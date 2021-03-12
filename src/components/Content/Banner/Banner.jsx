@@ -3,6 +3,7 @@ import Title from './Title';
 import Text from './Text';
 import Button from './Button';
 import './banner.css'
+const pfp = require('../../../assets/images/bitmoji/8b80b4d8-32db-4668-8490-9b1227b0754b-f0fe3384-3fbc-4f46-9738-7b713055c737-v1.png').default;
 
 // TODO: get a png to use as a banner profile image
 
@@ -20,7 +21,7 @@ function Banner() {
                 <Text />
                 <Button />
               </div>
-              {/* <img src='' class='art-banner-photo' alt='Banner Profile'></img> */}
+              <img src={pfp} class='art-banner-photo' alt='Banner Profile'></img>
             </div>
           </div>
         </div>

@@ -102,9 +102,9 @@
   color: #fafafc;
 }
 .art-banner .art-banner-overlay .art-banner-photo {
-  width: 390px;
+  width: 375px;
   position: absolute;
-  right: 30px;
+  right: 0;
   bottom: 0;
 }
 

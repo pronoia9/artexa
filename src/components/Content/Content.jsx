@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Background from './Banner/Background';
 import Banner from './Banner/Banner';
+import History from './History/History';
 
 function Content(props) {
   const [currPage, setCurrPage] = useState('Home');
@@ -19,6 +20,8 @@ function Content(props) {
           <div className='scroll-content'>
             {/* heading for banner */}
             <Banner />
+            {/* history, education */}
+            <History />
           </div>
         </div>
       </div>

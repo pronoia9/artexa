@@ -1,4 +1,5 @@
 {
+  "images": {"avatar" : "../../../assets/images/bitmoji/smile.png", "banner-avatar": "../../../assets/images/bitmoji/"}, 
   "languages": [
     { "id": "1", "language": "English", "level": 100 },
     { "id": "2", "language": "French", "level": 20 }
