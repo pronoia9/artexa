@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 function SoftSkill(props) {
-  return;
+  return <li>{props.skills}</li>;
 }
 
 export default SoftSkill;

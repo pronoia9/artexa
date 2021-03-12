@@ -1,0 +1,24 @@
+{
+  "languages": [
+    { "id": "1", "language": "English", "level": 100 },
+    { "id": "2", "language": "French", "level": 20 }
+  ],
+  "hardSkills": [
+    { "id": "1", "skill": "HTML5", "level": "85" },
+    { "id": "2", "skill": "CSS3", "level": "40" },
+    { "id": "3", "skill": "JavaScript", "level": "70" },
+    { "id": "4", "skill": "ReactJS", "level": "60" },
+    { "id": "5", "skill": "NodeJS", "level": "60" }
+  ],
+  "softSkills": [
+    "jQuery, Redux, React Hooks",
+    "MySQL, MongoDB, PostgresSQL",
+    "Bootstrap, Material UI, Semantic UI, Wordpress",
+    "Express, EJS, Mongoose, Passport",
+    "Git, GitHub",
+    "Bash, zShell",
+    "Java, C, C++",
+    "Unreal Engine, 3Ds Max",
+    "Photoshop, Sony VEGAS"
+  ]
+}
