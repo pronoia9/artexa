@@ -5,6 +5,7 @@ import Languages from './Languages/Languages';
 import HardSkills from './HardSkills/HardSkills';
 import SoftSkills from './SoftSkills/SoftSkills';
 import Resume from './Resume/Resume';
+import Social from './Social/Social';
 
 function ArtInfoBar() {
   return (
@@ -46,6 +47,9 @@ function ArtInfoBar() {
             <div className='scrollbar-thumb scrollbar-thumb-y'></div>
           </div>
         </div>
+
+        {/* social links */}
+        <Social />
       </div>
     </div>
   );
