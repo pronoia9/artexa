@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './assets/css/style.css';
 import Preloader from './components/Preloader/Preloader';
 import InfoBar from './components/Sidebar/InfoBar';
 import Content from './components/Content/Content';

@@ -1,6 +1,6 @@
 import React from 'react';
 import SoftSkill from './SoftSkill';
-import data from '../../../variables/data.json';
+import data from '../../../data/data.json';
 
 function SkillsList() {
   let i = 1;

@@ -1,6 +1,6 @@
 import React from 'react';
 import HardSkill from './HardSkill';
-import data from '../../../variables/data.json';
+import data from '../../../data/data.json';
 
 function HardSkills() {
   return (

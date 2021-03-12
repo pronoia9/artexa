@@ -1,30 +1,29 @@
-import React from 'react';
-//const url = require('../../assets/images/tengyart-vDn7bw3awrQ-unsplash.jpg').default;
+import React, { useState } from 'react';
+import Banner from './Banner';
+import Heading from './Heading';
 
-// TODO: Fix the background image link
+function Content(props) {
+  const [currPage, setCurrPage] = useState('Home');
 
-function ArtContent(props) {
   return (
     <div className={props.menuActive ? 'art-content active' : 'art-content'}>
       {/* curtain */}
       <div className='art-curtain' onClick={() => props.menuActive && props.setMenuActive(false)}></div>
 
-      {/* top background */}
-      <div
-        className='art-top-bg'
-        style={{
-          backgroundImage:
-            'url(https://images.unsplash.com/photo-1615377730068-e8235046ff05?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80)',
-        }}
-      >
-        {/* overlay */}
-        <div className='art-top-bg-overlay'></div>
-      </div>
+      {currPage === 'Home' && <Banner />}
 
       {/* swup container */}
-      <div></div>
+      <div className='transition-fade' id='swup' data-swup='0'>
+        {/* scroll frame */}
+        <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabindex='-1'>
+          <div className='scroll-content'>
+            {/* heading for banner */}
+            <Heading />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
 
-export default ArtContent;
+export default Content;

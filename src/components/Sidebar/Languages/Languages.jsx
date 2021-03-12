@@ -1,6 +1,6 @@
 import React from 'react';
 import Language from './Language';
-import data from '../../../variables/data.json';
+import data from '../../../data/data.json';
 
 function Languages() {
   return (
