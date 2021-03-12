@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import LoadingBar from './LoadingBar';
+import LoadingBar from './PercentLineBar';
 import anime from 'animejs/lib/anime.es.js';
 
 function Preloader() {

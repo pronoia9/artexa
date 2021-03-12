@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Preloader from './preloader/Preloader';
-import InfoBar from './info/InfoBar';
-import Content from './content/Content';
-import MenuBar from './menu/MenuBar';
+import Preloader from './components/Preloader/Preloader';
+import InfoBar from './components/Sidebar/InfoBar';
+import Content from './layouts/Content';
+import MenuBar from './components/Navbars/MenuBar';
 
 function App() {
   const [menuActive, setMenuActive] = useState(false);
