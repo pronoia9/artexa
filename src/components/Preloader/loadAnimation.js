@@ -8,7 +8,9 @@ function loadAnimation() {
     delay: 200,
     duration: 600,
     easing: 'linear',
-    complete: function (anim) {},
+    complete: function (anim) {
+      document.getElementById('art-preloader').style = 'display: flex';
+    },
   });
 
   // Fade Out

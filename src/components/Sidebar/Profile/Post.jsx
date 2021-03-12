@@ -7,7 +7,7 @@ function Post() {
       <br />
       Lorem ipsum{' '}
       <span>
-        <i class='fas fa-paw'></i>
+        <i className='fas fa-paw'></i>
       </span>
     </div>
   );

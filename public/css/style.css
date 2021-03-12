@@ -627,7 +627,6 @@ app marcup
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
   /* ----- info bar ----- */
   /* ----- content ----- */
@@ -640,9 +639,7 @@ app marcup
   height: calc(100vh - 30px);
   position: relative;
   z-index: 999;
-  -webkit-box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
   box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
-  -webkit-transition: 0.55s ease-in-out;
   transition: 0.55s ease-in-out;
 }
 .art-app .art-app-wrapper .art-app-container .art-info-bar .art-info-bar-frame {

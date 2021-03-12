@@ -13,7 +13,7 @@ function HardSkills() {
   return (
     <div className='art-hard-skills p-30-15'>
       {skills.map((skill) => (
-        <HardSkill id={skill.id} skill={skill.skill} level={skill.level} />
+        <HardSkill key={skill.id} id={skill.id} skill={skill.skill} level={skill.level} />
       ))}
     </div>
   );

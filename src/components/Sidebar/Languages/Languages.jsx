@@ -9,8 +9,8 @@ function Languages() {
 
   return (
     <div className='art-lang-skills p-30-15'>
-      {languages.map((l) => (
-        <Language id={l.id} language={l.language} level={l.level} />
+      {languages.map((language) => (
+        <Language key={language.id} id={language.id} language={language.language} level={language.level} />
       ))}
     </div>
   );
