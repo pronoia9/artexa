@@ -72,7 +72,7 @@ $(function() {
   //   }
   // });
 
-  bar.animate(1);
+  //bar.animate(1);
 
   // counters
   anime({

@@ -5,7 +5,7 @@ function MenuBarHeader(props) {
     <div className='art-menu-bar-header'>
       {/* when clicked on it, add class art-active */}
       <a
-        className={'art-menu-bar-btn'}
+        className={props.menuActive ? 'art-menu-bar-btn active' : 'art-menu-bar-btn'}
         href='/'
         onClick={() => (props.menuActive ? props.setMenuActive(false) : props.setMenuActive(true))}
       >
