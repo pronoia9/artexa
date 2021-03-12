@@ -1,5 +1,10 @@
 import React from 'react';
 import Profile from './Profile/Profile';
+import About from './About/About';
+import Languages from './Languages/Languages';
+import SkillsBar from './SkillsCircleBar/SkillsBar';
+import SkillsList from './SkillsList/SkillsList';
+import Resume from './Resume/Resume';
 
 function ArtInfoBar() {
   return (
@@ -19,7 +24,17 @@ function ArtInfoBar() {
         <Profile />
 
         <div id='scrollbar2' className='art-scroll-frame'>
-          <div className='scroll-content'></div>
+          <div className='scroll-content'>
+            <About />
+            <div className='art-ls-divider'></div>
+            <Languages />
+            <div className='art-ls-divider'></div>
+            <SkillsBar />
+            <div className='art-ls-divider'></div>
+            <SkillsList />
+            <div className='art-ls-divider'></div>
+            <Resume />
+          </div>
           <div className='scrollbar-track scrollbar-track-x'>
             <div className='scrollbar-thumb scrollbar-thumb-x'></div>
           </div>

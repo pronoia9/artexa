@@ -22,7 +22,7 @@ function LoadingBar() {
 
   return (
     <div id='preloader' className='art-preloader-load' style={{ position: 'relative' }}>
-      <svg viewBox='0 0 100 1.7' preserveAspectRatio='none' style={{ width: '100%', height: '100%' }}></svg>
+      <svg viewBox='0 0 100 1.7' preserveAspectRatio='none'></svg>
       <div
         className='progressbar-text'
         style={{

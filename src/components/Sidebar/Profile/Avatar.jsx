@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 const pfp = require('../../../assets/images/arter/face-1(1).jpg').default;
 
 // TODO Enable/fix avatar click fancybox
@@ -34,3 +34,5 @@ export default Avatar;
   //   transitionDuration: 1200,
   //   buttons: ['zoom', 'close'],
   // });
+
+  

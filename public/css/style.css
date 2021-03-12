@@ -1153,24 +1153,24 @@ info bar
 .art-info-bar .art-lang-skills {
   display: flex;
   flex-wrap: wrap;
-  justify-content:center;
+  justify-content: center;
 }
 .art-info-bar .art-lang-skills .art-lang-skills-item {
   width: 33.33333%;
   text-align: center;
   margin-bottom: 15px;
 }
-.art-info-bar .art-lang-skills .art-lang-skills-item .art-cirkle-progress {
+.art-info-bar .art-lang-skills .art-lang-skills-item .art-circle-progress {
   width: 65%;
   margin: 0 auto 15px;
 }
-.art-info-bar .art-lang-skills .art-lang-skills-item .art-cirkle-progress .progressbar-text {
+.art-info-bar .art-lang-skills .art-lang-skills-item .art-circle-progress .progressbar-text {
   font-size: 11px;
   color: #8c8c8e !important;
   position: relative;
   left: 45% !important;
 }
-.art-info-bar .art-lang-skills .art-lang-skills-item .art-cirkle-progress .progressbar-text:after {
+.art-info-bar .art-lang-skills .art-lang-skills-item .art-circle-progress .progressbar-text:after {
   content: '%';
   position: absolute;
   right: -7px;
@@ -1268,10 +1268,10 @@ info bar
   stroke: #ffc107;
 }
 
-.art-cirkle-progress path:first-child {
+.art-circle-progress path:first-child {
   stroke: #191923;
 }
-.art-cirkle-progress path:last-child {
+.art-circle-progress path:last-child {
   stroke: #ffc107;
 }
 
