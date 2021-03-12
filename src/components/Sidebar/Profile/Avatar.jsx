@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 const pfp = require('../../../assets/images/arter/face-1(1).jpg').default;
 
 // TODO Enable/fix avatar click fancybox

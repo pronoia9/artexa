@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Preloader from './components/Preloader/Preloader';
 import InfoBar from './components/Sidebar/InfoBar';
-import Content from './layouts/Content';
+import Content from './components/Content/Content';
 import MenuBar from './components/Navbars/MenuBar';
 
 function App() {

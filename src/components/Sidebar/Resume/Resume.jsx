@@ -1,9 +1,11 @@
 import React from 'react';
 
+// TODO: Add resume and replace the placeholder
+
 function Resume() {
   return (
     <div className='art-links-frame p-15-15'>
-      <a href='' class='art-link' download>
+      <a href='../../../variables/data.json' className='art-link' download>
         Download Resume <i className='fas fa-download'></i>
       </a>
     </div>

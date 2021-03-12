@@ -1,12 +1,13 @@
 import React from 'react';
-const url = require('../assets/images/tengyart-al1bUu7EfAQ-unsplash.jpg').default;
+//const url = require('../../assets/images/tengyart-vDn7bw3awrQ-unsplash.jpg').default;
+
+// TODO: Fix the background image link
 
 function ArtContent(props) {
   return (
     <div className={props.menuActive ? 'art-content active' : 'art-content'}>
       {/* curtain */}
       <div className='art-curtain' onClick={() => props.menuActive && props.setMenuActive(false)}></div>
-      {/* curtain end */}
 
       {/* top background */}
       <div
@@ -18,13 +19,10 @@ function ArtContent(props) {
       >
         {/* overlay */}
         <div className='art-top-bg-overlay'></div>
-        {/* overlay end */}
       </div>
-      {/* top background end */}
 
       {/* swup container */}
       <div></div>
-      {/* swup container end */}
     </div>
   );
 }
