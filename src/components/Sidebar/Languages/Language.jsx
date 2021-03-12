@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 var ProgressBar = require('progressbar.js');
 
-function LanguageProgress(props) {
+function Language(props) {
   const i = '#circleprog' + props.id;
   useEffect(() => {
     var bar = new ProgressBar.Circle(i, {
@@ -30,4 +30,4 @@ function LanguageProgress(props) {
   );
 }
 
-export default LanguageProgress;
+export default Language;

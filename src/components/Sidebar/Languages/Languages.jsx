@@ -1,5 +1,5 @@
 import React from 'react';
-import LanguageProgress from './LanguageProgress';
+import Language from './Language';
 
 function Languages() {
   const languages = [
@@ -10,7 +10,7 @@ function Languages() {
   return (
     <div className='art-lang-skills p-30-15'>
       {languages.map((l) => (
-        <LanguageProgress id={l.id} language={l.language} level={l.level} />
+        <Language id={l.id} language={l.language} level={l.level} />
       ))}
     </div>
   );

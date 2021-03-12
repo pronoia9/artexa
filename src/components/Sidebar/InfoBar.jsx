@@ -2,8 +2,8 @@ import React from 'react';
 import Profile from './Profile/Profile';
 import About from './About/About';
 import Languages from './Languages/Languages';
-import SkillsBar from './SkillsCircleBar/SkillsBar';
-import SkillsList from './SkillsList/SkillsList';
+import HardSkills from './HardSkills/HardSkills';
+import SoftSkills from './SoftSkills/SoftSkills';
 import Resume from './Resume/Resume';
 
 function ArtInfoBar() {
@@ -27,12 +27,16 @@ function ArtInfoBar() {
           <div className='scroll-content'>
             <About />
             <div className='art-ls-divider'></div>
+            {/* languages, circle bar animation */}
             <Languages />
             <div className='art-ls-divider'></div>
-            <SkillsBar />
+            {/* hard skills, line bar */}
+            <HardSkills />
             <div className='art-ls-divider'></div>
-            <SkillsList />
+            {/* soft skills, list */}
+            <SoftSkills />
             <div className='art-ls-divider'></div>
+            {/* download link for resume */}
             <Resume />
           </div>
           <div className='scrollbar-track scrollbar-track-x'>
