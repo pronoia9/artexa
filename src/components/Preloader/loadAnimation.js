@@ -1,6 +1,6 @@
 import anime from 'animejs/lib/anime.es.js';
 
-function pageLoading() {
+function loadAnimation() {
   // Fade In
   anime({
     targets: '.art-preloader .art-preloader-content',
@@ -24,4 +24,4 @@ function pageLoading() {
   });
 }
 
-export default pageLoading;
+export default loadAnimation;
