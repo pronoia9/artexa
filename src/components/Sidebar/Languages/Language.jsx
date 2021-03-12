@@ -1,26 +1,9 @@
 import React, { useEffect } from 'react';
-var ProgressBar = require('progressbar.js');
+import animateLanguage from './animateLanguage.js';
 
 function Language(props) {
-  const i = '#circleprog' + props.id;
-  useEffect(() => {
-    var bar = new ProgressBar.Circle(i, {
-      strokeWidth: 7,
-      easing: 'easeInOut',
-      duration: 1400,
-      delay: 2400 + props.level,
-      trailWidth: 7,
-      step: function (state, circle) {
-        var value = Math.round(circle.value() * 100);
-        if (value === 0) {
-          circle.setText('');
-        } else {
-          circle.setText(value);
-        }
-      },
-    });
-    bar.animate(props.level / 100);
-  });
+  // circle bar animation
+  useEffect(() => animateLanguage(props.id, props.language, props.level));
 
   return (
     <div className='art-lang-skills-item'>
