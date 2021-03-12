@@ -4,6 +4,8 @@ import Text from './Text';
 import Button from './Button';
 import './banner.css'
 
+// TODO: get a png to use as a banner profile image
+
 function Banner() {
   return (
     <div className='container-fluid'>
@@ -18,7 +20,7 @@ function Banner() {
                 <Text />
                 <Button />
               </div>
-              <img src='' class='art-banner-photo' alt='Banner Profile'></img>
+              {/* <img src='' class='art-banner-photo' alt='Banner Profile'></img> */}
             </div>
           </div>
         </div>

@@ -6,6 +6,7 @@ import HardSkills from './HardSkills/HardSkills';
 import SoftSkills from './SoftSkills/SoftSkills';
 import Resume from './Resume/Resume';
 import Social from './Social/Social';
+import './infoBar.css';
 
 function ArtInfoBar() {
   return (
