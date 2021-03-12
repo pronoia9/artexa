@@ -1,4 +1,5 @@
 import React from 'react';
+import './resume.css';
 
 // TODO: Add resume and replace the placeholder
 

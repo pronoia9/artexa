@@ -1,21 +1,22 @@
 import React from 'react';
+import './social.css';
 
-function Social(props) {
+function Social() {
   return (
     <div className='art-ls-social'>
-      <a href='https://github.com/pronoia9' target='_blank'>
+      <a className='GitHub' href='https://github.com/pronoia9' target='_blank'>
         <i class='fab fa-github-square'></i>
       </a>
-      <a href='https://www.linkedin.com/in/jayansin/' target='_blank'>
+      <a className='LinkedIn' href='https://www.linkedin.com/in/jayansin/' target='_blank'>
         <i class='fab fa-linkedin'></i>
       </a>
-      <a href='https://www.facebook.com/victoriouswaffles/' target='_blank'>
-        <i class="fab fa-github-square"></i>
+      <a className='Facebook'>
+        <i class='fab fa-facebook-square'></i>
       </a>
-      <a href='https://twitter.com/pronoia9' target='_blank'>
+      <a className='Twitter'>
         <i class='fab fa-twitter-square'></i>
       </a>
-      <a href='' target='_blank'>
+      <a className='Discord'>
         <i class='fab fa-discord'></i>
       </a>
     </div>

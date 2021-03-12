@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Load from './Load';
 import loadAnimation from './loadAnimation.js'
+import './preloader.css';
 
 function Preloader() {
   useEffect(loadAnimation);

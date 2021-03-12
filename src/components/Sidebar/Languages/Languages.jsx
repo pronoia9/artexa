@@ -1,6 +1,7 @@
 import React from 'react';
 import Language from './Language';
 import data from '../../../data/data.json';
+import './languages.css';
 
 function Languages() {
   return (

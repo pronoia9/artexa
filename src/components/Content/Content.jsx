@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Banner from './Banner';
-import Heading from './Heading';
+import Background from './Banner/Background';
+import Banner from './Banner/Banner';
 
 function Content(props) {
   const [currPage, setCurrPage] = useState('Home');
@@ -10,7 +10,7 @@ function Content(props) {
       {/* curtain */}
       <div className='art-curtain' onClick={() => props.menuActive && props.setMenuActive(false)}></div>
 
-      {currPage === 'Home' && <Banner />}
+      {currPage === 'Home' && <Background />}
 
       {/* swup container */}
       <div className='transition-fade' id='swup' data-swup='0'>
@@ -18,7 +18,7 @@ function Content(props) {
         <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabindex='-1'>
           <div className='scroll-content'>
             {/* heading for banner */}
-            <Heading />
+            <Banner />
           </div>
         </div>
       </div>
