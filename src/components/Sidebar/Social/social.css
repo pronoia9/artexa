@@ -19,6 +19,9 @@
 }
 .art-ls-social a:hover {
   text-shadow: 0 0 3px rgba(250, 250, 252, 0.4);
-  color: #fafafc;
   color: #ffc107;
+}
+
+a.social-unavailable:hover {
+  color: #fafafc;
 }

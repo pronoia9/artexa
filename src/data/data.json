@@ -36,6 +36,30 @@
     ]
   },
 
+  "social": [
+    { "platform": "github", "favicon": "fab fa-github-square", "url": "https://github.com/pronoia9" },
+    {
+      "platform": "linkedin",
+      "favicon": "fab fa-linkedin",
+      "url": "https://www.linkedin.com/in/jayansin/"
+    },
+    {
+      "platform": "facebook social-unavailable",
+      "favicon": "fab fa-facebook-square",
+      "url": "https://www.facebook.com/"
+    },
+    {
+      "platform": "twitter social-unavailable",
+      "favicon": "fab fa-twitter-square",
+      "url": "https://twitter.com/"
+    },
+    {
+      "platform": "discord social-unavailable",
+      "favicon": "fab fa-discord",
+      "url": "https://discordapp.com/"
+    }
+  ],
+
   "typed": [
     "hello wo- oops...",
     "write code.",
