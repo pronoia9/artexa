@@ -22,10 +22,3 @@ function Avatar() {
 }
 
 export default Avatar;
-
-// $('[data-fancybox="avatar"]').fancybox({
-//   animationEffect: 'zoom-in-out',
-//   animationDuration: 600,
-//   transitionDuration: 1200,
-//   buttons: ['zoom', 'close'],
-// });

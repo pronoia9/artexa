@@ -7,7 +7,7 @@ function SkillsList() {
   let i = 1;
   return (
     <ul className='art-knowledge-list p-15-0'>
-      {data.softSkills.map((skill) => (
+      {data.skills.soft.map((skill) => (
         <SoftSkill key={i++} skills={skill} />
       ))}
     </ul>
