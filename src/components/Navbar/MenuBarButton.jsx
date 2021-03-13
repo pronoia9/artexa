@@ -6,13 +6,13 @@ SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 function MenuBarHeader(props) {
   return (
     <div className='art-menu-bar-header'>
-      {/* when clicked on it, add class art-active */}
-      <a
+      {/* when clicked on it, add class art-active and shows/hides the navbar */}
+      <div
         className={props.menuActive ? 'art-menu-bar-btn art-active' : 'art-menu-bar-btn'}
         onClick={() => props.setMenuActive(!props.menuActive)}
       >
         <span></span>
-      </a>
+      </div>
     </div>
   );
 }

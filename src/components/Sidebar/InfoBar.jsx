@@ -15,11 +15,11 @@ function ArtInfoBar(props) {
     <div className={props.infoActive ? 'art-info-bar art-active' : 'art-info-bar'}>
       {/* menu bar frame */}
       <div className='art-info-bar-frame'>
-        {/* info bar header (mobile icon) */}
+        {/* info bar header (mobile icon to show/hide sidebar) */}
         <div className='art-info-bar-header'>
-          <a className='art-info-bar-btn' onClick={() => props.setInfoActive(!props.infoActive)}>
+          <div className='art-info-bar-btn' onClick={() => props.setInfoActive(!props.infoActive)}>
             <i className='fas fa-ellipsis-v'></i>
-          </a>
+          </div>
         </div>
 
         {/* avatar, availability, name, post */}
