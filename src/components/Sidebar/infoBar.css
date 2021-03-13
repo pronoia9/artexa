@@ -4,9 +4,8 @@
 }
 
 /* fixes the top padding with the scrollbar package */
-.art-scroll-frame .scroll-content {
+.art-info-bar .scroll-content {
   padding-top: 120px !important;
-  padding-bottom: 25px i !important;
 }
 
 /* ----- progresbar color ----- */
