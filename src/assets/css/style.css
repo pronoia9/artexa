@@ -520,7 +520,7 @@ blockquote:after {
 }
 .art-app .art-app-wrapper .art-app-container .art-info-bar .art-info-bar-frame {
   padding: 0 15px;
-  overflow: scroll;
+  /* overflow: scroll; */
 }
 .art-app .art-app-wrapper .art-app-container .art-info-bar .art-info-bar-frame .art-info-bar-header {
   width: 100%;
@@ -567,7 +567,7 @@ blockquote:after {
 .art-app .art-app-wrapper .art-app-container .art-content {
   position: relative;
   overflow: hidden;
-  overflow: scroll;
+  /* overflow: scroll; */
   width: 100vw;
   height: calc(100vh - 30px);
   padding-right: 80px;
@@ -2202,17 +2202,18 @@ transitions
 
 /* ----- in animation ----- */
 .transition-fade {
-  -webkit-transition: 0.55s ease-in-out;
   transition: 0.55s ease-in-out;
   opacity: 1;
 }
+.art-active .transition-fade {
+  opacity: 0.75;
+}
+
 .transition-fade .art-a {
-  -webkit-transform: scale(1);
   transform: scale(1);
   opacity: 1;
 }
 .transition-fade .art-price.art-popular-price {
-  -webkit-transform: scale(1.03);
   transform: scale(1.03);
 }
 
@@ -2221,7 +2222,6 @@ html.is-animating .transition-fade {
   opacity: 0;
 }
 html.is-animating .transition-fade .art-a {
-  -webkit-transform: scale(0.93);
   transform: scale(0.93);
   opacity: 0;
 }

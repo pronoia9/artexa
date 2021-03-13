@@ -6,7 +6,7 @@ import './languages.css';
 function Languages() {
   return (
     <div className='art-lang-skills p-30-15'>
-      {data.skills.languages.map((language) => (
+      {data.languages.map((language) => (
         <Language key={language.id} id={language.id} language={language.language} level={language.level} />
       ))}
     </div>

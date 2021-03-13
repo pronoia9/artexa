@@ -1,18 +1,17 @@
 import React from 'react';
-import animateLanguage from './animateLanguage.js';
-import Circle from '../../../components/progressbars/Circle';
+import Circle from '../../../components/progressbar/Circle';
 
 function Language(props) {
+
   return (
     <div className='art-lang-skills-item'>
-      {/* circle bar animation */}
       <Circle
+        key={props.id}
+        i={props.id}
         id={'circleprog' + props.id}
         className='art-circle-progress'
-        func={animateLanguage}
-        i={props.id}
-        language={props.language}
-        level={props.level}
+        text={props.language}
+        percentage={props.level}
       />
       <h6>{props.language}</h6>
     </div>

@@ -1,18 +1,23 @@
-import React, { useEffect } from 'react';
-import animateHardSkill from './animateHardSkill.js';
+import React from 'react';
+import Line from '../../../components/progressbar/Line';
 
 function HardSkill(props) {
-  // line bar animation
-  useEffect(() => animateHardSkill(props.id, props.skill, props.level));
-  
   return (
     <div className='art-hard-skills-item'>
+      {/* heading */}
       <div className='art-skill-heading'>
         <h6>{props.skill}</h6>
       </div>
-      <div className='art-line-progress'>
-        <div id={'lineprog' + props.id} className={'lineprog' + props.id}></div>
-      </div>
+
+      {/* progress bar (line) */}
+      <Line
+        key={props.id}
+        i={props.id}
+        id={'lineprog' + props.id}
+        className='art-line-progress'
+        text={props.language}
+        percentage={props.level}
+      />
     </div>
   );
 }

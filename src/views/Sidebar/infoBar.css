@@ -3,6 +3,12 @@
   padding: 0 15px;
 }
 
+/* fixes the top padding with the scrollbar package */
+.art-scroll-frame .scroll-content {
+  padding-top: 120px !important;
+  padding-bottom: 25px i !important;
+}
+
 /* ----- progresbar color ----- */
 .art-line-progress path:first-child {
   stroke: #191923;

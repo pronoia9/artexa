@@ -1,16 +1,15 @@
 import React, { useEffect } from 'react';
-import Load from './Load';
-import loadAnimation from './loadAnimation.js'
+import loading from './loading.js';
 import './preloader.css';
 
-function Preloader() {
-  useEffect(loadAnimation);
+function Preloader(props) {
+  useEffect(loading, []);
 
   return (
     <div id='art-preloader' className='art-preloader'>
       <div className='art-preloader-content'>
         <h4>Welcome</h4>
-        <Load />
+        <div id='preloader' className='art-preloader-load'></div>
       </div>
     </div>
   );

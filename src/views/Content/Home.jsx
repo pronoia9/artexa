@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Background from './Banner/Background';
 import Banner from './Banner/Banner';
 import History from './History/History';
 
 function Content(props) {
-  const [currPage, setCurrPage] = useState('Home');
-
   return (
-    <div className={props.menuActive ? 'art-content active' : 'art-content'}>
+    <div className={props.menuActive || props.infoActive ? 'art-content art-active' : 'art-content'}>
       {/* curtain */}
-      <div className='art-curtain' onClick={() => props.menuActive && props.setMenuActive(false)}></div>
+      <div className='art-curtain' onClick={() => {
+        props.menuActive && props.setMenuActive(false);
+        props.infoActive && props.setInfoActive(false);
+      }}></div>
 
-      {currPage === 'Home' && <Background />}
+      <Background />
 
       {/* swup container */}
-      <div className='transition-fade' id='swup' data-swup='0'>
+      <div className='transition-fade'>
         {/* scroll frame */}
         <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabindex='-1'>
           <div className='scroll-content'>
