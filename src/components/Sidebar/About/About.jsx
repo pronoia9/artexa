@@ -1,17 +1,14 @@
 import React from 'react';
+import ListItem from './ListItem';
+import data from '../../../data/data.json';
 
 function About() {
   return (
     <div className='art-table p-15-15'>
       <ul>
-        <li>
-          <h6>Nationality:</h6>
-          <span>U.S.</span>
-        </li>
-        <li>
-          <h6>Age:</h6>
-          <span>25</span>
-        </li>
+        {data.about.map((li) => (
+          <ListItem title={li.title} subtitle={li.subtitle} />
+        ))}
       </ul>
     </div>
   );
