@@ -12,12 +12,12 @@ import './infoBar.css';
 function ArtInfoBar(props) {
   return (
     // info bar
-    <div className={props.infoActive ? 'art-info-bar art-active' : 'art-info-bar'}>
+    <div className={props.sidebarActive ? 'art-info-bar art-active' : 'art-info-bar'}>
       {/* menu bar frame */}
       <div className='art-info-bar-frame'>
         {/* info bar header (mobile icon to show/hide sidebar) */}
         <div className='art-info-bar-header'>
-          <div className='art-info-bar-btn' onClick={() => props.setInfoActive(!props.infoActive)}>
+          <div className='art-info-bar-btn' onClick={() => props.setSidebarActive(!props.sidebarActive)}>
             <i className='fas fa-ellipsis-v'></i>
           </div>
         </div>

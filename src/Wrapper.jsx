@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import InfoBar from './components/Sidebar/InfoBar';
 import Content from './views/Home';
-import MenuBar from './components/Navbar/MenuBar';
+import Navbar from './components/Navbar/Navbar';
 
 function App() {
   // sliding for left side panel
-  const [infoActive, setInfoActive] = useState(false);
+  const [sidebarActive, setSidebarActive] = useState(false);
 
   // sliding for right side menu
-  const [menuActive, setMenuActive] = useState(false);
+  const [navbarActive, setNavbarActive] = useState(false);
 
   return (
     <div>
@@ -16,14 +16,14 @@ function App() {
 
       <div className='art-app-wrapper'>
         <div className='art-app-container'>
-          <InfoBar infoActive={infoActive} setInfoActive={setInfoActive} />
+          <InfoBar sidebarActive={sidebarActive} setSidebarActive={setSidebarActive} />
           <Content
-            menuActive={menuActive}
-            setMenuActive={setMenuActive}
-            infoActive={infoActive}
-            setInfoActive={setInfoActive}
+            navbarActive={navbarActive}
+            setNavbarActive={setNavbarActive}
+            sidebarActive={sidebarActive}
+            setSidebarActive={setSidebarActive}
           />
-          <MenuBar menuActive={menuActive} setMenuActive={setMenuActive} />
+          <Navbar navbarActive={navbarActive} setNavbarActive={setNavbarActive} />
         </div>
       </div>
     </div>

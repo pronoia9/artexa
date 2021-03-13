@@ -5,11 +5,11 @@ import History from '../components/History/History';
 
 function Content(props) {
   return (
-    <div className={props.menuActive || props.infoActive ? 'art-content art-active' : 'art-content'}>
+    <div className={props.navbarActive || props.sidebarActive ? 'art-content art-active' : 'art-content'}>
       {/* curtain */}
       <div className='art-curtain' onClick={() => {
-        props.menuActive && props.setMenuActive(false);
-        props.infoActive && props.setInfoActive(false);
+        props.navbarActive && props.setNavbarActive(false);
+        props.sidebarActive && props.setSidebarActive(false);
       }}></div>
 
       <Background />
