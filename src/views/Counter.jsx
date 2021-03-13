@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Contact() {
+function Counter() {
   return <div className='container-fluid'></div>;
 }
 
-export default Contact;
+export default Counter;

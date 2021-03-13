@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Contact() {
+function Courses() {
   return <div className='container-fluid'></div>;
 }
 
-export default Contact;
+export default Courses;
