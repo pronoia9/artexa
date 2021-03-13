@@ -1,8 +1,8 @@
 import React from 'react';
-import data from '../../../data/data.json';
+import data from '../../data/data.json';
 import Typed from 'react-typed';
 
-function Text() {
+function Code() {
   return (
     <div className='art-lg-text art-code mb-25'>
       &lt;<i>code</i>&gt; I{' '}
@@ -25,4 +25,4 @@ function Text() {
   );
 }
 
-export default Text;
+export default Code;

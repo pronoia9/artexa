@@ -1,7 +1,7 @@
 import React from 'react';
-import Background from './Banner/Background';
-import Banner from './Banner/Banner';
-import History from './History/History';
+import Background from '../components/Banner/Background';
+import Banner from '../components/Banner/Banner';
+import History from '../components/History/History';
 
 function Content(props) {
   return (
@@ -21,8 +21,10 @@ function Content(props) {
           <div className='scroll-content'>
             {/* heading for banner */}
             <Banner />
-            {/* history, education */}
+            {/* education history */}
             <History />
+            {/* projects */}
+            {/* extracurricular */}
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Line from '../../../components/progressbar/Line';
+import Line from '../../ProgressBars/Line';
 
 function HardSkill(props) {
   return (

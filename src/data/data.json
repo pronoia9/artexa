@@ -1,5 +1,8 @@
 {
-  "images": {"avatar" : "../../../assets/images/bitmoji/smile.png", "banner-avatar": "../../../assets/images/bitmoji/"}, 
+  "images": {
+    "avatar": "../../../assets/images/bitmoji/smile.png",
+    "banner-avatar": "../../../assets/images/bitmoji/"
+  },
   "languages": [
     { "id": "1", "language": "English", "level": 100 },
     { "id": "2", "language": "French", "level": 20 }
@@ -22,5 +25,12 @@
     "Unreal Engine, 3Ds Max",
     "Photoshop, Sony VEGAS, Excel"
   ],
-  "typed": ["hello wo- oops...", "write code.", "make websites.", "create web apps.", "do other stuff as well...", "... but mostly irrelevant."]
+  "typed": [
+    "hello wo- oops...",
+    "write code.",
+    "make websites.",
+    "create web apps.",
+    "do other stuff as well...",
+    "... but mostly irrelevant."
+  ]
 }

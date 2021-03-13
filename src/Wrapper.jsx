@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import InfoBar from './views/Sidebar/InfoBar';
-import Content from './views/Content/Home';
-import MenuBar from './views/Navbars/MenuBar';
+import InfoBar from './components/Sidebar/InfoBar';
+import Content from './views/Home';
+import MenuBar from './components/Navbar/MenuBar';
 
 function App() {
   // sliding for left side panel

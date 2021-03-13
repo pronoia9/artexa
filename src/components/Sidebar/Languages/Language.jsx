@@ -1,5 +1,5 @@
 import React from 'react';
-import Circle from '../../../components/progressbar/Circle';
+import Circle from '../../ProgressBars/Circle';
 
 function Language(props) {
 
