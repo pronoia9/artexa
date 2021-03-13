@@ -1,5 +1,8 @@
 {
-  "images": {"avatar" : "../../../assets/images/bitmoji/smile.png", "banner-avatar": "../../../assets/images/bitmoji/"}, 
+  "images": {
+    "avatar": "../../../assets/images/bitmoji/smile.png",
+    "banner-avatar": "../../../assets/images/bitmoji/"
+  },
   "languages": [
     { "id": "1", "language": "English", "level": 100 },
     { "id": "2", "language": "French", "level": 20 }
@@ -22,5 +25,49 @@
     "Unreal Engine, 3Ds Max",
     "Photoshop, Sony VEGAS, Excel"
   ],
-  "typed": ["hello wo- oops...", "write code.", "make websites.", "create web apps.", "do other stuff as well...", "... but mostly irrelevant."]
+  "typed": [
+    "hello wo- oops...",
+    "write code.",
+    "make websites.",
+    "create web apps.",
+    "do other stuff as well...",
+    "... but mostly irrelevant."
+  ],
+
+  "education": [
+    {
+      "completed": [
+        {
+          "title": "Seneca College",
+          "subtitle": "Student",
+          "date": "May 2016 - May 2019",
+          "content": "This three-year advanced diploma program provided me with the skills and knowledge to begin my career as a developer. I learned programming languages, program design and system analysis. Web concepts were integrated into all the courses to develop active database web programs on a variety of operating systems. Advanced techniques were taught through professional option courses.",
+          "link": "Program",
+          "url": "https://www.senecacollege.ca/programs/fulltime/CPA.html"
+        }
+      ]
+    },
+    {
+      "online": [
+        { "title": "The Complete Web Developer in 2021", "subtitle": "by Andrei Neagoie, Senior Software Developer", "date": "March 2021 - Ongoing", "content": "", "link": "", "url": "" },
+        { "title": "The Complete 2021 Web Development Bootcamp", "subtitle": "by Dr. Angela Yu, Developer and Lead Instructor", "date": "Feb 2021 - March 2021", "content": " The course is a taught by the lead instructor at the App Brewery, London's leading in-person programming bootcamp.", "link": "Course", "url": "https://www.udemy.com/course/the-complete-web-development-bootcamp/learn/" }
+      ]
+    },
+    {
+      "future": [
+        { "title": "", "subtitle": "", "date": "", "content": "", "link": "", "url": "" },
+        { "title": "", "subtitle": "", "date": "", "content": "", "link": "", "url": "" },
+        { "title": "", "subtitle": "", "date": "", "content": "", "link": "", "url": "" },
+        { "title": "", "subtitle": "", "date": "", "content": "", "link": "", "url": "" },
+        { "title": "", "subtitle": "", "date": "", "content": "", "link": "", "url": "" },
+        { "title": "", "subtitle": "", "date": "", "content": "", "link": "", "url": "" },
+        { "title": "", "subtitle": "", "date": "", "content": "", "link": "", "url": "" },
+        { "title": "", "subtitle": "", "date": "", "content": "", "link": "", "url": "" },
+        { "title": "", "subtitle": "", "date": "", "content": "", "link": "", "url": "" },
+        { "title": "", "subtitle": "", "date": "", "content": "", "link": "", "url": "" },
+        { "title": "", "subtitle": "", "date": "", "content": "", "link": "", "url": "" },
+        { "title": "", "subtitle": "", "date": "", "content": "", "link": "", "url": "" }
+      ]
+    }
+  ]
 }
