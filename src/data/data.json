@@ -36,6 +36,8 @@
     ]
   },
 
+  "resume": "https://www.dropbox.com/s/fe57nbhnms25xmo/Resume.pdf?dl=1",
+
   "social": [
     { "platform": "github", "favicon": "fab fa-github-square", "url": "https://github.com/pronoia9" },
     {
