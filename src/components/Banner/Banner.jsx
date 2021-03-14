@@ -18,8 +18,7 @@ function Banner() {
             <div className='art-banner-overlay'>
               <div className='art-banner-title'>
                 {/* title */}
-                <h1 className='mb-15'> {banner.heading.map((h) => { return <div>{h}</div>; })}
-                </h1>
+                <h1 className='mb-15'>{banner.heading.map((h) => <div>{h}</div> )}</h1>
                 {/* typed text */}
                 <Code />
                 <div className='art-button-frame'>

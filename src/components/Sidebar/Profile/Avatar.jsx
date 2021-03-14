@@ -1,5 +1,4 @@
 import React from 'react';
-//import sidebar from '../../../data/sidebar.json';
 const pfp = require('../../../assets/images/bitmoji/smile.png').default;
 
 // TODO Enable/fix avatar click fancybox
@@ -8,10 +7,10 @@ function Avatar() {
   return (
     //avatar
     <div className='art-avatar'>
-      <a data-fancybox='avatar' className='art-avatar-curtain' href={pfp}>
+      <div className='art-avatar-curtain'>
         <img className='art-avatar-curtain' src={pfp} alt='Avatar' />
-        <i className='fas fa-expand'></i>
-      </a>
+        {/* <i className='fas fa-expand'></i> */}
+      </div>
 
       {/* availability */}
       <div className='art-lamp-light'>

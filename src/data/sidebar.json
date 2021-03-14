@@ -1,7 +1,7 @@
 {
   "profile": {
     "name": "Lorem Ipsum",
-    "subtitle": ["Consectetur adipiscing elit,", "Dolor sit amet"],
+    "subtitle": ["", "Consectetur adipiscing elit,", "", "Dolor sit amet"],
     "availability": "Available",
     "avatar": "../../../assets/images/bitmoji/smile.png"
   },
