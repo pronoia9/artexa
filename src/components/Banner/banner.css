@@ -104,13 +104,13 @@
   position: absolute;
   right: 0;
   bottom: 0;
-  transition: all 1s;
+  transition: all 0.5s;
 }
 
 .art-banner .art-banner-overlay .art-banner-photo:hover {
   transform: scale(1.15);
   transform-origin: right bottom;
-  transition: transform 1s;
+  transition: transform 0.5s;
 }
 
 /* ----- typing code ----- */
