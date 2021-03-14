@@ -7,7 +7,6 @@ import SoftSkills from './SoftSkills/SoftSkills';
 import Resume from './Resume/Resume';
 import Social from './Social/Social';
 import Scrollbar from 'smooth-scrollbar-react';
-import './infoBar.css';
 
 export default function ArtInfoBar(props) {
   return (

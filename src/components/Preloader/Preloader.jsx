@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import loading from './loading.js';
-import './preloader.css';
 
 export default function Preloader(props) {
   useEffect(loading, []);

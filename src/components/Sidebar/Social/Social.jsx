@@ -1,7 +1,6 @@
 import React from 'react';
 import SocialIcon from './SocialIcon';
 import sidebar from '../../../data/sidebar.json';
-import './social.css';
 
 export default function Social() {
   return (

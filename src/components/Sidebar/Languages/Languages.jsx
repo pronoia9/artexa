@@ -1,7 +1,6 @@
 import React from 'react';
 import Language from './Language';
 import sidebar from '../../../data/sidebar.json';
-import './languages.css';
 
 export default function Languages() {
   return (

@@ -1,6 +1,5 @@
 import React from 'react';
 import sidebar from '../../../data/sidebar.json';
-import './resume.css';
 
 export default function Resume() {
   return (

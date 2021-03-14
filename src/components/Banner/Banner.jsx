@@ -1,7 +1,6 @@
 import React from 'react';
 import Code from './Code';
 import banner from '../../data/banner.json';
-import './banner.css';
 const pfp = require('../../assets/images/bitmoji/side-wave.png').default;
 
 // TODO: get a png to use as a banner profile image

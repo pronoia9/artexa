@@ -1,7 +1,6 @@
 import React from 'react';
 import HardSkill from './HardSkill';
 import sidebar from '../../../data/sidebar.json';
-import './hardSkills.css';
 
 export default function HardSkills() {
   return (

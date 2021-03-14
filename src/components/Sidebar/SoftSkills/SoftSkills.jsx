@@ -1,6 +1,5 @@
 import React from 'react';
 import SoftSkill from './SoftSkill';
-import './softSkills.css';
 import sidebar from '../../../data/sidebar.json';
 
 export default function SkillsList() {
