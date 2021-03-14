@@ -1,5 +1,5 @@
 import React from 'react';
-import data from '../../data/data.json';
+import banner from '../../data/banner.json';
 import Typed from 'react-typed';
 
 function Code() {
@@ -10,7 +10,7 @@ function Code() {
         loop
         typeSpeed={100}
         backSpeed={100}
-        strings={data.typed}
+        strings={banner.typed}
         smartBackspace
         shuffle={false}
         backDelay={1}

@@ -1,5 +1,5 @@
 import React from 'react';
-import Preloader from './views/Preloader/Preloader';
+import Preloader from './components/Preloader/Preloader';
 import Wrapper from './Wrapper';
 import './assets/css/style.css';
 

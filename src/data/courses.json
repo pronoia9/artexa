@@ -1,0 +1,421 @@
+{
+  "seneca": [
+    {
+      "id": "IPC144",
+      "name": "Introduction to Programming Using C",
+      "date": "May 2016 - Aug 2016",
+      "grade": "A+",
+      "description": "This course covers the fundamental principles of computer programming, with an emphasis on problem solving strategies using structured programming techniques. The C programming language, which is widely used and forms the syntactical basis for object-oriented languages such as C++, C#, and Java, is used to introduce problem analysis, algorithm design, and program implementation. Students work in a cross-platform environment.",
+      "outcomes": [
+        "Design functions using selection and iteration constructs to solve a programming task",
+        "Connect functions using pass-by-value and pass-by-address semantics to assemble a complete program",
+        "Design collections using arrays and structures to manage data efficiently",
+        "Code algorithms using standard library functions to incorporate existing technology",
+        "Stream data using standard library functions to interact with users and access persistent text",
+        "Trace the execution of a procedural program to validate its correctness",
+        "Code complete programs using appropriate object and pointer types to solve programming problems",
+        "Explain the purposes of procedural programming features to inform business persons",
+        "Prepare programming plans using logical components to solve practical problems"
+      ],
+      "url": "https://ict.senecacollege.ca/course/ipc144"
+    },
+    {
+      "id": "ULI101",
+      "name": "Introduction to Unix/Linux and the Internet",
+      "date": "May 2016 - Aug 2016",
+      "grade": "A",
+      "description": "Unix and Linux represent the operating system technology underlying many of the services of the Internet. This subject introduces students to Unix, Linux and the Internet. Students will learn the core utilities to work productively in a Linux environment. Students will do this work using the shell, at the same time learn to configure their login accounts, manipulate data stored in files, effectively use Linux commands and utilities, and write simple shell scripts.",
+      "outcomes": [
+        "Execute Linux commands to manage files and directories",
+        "Edit text files using common text editors in order to configure the system and write scripts",
+        "Write shell scripts to solve programming problems, including customizing user environments to improve working efficiency",
+        "Describe the directory layout of a typical Linux system in order to maintain and secure Unix directories and files",
+        "Use Linux pipes and file redirection to manipulate data",
+        "Form simple regular expressions to define patterns"
+      ],
+      "url": "https://ict.senecacollege.ca/course/uli101"
+    },
+    {
+      "id": "IOS110",
+      "name": "Introduction to Operating Systems Using Windows",
+      "date": "May 2016 - Aug 2016",
+      "grade": "A+",
+      "description": "This course provides a technical foundation of operating system installation, configuration, administration and troubleshooting. It introduces terminology and concepts of operating systems and computer networking. Students are introduced to problem-solving techniques for individual computer issues, providing computer solutions for small to large businesses, and network configuration and troubleshooting.",
+      "outcomes": [
+        "Discuss operating system and networking terms and concepts as they apply to a business scenario",
+        "Recommend an operating system and features to meet the needs of a business",
+        "Design an installation strategy for operating systems, their features and software to ensure the most economical use of hardware resources and time",
+        "Configure an operating system and its features so it can perform a specific task on a company network",
+        "Perform administration of an operating system allowing ongoing user access to the required resources on a network",
+        "Troubleshoot errors and problems with computers and the network to ensure the systems are available at all times",
+        "Utilize command line environments to manage file and directories and perform administrative tasks in order to increase administrative performance",
+        "Recommend a network configuration to suit real-word business environments"
+      ],
+      "url": "https://www.senecacollege.ca/ssos/find/IOS110/current/ce"
+    },
+    {
+      "id": "DBS201",
+      "name": "Introduction to Database Design and SQL",
+      "date": "Sept 2016 - Dec 2016",
+      "grade": "A",
+      "description": "This subject introduces students to relational database design and SQL (Structured Query Language) used with relational databases. Students will be introduced to  relational and object oriented models with a focus on the relational model and its operators. Students will be presented with a methodology for relational database design using Entity Relationship Diagrams and normalization of data. Students will be introduced to a subset of SQL using IBM's DB2 on the iSeries platform. An overview of the functions of the Database Management System (DBMS) and of a Database Administrator (DBA) will also be presented.",
+      "outcomes": [
+        "Use SQL to create and modify tables in DB2 databases",
+        "Work in groups on a project to design and create a DB2 database for an application requiring a minimum of 8-12 tables",
+        "Merge normalized relations from each user view into a complete set of normalized relations for a simple business application",
+        "Prepare an Entity Relationship Diagram for a simple business application",
+        "Use SQL to retrieve data from DB2 databases",
+        "Prepare the physical relational database schema for a simple business application",
+        "Identify user views for an application",
+        "Normalize a user view to 3rd Normal Form",
+        "Be able to recover a previous database state using journaling commands",
+        "Describe the basic functions of a Database Management System",
+        "Describe the responsibilities of a Database Administrator in an organization"
+      ],
+      "url": "https://www.senecacollege.ca/ssos/find/DBS201/current/ce"
+    },
+    {
+      "id": "INT222",
+      "name": "Internet I - Internet Fundamentals",
+      "date": "Sept 2016 - Dec 2016",
+      "grade": "A",
+      "description": "This subject introduces students to Internet architecture and software development principles, using the World Wide Web as the system example. After successfully completing the subject, a student will be able to design and create web pages for web browsers, while applying knowledge of HTML5 technologies. Students begin by learning JavaScript, the programming language of the Web. Then, the Document Object Model (DOM) is studied, and with it, documents that use the Hypertext Markup Language (HTML) to define its structure and content. To affect and modify the appearance and formatting of a document, students learn and apply the foundations of the Cascading Style Sheet (CSS) language. Throughout this progression of topics, JavaScript is continually used to access and modify the content and appearance of documents through the DOM interface.",
+      "outcomes": [
+        "Explain the purpose and general functionality of the World Wide Web, and its foundation protocol, HTTP",
+        "Develop professional-quality web client applications that conform to standards",
+        "Demonstrate competence working with the Document Object Model in modern browsers",
+        "Demonstrate competence in the JavaScript programming language, applied to web client applications",
+        "Demonstrate competence with the HyperText Markup Language in composing documents for the web",
+        "Demonstrate competence with Cascading Style Sheets to affect the appearance of web documents",
+        "Solve a wide range of common web client programming problems"
+      ],
+      "url": "https://www.senecacollege.ca/ssos/find/INT222/current/ce"
+    },
+    {
+      "id": "OOP244",
+      "name": "Introduction to Object Oriented Programming",
+      "date": "Sept 2016 - Dec 2016",
+      "grade": "A",
+      "description": "This subject introduces the student to object-oriented programming. The student learns to build reusable objects, encapsulate data and logic within a class, inherit one class from another and implement polymorphism.  This subject uses the C++ programming language exclusively and establishes a foundation for learning system analysis and design and more advanced concepts as implemented in languages such as C++, Java, C# and Objective-C.",
+      "outcomes": [
+        "Design classes with dynamically allocated resources to model the components of a programming solution",
+        "Design member functions using logic constructs to solve tasks of linear complexity",
+        "Relate classes using inheritance hierarchies to minimize the duplication of object code",
+        "Design polymorphic objects to amplify the reusability of program code",
+        "Use stream objects to interact with users and access persistent data",
+        "Trace the execution of object-oriented code to validate its correctness",
+        "Code a complete program using polymorphic objects to solve a systems or business problem",
+        "Explain the purpose of an object-oriented programming feature to inform a business person"
+      ],
+      "url": "https://ict.senecacollege.ca/course/oop244"
+    },
+    {
+      "id": "DBS301",
+      "name": "Database Design II and SQL Using Oracle",
+      "date": "Jan 2017 - Apr 2017",
+      "grade": "B",
+      "description": "This subject continues the study of database design and SQL begun in DBS201. Students will learn the entire set of SQL statements using Oracle's DBMS. Students will also learn Oracle's SQL *Plus commands. Students will work in teams to prepare and implement the logical and physical database schema for a business application requiring 12-18 tables including all necessary contraints to protect the integrity of the data.",
+      "outcomes": [
+        "Identify all constraints required to maintain data integrity for a business application",
+        "Work effectively as a member of a team to analyse data requirements, prepare an Entity Relationship Diagram, normalize application user views and prepare a logical database schema for a business application requiring more than 12 tables",
+        "Identify use of necessary indexes, views and sequences for an application",
+        "Implement, maintain and retrieve data using an Oracle database for a complex business application",
+        "Use SQL's Data Definition Language statements of CREATE, ALTER and DROP to create, modify and drop database objects including tables, views, sequences and indexes with all constraints required to maintain data and referential integrity",
+        "Use SQL*Plus commands to efficiently create, edit and run SQL statements and to format SQL output",
+        "Use SQL's Data Manipulation Language statements of INSERT, UPDATE and DELETE to add, change and delete application data from tables",
+        "Use SQL's Transaction Control Language statements of COMMIT to make database changes permanent and ROLLBACK to undo database changes",
+        "Use SQL's Data Control Language statements of GRANT and REVOKE to permit and remove access to database objects",
+        "Use commands from SQL*Plus, Oracle's extension to the SQL language, to customize a session environment",
+        "Use iSQL*Plus to create and run SQL statements",
+        "Use SQL's SELECT statement to retrieve data required by an application, including use of single row and group functions, nested queries and correlated sub-queries"
+      ],
+      "url": "https://www.senecacollege.ca/ssos/find/DBS301/current/ce"
+    },
+    {
+      "id": "INT322",
+      "name": "Internet II - Web Programming on UNIX",
+      "date": "Jan 2017 - Apr 2017",
+      "grade": "A",
+      "description": "E-commerce remains one of the fastest-growing aspects of business in recent years, and there is a great demand for people who can plan and implement complete, database-driven web applications that run in a variety of different environments. Focusing on technologies popular on the Linux/Unix platform, this subject will provide the student with the skills and knowledge required to create and maintain commercial-quality web sites suitable for database-driven business transactions. The student will learn to build dynamic web applications using popular web programming languages, while leveraging the power of a SQL database. Coverage will include application and web site security.",
+      "outcomes": [
+        "Design databases and develop applications that process database contents using a DBMS and a scripting language",
+        "Design, code, test, and implement programs using a server side scripting language",
+        "Continue the life-long learning process of acquiring new skills and knowledge through formal and self-directed means using information and learning resources",
+        "Develop and deploy Internet-based applications using current technologies to meet client needs",
+        "Use written, oral and visual communication skills to communicate with technical and non-technical audiences, at levels appropriate for a variety of business settings"
+      ],
+      "url": "https://www.senecacollege.ca/ssos/find/INT322/current/ce"
+    },
+    {
+      "id": "OOP345",
+      "name": "Object-Oriented Software Development Using C++",
+      "date": "Jan 2017 - Apr 2017",
+      "grade": "A+",
+      "description": "This subject expands the student's skill-set in object-oriented programming and introduces the student to threaded programming.  The student learns to model relationships between classes using containers, inheritance hierarchies and polymorphism in the C++ programming language and to write C++ programs that execute on multiple threads.",
+      "outcomes": [
+        "Design collections of model objects using sequential containers and multi-dimensional arrays to solve a systems or business problem",
+        "Create function objects and closures to customize a programming solution for a particular application",
+        "Model generalization and specialization using inheritance hierarchies to minimize the duplication of code",
+        "Model polymorphic behavior using interfaces, virtual functions and templates (generics) to amplify the reusability of code",
+        "Implement design components using algorithms of the standard template library to utilize existing technologies",
+        "Create program components of quadratic complexity to solve non-linear problems",
+        "Design program components using raw pointers and pointer arithmetic to access data in program memory",
+        "Design multi-tasked solutions using threading libraries to improve the performance of a program",
+        "Design file stream objects to backup text and binary data for future restoration"
+      ],
+      "url": "http://ict.senecacollege.ca/course/oop345"
+    },
+    {
+      "id": "SYS366",
+      "name": "Requirements Gathering Using OO Models",
+      "date": "Jan 2017 - Apr 2017",
+      "grade": "B+",
+      "description": "This subject focuses on the techniques and tools involved in gathering requirements for business systems that will solve business stakeholders' processing problems. Students will be introduced to system development life cycles, interface design, and will learn how to use research, observation, interviews, prototypes and feedback to gather stakeholders' requirements. Students will also learn how to document requirements in both business and systems use case diagrams using the Unified Modeling Language (UML) and the Rational Rose modeling tool. They will learn to write the use case descriptions, both business and systems. An in-depth case study will be used throughout the subject to allow students to apply what they learn.",
+      "outcomes": [
+        "Follow an Object-oriented methodology",
+        "Draw systems use case diagrams showing actor to use case relationships and use case to use case relationships",
+        "Model the primary business functionality in Business Use Case Diagrams",
+        "Perform the research and information gathering required to determine what a proposed system needs to accomplish",
+        "Identify all activities within a proposed system, as well as who initiates them",
+        "Transform activities into use cases",
+        "Describe use cases in writing following a given template",
+        "Describe in writing the phases involved in developing a system",
+        "Apply basic interface design concepts to create mock-ups (e.g. web page, screen and mock-ups reports)",
+        "Work effectively as part of a system development team to deliver a requirements model",
+        "Perform a user interface walk-through",
+        "Articulate (in writing) what a proposed system needs to accomplish",
+        "Use Rational Rose software to create the use case view of a software model",
+        "Perform a requirements walk-through"
+      ],
+      "url": "https://ict.senecacollege.ca/course/sys366"
+    },
+    {
+      "id": "DCN455",
+      "name": "Data Communications Networks",
+      "date": "Sept 2018 - Jan 2018",
+      "grade": "B+",
+      "description": "In this course, students will learn about the software and hardware systems and technology needed to create data communications networks. During the semester, the programming student will learn data communication, terminology and concepts, and gain skills with today's most important software and hardware implementations. Topics will include transmission systems, local and wide-area networks, data communications protocols, security, reliability, and efficiency. Upon completion, the student will have an understanding of the principles of data communication networks and how they support distributed applications.",
+      "outcomes": [
+        "Understand the vocabulary of data communications networks",
+        "Integrate the concepts and knowledge learned in this course with software development efforts in other courses and in future employment",
+        "Apply skills and techniques to real-life networking lab scenarios",
+        "Understand, define, and explain data communications networks concepts and applications to non-technical personnel"
+      ],
+      "url": "https://www.senecacollege.ca/ssos/find/DCN455/current/ce"
+    },
+    {
+      "id": "INT422",
+      "name": "Internet III - Web Programming on Windows",
+      "date": "Sept 2018 - Jan 2018",
+      "grade": "A",
+      "description": "This course addresses the concepts, technical skills, and business knowledge required to develop data-driven web sites hosted on the Microsoft Web Platform. The course will focus on server-side ASP.NET programming technologies and the C# language. Students will also work with current and full-featured data access technologies, and interact with local and remote data stores.",
+      "outcomes": [
+        "Analyze the requirements for a web-enabled application, and use both ASP.NET and web client technologies to program a solution to the problem",
+        "Continue the life-long learning process of acquiring new skills and knowledge through formal and self-directed means using information and learning resources",
+        "Use written, oral and visual communication skills to communicate with technical and non-technical audiences, at levels appropriate for a variety of business settings",
+        "Install and configure ASP.NET Identity",
+        "Develop feature-rich ASP.NET/MVC web applications in the Visual C# .NET language that run on Microsoft web servers",
+        "Understand and take advantage of the Visual Studio .NET integrated development environment, and the Microsoft .NET Framework",
+        "Develop web applications that work with Microsoft SQL Server databases"
+      ],
+      "url": "https://www.senecacollege.ca/ssos/find/INT422/current/ce"
+    },
+    {
+      "id": "JAC444",
+      "name": "Introduction to Java for C++ Programmers",
+      "date": "Sept 2018 - Jan 2018",
+      "grade": "B+",
+      "description": "Java is a widely-used, class-based, object-oriented programming environment. Its appeal comes from platform independence, programming convenience, and a rich and vibrant ecosystem. This subject will serve as a thorough introduction to Java as an object-oriented and functional programming language. Topics studied will include object-oriented concepts, lambda expressions, functional interfaces, threads, exceptions, graphical user interface programming with Java FX, input / output, networking, client-server programming, servlets, and database access via JDBC.",
+      "outcomes": [
+        "Design, code, test, and implement programs using Java fundamental libraries",
+        "Recognize and apply object oriented concepts like encapsulation, polymorphism and inheritance writing Java programs",
+        "Describe the use of lambda expressions and how we use functional programming in Java to non-technical business persons",
+        "Build a business application using design patterns and idioms derived from the Java programming language",
+        "Learn to use Java multi-threading and exception handling features in writing networking and communication applications",
+        "Develop applications using basic Java FX concepts and JDBC for database access",
+        "Explain the fundamentals of the Java programming language, but also its importance, uses, strengths and weaknesses"
+      ],
+      "url": "https://ict.senecacollege.ca/course/JAC444"
+    },
+    {
+      "id": "SYS466",
+      "name": "Analysis and Design Using OO Models",
+      "date": "Sept 2018 - Jan 2018",
+      "grade": "A",
+      "description": "This subject focuses on the practical application of object oriented concepts to the development of business systems. Students will learn how to use object oriented analysis and design techniques to create software models of business systems using the Unified Modeling Language (UML) and the Rational Rose modeling tool. Students will perform use case analysis to identify initial classes and will progress to detailed class design, defining class attributes, behaviours, hierarchies and relationships. Throughout the course students will work on creating a detailed software model based on a business case study.",
+      "outcomes": [
+        "Identify class responsibilities and document as class operations",
+        "Identify, stereotype, and document the key classes in a use case",
+        "Work effectively as part of the system development team to participate in systems design sessions and deliver an object oriented design model",
+        "Identify and document critical and exception scenarios for a use case",
+        "Identify class associations, aggregations and multiplicity and document these in a class diagram",
+        "Identify and document hierarchical relationships using class diagrams",
+        "Use Rational Rose software to create use case and logical views of a software model",
+        "Document object behaviour using interaction diagrams",
+        "Identify and document class attributes",
+        "Identify and document the domain components of a system"
+      ],
+      "url": "https://ict.senecacollege.ca/course/SYS466"
+    },
+    {
+      "id": "DSA555",
+      "name": "Data Structures and Algorithms in C++",
+      "date": "Jan 2018 - Apr 2018",
+      "grade": "A",
+      "description": "This is a survey course on algorithms and data structures commonly used in computer programs. Students taking this course will learn how these classical data structures and algorithms function. They will learn how to implement these data structures and apply them to real programming problems. Students will also learn how these data structures are used to implement parts of the standard language libraries. Furthermore, the course will also introduce students to computational theory. This course is meant to provide students with a fundamental background to computer science concepts.",
+      "outcomes": [
+        "Analyze algorithms and data structures for resource usage to design optimal programs",
+        "Explain the relationship between resource use growth rates and observed algorithmic behavior to forecast performance",
+        "Use pseudo code and diagrams to explain how data structures and algorithms are implemented",
+        "Implement custom linked-list structures to extend the behavior of language specific libraries",
+        "Explain the P vs NP problem to recognize the limitations of computation",
+        "Implement key-based container classes to retrieve data quickly and efficiently",
+        "Use graph data structures to store information about relationships between objects"
+      ],
+      "url": "https://ict.senecacollege.ca/course/dsa555"
+    },
+    {
+      "id": "GAM536",
+      "name": "Game Content Creation",
+      "date": "Jan 2018 - Apr 2018",
+      "grade": "A",
+      "description": "In game development, 3D modelling tools are used to generate graphical content such as models and animations. This course will explore how content is created both interactively and through coding. Students will learn to create and alter 3D content using both means.",
+      "outcomes": [
+        "Create models interactively using a 3D content creation tool",
+        "Create 2D textures for models",
+        "Create models algorithmically",
+        "Use a scripting language to extend existing 3D Modeling tools"
+      ],
+      "url": "http://ict.senecacollege.ca/course/GAM536"
+    },
+    {
+      "id": "GPU610",
+      "name": "Parallel Programming Fundamentals",
+      "date": "Jan 2018 - Apr 2018",
+      "grade": "C+",
+      "description": "Modern GPU (Graphics Processing Unit) technology supports massively parallel computations, which complements the serial processing capabilities of CPU technology. This course teaches students how to read and write programs that use both CPU and GPU technology. Students learn to reorganize existing programs into serial code that runs on the CPU and parallel code that runs on the GPU. Students also study cases that have benefited from CPU+GPU programming.",
+      "outcomes": [
+        "Code heterogeneous solutions using the CUDA and OpenCL programming models",
+        "Compile, run, and profile heterogeneous applications on Windows and Linux platforms",
+        "Design and code heterogeneous solutions using GPU optimized libraries",
+        "Discuss performance, optimization, and best practices in GPU programming",
+        "Install and run applications that benefit from GPU compute technology",
+        "Use directives to highlight parallelizable code to auto-compilers",
+        "Express problems in terms of vectors and matrices and transform vectors using matrices"
+      ],
+      "url": "http://ict.senecacollege.ca/course/GPU610"
+    },
+    {
+      "id": "PRJ566",
+      "name": "Project Planning and Management",
+      "date": "Jan 2018 - Apr 2018",
+      "grade": "A",
+      "description": "Students are required to select a project that involves developing a computer system. Students learn project management concepts while carrying out requirements gathering, analysis, design, and implementation planning for the identified system. Project management concepts include scope development and management, creation of work breakdown structures, including task dependencies, and cost benefit analysis using return on investment and payback. Students create dialogue maps and mock-ups of user interfaces for their systems, and use a modeling tool to create detailed software models which they then go on to implement in PRJ666.",
+      "outcomes": [
+        "Create written status reports documentation to provide regular updates to team members and stakeholders (in-person, email, web-based discussion)",
+        "Create a Web site to track status of team activities and issues and to manage project deliverables",
+        "Communicate status, problems and suggestions to other group members using required standard formats",
+        "Carry out a cost benefit analysis for a given project",
+        "Create a description of technical and business requirements in writing, using a given template, and in a software modeling tool using the Unified Modeling Language",
+        "Create a work breakdown structure, including tasks and dependencies, for the project",
+        "Create class diagrams, object interaction diagrams and class interaction diagrams for the application being modeled using the Unified Modeling Language and a software modeling tool",
+        "Participate as part of an analysis and design team to ensure each required unit of work is completed on time and to specifications",
+        "Analyze documented requirements using object-oriented techniques and create a software model of the resulting design",
+        "Design reports and user interfaces that meet client requirements"
+      ],
+      "url": "https://ict.senecacollege.ca/course/prj566"
+    },
+    {
+      "id": "DBW624",
+      "name": "Introduction to Datawarehousing",
+      "date": "May 2018 - Aug 2018",
+      "grade": "F",
+      "description": "The data warehousing marketplace continues to be one of the fastest growing areas of technology application. Whether it's used with CRM, ERP, e-Commerce, Financial Analysis, Sales Analysis or any of a large number of other disciplines, data warehousing has become an essential business tool for making informed decisions. This subject introduces students to data warehousing concepts. The subject uses a hands-on project to design and develop a data warehouse. Star schema fact tables and dimension tables will be examined. Multidimensional databases are emphasized as the students build on their database knowledge. A team project will be used to handle the process of moving data from an OLTP system to a DW with management reports through the cube and pivotal tables. Microsoft SQL server 2005 Analysis Services will be used to develop OLAP cubes and Microsoft Excel for OLAP reporting.",
+      "outcomes": [
+        "Explain the goals of data warehousing",
+        "Create OLAP reports from the data cube using Excel",
+        "Explain accepted Datawarehouse terminology",
+        "Identify the stages of the data warehousing lifecycle",
+        "Denormalize relational tables into high level summary tables",
+        "Apply the star schema model to a business case problem",
+        "Compare star schema and snowflake schema",
+        "Design and Implement a multidimensional data cube using SQL Server Analysis Services",
+        "Create OLAP-enabled web pages"
+      ],
+      "url": "https://www.senecacollege.ca/ssos/find/DBW624/current/ce"
+    },
+    {
+      "id": "PRJ666",
+      "name": "Project Implementation",
+      "date": "May 2018 - Aug 2018",
+      "grade": "C",
+      "description": "This is the final course in the systems stream in which students complete the development and implementation phase of a project. As part of a team, students will plan and manage the development of an actual system using project planning, system design, system implementation, and unit and system testing methodologies. Students will also integrate and apply the object-oriented concepts, tools and techniques learned in previous courses, and create appropriate documentation for the completed system.",
+      "outcomes": [
+        "Apply the object-oriented analysis design and development concepts acquired in previous systems courses to the implementation of a complete computer project which was planned and designed in PRJ566",
+        "Develop procedures, and systems and user documentation for the development of a computer system",
+        "Collaborate as a team to provide weekly detailed oral and written status reports to the instructor and business client",
+        "Apply the concepts, techniques and principles acquired in previous programming courses to the programming of a complete desktop, web-enabled or mobile application",
+        "Devise and implement a testing strategy for all levels of testing"
+      ],
+      "url": "https://ict.senecacollege.ca/course/prj666"
+    },
+    {
+      "id": "WIN210",
+      "name": "Basic Administration of Microsoft Windows",
+      "date": "May 2018 - Aug 2018",
+      "grade": "B",
+      "description": "This course provides students with the knowledge and skills necessary to perform administration tasks on a Microsoft Windows Server operating system. Topics such as installation, user account creation and maintenance, permissions, printing, hardware and disk storage will be covered through lecture and hands-on exercises.",
+      "outcomes": [
+        "Install a server operating system to create an appropriate configuration for a given company requirement",
+        "Analyze server resource usage data to prevent potential performance bottlenecks",
+        "Perform data back-up and restores to safeguard against data loss",
+        "Configure Groups, User and Computer Accounts to ensure ongoing access to required resources on a network or server",
+        "Configure permissions to protect server resources and control access",
+        "Configure Windows server printing to control access to secure print devices",
+        "Configure server hardware to ensure ongoing operation of the server"
+      ],
+      "url": "https://www.senecacollege.ca/ssos/find/WIN210/current/ce"
+    },
+    {
+      "id": "GAM531",
+      "name": "Game Engine Foundations",
+      "date": "Sept 2018 - Dec 2018",
+      "grade": "D",
+      "description": "Graphics accelerators provide developers with powerful tools for displaying visual information. This course teaches students the mathematical and structural concepts required to develop 3D gaming and simulation engines and how to implement these concepts using the DirectX and OpenGL low-level APIs.",
+      "outcomes": [
+        "Design and write C++ programs that implement the following APIs: DirectX 11 (Graphics), OpenGL 4.3, Microsoft Windows (Windowing system)",
+        "Design and maintain low level 3D video game and simulation engines",
+        "Apply vector and matrix mathematics to achieve desired transformations in three-dimensional space"
+      ],
+      "url": "http://ict.senecacollege.ca/course/GAM531"
+    },
+    {
+      "id": "GAM537",
+      "name": "Game Development Fundamentals",
+      "date": "Sept 2018 - Dec 2018",
+      "grade": "B",
+      "description": "High level game engines have become popular in recent years as they allow developers to focus on designing a game and leaving much of the low level computing to the game engine. This subject will teach students the principles of game design and give them the opportunity to create a game using an existing game engine. They will learn how to create/modify environmental effects, camera perspectives, AI behaviours and game types.",
+      "outcomes": [
+        "Design, create and modify various game types",
+        "Create game levels using a game engine",
+        "Create effective environmental effects",
+        "Create custom game logic and behaviour"
+      ],
+      "url": "http://ict.senecacollege.ca/course/GAM537"
+    },
+    {
+      "id": "UNX510",
+      "name": "UNIX BASH Shell Scripting",
+      "date": "Jan 2019 - Apr 2019",
+      "grade": "B",
+      "description": "Every UNIX System Administrator and UNIX Programmer must be capable of working with shell scripts. This course is an intensive look at Linux, from the command level, and at the Bourne Again SHell (BASH). Students will learn how to write, debug, run, and modify complex BASH scripts. Also included is a thorough look into common Linux commands and utilities.",
+      "outcomes": [
+        "Use named pipes to communicate between processes",
+        "Write, modify, and debug complex BASH shell scripts",
+        "Effectively use Linux at the command level",
+        "Use terminal handling within BASH shell scripts"
+      ],
+      "url": "http://ict.senecacollege.ca/course/UNX510"
+    }
+  ]
+}

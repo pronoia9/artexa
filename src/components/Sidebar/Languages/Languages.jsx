@@ -1,13 +1,13 @@
 import React from 'react';
 import Language from './Language';
-import data from '../../../data/data.json';
+import sidebar from '../../../data/sidebar.json';
 import './languages.css';
 
 function Languages() {
   return (
     <div className='art-lang-skills p-30-15'>
-      {data.skills.languages.map((language) => (
-        <Language key={language.id} id={language.id} language={language.language} level={language.level} />
+      {sidebar.skills.languages.map((l) => (
+        <Language key={l.id} id={l.id} language={l.language} level={l.level} />
       ))}
     </div>
   );

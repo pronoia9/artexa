@@ -1,4 +1,5 @@
 import React from 'react';
+//import sidebar from '../../../data/sidebar.json';
 const pfp = require('../../../assets/images/bitmoji/smile.png').default;
 
 // TODO Enable/fix avatar click fancybox

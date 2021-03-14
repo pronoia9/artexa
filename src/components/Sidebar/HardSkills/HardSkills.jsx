@@ -1,13 +1,13 @@
 import React from 'react';
 import HardSkill from './HardSkill';
-import data from '../../../data/data.json';
+import sidebar from '../../../data/sidebar.json';
 import './hardSkills.css';
 
 function HardSkills() {
   return (
     <div className='art-hard-skills p-30-15'>
-      {data.skills.hard.map((skill) => (
-        <HardSkill key={skill.id} id={skill.id} skill={skill.skill} level={skill.level} />
+      {sidebar.skills.hard.map((s) => (
+        <HardSkill key={s.id} id={s.id} skill={s.skill} level={s.level} />
       ))}
     </div>
   );
