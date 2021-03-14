@@ -33,6 +33,7 @@ export default function Content(props) {
 
               {/* education history */}
               <History />
+              
               {/* projects */}
 
               {/* extracurricular */}
