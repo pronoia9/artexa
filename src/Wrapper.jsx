@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import InfoBar from './components/Sidebar/InfoBar';
-import Content from './views/Home';
+import Home from './views/Home';
 import Navbar from './components/Navbar/Navbar';
+import banner from './data/banner.json';
 
 function App() {
   // sliding for left side panel
@@ -10,6 +11,11 @@ function App() {
   // sliding for right side menu
   const [navbarActive, setNavbarActive] = useState(false);
 
+  // current background image
+  const [background, setBackground] = useState(
+    banner.backgrounds.dropbox[Math.round(Math.random() * banner.backgrounds.dropbox.length)]
+  );
+
   return (
     <div>
       <div className='art-mobile-top-bar'></div>
@@ -17,11 +23,13 @@ function App() {
       <div className='art-app-wrapper'>
         <div className='art-app-container'>
           <InfoBar sidebarActive={sidebarActive} setSidebarActive={setSidebarActive} />
-          <Content
+          <Home
             navbarActive={navbarActive}
             setNavbarActive={setNavbarActive}
             sidebarActive={sidebarActive}
             setSidebarActive={setSidebarActive}
+            background={background}
+            setBackground={setBackground}
           />
           <Navbar navbarActive={navbarActive} setNavbarActive={setNavbarActive} />
         </div>

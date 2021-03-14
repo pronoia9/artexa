@@ -16,7 +16,7 @@ function Content(props) {
         }}
       ></div>
 
-      <Background />
+      <Background background={props.background} setBackground={props.setBackground} />
 
       {/* swup container */}
       <div className='transition-fade'>
@@ -25,11 +25,11 @@ function Content(props) {
           <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabindex='-1'>
             <div className='scroll-content'>
               {/* heading for banner */}
-              <Banner />
+              <Banner background={props.background} setBackground={props.setBackground} />
               {/* education history */}
               <History />
               {/* projects */}
-              
+
               {/* extracurricular */}
             </div>
           </div>
