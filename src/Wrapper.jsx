@@ -22,7 +22,12 @@ export default function Wrapper() {
 
       <div className='art-app-wrapper'>
         <div className='art-app-container'>
-          <InfoBar sidebarActive={sidebarActive} setSidebarActive={setSidebarActive} />
+          <InfoBar
+            navbarActive={navbarActive}
+            setNavbarActive={setNavbarActive}
+            sidebarActive={sidebarActive}
+            setSidebarActive={setSidebarActive}
+          />
           <Home
             navbarActive={navbarActive}
             setNavbarActive={setNavbarActive}
@@ -31,7 +36,12 @@ export default function Wrapper() {
             background={background}
             setBackground={setBackground}
           />
-          <Navbar navbarActive={navbarActive} setNavbarActive={setNavbarActive} />
+          <Navbar
+            navbarActive={navbarActive}
+            setNavbarActive={setNavbarActive}
+            sidebarActive={sidebarActive}
+            setSidebarActive={setSidebarActive}
+          />
         </div>
       </div>
     </div>

@@ -17,7 +17,10 @@ export default function ArtInfoBar(props) {
       <div className='art-info-bar-frame'>
         {/* info bar header (mobile icon to show/hide sidebar) */}
         <div className='art-info-bar-header'>
-          <div className='art-info-bar-btn' onClick={() => props.setSidebarActive(!props.sidebarActive)}>
+          <div className='art-info-bar-btn' onClick={() => {
+            props.navbarActive && props.setNavbarActive(false);
+            props.setSidebarActive(!props.sidebarActive);
+          }}>
             <i className='fas fa-ellipsis-v'></i>
           </div>
         </div>
