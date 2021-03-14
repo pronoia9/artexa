@@ -1,10 +1,10 @@
 import React from 'react';
-import data from '../../data/data.json';
+import banner from '../../data/banner.json';
 
 function Banner() {
   return (
     //top background
-    <div className='art-top-bg' style={{backgroundImage: "url(" + data.background + ")"}}>
+    <div className='art-top-bg' style={{backgroundImage: "url(" + banner.background + ")"}}>
       {/* overlay */}
       <div className='art-top-bg-overlay'></div>
     </div>
