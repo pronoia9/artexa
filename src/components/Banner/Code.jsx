@@ -9,7 +9,7 @@ function Code() {
       <Typed
         loop
         typeSpeed={100}
-        backSpeed={100}
+        backSpeed={50}
         strings={banner.typed}
         smartBackspace
         shuffle={false}
