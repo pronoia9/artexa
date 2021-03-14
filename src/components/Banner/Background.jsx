@@ -1,7 +1,6 @@
 import React from 'react';
-import banner from '../../data/banner.json';
 
-function Banner(props) {
+export default function Banner(props) {
   return (
     //top background
     <div className='art-top-bg' style={{ backgroundImage: 'url(' + props.background + ')' }}>
@@ -10,5 +9,3 @@ function Banner(props) {
     </div>
   );
 }
-
-export default Banner;

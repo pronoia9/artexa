@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ListItem(props) {
+export default function ListItem(props) {
   return (
     <li>
       <h6>{props.title}</h6>
@@ -8,5 +8,3 @@ function ListItem(props) {
     </li>
   );
 }
-
-export default ListItem;

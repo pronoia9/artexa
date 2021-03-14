@@ -1,7 +1,5 @@
 import React from 'react';
 
-function Hobbies() {
+export default function Hobbies() {
   return <div className='container-fluid'></div>;
 }
-
-export default Hobbies;

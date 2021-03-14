@@ -1,7 +1,5 @@
 import React from 'react';
 
-function NotFound() {
+export default function NotFound() {
   return <div className='container-fluid'></div>;
 }
-
-export default NotFound;

@@ -1,7 +1,6 @@
 import React from 'react';
 
-
-function ScrellFrame() {
+export default function ScrellFrame() {
   return (
     <div className='art-scroll-frame'>
       <nav id='swupMenu' data-swup='1'>
@@ -20,5 +19,3 @@ function ScrellFrame() {
     </div>
   );
 }
-
-export default ScrellFrame;

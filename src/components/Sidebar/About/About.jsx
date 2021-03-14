@@ -2,7 +2,7 @@ import React from 'react';
 import ListItem from './ListItem';
 import sidebar from '../../../data/sidebar.json';
 
-function About() {
+export default function About() {
   return (
     <div className='art-table p-15-15'>
       <ul>
@@ -13,5 +13,3 @@ function About() {
     </div>
   );
 }
-
-export default About;

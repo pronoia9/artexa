@@ -3,7 +3,7 @@ import SoftSkill from './SoftSkill';
 import './softSkills.css';
 import sidebar from '../../../data/sidebar.json';
 
-function SkillsList() {
+export default function SkillsList() {
   let i = 1;
   return (
     <ul className='art-knowledge-list p-15-0'>
@@ -13,5 +13,3 @@ function SkillsList() {
     </ul>
   );
 }
-
-export default SkillsList;

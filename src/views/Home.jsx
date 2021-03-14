@@ -4,7 +4,7 @@ import Banner from '../components/Banner/Banner';
 import History from './History';
 import Scrollbar from 'smooth-scrollbar-react';
 
-function Content(props) {
+export default function Content(props) {
   return (
     <div className={props.navbarActive || props.sidebarActive ? 'art-content art-active' : 'art-content'}>
       {/* curtain */}
@@ -38,5 +38,3 @@ function Content(props) {
     </div>
   );
 }
-
-export default Content;

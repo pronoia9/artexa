@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import loading from './loading.js';
 import './preloader.css';
 
-function Preloader(props) {
+export default function Preloader(props) {
   useEffect(loading, []);
 
   return (
@@ -14,5 +14,3 @@ function Preloader(props) {
     </div>
   );
 }
-
-export default Preloader;

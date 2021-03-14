@@ -4,7 +4,7 @@ import Home from './views/Home';
 import Navbar from './components/Navbar/Navbar';
 import banner from './data/banner.json';
 
-function App() {
+export default function Wrapper() {
   // sliding for left side panel
   const [sidebarActive, setSidebarActive] = useState(false);
 
@@ -37,5 +37,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

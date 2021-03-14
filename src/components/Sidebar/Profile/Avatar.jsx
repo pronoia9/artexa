@@ -3,7 +3,7 @@ const pfp = require('../../../assets/images/bitmoji/smile.png').default;
 
 // TODO Enable/fix avatar click fancybox
 
-function Avatar() {
+export default function Avatar() {
   return (
     //avatar
     <div className='art-avatar'>
@@ -20,12 +20,3 @@ function Avatar() {
     </div>
   );
 }
-
-export default Avatar;
-
-// $('[data-fancybox="avatar"]').fancybox({
-//   animationEffect: 'zoom-in-out',
-//   animationDuration: 600,
-//   transitionDuration: 1200,
-//   buttons: ['zoom', 'close'],
-// });

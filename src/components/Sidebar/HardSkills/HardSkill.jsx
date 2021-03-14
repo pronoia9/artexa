@@ -1,7 +1,7 @@
 import React from 'react';
 import Line from '../../ProgressBars/Line';
 
-function HardSkill(props) {
+export default function HardSkill(props) {
   return (
     <div className='art-hard-skills-item'>
       {/* heading */}
@@ -21,5 +21,3 @@ function HardSkill(props) {
     </div>
   );
 }
-
-export default HardSkill;

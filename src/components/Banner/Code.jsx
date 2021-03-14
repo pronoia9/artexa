@@ -2,7 +2,7 @@ import React from 'react';
 import banner from '../../data/banner.json';
 import Typed from 'react-typed';
 
-function Code() {
+export default function Code() {
   return (
     <div className='art-lg-text art-code mb-25'>
       &lt;<i>code</i>&gt; I{' '}
@@ -24,5 +24,3 @@ function Code() {
     </div>
   );
 }
-
-export default Code;

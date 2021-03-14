@@ -4,7 +4,7 @@ import Name from './Name';
 import Post from './Post';
 import './profile.css';
 
-function Profile() {
+export default function Profile() {
   return (
     <div className='art-header'>
       <Avatar />
@@ -13,5 +13,3 @@ function Profile() {
     </div>
   );
 }
-
-export default Profile;

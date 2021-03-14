@@ -1,7 +1,5 @@
 import React from 'react';
 
-function Courses() {
+export default function Courses() {
   return <div className='container-fluid'></div>;
 }
-
-export default Courses;

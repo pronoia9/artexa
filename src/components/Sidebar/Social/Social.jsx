@@ -3,7 +3,7 @@ import SocialIcon from './SocialIcon';
 import sidebar from '../../../data/sidebar.json';
 import './social.css';
 
-function Social() {
+export default function Social() {
   return (
     <div className='art-ls-social'>
       {sidebar.social.map((s) => (
@@ -12,5 +12,3 @@ function Social() {
     </div>
   );
 }
-
-export default Social;

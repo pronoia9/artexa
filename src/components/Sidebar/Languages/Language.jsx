@@ -1,8 +1,7 @@
 import React from 'react';
 import Circle from '../../ProgressBars/Circle';
 
-function Language(props) {
-
+export default function Language(props) {
   return (
     <div className='art-lang-skills-item'>
       <Circle
@@ -17,5 +16,3 @@ function Language(props) {
     </div>
   );
 }
-
-export default Language;

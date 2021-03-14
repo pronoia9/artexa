@@ -3,7 +3,7 @@ import NavbarButton from './NavbarButton';
 import NavbarCurrentPage from './NavbarCurrentPage';
 import NavbarList from './NavbarList';
 
-function ArtMenuBar(props) {
+export default function ArtMenuBar(props) {
   return (
     <div className={props.navbarActive ? 'art-menu-bar art-active' : 'art-menu-bar'}>
       <div id='art-menu-bar-frame' className='art-menu-bar-frame'>
@@ -14,5 +14,3 @@ function ArtMenuBar(props) {
     </div>
   );
 }
-
-export default ArtMenuBar;

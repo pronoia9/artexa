@@ -9,7 +9,7 @@ import Social from './Social/Social';
 import Scrollbar from 'smooth-scrollbar-react';
 import './infoBar.css';
 
-function ArtInfoBar(props) {
+export default function ArtInfoBar(props) {
   return (
     // info bar
     <div className={props.sidebarActive ? 'art-info-bar art-active' : 'art-info-bar'}>
@@ -51,5 +51,3 @@ function ArtInfoBar(props) {
     </div>
   );
 }
-
-export default ArtInfoBar;

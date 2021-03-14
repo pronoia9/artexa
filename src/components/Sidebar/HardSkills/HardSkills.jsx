@@ -3,7 +3,7 @@ import HardSkill from './HardSkill';
 import sidebar from '../../../data/sidebar.json';
 import './hardSkills.css';
 
-function HardSkills() {
+export default function HardSkills() {
   return (
     <div className='art-hard-skills p-30-15'>
       {sidebar.skills.hard.map((s) => (
@@ -12,5 +12,3 @@ function HardSkills() {
     </div>
   );
 }
-
-export default HardSkills;

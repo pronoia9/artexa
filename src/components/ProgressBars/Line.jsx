@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { progressbarLine } from './progressbar.js';
 
-function Line(props) {
+export default function Line(props) {
   // line bar animation
   useEffect(() => progressbarLine(props.i, props.id, props.text, props.percentage), []);
 
@@ -12,5 +12,3 @@ function Line(props) {
     </div>
   );
 }
-
-export default Line;

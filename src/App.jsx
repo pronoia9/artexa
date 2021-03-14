@@ -3,7 +3,7 @@ import Preloader from './components/Preloader/Preloader';
 import Wrapper from './Wrapper';
 import './assets/css/style.css';
 
-function App() {
+export default function App() {
   return (
     <div className='art-app'>
       <Wrapper />
@@ -11,5 +11,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

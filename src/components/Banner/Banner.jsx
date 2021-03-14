@@ -6,7 +6,7 @@ const pfp = require('../../assets/images/bitmoji/side-wave.png').default;
 
 // TODO: get a png to use as a banner profile image
 
-function Banner(props) {
+export default function Banner(props) {
   return (
     <div className='container-fluid'>
       <div className='row p-60-0 p-lg-30-0 p-md-15-0'>
@@ -54,5 +54,3 @@ function Banner(props) {
     </div>
   );
 }
-
-export default Banner;
