@@ -1133,7 +1133,7 @@ info bar
 .art-line-progress:hover path:last-child {
   transform: scale(1.01);
   transition: right ease-in-out 1s;
-  stroke: #fff;
+  stroke: var(--color-primary-3);
 }
 
 .art-circle-progress path:first-child {
@@ -1448,7 +1448,13 @@ content
 .art-banner .art-banner-overlay .art-banner-title h1 {
   display: inline-block;
   color: transparent;
-  background-image: linear-gradient(0.25turn, var(--color-primary-1), var(--color-primary-2), var(--color-primary-3), var(--color-primary-4));
+  background-image: linear-gradient(
+    0.25turn,
+    var(--color-primary-1),
+    var(--color-primary-2),
+    var(--color-primary-3),
+    var(--color-primary-4)
+  );
   background-size: 100%;
   background-clip: text;
 }
@@ -1480,6 +1486,7 @@ content
   display: flex;
   align-items: center;
   margin-bottom: 30px;
+  padding-left: 20%;
   opacity: 0;
   position: relative;
 }

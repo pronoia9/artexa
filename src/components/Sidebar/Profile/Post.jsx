@@ -5,7 +5,7 @@ export default function Post() {
   return (
     <div className='art-sm-text'>
       {sidebar.profile.subtitle.map((s) => (
-        <div>{s}</div>
+        <div key={s}>{s}</div>
       ))}
     </div>
   );

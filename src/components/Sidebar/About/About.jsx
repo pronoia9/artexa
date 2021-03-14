@@ -7,7 +7,7 @@ export default function About() {
     <div className='art-table p-15-15'>
       <ul>
         {sidebar.about.map((li) => (
-          <ListItem title={li.title} subtitle={li.subtitle} />
+          <ListItem key={li.id} title={li.title} subtitle={li.subtitle} />
         ))}
       </ul>
     </div>

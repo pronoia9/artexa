@@ -6,7 +6,7 @@ export default function Social() {
   return (
     <div className='art-ls-social'>
       {sidebar.social.map((s) => (
-        <SocialIcon platform={s.platform} url={s.url} favicon={s.favicon} />
+        <SocialIcon key={s.id} platform={s.platform} url={s.url} favicon={s.favicon} />
       ))}
     </div>
   );

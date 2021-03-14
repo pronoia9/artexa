@@ -1,6 +1,6 @@
 var ProgressBar = require('progressbar.js');
 
-function progressbarCircle(i, id, text, percent) {
+function progressbarCircle(i, id, percent) {
   var bar = new ProgressBar.Circle('#' + id, {
     strokeWidth: 7,
     easing: 'easeInOut',
@@ -14,7 +14,7 @@ function progressbarCircle(i, id, text, percent) {
   bar.animate(percent / 100);
 }
 
-function progressbarLine(i, id, skill, level) {
+function progressbarLine(i, id, level) {
   var bar = new ProgressBar.Line("#" + id, {
     strokeWidth: 1.72,
     easing: 'easeInOut',

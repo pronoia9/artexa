@@ -19,7 +19,7 @@ export default function Banner(props) {
                 {/* title */}
                 <h1 className='mb-15'>
                   {banner.heading.map((h) => (
-                    <div>{h}</div>
+                    <div key={h}>{h}</div>
                   ))}
                 </h1>
                 {/* typed text */}
@@ -45,7 +45,7 @@ export default function Banner(props) {
                 </div>
               </div>
               {/* avatar */}
-              <img src={pfp} class='art-banner-photo' alt='Banner Profile'></img>
+              <img src={pfp} className='art-banner-photo' alt='Banner Profile'></img>
             </div>
           </div>
         </div>

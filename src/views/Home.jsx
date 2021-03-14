@@ -1,6 +1,7 @@
 import React from 'react';
 import Background from '../components/Banner/Background';
 import Banner from '../components/Banner/Banner';
+import Counters from './Counters';
 import History from './History';
 import Scrollbar from 'smooth-scrollbar-react';
 
@@ -22,10 +23,14 @@ export default function Content(props) {
       <div className='transition-fade'>
         {/* scroll frame */}
         <Scrollbar>
-          <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabindex='-1'>
+          <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
             <div className='scroll-content'>
               {/* heading for banner */}
               <Banner background={props.background} setBackground={props.setBackground} />
+
+              {/* counters */}
+              <Counters />
+
               {/* education history */}
               <History />
               {/* projects */}

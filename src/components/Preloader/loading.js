@@ -9,9 +9,7 @@ function loading() {
     delay: 200,
     duration: 600,
     easing: 'linear',
-    complete: function (anim) {
-      document.getElementById('art-preloader').style = 'display: flex';
-    },
+    complete: (anim) => (document.getElementById('art-preloader').style = 'display: flex'),
   });
 
   // fade out animation
@@ -21,9 +19,7 @@ function loading() {
     delay: 2200,
     duration: 400,
     easing: 'linear',
-    complete: function (anim) {
-      document.getElementById('art-preloader').style = 'display: none';
-    },
+    complete: (anim) => (document.getElementById('art-preloader').style = 'display: none'),
   });
 
   // laoding bar animation

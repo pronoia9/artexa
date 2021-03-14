@@ -1,14 +1,14 @@
 {
   "profile": {
     "name": "Lorem Ipsum",
-    "subtitle": ["", "Consectetur adipiscing elit,", "", "Dolor sit amet"],
+    "subtitle": ["Consectetur adipiscing elit,", "Dolor sit amet"],
     "availability": "Available",
     "avatar": "../../../assets/images/bitmoji/smile.png"
   },
 
   "about": [
-    { "title": "Nationality", "subtitle": "U.S." },
-    { "title": "Age", "subtitle": "25" }
+    { "id": 1, "title": "Nationality", "subtitle": "U.S." },
+    { "id": 2, "title": "Age", "subtitle": "25" }
   ],
 
   "skills": {
@@ -17,11 +17,11 @@
       { "id": "2", "language": "French", "level": 20 }
     ],
     "hard": [
-      { "id": "1", "skill": "HTML5", "level": "85" },
-      { "id": "2", "skill": "CSS3", "level": "40" },
-      { "id": "3", "skill": "JavaScript", "level": "70" },
-      { "id": "4", "skill": "ReactJS", "level": "60" },
-      { "id": "5", "skill": "NodeJS", "level": "60" }
+      { "id": "1", "skill": "HTML5", "level": 85 },
+      { "id": "2", "skill": "CSS3", "level": 40 },
+      { "id": "3", "skill": "JavaScript", "level": 70 },
+      { "id": "4", "skill": "ReactJS", "level": 60 },
+      { "id": "5", "skill": "NodeJS", "level": 60 }
     ],
     "soft": [
       "jQuery, Redux, React Hooks",
@@ -36,30 +36,38 @@
     ]
   },
 
-  "resume": { "text": "Download Resume", "url": "https://www.dropbox.com/s/fe57nbhnms25xmo/Resume.pdf?dl=1" },
+  "resume": {
+    "text": "Download Resume",
+    "url": "https://www.dropbox.com/s/fe57nbhnms25xmo/Resume.pdf?dl=1"
+  },
 
   "social": [
     {
+      "id": 1,
       "platform": "github",
       "favicon": "fab fa-github-square",
       "url": "https://github.com/pronoia9"
     },
     {
+      "id": 2,
       "platform": "linkedin",
       "favicon": "fab fa-linkedin",
       "url": "https://www.linkedin.com/in/jayansin/"
     },
     {
+      "id": 3,
       "platform": "facebook social-unavailable",
       "favicon": "fab fa-facebook-square",
       "url": "https://www.facebook.com/"
     },
     {
+      "id": 4,
       "platform": "twitter social-unavailable",
       "favicon": "fab fa-twitter-square",
       "url": "https://twitter.com/"
     },
     {
+      "id": 5,
       "platform": "discord social-unavailable",
       "favicon": "fab fa-discord",
       "url": "https://discordapp.com/"
