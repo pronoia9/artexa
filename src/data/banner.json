@@ -1,16 +1,14 @@
 {
-  "background": "https://images.unsplash.com/photo-1615377730068-e8235046ff05?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-
   "avatar": "../../assets/images/bitmoji/8b80b4d8-32db-4668-8490-9b1227b0754b-f0fe3384-3fbc-4f46-9738-7b713055c737-v1.png",
 
   "heading": ["hi.", "welcome."],
 
   "typed": [
-    "write code.",
-    "make websites.",
-    "create web apps.",
-    "do other stuff as well...",
-    "... but mostly irrelevant."
+    "Hello Wor- No...",
+    "Hi, I'm Jay.",
+    "I like to make web apps.",
+    "I do other stuff as well.",
+    "... but mostly not relevant."
   ],
 
   "button": { "text": "Explore Now", "url": "/projects" },

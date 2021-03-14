@@ -5,11 +5,11 @@ import Typed from 'react-typed';
 export default function Code() {
   return (
     <div className='art-lg-text art-code mb-25'>
-      &lt;<i>code</i>&gt; I{' '}
+      &lt;<i>code</i>&gt;{' '}
       <Typed
         loop
         typeSpeed={100}
-        backSpeed={50}
+        backSpeed={25}
         strings={banner.typed}
         smartBackspace
         shuffle={false}
@@ -19,7 +19,7 @@ export default function Code() {
         loopCount={0}
         showCursor
         cursorChar='|'
-      />
+      />{' '}
       &lt;/<i>code</i>&gt;
     </div>
   );

@@ -1,7 +1,7 @@
 {
   "counters": [
     { "id": 1, "number": "2", "text": "Years Experience" },
-    { "id": 2, "number": "5", "text": "Completed Projects" },
+    { "id": 2, "number": "15", "text": "Completed Projects" },
     { "id": 3, "number": "3", "text": "Certificates" }
   ]
 }
