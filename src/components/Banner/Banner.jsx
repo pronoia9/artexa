@@ -36,12 +36,12 @@ function Banner(props) {
                     onClick={() =>
                       props.setBackground(
                         banner.backgrounds.dropbox[
-                          Math.round(Math.random() * banner.backgrounds.dropbox.length)
+                          Math.floor(Math.random() * banner.backgrounds.dropbox.length)
                         ]
                       )
                     }
                   >
-                    <span>{banner.button.text}</span>
+                    <span>Click Me</span>
                   </div>
                 </div>
               </div>

@@ -11,9 +11,9 @@ function App() {
   // sliding for right side menu
   const [navbarActive, setNavbarActive] = useState(false);
 
-  // current background image
+  // current background image (gets a image link)
   const [background, setBackground] = useState(
-    banner.backgrounds.dropbox[Math.round(Math.random() * banner.backgrounds.dropbox.length)]
+    banner.backgrounds.dropbox[Math.floor(Math.random() * banner.backgrounds.dropbox.length)]
   );
 
   return (

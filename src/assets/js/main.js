@@ -1,7 +1,10 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-redeclare */
 import $ from './plugins/jquery';
 import Scrollbar, { OverscrollPlugin } from './plugins/overscroll.min';
 import Swup from './plugins/swup.min';
 import anime from './plugins/anime.min';
+import Swiper from './plugins/';
 
 $(function () {
   // swup js
