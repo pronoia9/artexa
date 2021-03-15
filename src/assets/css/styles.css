@@ -274,9 +274,7 @@ blockquote:after {
   box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
 }
 
-/* ------------------------------
-link
------------------------------- */
+/* ------------------------------ link ------------------------------ */
 .art-link {
   position: relative;
   text-transform: uppercase;
@@ -353,9 +351,7 @@ link
   transform: translateX(-5px);
 }
 
-/* ------------------------------
-button
------------------------------- */
+/* ------------------------------ button ------------------------------ */
 .art-btn {
   text-transform: uppercase;
   box-shadow: 0 1px 4px 0 var(--color-box-shadow-0);
@@ -2044,11 +2040,12 @@ footer a:hover {
 portfolio
 ------------------------------ */
 /* ----- filter ----- */
-.art-filter a {
+.art-filter .art-link {
   color: var(--color-text-1);
   margin-bottom: 0;
+  cursor: pointer;
 }
-.art-filter a.art-current {
+.art-filter .art-link.art-current {
   color: var(--color-primary-0);
 }
 

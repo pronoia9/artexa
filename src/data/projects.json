@@ -1,21 +1,9 @@
 {
   "filter": [
-    { "id": 1, "category": "All Categories", "href": "", "dataFilter": "*", "className": " art-current" },
-    {
-      "id": 2,
-      "category": "Static Websites",
-      "href": "",
-      "dataFilter": ".staticWebsites",
-      "className": ""
-    },
-    {
-      "id": 3,
-      "category": "Web Applications",
-      "href": "",
-      "dataFilter": ".webApplications",
-      "className": ""
-    },
-    { "id": 4, "category": "CSS", "href": "", "dataFilter": ".css", "className": "" }
+    { "id": 1, "category": "All Categories", "dataFilter": null },
+    { "id": 2, "category": "Static Websites", "dataFilter": "staticWebsites" },
+    { "id": 3, "category": "Web Applications", "dataFilter": "webApplications" },
+    { "id": 4, "category": "CSS", "dataFilter": "css" }
   ],
 
   "projects": [
@@ -24,6 +12,7 @@
       "dataFilter": "css",
       "href": "",
       "shape": "square",
+      "height": "",
       "title": "Lorem Ipsum",
       "overview": "",
       "images": [
@@ -38,7 +27,8 @@
         "finalDate": "12/03/2020",
         "status": "Completed",
         "client": "Envato Market",
-        "location": ""
+        "location": "",
+        "url": ""
       },
       "reviws": []
     },
@@ -47,6 +37,7 @@
       "dataFilter": "staticWebsites",
       "href": "",
       "shape": "square",
+      "height": "",
       "title": "Lorem Ipsum",
       "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "images": [
@@ -61,7 +52,8 @@
         "finalDate": "12/03/2020",
         "status": "Completed",
         "client": "Envato Market",
-        "location": ""
+        "location": "",
+        "url": ""
       },
       "reviws": []
     },
@@ -70,6 +62,7 @@
       "dataFilter": "staticWebsites",
       "href": "",
       "shape": "square",
+      "height": "",
       "title": "Lorem Ipsum",
       "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "images": [
@@ -84,7 +77,8 @@
         "finalDate": "12/03/2020",
         "status": "Completed",
         "client": "Envato Market",
-        "location": ""
+        "location": "",
+        "url": ""
       },
       "reviws": []
     },
@@ -93,6 +87,7 @@
       "dataFilter": "staticWebsites",
       "href": "",
       "shape": "square",
+      "height": "",
       "title": "Lorem Ipsum",
       "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "images": [
@@ -107,7 +102,8 @@
         "finalDate": "12/03/2020",
         "status": "Completed",
         "client": "Envato Market",
-        "location": ""
+        "location": "",
+        "url": ""
       },
       "reviws": []
     },
@@ -116,6 +112,7 @@
       "dataFilter": "staticWebsites",
       "href": "",
       "shape": "square",
+      "height": "",
       "title": "Lorem Ipsum",
       "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "images": [
@@ -130,7 +127,8 @@
         "finalDate": "12/03/2020",
         "status": "Completed",
         "client": "Envato Market",
-        "location": ""
+        "location": "",
+        "url": ""
       },
       "reviws": []
     },
@@ -139,6 +137,7 @@
       "dataFilter": "staticWebsites",
       "href": "",
       "shape": "square",
+      "height": "",
       "title": "Lorem Ipsum",
       "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "images": [
@@ -153,7 +152,8 @@
         "finalDate": "12/03/2020",
         "status": "Completed",
         "client": "Envato Market",
-        "location": ""
+        "location": "",
+        "url": ""
       },
       "reviws": []
     },
@@ -162,6 +162,7 @@
       "dataFilter": "staticWebsites",
       "href": "",
       "shape": "square",
+      "height": "",
       "title": "Lorem Ipsum",
       "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "images": [
@@ -176,7 +177,8 @@
         "finalDate": "12/03/2020",
         "status": "Completed",
         "client": "Envato Market",
-        "location": ""
+        "location": "",
+        "url": ""
       },
       "reviws": []
     },
@@ -185,6 +187,7 @@
       "dataFilter": "staticWebsites",
       "href": "",
       "shape": "square",
+      "height": "",
       "title": "Lorem Ipsum",
       "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "images": [
@@ -199,7 +202,8 @@
         "finalDate": "12/03/2020",
         "status": "Completed",
         "client": "Envato Market",
-        "location": ""
+        "location": "",
+        "url": ""
       },
       "reviws": []
     },
@@ -208,6 +212,7 @@
       "dataFilter": "staticWebsites",
       "href": "",
       "shape": "square",
+      "height": "",
       "title": "Lorem Ipsum",
       "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "images": [
@@ -222,7 +227,8 @@
         "finalDate": "12/03/2020",
         "status": "Completed",
         "client": "Envato Market",
-        "location": ""
+        "location": "",
+        "url": ""
       },
       "reviws": []
     },
@@ -231,6 +237,7 @@
       "dataFilter": "staticWebsites",
       "href": "",
       "shape": "square",
+      "height": "",
       "title": "Lorem Ipsum",
       "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "images": [
@@ -245,7 +252,8 @@
         "finalDate": "12/03/2020",
         "status": "Completed",
         "client": "Envato Market",
-        "location": ""
+        "location": "",
+        "url": ""
       },
       "reviws": []
     },
@@ -254,6 +262,7 @@
       "dataFilter": "staticWebsites",
       "href": "",
       "shape": "square",
+      "height": "",
       "title": "Lorem Ipsum",
       "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "images": [
@@ -268,7 +277,8 @@
         "finalDate": "12/03/2020",
         "status": "Completed",
         "client": "Envato Market",
-        "location": ""
+        "location": "",
+        "url": ""
       },
       "reviws": []
     },
@@ -277,6 +287,7 @@
       "dataFilter": "staticWebsites",
       "href": "",
       "shape": "square",
+      "height": "",
       "title": "Lorem Ipsum",
       "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
       "images": [
@@ -291,7 +302,83 @@
         "finalDate": "12/03/2020",
         "status": "Completed",
         "client": "Envato Market",
-        "location": ""
+        "location": "",
+        "url": ""
+      },
+      "reviws": []
+    },
+    {
+      "id": 13,
+      "dataFilter": "staticWebsites",
+      "href": "",
+      "shape": "square",
+      "height": "",
+      "title": "Lorem Ipsum",
+      "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "images": [
+        "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
+        "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+        "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
+        "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
+      ],
+      "details": {
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
+        "orderDate": "24/12/2019",
+        "finalDate": "12/03/2020",
+        "status": "Completed",
+        "client": "Envato Market",
+        "location": "",
+        "url": ""
+      },
+      "reviws": []
+    },
+    {
+      "id": 14,
+      "dataFilter": "staticWebsites",
+      "href": "",
+      "shape": "square",
+      "height": "",
+      "title": "Lorem Ipsum",
+      "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "images": [
+        "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
+        "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+        "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
+        "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
+      ],
+      "details": {
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
+        "orderDate": "24/12/2019",
+        "finalDate": "12/03/2020",
+        "status": "Completed",
+        "client": "Envato Market",
+        "location": "",
+        "url": ""
+      },
+      "reviws": []
+    },
+    {
+      "id": 15,
+      "dataFilter": "staticWebsites",
+      "href": "",
+      "shape": "square",
+      "height": "",
+      "title": "Lorem Ipsum",
+      "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+      "images": [
+        "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
+        "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+        "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
+        "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
+      ],
+      "details": {
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
+        "orderDate": "24/12/2019",
+        "finalDate": "12/03/2020",
+        "status": "Completed",
+        "client": "Envato Market",
+        "location": "",
+        "url": ""
       },
       "reviws": []
     }

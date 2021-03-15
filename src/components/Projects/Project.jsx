@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Project(props) {
   return (
-    <div className={'art-grid-item ' + props.shape + ' ' + props.dataFilter}>
+    <div className={'art-grid-item ' + props.dataFilter}>
       {/* project image */}
       <a
         data-fancybox='gallery'

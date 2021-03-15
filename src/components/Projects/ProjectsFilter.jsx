@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function ProjectsFilter(props) {
   return (
-    <a href={props.href} data-filter={props.dataFilter} className={'art-link' + props.className}>
+    <div className={'art-link' + props.className} onClick={() => props.setFilterKey(props.dataFilter)}>
       {props.category}
-    </a>
+    </div>
   );
 }
