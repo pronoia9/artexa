@@ -1,0 +1,12 @@
+{
+  "filter": [
+    { "id": 1, "category": "All Categories", "href": "", "dataFilter": "*", "className": " art-current" },
+    { "id": 2, "category": "Static Websites", "href": "", "dataFilter": ".staticWebsites", "className": "" },
+    { "id": 3, "category": "Web Applications", "href": "", "dataFilter": ".webApplications", "className": "" },
+    { "id": 4, "category": "CSS", "href": "", "dataFilter": ".css", "className": "" }
+  ],
+
+  "projects": [
+    {"id": 1, "title" : "Lorem Ipsum"}
+  ]
+}

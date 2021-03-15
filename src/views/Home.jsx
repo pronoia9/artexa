@@ -3,6 +3,7 @@ import Background from '../components/Banner/Background';
 import Banner from '../components/Banner/Banner';
 import Counters from './Counters';
 import History from './History';
+import Projects from './Projects';
 import Scrollbar from 'smooth-scrollbar-react';
 
 export default function Content(props) {
@@ -33,8 +34,9 @@ export default function Content(props) {
 
               {/* education history */}
               <History />
-              
+
               {/* projects */}
+              <Projects />
 
               {/* extracurricular */}
             </div>

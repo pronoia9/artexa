@@ -2021,7 +2021,7 @@ portfolio
   margin-bottom: 0;
 }
 .art-filter a.art-current {
-  color: var(--color-text-0);
+  color: var(--color-primary-1);
 }
 
 /* ----- portfolio items ----- */

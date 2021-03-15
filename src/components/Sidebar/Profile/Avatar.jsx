@@ -1,4 +1,5 @@
 import React from 'react';
+
 const pfp = require('../../../assets/images/bitmoji/smile.png').default;
 
 // TODO Enable/fix avatar click fancybox
@@ -7,10 +8,10 @@ export default function Avatar() {
   return (
     //avatar
     <div className='art-avatar'>
-      <div className='art-avatar-curtain'>
-        <img className='art-avatar-curtain' src={pfp} alt='Avatar' />
-        {/* <i className='fas fa-expand'></i> */}
-      </div>
+      <a data-fancybox='avatar' dataFancybox='avatar' href={pfp} className='art-avatar-curtain'>
+        <img src={pfp} alt='Avatar' />
+        <i className='fas fa-expand'></i>
+      </a>
 
       {/* availability */}
       <div className='art-lamp-light'>
