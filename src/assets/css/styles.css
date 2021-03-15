@@ -1905,6 +1905,14 @@ menu bar
   cursor: text;
 }
 
+#message + label {
+  background: none;
+}
+
+#message:focus + label i {
+  color: var(--color-text-3);
+}
+
 .art-submit-frame {
   position: relative;
   height: 45px;
