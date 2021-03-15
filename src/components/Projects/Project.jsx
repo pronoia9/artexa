@@ -6,7 +6,7 @@ export default function Project(props) {
       {/* project image */}
       <a
         data-fancybox='gallery'
-        href={props.href}
+        href={props.images[0]}
         className={'art-a art-portfolio-item-frame art-' + props.shape}
       >
         <img src={props.images[0]} alt='item'></img>
