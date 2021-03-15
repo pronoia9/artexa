@@ -302,7 +302,7 @@ link
   transform: translateX(5px);
 }
 .art-link.art-color-link {
-  color: var(--color-primary-2);
+  color: var(--color-primary-0);
 }
 .art-link.art-color-link:hover {
   color: var(--color-primary-1);
@@ -1093,7 +1093,7 @@ info bar
   margin-right: 10px;
 }
 .art-info-bar .art-knowledge-list li:hover::before {
-  color: var(--color-primary-2);
+  color: var(--color-primary-1);
 }
 .art-info-bar .art-links-frame {
   display: flex;
@@ -2049,7 +2049,7 @@ portfolio
   margin-bottom: 0;
 }
 .art-filter a.art-current {
-  color: var(--color-primary-1);
+  color: var(--color-primary-0);
 }
 
 /* ----- portfolio items ----- */
