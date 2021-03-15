@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import submit from './formSubmit.js';
 
 export default function ContactForm(props) {
+  // store the values for value and onchange
+  // active is used to keep the fields that have input lit up (css)
+  // the css effect works on focus, as well as if theres input in the field
   const [form, setForm] = useState({
     name: { value: '', active: false },
     email: { value: '', active: false },
@@ -90,7 +93,7 @@ export default function ContactForm(props) {
               <span>Send Message</span>
             </button>
             <div className='art-success'>
-              "Success "<i className='fas fa-check'></i>
+              Success <i className='fas fa-check'></i>
             </div>
           </div>
         </form>
