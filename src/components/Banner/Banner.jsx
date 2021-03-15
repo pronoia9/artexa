@@ -24,7 +24,7 @@ export default function Banner(props) {
                 </h1>
                 {/* typed text */}
                 <Code />
-                <div className='art-button-frame'>
+                <div className='art-buttons-frame'>
                   {/* button */}
                   {/* <a href={banner.button.url} className='art-btn art-btn-md'>
                     <span>{banner.button.text}</span>

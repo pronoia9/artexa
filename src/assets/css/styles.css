@@ -369,6 +369,9 @@ button
   border: none;
   transition: 0.4s ease-in-out;
 }
+.art-btn:hover {
+  background-color: var(--color-primary-2);
+}
 .art-btn span {
   align-self: center;
   transition: 0.2s ease-in-out;
@@ -1136,7 +1139,7 @@ info bar
 .art-line-progress:hover path:last-child {
   transform: scale(1.01);
   transition: right ease-in-out 1s;
-  stroke: var(--color-primary-2);
+  stroke: var(--color-primary-1);
 }
 
 .art-circle-progress path:first-child {
@@ -1149,7 +1152,7 @@ info bar
   transform: scale(1.01);
   transform-origin: center;
   transition: transform 0.5s;
-  stroke: var(--color-primary-2);
+  stroke: var(--color-primary-1);
 }
 
 /* ------------------------------
@@ -1465,6 +1468,12 @@ menu bar
   );
   background-size: 100%;
   background-clip: text;
+  transition: transform 0.5s;
+}
+.art-banner .art-banner-overlay .art-banner-title h1:hover {
+  /* text-shadow: 0.1px 0.1px 10px var(--color-primary-1); */
+  transform: scale(1.01);
+  transition: transform 0.5s;
 }
 .art-banner .art-banner-overlay .art-banner-photo {
   width: 390px;
@@ -1482,11 +1491,21 @@ menu bar
 /* ----- typing code ----- */
 .art-code {
   font-family: 'Courier Prime', monospace;
-  color: var(--color-text-0);
+  color: var(--color-primary-0);
+  text-shadow: 1px 1px 5px var(--color-primary-1);
 }
 .art-code i {
   font-style: normal;
-  color: var(--color-primary-2);
+  color: var(--color-primary-4);
+  text-shadow: none;
+}
+.art-code span {
+  color: var(--color-text-0);
+  text-shadow: none;
+}
+.art-code span:hover {
+  font-style: italic;
+  /* color: var(--color-primary-3); */
 }
 
 /* ----- counters ----- */
