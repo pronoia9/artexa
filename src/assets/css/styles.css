@@ -1805,7 +1805,7 @@ menu bar
 }
 .art-timeline .art-timeline-content:hover {
   opacity: 0.9;
-  transform: scale(1.05);
+  transform: scale(1.01);
   transform-origin: right top;
   transition: transform 0.5s ease-in-out;
 }
