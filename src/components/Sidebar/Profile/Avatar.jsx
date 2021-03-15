@@ -8,7 +8,7 @@ export default function Avatar() {
   return (
     //avatar
     <div className='art-avatar'>
-      <a data-fancybox='avatar' dataFancybox='avatar' href={pfp} className='art-avatar-curtain'>
+      <a data-fancybox='avatar' href={pfp} className='art-avatar-curtain'>
         <img src={pfp} alt='Avatar' />
         <i className='fas fa-expand'></i>
       </a>

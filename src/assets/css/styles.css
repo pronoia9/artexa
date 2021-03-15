@@ -1801,9 +1801,13 @@ menu bar
   padding: 30px;
   margin-bottom: 30px;
   box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+  transition: 0.5s ease-in-out;
 }
 .art-timeline .art-timeline-content:hover {
-/* TODO */
+  opacity: 0.9;
+  transform: scale(1.05);
+  transform-origin: right top;
+  transition: transform 0.5s ease-in-out;
 }
 .art-timeline .art-timeline-content:after {
   height: 10px;
