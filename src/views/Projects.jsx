@@ -40,7 +40,21 @@ export default function Projects() {
         {/* project items  */}
         <div className='art-grid art-grid-3-col art-gallery'>
           {projects.projects.map((p) => {
-            return <Project filter={p.filter} />;
+            const { id, dataFilter, href, shape, title, overview, images, details, reviews } = p;
+            return (
+              <Project
+                key={id}
+                id={id}
+                dataFilter={dataFilter}
+                href={href}
+                shape={shape}
+                title={title}
+                overview={overview}
+                images={images}
+                details={details}
+                reviews={reviews}
+              />
+            );
           })}
         </div>
       </div>

@@ -2103,6 +2103,9 @@ portfolio
 }
 
 .art-grid {
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  grid-template-rows: masonry; */
   transition: 0.55s ease-in-out;
   width: 100%;
   /* clear fix */
@@ -2119,6 +2122,8 @@ portfolio
   position: relative;
   height: auto;
   padding: 0 15px;
+}
+.art-grid .art-grid-item:nth-child(4) {
 }
 .art-grid .art-grid-item .art-item-description {
   position: absolute;
