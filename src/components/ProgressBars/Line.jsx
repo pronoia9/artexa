@@ -3,7 +3,7 @@ import { progressbarLine } from './progressbar.js';
 
 export default function Line(props) {
   // line bar animation
-  useEffect(() => progressbarLine(props.i, props.id, props.percentage), []);
+  useEffect(() => progressbarLine(props.i, props.id, props.percentage), [props.i, props.id, props.percentage]);
 
   // returns the text + animation
   return (

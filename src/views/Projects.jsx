@@ -83,9 +83,10 @@ export default function Projects() {
                   reviews={reviews}
                 />
               );
-            } else {
-              console.log('Error with filtering projects (It\'s possible no projects were found under this filter).');
             }
+            return console.log(
+              "Error with filtering projects (It's possible no projects were found under this filter)."
+            );
           })}
         </div>
       </div>

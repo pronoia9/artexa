@@ -4,6 +4,8 @@ import Banner from '../components/Banner/Banner';
 import Counters from './Counters';
 import History from './History';
 import Projects from './Projects';
+import Warning from './Warning';
+import Footer from './Footer';
 import Scrollbar from 'smooth-scrollbar-react';
 
 export default function Content(props) {
@@ -38,7 +40,13 @@ export default function Content(props) {
               {/* projects */}
               <Projects />
 
-              {/* extracurricular */}
+              {/* activities */}
+
+              {/* warning */}
+              <Warning />
+
+              {/* footer */}
+              <Footer />
             </div>
           </div>
         </Scrollbar>
