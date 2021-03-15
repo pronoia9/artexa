@@ -1,0 +1,38 @@
+{
+          "id": 3,
+          "title": "Destination Imagination",
+          "subtitle": "Participant",
+          "date": "April 2013",
+          "content": "Destination Imagination (DI) is a global educational nonprofit dedicated to inspiring the next generation of innovators, leaders and creative problem solvers.",
+          "link": "Website",
+          "url": "https://www.destinationimagination.org/about/"
+        },
+        {
+          "id": 3,
+          "title": "Caretakers of the Environment",
+          "subtitle": "Volunteer",
+          "date": "August 2012",
+          "content": "The CEI is an independent organization established in 1986, embracing secondary school students, teachers and mentors, whose interests are focused specifically on the issues of environmental protection, promoting education, shaping awarness and training within sustainable development.",
+          "link": "Website",
+          "url": "https://www.caretakers4all.org/"
+        }
+
+
+        {
+          "id": 2,
+          "title": "The Complete Web Developer",
+          "subtitle": "by Andrei Neagoie, Senior Software Developer",
+          "date": "March 2021 - Ongoing",
+          "content": "",
+          "link": "Course",
+          "url": ""
+        },
+        {
+          "id": 2,
+          "title": "The Complete Web Developer",
+          "subtitle": "by Andrei Neagoie, Senior Software Developer",
+          "date": "March 2021 - Ongoing",
+          "content": "",
+          "link": "Course",
+          "url": ""
+        },

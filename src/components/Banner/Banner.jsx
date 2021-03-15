@@ -34,8 +34,8 @@ export default function Banner(props) {
                     style={{ cursor: 'pointer' }}
                     onClick={() =>
                       props.setBackground(
-                        banner.backgrounds.dropbox[
-                          Math.floor(Math.random() * banner.backgrounds.dropbox.length)
+                        banner.backgrounds.unsplash[
+                          Math.floor(Math.random() * banner.backgrounds.unsplash.length)
                         ]
                       )
                     }

@@ -2,7 +2,7 @@
   "education": [
     {
       "id": 1,
-      "type": "School",
+      "type": "Education",
       "history": [
         {
           "id": 1,
@@ -17,8 +17,9 @@
     },
     {
       "id": 2,
-      "type": "Courses",
+      "type": "Certificates",
       "history": [
+        
         {
           "id": 1,
           "title": "The Complete Web Developer",

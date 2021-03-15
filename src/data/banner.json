@@ -5,8 +5,8 @@
 
   "typed": [
     "Hello Wor- No...",
-    "Hi, I'm Jay.",
-    "I like to make web apps.",
+    "I like to make websites.",
+    "Also web applications.",
     "I do other stuff as well.",
     "... but mostly not relevant."
   ],
@@ -77,6 +77,13 @@
       "https://previews.dropbox.com/p/thumb/ABExWKqtH_VS5iNUWi7ZyCc4TAWZpafOuaDY1p_3zvZvSJTiHAeKlCYX9RXeMnF_FksDEjyUn0ngjBnqnIKQrzq8m6Pv_g09WLcJE5CtKorUwEOA-sTMhre6nj2kSdVIbjK4eUFOJXE89UhYfmGeG8ePQGvxI3NQkbS_zbwApso0zFdAMO5dxnQhweRwPL1KqveTiRpnkiEa2vbyya2rqZN7ZSzWSYPcQpGyMivu_kWh221Rnl1FJ5LAbHlulP-JRaQXUQwIUNUC-D87BhNwZv_n07KYNlGI0M2PlojTiNwX5v9O4VoL7ostCKjtUQEi0TuYtR1MbWyNslODVWCNOJGtgJbrRwP2Gxe3MpXwRi2BFWAmnvbpNxx1iejHfYP-R5ONp1KhkWwDg9OWWQdyzafq7q0kyC9KkLYANfLM6WfX-tQ61uD-5zLmKEMDOKUKcZMy1Vm_A2ufUoNyxhC8M01FmfoK6gKk2XgEWgvGt9WaOQ/p.jpeg?fv_content=true&size_mode=5",
       "https://previews.dropbox.com/p/thumb/ABH7cCk-PxyAFTxu2AuFr--BHl_PbD92P9MZkk1Rr0htA18FU8v64LaiwJqhhFK93d82grjDf7HgngHK4ekLmx-cXi4akpn5XxBHV_OipcIM9Tpi89R1OtgCBfVfeBM-AEWfBkvoA4Tw12VfsY1LCDx38fe-NoY2t_mrJkp474Ef_GYV2waOpzLwSUdOAxmzcih_FURe98DGfiDRmqO8k7AEPjxsoR5IU3WsPuLokjmz_BB5qHc9gq_hNKw3X_On_4Zx0a-Qd6tutoRAo-7OsTmaa7H6CzuYuMyGlqtXmui-KqJjqSYi7wmfysDPTXHcvqEdOUq5PxBLYm_1dsuJm9q6beeAyVyLTYwVqARzYfbdvPmHzwd2ewWJ8xvrLG8Z9Rdk_7ortA1yEA1BECT5TM4315ZEk7d4OgD7GqiSA_BTDIKxYX61SNJsgnq54-WrzHv-VhlxI_9cCfXuSkISvbXcKBEhHvRsfLUogLT-v3MnyA/p.jpeg?size=2048x1536&size_mode=3",
       "https://previews.dropbox.com/p/thumb/ABGtap7sZVzvIp9BBX0hhbDhVZcCyONgpEiNkN7BHQyAmx15sIwkeio6MhWMh6LDnzJ7BbojklpL5DpKRsP_OxL0BcGMcFgDVor_MxzZJj6G5u8cy3x-JKOF-DxTDTSnBP0ZwtKCpTrP_WLn1A1AGG1FXDZ3QJfbYPkhvfS7xrO8uDn3CRkX5v-pkYry_gs6nO5R9NqQuQ9KMUHaV_b7P7jBzvmelWMD9djjKu-WSi4w7HWfOZAULOMlDlO0itXf0uuEca61FZrv7T-khf3LjNCbRsrDNQNHqh3VmjiBtlRe5JrV-K90J4eLcoDYUiI0t7jjzQyZTtNoSfH78_nGpTVk7EobwX4-Df9Sq6Ghauw_3g/p.jpeg?size=2048x1536&size_mode=3"
+    ],
+    "unsplash": [
+      "https://images.unsplash.com/photo-1615401318613-4fa7172ca826?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1700&q=80",
+      "https://images.unsplash.com/photo-1577312891106-b39a179bfab6?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1751&q=80",
+      "https://images.unsplash.com/photo-1534227749049-06c3ed80963c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
+      "https://images.unsplash.com/photo-1615656046283-fde27322df20?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1700&q=80",
+      "https://images.unsplash.com/photo-1606735517056-c40996edc1ad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
     ]
   }
 }

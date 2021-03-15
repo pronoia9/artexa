@@ -13,7 +13,7 @@ export default function Wrapper() {
 
   // current background image (gets a image link)
   const [background, setBackground] = useState(
-    banner.backgrounds.dropbox[Math.floor(Math.random() * banner.backgrounds.dropbox.length)]
+    banner.backgrounds.unsplash[Math.floor(Math.random() * banner.backgrounds.unsplash.length)]
   );
 
   return (
