@@ -1089,6 +1089,9 @@ info bar
   color: var(--color-primary-0);
   margin-right: 10px;
 }
+.art-info-bar .art-knowledge-list li:hover::before {
+  color: var(--color-primary-2);
+}
 .art-info-bar .art-links-frame {
   display: flex;
   justify-content: space-between;
@@ -1133,7 +1136,7 @@ info bar
 .art-line-progress:hover path:last-child {
   transform: scale(1.01);
   transition: right ease-in-out 1s;
-  stroke: var(--color-primary-3);
+  stroke: var(--color-primary-2);
 }
 
 .art-circle-progress path:first-child {
@@ -1141,6 +1144,12 @@ info bar
 }
 .art-circle-progress path:last-child {
   stroke: var(--color-primary-0);
+}
+.art-circle-progress:hover path:last-child {
+  transform: scale(1.01);
+  transform-origin: center;
+  transition: transform 0.5s;
+  stroke: var(--color-primary-2);
 }
 
 /* ------------------------------
