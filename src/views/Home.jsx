@@ -37,7 +37,7 @@ export default function Content(props) {
               <Counters />
 
               {/* education history */}
-              {/* <History /> */}
+              <History />
 
               {/* projects */}
               {/* <Projects /> */}
