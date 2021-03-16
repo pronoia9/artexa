@@ -1,5 +1,5 @@
 import React from 'react';
-import { Formik, Field, Form, ErrorMessage, resetForm } from 'formik';
+import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { formButtonAnimation } from '../../assets/js/main.js';
 import emailjs from 'emailjs-com';
@@ -35,7 +35,7 @@ export default function ContactForm(props) {
                   {
                     name: contact.name,
                     email: contact.email,
-                    message: contact.email,
+                    message: contact.message,
                   },
                   'user_UTJTDSxq66eaS0NGyt0PQ'
                 )

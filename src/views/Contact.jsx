@@ -18,7 +18,7 @@ export default function Contact() {
 
         {/* contact info */}
         {contactData.info.map((i) => (
-          <ContactCard info={i} length={contactData.info.length} />
+          <ContactCard key={Math.round(Math.random() * 50)} info={i} length={contactData.info.length} />
         ))}
 
         {/* contact form */}

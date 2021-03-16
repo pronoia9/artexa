@@ -8,7 +8,7 @@ export default function ContactCards(props) {
         <div className='art-table p-15-15'>
           <ul>
             {props.info.map((i) => (
-              <ContactCardInfo info={i} />
+              <ContactCardInfo key={i.id} id={i.id} info={i} />
             ))}
           </ul>
         </div>
