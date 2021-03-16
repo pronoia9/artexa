@@ -22,7 +22,7 @@ export default function Contact() {
         ))}
 
         {/* contact form */}
-        <ContactForm title={contactData.form} />
+        <ContactForm form={contactData.form} />
       </div>
     </div>
   );

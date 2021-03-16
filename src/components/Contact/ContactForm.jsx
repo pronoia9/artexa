@@ -1,7 +1,8 @@
 import React from 'react';
-import { Formik, Field, Form, ErrorMessage } from 'formik';
+import { Formik, Field, Form, ErrorMessage, resetForm } from 'formik';
 import * as Yup from 'yup';
 import { formButtonAnimation } from '../../assets/js/main.js';
+import emailjs from 'emailjs-com';
 
 export default function ContactForm(props) {
   return (
@@ -9,7 +10,7 @@ export default function ContactForm(props) {
       {/* form title */}
       <div className='art-section-title'>
         <div className='art-title-frame'>
-          <h4>{props.title}</h4>
+          <h4>{props.form.title}</h4>
         </div>
       </div>
 
@@ -17,23 +18,43 @@ export default function ContactForm(props) {
       <div className='art-a art-card'>
         <Formik
           initialValues={{ name: '', email: '', message: '' }}
+          // validation
           validationSchema={Yup.object({
             name: Yup.string().max(35, 'Must be 35 characters or less').required('Required'),
             email: Yup.string().email('Invalid email address').required('Required'),
-            message: Yup.string().max(500, 'Must be 500 characters or less').required('Required'),
+            message: Yup.string().max(800, 'Must be 800 characters or less').required('Required'),
           })}
-          onSubmit={(values, { setSubmitting }) => {
-            // TODO: add post and remove alert
+          // form submit
+          onSubmit={(values, { setSubmitting, resetForm }) => {
+            const contact = JSON.parse(JSON.stringify(values, null, 2));
             setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
+              emailjs
+                .send(
+                  'service_ag8htup',
+                  'y3qexcs',
+                  {
+                    name: contact.name,
+                    email: contact.email,
+                    message: contact.email,
+                  },
+                  'user_UTJTDSxq66eaS0NGyt0PQ'
+                )
+                .then(
+                  (result) => {
+                    console.log(result.text);
+                    formButtonAnimation();
+                    setTimeout(() => resetForm(), 2000);
+                  },
+                  (error) => {
+                    console.log(error.text);
+                  }
+                );
             }, 400);
-            formButtonAnimation();
           }}
         >
           {/* form */}
           {(formik) => (
-            <Form>
+            <Form id='form' className='art-contact-form'>
               {/* name */}
               <div className='art-form-field'>
                 <Field
@@ -43,7 +64,7 @@ export default function ContactForm(props) {
                   type='text'
                   placeholder='Name'
                 />
-                <label for='name'>
+                <label htmlFor='name'>
                   <i className='fas fa-user'></i>
                 </label>
                 <div className='art-validation-warning'>
@@ -62,7 +83,7 @@ export default function ContactForm(props) {
                   type='email'
                   placeholder='Email'
                 />
-                <label for='email'>
+                <label htmlFor='email'>
                   <i className='fas fa-at'></i>
                 </label>
                 <div className='art-validation-warning'>
@@ -81,8 +102,8 @@ export default function ContactForm(props) {
                   placeholder='Message'
                   as='textarea'
                 />
-                <label for='message'>
-                  <i className='far fa-envelope'></i>
+                <label htmlFor='message'>
+                  <i className='far fa-envelope'></i>{' '}
                 </label>
                 <div className='art-validation-warning art-message-validation'>
                   <span>
