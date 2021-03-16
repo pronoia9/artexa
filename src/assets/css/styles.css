@@ -1886,10 +1886,10 @@ info bar
   transition: 0.4s ease-in-out;
   cursor: text;
 }
-#message + label {
+label[for~='message'] {
   background: none;
 }
-#message:focus + label i {
+textarea:focus label[for~='message'] i {
   color: var(--color-text-3);
 }
 .art-form-field .art-validation-warning {
@@ -1897,17 +1897,19 @@ info bar
   padding: 7px;
   /* text-align: center; */
 }
+.art-form-field .art-validation-warning.art-message-validation {
+  padding-top: 0;
+}
 .art-form-field .art-validation-warning span {
   color: var(--color-primary-4);
   margin-left: 50px;
 }
 .art-submit-frame {
   position: relative;
-  height: 55px;
+  height: 45px;
 }
 .art-submit-frame .art-submit {
   margin: 0;
-  margin-top: 10px;
   overflow: hidden;
   position: relative;
   z-index: 999;

@@ -38,12 +38,12 @@ export default function ContactForm(props) {
               value={formik.values.name}
               onChange={formik.handleChange}
             ></input>
-            <div className='art-validation-warning'>
-              {formik.errors.name ? <span>{formik.errors.name}</span> : null}
-            </div>
             <label for='name'>
               <i className='fas fa-user'></i>
             </label>
+            <div className='art-validation-warning'>
+              {formik.errors.name ? <span>{formik.errors.name}</span> : null}
+            </div>
           </div>
 
           {/* email */}
@@ -57,12 +57,12 @@ export default function ContactForm(props) {
               value={formik.values.email}
               onChange={formik.handleChange}
             ></input>
-            <div className='art-validation-warning'>
-              {formik.errors.email ? <span>{formik.errors.email}</span> : null}
-            </div>
             <label for='email'>
               <i className='fas fa-at'></i>
             </label>
+            <div className='art-validation-warning'>
+              {formik.errors.email ? <span>{formik.errors.email}</span> : null}
+            </div>
           </div>
 
           {/* message */}
@@ -75,12 +75,12 @@ export default function ContactForm(props) {
               value={formik.values.message}
               onChange={formik.handleChange}
             ></textarea>
-            <div className='art-validation-warning'>
-              {formik.errors.message ? <span>{formik.errors.message}</span> : null}
-            </div>
             <label for='message'>
               <i className='far fa-envelope'></i>
             </label>
+            <div className='art-validation-warning art-message-validation'>
+              {formik.errors.message ? <span>{formik.errors.message}</span> : null}
+            </div>
           </div>
 
           {/* submit */}
