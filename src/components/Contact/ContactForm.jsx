@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import submit from './formSubmit.js';
+import { useFormik } from 'formik';
+import submitForm from './formSubmit.js';
 
 export default function ContactForm(props) {
-  // store the values for value and onchange
-  // active is used to keep the fields that have input lit up (css)
-  // the css effect works on focus, as well as if theres input in the field
-  const [form, setForm] = useState({
-    name: { value: '', active: false },
-    email: { value: '', active: false },
-    text: { value: '', active: false },
+  const formik = useFormik({
+    initialValues: {
+      name: '',
+      email: '',
+      message: '',
+    },
+    validate,
+    onSubmit: (values) => {
+      alert(JSON.stringify(values, null, 2));
+    },
   });
-  const [success, setSuccess] = useState(false);
 
   return (
     <div className='col-lg-12'>
@@ -29,15 +32,15 @@ export default function ContactForm(props) {
             <input
               id='name'
               name='name'
-              className={'art-input' + (form.name.active ? ' art-active' : '')}
+              className={'art-input' + (formik.values.name ? ' art-active' : '')}
               type='text'
               placeholder='Name'
-              value={form.name.value}
-              required
-              onChange={(e) =>
-                setForm({ ...form, name: { value: e.target.value, active: e.target.value ? true : false } })
-              }
+              value={formik.values.name}
+              onChange={formik.handleChange}
             ></input>
+            <div className='art-validation-warning'>
+              {formik.errors.name ? <span>{formik.errors.name}</span> : null}
+            </div>
             <label for='name'>
               <i className='fas fa-user'></i>
             </label>
@@ -48,18 +51,15 @@ export default function ContactForm(props) {
             <input
               id='email'
               name='email'
-              className={'art-input' + (form.email.active ? ' art-active' : '')}
+              className={'art-input' + (formik.values.email ? ' art-active' : '')}
               type='email'
               placeholder='Email'
-              value={form.email.value}
-              required
-              onChange={(e) =>
-                setForm({
-                  ...form,
-                  email: { value: e.target.value, active: e.target.value ? true : false },
-                })
-              }
+              value={formik.values.email}
+              onChange={formik.handleChange}
             ></input>
+            <div className='art-validation-warning'>
+              {formik.errors.email ? <span>{formik.errors.email}</span> : null}
+            </div>
             <label for='email'>
               <i className='fas fa-at'></i>
             </label>
@@ -69,15 +69,15 @@ export default function ContactForm(props) {
           <div className='art-form-field'>
             <textarea
               id='message'
-              name='text'
-              className={'art-input' + (form.text.active ? ' art-active' : '')}
+              name='message'
+              className={'art-input' + (formik.values.message ? ' art-active' : '')}
               placeholder='Message'
-              value={form.text.value}
-              required
-              onChange={(e) =>
-                setForm({ ...form, text: { value: e.target.value, active: e.target.value ? true : false } })
-              }
+              value={formik.values.message}
+              onChange={formik.handleChange}
             ></textarea>
+            <div className='art-validation-warning'>
+              {formik.errors.message ? <span>{formik.errors.message}</span> : null}
+            </div>
             <label for='message'>
               <i className='far fa-envelope'></i>
             </label>
@@ -88,7 +88,7 @@ export default function ContactForm(props) {
             <button
               className='art-btn art-btn-md art-submit'
               type='submit'
-              onClick={() => setSuccess(submit(form))}
+              onClick={() => formik.handleSubmit()}
             >
               <span>Send Message</span>
             </button>
@@ -101,3 +101,29 @@ export default function ContactForm(props) {
     </div>
   );
 }
+
+const validate = (values) => {
+  // name valiadation
+  const errors = {};
+  if (!values.name) {
+    errors.name = 'Required';
+  } else if (values.name.length > 35) {
+    errors.name = 'Must be 35 characters or less';
+  }
+
+  // email validation
+  if (!values.email) {
+    errors.email = 'Required';
+  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
+    errors.email = 'Invalid email address';
+  }
+
+  // message valiadation
+  if (!values.message) {
+    errors.message = 'Required';
+  } else if (values.message.length > 500) {
+    errors.message = 'Must be 500 characters or less';
+  }
+
+  return errors;
+};

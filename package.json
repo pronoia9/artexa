@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.8.3",
     "animejs": "^3.2.1",
+    "formik": "^2.2.6",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.6.0",
     "progressbar.js": "^1.1.0",
