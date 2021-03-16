@@ -35,14 +35,15 @@ export default function ContactForm(props) {
               className={'art-input' + (formik.values.name ? ' art-active' : '')}
               type='text'
               placeholder='Name'
-              value={formik.values.name}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.name}
             ></input>
             <label for='name'>
               <i className='fas fa-user'></i>
             </label>
             <div className='art-validation-warning'>
-              {formik.errors.name ? <span>{formik.errors.name}</span> : null}
+              {formik.touched.name && formik.errors.name ? <span>{formik.errors.name}</span> : null}
             </div>
           </div>
 
@@ -54,14 +55,15 @@ export default function ContactForm(props) {
               className={'art-input' + (formik.values.email ? ' art-active' : '')}
               type='email'
               placeholder='Email'
-              value={formik.values.email}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.email}
             ></input>
             <label for='email'>
               <i className='fas fa-at'></i>
             </label>
             <div className='art-validation-warning'>
-              {formik.errors.email ? <span>{formik.errors.email}</span> : null}
+              {formik.touched.email && formik.errors.email ? <span>{formik.errors.email}</span> : null}
             </div>
           </div>
 
@@ -72,14 +74,15 @@ export default function ContactForm(props) {
               name='message'
               className={'art-input' + (formik.values.message ? ' art-active' : '')}
               placeholder='Message'
-              value={formik.values.message}
               onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              value={formik.values.message}
             ></textarea>
             <label for='message'>
               <i className='far fa-envelope'></i>
             </label>
             <div className='art-validation-warning art-message-validation'>
-              {formik.errors.message ? <span>{formik.errors.message}</span> : null}
+              {formik.touched.message && formik.errors.message ? <span>{formik.errors.message}</span> : null}
             </div>
           </div>
 
