@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
-import submitForm from './formSubmit.js';
+import * as Yup from 'yup';
+import formButtonAnimation from '../../assets/js/main.js';
 
 export default function ContactForm(props) {
   const formik = useFormik({
@@ -9,7 +10,11 @@ export default function ContactForm(props) {
       email: '',
       message: '',
     },
-    validate,
+    validationSchema: Yup.object({
+      name: Yup.string().max(35, 'Must be 35 characters or less').required('Required'),
+      email: Yup.string().email('Invalid email address').required('Required'),
+      message: Yup.string().max(500, 'Must be 500 characters or less').required('Required'),
+    }),
     onSubmit: (values) => {
       alert(JSON.stringify(values, null, 2));
     },
@@ -82,7 +87,9 @@ export default function ContactForm(props) {
               <i className='far fa-envelope'></i>
             </label>
             <div className='art-validation-warning art-message-validation'>
-              {formik.touched.message && formik.errors.message ? <span>{formik.errors.message}</span> : null}
+              {formik.touched.message && formik.errors.message ? (
+                <span>{formik.errors.message}</span>
+              ) : null}
             </div>
           </div>
 
@@ -104,29 +111,3 @@ export default function ContactForm(props) {
     </div>
   );
 }
-
-const validate = (values) => {
-  // name valiadation
-  const errors = {};
-  if (!values.name) {
-    errors.name = 'Required';
-  } else if (values.name.length > 35) {
-    errors.name = 'Must be 35 characters or less';
-  }
-
-  // email validation
-  if (!values.email) {
-    errors.email = 'Required';
-  } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
-    errors.email = 'Invalid email address';
-  }
-
-  // message valiadation
-  if (!values.message) {
-    errors.message = 'Required';
-  } else if (values.message.length > 500) {
-    errors.message = 'Must be 500 characters or less';
-  }
-
-  return errors;
-};
