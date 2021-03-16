@@ -1,27 +1,9 @@
 import React from 'react';
-import { useFormik, Formik } from 'formik';
+import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { formButtonAnimation } from '../../assets/js/main.js';
 
 export default function ContactForm(props) {
-  const formik = useFormik({
-    initialValues: {
-      name: '',
-      email: '',
-      message: '',
-    },
-    validationSchema: Yup.object({
-      name: Yup.string().max(35, 'Must be 35 characters or less').required('Required'),
-      email: Yup.string().email('Invalid email address').required('Required'),
-      message: Yup.string().max(500, 'Must be 500 characters or less').required('Required'),
-    }),
-    onSubmit: (values) => {
-      // TODO: add post and remove alert
-      alert(JSON.stringify(values, null, 2));
-      formButtonAnimation();
-    },
-  });
-
   return (
     <div className='col-lg-12'>
       {/* form title */}
