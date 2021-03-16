@@ -5,6 +5,7 @@ import Counters from './Counters';
 import History from './History';
 import Projects from './Projects';
 import Contact from './Contact';
+import Blog from './Blog';
 import Warning from './Warning';
 import Footer from './Footer';
 import Scrollbar from 'smooth-scrollbar-react';
@@ -36,7 +37,7 @@ export default function Content(props) {
               <Counters />
 
               {/* education history */}
-              <History />
+              {/* <History /> */}
 
               {/* projects */}
               {/* <Projects /> */}
@@ -44,7 +45,10 @@ export default function Content(props) {
               {/* activities */}
 
               {/* contact info */}
-              <Contact />
+              {/* <Contact /> */}
+
+              {/* newsletter / posts */}
+              <Blog />
 
               {/* warning */}
               <Warning />
