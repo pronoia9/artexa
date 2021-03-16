@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-import formButtonAnimation from '../../assets/js/main.js';
+import { formButtonAnimation } from '../../assets/js/main.js';
 
 export default function ContactForm(props) {
   const formik = useFormik({
@@ -16,7 +16,9 @@ export default function ContactForm(props) {
       message: Yup.string().max(500, 'Must be 500 characters or less').required('Required'),
     }),
     onSubmit: (values) => {
+      // TODO: add post and remove alert
       alert(JSON.stringify(values, null, 2));
+      formButtonAnimation();
     },
   });
 
@@ -40,9 +42,7 @@ export default function ContactForm(props) {
               className={'art-input' + (formik.values.name ? ' art-active' : '')}
               type='text'
               placeholder='Name'
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.name}
+              {...formik.getFieldProps('name')}
             ></input>
             <label for='name'>
               <i className='fas fa-user'></i>
@@ -60,9 +60,7 @@ export default function ContactForm(props) {
               className={'art-input' + (formik.values.email ? ' art-active' : '')}
               type='email'
               placeholder='Email'
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
+              {...formik.getFieldProps('email')}
             ></input>
             <label for='email'>
               <i className='fas fa-at'></i>
@@ -79,9 +77,7 @@ export default function ContactForm(props) {
               name='message'
               className={'art-input' + (formik.values.message ? ' art-active' : '')}
               placeholder='Message'
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.message}
+              {...formik.getFieldProps('message')}
             ></textarea>
             <label for='message'>
               <i className='far fa-envelope'></i>
