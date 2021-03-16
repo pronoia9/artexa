@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import BlogCard from '../components/Blog/BlogCard';
 import data from '../data/blog.json';
 // import Swiper core and required modules
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,6 +10,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
 export default function Blog() {
+  // start autoplay
+  SwiperCore.use([Autoplay]);
   return (
     <div className='container-fluid'>
       {/* row */}
@@ -31,7 +33,39 @@ export default function Blog() {
             spaceBetween={30}
             slidesPerView={3}
             speed={1400}
-            autoplay={4000}
+            autoplay={{ delay: 4000 }}
+            breakpoints={{
+              // when window width is >= 320px
+              320: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              // when window width is >= 480px
+              480: {
+                slidesPerView: 1,
+                spaceBetween: 10,
+              },
+              // when window width is >= 640px
+              640: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              // when window width is >= 992
+              992: {
+                slidesPerView: 2,
+                spaceBetween: 10,
+              },
+              // when window width is >= 1200
+              1200: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+              // when window width is >= 1500
+              1500: {
+                slidesPerView: 3,
+                spaceBetween: 30,
+              },
+            }}
             navigation={{ nextEl: '.art-blog-swiper-next', prevEl: '.art-blog-swiper-prev' }}
             pagination={{ el: '.swiper-pagination', type: 'bullets', clickable: true }}
             onSwiper={(swiper) => console.log(swiper)}

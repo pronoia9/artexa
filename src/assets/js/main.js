@@ -38,10 +38,7 @@ export { formButtonAnimation };
 //     el: '.swiper-pagination',
 //     clickable: true,
 //   },
-//   navigation: {
-//     nextEl: '.art-works-swiper-next',
-//     prevEl: '.art-works-swiper-prev',
-//   },
+
 //   breakpoints: {
 //     1500: {
 //       slidesPerView: 2,
@@ -55,35 +52,6 @@ export { formButtonAnimation };
 //   },
 // });
 
-// // slider blog
-// var swiper = new Swiper('.art-blog-slider', {
-//   slidesPerView: 3,
-//   spaceBetween: 30,
-//   speed: 1400,
-//   autoplay: {
-//     delay: 4000,
-//   },
-//   autoplaySpeed: 5000,
-//   pagination: {
-//     el: '.swiper-pagination',
-//     clickable: true,
-//   },
-//   navigation: {
-//     nextEl: '.art-blog-swiper-next',
-//     prevEl: '.art-blog-swiper-prev',
-//   },
-//   breakpoints: {
-//     1500: {
-//       slidesPerView: 3,
-//     },
-//     1200: {
-//       slidesPerView: 3,
-//     },
-//     992: {
-//       slidesPerView: 1,
-//     },
-//   },
-// });
 
 // $('[data-fancybox="gallery"]').fancybox({
 //   animationEffect: 'zoom-in-out',
