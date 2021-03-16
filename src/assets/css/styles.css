@@ -1856,11 +1856,11 @@ info bar
 .art-form-field textarea:focus {
   border-color: var(--color-primary-0);
 }
-.art-contact-form .art-input:focus {
+.art-form-field .art-input:focus {
   outline: none;
 }
-.art-contact-form .art-input.art-active + label,
-.art-contact-form .art-input:focus + label {
+.art-input.art-active + label,
+.art-input:focus + label {
   background: var(--color-primary-0);
   color: var(--color-text-3);
 }
@@ -1868,7 +1868,7 @@ info bar
   position: relative;
   margin-bottom: 0;
 }
-.art-contact-form label {
+.art-form-field label {
   text-align: center;
   color: var(--color-text-1);
   position: absolute;
@@ -1886,19 +1886,13 @@ info bar
   transition: 0.4s ease-in-out;
   cursor: text;
 }
-label[for~='message'] {
-  background: none;
-}
-textarea:focus label[for~='message'] i {
-  color: var(--color-text-3);
-}
 .art-form-field .art-validation-warning {
   height: 30px;
   padding: 7px;
   /* text-align: center; */
 }
 .art-form-field .art-validation-warning.art-message-validation {
-  padding-top: 0;
+  padding-top: 1px;
 }
 .art-form-field .art-validation-warning span {
   color: var(--color-primary-4);
@@ -1914,10 +1908,10 @@ textarea:focus label[for~='message'] i {
   position: relative;
   z-index: 999;
 }
-.art-submit-frame .art-submit:focus {
+ .art-submit-frame .art-submit:focus {
   outline: inherit;
 }
-.art-submit-frame .art-success {
+ .art-success {
   position: absolute;
   top: 0;
   left: 0;
