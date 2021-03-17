@@ -1,5 +1,4 @@
 import React from 'react';
-import sidebar from '../../../data/sidebar.json';
 
 export default function Resume(props) {
   return (

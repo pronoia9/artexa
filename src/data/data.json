@@ -8,8 +8,8 @@
     },
 
     "about": [
-      { "id": 1, "title": "Nationality", "subtitle": "U.S." },
-      { "id": 2, "title": "Age", "subtitle": "25" }
+      { "id": 1, "title": "Sed non", "subtitle": "Elit aliquet" },
+      { "id": 2, "title": "Aliquam tortor", "subtitle": "Sit amet" }
     ],
 
     "skills": {
