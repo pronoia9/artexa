@@ -22,5 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-/src/assets/images/backgrounds
+/public/media
+/public/images/backgrounds/mac
 /src/assets/js/arter

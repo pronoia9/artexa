@@ -4,7 +4,7 @@ import Banner from '../components/Banner/Banner';
 import Counters from './Counters';
 import History from './History';
 import Projects from './Projects';
-import Test from './Test';
+// import Test from './Test';
 import Contact from './Contact';
 import Blog from './Blog';
 import Warning from './Warning';
@@ -13,6 +13,7 @@ import Scrollbar from 'smooth-scrollbar-react';
 
 export default function Content(props) {
   return (
+    // activate/show curtain (css) if any of the panels are open/active
     <div className={props.navbarActive || props.sidebarActive ? 'art-content art-active' : 'art-content'}>
       {/* curtain */}
       <div
@@ -23,6 +24,7 @@ export default function Content(props) {
         }}
       ></div>
 
+      {/* send the background state from wrapper, which changes dynamically (on input) */}
       <Background background={props.background} setBackground={props.setBackground} />
 
       {/* swup container */}

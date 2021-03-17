@@ -1405,6 +1405,7 @@ info bar
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
   background: var(--color-background-1);
+  display: none;
 }
 
 .art-banner {

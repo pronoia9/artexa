@@ -11,7 +11,13 @@ export default function Banner(props) {
       <div className='row p-60-0 p-lg-30-0 p-md-15-0'>
         <div className='col-lg-12'>
           {/* background image */}
-          <div className='art-a art-banner' style={{ backgroundImage: 'url(' + props.background + ')' }}>
+          <div
+            className='art-a art-banner'
+            //style={{ backgroundImage: 'url(' + props.background.current + ')' }}
+            style={{
+              backgroundImage: 'url(' + process.env.PUBLIC_URL + props.background.current + ')',
+            }}
+          >
             <div className='art-banner-back'></div>
             <div className='art-banner-dec'></div>
             <div className='art-banner-overlay'>
@@ -32,15 +38,22 @@ export default function Banner(props) {
                   <div
                     className='art-btn art-btn-md'
                     style={{ cursor: 'pointer' }}
-                    onClick={() =>
-                      props.setBackground(
-                        banner.backgrounds.unsplash[
-                          Math.floor(Math.random() * banner.backgrounds.unsplash.length)
-                        ]
-                      )
-                    }
+                    onClick={() => {
+                      // to not get the same image, compare it to the index
+                      // if they are the same, randomize it again until its not the same
+                      let i;
+                      do {
+                        i = Math.floor(Math.random() * props.background.total);
+                      } while (i === props.background.index);
+                      // change background after the new image index is different
+                      props.setBackground({
+                        ...props.background,
+                        current: props.background.all[i],
+                        index: i,
+                      });
+                    }}
                   >
-                    <span>Click Me</span>
+                    <span>Beam Me Up Scotty</span>
                   </div>
                 </div>
               </div>

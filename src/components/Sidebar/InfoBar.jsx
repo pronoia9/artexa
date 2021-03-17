@@ -7,7 +7,6 @@ import SoftSkills from './SoftSkills/SoftSkills';
 import Resume from './Resume/Resume';
 import Social from './Social/Social';
 import Scrollbar from 'smooth-scrollbar-react';
-import data from '../../data/sidebar.json';
 
 export default function ArtInfoBar(props) {
   return (
@@ -17,39 +16,42 @@ export default function ArtInfoBar(props) {
       <div className='art-info-bar-frame'>
         {/* info bar header (mobile icon to show/hide sidebar) */}
         <div className='art-info-bar-header'>
-          <div className='art-info-bar-btn' onClick={() => {
-            props.navbarActive && props.setNavbarActive(false);
-            props.setSidebarActive(!props.sidebarActive);
-          }}>
+          <div
+            className='art-info-bar-btn'
+            onClick={() => {
+              props.navbarActive && props.setNavbarActive(false);
+              props.setSidebarActive(!props.sidebarActive);
+            }}
+          >
             <i className='fas fa-ellipsis-v'></i>
           </div>
         </div>
 
         {/* avatar, availability, name, post */}
-        <Profile profile={data.profile} />
+        <Profile profile={props.data.profile} />
 
         <Scrollbar>
           <div className='art-scroll-frame'>
             <div className='scroll-content'>
-              <About about={data.about} />
+              <About about={props.data.about} />
               <div className='art-ls-divider'></div>
               {/* languages, circle bar animation */}
-              <Languages skills={data.skills.languages} />
+              <Languages skills={props.data.skills.languages} />
               <div className='art-ls-divider'></div>
               {/* hard skills, line bar */}
-              <HardSkills skills={data.skills.hard} />
+              <HardSkills skills={props.data.skills.hard} />
               <div className='art-ls-divider'></div>
               {/* soft skills, list */}
-              <SoftSkills skills={data.skills.soft} />
+              <SoftSkills skills={props.data.skills.soft} />
               <div className='art-ls-divider'></div>
               {/* download link for resume */}
-              <Resume resume={data.resume} />
+              <Resume resume={props.data.resume} />
             </div>
           </div>
         </Scrollbar>
 
         {/* social links */}
-        <Social social={data.social} />
+        <Social social={props.data.social} />
       </div>
     </div>
   );

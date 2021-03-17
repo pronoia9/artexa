@@ -1,0 +1,176 @@
+{
+  "sidebar": {
+    "profile": {
+      "name": "Lorem Ipsum",
+      "subtitle": ["Consectetur adipiscing elit,", "Dolor sit amet"],
+      "available": true,
+      "avatar": "/images/bitmoji/smile.png"
+    },
+
+    "about": [
+      { "id": 1, "title": "Nationality", "subtitle": "U.S." },
+      { "id": 2, "title": "Age", "subtitle": "25" }
+    ],
+
+    "skills": {
+      "languages": [
+        { "id": "1", "language": "English", "level": 100 },
+        { "id": "2", "language": "French", "level": 20 }
+      ],
+      "hard": [
+        { "id": "1", "skill": "HTML5", "level": 85 },
+        { "id": "2", "skill": "CSS3", "level": 40 },
+        { "id": "3", "skill": "JavaScript", "level": 70 },
+        { "id": "4", "skill": "ReactJS", "level": 60 },
+        { "id": "5", "skill": "NodeJS", "level": 60 }
+      ],
+      "soft": [
+        "React Hooks, Redux, jQuery",
+        "MySQL, MongoDB, PostgresSQL",
+        "Bootstrap, Material UI, Semantic UI, Wordpress",
+        "Express, EJS, Mongoose, Passport",
+        "Git, GitHub",
+        "Bash, Zsh",
+        "Java, C, C++",
+        "Unreal Engine, 3Ds Max",
+        "Photoshop, Sony VEGAS, Excel"
+      ]
+    },
+
+    "resume": {
+      "text": "Download Resume",
+      "url": "/files/resume.pdf"
+    },
+
+    "social": [
+      {
+        "id": 1,
+        "platform": "github",
+        "favicon": "fab fa-github-square",
+        "url": "https://github.com/"
+      },
+      {
+        "id": 2,
+        "platform": "linkedin",
+        "favicon": "fab fa-linkedin",
+        "url": "https://www.linkedin.com/"
+      },
+      {
+        "id": 3,
+        "platform": "facebook social-unavailable",
+        "favicon": "fab fa-facebook-square",
+        "url": "https://www.facebook.com/"
+      },
+      {
+        "id": 4,
+        "platform": "twitter social-unavailable",
+        "favicon": "fab fa-twitter-square",
+        "url": "https://twitter.com/"
+      },
+      {
+        "id": 5,
+        "platform": "discord social-unavailable",
+        "favicon": "fab fa-discord",
+        "url": "https://discordapp.com/"
+      }
+    ]
+  },
+
+  "navbar": {},
+
+  "backgrounds": {
+    "unsplash": [
+      "https://images.unsplash.com/photo-1610123598147-f632aa18b275?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1778&q=80",
+      "https://images.unsplash.com/photo-1615161275758-3a67e55bc95f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1849&q=80",
+      "https://images.unsplash.com/photo-1493243350443-9e3048ce7288?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1794&q=80",
+      "https://images.unsplash.com/photo-1476231682828-37e571bc172f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1267&q=80",
+      "https://images.unsplash.com/photo-1488441770602-aed21fc49bd5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1498534405718-957b7b84b009?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1502471975172-e7b1ec41fd8b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1502657877623-f66bf489d236?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1567554152125-a1459e23bb69?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1351&q=80",
+      "https://images.unsplash.com/photo-1494253188410-ff0cdea5499e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1611598704441-0c259fa12313?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1443479579455-1860f114bf77?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1473800447596-01729482b8eb?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1507830075634-ce51e8b19328?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1613033402715-e66f36181e46?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1615676893771-94c4d0a2f1ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1547859603-486e748b803d?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1381&q=80",
+      "https://images.unsplash.com/photo-1615656046283-fde27322df20?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1615401318613-4fa7172ca826?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1615378023416-0c0644efa659?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1352&q=80",
+      "https://images.unsplash.com/photo-1610963196817-7d1415647029?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1556634202-129a046351c0?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80",
+      "https://images.unsplash.com/photo-1512270094797-d45489e84533?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80"
+    ],
+    "backgrounds": [
+      "/images/backgrounds/1HwszNsuxXk.jpg",
+      "/images/backgrounds/2K4LmjU7TLs.jpg",
+      "/images/backgrounds/004jX9ALUZU.jpg",
+      "/images/backgrounds/al1bUu7EfAQ.jpg",
+      "/images/backgrounds/b2gyAgjtKn8.jpg",
+      "/images/backgrounds/dhAgfU99RCs.jpg",
+      "/images/backgrounds/E3K4APqoU.jpg",
+      "/images/backgrounds/iBG594vhR1k.jpg",
+      "/images/backgrounds/Jl83cEVFVNc.jpg",
+      "/images/backgrounds/JnXebVlsVrg.jpg",
+      "/images/backgrounds/jWTvMpHhdJY.jpg",
+      "/images/backgrounds/lY86nIeUbQA.jpg",
+      "/images/backgrounds/NUNu43eiLpg.jpg",
+      "/images/backgrounds/nxPhgFBtI4Q.jpg",
+      "/images/backgrounds/OtXJhYjbKeg.jpg",
+      "/images/backgrounds/tdgtqesrmQ.jpg",
+      "/images/backgrounds/TFV9EPdYOaw.jpg",
+      "/images/backgrounds/ubdsod0TXEw.jpg",
+      "/images/backgrounds/Uiec6eDFuH8.jpg",
+      "/images/backgrounds/UtUa7GYW300.jpg",
+      "/images/backgrounds/vDn7bw3awrQ.jpg",
+      "/images/backgrounds/VjRc6HDXJ5s.jpg",
+      "/images/backgrounds/vpZC61rjDzU.jpg",
+      "/images/backgrounds/w68kZc0L69w.jpg",
+      "/images/backgrounds/WJlEug4ng5w.jpg",
+      "/images/backgrounds/wy5QuZMI8V4.jpg",
+      "/images/backgrounds/x0VqbsCaFlw.jpg",
+      "/images/backgrounds/yKfRpwg4pIY.jpg",
+      "/images/backgrounds/ZlJSyJSXSRU.jpg",
+      "/images/backgrounds/Zlx6F3CKcVQ.jpg"
+    ],
+    "animated": [
+      "/images/backgrounds/gifs/analysis.gif",
+      "/images/backgrounds/gifs/calm.gif",
+      "/images/backgrounds/gifs/circuit.gif",
+      "/images/backgrounds/gifs/computer.gif",
+      "/images/backgrounds/gifs/digital.gif",
+      "/images/backgrounds/gifs/eletronic.gif",
+      "/images/backgrounds/gifs/futuristic.gif",
+      "/images/backgrounds/gifs/glitch.gif",
+      "/images/backgrounds/gifs/tunnel.gif",
+      "/images/backgrounds/gifs/golden.gif",
+      "/images/backgrounds/gifs/holgram.gif",
+      "/images/backgrounds/gifs/ink58193.gif",
+      "/images/backgrounds/gifs/ink67354.gif",
+      "/images/backgrounds/gifs/lightning.gif",
+      "/images/backgrounds/gifs/nebula-blue.gif",
+      "/images/backgrounds/gifs/nebula-red.gif",
+      "/images/backgrounds/gifs/night-sky.gif",
+      "/images/backgrounds/gifs/outro.gif",
+      "/images/backgrounds/gifs/plexus.gif"
+    ]
+  },
+
+  "banner": {
+    "heading": ["hi.", "welcome."],
+
+    "typed": [
+      "Hello Wor- No...",
+      "I like to make websites.",
+      "Also web applications.",
+      "I do other stuff as well.",
+      "... but mostly not relevant."
+    ],
+
+    "button": { "text": "beam me up scotty", "url": "" }
+  }
+}
