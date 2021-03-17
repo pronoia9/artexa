@@ -3,6 +3,8 @@ import Project from './Project';
 import ProjectsFilter from './ProjectsFilter';
 
 export default function Projects(props) {
+  const max = 6;
+  let current = 0;
   // state for storing the filter keyword, with an initial value of null, which means no filter is applied
   const [filterKey, setFilterKey] = useState(null);
 
@@ -51,7 +53,8 @@ export default function Projects(props) {
             const { id, dataFilter, href, shape, title, overview, images, details, reviews } = p;
             // if we dont have a filter key, show everything
             if (!filterKey) {
-              if (id < 7) {
+              if (current < max) {
+                current++;
                 return (
                   <Project
                     key={id}
@@ -70,7 +73,7 @@ export default function Projects(props) {
             }
             // if not, return only the items who has the filterkey property
             else if (dataFilter === filterKey) {
-              if (id < 7) {
+              if (current < max) {
                 return (
                   <Project
                     key={id}
@@ -87,9 +90,7 @@ export default function Projects(props) {
                 );
               }
             }
-            return console.log(
-              "Error with filtering projects (or no projects were found under this filter, or I can't make swipe work so I'm using primitive methods to limit the row for projects)."
-            );
+            return;
           })}
         </div>
       </div>

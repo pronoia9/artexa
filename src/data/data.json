@@ -239,376 +239,196 @@
       "projects": [
         {
           "id": 1,
-          "dataFilter": "css",
-          "href": "",
+          "dataFilter": "webApplications",
+          "href": "https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW",
           "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
+          "title": "Todo app",
           "overview": "",
-          "images": [
-            "https://images.unsplash.com/photo-1615554851544-e6249b92a492?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-            "https://images.unsplash.com/photo-1615790629487-63c2a70d491b?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1282&q=80",
-            "https://images.unsplash.com/photo-1525858907241-d230b66fb9fa?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1636&q=80",
-            "https://images.unsplash.com/photo-1615663245857-ac93bb7c39e7?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=802&q=80"
+         "images": [
+            "/images/projects/todo-list_1.jpg",
+            "/images/projects/todo-list_mobile.jpg"
           ],
           "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
+            "description": "",
+            "orderDate": "",
+            "finalDate": "",
+            "status": "",
+            "client": "",
             "location": "",
-            "url": ""
+            "url": "https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW"
           },
           "reviws": []
         },
         {
           "id": 2,
-          "dataFilter": "staticWebsites",
-          "href": "",
+          "dataFilter": "webApplications",
+          "href": "https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM",
           "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "images": [
-            "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
-            "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-            "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
-            "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
+          "title": "Clock app",
+          "overview": "",
+         "images": [
+            "/images/projects/clock-app_1.jpg",
+            "/images/projects/clock-app_2.jpg",
+            "/images/projects/clock-app_mobile_1.jpg",
+            "/images/projects/clock-app_mobile_2.jpg"
           ],
           "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
+            "description": "",
+            "orderDate": "",
+            "finalDate": "",
+            "status": "",
+            "client": "",
             "location": "",
-            "url": ""
+            "url": "https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM"
           },
           "reviws": []
         },
         {
           "id": 3,
-          "dataFilter": "staticWebsites",
-          "href": "",
+          "dataFilter": "webApplications",
+          "href": "https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G",
           "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "title": "Pomodoro app",
+          "overview": "",
           "images": [
-            "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
-            "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-            "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
-            "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
+            "/images/projects/pomodoro_1.jpg",
+            "/images/projects/pomodoro_2.jpg",
+            "/images/projects/pomodoro_mobile_1.jpg",
+            "/images/projects/pomodoro_mobile_1.jpg"
           ],
           "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
+            "description": "",
+            "orderDate": "",
+            "finalDate": "",
+            "status": "",
+            "client": "",
             "location": "",
-            "url": ""
+            "url": "https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G"
           },
           "reviws": []
         },
         {
           "id": 4,
-          "dataFilter": "staticWebsites",
-          "href": "",
+          "dataFilter": "webApplications",
+          "href": "https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-",
           "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "images": [
-            "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
-            "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-            "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
-            "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
-          ],
+          "title": "Launch countdown timer",
+          "overview": "",
+          "images": ["/images/projects/cooldown-timer.jpg", "/images/projects/cooldown-timer_mobile.jpg"],
           "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
+            "description": "",
+            "orderDate": "",
+            "finalDate": "",
+            "status": "",
+            "client": "",
             "location": "",
-            "url": ""
+            "url": "https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-"
           },
           "reviws": []
         },
         {
           "id": 5,
-          "dataFilter": "staticWebsites",
-          "href": "",
+          "dataFilter": "webApplications",
+          "href": "https://www.frontendmentor.io/challenges/dine-restaurant-website-yAt7Vvxt7",
           "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "title": "Dine restaurant website",
+          "overview": "",
           "images": [
-            "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
-            "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-            "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
-            "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
+            "/images/projects/restaurant-website_1.jpg",
+            "/images/projects/restaurant-website_2.jpg",
+            "/images/projects/restaurant-website_mobile.jpg"
           ],
           "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
+            "description": "Your challenge is to build out this 2-page restaurant website and get it looking as close to the design as possible. The download includes mobile, tablet & desktop designs for a Homepage and Booking page. A design system is also included to provide colors, fonts, etc.",
+            "orderDate": "",
+            "finalDate": "",
+            "status": "",
+            "client": "",
             "location": "",
-            "url": ""
+            "url": "https://www.frontendmentor.io/challenges/dine-restaurant-website-yAt7Vvxt7"
           },
           "reviws": []
         },
         {
           "id": 6,
-          "dataFilter": "staticWebsites",
-          "href": "",
+          "dataFilter": "webApplications",
+          "href": "https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH",
           "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "title": "Rock, Paper, Scissors game",
+          "overview": "",
           "images": [
-            "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
-            "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-            "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
-            "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
+            "/images/projects/rock-paper-scissors_1.jpg",
+            "/images/projects/rock-paper-scissors_2.jpg",
+            "/images/projects/rock-paper-scissors_mobile.jpg"
           ],
           "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
+            "description": "Your challenge is to build out this Rock, Paper, Scissors game and get it looking as close to the design as possible.",
+            "orderDate": "",
+            "finalDate": "",
+            "status": "",
+            "client": "",
             "location": "",
-            "url": ""
+            "url": "https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH"
           },
           "reviws": []
         },
         {
           "id": 7,
-          "dataFilter": "staticWebsites",
-          "href": "",
+          "dataFilter": "webApplications",
+          "href": "https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0",
           "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+          "title": "IP Address Tracker",
+          "overview": "",
           "images": [
-            "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
-            "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-            "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
-            "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
+            "/images/projects/ip-address-tracker.jpg",
+            "/images/projects/ip-address-tracker_mobile.jpg"
           ],
           "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
+            "description": "Your challenge is to build out this IP Address Tracker app and get it looking as close to the design as possible. To get the IP Address locations, you'll be using the IP Geolocation API by IPify. To generate the map, we recommend using LeafletJS.",
+            "orderDate": "",
+            "finalDate": "",
+            "status": "",
+            "client": "",
             "location": "",
-            "url": ""
+            "url": "https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0"
           },
           "reviws": []
         },
         {
           "id": 8,
-          "dataFilter": "staticWebsites",
-          "href": "",
+          "dataFilter": "webApplications",
+          "href": "https://www.frontendmentor.io/challenges/github-jobs-api-93L-NL6rP",
           "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "images": [
-            "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
-            "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-            "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
-            "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
-          ],
+          "title": "GitHub Jobs API",
+          "overview": "",
+          "images": ["/images/projects/github-jobs.jpg", "/images/projects/github-jobs_mobile.jpg"],
           "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
+            "description": "Your challenge is to build out this job board using the GitHub Jobs API data and get it looking as close to the design as possible. You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.",
+            "orderDate": "",
+            "finalDate": "",
+            "status": "",
+            "client": "",
             "location": "",
-            "url": ""
+            "url": "https://www.frontendmentor.io/challenges/github-jobs-api-93L-NL6rP"
           },
           "reviws": []
         },
         {
           "id": 9,
-          "dataFilter": "staticWebsites",
-          "href": "",
+          "dataFilter": "webApplications",
+          "href": "https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca",
           "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "images": [
-            "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
-            "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-            "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
-            "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
-          ],
+          "title": "REST Countries API with color theme switcher",
+          "overview": "",
+          "images": ["images/projects/rest-countries.jpg", "/images/projects/rest-countries_mobile.jpg"],
           "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
+            "description": "Your challenge is to integrate with the REST Countries API to pull country data and display it like in the designs. You can use any JavaScript framework/library on the front-end such as React or Vue. You also have complete control over which packages you use to do things like make HTTP requests or style your project.",
+            "orderDate": "",
+            "finalDate": "",
+            "status": "",
+            "client": "",
             "location": "",
-            "url": ""
-          },
-          "reviws": []
-        },
-        {
-          "id": 10,
-          "dataFilter": "staticWebsites",
-          "href": "",
-          "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "images": [
-            "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
-            "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-            "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
-            "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
-          ],
-          "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
-            "location": "",
-            "url": ""
-          },
-          "reviws": []
-        },
-        {
-          "id": 11,
-          "dataFilter": "staticWebsites",
-          "href": "",
-          "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "images": [
-            "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
-            "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-            "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
-            "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
-          ],
-          "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
-            "location": "",
-            "url": ""
-          },
-          "reviws": []
-        },
-        {
-          "id": 12,
-          "dataFilter": "staticWebsites",
-          "href": "",
-          "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "images": [
-            "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
-            "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-            "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
-            "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
-          ],
-          "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
-            "location": "",
-            "url": ""
-          },
-          "reviws": []
-        },
-        {
-          "id": 13,
-          "dataFilter": "staticWebsites",
-          "href": "",
-          "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "images": [
-            "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
-            "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-            "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
-            "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
-          ],
-          "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
-            "location": "",
-            "url": ""
-          },
-          "reviws": []
-        },
-        {
-          "id": 14,
-          "dataFilter": "staticWebsites",
-          "href": "",
-          "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "images": [
-            "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
-            "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-            "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
-            "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
-          ],
-          "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
-            "location": "",
-            "url": ""
-          },
-          "reviws": []
-        },
-        {
-          "id": 15,
-          "dataFilter": "staticWebsites",
-          "href": "",
-          "shape": "square",
-          "height": "",
-          "title": "Lorem Ipsum",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-          "images": [
-            "https://images.unsplash.com/photo-1613406328782-23305286af33?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=772&q=80",
-            "https://images.unsplash.com/photo-1606318801954-d46d46d3360a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80",
-            "https://images.unsplash.com/photo-1566709603547-638aba3dbbc0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1653&q=80",
-            "https://images.unsplash.com/photo-1543472750-506bacbf5808?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80"
-          ],
-          "details": {
-            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut arcu sit amet felis elementum feugiat. Ut id erat consectetur, condimentum turpis at, imperdiet neque. Quisque convallis eget sem eget luctus. Duis quis nisl tortor. Vestibulum nec mi imperdiet, hendrerit justo eu, mattis nisi. Maecenas diam lacus, rhoncus eget eros eu, vestibulum porttitor felis. In sit amet velit ullamcorper, tristique quam vel, faucibus eros. Donec lectus sapien, tristique ut porta blandit, molestie vel nulla. Suspendisse ac tincidunt felis, id dapibus tellus. Aliquam cursus, ante et semper volutpat, tortor magna lobortis leo, maximus laoreet tellus arcu ac erat.",
-            "orderDate": "24/12/2019",
-            "finalDate": "12/03/2020",
-            "status": "Completed",
-            "client": "Envato Market",
-            "location": "",
-            "url": ""
+            "url": "https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca"
           },
           "reviws": []
         }
@@ -1058,42 +878,34 @@
       "posts": [
         {
           "id": 1,
-          "title": "Blog post title",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet!",
+          "title": "VSCode settings",
+          "overview": "Operator Mono, custom colors, custom ligatures, etc.",
           "url": "",
-          "image": "https://images.unsplash.com/photo-1505314392404-ddf214ad93f2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
+          "image": "/images/blog/vscode_settings.jpeg",
           "publication": { "date": "", "author": "", "category": "", "content": "" }
         },
         {
           "id": 2,
-          "title": "Blog post title",
+          "title": "VSCode extensions",
           "overview": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet!",
           "url": "",
-          "image": "https://images.unsplash.com/photo-1505314392404-ddf214ad93f2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
+          "image": "/images/blog/vscode_extensions.png",
           "publication": { "date": "", "author": "", "category": "", "content": "" }
         },
         {
           "id": 3,
-          "title": "Blog post title",
+          "title": "Atom packages",
           "overview": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet!",
           "url": "",
-          "image": "https://images.unsplash.com/photo-1505314392404-ddf214ad93f2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
+          "image": "/images/blog/atom-packages.jpg",
           "publication": { "date": "", "author": "", "category": "", "content": "" }
         },
         {
           "id": 4,
-          "title": "Blog post title",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet!",
-          "url": "",
-          "image": "https://images.unsplash.com/photo-1505314392404-ddf214ad93f2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
-          "publication": { "date": "", "author": "", "category": "", "content": "" }
-        },
-        {
-          "id": 5,
-          "title": "Blog post title",
-          "overview": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet!",
-          "url": "",
-          "image": "https://images.unsplash.com/photo-1505314392404-ddf214ad93f2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80",
+          "title": "Arter - CV Resume Portfolio",
+          "overview": "Arter is an modern and unique creative HTML Template.",
+          "url": "https://themeforest.net/item/arter-cv-resume-portfolio-web-app-template/27008333",
+          "image": "/images/blog/arter.jfif",
           "publication": { "date": "", "author": "", "category": "", "content": "" }
         }
       ]
