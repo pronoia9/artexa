@@ -22,7 +22,7 @@ export default function Project(props) {
         <div className='mb-15'>
           {/* {props.overview} */}
           {props.tags.map((t) => (
-            <span className='art-tag'>{t}</span>
+            <p className='art-tag'>{t}</p>
           ))}
         </div>
 

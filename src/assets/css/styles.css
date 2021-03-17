@@ -72,6 +72,7 @@
   --color-text-2: #646466;
   --color-text-3: #20202a;
   --color-text-4: #1e1e28;
+  --color-text-5: #121217;
 
   --color-background-0: #191923;
   --color-background-1: #1e1e28e0;
@@ -837,9 +838,7 @@ blockquote:after {
   padding-right: 0;
 }
 
-/* ------------------------------
-info bar
------------------------------- */
+/* ------------------------------ info bar ------------------------------ */
 .art-info-bar {
   padding: 0 15px;
   /* ----- header ----- */
@@ -847,6 +846,7 @@ info bar
   /* ----- language skills ----- */
   /* ----- hard skills ----- */
   /* ----- knowledge ----- */
+  /* ----- strengths ----- */
   /* ----- info bar links ----- */
   /* ----- social links ----- */
 }
@@ -1143,6 +1143,20 @@ info bar
   transform-origin: center;
   transition: transform 0.5s;
   stroke: var(--color-primary-1);
+}
+
+.art-info-bar .art-strengths p {
+  display: inline-block;
+  color: var(--color-text-1);
+  background: var(--color-text-5);
+  padding: 3px 10px;
+  border-radius: 15px;
+  box-shadow: inset 0 3px 8px 0 var(--color-box-shadow-0);
+  font-size: 10px;
+  margin-right: 3px;
+}
+.art-info-bar .art-strengths p:hover {
+  color: var(--color-primary-2);
 }
 
 /* ------------------------------ menu bar ------------------------------ */
@@ -2134,14 +2148,19 @@ footer a:hover {
 .art-grid .art-grid-item:hover .art-item-description {
   transform: translateY(0);
 }
-.art-grid .art-grid-item .art-item-description .art-tag {
+.art-grid .art-grid-item .art-item-description p.art-tag {
+  display: inline-block;
   color: var(--color-text-1);
   background: var(--color-text-3);
   padding: 3px 12px;
   border-radius: 15px;
   box-shadow: inset 0 3px 8px 0 var(--color-box-shadow-0);
   font-size: 10px;
-  margin-right: 3px;
+  margin: 0 5px;
+  margin-left: 0;
+}
+.art-grid .art-grid-item .art-item-description p.art-tag:hover {
+  color: var(--color-primary-2);
 }
 .art-grid.art-grid-2-col .art-grid-item {
   width: 50%;

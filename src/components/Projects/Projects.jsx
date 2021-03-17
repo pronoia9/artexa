@@ -90,7 +90,7 @@ export default function Projects(props) {
                 );
               }
             }
-            return;
+            return <></>;
           })}
         </div>
       </div>

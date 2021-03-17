@@ -4,6 +4,7 @@ import About from './About/About';
 import Languages from './Languages/Languages';
 import HardSkills from './HardSkills/HardSkills';
 import SoftSkills from './SoftSkills/SoftSkills';
+import Strengths from './Strengths/Strengths';
 import Resume from './Resume/Resume';
 import Social from './Social/Social';
 import Scrollbar from 'smooth-scrollbar-react';
@@ -43,6 +44,9 @@ export default function ArtInfoBar(props) {
               <div className='art-ls-divider'></div>
               {/* soft skills, list */}
               <SoftSkills skills={props.data.skills.soft} />
+              <div className='art-ls-divider'></div>
+              {/* strengths */}
+              <Strengths data={props.data.strengths} />
               <div className='art-ls-divider'></div>
               {/* download link for resume */}
               <Resume resume={props.data.resume} />
