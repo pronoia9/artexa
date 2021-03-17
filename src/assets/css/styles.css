@@ -1469,6 +1469,11 @@ blockquote:after {
     var(--color-primary-4)
   );
   background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -ms-background-clip: text;
+  -o-background-clip: text;
+  background-clip: text;
   background-clip: text;
   transition: transform 0.5s;
 }
