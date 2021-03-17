@@ -50,7 +50,7 @@ export default function Projects(props) {
         {/* project items  */}
         <div className='art-grid art-grid-3-col art-gallery'>
           {props.data.projects.map((p) => {
-            const { id, dataFilter, href, shape, title, overview, images, details, reviews } = p;
+            const { id, dataFilter, href, shape, title, tags, images, details, reviews } = p;
             // if we dont have a filter key, show everything
             if (!filterKey) {
               if (current < max) {
@@ -63,7 +63,7 @@ export default function Projects(props) {
                     href={href}
                     shape={shape}
                     title={title}
-                    overview={overview}
+                    tags={tags}
                     images={images}
                     details={details}
                     reviews={reviews}
@@ -82,7 +82,7 @@ export default function Projects(props) {
                     href={href}
                     shape={shape}
                     title={title}
-                    overview={overview}
+                    tags={tags}
                     images={images}
                     details={details}
                     reviews={reviews}

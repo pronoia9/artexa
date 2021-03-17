@@ -6,10 +6,10 @@ export default function Project(props) {
       {/* project image */}
       <a
         data-fancybox='gallery'
-        href={props.images[0]}
+        href={process.env.PUBLIC_URL + props.images[0]}
         className={'art-a art-portfolio-item-frame art-' + props.shape}
       >
-        <img src={props.images[0]} alt='item'></img>
+        <img src={process.env.PUBLIC_URL + props.images[0]} alt='item'></img>
         <span className='art-item-hover'>
           <i className='fas fa-expand'></i>
         </span>
@@ -19,10 +19,15 @@ export default function Project(props) {
       <div className='art-item-description'>
         {/* title */}
         <h5 className='mb-15'>{props.title}</h5>
-        {props.description !== '' && <div className='mb-15'>{props.overview}</div>}
+        <div className='mb-15'>
+          {/* {props.overview} */}
+          {props.tags.map((t) => (
+            <span className='art-tag'>{t}</span>
+          ))}
+        </div>
 
         {/* link */}
-        <a href='#.' className='art-link art-color-link art-w-chevron'>
+        <a href={props.url} className='art-link art-color-link art-w-chevron'>
           Read More
         </a>
       </div>

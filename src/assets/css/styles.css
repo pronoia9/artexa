@@ -286,24 +286,25 @@ blockquote:after {
   margin-bottom: 10px;
   color: var(--color-text-1);
   transition: 0.4s ease-in-out;
+  cursor: pointer;
 }
 .art-link:hover {
   color: var(--color-text-0);
   text-shadow: 0 0 3px var(--color-text-shadow-0);
 }
 .art-link.art-white-link {
-  color: var(--color-text-0);
+  color: var(--color-text-0) !important;
 }
 .art-link.art-white-link:hover {
-  color: var(--color-text-0);
+  color: var(--color-text-0) !important;
   text-shadow: 0 0 3px var(--color-text-shadow-0);
   transform: translateX(5px);
 }
 .art-link.art-color-link {
-  color: var(--color-primary-0);
+  color: var(--color-primary-0) !important;
 }
 .art-link.art-color-link:hover {
-  color: var(--color-primary-1);
+  color: var(--color-primary-1) !important;
   text-shadow: 0 0 3px var(--color-text-shadow-0);
   transform: translateX(5px);
 }
@@ -2118,8 +2119,6 @@ footer a:hover {
   height: auto;
   padding: 0 15px;
 }
-.art-grid .art-grid-item:nth-child(4) {
-}
 .art-grid .art-grid-item .art-item-description {
   position: absolute;
   z-index: 9;
@@ -2134,6 +2133,15 @@ footer a:hover {
 }
 .art-grid .art-grid-item:hover .art-item-description {
   transform: translateY(0);
+}
+.art-grid .art-grid-item .art-item-description .art-tag {
+  color: var(--color-text-1);
+  background: var(--color-text-3);
+  padding: 3px 12px;
+  border-radius: 15px;
+  box-shadow: inset 0 3px 8px 0 var(--color-box-shadow-0);
+  font-size: 10px;
+  margin-right: 3px;
 }
 .art-grid.art-grid-2-col .art-grid-item {
   width: 50%;
