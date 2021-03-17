@@ -1,8 +1,7 @@
 import React from 'react';
-import banner from '../../data/banner.json';
 import Typed from 'react-typed';
 
-export default function Code() {
+export default function Code(props) {
   return (
     <div className='art-lg-text art-code mb-25'>
       &lt;<i>code</i>&gt;{' '}
@@ -10,7 +9,7 @@ export default function Code() {
         loop
         typeSpeed={100}
         backSpeed={25}
-        strings={banner.typed}
+        strings={props.typed}
         smartBackspace
         shuffle={false}
         backDelay={1}

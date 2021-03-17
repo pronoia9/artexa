@@ -1,9 +1,5 @@
 import React from 'react';
 import Code from './Code';
-import banner from '../../data/banner.json';
-const pfp = require('../../assets/images/bitmoji/side-wave.png').default;
-
-// TODO: get a png to use as a banner profile image
 
 export default function Banner(props) {
   return (
@@ -24,20 +20,23 @@ export default function Banner(props) {
               <div className='art-banner-title'>
                 {/* title */}
                 <h1 className='mb-15'>
-                  {banner.heading.map((h) => (
+                  {props.data.heading.map((h) => (
                     <div key={h}>{h}</div>
                   ))}
                 </h1>
+
                 {/* typed text */}
-                <Code />
+                <Code typed={props.data.typed} />
+                
+                {/* button */}
                 <div className='art-buttons-frame'>
-                  {/* button */}
-                  {/* <a href={banner.button.url} className='art-btn art-btn-md'>
-                    <span>{banner.button.text}</span>
+                  {/* button v1 (an actual button) */}
+                  {/* <a href={props.data.button.url} className='art-btn art-btn-md'>
+                    <span>{props.data.button.text}</span>
                   </a> */}
+                  {/* button v2 (a div with onclick) */}
                   <div
-                    className='art-btn art-btn-md'
-                    style={{ cursor: 'pointer' }}
+                    className='art-btn art-btn-md btn-v2'
                     onClick={() => {
                       // to not get the same image, compare it to the index
                       // if they are the same, randomize it again until its not the same
@@ -53,12 +52,16 @@ export default function Banner(props) {
                       });
                     }}
                   >
-                    <span>Beam Me Up Scotty</span>
+                    <span>{props.data.button.text}</span>
                   </div>
                 </div>
               </div>
               {/* avatar */}
-              <img src={pfp} className='art-banner-photo' alt='Banner Profile'></img>
+              <img
+                src={process.env.PUBLIC_URL + props.data.avatar}
+                className='art-banner-photo'
+                alt='Banner Profile'
+              ></img>
             </div>
           </div>
         </div>

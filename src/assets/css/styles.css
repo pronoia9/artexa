@@ -386,6 +386,9 @@ blockquote:after {
   transform: translateY(-2px);
   color: var(--color-text-4);
 }
+.btn-v2 {
+  cursor: pointer;
+}
 
 /* ------------------------------ space ------------------------------ */
 .p-30-0 {
@@ -952,7 +955,7 @@ info bar
 }
 .art-info-bar .art-header .art-avatar .art-lamp-light .art-available-lamp:after {
   position: relative;
-  content: 'I\'m available for hire';
+  content: "I'm available for hire";
   width: 115px;
   display: block;
   padding: 5px 10px;

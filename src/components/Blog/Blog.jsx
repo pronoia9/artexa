@@ -1,6 +1,5 @@
 import React from 'react';
-import BlogCard from '../components/Blog/BlogCard';
-import data from '../data/blog.json';
+import BlogCard from './BlogCard';
 // import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 
@@ -9,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, A11y]);
 
-export default function Blog() {
+export default function Blog(props) {
   // start autoplay
   SwiperCore.use([Autoplay]);
   return (
@@ -71,7 +70,7 @@ export default function Blog() {
             // onSwiper={(swiper) => console.log(swiper)}
             // onSlideChange={() => console.log('slide change')}
           >
-            {data.posts.map((p) => (
+            {props.data.posts.map((p) => (
               <SwiperSlide key={p.id} className='swiper-slide'>
                 <BlogCard
                   key={p.id}
@@ -100,7 +99,11 @@ export default function Blog() {
               {/* slider navigation */}
               <div className='art-slider-nav-frame'>
                 {/* prev */}
-                <div className='art-slider-nav art-blog-swiper-prev' role='button' aria-label='Previous slide'>
+                <div
+                  className='art-slider-nav art-blog-swiper-prev'
+                  role='button'
+                  aria-label='Previous slide'
+                >
                   <i className='fas fa-chevron-left'></i>
                 </div>
                 {/* next */}

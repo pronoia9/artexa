@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import Project from '../components/Projects/Project';
-import ProjectsFilter from '../components/Projects/ProjectsFilter';
-import projects from '../data/projects.json';
+import Project from './Project';
+import ProjectsFilter from './ProjectsFilter';
 
-export default function Projects() {
+export default function Projects(props) {
   // state for storing the filter keyword, with an initial value of null, which means no filter is applied
   const [filterKey, setFilterKey] = useState(null);
 
@@ -21,7 +20,7 @@ export default function Projects() {
             {/* right frame (filter options) */}
             <div className='art-right-frame'>
               <div className='art-filter'>
-                {projects.filter.map((d) => {
+                {props.data.filter.map((d) => {
                   const { id, category, dataFilter } = d;
                   let className = '';
                   // if the current filterkey matches the filyer types key
@@ -48,7 +47,7 @@ export default function Projects() {
 
         {/* project items  */}
         <div className='art-grid art-grid-3-col art-gallery'>
-          {projects.projects.map((p) => {
+          {props.data.projects.map((p) => {
             const { id, dataFilter, href, shape, title, overview, images, details, reviews } = p;
             // if we dont have a filter key, show everything
             if (!filterKey) {
@@ -89,7 +88,7 @@ export default function Projects() {
               }
             }
             return console.log(
-              "Error with filtering projects (It's possible no projects were found under this filter)."
+              "Error with filtering projects (or no projects were found under this filter, or I can't make swipe work so I'm using primitive methods to limit the row for projects)."
             );
           })}
         </div>

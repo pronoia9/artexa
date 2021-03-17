@@ -1,17 +1,18 @@
 import React from 'react';
-import Background from '../components/Banner/Background';
+import Background from '../components/Background';
 import Banner from '../components/Banner/Banner';
-import Counters from './Counters';
-import History from './History';
-import Projects from './Projects';
+import Counters from '../components/Counter/Counters';
+import History from '../components/History/History';
+import Projects from '../components/Projects/Projects';
 // import Test from './Test';
-import Contact from './Contact';
-import Blog from './Blog';
-import Warning from './Warning';
-import Footer from './Footer';
+import Contact from '../components/Contact/Contact';
+import Blog from '../components/Blog/Blog';
+import Logos from '../components/Logos/Logos';
+import Footer from '../components/Footer';
 import Scrollbar from 'smooth-scrollbar-react';
 
 export default function Content(props) {
+  console.log(props);
   return (
     // activate/show curtain (css) if any of the panels are open/active
     <div className={props.navbarActive || props.sidebarActive ? 'art-content art-active' : 'art-content'}>
@@ -34,28 +35,28 @@ export default function Content(props) {
           <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
             <div className='scroll-content'>
               {/* heading for banner */}
-              <Banner background={props.background} setBackground={props.setBackground} />
+              <Banner background={props.background} setBackground={props.setBackground} data={props.data.banner} />
 
               {/* counters */}
-              <Counters />
+              <Counters data={props.data.counters} />
 
               {/* education history */}
-              <History />
+              <History data={props.data.history} />
 
               {/* projects */}
-              <Projects />
+              <Projects data={props.data.projects} />
               {/* <Test /> */}
 
               {/* activities */}
 
               {/* contact info */}
-              <Contact />
+              <Contact data={props.data.contact} />
 
               {/* newsletter / posts */}
-              <Blog />
+              <Blog data={props.data.blog} />
 
               {/* warning */}
-              <Warning />
+              <Logos data={props.data.logos} />
 
               {/* footer */}
               <Footer />

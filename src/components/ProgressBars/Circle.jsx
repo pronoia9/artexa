@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { progressbarCircle } from './progressbar.js';
+import { progressbarCircle } from '../../assets/js/main.js';
 
 export default function Circle(props) {
   // circle bar animation

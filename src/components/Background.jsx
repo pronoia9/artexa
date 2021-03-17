@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Banner(props) {
+export default function Background(props) {
   return (
     //top background
     <div

@@ -19,7 +19,6 @@ export default function Wrapper() {
     current: data.backgrounds.animated[i],
     index: i,
   });
-  console.log(background);
   return (
     <div>
       <div className='art-mobile-top-bar'></div>
@@ -34,7 +33,7 @@ export default function Wrapper() {
             setSidebarActive={setSidebarActive}
           />
           <Home
-            data={data}
+            data={data.main}
             navbarActive={navbarActive}
             setNavbarActive={setNavbarActive}
             sidebarActive={sidebarActive}
