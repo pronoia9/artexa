@@ -15,6 +15,7 @@ import './assets/css/styles.css';
 export default function App() {
   return (
     <div className='art-app'>
+      {/* separated sections to not have preloader render every time theres an update */}
       <Wrapper />
       <Preloader />
     </div>
