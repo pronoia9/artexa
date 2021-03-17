@@ -1,24 +1,63 @@
-import React from 'react';
-import Preloader from './components/Preloader/Preloader';
-import Wrapper from './Wrapper';
-// stylesheets
-import './assets/css/colors/yellow.css';
-import './assets/css/styles.css';
-
-// fancybox
-import './assets/css/fancybox.min.css';
-// swiper
-import 'swiper/swiper.scss';
-import 'swiper/components/navigation/navigation.scss';
-import 'swiper/components/pagination/pagination.scss';
-import 'swiper/components/scrollbar/scrollbar.scss';
+import React, { useState } from 'react';
+// side panels
+import InfoBar from './components/Sidebar/InfoBar';
+import Navbar from './components/Navbar/Navbar';
+// pages
+import HomePage from './views/HomePage';
+import ProjectsPage from './views/ProjectsPage';
+import HistoryPage from './views/HistoryPage';
+import ContactPage from './views/ContactPage';
+import BlogPage from './views/BlogPage';
+// data
+import data from './data/data.json';
 
 export default function App() {
+  // sliding for left side panel
+  const [sidebarActive, setSidebarActive] = useState(false);
+
+  // sliding for right side menu
+  const [navbarActive, setNavbarActive] = useState(false);
+
+  let i = Math.floor(Math.random() * data.backgrounds.animated.length);
+  // current background image (gets a image link)
+  const [background, setBackground] = useState({
+    all: data.backgrounds.animated,
+    total: data.backgrounds.animated.length,
+    current: data.backgrounds.animated[i],
+    index: i,
+  });
+
   return (
-    <div className='art-app'>
-      {/* separated sections to not have preloader render every time theres an update */}
-      <Wrapper />
-      <Preloader />
+    <div>
+      <div className='art-mobile-top-bar'></div>
+
+      <div className='art-app-wrapper'>
+        <div className='art-app-container'>
+          <InfoBar
+            data={data.sidebar}
+            navbarActive={navbarActive}
+            setNavbarActive={setNavbarActive}
+            sidebarActive={sidebarActive}
+            setSidebarActive={setSidebarActive}
+          />
+          <HomePage
+            data={data.main}
+            navbarActive={navbarActive}
+            setNavbarActive={setNavbarActive}
+            sidebarActive={sidebarActive}
+            setSidebarActive={setSidebarActive}
+            background={background}
+            setBackground={setBackground}
+          />
+          <Navbar
+            data={data.navbar}
+            navbarActive={navbarActive}
+            setNavbarActive={setNavbarActive}
+            sidebarActive={sidebarActive}
+            setSidebarActive={setSidebarActive}
+          />
+        </div>
+      </div>
     </div>
   );
 }

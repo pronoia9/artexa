@@ -10,7 +10,7 @@ import Contact from '../components/Contact/Contact';
 import Blog from '../components/Blog/Blog';
 import Footer from '../components/Footer';
 
-export default function Content(props) {
+export default function HomePage(props) {
   return (
     // activate/show curtain (css) if any of the panels are open/active
     <div className={props.navbarActive || props.sidebarActive ? 'art-content art-active' : 'art-content'}>
