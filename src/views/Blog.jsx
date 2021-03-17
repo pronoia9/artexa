@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import BlogCard from '../components/Blog/BlogCard';
 import data from '../data/blog.json';
 // import Swiper core and required modules
-import SwiperCore, { Navigation, Pagination, Scrollbar, A11y, Autoplay } from 'swiper';
+import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // install Swiper modules
-SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
+SwiperCore.use([Navigation, Pagination, A11y]);
 
 export default function Blog() {
   // start autoplay
@@ -15,7 +15,7 @@ export default function Blog() {
   return (
     <div className='container-fluid'>
       {/* row */}
-      <div className='row'>
+      <div className='row p-30-0'>
         {/* heading */}
         <div className='col-lg-12'>
           {/* title */}
@@ -68,11 +68,11 @@ export default function Blog() {
             }}
             navigation={{ nextEl: '.art-blog-swiper-next', prevEl: '.art-blog-swiper-prev' }}
             pagination={{ el: '.swiper-pagination', type: 'bullets', clickable: true }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log('slide change')}
+            // onSwiper={(swiper) => console.log(swiper)}
+            // onSlideChange={() => console.log('slide change')}
           >
             {data.posts.map((p) => (
-              <SwiperSlide className='swiper-slide'>
+              <SwiperSlide key={p.id} className='swiper-slide'>
                 <BlogCard
                   key={p.id}
                   id={p.id}
@@ -100,21 +100,11 @@ export default function Blog() {
               {/* slider navigation */}
               <div className='art-slider-nav-frame'>
                 {/* prev */}
-                <div
-                  className='art-slider-nav art-blog-swiper-prev'
-                  role='button'
-                  aria-label='Previous slide'
-                  aria-disabled={true}
-                >
+                <div className='art-slider-nav art-blog-swiper-prev' role='button' aria-label='Previous slide'>
                   <i className='fas fa-chevron-left'></i>
                 </div>
                 {/* next */}
-                <div
-                  className='art-slider-nav art-blog-swiper-next'
-                  role='button'
-                  aria-label='Next slide'
-                  aria-disabled={true}
-                >
+                <div className='art-slider-nav art-blog-swiper-next' role='button' aria-label='Next slide'>
                   <i className='fas fa-chevron-right'></i>
                 </div>
               </div>

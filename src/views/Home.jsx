@@ -4,6 +4,7 @@ import Banner from '../components/Banner/Banner';
 import Counters from './Counters';
 import History from './History';
 import Projects from './Projects';
+import Test from './Test';
 import Contact from './Contact';
 import Blog from './Blog';
 import Warning from './Warning';
@@ -40,12 +41,13 @@ export default function Content(props) {
               <History />
 
               {/* projects */}
-              {/* <Projects /> */}
+              <Projects />
+              {/* <Test /> */}
 
               {/* activities */}
 
               {/* contact info */}
-              {/* <Contact /> */}
+              <Contact />
 
               {/* newsletter / posts */}
               <Blog />

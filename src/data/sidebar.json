@@ -2,8 +2,8 @@
   "profile": {
     "name": "Lorem Ipsum",
     "subtitle": ["Consectetur adipiscing elit,", "Dolor sit amet"],
-    "availability": "Available",
-    "avatar": "../../../assets/images/bitmoji/smile.png"
+    "available": true,
+    "avatar": "/images/bitmoji/smile.png"
   },
 
   "about": [
@@ -38,7 +38,7 @@
 
   "resume": {
     "text": "Download Resume",
-    "url": "https://www.dropbox.com/s/fe57nbhnms25xmo/Resume.pdf?dl=1"
+    "url": "/files/resume.pdf"
   },
 
   "social": [

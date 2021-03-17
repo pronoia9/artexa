@@ -52,37 +52,41 @@ export default function Projects() {
             const { id, dataFilter, href, shape, title, overview, images, details, reviews } = p;
             // if we dont have a filter key, show everything
             if (!filterKey) {
-              return (
-                <Project
-                  key={id}
-                  id={id}
-                  dataFilter={dataFilter}
-                  href={href}
-                  shape={shape}
-                  title={title}
-                  overview={overview}
-                  images={images}
-                  details={details}
-                  reviews={reviews}
-                />
-              );
+              if (id < 7) {
+                return (
+                  <Project
+                    key={id}
+                    id={id}
+                    dataFilter={dataFilter}
+                    href={href}
+                    shape={shape}
+                    title={title}
+                    overview={overview}
+                    images={images}
+                    details={details}
+                    reviews={reviews}
+                  />
+                );
+              }
             }
             // if not, return only the items who has the filterkey property
             else if (dataFilter === filterKey) {
-              return (
-                <Project
-                  key={id}
-                  id={id}
-                  dataFilter={dataFilter}
-                  href={href}
-                  shape={shape}
-                  title={title}
-                  overview={overview}
-                  images={images}
-                  details={details}
-                  reviews={reviews}
-                />
-              );
+              if (id < 7) {
+                return (
+                  <Project
+                    key={id}
+                    id={id}
+                    dataFilter={dataFilter}
+                    href={href}
+                    shape={shape}
+                    title={title}
+                    overview={overview}
+                    images={images}
+                    details={details}
+                    reviews={reviews}
+                  />
+                );
+              }
             }
             return console.log(
               "Error with filtering projects (It's possible no projects were found under this filter)."

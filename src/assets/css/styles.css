@@ -952,7 +952,7 @@ info bar
 }
 .art-info-bar .art-header .art-avatar .art-lamp-light .art-available-lamp:after {
   position: relative;
-  content: 'I am available for freelance hire';
+  content: 'I\'m available for hire';
   width: 115px;
   display: block;
   padding: 5px 10px;
@@ -1002,7 +1002,7 @@ info bar
   background: red;
 }
 .art-info-bar .art-header .art-avatar .art-lamp-light.art-not-available .art-available-lamp:after {
-  content: "Sorry I'm busy today";
+  content: "Sorry, I'm no longer available.";
 }
 .art-info-bar .art-name {
   color: var(--color-text-0);

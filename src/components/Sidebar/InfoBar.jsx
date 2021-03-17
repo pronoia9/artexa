@@ -7,6 +7,7 @@ import SoftSkills from './SoftSkills/SoftSkills';
 import Resume from './Resume/Resume';
 import Social from './Social/Social';
 import Scrollbar from 'smooth-scrollbar-react';
+import data from '../../data/sidebar.json';
 
 export default function ArtInfoBar(props) {
   return (
@@ -25,30 +26,30 @@ export default function ArtInfoBar(props) {
         </div>
 
         {/* avatar, availability, name, post */}
-        <Profile />
+        <Profile profile={data.profile} />
 
         <Scrollbar>
           <div className='art-scroll-frame'>
             <div className='scroll-content'>
-              <About />
+              <About about={data.about} />
               <div className='art-ls-divider'></div>
               {/* languages, circle bar animation */}
-              <Languages />
+              <Languages skills={data.skills.languages} />
               <div className='art-ls-divider'></div>
               {/* hard skills, line bar */}
-              <HardSkills />
+              <HardSkills skills={data.skills.hard} />
               <div className='art-ls-divider'></div>
               {/* soft skills, list */}
-              <SoftSkills />
+              <SoftSkills skills={data.skills.soft} />
               <div className='art-ls-divider'></div>
               {/* download link for resume */}
-              <Resume />
+              <Resume resume={data.resume} />
             </div>
           </div>
         </Scrollbar>
 
         {/* social links */}
-        <Social />
+        <Social social={data.social} />
       </div>
     </div>
   );

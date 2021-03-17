@@ -1,10 +1,9 @@
 import React from 'react';
-import sidebar from '../../../data/sidebar.json';
 
-export default function Post() {
+export default function Post(props) {
   return (
     <div className='art-sm-text'>
-      {sidebar.profile.subtitle.map((s) => (
+      {props.subtitle.map((s) => (
         <div key={s}>{s}</div>
       ))}
     </div>

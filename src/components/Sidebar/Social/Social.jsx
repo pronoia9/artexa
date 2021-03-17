@@ -1,11 +1,10 @@
 import React from 'react';
 import SocialIcon from './SocialIcon';
-import sidebar from '../../../data/sidebar.json';
 
-export default function Social() {
+export default function Social(props) {
   return (
     <div className='art-ls-social'>
-      {sidebar.social.map((s) => (
+      {props.social.map((s) => (
         <SocialIcon key={s.id} platform={s.platform} url={s.url} favicon={s.favicon} />
       ))}
     </div>
