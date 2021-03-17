@@ -1,4 +1,5 @@
 import React from 'react';
+import Scrollbar from 'smooth-scrollbar-react';
 import Background from '../components/Background';
 import Banner from '../components/Banner/Banner';
 import Counters from '../components/Counter/Counters';
@@ -7,12 +8,9 @@ import Projects from '../components/Projects/Projects';
 // import Test from './Test';
 import Contact from '../components/Contact/Contact';
 import Blog from '../components/Blog/Blog';
-import Logos from '../components/Logos/Logos';
 import Footer from '../components/Footer';
-import Scrollbar from 'smooth-scrollbar-react';
 
 export default function Content(props) {
-  console.log(props);
   return (
     // activate/show curtain (css) if any of the panels are open/active
     <div className={props.navbarActive || props.sidebarActive ? 'art-content art-active' : 'art-content'}>
@@ -35,7 +33,11 @@ export default function Content(props) {
           <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
             <div className='scroll-content'>
               {/* heading for banner */}
-              <Banner background={props.background} setBackground={props.setBackground} data={props.data.banner} />
+              <Banner
+                background={props.background}
+                setBackground={props.setBackground}
+                data={props.data.banner}
+              />
 
               {/* counters */}
               <Counters data={props.data.counters} />
@@ -45,7 +47,7 @@ export default function Content(props) {
 
               {/* projects */}
               <Projects data={props.data.projects} />
-              {/* <Test /> */}
+              {/* <Test data={props.data.projects} /> */}
 
               {/* activities */}
 
@@ -55,11 +57,8 @@ export default function Content(props) {
               {/* newsletter / posts */}
               <Blog data={props.data.blog} />
 
-              {/* warning */}
-              <Logos data={props.data.logos} />
-
               {/* footer */}
-              <Footer />
+              <Footer data={props.data.logos} />
             </div>
           </div>
         </Scrollbar>

@@ -1,7 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import Project from '../components/Projects/Project';
-import ProjectsFilter from '../components/Projects/ProjectsFilter';
-import projects from '../data/projects.json';
+import Project from './Project';
+import ProjectsFilter from './ProjectsFilter';
 import './test.css';
 
 // import Swiper core and required modules
@@ -12,7 +12,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, A11y]);
 
-export default function Test() {
+export default function Test(props) {
   // state for storing the filter keyword, with an initial value of null, which means no filter is applied
   const [filterKey, setFilterKey] = useState(null);
 
@@ -30,7 +30,7 @@ export default function Test() {
             {/* right frame (filter options) */}
             <div className='art-right-frame test'>
               <div className='art-filter test'>
-                {projects.filter.map((d) => {
+                {props.data.filter.map((d) => {
                   const { id, category, dataFilter } = d;
                   let className = '';
                   // if the current filterkey matches the filyer types key
