@@ -63,30 +63,35 @@
         "id": 1,
         "platform": "github",
         "favicon": "fab fa-github-square",
+        "fancybox": null,
         "url": "https://github.com/"
       },
       {
         "id": 2,
         "platform": "linkedin",
         "favicon": "fab fa-linkedin",
+        "fancybox": null,
         "url": "https://www.linkedin.com/"
       },
       {
         "id": 3,
         "platform": "facebook social-unavailable",
         "favicon": "fab fa-facebook-square",
+        "fancybox": null,
         "url": "https://www.facebook.com/"
       },
       {
         "id": 4,
-        "platform": "twitter social-unavailable",
-        "favicon": "fab fa-twitter-square",
-        "url": "https://twitter.com/"
+        "platform": "snapchat",
+        "favicon": "fab fa-snapchat-square",
+        "fancybox": "snapchat",
+        "url": "/images/bitmoji/snapchat.png"
       },
       {
         "id": 5,
         "platform": "discord social-unavailable",
         "favicon": "fab fa-discord",
+        "fancybox": null,
         "url": "https://discordapp.com/"
       }
     ]
@@ -188,7 +193,7 @@
               "date": "May 2016 - May 2019",
               "content": "This three-year advanced diploma program provided me with the skills and knowledge to begin my career as a developer. I learned programming languages, program design and system analysis. Web concepts were integrated into all the courses to develop active database web programs on a variety of operating systems. Advanced techniques were taught through professional option courses.",
               "link": "Diploma",
-              "url": "src/assets/images/certificates/certificate1.png"
+              "url": "/images/certificates/certificate1.png"
             }
           ]
         },
@@ -203,7 +208,7 @@
               "date": "March 2021 - Ongoing",
               "content": "",
               "link": "Certificate",
-              "url": "src/assets/images/certificates/certificate2.png"
+              "url": "/images/certificates/certificate2.png"
             },
             {
               "id": 2,
@@ -212,7 +217,7 @@
               "date": "Feb 2021 - March 2021",
               "content": " The course was a taught by the lead instructor at the App Brewery, London's leading in-person programming bootcamp.",
               "link": "Certificate",
-              "url": "%PUBLIC_URL%/src/assets/images/certificates/certificate3.png"
+              "url": "/images/certificates/certificate3.png"
             }
           ]
         }

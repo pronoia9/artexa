@@ -27,7 +27,13 @@ export default function EducationHistory(props) {
         <p>{props.content}</p>
 
         {/* link */}
-        <a data-fancybox={props.link} className='art-link art-color-link art-w-chevron' href={props.url}>{props.link}</a>
+        <a
+          data-fancybox='history'
+          className='art-link art-color-link art-w-chevron'
+          href={process.env.PUBLIC_URL + props.url}
+        >
+          {props.link}
+        </a>
       </div>
     </div>
   );

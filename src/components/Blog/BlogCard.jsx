@@ -4,7 +4,7 @@ export default function BlogCard(props) {
   return (
     <div className='art-a art-blog-card'>
       {/* post cover */}
-      <a href='/' className='art-port-cover'><img src={props.image} alt='post' /></a>
+      <a href={props.url} className='art-port-cover'><img src={process.env.PUBLIC_URL + props.image} alt='post' /></a>
 
       {/* post description */}
       <div className='art-post-description'>
@@ -15,7 +15,7 @@ export default function BlogCard(props) {
         {/* text */}
         <div className='mb-15'>{props.overview}</div>
         {/* link */}
-        <a href='/' className='art-link art-color-link art-w-chevron'>Read More</a>
+        <a href={props.url} className='art-link art-color-link art-w-chevron'>Read More</a>
       </div>
     </div>
   );
