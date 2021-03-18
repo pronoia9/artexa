@@ -23,6 +23,7 @@ export default function NavbarListItem(props) {
               setNavbarActive={props.setNavbarActive}
               currentPage={props.currentPage}
               setCurrentPage={props.setCurrentPage}
+              active={active}
               setActive={setActive}
             />
           ))}
@@ -54,7 +55,7 @@ export default function NavbarListItem(props) {
           else {
             props.setNavbarActive(false);
             props.setCurrentPage(props.item.title);
-            props.setActive(false);
+            if (active) {props.setActive(false);}
           }
         }}
       >
