@@ -70,31 +70,31 @@ export default function App() {
                   <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
                     <div className='scroll-content'>
                       <Switch>
-                        <Route path='/projects-2-col'>
+                        <Route exact path='/projects-2-col'>
                           <ProjectsPage data={data.main.projects} column={2} />
                         </Route>
 
-                        <Route path='/projects-3-col'>
+                        <Route exact path='/projects-3-col'>
                           <ProjectsPage data={data.main.projects} column={3} />
                         </Route>
 
-                        <Route path='/history'>
+                        <Route exact path='/history'>
                           <HistoryPage data={data.main.history} />
                         </Route>
 
-                        <Route path='/contact'>
+                        <Route exact path='/contact'>
                           <ContactPage data={data.main.contact} />
                         </Route>
 
-                        <Route path='/blog-2-col'>
+                        <Route exact path='/blog-2-col'>
                           <BlogPage data={data.main.blog} column={2} />
                         </Route>
 
-                        <Route path='/blog-3-col'>
+                        <Route exact path='/blog-3-col'>
                           <BlogPage data={data.main.blog} column={3} />
                         </Route>
 
-                        <Route path='/'>
+                        <Route exact path='/'>
                           <HomePage
                             data={data.main}
                             background={background}
