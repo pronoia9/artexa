@@ -49,13 +49,11 @@ export default function HomePage(props) {
               <Projects data={props.data.projects} />
               {/* <Test data={props.data.projects} /> */}
 
-              {/* activities */}
+              {/* newsletter / posts */}
+              <Blog data={props.data.blog} />
 
               {/* contact info */}
               <Contact data={props.data.contact} />
-
-              {/* newsletter / posts */}
-              <Blog data={props.data.blog} />
 
               {/* footer */}
               <Footer data={props.data.logos} />
