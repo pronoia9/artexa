@@ -6,7 +6,6 @@ import Preloader from './components/Preloader/Preloader';
 // stylesheets
 import './assets/css/colors/yellow.css';
 import './assets/css/styles.css';
-
 // fancybox
 import './assets/css/fancybox.min.css';
 // swiper
