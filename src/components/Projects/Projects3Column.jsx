@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Project from './Project';
+import ProjectCard from './ProjectCard';
 import ProjectsFilter from './ProjectsFilter';
 
-export default function ProjectsSwiper(props) {
+export default function Projects3Column(props) {
   // state for storing the filter keyword, with an initial value of null, which means no filter is applied
   const [filterKey, setFilterKey] = useState(null);
 
@@ -13,10 +13,6 @@ export default function ProjectsSwiper(props) {
         <div className='col-lg-12'>
           {/* section title */}
           <div className='art-section-title'>
-            {/* title frame */}
-            <div className='art-title-frame'>
-              <h4>Projects</h4>
-            </div>
             {/* right frame (filter options) */}
             <div className='art-right-frame'>
               <div className='art-filter'>
@@ -52,7 +48,7 @@ export default function ProjectsSwiper(props) {
             // if we dont have a filter key, show everything
             if (!filterKey) {
               return (
-                <Project
+                <ProjectCard
                   key={id}
                   id={id}
                   dataFilter={dataFilter}
@@ -69,7 +65,7 @@ export default function ProjectsSwiper(props) {
             // if not, return only the items who has the filterkey property
             else if (dataFilter === filterKey) {
               return (
-                <Project
+                <ProjectCard
                   key={id}
                   id={id}
                   dataFilter={dataFilter}

@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-router-dom';
 import Scrollbar from 'smooth-scrollbar-react';
 // bg
 import Background from './components/Background';
@@ -25,8 +24,8 @@ export default function App() {
   // sliding for right side menu
   const [navbarActive, setNavbarActive] = useState(false);
 
-  let i = Math.floor(Math.random() * data.backgrounds.animated.length);
   // current background image (gets a image link)
+  let i = Math.floor(Math.random() * data.backgrounds.animated.length);
   const [background, setBackground] = useState({
     all: data.backgrounds.animated,
     total: data.backgrounds.animated.length,
@@ -35,7 +34,7 @@ export default function App() {
   });
 
   return (
-    <div>
+    <div className='art-app'>
       <div className='art-mobile-top-bar'></div>
 
       <div className='art-app-wrapper'>
@@ -47,74 +46,77 @@ export default function App() {
             sidebarActive={sidebarActive}
             setSidebarActive={setSidebarActive}
           />
+          <BrowserRouter>
+            {/* body (content area, middle section) */}
+            {/* activate/show curtain (css) if any of the panels are open/active */}
+            <div className={navbarActive || sidebarActive ? 'art-content art-active' : 'art-content'}>
+              {/* curtain */}
+              <div
+                className='art-curtain'
+                onClick={() => {
+                  navbarActive && setNavbarActive(false);
+                  sidebarActive && setSidebarActive(false);
+                }}
+              ></div>
+              {/* send the background state from wrapper, which changes dynamically (on input) */}
+              <Background background={background} setBackground={setBackground} />
 
-          {/* body (content area, middle section) */}
-          {/* activate/show curtain (css) if any of the panels are open/active */}
-          <div className={navbarActive || sidebarActive ? 'art-content art-active' : 'art-content'}>
-            {/* curtain */}
-            <div
-              className='art-curtain'
-              onClick={() => {
-                navbarActive && setNavbarActive(false);
-                sidebarActive && setSidebarActive(false);
-              }}
-            ></div>
-            {/* send the background state from wrapper, which changes dynamically (on input) */}
-            <Background background={background} setBackground={setBackground} />
-            {/* swup container */}
-            <div className='transition-fade'>
-              {/* scroll frame */}
-              <Scrollbar>
-                <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
-                  <div className='scroll-content'>
-                    {/* DIFFERENT TYPES OF PAGES WILL BE HERE */}
-                    <Switch>
-                      <Route path='/projects'>
-                        <ProjectsPage data={data.main.projects} />
-                      </Route>
+              {/* swup container */}
+              <div className='transition-fade swup' id='swup'>
+                {/* scroll frame */}
+                <Scrollbar>
+                  <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
+                    <div className='scroll-content'>
+                      <Switch>
+                        <Route path='/projects-2-col'>
+                          <ProjectsPage data={data.main.projects} column={2} />
+                        </Route>
 
-                      <Route path='/history'>
-                        <HistoryPage data={data.main.history} />
-                      </Route>
+                        <Route path='/projects-3-col'>
+                          <ProjectsPage data={data.main.projects} column={3} />
+                        </Route>
 
-                      <Route path='/contact'>
-                        <ContactPage data={data.main.contact} />
-                      </Route>
+                        <Route path='/history'>
+                          <HistoryPage data={data.main.history} />
+                        </Route>
 
-                      {/* TODO: CHANGE BLOG PAGE TO 2 or 3 COLUMNS */}
-                      <Route path='/blog'>
-                        <BlogPage data={data.main.blog} />
-                      </Route>
+                        <Route path='/contact'>
+                          <ContactPage data={data.main.contact} />
+                        </Route>
 
-                      <Route path='/'>
-                        <HomePage data={data.main} background={background} setBackground={setBackground} />
-                      </Route>
-                    </Switch>
+                        <Route path='/blog-2-col'>
+                          <BlogPage data={data.main.blog} column={2} />
+                        </Route>
 
-                    {/* footer */}
-                    <Footer data={data.main.logos} />
+                        <Route path='/blog-3-col'>
+                          <BlogPage data={data.main.blog} column={3} />
+                        </Route>
+
+                        <Route path='/'>
+                          <HomePage
+                            data={data.main}
+                            background={background}
+                            setBackground={setBackground}
+                          />
+                        </Route>
+                      </Switch>
+
+                      {/* footer */}
+                      <Footer data={data.main.logos} />
+                    </div>
                   </div>
-                </div>
-              </Scrollbar>
+                </Scrollbar>
+              </div>
             </div>
-          </div>
 
-          {/* <HomePage
-            data={data.main}
-            navbarActive={navbarActive}
-            setNavbarActive={setNavbarActive}
-            sidebarActive={sidebarActive}
-            setSidebarActive={setSidebarActive}
-            background={background}
-            setBackground={setBackground}
-          /> */}
-          <Navbar
-            data={data.navbar}
-            navbarActive={navbarActive}
-            setNavbarActive={setNavbarActive}
-            sidebarActive={sidebarActive}
-            setSidebarActive={setSidebarActive}
-          />
+            <Navbar
+              data={data.navbar}
+              navbarActive={navbarActive}
+              setNavbarActive={setNavbarActive}
+              sidebarActive={sidebarActive}
+              setSidebarActive={setSidebarActive}
+            />
+          </BrowserRouter>
         </div>
       </div>
     </div>

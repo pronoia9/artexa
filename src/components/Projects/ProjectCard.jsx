@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Project(props) {
+export default function ProjectCard(props) {
   return (
     <div className={'art-grid-item ' + props.dataFilter}>
       {/* project image */}

@@ -97,9 +97,25 @@
     ]
   },
 
-  "navbar": {
-    "list": ["Home", "Portfolio", "History", "Contact", "Blog"]
-  },
+  "navbar": [
+    { "title": "Home", "subMenu": false, "path": "/" },
+    {
+      "title": "Portfolio",
+      "subMenu": [
+        { "title": "Portfolio", "subtitle": "2 Column", "path": "/projects-2-col" },
+        { "title": "Portfolio", "subtitle": "3 Column", "path": "/projects-3-col" }
+      ]
+    },
+    { "title": "History", "subMenu": false, "path": "/history" },
+    {
+      "title": "Blog",
+      "subMenu": [
+        { "title": "Blog", "subtitle": "2 Column", "path": "/blog-2-col" },
+        { "title": "Blog", "subtitle": "3 Column", "path": "/blog-3-col" }
+      ]
+    },
+    { "title": "Contact", "subMenu": false, "path": "/contact" }
+  ],
 
   "backgrounds": {
     "static": [
@@ -191,7 +207,9 @@
               "title": "The Complete Web Developer",
               "subtitle": "by Andrei Neagoie, Senior Software Developer",
               "date": "March 2021 - Ongoing",
-              "content": ["Cras orci ipsum, euismod fermentum eleifend a, consectetur vitae nisl. Cras ut mattis diam, at tristique augue."],
+              "content": [
+                "Cras orci ipsum, euismod fermentum eleifend a, consectetur vitae nisl. Cras ut mattis diam, at tristique augue."
+              ],
               "link": "Certificate",
               "url": "/images/certificates/certificate2.png"
             },
@@ -209,7 +227,9 @@
               "title": "Seneca College",
               "subtitle": "Student",
               "date": "May 2016 - May 2019",
-              "content": ["Curabitur a quam magna. Nulla mi sem, porttitor sit amet suscipit at, blandit eget arcu. Mauris mattis arcu turpis, et pretium elit ultrices vitae."],
+              "content": [
+                "Curabitur a quam magna. Nulla mi sem, porttitor sit amet suscipit at, blandit eget arcu. Mauris mattis arcu turpis, et pretium elit ultrices vitae."
+              ],
               "link": "Diploma",
               "url": "/images/certificates/certificate1.png"
             }
@@ -224,7 +244,9 @@
               "title": "Nullam et Eros",
               "subtitle": "Participant",
               "date": "May 2017",
-              "content": ["Eu ipsum ultrices tincidunt. Donec eu risus et risus iaculis aliquet ut ac diam. Donec maximus eros a molestie eleifend. Sed aliquam et nulla sit amet ornare."],
+              "content": [
+                "Eu ipsum ultrices tincidunt. Donec eu risus et risus iaculis aliquet ut ac diam. Donec maximus eros a molestie eleifend. Sed aliquam et nulla sit amet ornare."
+              ],
               "link": "Aliquam",
               "url": "https://www.lipsum.com/"
             },
@@ -233,7 +255,9 @@
               "title": "Destination Imagination",
               "subtitle": "Participant",
               "date": "April 2013",
-              "content": ["Destination Imagination (DI) is a global educational nonprofit dedicated to inspiring the next generation of innovators, leaders and creative problem solvers."],
+              "content": [
+                "Destination Imagination (DI) is a global educational nonprofit dedicated to inspiring the next generation of innovators, leaders and creative problem solvers."
+              ],
               "link": "Website",
               "url": "https://www.destinationimagination.org/about/"
             },
@@ -242,7 +266,9 @@
               "title": "Caretakers of the Environment",
               "subtitle": "Volunteer",
               "date": "August 2012",
-              "content": ["The CEI is an independent organization established in 1986, embracing secondary school students, teachers and mentors, whose interests are focused specifically on the issues of environmental protection, promoting education, shaping awarness and training within sustainable development."],
+              "content": [
+                "The CEI is an independent organization established in 1986, embracing secondary school students, teachers and mentors, whose interests are focused specifically on the issues of environmental protection, promoting education, shaping awarness and training within sustainable development."
+              ],
               "link": "Website",
               "url": "https://www.caretakers4all.org/"
             }

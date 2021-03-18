@@ -54,6 +54,18 @@ function loading() {
   );
   bar.animate(1);
 }
+// ----------------------------- TRANSITION ----------------------------- //
+function transition() {
+  anime({
+    targets: '.transition-fade',
+    opacity: [0, 1],
+    scale: [0, 1],
+    delay: 250,
+    endDelay: 250,
+    duration: 1000,
+    easing: 'easeOutExpo',
+  });
+}
 
 //----------------------------- PROGRESSBARS -----------------------------//
 function progressbarCircle(i, id, percent) {
@@ -119,4 +131,4 @@ function formButtonAnimation() {
   return true;
 }
 
-export { loading, progressbarCircle, progressbarLine, counterAnimation, formButtonAnimation };
+export { loading, transition, progressbarCircle, progressbarLine, counterAnimation, formButtonAnimation };

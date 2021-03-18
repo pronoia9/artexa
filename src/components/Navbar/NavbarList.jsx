@@ -1,19 +1,20 @@
 import React from 'react';
+import NavbarListItem from './NavbarListItem';
 
-export default function ScrellFrame() {
+export default function NavbarList(props) {
   return (
     <div className='art-scroll-frame'>
       <nav id='swupMenu' data-swup='1'>
         <ul className='main-menu'>
-          <li className='menu-item current-menu-item'>
-            <a href='/'>Home</a>
-          </li>
-          <li className='menu-item'>
-            <a href='/'>History</a>
-          </li>
-          <li className='menu-item'>
-            <a href='/'>Education</a>
-          </li>
+          {props.data.map((li) => (
+            <NavbarListItem
+              key={li.title}
+              item={li}
+              setNavbarActive={props.setNavbarActive}
+              currentPage={props.currentPage}
+              setCurrentPage={props.setCurrentPage}
+            />
+          ))}
         </ul>
       </nav>
     </div>
