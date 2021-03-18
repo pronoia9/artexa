@@ -5,7 +5,7 @@ import { transition } from '../assets/js/main.js';
 
 export default function ContactPage(props) {
   // body section transition (soft fade in)
-  useEffect(transition, []);
+  //useEffect(transition, []);
 
   return <Contact data={props.data} />;
 }

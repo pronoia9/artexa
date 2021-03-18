@@ -19,7 +19,7 @@ import 'swiper/components/scrollbar/scrollbar.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-    {/* <Preloader /> */}
+    <Preloader />
     <App />
   </React.StrictMode>,
   document.getElementById('root')

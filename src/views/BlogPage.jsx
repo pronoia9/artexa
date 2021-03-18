@@ -7,7 +7,7 @@ import { transition } from '../assets/js/main.js';
 
 export default function BlogPage(props) {
   // body section transition (soft fade in)
-  useEffect(transition, []);
+  //useEffect(transition, []);
 
   return <Blog data={props.data} />;
 }

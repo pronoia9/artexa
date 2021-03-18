@@ -5,7 +5,7 @@ import { transition } from '../assets/js/main.js';
 
 export default function HistoryPage(props) {
   // body section transition (soft fade in)
-  useEffect(transition, []);
+  //useEffect(transition, []);
 
   return <History data={props.data} />;
 }

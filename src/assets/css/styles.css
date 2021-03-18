@@ -2510,9 +2510,10 @@ footer a:hover {
 
 /* ----- in animation ----- */
 .transition-fade {
-  opacity: 0;
+  /* opacity: 0; */
   /* transform: scale(0.1); */
-  /* transition: 0.55s ease-in-out; */
+  transition: 0.55s ease-in-out;
+  opacity: 1;
 }
 .transition-fade .art-a {
   transform: scale(1);

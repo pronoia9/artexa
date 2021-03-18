@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-router-dom';
 import Scrollbar from 'smooth-scrollbar-react';
-import { PageTransition } from '@steveeeie/react-page-transition';
 // bg
 import Background from './components/Background';
 // side panels
@@ -17,6 +16,8 @@ import ContactPage from './views/ContactPage';
 import Footer from './components/Footer';
 // data
 import data from './data/data.json';
+// transition animation
+import 'react-tiger-transition/styles/main.min.css';
 
 export default function App() {
   // sliding for left side panel
