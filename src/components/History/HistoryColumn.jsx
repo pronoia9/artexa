@@ -1,7 +1,7 @@
 import React from 'react';
-import EducationHistory from './EducationHistory';
+import EducationHistory from './HistoryItem';
 
-export default function Education(props) {
+export default function HistoryColumn(props) {
   return (
     // half screen panel
     <div className='col-lg-6'>

@@ -1,5 +1,5 @@
 import React from 'react';
-import Education from './Education';
+import Education from './HistoryColumn';
 
 export default function History(props) {
   return (

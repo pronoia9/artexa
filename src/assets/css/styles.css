@@ -1083,7 +1083,7 @@ blockquote:after {
   margin-right: 10px;
 }
 .art-info-bar .art-knowledge-list li:hover::before {
-  color: var(--color-primary-1);
+  color: var(--color-primary-2);
 }
 .art-info-bar .art-links-frame {
   display: flex;

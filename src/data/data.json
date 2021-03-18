@@ -187,26 +187,11 @@
           "type": "Education",
           "history": [
             {
-              "id": 1,
-              "title": "Seneca College",
-              "subtitle": "Student",
-              "date": "May 2016 - May 2019",
-              "content": "This three-year advanced diploma program provided me with the skills and knowledge to begin my career as a developer. I learned programming languages, program design and system analysis. Web concepts were integrated into all the courses to develop active database web programs on a variety of operating systems. Advanced techniques were taught through professional option courses.",
-              "link": "Diploma",
-              "url": "/images/certificates/certificate1.png"
-            }
-          ]
-        },
-        {
-          "id": 2,
-          "type": "Certificates",
-          "history": [
-            {
-              "id": 1,
+              "id": 3,
               "title": "The Complete Web Developer",
               "subtitle": "by Andrei Neagoie, Senior Software Developer",
               "date": "March 2021 - Ongoing",
-              "content": "",
+              "content": ["Cras orci ipsum, euismod fermentum eleifend a, consectetur vitae nisl. Cras ut mattis diam, at tristique augue."],
               "link": "Certificate",
               "url": "/images/certificates/certificate2.png"
             },
@@ -215,9 +200,51 @@
               "title": "Web Development Bootcamp",
               "subtitle": "by Dr. Angela Yu, Developer and Lead Instructor",
               "date": "Feb 2021 - March 2021",
-              "content": " The course was a taught by the lead instructor at the App Brewery, London's leading in-person programming bootcamp.",
+              "content": ["Pellentesque et dolor ut ligula faucibus interdum a non tellus."],
               "link": "Certificate",
               "url": "/images/certificates/certificate3.png"
+            },
+            {
+              "id": 1,
+              "title": "Seneca College",
+              "subtitle": "Student",
+              "date": "May 2016 - May 2019",
+              "content": ["Curabitur a quam magna. Nulla mi sem, porttitor sit amet suscipit at, blandit eget arcu. Mauris mattis arcu turpis, et pretium elit ultrices vitae."],
+              "link": "Diploma",
+              "url": "/images/certificates/certificate1.png"
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "type": "Activities",
+          "history": [
+            {
+              "id": 3,
+              "title": "Nullam et Eros",
+              "subtitle": "Participant",
+              "date": "May 2017",
+              "content": ["Eu ipsum ultrices tincidunt. Donec eu risus et risus iaculis aliquet ut ac diam. Donec maximus eros a molestie eleifend. Sed aliquam et nulla sit amet ornare."],
+              "link": "Aliquam",
+              "url": "https://www.lipsum.com/"
+            },
+            {
+              "id": 2,
+              "title": "Destination Imagination",
+              "subtitle": "Participant",
+              "date": "April 2013",
+              "content": ["Destination Imagination (DI) is a global educational nonprofit dedicated to inspiring the next generation of innovators, leaders and creative problem solvers."],
+              "link": "Website",
+              "url": "https://www.destinationimagination.org/about/"
+            },
+            {
+              "id": 1,
+              "title": "Caretakers of the Environment",
+              "subtitle": "Volunteer",
+              "date": "August 2012",
+              "content": ["The CEI is an independent organization established in 1986, embracing secondary school students, teachers and mentors, whose interests are focused specifically on the issues of environmental protection, promoting education, shaping awarness and training within sustainable development."],
+              "link": "Website",
+              "url": "https://www.caretakers4all.org/"
             }
           ]
         }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function EducationHistory(props) {
+export default function HistoryItem(props) {
   return (
     <div className='art-timeline-item'>
       {/* decoration, the circle lights next to the item */}
@@ -24,7 +24,9 @@ export default function EducationHistory(props) {
         </div>
 
         {/* content */}
-        <p>{props.content}</p>
+        {props.content.map((c) => (
+          <p key={c}>{c}</p>
+        ))}
 
         {/* link */}
         <a
