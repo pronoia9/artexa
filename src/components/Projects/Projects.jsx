@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import Project from './Project';
 import ProjectsFilter from './ProjectsFilter';
 
-export default function Projects(props) {
-  const max = 6;
-  let current = 0;
+export default function ProjectsSwiper(props) {
   // state for storing the filter keyword, with an initial value of null, which means no filter is applied
   const [filterKey, setFilterKey] = useState(null);
 
@@ -53,42 +51,37 @@ export default function Projects(props) {
             const { id, dataFilter, href, shape, title, tags, images, details, reviews } = p;
             // if we dont have a filter key, show everything
             if (!filterKey) {
-              if (current < max) {
-                current++;
-                return (
-                  <Project
-                    key={id}
-                    id={id}
-                    dataFilter={dataFilter}
-                    href={href}
-                    shape={shape}
-                    title={title}
-                    tags={tags}
-                    images={images}
-                    details={details}
-                    reviews={reviews}
-                  />
-                );
-              }
+              return (
+                <Project
+                  key={id}
+                  id={id}
+                  dataFilter={dataFilter}
+                  href={href}
+                  shape={shape}
+                  title={title}
+                  tags={tags}
+                  images={images}
+                  details={details}
+                  reviews={reviews}
+                />
+              );
             }
             // if not, return only the items who has the filterkey property
             else if (dataFilter === filterKey) {
-              if (current < max) {
-                return (
-                  <Project
-                    key={id}
-                    id={id}
-                    dataFilter={dataFilter}
-                    href={href}
-                    shape={shape}
-                    title={title}
-                    tags={tags}
-                    images={images}
-                    details={details}
-                    reviews={reviews}
-                  />
-                );
-              }
+              return (
+                <Project
+                  key={id}
+                  id={id}
+                  dataFilter={dataFilter}
+                  href={href}
+                  shape={shape}
+                  title={title}
+                  tags={tags}
+                  images={images}
+                  details={details}
+                  reviews={reviews}
+                />
+              );
             }
             return <></>;
           })}

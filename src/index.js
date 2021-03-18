@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Preloader from './components/Preloader/Preloader';
@@ -16,13 +17,15 @@ import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <div className='art-app'>
-      {/* separated sections to not have preloader on render once */}
-      <App />
-      <Preloader />
-    </div>
-  </React.StrictMode>,
+  <BrowserRouter>
+    <React.StrictMode>
+      <div className='art-app'>
+        {/* separated sections to not have preloader on render once */}
+        <App />
+        <Preloader />
+      </div>
+    </React.StrictMode>
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

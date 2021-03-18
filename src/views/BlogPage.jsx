@@ -1,36 +1,8 @@
 import React from 'react';
-import Scrollbar from 'smooth-scrollbar-react';
 import Blog from '../components/Blog/Blog';
-import Footer from '../components/Footer';
+
+// TODO : change this page to 2 column (or 3 column) 
 
 export default function BlogPage(props) {
-  return (
-    // activate/show curtain (css) if any of the panels are open/active
-    <div className={props.navbarActive || props.sidebarActive ? 'art-content art-active' : 'art-content'}>
-      {/* curtain */}
-      <div
-        className='art-curtain'
-        onClick={() => {
-          props.navbarActive && props.setNavbarActive(false);
-          props.sidebarActive && props.setSidebarActive(false);
-        }}
-      ></div>
-
-      {/* swup container */}
-      <div className='transition-fade'>
-        {/* scroll frame */}
-        <Scrollbar>
-          <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
-            <div className='scroll-content'>
-              {/* newsletter / posts */}
-              <Blog data={props.data.blog} />
-
-              {/* footer */}
-              <Footer data={props.data.logos} />
-            </div>
-          </div>
-        </Scrollbar>
-      </div>
-    </div>
-  );
+  return <Blog data={props.data} />;
 }
