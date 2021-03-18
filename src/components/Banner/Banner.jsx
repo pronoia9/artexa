@@ -9,10 +9,7 @@ export default function Banner(props) {
           {/* background image */}
           <div
             className='art-a art-banner'
-            //style={{ backgroundImage: 'url(' + props.background.current + ')' }}
-            style={{
-              backgroundImage: 'url(' + process.env.PUBLIC_URL + props.background.current + ')',
-            }}
+            style={{ backgroundImage: 'url(' + process.env.PUBLIC_URL + props.background.current + ')' }}
           >
             <div className='art-banner-back'></div>
             <div className='art-banner-dec'></div>
@@ -27,7 +24,7 @@ export default function Banner(props) {
 
                 {/* typed text */}
                 <Code typed={props.data.typed} />
-                
+
                 {/* button */}
                 <div className='art-buttons-frame'>
                   {/* button v1 (an actual button) */}
