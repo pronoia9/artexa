@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route, BrowserRouter } from 'react-router-dom';
 import Scrollbar from 'smooth-scrollbar-react';
+import { PageTransition } from '@steveeeie/react-page-transition';
 // bg
 import Background from './components/Background';
 // side panels

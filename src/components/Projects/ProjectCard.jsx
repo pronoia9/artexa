@@ -22,7 +22,7 @@ export default function ProjectCard(props) {
         <div className='mb-15'>
           {/* {props.overview} */}
           {props.tags.map((t) => (
-            <p className='art-tag'>{t}</p>
+            <p key={t} className='art-tag'>{t}</p>
           ))}
         </div>
 

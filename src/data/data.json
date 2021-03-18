@@ -279,29 +279,6 @@
       "work": [{ "title": "", "subtitle": "", "date": "", "content": "", "link": "", "url": "" }]
     },
 
-    "activities": {
-      "activities": [
-        {
-          "id": 3,
-          "title": "Destination Imagination",
-          "subtitle": "Participant",
-          "date": "April 2013",
-          "content": "Destination Imagination (DI) is a global educational nonprofit dedicated to inspiring the next generation of innovators, leaders and creative problem solvers.",
-          "link": "Website",
-          "url": "https://www.destinationimagination.org/about/"
-        },
-        {
-          "id": 3,
-          "title": "Caretakers of the Environment",
-          "subtitle": "Volunteer",
-          "date": "August 2012",
-          "content": "The CEI is an independent organization established in 1986, embracing secondary school students, teachers and mentors, whose interests are focused specifically on the issues of environmental protection, promoting education, shaping awarness and training within sustainable development.",
-          "link": "Website",
-          "url": "https://www.caretakers4all.org/"
-        }
-      ]
-    },
-
     "projects": {
       "filter": [
         { "id": 1, "category": "All Categories", "dataFilter": null },
