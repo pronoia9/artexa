@@ -15,8 +15,6 @@ import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 
-// TODO: fix preloader so it doesnt render with every redirection
-
 ReactDOM.render(
   <React.StrictMode>
     <Preloader />
