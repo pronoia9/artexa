@@ -266,7 +266,7 @@
       "projects": [
         {
           "id": 1,
-          "dataFilter": "webApplications",
+          "dataFilter": ["webApplications"],
           "href": "https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW",
           "shape": "square",
           "title": "Todo app",
@@ -285,7 +285,7 @@
         },
         {
           "id": 2,
-          "dataFilter": "webApplications",
+          "dataFilter": ["webApplications"],
           "href": "https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM",
           "shape": "square",
           "title": "Clock app",
@@ -309,7 +309,7 @@
         },
         {
           "id": 3,
-          "dataFilter": "webApplications",
+          "dataFilter": ["webApplications"],
           "href": "https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G",
           "shape": "square",
           "title": "Pomodoro app",
@@ -333,7 +333,7 @@
         },
         {
           "id": 4,
-          "dataFilter": "webApplications",
+          "dataFilter": ["webApplications"],
           "href": "https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-",
           "shape": "square",
           "title": "Launch countdown timer",
@@ -352,7 +352,7 @@
         },
         {
           "id": 5,
-          "dataFilter": "webApplications",
+          "dataFilter": ["webApplications"],
           "href": "https://www.frontendmentor.io/challenges/dine-restaurant-website-yAt7Vvxt7",
           "shape": "square",
           "title": "Dine restaurant website",
@@ -375,7 +375,7 @@
         },
         {
           "id": 6,
-          "dataFilter": "webApplications",
+          "dataFilter": ["webApplications"],
           "href": "https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH",
           "shape": "square",
           "title": "Rock, Paper, Scissors game",
@@ -398,7 +398,7 @@
         },
         {
           "id": 7,
-          "dataFilter": "webApplications",
+          "dataFilter": ["webApplications"],
           "href": "https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0",
           "shape": "square",
           "title": "IP Address Tracker",
@@ -420,7 +420,7 @@
         },
         {
           "id": 8,
-          "dataFilter": "webApplications",
+          "dataFilter": ["webApplications"],
           "href": "https://www.frontendmentor.io/challenges/github-jobs-api-93L-NL6rP",
           "shape": "square",
           "title": "GitHub Jobs API",
@@ -439,7 +439,7 @@
         },
         {
           "id": 9,
-          "dataFilter": "webApplications",
+          "dataFilter": ["webApplications"],
           "href": "https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca",
           "shape": "square",
           "title": "REST Countries API with color theme switcher",

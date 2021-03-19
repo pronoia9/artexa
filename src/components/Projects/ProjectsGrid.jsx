@@ -63,7 +63,7 @@ export default function ProjectsGrid(props) {
               );
             }
             // if not, return only the items who has the filterkey property
-            else if (dataFilter === filterKey) {
+            else if (dataFilter.includes(filterKey)) {
               return (
                 <ProjectCard
                   key={id}
