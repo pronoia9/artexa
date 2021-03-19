@@ -444,7 +444,7 @@
           "shape": "square",
           "title": "REST Countries API with color theme switcher",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
-          "images": ["images/projects/rest-countries.jpg", "/images/projects/rest-countries_mobile.jpg"],
+          "images": ["/images/projects/rest-countries.jpg", "/images/projects/rest-countries_mobile.jpg"],
           "details": {
             "description": "",
             "orderDate": "",
