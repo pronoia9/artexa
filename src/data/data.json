@@ -269,25 +269,15 @@
         {
           "id": 1,
           "filters": ["filter1", "filter3", "filter4"],
-          "href": "https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW",
+          "url": "https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW",
           "title": "Todo app",
           "tags": ["HTML", "CSS", "ReactJS", "NodeJS"],
-          "images": ["/images/projects/todo-list_1.jpg", "/images/projects/todo-list_mobile.jpg"],
-          "details": {
-            "description": "",
-            "orderDate": "",
-            "finalDate": "",
-            "status": "",
-            "client": "",
-            "location": "",
-            "url": "https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW"
-          },
-          "reviws": []
+          "images": ["/images/projects/todo-list_1.jpg", "/images/projects/todo-list_mobile.jpg"]
         },
         {
           "id": 2,
           "filters": ["filter2", "filter3", "filter5"],
-          "href": "https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM",
+          "url": "https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM",
           "title": "Clock app",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
           "images": [
@@ -295,22 +285,12 @@
             "/images/projects/clock-app_2.jpg",
             "/images/projects/clock-app_mobile_1.jpg",
             "/images/projects/clock-app_mobile_2.jpg"
-          ],
-          "details": {
-            "description": "",
-            "orderDate": "",
-            "finalDate": "",
-            "status": "",
-            "client": "",
-            "location": "",
-            "url": "https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM"
-          },
-          "reviws": []
+          ]
         },
         {
           "id": 3,
           "filters": ["filter1", "filter2", "filter4"],
-          "href": "https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G",
+          "url": "https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G",
           "title": "Pomodoro app",
           "tags": ["HTML", "CSS", "JavaScript"],
           "images": [
@@ -318,136 +298,66 @@
             "/images/projects/pomodoro_2.jpg",
             "/images/projects/pomodoro_mobile_1.jpg",
             "/images/projects/pomodoro_mobile_1.jpg"
-          ],
-          "details": {
-            "description": "",
-            "orderDate": "",
-            "finalDate": "",
-            "status": "",
-            "client": "",
-            "location": "",
-            "url": "https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G"
-          },
-          "reviws": []
+          ]
         },
         {
           "id": 4,
           "filters": ["filter3", "filter4", "filter5"],
-          "href": "https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-",
+          "url": "https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-",
           "title": "Launch countdown timer",
           "tags": ["HTML", "CSS", "JS"],
-          "images": ["/images/projects/cooldown-timer.jpg", "/images/projects/cooldown-timer_mobile.jpg"],
-          "details": {
-            "description": "",
-            "orderDate": "",
-            "finalDate": "",
-            "status": "",
-            "client": "",
-            "location": "",
-            "url": "https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-"
-          },
-          "reviws": []
+          "images": ["/images/projects/cooldown-timer.jpg", "/images/projects/cooldown-timer_mobile.jpg"]
         },
         {
           "id": 5,
           "filters": ["filter1", "filter2", "filter5"],
-          "href": "https://www.frontendmentor.io/challenges/dine-restaurant-website-yAt7Vvxt7",
+          "url": "https://www.frontendmentor.io/challenges/dine-restaurant-website-yAt7Vvxt7",
           "title": "Dine restaurant website",
           "tags": ["HTML", "CSS", "JavaScript"],
           "images": [
             "/images/projects/restaurant-website_1.jpg",
             "/images/projects/restaurant-website_2.jpg",
             "/images/projects/restaurant-website_mobile.jpg"
-          ],
-          "details": {
-            "description": "",
-            "orderDate": "",
-            "finalDate": "",
-            "status": "",
-            "client": "",
-            "location": "",
-            "url": "https://www.frontendmentor.io/challenges/dine-restaurant-website-yAt7Vvxt7"
-          },
-          "reviws": []
+          ]
         },
         {
           "id": 6,
           "filters": ["filter1", "filter3", "filter4"],
-          "href": "https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH",
+          "url": "https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH",
           "title": "Rock, Paper, Scissors game",
           "tags": ["HTML", "CSS", "JavaScript"],
           "images": [
             "/images/projects/rock-paper-scissors_1.jpg",
             "/images/projects/rock-paper-scissors_2.jpg",
             "/images/projects/rock-paper-scissors_mobile.jpg"
-          ],
-          "details": {
-            "description": "",
-            "orderDate": "",
-            "finalDate": "",
-            "status": "",
-            "client": "",
-            "location": "",
-            "url": "https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH"
-          },
-          "reviws": []
+          ]
         },
         {
           "id": 7,
           "filters": ["filter2", "filter4", "filter5"],
-          "href": "https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0",
+          "url": "https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0",
           "title": "IP Address Tracker",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
           "images": [
             "/images/projects/ip-address-tracker.jpg",
             "/images/projects/ip-address-tracker_mobile.jpg"
-          ],
-          "details": {
-            "description": "",
-            "orderDate": "",
-            "finalDate": "",
-            "status": "",
-            "client": "",
-            "location": "",
-            "url": "https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0"
-          },
-          "reviws": []
+          ]
         },
         {
           "id": 8,
           "filters": ["filter1", "filter2", "filter5"],
-          "href": "https://www.frontendmentor.io/challenges/github-jobs-api-93L-NL6rP",
+          "url": "https://www.frontendmentor.io/challenges/github-jobs-api-93L-NL6rP",
           "title": "GitHub Jobs API",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
-          "images": ["/images/projects/github-jobs.jpg", "/images/projects/github-jobs_mobile.jpg"],
-          "details": {
-            "description": "",
-            "orderDate": "",
-            "finalDate": "",
-            "status": "",
-            "client": "",
-            "location": "",
-            "url": "https://www.frontendmentor.io/challenges/github-jobs-api-93L-NL6rP"
-          },
-          "reviws": []
+          "images": ["/images/projects/github-jobs.jpg", "/images/projects/github-jobs_mobile.jpg"]
         },
         {
           "id": 9,
           "filters": ["filter2", "filter3", "filter4"],
-          "href": "https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca",
+          "url": "https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca",
           "title": "REST Countries API with color theme switcher",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
-          "images": ["/images/projects/rest-countries.jpg", "/images/projects/rest-countries_mobile.jpg"],
-          "details": {
-            "description": "",
-            "orderDate": "",
-            "finalDate": "",
-            "status": "",
-            "client": "",
-            "location": "",
-            "url": "https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca"
-          },
-          "reviws": []
+          "images": ["/images/projects/rest-countries.jpg", "/images/projects/rest-countries_mobile.jpg"]
         }
       ]
     },
