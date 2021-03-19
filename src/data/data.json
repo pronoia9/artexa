@@ -258,17 +258,18 @@
     "projects": {
       "filter": [
         { "id": 1, "category": "All Categories", "dataFilter": null },
-        { "id": 2, "category": "Static Websites", "dataFilter": "staticWebsites" },
-        { "id": 3, "category": "Web Applications", "dataFilter": "webApplications" },
-        { "id": 4, "category": "CSS", "dataFilter": "css" }
+        { "id": 2, "category": "Filter 1", "dataFilter": "filter1" },
+        { "id": 3, "category": "Filter 2", "dataFilter": "filter2" },
+        { "id": 3, "category": "Filter 3", "dataFilter": "filter3" },
+        { "id": 3, "category": "Filter 4", "dataFilter": "filter4" },
+        { "id": 4, "category": "Filter 5", "dataFilter": "filter5" }
       ],
 
       "projects": [
         {
           "id": 1,
-          "dataFilter": ["webApplications"],
+          "dataFilter": ["filter1", "filter3", "filter4"],
           "href": "https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW",
-          "shape": "square",
           "title": "Todo app",
           "tags": ["HTML", "CSS", "ReactJS", "NodeJS"],
           "images": ["/images/projects/todo-list_1.jpg", "/images/projects/todo-list_mobile.jpg"],
@@ -285,9 +286,8 @@
         },
         {
           "id": 2,
-          "dataFilter": ["webApplications"],
+          "dataFilter": ["filter2", "filter3", "filter5"],
           "href": "https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM",
-          "shape": "square",
           "title": "Clock app",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
           "images": [
@@ -309,9 +309,8 @@
         },
         {
           "id": 3,
-          "dataFilter": ["webApplications"],
+          "dataFilter": ["filter1", "filter2", "filter4"],
           "href": "https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G",
-          "shape": "square",
           "title": "Pomodoro app",
           "tags": ["HTML", "CSS", "JavaScript"],
           "images": [
@@ -333,9 +332,8 @@
         },
         {
           "id": 4,
-          "dataFilter": ["webApplications"],
+          "dataFilter": ["filter3", "filter4", "filter5"],
           "href": "https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-",
-          "shape": "square",
           "title": "Launch countdown timer",
           "tags": ["HTML", "CSS", "JS"],
           "images": ["/images/projects/cooldown-timer.jpg", "/images/projects/cooldown-timer_mobile.jpg"],
@@ -352,9 +350,8 @@
         },
         {
           "id": 5,
-          "dataFilter": ["webApplications"],
+          "dataFilter": ["filter1", "filter2", "filter5"],
           "href": "https://www.frontendmentor.io/challenges/dine-restaurant-website-yAt7Vvxt7",
-          "shape": "square",
           "title": "Dine restaurant website",
           "tags": ["HTML", "CSS", "JavaScript"],
           "images": [
@@ -375,9 +372,8 @@
         },
         {
           "id": 6,
-          "dataFilter": ["webApplications"],
+          "dataFilter": ["filter1", "filter3", "filter4"],
           "href": "https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH",
-          "shape": "square",
           "title": "Rock, Paper, Scissors game",
           "tags": ["HTML", "CSS", "JavaScript"],
           "images": [
@@ -398,9 +394,8 @@
         },
         {
           "id": 7,
-          "dataFilter": ["webApplications"],
+          "dataFilter": ["filter2", "filter4", "filter5"],
           "href": "https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0",
-          "shape": "square",
           "title": "IP Address Tracker",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
           "images": [
@@ -420,9 +415,8 @@
         },
         {
           "id": 8,
-          "dataFilter": ["webApplications"],
+          "dataFilter": ["filter1", "filter2", "filter5"],
           "href": "https://www.frontendmentor.io/challenges/github-jobs-api-93L-NL6rP",
-          "shape": "square",
           "title": "GitHub Jobs API",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
           "images": ["/images/projects/github-jobs.jpg", "/images/projects/github-jobs_mobile.jpg"],
@@ -439,9 +433,8 @@
         },
         {
           "id": 9,
-          "dataFilter": ["webApplications"],
+          "dataFilter": ["filter2", "filter3", "filter4"],
           "href": "https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca",
-          "shape": "square",
           "title": "REST Countries API with color theme switcher",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
           "images": ["/images/projects/rest-countries.jpg", "/images/projects/rest-countries_mobile.jpg"],
