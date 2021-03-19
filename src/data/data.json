@@ -257,18 +257,18 @@
 
     "projects": {
       "filter": [
-        { "id": 1, "category": "All Categories", "dataFilter": null },
-        { "id": 2, "category": "Filter 1", "dataFilter": "filter1" },
-        { "id": 3, "category": "Filter 2", "dataFilter": "filter2" },
+        { "id": 0, "category": "All Categories", "dataFilter": null },
+        { "id": 1, "category": "Filter 1", "dataFilter": "filter1" },
+        { "id": 2, "category": "Filter 2", "dataFilter": "filter2" },
         { "id": 3, "category": "Filter 3", "dataFilter": "filter3" },
-        { "id": 3, "category": "Filter 4", "dataFilter": "filter4" },
-        { "id": 4, "category": "Filter 5", "dataFilter": "filter5" }
+        { "id": 4, "category": "Filter 4", "dataFilter": "filter4" },
+        { "id": 5, "category": "Filter 5", "dataFilter": "filter5" }
       ],
 
       "projects": [
         {
           "id": 1,
-          "dataFilter": ["filter1", "filter3", "filter4"],
+          "filters": ["filter1", "filter3", "filter4"],
           "href": "https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW",
           "title": "Todo app",
           "tags": ["HTML", "CSS", "ReactJS", "NodeJS"],
@@ -286,7 +286,7 @@
         },
         {
           "id": 2,
-          "dataFilter": ["filter2", "filter3", "filter5"],
+          "filters": ["filter2", "filter3", "filter5"],
           "href": "https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM",
           "title": "Clock app",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
@@ -309,7 +309,7 @@
         },
         {
           "id": 3,
-          "dataFilter": ["filter1", "filter2", "filter4"],
+          "filters": ["filter1", "filter2", "filter4"],
           "href": "https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G",
           "title": "Pomodoro app",
           "tags": ["HTML", "CSS", "JavaScript"],
@@ -332,7 +332,7 @@
         },
         {
           "id": 4,
-          "dataFilter": ["filter3", "filter4", "filter5"],
+          "filters": ["filter3", "filter4", "filter5"],
           "href": "https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-",
           "title": "Launch countdown timer",
           "tags": ["HTML", "CSS", "JS"],
@@ -350,7 +350,7 @@
         },
         {
           "id": 5,
-          "dataFilter": ["filter1", "filter2", "filter5"],
+          "filters": ["filter1", "filter2", "filter5"],
           "href": "https://www.frontendmentor.io/challenges/dine-restaurant-website-yAt7Vvxt7",
           "title": "Dine restaurant website",
           "tags": ["HTML", "CSS", "JavaScript"],
@@ -372,7 +372,7 @@
         },
         {
           "id": 6,
-          "dataFilter": ["filter1", "filter3", "filter4"],
+          "filters": ["filter1", "filter3", "filter4"],
           "href": "https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH",
           "title": "Rock, Paper, Scissors game",
           "tags": ["HTML", "CSS", "JavaScript"],
@@ -394,7 +394,7 @@
         },
         {
           "id": 7,
-          "dataFilter": ["filter2", "filter4", "filter5"],
+          "filters": ["filter2", "filter4", "filter5"],
           "href": "https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0",
           "title": "IP Address Tracker",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
@@ -415,7 +415,7 @@
         },
         {
           "id": 8,
-          "dataFilter": ["filter1", "filter2", "filter5"],
+          "filters": ["filter1", "filter2", "filter5"],
           "href": "https://www.frontendmentor.io/challenges/github-jobs-api-93L-NL6rP",
           "title": "GitHub Jobs API",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
@@ -433,7 +433,7 @@
         },
         {
           "id": 9,
-          "dataFilter": ["filter2", "filter3", "filter4"],
+          "filters": ["filter2", "filter3", "filter4"],
           "href": "https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca",
           "title": "REST Countries API with color theme switcher",
           "tags": ["HTML", "CSS", "JavaScript", "API"],

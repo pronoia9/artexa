@@ -2,31 +2,29 @@ import React from 'react';
 
 export default function ProjectCard(props) {
   return (
-    <div class='art-grid-item art-project-swiper-card'>
+    <div className='art-grid-item art-project-swiper-card'>
       {/* project image */}
       <a
         data-fancybox='gallery'
         href={process.env.PUBLIC_URL + props.project.images[0]}
-        class='art-a art-portfolio-item-frame art-square'
+        className='art-a art-portfolio-item-frame art-square'
       >
         <img src={process.env.PUBLIC_URL + props.project.images[0]} alt='item' />
-        <span class='art-item-hover'>
-          <i class='fas fa-expand'></i>
+        <span className='art-item-hover'>
+          <i className='fas fa-expand'></i>
         </span>
       </a>
 
       {/* project description */}
-      <div class='art-item-description'>
+      <div className='art-item-description'>
         {/* title */}
-        <h5 class='mb-15'>{props.project.title}</h5>
+        <h5 className='mb-15'>{props.project.title}</h5>
         {/* overview */}
-        <div class='mb-15'>{props.project.overview}</div>
+        <div className='mb-15'>{props.project.overview}</div>
         {/* tags */}
-        <div class='mb-15'>
+        <div className='mb-15'>
           {props.project.tags.map((t) => (
-            <p key={t} className='art-tag'>
-              {t}
-            </p>
+            <p key={t} className='art-tag'>{t}</p>
           ))}
         </div>
         {/* link */}

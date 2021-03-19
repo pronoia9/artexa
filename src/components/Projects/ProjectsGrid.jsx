@@ -4,7 +4,7 @@ import ProjectsFilter from './ProjectsFilter';
 
 export default function ProjectsGrid(props) {
   // state for storing the filter keyword, with an initial value of null, which means no filter is applied
-  const [filterKey, setFilterKey] = useState(null);
+  const [currentFilter, setCurrentFilter] = useState(null);
 
   return (
     <div className='container-fluid'>
@@ -13,22 +13,23 @@ export default function ProjectsGrid(props) {
         <div className='col-lg-12'>
           {/* section title */}
           <div className='art-section-title'>
+            {/* title */}
+            <div className='art-title-frame'>
+              <h4>Projects</h4>
+            </div>
             {/* right frame (filter options) */}
             <div className='art-right-frame'>
               <div className='art-filter'>
                 {props.data.filter.map((filter) => {
                   let className = '';
-                  // if the current filterkey matches the filyer types key
-                  if (filterKey === filter.dataFilter) {
-                    // then we're on this filter, so send something to activate it
-                    className = ' art-current';
-                  }
+                  // if the current filter matches, then add a class to activate its css change
+                  currentFilter === filter.dataFilter && (className = ' art-current');
                   return (
                     <ProjectsFilter
                       key={filter.id}
                       filter={filter}
-                      filterKey={filterKey}
-                      setFilterKey={setFilterKey}
+                      currentFilter={currentFilter}
+                      setCurrentFilter={setCurrentFilter}
                       className={className}
                     />
                   );
@@ -42,11 +43,11 @@ export default function ProjectsGrid(props) {
         <div className={'art-grid art-grid-' + props.column + '-col art-gallery'}>
           {props.data.projects.map((p) => {
             // if we dont have a filter key, show everything
-            if (!filterKey) {
+            if (!currentFilter) {
               return <ProjectCard key={p.id} project={p} />;
             }
             // if the project includes the searched filter in its filters list, then display it
-            else if (p.dataFilter.includes(filterKey)) {
+            else if (p.filters.includes(currentFilter)) {
               return <ProjectCard key={p.id} project={p} />;
             }
             return <></>;

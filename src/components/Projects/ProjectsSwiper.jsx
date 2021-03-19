@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import ProjectsFilter from './ProjectsFilter';
+import React from 'react';
 import ProjectSwiperCard from './ProjectSwiperCard';
 // import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
@@ -10,9 +9,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 SwiperCore.use([Navigation, Pagination, A11y]);
 
 export default function ProjectsSwiper(props) {
-  // state for storing the filter keyword, with an initial value of null, which means no filter is applied
-  const [filterKey, setFilterKey] = useState(null);
-
   // start autoplay
   SwiperCore.use([Autoplay]);
 
@@ -23,27 +19,9 @@ export default function ProjectsSwiper(props) {
         <div className='col-lg-12'>
           {/* section title */}
           <div className='art-section-title'>
-            {/* right frame (filter options) */}
-            <div className='art-right-frame'>
-              <div className='art-filter'>
-                {props.data.filter.map((filter) => {
-                  let className = '';
-                  // if the current filterkey matches the filyer types key
-                  if (filterKey === filter.dataFilter) {
-                    // then we're on this filter, so send something to activate it
-                    className = ' art-current';
-                  }
-                  return (
-                    <ProjectsFilter
-                      key={filter.id}
-                      filter={filter}
-                      filterKey={filterKey}
-                      setFilterKey={setFilterKey}
-                      className={className}
-                    />
-                  );
-                })}
-              </div>
+            {/* title */}
+            <div className='art-title-frame'>
+              <h4>Projects</h4>
             </div>
           </div>
         </div>
@@ -51,11 +29,10 @@ export default function ProjectsSwiper(props) {
         {/* project items  */}
         <div className={'col-lg-12'}>
           <Swiper
-            className=''
             spaceBetween={30}
             slidesPerView={3}
-            speed={1400}
-            autoplay={{ delay: 4000 }}
+            speed={900}
+            autoplay={{ delay: 3000 }}
             breakpoints={{
               // when window width is >= 320px
               320: {
@@ -91,25 +68,11 @@ export default function ProjectsSwiper(props) {
             navigation={{ nextEl: '.art-project-swiper-next', prevEl: '.art-project-swiper-prev' }}
             pagination={{ el: '.project-swiper-pagination', type: 'bullets', clickable: true }}
           >
-            {props.data.projects.map((p) => {
-              // if we dont have a filter key, show everything
-              if (!filterKey) {
-                return (
-                  <SwiperSlide className='swiper-slide art-grid art-grid-3-col art-gallery'>
-                    <ProjectSwiperCard key={p.id} project={p} />
-                  </SwiperSlide>
-                );
-              }
-              // if the project includes the searched filter in its filters list, then display it
-              else if (p.dataFilter.includes(filterKey)) {
-                return (
-                  <SwiperSlide className='swiper-slide art-grid art-grid-3-col art-gallery'>
-                    <ProjectSwiperCard key={p.id} project={p} />
-                  </SwiperSlide>
-                );
-              }
-              return <></>;
-            })}
+            {props.data.projects.map((p) => (
+              <SwiperSlide key={p.id} className='swiper-slide art-grid art-grid-3-col art-gallery'>
+                <ProjectSwiperCard key={p.id} project={p} />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
 
