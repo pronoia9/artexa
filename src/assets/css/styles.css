@@ -1152,7 +1152,7 @@ blockquote:after {
   border-radius: 15px;
   box-shadow: inset 0 3px 8px 0 var(--color-box-shadow-0);
   font-size: 10px;
-  margin-right: 3px;
+  margin: auto 3px 5px auto;
 }
 .art-info-bar .art-strengths p:hover {
   color: var(--color-primary-2);
@@ -1921,7 +1921,8 @@ blockquote:after {
 }
 
 /* ----- blog ----- */
-.art-blog-card {
+.art-blog-card,
+.art-project-card {
   position: relative;
   overflow: hidden;
   box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
@@ -2094,7 +2095,8 @@ footer a:hover {
   display: block;
   clear: both;
 }
-.art-grid .art-grid-item {
+.art-grid .art-grid-item,
+.art-grid-item {
   float: left;
   margin-bottom: 30px;
   overflow: hidden;
@@ -2102,7 +2104,8 @@ footer a:hover {
   height: auto;
   padding: 0 15px;
 }
-.art-grid .art-grid-item .art-item-description {
+.art-grid .art-grid-item .art-item-description,
+.art-grid-item .art-item-description {
   position: absolute;
   z-index: 9;
   bottom: 0;
@@ -2114,10 +2117,12 @@ footer a:hover {
   transform: translateY(100%);
   transition: 0.55s ease-in-out;
 }
-.art-grid .art-grid-item:hover .art-item-description {
+.art-grid .art-grid-item:hover .art-item-description,
+.art-grid-item:hover .art-item-description {
   transform: translateY(0);
 }
-.art-grid .art-grid-item .art-item-description p.art-tag {
+.art-grid .art-grid-item .art-item-description p.art-tag,
+.art-grid-item .art-item-description p.art-tag {
   display: inline-block;
   color: var(--color-text-1);
   background: var(--color-text-3);
@@ -2125,10 +2130,10 @@ footer a:hover {
   border-radius: 15px;
   box-shadow: inset 0 3px 8px 0 var(--color-box-shadow-0);
   font-size: 10px;
-  margin: 0 5px;
-  margin-left: 0;
+  margin: 0 5px 5px 0;
 }
-.art-grid .art-grid-item .art-item-description p.art-tag:hover {
+.art-grid .art-grid-item .art-item-description p.art-tag:hover,
+.art-grid-item .art-item-description p.art-tag:hover {
   color: var(--color-primary-2);
 }
 .art-grid.art-grid-2-col .art-grid-item {
@@ -2154,6 +2159,14 @@ footer a:hover {
 }
 .art-grid.art-grid-3-col .art-grid-item .art-portfolio-item-frame.art-square {
   padding-bottom: 90%;
+}
+.art-project-swiper-card {
+  width: 100% !important;
+  padding: 0 !important;
+}
+.art-project-swiper-card .art-item-description {
+  left: 0 !important;
+  width: auto !important;
 }
 
 /* ----- touch device ----- */

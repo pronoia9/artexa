@@ -82,7 +82,7 @@ export default function BlogSwiper(props) {
           </Swiper>
         </div>
 
-        {/* swiper */}
+        {/* swiper navigation */}
         <div className='col-lg-12 p-0-30'>
           <div className='art-slider-navigation'>
             {/* left side */}
