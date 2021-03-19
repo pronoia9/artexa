@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default function NavbarListItem(props) {
   // used to open/close submenu
@@ -23,8 +23,6 @@ export default function NavbarListItem(props) {
               setNavbarActive={props.setNavbarActive}
               currentPage={props.currentPage}
               setCurrentPage={props.setCurrentPage}
-              active={active}
-              setActive={setActive}
             />
           ))}
         </ul>
@@ -34,16 +32,15 @@ export default function NavbarListItem(props) {
   // else return a normal list item
   return (
     // if the current page is this list item, add a class that will highlight it
-    <li
-      className={
-        'menu-item' +
-        (props.currentPage === props.item.title || props.currentPage === props.item.subtitle
-          ? ' current-menu-item'
-          : '')
-      }
-    >
-      <Link
+    <li className='menu-item'>
+      <NavLink
+        exact
         to={props.item.path}
+        activeClassName='selected'
+        activeStyle={{
+          color: '#fff',
+          textShadow: '0 0 3px var(--color-text-shadow-0)',
+        }}
         onClick={(e) => {
           // if the current link items path is the current pathname
           if (props.item.path === window.location.pathname) {
@@ -55,13 +52,17 @@ export default function NavbarListItem(props) {
           else {
             props.setNavbarActive(false);
             props.setCurrentPage(props.item.title);
-            if (active) {props.setActive(false);}
+            // close all the dropdown menus (submenus)
+            const submenus = document.getElementsByClassName('sub-menu');
+            for (let i = 0; i < submenus.length; i++) {
+              submenus[i].classList.remove('art-active');
+            }
           }
         }}
       >
         {/* show either the subtitle (if they have it, nested list items will have it), or the title  */}
         <span>{props.item.subtitle || props.item.title}</span>
-      </Link>
+      </NavLink>
     </li>
   );
 }

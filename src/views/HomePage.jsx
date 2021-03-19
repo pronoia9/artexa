@@ -10,7 +10,7 @@ import { transition } from '../assets/js/main.js';
 
 export default function HomePage(props) {
   // body section transition (soft fade in)
-  //useEffect(transition, []);
+  useEffect(transition, []);
 
   return (
     <>

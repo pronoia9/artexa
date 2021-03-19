@@ -2,6 +2,7 @@ import React from 'react';
 import NavbarListItem from './NavbarListItem';
 
 export default function NavbarList(props) {
+
   return (
     <div className='art-scroll-frame'>
       <nav id='swupMenu' data-swup='1'>

@@ -61,8 +61,8 @@ export default function App() {
               {/* send the background state from wrapper, which changes dynamically (on input) */}
               <Background background={background} setBackground={setBackground} />
 
-              {/* swup container */}
-              <div className='transition-fade swup' id='swup'>
+              {/* transition container */}
+              <div className='transition-fade' id='swup'>
                 {/* scroll frame */}
                 <Scrollbar>
                   <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
