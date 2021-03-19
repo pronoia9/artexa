@@ -15,6 +15,7 @@ import CoursePage from './views/CoursePage';
 import BlogPage from './views/BlogPage';
 import AboutPage from './views/AboutPage';
 import ContactPage from './views/ContactPage';
+import NotFound from './views/NotFound';
 import Footer from './components/Footer';
 // data
 import data from './data/data.json';
@@ -116,6 +117,10 @@ export default function App() {
 
                         <Route exact path='/contact'>
                           <ContactPage data={data.main.contact} />
+                        </Route>
+
+                        <Route path='*'>
+                          <NotFound />
                         </Route>
                       </Switch>
 
