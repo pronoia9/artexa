@@ -24,11 +24,18 @@ export default function ProjectCard(props) {
         {/* tags */}
         <div className='mb-15'>
           {props.project.tags.map((t) => (
-            <p key={t} className='art-tag'>{t}</p>
+            <p key={t} className='art-tag'>
+              {t}
+            </p>
           ))}
         </div>
         {/* link */}
-        <a href={props.project.url} className='art-link art-color-link art-w-chevron'>
+        <a
+          href={props.project.url}
+          className='art-link art-color-link art-w-chevron'
+          target='_blank'
+          rel='noreferrer'
+        >
           Read More
         </a>
       </div>
