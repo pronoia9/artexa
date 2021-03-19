@@ -899,7 +899,8 @@
     },
 
     "blog": {
-      "title": "Cool Story Bro",
+      "title": "Posts",
+      "message": "Read More",
       "posts": [
         {
           "id": 1,

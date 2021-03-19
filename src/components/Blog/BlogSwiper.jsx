@@ -20,7 +20,7 @@ export default function BlogSwiper(props) {
           {/* title */}
           <div className='art-section-title'>
             <div className='art-title-frame'>
-              <h4>Posts</h4>
+              <h4>{props.data.title}</h4>
             </div>
           </div>
         </div>
@@ -74,11 +74,8 @@ export default function BlogSwiper(props) {
               <SwiperSlide key={p.id} className='swiper-slide'>
                 <BlogCard
                   key={p.id}
-                  id={p.id}
-                  title={p.title}
-                  overview={p.overview}
-                  url={p.url}
-                  image={p.image}
+                  post={p}
+                  message={props.data.message}
                 />
               </SwiperSlide>
             ))}
