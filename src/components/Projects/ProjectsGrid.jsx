@@ -62,7 +62,7 @@ export default function ProjectsGrid(props) {
                 />
               );
             }
-            // if not, return only the items who has the filterkey property
+            // if the project includes the searched filter in its filters list, then display it
             else if (dataFilter.includes(filterKey)) {
               return (
                 <ProjectCard
