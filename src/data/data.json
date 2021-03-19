@@ -114,6 +114,7 @@
         { "title": "Blog", "subtitle": "3 Column", "path": "/blog-3-col" }
       ]
     },
+    { "title": "About", "subMenu": false, "path": "/about" },
     { "title": "Contact", "subMenu": false, "path": "/contact" }
   ],
 

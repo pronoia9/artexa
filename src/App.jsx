@@ -12,6 +12,7 @@ import HomePage from './views/HomePage';
 import ProjectsPage from './views/ProjectsPage';
 import HistoryPage from './views/HistoryPage';
 import BlogPage from './views/BlogPage';
+import AboutPage from './views/AboutPage';
 import ContactPage from './views/ContactPage';
 import Footer from './components/Footer';
 // data
@@ -68,6 +69,14 @@ export default function App() {
                   <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
                     <div className='scroll-content'>
                       <Switch>
+                        <Route exact path='/'>
+                          <HomePage
+                            data={data.main}
+                            background={background}
+                            setBackground={setBackground}
+                          />
+                        </Route>
+
                         <Route exact path='/projects-2-col'>
                           <ProjectsPage data={data.main.projects} column={2} />
                         </Route>
@@ -80,10 +89,6 @@ export default function App() {
                           <HistoryPage data={data.main.history} />
                         </Route>
 
-                        <Route exact path='/contact'>
-                          <ContactPage data={data.main.contact} />
-                        </Route>
-
                         <Route exact path='/blog-2-col'>
                           <BlogPage data={data.main.blog} column={2} />
                         </Route>
@@ -92,12 +97,16 @@ export default function App() {
                           <BlogPage data={data.main.blog} column={3} />
                         </Route>
 
-                        <Route exact path='/'>
-                          <HomePage
+                        <Route exact path='/about'>
+                          <AboutPage
                             data={data.main}
                             background={background}
                             setBackground={setBackground}
                           />
+                        </Route>
+
+                        <Route exact path='/contact'>
+                          <ContactPage data={data.main.contact} />
                         </Route>
                       </Switch>
 
