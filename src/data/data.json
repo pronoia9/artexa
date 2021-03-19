@@ -352,33 +352,7 @@
 
     "courses": [
       {
-        "id": 1,
-        "title": "Online",
-        "timeline": [
-          {
-            "id": 2,
-            "title": "The Complete Web Developer",
-            "subtitle": "by Andrei Neagoie, Senior Software Developer",
-            "date": "March 2021 - Ongoing",
-            "description": [
-              "Cras orci ipsum, euismod fermentum eleifend a, consectetur vitae nisl. Cras ut mattis diam, at tristique augue."
-            ],
-            "button": "Certificate",
-            "url": "/images/certificates/certificate2.png"
-          },
-          {
-            "id": 1,
-            "title": "Web Development Bootcamp",
-            "subtitle": "Completed",
-            "date": "Feb 2021 - March 2021",
-            "description": ["Pellentesque et dolor ut ligula faucibus interdum a non tellus."],
-            "button": "Certificate",
-            "url": "/images/certificates/certificate3.png"
-          }
-        ]
-      },
-      {
-        "id": 2,
+        "id": 6,
         "title": "6th Semester",
         "timeline": [
           {
@@ -429,7 +403,7 @@
         ]
       },
       {
-        "id": 3,
+        "id": 5,
         "title": "5th Semester",
         "timeline": [
           {
@@ -513,7 +487,7 @@
         ]
       },
       {
-        "id": 5,
+        "id": 3,
         "title": "3rd Semester",
         "timeline": [
           {
@@ -555,7 +529,7 @@
         ]
       },
       {
-        "id": 6,
+        "id": 2,
         "title": "2nd Semester",
         "timeline": [
           {
@@ -588,7 +562,7 @@
         ]
       },
       {
-        "id": 7,
+        "id": 1,
         "title": "1st Semester",
         "timeline": [
           {
