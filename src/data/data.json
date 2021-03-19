@@ -217,17 +217,6 @@
           "type": "Activities",
           "history": [
             {
-              "id": 3,
-              "title": "Nullam et Eros",
-              "subtitle": "Participant",
-              "date": "May 2017",
-              "content": [
-                "Eu ipsum ultrices tincidunt. Donec eu risus et risus iaculis aliquet ut ac diam. Donec maximus eros a molestie eleifend. Sed aliquam et nulla sit amet ornare."
-              ],
-              "link": "Aliquam",
-              "url": "https://www.lipsum.com/"
-            },
-            {
               "id": 2,
               "title": "Destination Imagination",
               "subtitle": "Participant",
@@ -803,7 +792,7 @@
     },
 
     "blog": {
-      "title": "Posts",
+      "title": "Cool Stuff",
       "message": "Read More",
       "posts": [
         {
