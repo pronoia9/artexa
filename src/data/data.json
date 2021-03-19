@@ -899,86 +899,77 @@
     },
 
     "blog": {
+      "title": "Cool Story Bro",
       "posts": [
         {
           "id": 1,
           "title": "Fancybox",
-          "overview": "",
-          "url": "",
-          "image": "/images/blog/vscode_settings.jpeg",
-          "publication": { "date": "", "author": "", "category": "", "content": "" }
+          "overview": "JavaScript lightbox library for presenting various types of media.",
+          "url": "https://fancyapps.com/fancybox/3/",
+          "image": "/images/blog/fancybox.png"
         },
         {
           "id": 2,
           "title": "Animejs",
-          "overview": "",
-          "url": "",
-          "image": "/images/blog/vscode_extensions.png",
-          "publication": { "date": "", "author": "", "category": "", "content": "" }
+          "overview": "A JavaScript animation library with a simple, yet powerful API.",
+          "url": "https://animejs.com/",
+          "image": "/images/blog/animejs.png"
         },
         {
           "id": 3,
-          "title": "Typedjs",
-          "overview": "A JavaScript Typing Animation",
+          "title": "Typed",
+          "overview": "A JavaScript Typing Animation. Typed.js is a library that types.",
           "url": "https://www.npmjs.com/package/react-typed",
-          "image": "/images/blog/atom-packages.jpg",
-          "publication": { "date": "", "author": "", "category": "", "content": "" }
+          "image": "/images/blog/typedjs.gif"
         },
         {
           "id": 4,
           "title": "Swiper",
-          "overview": "",
-          "url": "",
-          "image": "/images/blog/atom-packages.jpg",
-          "publication": { "date": "", "author": "", "category": "", "content": "" }
+          "overview": "Modern mobile touch slider with transitions and amazing behavior.",
+          "url": "https://swiperjs.com/",
+          "image": "/images/blog/swiperjs.png"
         },
         {
           "id": 5,
           "title": "Formik",
-          "overview": "Build forms in React, without the tears.",
+          "overview": "Formik makes debugging, testing, and reasoning about your forms a breeze.",
           "url": "https://formik.org/",
-          "image": "/images/blog/atom-packages.jpg",
-          "publication": { "date": "", "author": "", "category": "", "content": "" }
+          "image": "/images/blog/formik.jpeg"
         },
         {
           "id": 6,
           "title": "Yup",
-          "overview": "",
-          "url": "",
-          "image": "/images/blog/atom-packages.jpg",
-          "publication": { "date": "", "author": "", "category": "", "content": "" }
+          "overview": "A JavaScript schema builder for value parsing and validation.",
+          "url": "https://www.npmjs.com/package/yup",
+          "image": "/images/blog/yup.jpg"
         },
         {
           "id": 7,
-          "title": "Emailjs",
-          "overview": "",
-          "url": "",
-          "image": "/images/blog/atom-packages.jpg",
-          "publication": { "date": "", "author": "", "category": "", "content": "" }
+          "title": "EmailJS",
+          "overview": "EmailJS helps to send emails using client-side technologies...",
+          "url": "https://www.emailjs.com/",
+          "image": "/images/blog/emailjs.png"
         },
         {
           "id": 8,
           "title": "Smooth Scrollbar",
-          "overview": "",
-          "url": "",
-          "image": "/images/blog/atom-packages.jpg",
-          "publication": { "date": "", "author": "", "category": "", "content": "" }
+          "overview": "Customizable, Pluginable, and High Performance Scrollbars!",
+          "url": "https://www.npmjs.com/package/react-smooth-scrollbar",
+          "image": "/images/blog/smooth-scrollbar.png"
         },
         {
           "id": 9,
           "title": "Tiget Transitions",
-          "overview": "",
-          "url": "",
-          "image": "/images/blog/atom-packages.jpg",
-          "publication": { "date": "", "author": "", "category": "", "content": "" }
+          "overview": "Easy page transitions for react-router. Built with react-transition-group.",
+          "url": "https://pedrobern.github.io/react-tiger-transition/",
+          "image": "/images/blog/tiger-transition.webp"
         },
         {
           "id": 10,
           "title": "Arter - CV Resume Portfolio",
           "overview": "Arter is an modern and unique creative HTML Template.",
           "url": "https://themeforest.net/item/arter-cv-resume-portfolio-web-app-template/27008333",
-          "image": "/images/blog/arter.jfif",
-          "publication": { "date": "", "author": "", "category": "", "content": "" }
+          "image": "/images/blog/arter.jfif"
         }
       ]
     },
