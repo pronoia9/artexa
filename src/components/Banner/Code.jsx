@@ -1,5 +1,7 @@
 import React from 'react';
 import Typed from 'react-typed';
+// for blinking cursor
+import 'react-typed/dist/animatedCursor.css';
 
 export default function Code(props) {
   return (
