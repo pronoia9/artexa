@@ -11,6 +11,9 @@ import Footer from './components/Footer';
 import Routes from './views/Routes';
 // data
 import data from './data/data.json';
+// js
+import { rng } from './assets/js/main.js';
+let i = rng(0, data.backgrounds.animated.length);
 
 export default function App() {
   // sliding for left side panel
@@ -19,8 +22,7 @@ export default function App() {
   // sliding for right side menu
   const [navbarActive, setNavbarActive] = useState(false);
 
-  // current background image (gets a image link)
-  let i = Math.floor(Math.random() * data.backgrounds.animated.length);
+  // current background image (gets a local image link/path)
   const [background, setBackground] = useState({
     all: data.backgrounds.animated,
     total: data.backgrounds.animated.length,

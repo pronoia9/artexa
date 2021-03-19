@@ -1,5 +1,6 @@
 import React from 'react';
 import Code from './Code';
+import { rng } from '../../assets/js/main.js';
 
 export default function Banner(props) {
   return (
@@ -39,7 +40,7 @@ export default function Banner(props) {
                       // if they are the same, randomize it again until its not the same
                       let i;
                       do {
-                        i = Math.floor(Math.random() * props.background.total);
+                        i = rng(0, props.background.total);
                       } while (i === props.background.index);
                       // change background after the new image index is different
                       props.setBackground({

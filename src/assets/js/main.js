@@ -131,4 +131,17 @@ function formButtonAnimation() {
   return true;
 }
 
-export { loading, transition, progressbarCircle, progressbarLine, counterAnimation, formButtonAnimation };
+//--------------------------------- MISC ---------------------------------//
+function rng(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+export {
+  rng,
+  loading,
+  transition,
+  progressbarCircle,
+  progressbarLine,
+  counterAnimation,
+  formButtonAnimation,
+};
