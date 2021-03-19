@@ -1,11 +1,11 @@
 import React from 'react';
-import Education from './HistoryColumn';
+import Timeline from '../Timeline/Timeline';
 
 export default function History(props) {
   return (
     <div className='container-fluid'>
       <div className='row p-30-0'>
-        {props.data.education.map((e) => <Education key={e.id} type={e.type} history={e.history} /> )}
+        {props.data.map((col) => <Timeline key={col.id} column={2} title={col.title} list={col.timeline} /> )}
       </div>
     </div>
   );

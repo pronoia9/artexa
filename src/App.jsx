@@ -11,6 +11,7 @@ import Navbar from './components/Navbar/Navbar';
 import HomePage from './views/HomePage';
 import ProjectsPage from './views/ProjectsPage';
 import HistoryPage from './views/HistoryPage';
+import CoursePage from './views/CoursePage';
 import BlogPage from './views/BlogPage';
 import AboutPage from './views/AboutPage';
 import ContactPage from './views/ContactPage';
@@ -87,6 +88,14 @@ export default function App() {
 
                         <Route exact path='/history'>
                           <HistoryPage data={data.main.history} />
+                        </Route>
+
+                        <Route exact path='/courses-1-col'>
+                          <CoursePage data={data.main.courses} column={1} />
+                        </Route>
+
+                        <Route exact path='/courses-2-col'>
+                          <CoursePage data={data.main.courses} column={2} />
                         </Route>
 
                         <Route exact path='/blog-2-col'>
