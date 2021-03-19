@@ -193,10 +193,8 @@
             "title": "The Complete Web Developer",
             "subtitle": "by Andrei Neagoie, Senior Software Developer",
             "date": "March 2021 - Ongoing",
-            "description": [
-              "Cras orci ipsum, euismod fermentum eleifend a, consectetur vitae nisl. Cras ut mattis diam, at tristique augue."
-            ],
-            "link": "Certificate",
+            "description": "Cras orci ipsum, euismod fermentum eleifend a, consectetur vitae nisl. Cras ut mattis diam, at tristique augue.",
+            "button": "Certificate",
             "url": "/images/certificates/certificate2.png"
           },
           {
@@ -204,8 +202,8 @@
             "title": "Web Development Bootcamp",
             "subtitle": "by Dr. Angela Yu, Developer and Lead Instructor",
             "date": "Feb 2021 - March 2021",
-            "description": ["Pellentesque et dolor ut ligula faucibus interdum a non tellus."],
-            "link": "Certificate",
+            "description": "Pellentesque et dolor ut ligula faucibus interdum a non tellus.",
+            "button": "Certificate",
             "url": "/images/certificates/certificate3.png"
           },
           {
@@ -213,10 +211,8 @@
             "title": "Seneca College",
             "subtitle": "Student",
             "date": "May 2016 - May 2019",
-            "description": [
-              "Curabitur a quam magna. Nulla mi sem, porttitor sit amet suscipit at, blandit eget arcu. Mauris mattis arcu turpis, et pretium elit ultrices vitae."
-            ],
-            "link": "Diploma",
+            "description": "Curabitur a quam magna. Nulla mi sem, porttitor sit amet suscipit at, blandit eget arcu. Mauris mattis arcu turpis, et pretium elit ultrices vitae.",
+            "button": "Diploma",
             "url": "/images/certificates/certificate1.png"
           }
         ]
@@ -230,10 +226,8 @@
             "title": "Destination Imagination",
             "subtitle": "Participant",
             "date": "April 2013",
-            "description": [
-              "Destination Imagination (DI) is a global educational nonprofit dedicated to inspiring the next generation of innovators, leaders and creative problem solvers."
-            ],
-            "link": "Website",
+            "description": "Destination Imagination (DI) is a global educational nonprofit dedicated to inspiring the next generation of innovators, leaders and creative problem solvers.",
+            "button": "Website",
             "url": "https://www.destinationimagination.org/about/"
           },
           {
@@ -241,10 +235,8 @@
             "title": "Caretakers of the Environment",
             "subtitle": "Volunteer",
             "date": "August 2012",
-            "description": [
-              "The CEI is an independent organization established in 1986, embracing secondary school students, teachers and mentors, whose interests are focused specifically on the issues of environmental protection, promoting education, shaping awarness and training within sustainable development."
-            ],
-            "link": "Website",
+            "description": "The CEI is an independent organization established in 1986, embracing secondary school students, teachers and mentors, whose interests are focused specifically on the issues of environmental protection, promoting education, shaping awarness and training within sustainable development.",
+            "button": "Website",
             "url": "https://www.caretakers4all.org/"
           }
         ]
