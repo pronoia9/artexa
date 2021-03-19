@@ -1,22 +1,14 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
 import Scrollbar from 'smooth-scrollbar-react';
 // bg
 import Background from './components/Background';
 // side panels
 import InfoBar from './components/Sidebar/InfoBar';
 import Navbar from './components/Navbar/Navbar';
-// pages
-import HomePage from './views/HomePage';
-import ProjectsPage from './views/ProjectsPage';
-import HistoryPage from './views/HistoryPage';
-import CoursePage from './views/CoursePage';
-import BlogPage from './views/BlogPage';
-import AboutPage from './views/AboutPage';
-import ContactPage from './views/ContactPage';
-import NotFound from './views/NotFound';
+// middle
 import Footer from './components/Footer';
+import Routes from './views/Routes';
 // data
 import data from './data/data.json';
 
@@ -49,93 +41,44 @@ export default function App() {
             sidebarActive={sidebarActive}
             setSidebarActive={setSidebarActive}
           />
-          <BrowserRouter>
-            {/* body (content area, middle section) */}
-            {/* activate/show curtain (css) if any of the panels are open/active */}
-            <div className={navbarActive || sidebarActive ? 'art-content art-active' : 'art-content'}>
-              {/* curtain */}
-              <div
-                className='art-curtain'
-                onClick={() => {
-                  navbarActive && setNavbarActive(false);
-                  sidebarActive && setSidebarActive(false);
-                }}
-              ></div>
-              {/* send the background state from wrapper, which changes dynamically (on input) */}
-              <Background background={background} setBackground={setBackground} />
+          {/* body (content area, middle section) */}
+          {/* activate/show curtain (css) if any of the panels are open/active */}
+          <div className={navbarActive || sidebarActive ? 'art-content art-active' : 'art-content'}>
+            {/* curtain */}
+            <div
+              className='art-curtain'
+              onClick={() => {
+                navbarActive && setNavbarActive(false);
+                sidebarActive && setSidebarActive(false);
+              }}
+            ></div>
+            {/* send the background state from wrapper, which changes dynamically (on input) */}
+            <Background background={background} setBackground={setBackground} />
 
-              {/* transition container */}
-              <div className='transition-fade' id='swup'>
-                {/* scroll frame */}
-                <Scrollbar>
-                  <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
-                    <div className='scroll-content'>
-                      <Switch>
-                        <Route exact path='/'>
-                          <HomePage
-                            data={data.main}
-                            background={background}
-                            setBackground={setBackground}
-                          />
-                        </Route>
+            {/* transition container */}
+            <div className='transition-fade' id='swup'>
+              {/* scroll frame */}
+              <Scrollbar>
+                <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
+                  <div className='scroll-content'>
+                    {/* routes */}
+                    <Routes data={data.main} background={background} setBackground={setBackground} />
 
-                        <Route exact path='/projects-2-col'>
-                          <ProjectsPage data={data.main.projects} column={2} />
-                        </Route>
-
-                        <Route exact path='/projects-3-col'>
-                          <ProjectsPage data={data.main.projects} column={3} />
-                        </Route>
-
-                        <Route exact path='/history'>
-                          <HistoryPage data={data.main.history} />
-                        </Route>
-
-                        <Route exact path='/courses'>
-                          <CoursePage data={data.main.courses} column={2} />
-                        </Route>
-
-                        <Route exact path='/blog-2-col'>
-                          <BlogPage data={data.main.blog} column={2} />
-                        </Route>
-
-                        <Route exact path='/blog-3-col'>
-                          <BlogPage data={data.main.blog} column={3} />
-                        </Route>
-
-                        <Route exact path='/about'>
-                          <AboutPage
-                            data={data.main}
-                            background={background}
-                            setBackground={setBackground}
-                          />
-                        </Route>
-
-                        <Route exact path='/contact'>
-                          <ContactPage data={data.main.contact} />
-                        </Route>
-
-                        <Route path='*'>
-                          <NotFound />
-                        </Route>
-                      </Switch>
-
-                      {/* footer */}
-                      <Footer data={data.main.logos} />
-                    </div>
+                    {/* footer */}
+                    <Footer data={data.main.logos} />
                   </div>
-                </Scrollbar>
-              </div>
+                </div>
+              </Scrollbar>
             </div>
+          </div>
 
-            <Navbar
-              data={data.navbar}
-              navbarActive={navbarActive}
-              setNavbarActive={setNavbarActive}
-              sidebarActive={sidebarActive}
-              setSidebarActive={setSidebarActive}
-            />
-          </BrowserRouter>
+          <Navbar
+            data={data.navbar}
+            navbarActive={navbarActive}
+            setNavbarActive={setNavbarActive}
+            sidebarActive={sidebarActive}
+            setSidebarActive={setSidebarActive}
+          />
         </div>
       </div>
     </div>
