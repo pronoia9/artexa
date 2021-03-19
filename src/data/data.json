@@ -108,14 +108,7 @@
       ]
     },
     { "id": 2, "title": "History", "subMenu": false, "path": "/history" },
-    {
-      "id": 3,
-      "title": "Courses",
-      "subMenu": [
-        { "title": "Courses", "subtitle": "1 Column", "path": "/courses-1-col" },
-        { "title": "Courses", "subtitle": "2 Columns", "path": "/courses-2-col" }
-      ]
-    },
+    { "id": 3, "title": "Courses", "subMenu": false, "path": "/courses" },
     {
       "id": 4,
       "title": "Blog",

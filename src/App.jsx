@@ -91,11 +91,7 @@ export default function App() {
                           <HistoryPage data={data.main.history} />
                         </Route>
 
-                        <Route exact path='/courses-1-col'>
-                          <CoursePage data={data.main.courses} column={1} />
-                        </Route>
-
-                        <Route exact path='/courses-2-col'>
+                        <Route exact path='/courses'>
                           <CoursePage data={data.main.courses} column={2} />
                         </Route>
 
