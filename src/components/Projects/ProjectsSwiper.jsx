@@ -1,4 +1,5 @@
 import React from 'react';
+import ProjectCard from './ProjectCard';
 import ProjectSwiperCard from './ProjectSwiperCard';
 // import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
@@ -70,7 +71,7 @@ export default function ProjectsSwiper(props) {
           >
             {props.data.projects.map((p) => (
               <SwiperSlide key={p.id} className='swiper-slide art-grid art-grid-3-col art-gallery'>
-                <ProjectSwiperCard key={p.id} project={p} />
+                <ProjectCard key={p.id} project={p} class=' art-project-swiper-card' />
               </SwiperSlide>
             ))}
           </Swiper>
