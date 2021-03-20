@@ -21,6 +21,7 @@ var ProgressBar = require('progressbar.js');
 // x. misc
 //       - rng
 
+
 //------------------------------- PRELOADER ------------------------------//
 function loading() {
   // fade in animation
@@ -113,7 +114,7 @@ function scrollbarInit() {
 }
 
 //------------------------------  FANCYBOX  ------------------------------//
-// document.querySelector('[data-fancybox]="gallery"')
+
 
 //----------------------------- PROGRESSBARS -----------------------------//
 function progressbarCircle(i, id, percent) {

@@ -4,9 +4,6 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Preloader from './components/Preloader/Preloader';
-// stylesheets
-import './assets/css/colors/yellow.css';
-import './assets/css/styles.css';
 // fancybox
 import './assets/css/fancybox.min.css';
 // swiper
@@ -14,6 +11,9 @@ import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
+// stylesheets
+import './assets/css/colors/yellow.css';
+import './assets/css/styles.css';
 
 ReactDOM.render(
   <React.StrictMode>
