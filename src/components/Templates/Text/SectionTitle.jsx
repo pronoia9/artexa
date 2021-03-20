@@ -2,9 +2,9 @@ import React from 'react';
 
 export default function SectionTitle(props) {
   return (
-    <div class={'col-lg-' + (12 / props.column || 12)}>
-      <div class='art-section-title'>
-        <div class='art-title-frame'>
+    <div className={'col-lg-' + (12 / props.column || 12)}>
+      <div className='art-section-title'>
+        <div className='art-title-frame'>
           <h4>{props.title}</h4>
         </div>
 

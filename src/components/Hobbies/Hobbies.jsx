@@ -17,7 +17,7 @@ export default function Hobbies(props) {
       <div className='row p-30-30'>
         <SectionTitle title={props.data.title} />
 
-        <div class='col-lg-12'>
+        <div className='col-lg-12'>
           <Swiper
             spaceBetween={0}
             slidesPerView={5}

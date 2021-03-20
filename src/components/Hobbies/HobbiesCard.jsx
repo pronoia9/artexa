@@ -6,12 +6,12 @@ export default function HobbiesCard(props) {
       <a
         data-fancybox='hobbies'
         href={process.env.PUBLIC_URL + props.fancybox}
-        class={'art-a art-' + props.section + '-item-frame art-horizontal'}
+        className={'art-a art-' + props.section + '-item-frame art-horizontal'}
       >
         <img src={process.env.PUBLIC_URL + props.image} alt={props.title} />
 
-        <span class='art-item-hover'>
-          <i class='fas fa-expand'></i>
+        <span className='art-item-hover'>
+          <i className='fas fa-expand'></i>
         </span>
       </a>
     </div>
