@@ -668,13 +668,6 @@
         },
         {
           "id": 9,
-          "title": "Tiget Transitions",
-          "overview": "Easy page transitions for react-router. Built with react-transition-group.",
-          "url": "https://pedrobern.github.io/react-tiger-transition/",
-          "image": "/images/blog/tiger-transition.webp"
-        },
-        {
-          "id": 10,
           "title": "Arter - CV Resume Portfolio",
           "overview": "Arter is an modern and unique creative HTML Template.",
           "url": "https://themeforest.net/item/arter-cv-resume-portfolio-web-app-template/27008333",

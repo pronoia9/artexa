@@ -5,7 +5,7 @@ export default function NavbarList(props) {
 
   return (
     <div className='art-scroll-frame'>
-      <nav id='swupMenu' data-swup='1'>
+      <nav>
         <ul className='main-menu'>
           {props.data.map((li) => (
             <NavbarListItem

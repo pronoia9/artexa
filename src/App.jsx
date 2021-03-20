@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Scrollbar from 'smooth-scrollbar-react';
 import SmoothScrollbar from 'smooth-scrollbar';
 import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
@@ -14,12 +14,15 @@ import Routes from './routes/Routes';
 // data
 import data from './data/data.json';
 // js
-import { rng } from './assets/js/main.js';
+import { rng, transition } from './assets/js/main.js';
+
 let i = rng(0, data.backgrounds.animated.length);
 
 SmoothScrollbar.use(OverscrollPlugin);
 
 export default function App() {
+  useEffect(transition, [window.location.pathname]);
+
   // sliding for left side panel
   const [sidebarActive, setSidebarActive] = useState(false);
 
