@@ -1,22 +1,12 @@
 import React from 'react';
+import SectionTitle from '../Templates/Text/SectionTitle';
 
 export default function About() {
   return (
     <div className='container-fluid'>
       <div className='row p-30-0'>
         {/* header */}
-        <div className='col-lg-12'>
-          <div className='art-section-title'>
-            {/* title */}
-            <div className='art-title-frame'>
-              <h4>About Me</h4>
-            </div>
-            {/* right frame */}
-            <div className='art-right-frame'>
-              <div className='art-project-category'>Fri Mar 19, 2021</div>
-            </div>
-          </div>
-        </div>
+        <SectionTitle title='About Me' rightTitle='Fri Mar 19, 2021' rightClass='art-project-category' />
 
         {/* content */}
         <div className='col-lg-12'>

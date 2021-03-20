@@ -1,7 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
 import SmoothScrollbar from 'smooth-scrollbar';
-import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 import Scrollbar from 'react-smooth-scrollbar';
 // bg
 import Background from './components/Background';

@@ -1,6 +1,7 @@
 import React from 'react';
 import Banner from '../components/Banner/Banner';
 import Counters from '../components/Counter/Counters';
+import Hobbies from '../components/Hobbies/Hobbies';
 import History from '../components/History/History';
 import ProjectsSwiper from '../components/Projects/ProjectsSwiper';
 import BlogSwiper from '../components/Blog/BlogSwiper';
@@ -14,6 +15,9 @@ export default function HomePage(props) {
 
       {/* counters */}
       <Counters data={props.data.counters} />
+
+      {/* TEST */}
+      <Hobbies />
 
       {/* projects */}
       <ProjectsSwiper data={props.data.projects} />

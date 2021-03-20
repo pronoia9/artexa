@@ -1,30 +1,20 @@
 import React from 'react';
-import ProjectCard from './ProjectCard';
-// import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
+import ProjectCard from './ProjectCard';
+import SectionTitle from '../Templates/Text/SectionTitle';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, A11y]);
 
 export default function ProjectsSwiper(props) {
-  // start autoplay
-  SwiperCore.use([Autoplay]);
+  SwiperCore.use([Autoplay]); // start autoplay
 
   return (
     <div className='container-fluid'>
       <div className='row p-30-0'>
-        {/* title / filter bar */}
-        <div className='col-lg-12'>
-          {/* section title */}
-          <div className='art-section-title'>
-            {/* title */}
-            <div className='art-title-frame'>
-              <h4>Projects</h4>
-            </div>
-          </div>
-        </div>
+        {/* title */}
+        <SectionTitle title='Projects' />
 
         {/* project items  */}
         <div className={'col-lg-12'}>

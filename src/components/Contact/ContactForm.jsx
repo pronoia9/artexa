@@ -1,18 +1,15 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { formButtonAnimation } from '../../assets/js/main.js';
 import emailjs from 'emailjs-com';
+import Title from '../Templates/Text/Title';
+import { formButtonAnimation } from '../../assets/js/main.js';
 
 export default function ContactForm(props) {
   return (
     <div className='col-lg-12'>
       {/* form title */}
-      <div className='art-section-title'>
-        <div className='art-title-frame'>
-          <h4>{props.form.title}</h4>
-        </div>
-      </div>
+      <Title title={props.form.title} />
 
       {/* form container */}
       <div className='art-a art-card'>

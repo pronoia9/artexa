@@ -1,16 +1,13 @@
 import React from 'react';
 import TimelineItem from './TimelineItem';
+import Title from '../Text/Title';
 
 export default function TimelineColumn(props) {
   return (
     // half screen panel
     <div className={'col-lg-' + 12 / props.column}>
       {/* title */}
-      <div className='art-section-title'>
-        <div className='art-title-frame'>
-          <h4>{props.title}</h4>
-        </div>
-      </div>
+      <Title title={props.title} />
 
       {/* items container */}
       <div className='art-timeline art-gallery'>

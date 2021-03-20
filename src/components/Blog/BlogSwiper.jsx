@@ -1,9 +1,8 @@
 import React from 'react';
-import BlogCard from './BlogCard';
-// import Swiper core and required modules
 import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
+import BlogCard from './BlogCard';
+import SectionTitle from '../Templates/Text/SectionTitle';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, A11y]);
@@ -13,17 +12,9 @@ export default function BlogSwiper(props) {
   SwiperCore.use([Autoplay]);
   return (
     <div className='container-fluid'>
-      {/* row */}
       <div className='row p-30-0'>
-        {/* heading */}
-        <div className='col-lg-12'>
-          {/* title */}
-          <div className='art-section-title'>
-            <div className='art-title-frame'>
-              <h4>{props.data.title}</h4>
-            </div>
-          </div>
-        </div>
+        {/* title */}
+        <SectionTitle title={props.data.title} />
 
         {/* posts */}
         <div className='col-lg-12'>
@@ -72,11 +63,7 @@ export default function BlogSwiper(props) {
           >
             {props.data.posts.map((p) => (
               <SwiperSlide key={p.id} className='swiper-slide'>
-                <BlogCard
-                  key={p.id}
-                  post={p}
-                  message={props.data.message}
-                />
+                <BlogCard key={p.id} post={p} message={props.data.message} />
               </SwiperSlide>
             ))}
           </Swiper>
