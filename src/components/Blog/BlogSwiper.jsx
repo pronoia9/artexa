@@ -66,7 +66,7 @@ export default function BlogSwiper(props) {
               },
             }}
             navigation={{ nextEl: '.art-blog-swiper-next', prevEl: '.art-blog-swiper-prev' }}
-            pagination={{ el: '.swiper-pagination', type: 'bullets', clickable: true }}
+            pagination={{ el: '.swiper-blog-pagination', type: 'bullets', clickable: true }}
             // onSwiper={(swiper) => console.log(swiper)}
             // onSlideChange={() => console.log('slide change')}
           >
@@ -88,7 +88,7 @@ export default function BlogSwiper(props) {
             {/* left side */}
             <div className='art-sn-left'>
               {/* slider pagination */}
-              <div className='swiper-pagination'></div>
+              <div className='swiper-blog-pagination'></div>
             </div>
 
             {/* right side */}
