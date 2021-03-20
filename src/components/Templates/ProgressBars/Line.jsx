@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { progressbarLine } from '../../assets/js/main.js';
+import { progressbarLine } from '../../../assets/js/main.js';
 
 export default function Line(props) {
   // line bar animation

@@ -1,5 +1,5 @@
 import React from 'react';
-import Circle from '../../ProgressBars/Circle';
+import Circle from '../../Templates/ProgressBars/Circle';
 
 export default function Language(props) {
   return (
