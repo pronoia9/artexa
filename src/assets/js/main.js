@@ -82,16 +82,24 @@ function transition() {
   } catch (e) {
     console.log(e);
   }
-
-  // easier to have this inside transition instead of making useEffect() line longer inside App()
-  scrollbarInit();
 }
 
 //-----------------------------  SCROLLBAR  ------------------------------//
 function scrollbarInit() {
   SmoothScrollbar.use(OverscrollPlugin);
+  // content scroll (mid-section)
   try {
     SmoothScrollbar.init(document.getElementById('scrollbar'), {
+      plugins: {
+        effect: 'bounce',
+        damping: 0.2,
+        maxOverscroll: 150,
+        glowColor: '#222a2s',
+      },
+    });
+
+    // info bar scroll (left panel)
+    SmoothScrollbar.init(document.getElementById('sidebar-scrollbar'), {
       plugins: {
         effect: 'bounce',
         damping: 0.2,

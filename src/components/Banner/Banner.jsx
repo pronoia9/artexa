@@ -40,7 +40,7 @@ export default function Banner(props) {
                       // if they are the same, randomize it again until its not the same
                       let i;
                       do {
-                        i = rng(0, props.background.total);
+                        i = rng(0, props.background.total - 1);
                       } while (i === props.background.index);
                       // change background after the new image index is different
                       props.setBackground({

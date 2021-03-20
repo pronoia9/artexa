@@ -525,7 +525,7 @@ blockquote:after {
 /* ----- scroll frame ----- */
 .art-scroll-frame {
   width: 100%;
-  height: calc(100vh - 30px);
+  height: calc(100vh - 60px);
 }
 
 .scrollbar-track {
@@ -850,7 +850,7 @@ blockquote:after {
   /* ----- social links ----- */
 }
 .art-info-bar .scroll-content {
-  padding-top: 120px !important;
+  padding-top: 80px !important;
 }
 .art-info-bar .art-header {
   position: absolute;

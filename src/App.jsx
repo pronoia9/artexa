@@ -14,12 +14,14 @@ import Routes from './routes/Routes';
 // data
 import data from './data/data.json';
 // js
-import { rng, transition } from './assets/js/main.js';
-let i = rng(0, data.backgrounds.animated.length);
+import { rng, transition, scrollbarInit } from './assets/js/main.js';
+
+let i = rng(0, data.backgrounds.animated.length - 1);
 
 // TODO: <Scrollbar> is component t, need to fix warning regarding it
 
 export default function App() {
+  useEffect(scrollbarInit, []);
   useEffect(transition, [window.location.pathname]);
 
   // sliding for left side panel

@@ -1,5 +1,7 @@
 import React from 'react';
-import Scrollbar from 'smooth-scrollbar-react';
+import SmoothScrollbar from 'smooth-scrollbar';
+import Scrollbar from 'react-smooth-scrollbar';
+// sections
 import Profile from './Profile/Profile';
 import About from './About/About';
 import Languages from './Languages/Languages';
@@ -34,14 +36,15 @@ export default function ArtInfoBar(props) {
         <Profile profile={props.data.profile} />
 
         <Scrollbar
-          className='info-bar-scrollbar'
+          id='info-bar-scrollbar'
           damping={0.5}
           thumbMinSize={20}
           renderByPixels={true}
           alwaysShowTracks={false}
           continuousScrolling={true}
+          plugins={{ SmoothScrollbar }}
         >
-          <div className='art-scroll-frame'>
+          <div id='sidebar-scrollbar' className='art-scroll-frame'>
             <div className='scroll-content'>
               <About about={props.data.about} />
               <div className='art-ls-divider'></div>
