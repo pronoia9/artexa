@@ -1,6 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import Scrollbar from 'smooth-scrollbar-react';
+import SmoothScrollbar from 'smooth-scrollbar';
+import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 // bg
 import Background from './components/Background';
 // side panels
@@ -14,6 +16,8 @@ import data from './data/data.json';
 // js
 import { rng } from './assets/js/main.js';
 let i = rng(0, data.backgrounds.animated.length);
+
+SmoothScrollbar.use(OverscrollPlugin);
 
 export default function App() {
   // sliding for left side panel
@@ -60,7 +64,7 @@ export default function App() {
             {/* transition container */}
             <div className='transition-fade' id='swup'>
               {/* scroll frame */}
-              <Scrollbar>
+              <Scrollbar renderByPixels={true}>
                 <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
                   <div className='scroll-content'>
                     {/* routes */}
