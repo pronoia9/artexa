@@ -18,6 +18,14 @@ import { rng } from './assets/js/main.js';
 let i = rng(0, data.backgrounds.animated.length);
 
 SmoothScrollbar.use(OverscrollPlugin);
+SmoothScrollbar.init(document.getElementById('root'), {
+  plugins: {
+    effect: 'bounce',
+    damping: 0.2,
+    maxOverscroll: 150,
+    glowColor: '#222a2s',
+  },
+});
 
 export default function App() {
   // sliding for left side panel
@@ -64,7 +72,14 @@ export default function App() {
             {/* transition container */}
             <div className='transition-fade' id='swup'>
               {/* scroll frame */}
-              <Scrollbar renderByPixels={true}>
+              <Scrollbar
+                damping={0.1}
+                thumbMinSize={20}
+                renderByPixels={true}
+                alwaysShowTracks={false}
+                continuousScrolling={true}
+                plugins={SmoothScrollbar}
+              >
                 <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
                   <div className='scroll-content'>
                     {/* routes */}
