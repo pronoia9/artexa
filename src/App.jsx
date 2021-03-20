@@ -17,6 +17,8 @@ import data from './data/data.json';
 import { rng, transition } from './assets/js/main.js';
 let i = rng(0, data.backgrounds.animated.length);
 
+// TODO: <Scrollbar> is component t, need to fix warning regarding it
+
 export default function App() {
   useEffect(transition, [window.location.pathname]);
 
@@ -65,6 +67,7 @@ export default function App() {
             <div className='transition-fade' id='transition-fade'>
               {/* scroll frame */}
               <Scrollbar
+                className='content-scrollbar'
                 damping={0.5}
                 thumbMinSize={20}
                 renderByPixels={true}

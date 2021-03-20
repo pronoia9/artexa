@@ -1,6 +1,5 @@
 import React from 'react';
 import Scrollbar from 'smooth-scrollbar-react';
-
 import Profile from './Profile/Profile';
 import About from './About/About';
 import Languages from './Languages/Languages';
@@ -9,6 +8,8 @@ import SoftSkills from './SoftSkills/SoftSkills';
 import Strengths from './Strengths/Strengths';
 import Resume from './Resume/Resume';
 import Social from './Social/Social';
+
+// TODO: <Scrollbar> is component e, need to fix warning regarding it
 
 export default function ArtInfoBar(props) {
   return (
@@ -33,6 +34,7 @@ export default function ArtInfoBar(props) {
         <Profile profile={props.data.profile} />
 
         <Scrollbar
+          className='info-bar-scrollbar'
           damping={0.5}
           thumbMinSize={20}
           renderByPixels={true}
