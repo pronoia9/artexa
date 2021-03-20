@@ -1,5 +1,5 @@
 import React from 'react';
-import Timeline from '../Timeline/Timeline';
+import Timeline from '../Templates/Timeline/Timeline';
 
 export default function Courses(props) {
   return (
