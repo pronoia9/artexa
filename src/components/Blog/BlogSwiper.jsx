@@ -3,6 +3,7 @@ import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import BlogCard from './BlogCard';
 import SectionTitle from '../Templates/Text/SectionTitle';
+import SwiperNavigation from '../Templates/Swiper/SwiperNavigation';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination, A11y]);
@@ -57,7 +58,7 @@ export default function BlogSwiper(props) {
               },
             }}
             navigation={{ nextEl: '.art-blog-swiper-next', prevEl: '.art-blog-swiper-prev' }}
-            pagination={{ el: '.swiper-blog-pagination', type: 'bullets', clickable: true }}
+            pagination={{ el: '.blog-swiper-pagination', type: 'bullets', clickable: true }}
             // onSwiper={(swiper) => console.log(swiper)}
             // onSlideChange={() => console.log('slide change')}
           >
@@ -69,35 +70,7 @@ export default function BlogSwiper(props) {
           </Swiper>
         </div>
 
-        {/* swiper navigation */}
-        <div className='col-lg-12 p-0-30'>
-          <div className='art-slider-navigation'>
-            {/* left side */}
-            <div className='art-sn-left'>
-              {/* slider pagination */}
-              <div className='swiper-blog-pagination'></div>
-            </div>
-
-            {/* right side */}
-            <div className='art-sn-right'>
-              {/* slider navigation */}
-              <div className='art-slider-nav-frame'>
-                {/* prev */}
-                <div
-                  className='art-slider-nav art-blog-swiper-prev'
-                  role='button'
-                  aria-label='Previous slide'
-                >
-                  <i className='fas fa-chevron-left'></i>
-                </div>
-                {/* next */}
-                <div className='art-slider-nav art-blog-swiper-next' role='button' aria-label='Next slide'>
-                  <i className='fas fa-chevron-right'></i>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <SwiperNavigation section='blog' />
       </div>
     </div>
   );
