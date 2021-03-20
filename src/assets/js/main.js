@@ -8,6 +8,8 @@ var ProgressBar = require('progressbar.js');
 //       - loading animation (fade in, line bar, fade out)
 // x. transitions
 //       - transition (page transition, fade in)
+// x. scrollbar
+//       - scrollbarInit (for content-scrollbar)
 // x. fancybox
 // x. progress bars
 //       - circle animation
@@ -175,12 +177,20 @@ function rng(min, max) {
 }
 
 export {
-  rng,
+  // preloader
   loading,
-  scrollbarInit,
+  // transition
   transition,
+  // scrollbar
+  scrollbarInit,
+  // fancybox
+  // progressbars
   progressbarCircle,
   progressbarLine,
+  // counters
   counterAnimation,
+  // form
   formButtonAnimation,
+  // misc
+  rng,
 };
