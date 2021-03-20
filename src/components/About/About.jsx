@@ -19,9 +19,9 @@ export default function About() {
         </div>
 
         {/* content */}
-        <div class='col-lg-12'>
-          <div class='art-a art-card'>
-            <p class='art-lg-text art-white'>
+        <div className='col-lg-12'>
+          <div className='art-a art-card'>
+            <p className='art-lg-text art-white'>
               <i>
                 Consectetur adipisicing elit. Magni debitis nemo, minus aut tempora impedit quis quam omnis,
                 odit saepe ipsa sunt magnam culpa quisquam iusto consectetur necessitatibus. Tenetur,
@@ -38,7 +38,7 @@ export default function About() {
               quo perferendis vero libero ex. Iste ipsam eaque veniam facilis architecto unde, quibusdam
               accusamus culpa cumque delectus deserunt nemo saepe minima.
             </p>
-            <ul class='art-custom-list'>
+            <ul className='art-custom-list'>
               <li>Doloribus recusandae</li>
               <li>Alias officia ad nihil </li>
               <li>Culpa repellat</li>
