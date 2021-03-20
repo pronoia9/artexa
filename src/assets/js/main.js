@@ -1,4 +1,7 @@
 import anime from 'animejs/lib/anime.es.js';
+import SmoothScrollbar from 'smooth-scrollbar';
+import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
+
 var ProgressBar = require('progressbar.js');
 
 // x. preloader
@@ -64,15 +67,39 @@ function loading() {
 function transition() {
   // since the transition-fade containers opacity changes after the first time this function is called
   // reset it to 0 so it can go from 0-1 again, continuosly
-  document.getElementById('transition-fade').style = 'opacity:0';
+  try {
+    document.getElementById('transition-fade').style = 'opacity:0';
 
-  anime({
-    targets: '.transition-fade',
-    opacity: [0, 1],
-    delay: 400,
-    duration: 800,
-    easing: 'linear',
-  });
+    anime({
+      targets: '.transition-fade',
+      opacity: [0, 1],
+      delay: 400,
+      duration: 800,
+      easing: 'linear',
+    });
+  } catch (e) {
+    console.log(e);
+  }
+
+  // easier to have this inside transition instead of making useEffect() line longer inside App()
+  scrollbarInit();
+}
+
+//-----------------------------  SCROLLBAR  ------------------------------//
+function scrollbarInit() {
+  SmoothScrollbar.use(OverscrollPlugin);
+  try {
+    SmoothScrollbar.init(document.getElementById('scrollbar'), {
+      plugins: {
+        effect: 'bounce',
+        damping: 0.2,
+        maxOverscroll: 150,
+        glowColor: '#222a2s',
+      },
+    });
+  } catch (e) {
+    console.log(e);
+  }
 }
 
 //------------------------------  FANCYBOX  ------------------------------//
@@ -150,6 +177,7 @@ function rng(min, max) {
 export {
   rng,
   loading,
+  scrollbarInit,
   transition,
   progressbarCircle,
   progressbarLine,

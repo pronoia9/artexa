@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from 'react';
-import Scrollbar from 'smooth-scrollbar-react';
 import SmoothScrollbar from 'smooth-scrollbar';
 import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
+import Scrollbar from 'react-smooth-scrollbar';
 // bg
 import Background from './components/Background';
 // side panels
@@ -15,10 +15,7 @@ import Routes from './routes/Routes';
 import data from './data/data.json';
 // js
 import { rng, transition } from './assets/js/main.js';
-
 let i = rng(0, data.backgrounds.animated.length);
-
-SmoothScrollbar.use(OverscrollPlugin);
 
 export default function App() {
   useEffect(transition, [window.location.pathname]);
@@ -73,7 +70,7 @@ export default function App() {
                 renderByPixels={true}
                 alwaysShowTracks={false}
                 continuousScrolling={true}
-                plugins={SmoothScrollbar}
+                plugins={{ SmoothScrollbar }}
               >
                 <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
                   <div className='scroll-content'>
