@@ -56,14 +56,16 @@ function loading() {
 }
 // ----------------------------- TRANSITION ----------------------------- //
 function transition() {
+  // since the transition-fade containers opacity changes after the first time this function is called
+  // reset it to 0 so it can go from 0-1 again, continuosly
+  document.getElementById('transition-fade').style = 'opacity:0';
+
   anime({
     targets: '.transition-fade',
     opacity: [0, 1],
-    scale: [0, 1],
-    delay: 250,
-    endDelay: 250,
-    duration: 1000,
-    easing: 'easeOutExpo',
+    delay: 400,
+    duration: 800,
+    easing: 'linear',
   });
 }
 

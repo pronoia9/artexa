@@ -1,7 +1,8 @@
 import React from 'react';
 import BlogGrid from '../components/Blog/BlogGrid';
 
-// TODO : change this page to 2 column (or 3 column), ie: finish BlogGrid.jsx
+// DEPRECATED
+// NOT RELEVANT SINCE BLOG PAGES HAD TO BE SEPARATED TO GET ANIME TRANSITION WORK
 
 export default function BlogPage(props) {
   return <BlogGrid data={props.data} column={props.column || 2} />;

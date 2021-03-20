@@ -2484,8 +2484,8 @@ footer a:hover {
 .transition-fade {
   /* opacity: 0; */
   /* transform: scale(0.1); */
-  transition: 0.55s ease-in-out;
-  opacity: 1;
+  /* transition: 0.55s ease-in-out; */
+  opacity: 0;
 }
 .transition-fade .art-a {
   transform: scale(1);

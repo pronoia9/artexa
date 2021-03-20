@@ -4,9 +4,13 @@ import { Switch, Route } from 'react-router-dom';
 // pages
 import HomePage from '../views/HomePage';
 import ProjectsPage from '../views/ProjectsPage';
+import Projects2Col from '../views/Projects2Col';
+import Projects3Col from '../views/Projects3Col';
 import HistoryPage from '../views/HistoryPage';
 import CoursePage from '../views/CoursePage';
 import BlogPage from '../views/BlogPage';
+import Blog2Col from '../views/Blog2Col';
+import Blog3Col from '../views/Blog3Col';
 import AboutPage from '../views/AboutPage';
 import ContactPage from '../views/ContactPage';
 import NotFound from '../views/NotFound';
@@ -16,12 +20,16 @@ import 'react-tiger-transition/styles/main.min.css';
 export default function App(props) {
   return (
     <Switch>
+      <Route exact path='/projects'>
+        <ProjectsPage data={props.data.blog} column={3} />
+      </Route>
+
       <Route exact path='/projects-2-col'>
-        <ProjectsPage data={props.data.projects} column={2} />
+        <Projects2Col data={props.data.projects} />
       </Route>
 
       <Route exact path='/projects-3-col'>
-        <ProjectsPage data={props.data.projects} column={3} />
+        <Projects3Col data={props.data.projects} />
       </Route>
 
       <Route exact path='/history'>
@@ -32,12 +40,16 @@ export default function App(props) {
         <CoursePage data={props.data.courses} column={2} />
       </Route>
 
-      <Route exact path='/blog-2-col'>
+      <Route exact path='/blog'>
         <BlogPage data={props.data.blog} column={2} />
       </Route>
 
+      <Route exact path='/blog-2-col'>
+        <Blog2Col data={props.data.blog} />
+      </Route>
+
       <Route exact path='/blog-3-col'>
-        <BlogPage data={props.data.blog} column={3} />
+        <Blog3Col data={props.data.blog} />
       </Route>
 
       <Route exact path='/about'>

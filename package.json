@@ -27,6 +27,7 @@
     "smooth-scrollbar": "^8.6.1",
     "smooth-scrollbar-react": "^1.0.1",
     "swiper": "^6.5.0",
+    "swup": "^2.0.14",
     "web-vitals": "^1.1.0",
     "yup": "^0.32.9"
   },
