@@ -5,7 +5,7 @@ export default function ProjectCard(props) {
     <div className={'art-grid-item' + (props.class || '')}>
       {/* project image */}
       <a
-        data-fancybox='gallery'
+        data-fancybox='projects'
         href={process.env.PUBLIC_URL + props.project.images[0]}
         className={'art-a art-portfolio-item-frame art-square'}
       >
