@@ -15,7 +15,7 @@ export default function App(props) {
   return (
     <Switch>
       <Route exact path='/projects'>
-        <ProjectsPage data={props.data.projects} column={3} />
+        <ProjectsPage data={props.data.projects} />
       </Route>
 
       <Route exact path='/projects-2-col'>
@@ -31,11 +31,11 @@ export default function App(props) {
       </Route>
 
       <Route exact path='/courses'>
-        <CoursePage data={props.data.courses} column={2} />
+        <CoursePage data={props.data.courses} />
       </Route>
 
       <Route exact path='/blog'>
-        <BlogPage data={props.data.blog} column={2} />
+        <BlogPage data={props.data.blog} />
       </Route>
 
       <Route exact path='/blog-2-col'>
