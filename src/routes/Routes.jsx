@@ -1,15 +1,15 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { BrowserRouter as Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 // pages
-import HomePage from './HomePage';
-import ProjectsPage from './ProjectsPage';
-import HistoryPage from './HistoryPage';
-import CoursePage from './CoursePage';
-import BlogPage from './BlogPage';
-import AboutPage from './AboutPage';
-import ContactPage from './ContactPage';
-import NotFound from './NotFound';
+import HomePage from '../views/HomePage';
+import ProjectsPage from '../views/ProjectsPage';
+import HistoryPage from '../views/HistoryPage';
+import CoursePage from '../views/CoursePage';
+import BlogPage from '../views/BlogPage';
+import AboutPage from '../views/AboutPage';
+import ContactPage from '../views/ContactPage';
+import NotFound from '../views/NotFound';
 // transition animation
 import 'react-tiger-transition/styles/main.min.css';
 
@@ -41,11 +41,7 @@ export default function App(props) {
       </Route>
 
       <Route exact path='/about'>
-        <AboutPage
-          data={props.data}
-          background={props.background}
-          setBackground={props.setBackground}
-        />
+        <AboutPage data={props.data} background={props.background} setBackground={props.setBackground} />
       </Route>
 
       <Route exact path='/contact'>
@@ -53,11 +49,7 @@ export default function App(props) {
       </Route>
 
       <Route exact path='/'>
-        <HomePage
-          data={props.data}
-          background={props.background}
-          setBackground={props.setBackground}
-        />
+        <HomePage data={props.data} background={props.background} setBackground={props.setBackground} />
       </Route>
 
       <Route path='*'>

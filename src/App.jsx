@@ -8,7 +8,7 @@ import InfoBar from './components/Sidebar/InfoBar';
 import Navbar from './components/Navbar/Navbar';
 // middle
 import Footer from './components/Footer';
-import Routes from './views/Routes';
+import Routes from './routes/Routes';
 // data
 import data from './data/data.json';
 // js
