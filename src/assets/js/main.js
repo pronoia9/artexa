@@ -1,15 +1,20 @@
 import anime from 'animejs/lib/anime.es.js';
 var ProgressBar = require('progressbar.js');
 
-// 1. preloader
+// x. preloader
 //       - loading animation (fade in, line bar, fade out)
-// 2. progress bars
+// x. transitions
+//       - transition (page transition, fade in)
+// x. fancybox
+// x. progress bars
 //       - circle animation
 //       - line animation
-// 3. counters
+// x. counters
 //       - couter animation (fade in)
-// 4. form
+// x. form
 //       - button animations (scale, fade in/out)
+// x. misc
+//       - rng
 
 //------------------------------- PRELOADER ------------------------------//
 function loading() {
@@ -54,6 +59,7 @@ function loading() {
   );
   bar.animate(1);
 }
+
 // ----------------------------- TRANSITION ----------------------------- //
 function transition() {
   // since the transition-fade containers opacity changes after the first time this function is called
@@ -68,6 +74,9 @@ function transition() {
     easing: 'linear',
   });
 }
+
+//------------------------------  FANCYBOX  ------------------------------//
+// document.querySelector('[data-fancybox]="gallery"')
 
 //----------------------------- PROGRESSBARS -----------------------------//
 function progressbarCircle(i, id, percent) {
