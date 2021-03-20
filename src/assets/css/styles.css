@@ -1981,6 +1981,17 @@ blockquote:after {
   margin: 0;
 }
 
+/* ----- hobbies ----- */
+.art-hobbies-item-frame {
+  height: 100px;
+  width: 100px;
+  padding-bottom: 0;
+  box-shadow: none !important;
+}
+.art-hobbies-item-frame img {
+  object-fit: scale-down !important;
+}
+
 /* ----- brands ----- */
 .art-brand {
   width: 120px;
@@ -2034,7 +2045,8 @@ footer a:hover {
 }
 
 /* ----- portfolio items ----- */
-.art-portfolio-item-frame {
+.art-portfolio-item-frame,
+.art-hobbies-item-frame {
   display: block;
   width: 100%;
   outline: inherit;
@@ -2043,7 +2055,8 @@ footer a:hover {
   position: relative;
   padding-bottom: 60%;
 }
-.art-portfolio-item-frame img {
+.art-portfolio-item-frame img,
+.art-hobbies-item-frame img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -2054,7 +2067,8 @@ footer a:hover {
   filter: brightness(85%) blur(0);
   transition: 0.4s ease-in-out;
 }
-.art-portfolio-item-frame .art-item-hover {
+.art-portfolio-item-frame .art-item-hover,
+.art-hobbies-item-frame .art-item-hover {
   width: 27px;
   height: 27px;
   box-shadow: 0 1px 4px 0 var(--color-box-shadow-0);
@@ -2071,14 +2085,17 @@ footer a:hover {
   align-items: center;
   transition: 0.4s ease-in-out;
 }
-.art-portfolio-item-frame:hover .art-item-hover {
+.art-portfolio-item-frame:hover .art-item-hover,
+.art-hobbies-item-frame:hover .art-item-hover {
   opacity: 0.5;
 }
-.art-portfolio-item-frame:hover .art-item-hover:hover {
+.art-portfolio-item-frame:hover .art-item-hover:hover,
+.art-hobbies-item-frame:hover .art-item-hover:hover {
   opacity: 1;
   transform: scale(1.07);
 }
-.art-portfolio-item-frame:hover img {
+.art-portfolio-item-frame:hover img,
+.art-hobbies-item-frame:hover img {
   transform: scale(1.07);
   filter: brightness(100%) blur(0);
 }
@@ -2266,7 +2283,7 @@ footer a:hover {
   z-index: 999999999999999999;
 }
 .fancybox-content .fancybox-image {
-  box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+  /* box-shadow: 0 3px 8px 0 var(--color-box-shadow-0); */
 }
 .fancybox-thumbs {
   background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);

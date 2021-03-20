@@ -6,7 +6,7 @@ export default function AboutPage(props) {
   return (
     <>
       <About background={props.background} />
-      <Hobbies />
+      <Hobbies data={props.data} />
     </>
   );
 }

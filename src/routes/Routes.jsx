@@ -47,7 +47,7 @@ export default function App(props) {
       </Route>
 
       <Route exact path='/about'>
-        <AboutPage data={props.data} background={props.background} setBackground={props.setBackground} />
+        <AboutPage data={props.data.hobbies} background={props.background} setBackground={props.setBackground} />
       </Route>
 
       <Route exact path='/contact'>

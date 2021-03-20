@@ -676,6 +676,72 @@
       ]
     },
 
+    "hobbies": {
+      "title": "My Hobbies",
+      "hobbies": [
+        {
+          "id": 0,
+          "title": "Reading",
+          "image": "/images/bitmoji/reading.png",
+          "fancybox": "/images/bitmoji/reading.png"
+        },
+        {
+          "id": 1,
+          "title": "Programming",
+          "image": "/images/bitmoji/asdfghjkl_circle.png",
+          "fancybox": "/images/bitmoji/asdfghjkl.png"
+        },
+        {
+          "id": 2,
+          "title": "Listening to Music",
+          "image": "/images/bitmoji/music_circle.png",
+          "fancybox": "/images/bitmoji/music.png"
+        },
+        {
+          "id": 3,
+          "title": "Cooking",
+          "image": "/images/bitmoji/cooking_circle.png",
+          "fancybox": "/images/bitmoji/cooking.png"
+        },
+        {
+          "id": 4,
+          "title": "Baking",
+          "image": "/images/bitmoji/baking_circle.png",
+          "fancybox": "/images/bitmoji/baking.png"
+        },
+        {
+          "id": 5,
+          "title": "Cats",
+          "image": "/images/bitmoji/cats_circle.png",
+          "fancybox": "/images/bitmoji/cats.png"
+        },
+        {
+          "id": 6,
+          "title": "Dogs",
+          "image": "/images/bitmoji/dogs_circle.png",
+          "fancybox": "/images/bitmoji/dogs.png"
+        },
+        {
+          "id": 7,
+          "title": "Gaming",
+          "image": "/images/bitmoji/gaming_circle.png",
+          "fancybox": "/images/bitmoji/gaming.png"
+        },
+        {
+          "id": 8,
+          "title": "TV Shows",
+          "image": "/images/bitmoji/tv.png",
+          "fancybox": "/images/bitmoji/tv.png"
+        },
+        {
+          "id": 9,
+          "title": "Movies",
+          "image": "/images/bitmoji/movie_circle.png",
+          "fancybox": "/images/bitmoji/movie.png"
+        }
+      ]
+    },
+
     "logos": [
       "/images/bitmoji/wear-your-mask.png",
       "/images/bitmoji/dont-touch-your-face.png",
