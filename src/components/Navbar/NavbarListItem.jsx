@@ -23,6 +23,8 @@ export default function NavbarListItem(props) {
               setNavbarActive={props.setNavbarActive}
               currentPage={props.currentPage}
               setCurrentPage={props.setCurrentPage}
+              active={active}
+              setActive={setActive}
             />
           ))}
         </ul>
@@ -57,6 +59,7 @@ export default function NavbarListItem(props) {
             for (let i = 0; i < submenus.length; i++) {
               submenus[i].classList.remove('art-active');
             }
+            props.setActive(false);
           }
         }}
       >
