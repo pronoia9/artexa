@@ -59,7 +59,7 @@ export default function NavbarListItem(props) {
             for (let i = 0; i < submenus.length; i++) {
               submenus[i].classList.remove('art-active');
             }
-            props.setActive(false);
+            props.active && props.setActive(false);
           }
         }}
       >
