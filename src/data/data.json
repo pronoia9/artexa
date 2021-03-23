@@ -1,15 +1,15 @@
 {
   "sidebar": {
     "profile": {
-      "name": "Lorem Ipsum",
-      "subtitle": ["Consectetur adipiscing elit,", "Dolor sit amet"],
+      "name": "Jay Ansin",
+      "subtitle": ["Full-Stack Developer,", "Avid pet lover 🐶"],
       "available": true,
       "avatar": "/images/bitmoji/smile.png"
     },
 
     "about": [
-      { "id": 1, "title": "Sed non", "subtitle": "Elit aliquet" },
-      { "id": 2, "title": "Aliquam tortor", "subtitle": "Sit amet" }
+      { "id": 1, "title": "Nationality:", "subtitle": "U.S." },
+      { "id": 2, "title": "Age", "subtitle": "25" }
     ],
 
     "skills": {
@@ -64,14 +64,14 @@
         "platform": "github",
         "favicon": "fab fa-github-square",
         "fancybox": null,
-        "url": "https://github.com/"
+        "url": "https://github.com/pronoia9/"
       },
       {
         "id": 2,
         "platform": "linkedin",
         "favicon": "fab fa-linkedin",
         "fancybox": null,
-        "url": "https://www.linkedin.com/"
+        "url": "https://www.linkedin.com/in/jayansin/"
       },
       {
         "id": 3,
@@ -160,7 +160,7 @@
       "avatar": "/images/bitmoji/side-wave.png",
 
       "typed": [
-        "Hello Wor- No...",
+        "Hello Wor-",
         "I like to make websites.",
         "Also web applications.",
         "I do other stuff as well.",
