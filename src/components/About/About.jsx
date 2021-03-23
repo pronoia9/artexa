@@ -1,7 +1,8 @@
 import React from 'react';
 import SectionTitle from '../Templates/Text/SectionTitle';
+import Hobbies from '../Hobbies/Hobbies';
 
-export default function About() {
+export default function About(props) {
   return (
     <div className='container-fluid'>
       <div className='row p-30-0'>
@@ -59,6 +60,8 @@ export default function About() {
             </p>
 
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
+
+            <Hobbies title={false} data={props.hobbies} navigation={false} />
           </div>
         </div>
       </div>

@@ -15,7 +15,8 @@ export default function Hobbies(props) {
   return (
     <div className='container-fluid'>
       <div className='row p-30-30'>
-        <SectionTitle title={props.data.title} />
+        {/* if title is true/enabled, then render title */}
+        {props.title && <SectionTitle title={props.data.title} />}
 
         <div className='col-lg-12'>
           <Swiper
@@ -36,13 +37,20 @@ export default function Hobbies(props) {
           >
             {props.data.hobbies.map((hobby) => (
               <SwiperSlide key={hobby.id}>
-                <HobbiesCard key={hobby.id} title={hobby.title} image={hobby.image} fancybox={hobby.fancybox} section='hobbies' />
+                <HobbiesCard
+                  key={hobby.id}
+                  title={hobby.title}
+                  image={hobby.image}
+                  fancybox={hobby.fancybox}
+                  section='hobbies'
+                />
               </SwiperSlide>
             ))}
           </Swiper>
         </div>
 
-        <SwiperNavigation section='hobbies' />
+        {/* render navigation only if its enabled/true */}
+        {props.navigation && <SwiperNavigation section='hobbies' />}
       </div>
     </div>
   );
