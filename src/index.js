@@ -17,7 +17,7 @@ import './assets/css/styles.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Preloader />
       <App />
     </BrowserRouter>
