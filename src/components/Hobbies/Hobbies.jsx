@@ -18,7 +18,7 @@ export default function Hobbies(props) {
         {/* if title is true/enabled, then render title */}
         {props.title && <SectionTitle title={props.data.title} />}
 
-        <div className='col-lg-12'>
+        <div className='col-lg-12 hobbies-container'>
           <Swiper
             spaceBetween={0}
             slidesPerView={5}
