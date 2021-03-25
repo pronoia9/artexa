@@ -1,6 +1,6 @@
 {
-  "homepage": "https://pronoia9.github.io/portfolio/",
   "name": "portfolio",
+  "homepage": "https://pronoia9.github.io/portfolio",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
@@ -28,7 +28,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
