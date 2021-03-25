@@ -1,7 +1,7 @@
 {
-  "homepage": "http://pronoia9.github.io/portfolio",
-  "name": "portfolio-arter",
-  "version": "0.1.0",
+  "homepage": "https://pronoia9.github.io/portfolio/",
+  "name": "portfolio",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@fancyapps/fancybox": "^3.5.7",
