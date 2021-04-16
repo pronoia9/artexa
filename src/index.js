@@ -18,8 +18,8 @@ import './assets/css/styles.css';
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
-      <Preloader />
       <App />
+      <Preloader />
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
