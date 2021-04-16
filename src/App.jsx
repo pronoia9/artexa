@@ -29,14 +29,6 @@ export default function App() {
   // sliding for right side menu
   const [navbarActive, setNavbarActive] = useState(false);
 
-  // current background image (gets a local image link/path)
-  const [background, setBackground] = useState({
-    all: data.backgrounds.animated,
-    total: data.backgrounds.animated.length,
-    current: data.backgrounds.animated[i],
-    index: i,
-  });
-
   return (
     <div className='art-app'>
       <div className='art-mobile-top-bar'></div>
@@ -62,7 +54,7 @@ export default function App() {
               }}
             ></div>
             {/* send the background state from wrapper, which changes dynamically (on input) */}
-            <Background background={background} setBackground={setBackground} />
+            <Background />
 
             {/* transition container */}
             <div className='transition-fade' id='transition-fade'>
@@ -79,7 +71,7 @@ export default function App() {
                 <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
                   <div className='scroll-content'>
                     {/* routes */}
-                    <Routes data={data.main} background={background} setBackground={setBackground} />
+                    <Routes data={data.main} />
 
                     {/* footer */}
                     <Footer data={data.main.logos} />
