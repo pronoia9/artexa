@@ -6,9 +6,7 @@ export default function Background(props) {
     <div
       className='art-top-bg'
       style={{
-        backgroundImage: 'url(' + process.env.PUBLIC_URL + props.background.current + ')',
-      }}
-    >
+        backgroundImage: 'url(' + process.env.PUBLIC_URL + '/images/backgrounds/plexus.gif)'}}>
       {/* overlay */}
       <div className='art-top-bg-overlay'></div>
     </div>

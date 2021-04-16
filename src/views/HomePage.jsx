@@ -10,7 +10,7 @@ export default function HomePage(props) {
   return (
     <>
       {/* heading for banner */}
-      <Banner background={props.background} setBackground={props.setBackground} data={props.data.banner} />
+      <Banner data={props.data.banner} />
 
       {/* counters */}
       <Counters data={props.data.counters} />

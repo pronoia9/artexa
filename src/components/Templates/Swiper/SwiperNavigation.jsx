@@ -7,7 +7,7 @@ export default function SwiperNavigation(props) {
         {/* left side */}
         <div className='art-sn-left'>
           {/* slider pagination */}
-          <div className={props.section + '-swiper-pagination'}></div>
+          <div className={`swiper-pagination ${props.section}-swiper-pagination`}></div>
         </div>
 
         {/* right side */}
@@ -15,19 +15,11 @@ export default function SwiperNavigation(props) {
           {/* slider navigation */}
           <div className='art-slider-nav-frame'>
             {/* prev */}
-            <div
-              className={'art-slider-nav art-' + props.section + '-swiper-prev'}
-              role='button'
-              aria-label='Previous slide'
-            >
+            <div className={`art-slider-nav art-${props.section}-swiper-prev`} role='button' aria-label='Previous slide'>
               <i className='fas fa-chevron-left'></i>
             </div>
             {/* next */}
-            <div
-              className={'art-slider-nav art-' + props.section + '-swiper-next'}
-              role='button'
-              aria-label='Next slide'
-            >
+            <div className={'art-slider-nav art-' + props.section + '-swiper-next'} role='button' aria-label='Next slide'>
               <i className='fas fa-chevron-right'></i>
             </div>
           </div>

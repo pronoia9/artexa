@@ -55,7 +55,7 @@ export default function App(props) {
       </Route>
 
       <Route exact path='/'>
-        <HomePage data={props.data} background={props.background} setBackground={props.setBackground} />
+        <HomePage data={props.data} />
       </Route>
 
       <Route path='*'>
