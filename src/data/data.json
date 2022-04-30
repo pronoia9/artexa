@@ -9,7 +9,7 @@
 
     "about": [
       { "id": 1, "title": "Nationality:", "subtitle": "U.S." },
-      { "id": 2, "title": "Age", "subtitle": "25" }
+      { "id": 2, "title": "Age", "subtitle": "1995" }
     ],
 
     "skills": {
