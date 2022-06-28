@@ -25,7 +25,7 @@
         { "id": "5", "skill": "NodeJS", "level": 60 }
       ],
       "soft": [
-        "React Hooks, Redux, jQuery",
+        "React Hooks, React Router, Redux, jQuery",
         "MySQL, MongoDB, PostgresSQL",
         "Bootstrap, Material UI, Semantic UI, Wordpress",
         "Express, Knex, Mongoose",
