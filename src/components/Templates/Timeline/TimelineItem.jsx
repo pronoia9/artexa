@@ -1,6 +1,8 @@
 import React from 'react';
 
-export default function TimelineItem(props) {
+export default function TimelineItem({ item }) {
+  const { id, title, subtitle, date, description, button, url } = item;
+  
   return (
     <div className='art-timeline-item'>
       {/* decoration, the circle lights next to the item */}
@@ -13,30 +15,30 @@ export default function TimelineItem(props) {
         <div className='art-card-header'>
           <div className='art-left-side'>
             {/* title */}
-            <h5>{props.item.title}</h5>
+            <h5>{title}</h5>
             {/* status / author */}
-            {props.item.subtitle && <div className='art-el-suptitle mb-15'>{props.item.subtitle}</div>}
+            {subtitle && <div className='art-el-suptitle mb-15'>{subtitle}</div>}
           </div>
           {/* date */}
-          {props.item.date && (
+          {date && (
             <div className='art-right-side'>
-              <div className='art-date'>{props.item.date}</div>
+              <div className='art-date'>{date}</div>
             </div>
           )}
         </div>
 
         {/* content */}
-        <p>{props.item.description}</p>
+        <p>{description}</p>
         {/* <ul>
-          {props.item.list.map((c) => (
+          {list.map((c) => (
             <li key={c}>{c}</li>
           ))}
         </ul> */}
 
         {/* link */}
-        {(props.item.button && props.item.url) && (
-          <a data-fancybox='history' className='art-link art-color-link art-w-chevron' href={process.env.PUBLIC_URL + props.item.url}>
-            {props.item.button}
+        {(button && url) && (
+          <a data-fancybox='history' className='art-link art-color-link art-w-chevron' href={process.env.PUBLIC_URL + url}>
+            {button}
           </a>
         )}
       </div>
