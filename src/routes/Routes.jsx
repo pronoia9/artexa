@@ -11,51 +11,53 @@ import AboutPage from '../views/AboutPage';
 import ContactPage from '../views/ContactPage';
 import NotFound from '../views/NotFound';
 
-export default function App(props) {
+export default function App({ data }) {
+  const { projects, history, courses, technologies, hobbies, contact } = data;
+
   return (
     <Switch>
       <Route exact path='/projects'>
-        <ProjectsPage data={props.data.projects} />
+        <ProjectsPage data={projects} />
       </Route>
 
       <Route exact path='/projects-2-col'>
-        <ProjectsPage data={props.data.projects} column={2} />
+        <ProjectsPage data={projects} column={2} />
       </Route>
 
       <Route exact path='/projects-3-col'>
-        <ProjectsPage data={props.data.projects} column={3} />
+        <ProjectsPage data={projects} column={3} />
       </Route>
 
       <Route exact path='/history'>
-        <HistoryPage data={props.data.history} />
+        <HistoryPage data={history} />
       </Route>
 
       <Route exact path='/courses'>
-        <CoursePage data={props.data.courses} />
+        <CoursePage data={courses} />
       </Route>
 
       <Route exact path='/blog'>
-        <BlogPage data={props.data.blog} />
+        <BlogPage data={technologies} />
       </Route>
 
       <Route exact path='/blog-2-col'>
-        <BlogPage data={props.data.blog} column={2} />
+        <BlogPage data={technologies} column={2} />
       </Route>
 
       <Route exact path='/blog-3-col'>
-        <BlogPage data={props.data.blog} column={3} />
+        <BlogPage data={technologies} column={3} />
       </Route>
 
       <Route exact path='/about'>
-        <AboutPage hobbies={props.data.hobbies} />
+        <AboutPage hobbies={hobbies} />
       </Route>
 
       <Route exact path='/contact'>
-        <ContactPage data={props.data.contact} />
+        <ContactPage data={contact} />
       </Route>
 
       <Route exact path='/'>
-        <HomePage data={props.data} />
+        <HomePage data={data} />
       </Route>
 
       <Route path='*'>
