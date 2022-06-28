@@ -32,13 +32,11 @@ export default function TimelineItem(props) {
         </ul> */}
 
         {/* link */}
-        <a
-          data-fancybox='history'
-          className='art-link art-color-link art-w-chevron'
-          href={process.env.PUBLIC_URL + props.item.url}
-        >
-          {props.item.button}
-        </a>
+        {props.item.url && (
+          <a data-fancybox='history' className='art-link art-color-link art-w-chevron' href={process.env.PUBLIC_URL + props.item.url}>
+            {props.item.button}
+          </a>
+        )}
       </div>
     </div>
   );
