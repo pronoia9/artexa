@@ -615,8 +615,8 @@
       "form": { "title": "Get in touch" }
     },
 
-    "blog": {
-      "title": "Posts",
+    "technologies": {
+      "title": "Technologies | Libraries",
       "message": "Read More",
       "posts": [
         {
@@ -624,63 +624,63 @@
           "title": "Fancybox",
           "overview": "JavaScript lightbox library for presenting various types of media.",
           "url": "https://fancyapps.com/fancybox/3/",
-          "image": "/images/blog/fancybox.png"
+          "image": "/images/technologies/fancybox.png"
         },
         {
           "id": 2,
           "title": "Animejs",
           "overview": "A JavaScript animation library with a simple, yet powerful API.",
           "url": "https://animejs.com/",
-          "image": "/images/blog/animejs.png"
+          "image": "/images/technologies/animejs.png"
         },
         {
           "id": 3,
           "title": "Typed",
           "overview": "A JavaScript Typing Animation. Typed.js is a library that types.",
           "url": "https://www.npmjs.com/package/react-typed",
-          "image": "/images/blog/typedjs.gif"
+          "image": "/images/technologies/typedjs.gif"
         },
         {
           "id": 4,
           "title": "Swiper",
           "overview": "Modern mobile touch slider with transitions and amazing behavior.",
           "url": "https://swiperjs.com/",
-          "image": "/images/blog/swiperjs.png"
+          "image": "/images/technologies/swiperjs.png"
         },
         {
           "id": 5,
           "title": "Formik",
           "overview": "Formik makes debugging, testing, and reasoning about your forms a breeze.",
           "url": "https://formik.org/",
-          "image": "/images/blog/formik.jpeg"
+          "image": "/images/technologies/formik.jpeg"
         },
         {
           "id": 6,
           "title": "Yup",
           "overview": "A JavaScript schema builder for value parsing and validation.",
           "url": "https://www.npmjs.com/package/yup",
-          "image": "/images/blog/yup.jpg"
+          "image": "/images/technologies/yup.jpg"
         },
         {
           "id": 7,
           "title": "EmailJS",
           "overview": "EmailJS helps to send emails using client-side technologies...",
           "url": "https://www.emailjs.com/",
-          "image": "/images/blog/emailjs.png"
+          "image": "/images/technologies/emailjs.png"
         },
         {
           "id": 8,
           "title": "Smooth Scrollbar",
           "overview": "Customizable, Pluginable, and High Performance Scrollbars!",
           "url": "https://www.npmjs.com/package/react-smooth-scrollbar",
-          "image": "/images/blog/smooth-scrollbar.png"
+          "image": "/images/technologies/smooth-scrollbar.png"
         },
         {
           "id": 9,
           "title": "Arter - CV Resume Portfolio",
           "overview": "Arter is an modern and unique creative HTML Template.",
           "url": "https://themeforest.net/item/arter-cv-resume-portfolio-web-app-template/27008333",
-          "image": "/images/blog/arter.jfif"
+          "image": "/images/technologies/arter.jfif"
         }
       ]
     },
