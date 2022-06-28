@@ -15,12 +15,14 @@ export default function TimelineItem(props) {
             {/* title */}
             <h5>{props.item.title}</h5>
             {/* status / author */}
-            <div className='art-el-suptitle mb-15'>{props.item.subtitle}</div>
+            {props.item.subtitle && <div className='art-el-suptitle mb-15'>{props.item.subtitle}</div>}
           </div>
           {/* date */}
-          <div className='art-right-side'>
-            <div className='art-date'>{props.item.date}</div>
-          </div>
+          {props.item.date && (
+            <div className='art-right-side'>
+              <div className='art-date'>{props.item.date}</div>
+            </div>
+          )}
         </div>
 
         {/* content */}
@@ -32,7 +34,7 @@ export default function TimelineItem(props) {
         </ul> */}
 
         {/* link */}
-        {props.item.url && (
+        {(props.item.button && props.item.url) && (
           <a data-fancybox='history' className='art-link art-color-link art-w-chevron' href={process.env.PUBLIC_URL + props.item.url}>
             {props.item.button}
           </a>
