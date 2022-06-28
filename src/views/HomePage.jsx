@@ -6,26 +6,27 @@ import ProjectsSwiper from '../components/Projects/ProjectsSwiper';
 import BlogSwiper from '../components/Blog/BlogSwiper';
 import Contact from '../components/Contact/Contact';
 
-export default function HomePage(props) {
+export default function HomePage({ data }) {
+  const { banner, counters, projects, history, technologies, contact } = data;
   return (
     <>
       {/* heading for banner */}
-      <Banner data={props.data.banner} />
+      <Banner data={banner} />
 
       {/* counters */}
-      <Counters data={props.data.counters} />
+      <Counters data={counters} />
 
       {/* projects */}
-      <ProjectsSwiper data={props.data.projects} />
+      <ProjectsSwiper data={projects} />
 
       {/* education history */}
-      <History data={props.data.history} />
+      <History data={history} />
 
       {/* newsletter / posts */}
-      <BlogSwiper data={props.data.blog} />
+      <BlogSwiper data={technologies} />
 
       {/* contact info */}
-      <Contact data={props.data.contact} />
+      <Contact data={contact} />
     </>
   );
 }
