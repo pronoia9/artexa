@@ -13,11 +13,9 @@ import './assets/css/colors/yellow.css';
 import './assets/css/styles.css';
 
 ReactDOM.render(
-  <React.StrictMode>
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <App />
       <Preloader />
-    </BrowserRouter>
-  </React.StrictMode>,
+    </BrowserRouter>,
   document.getElementById('root')
 );
