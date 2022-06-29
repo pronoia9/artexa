@@ -7,17 +7,15 @@ import NavbarList from './NavbarList';
 export default function ArtMenuBar({ data, navbarActive, sidebarActive, setSidebarActive, setNavbarActive }) {
   // contains the current page
   const [currentPage, setCurrentPage] = useState('');
-  const [currentPath, setCurrentPath] = useState('');
   // react router location
   let location = useLocation();
 
   useEffect(() => {
-    setCurrentPath(location.pathname);
     setCurrentPage(() => {
-      const location = currentPath.replaceAll('/', '');
-      return location ? location[0].toUpperCase() + location.slice(1) : currentPath === '/' ? 'Home' : '';
+      const l = location.pathname.replaceAll('/', '');
+      return l === '/' ? 'Home' : l[0].toUpperCase() + l.slice(1);
     });
-  }, [location, currentPath]);
+  }, [location]);
 
   return (
     <div className={navbarActive ? 'art-menu-bar art-active' : 'art-menu-bar'}>
@@ -29,7 +27,7 @@ export default function ArtMenuBar({ data, navbarActive, sidebarActive, setSideb
           setSidebarActive={setSidebarActive}
         />
         <NavbarCurrentPage currentPage={currentPage} />
-        <NavbarList data={data} currentPage={currentPage} currentPath={currentPath} setCurrentPage={setCurrentPage} setNavbarActive={setNavbarActive} />
+        <NavbarList data={data} currentPage={currentPage} setCurrentPage={setCurrentPage} setNavbarActive={setNavbarActive} />
       </div>
     </div>
   );
