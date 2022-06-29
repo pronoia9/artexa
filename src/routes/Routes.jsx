@@ -11,7 +11,7 @@ import AboutPage from '../views/AboutPage';
 import ContactPage from '../views/ContactPage';
 import NotFound from '../views/NotFound';
 
-export default function App({ data }) {
+export default function App({ data, background, changeBackground }) {
   const { projects, history, courses, technologies, hobbies, contact } = data;
 
   return (
@@ -57,7 +57,7 @@ export default function App({ data }) {
       </Route>
 
       <Route exact path='/'>
-        <HomePage data={data} />
+        <HomePage data={data} background={background} changeBackground={changeBackground} />
       </Route>
 
       <Route path='*'>

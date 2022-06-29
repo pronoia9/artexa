@@ -6,12 +6,12 @@ import ProjectsSwiper from '../components/Projects/ProjectsSwiper';
 import BlogSwiper from '../components/Blog/BlogSwiper';
 import Contact from '../components/Contact/Contact';
 
-export default function HomePage({ data }) {
+export default function HomePage({ data, background, changeBackground }) {
   const { banner, counters, projects, history, technologies, contact } = data;
   return (
     <>
       {/* heading for banner */}
-      <Banner data={banner} />
+      <Banner data={banner} background={background} changeBackground={changeBackground} />
 
       {/* counters */}
       <Counters data={counters} />
