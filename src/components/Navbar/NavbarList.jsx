@@ -1,19 +1,17 @@
-import React from 'react';
 import NavbarListItem from './NavbarListItem';
 
-export default function NavbarList(props) {
-
+export default function NavbarList({ data, setNavbarActive, currentPage, setCurrentPage }) {
   return (
     <div className='art-scroll-frame'>
       <nav>
         <ul className='main-menu'>
-          {props.data.map((li) => (
+          {data.map((li) => (
             <NavbarListItem
               key={li.title}
               item={li}
-              setNavbarActive={props.setNavbarActive}
-              currentPage={props.currentPage}
-              setCurrentPage={props.setCurrentPage}
+              setNavbarActive={setNavbarActive}
+              currentPage={currentPage}
+              setCurrentPage={setCurrentPage}
             />
           ))}
         </ul>
