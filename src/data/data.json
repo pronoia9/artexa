@@ -255,11 +255,11 @@
     "projects": {
       "filter": [
         { "id": 0, "category": "All Categories", "dataFilter": null },
-        { "id": 1, "category": "Filter 1", "dataFilter": "filter1" },
-        { "id": 2, "category": "Filter 2", "dataFilter": "filter2" },
-        { "id": 3, "category": "Filter 3", "dataFilter": "filter3" },
-        { "id": 4, "category": "Filter 4", "dataFilter": "filter4" },
-        { "id": 5, "category": "Filter 5", "dataFilter": "filter5" }
+        { "id": 1, "category": "Full", "dataFilter": "full" },
+        { "id": 2, "category": "Mini", "dataFilter": "mini" },
+        { "id": 3, "category": "React", "dataFilter": "react" },
+        { "id": 4, "category": "APIs", "dataFilter": "api" },
+        { "id": 5, "category": "CSS", "dataFilter": "css" }
       ],
 
       "projects": [
