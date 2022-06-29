@@ -297,11 +297,11 @@
         },
         {
           "id": 4,
-          "filters": ["", "", ""],
-          "url": "",
+          "filters": ["mini", "react", "api"],
+          "url": "https://pronoia9.github.io/advice_generator/",
           "title": "Advice Generator",
-          "tags": ["", "", "", ""],
-          "images": ["/images/projects/.jpg", "/images/projects/.jpg"]
+          "tags": ["React", "HTML", "CSS", "Javascript", "APIs"],
+          "images": ["/images/projects/advice_generator.png"]
         },
         {
           "id": 5,
