@@ -625,7 +625,7 @@
     "technologies": {
       "title": "Technologies | Libraries",
       "message": "Read More",
-      "posts": [
+      "packages": [
         {
           "id": 1,
           "title": "Fancybox",
