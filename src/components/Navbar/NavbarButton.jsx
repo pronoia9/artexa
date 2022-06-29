@@ -1,16 +1,15 @@
 import React from 'react';
 
-export default function MenuBarHeader(props) {
+export default function MenuBarHeader({ navbarActive, setSidebarActive, sidebarActive, setNavbarActive }) {
   return (
     <div className='art-menu-bar-header'>
       {/* when clicked on it, add class art-active and shows/hides the navbar */}
       <div
-        className={props.navbarActive ? 'art-menu-bar-btn art-active' : 'art-menu-bar-btn'}
+        className={navbarActive ? 'art-menu-bar-btn art-active' : 'art-menu-bar-btn'}
         onClick={() => {
-          props.sidebarActive && props.setSidebarActive(false);
-          props.setNavbarActive(!props.navbarActive);
-        }}
-      >
+          sidebarActive && setSidebarActive(false);
+          setNavbarActive(!navbarActive);
+        }}>
         <span></span>
       </div>
     </div>
