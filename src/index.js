@@ -10,7 +10,7 @@ import 'swiper/components/pagination/pagination.scss';
 import 'swiper/components/scrollbar/scrollbar.scss';
 // stylesheets
 import './assets/css/colors/yellow.css';
-import './assets/css/styles.css';
+import './assets/css/styles.scss';
 
 ReactDOM.render(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
