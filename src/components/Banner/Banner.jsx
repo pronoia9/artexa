@@ -2,7 +2,7 @@ import React from 'react';
 import Code from './Code';
 import { rng } from '../../assets/js/main.js';
 
-export default function Banner({ data, background }) {
+export default function Banner({ data, background, changeBackground }) {
   return (
     <div className='container-fluid'>
       <div className='row p-60-0 p-lg-30-0 p-md-15-0'>
@@ -30,7 +30,7 @@ export default function Banner({ data, background }) {
                     <span>{data.button.text}</span>
                   </a> */}
                   {/* button v2 (a div with onclick) */}
-                  <div className='art-btn art-btn-md btn-v2' onClick={() => {}}>
+                  <div className='art-btn art-btn-md btn-v2' onClick={() => changeBackground()}>
                     <span>{data.button.text}</span>
                   </div>
                 </div>
