@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function MenuBarHeader({ navbarActive, setSidebarActive, sidebarActive, setNavbarActive }) {
   return (
     <div className='art-menu-bar-header'>
