@@ -187,7 +187,8 @@
             "date": "June 2022 - Ongoing",
             "description": "Learning from React.js experts. This is a React JS tutorial + projects course that I'm learning/improving in React, building advanced large-scale applications from scratch using Redux, React Hooks, React Router, GraphQL, Context API, Firebase, Redux-Saga, Stripe, and more.",
             "button": "Link",
-            "url": "https://zerotomastery.io/courses/learn-react/"
+            "url": "https://zerotomastery.io/courses/learn-react/",
+            "fancybox": false
           },
           {
             "id": 3,
@@ -196,7 +197,8 @@
             "date": "April 2022 - May 2022",
             "description": "This course was taught by an instructor who has worked in Silicon Valley, and one of the top tech companies in Toronto.",
             "button": "Certificate",
-            "url": "/images/certificates/ztm-tcwd.jpg"
+            "url": "/images/certificates/ztm-tcwd.jpg",
+            "fancybox": true
           },
           {
             "id": 2,
@@ -205,7 +207,8 @@
             "date": "Feb 2021 - March 2021",
             "description": "The course was taught by the lead instructor at the App Brewery, London's leading in-person programming bootcamp.",
             "button": "Certificate",
-            "url": "/images/certificates/tab-wdb.png"
+            "url": "/images/certificates/tab-wdb.png",
+            "fancybox": true
           },
           {
             "id": 1,
@@ -214,7 +217,8 @@
             "date": "May 2016 - May 2019",
             "description": "This three-year advanced diploma program provided me with the skills and knowledge for software developement. I've learned programming languages, program design and system analysis. Web concepts were integrated into all courses to develop active database web programs on a variety of operating systems. Advanced techniques were taught through professional option courses.",
             "button": "Diploma",
-            "url": "/images/certificates/example.png"
+            "url": "/images/certificates/example.png",
+            "fancybox": true
           }
         ]
       },
@@ -229,7 +233,8 @@
             "date": "April 2013",
             "description": "Destination Imagination (DI) is a global educational nonprofit dedicated to inspiring the next generation of innovators, leaders and creative problem solvers.",
             "button": "Website",
-            "url": "https://www.destinationimagination.org/about/"
+            "url": "https://www.destinationimagination.org/about/",
+            "fancybox": false
           },
           {
             "id": 1,
@@ -238,7 +243,8 @@
             "date": "August 2011",
             "description": "The CEI is an independent organization established in 1986, embracing secondary school students, teachers and mentors, whose interests are focused specifically on the issues of environmental protection, promoting education, shaping awarness and training within sustainable development.",
             "button": "Certificate",
-            "url": "/images/certificates/cei.jpg"
+            "url": "/images/certificates/cei.jpg",
+            "fancybox": true
           }
         ]
       }
