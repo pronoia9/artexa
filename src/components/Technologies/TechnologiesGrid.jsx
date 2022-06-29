@@ -12,7 +12,7 @@ export default function TechnologiesGrid({ data, column }) {
         {/* content */}
         {packages.map((item) => (
           <div className={'col-lg-' + 12 / column}>
-            <TechnologiesCard key={item.id} item={item} message={message} />
+            <TechnologiesCard key={item.id + item.title} item={item} message={message} />
           </div>
         ))}
       </div>
