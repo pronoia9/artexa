@@ -19,7 +19,6 @@ export default function NavbarListItem({ item, setNavbarActive, currentPage }) {
               key={li.subtitle}
               item={li}
               setNavbarActive={setNavbarActive}
-              currentPage={currentPage}
               active={active}
               setActive={setActive}
             />
