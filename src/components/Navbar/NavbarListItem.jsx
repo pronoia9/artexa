@@ -38,7 +38,7 @@ export default function NavbarListItem(props) {
       <NavLink
         exact
         to={props.item.path}
-        activeClassName='selected'
+        activeclassname='selected'
         activeStyle={{
           color: '#fff',
           textShadow: '0 0 3px var(--color-text-shadow-0)',
@@ -61,8 +61,7 @@ export default function NavbarListItem(props) {
             }
             props.active && props.setActive(false);
           }
-        }}
-      >
+        }}>
         {/* show either the subtitle (if they have it, nested list items will have it), or the title  */}
         <span>{props.item.subtitle || props.item.title}</span>
       </NavLink>
