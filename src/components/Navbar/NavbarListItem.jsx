@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function NavbarListItem(props) {
   // used to open/close submenu
@@ -8,12 +8,7 @@ export default function NavbarListItem(props) {
 
   if (props.item.subMenu) {
     return (
-      <li
-        className={
-          'menu-item menu-item-has-children' +
-          (props.currentPage === props.item.title ? ' current-menu-item' : '')
-        }
-      >
+      <li className={'menu-item menu-item-has-children' + (props.currentPage === props.item.title ? ' current-menu-item' : '')}>
         <p onClick={() => setActive(!active)}>{props.item.title}</p>
         <ul className={'sub-menu' + (active ? ' art-active' : '')}>
           {props.item.subMenu.map((li) => (
@@ -35,8 +30,7 @@ export default function NavbarListItem(props) {
   return (
     // if the current page is this list item, add a class that will highlight it
     <li className='menu-item'>
-      <NavLink
-        exact
+      <Link
         to={props.item.path}
         activeclassname='selected'
         activestyle={{
@@ -64,7 +58,7 @@ export default function NavbarListItem(props) {
         }}>
         {/* show either the subtitle (if they have it, nested list items will have it), or the title  */}
         <span>{props.item.subtitle || props.item.title}</span>
-      </NavLink>
+      </Link>
     </li>
   );
 }
