@@ -37,9 +37,8 @@ export default function TimelineItem({ item }) {
 
         {/* link */}
         {(button && url) && (
-          <a data-fancybox='history' className='art-link art-color-link art-w-chevron' href={process.env.PUBLIC_URL + url}>
-            {button}
-          </a>
+          url.includes('https') ? <a className='art-link art-color-link art-w-chevron' href={url} target='_blank' rel="noreferrer">{button}</a> :
+          <a data-fancybox='history' className='art-link art-color-link art-w-chevron' href={process.env.PUBLIC_URL + url}>{button}</a>
         )}
       </div>
     </div>
