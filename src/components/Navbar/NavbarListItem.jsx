@@ -40,13 +40,9 @@ export default function NavbarListItem({ item, setNavbarActive, currentPage }) {
           textShadow: '0 0 3px var(--color-text-shadow-0)',
         }}
         onClick={(e) => {
-          // if the current link items path is the current pathname
-          if (path === location.pathname) {
-            // that means were on the page that this link links to, so dont do anything
-            e.preventDefault();
-          }
-          // if it's a different path, then change the current page to that links title
-          // and set navbar active to false to close it
+          // if the current link items path is the current pathname that means were on the page that this link links to, so dont do anything
+          if (path === location.pathname) e.preventDefault();
+          // if it's a different path, then change the current page to that links title and set navbar active to false to close it
           else {
             setNavbarActive(false);
             // close all the dropdown menus (submenus)
