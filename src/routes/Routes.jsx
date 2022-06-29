@@ -16,18 +16,20 @@ export default function App({ data, background, changeBackground }) {
 
   return (
     <Routes>
-      <Route path='/projects' element={<ProjectsPage data={projects} />} />
-      <Route path='/projects-2-col' element={<ProjectsPage data={projects} column={2} />} />
-      <Route path='/projects-3-col' element={<ProjectsPage data={projects} column={3} />} />
-      <Route path='/history' element={<HistoryPage data={history} />} />
-      <Route path='/courses' element={<CoursePage data={courses} />} />
-      <Route path='/technologies' element={<BlogPage data={technologies} />} />
-      <Route path='/technologies-2-col' element={<BlogPage data={technologies} column={2} />} />
-      <Route path='/technologies-3-col' element={<BlogPage data={technologies} column={3} />} />
-      <Route path='/about' element={<AboutPage hobbies={hobbies} />} />
-      <Route path='/contact' element={<ContactPage data={contact} />} />
-      <Route path='/portfolio' element={<HomePage data={data} background={background} changeBackground={changeBackground} />} />
-      <Route path='*' element={<NotFound />} />
+      <Route path='/' element={<HomePage data={data} background={background} changeBackground={changeBackground} />}>
+        <Route path='/projects' element={<ProjectsPage data={projects} />} />
+        <Route path='/projects-2-col' element={<ProjectsPage data={projects} column={2} />} />
+        <Route path='/projects-3-col' element={<ProjectsPage data={projects} column={3} />} />
+        <Route path='/history' element={<HistoryPage data={history} />} />
+        <Route path='/courses' element={<CoursePage data={courses} />} />
+        <Route path='/technologies' element={<BlogPage data={technologies} />} />
+        <Route path='/technologies-2-col' element={<BlogPage data={technologies} column={2} />} />
+        <Route path='/technologies-3-col' element={<BlogPage data={technologies} column={3} />} />
+        <Route path='/about' element={<AboutPage hobbies={hobbies} />} />
+        <Route path='/contact' element={<ContactPage data={contact} />} />
+        <Route path='/portfolio' element={<HomePage data={data} background={background} changeBackground={changeBackground} />} />
+        <Route path='*' element={<NotFound />} />
+      </Route>
     </Routes>
   );
 }
