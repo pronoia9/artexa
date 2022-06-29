@@ -13,7 +13,7 @@ export default function HomePage({ data, background, changeBackground }) {
       <Banner data={banner} background={background} changeBackground={changeBackground} />
 
       {/* counters */}
-      <Counters data={counters} />
+      <Counters data={counters} projectsCount={projects.projects.length} />
 
       {/* projects */}
       <ProjectsSwiper data={projects} />
