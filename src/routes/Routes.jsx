@@ -16,7 +16,7 @@ export default function App({ data, background, changeBackground }) {
 
   return (
     <Routes>
-      <Route path='/' element={<HomePage data={data} background={background} changeBackground={changeBackground} />}>
+      {/* <Route path='/' element={<HomePage data={data} background={background} changeBackground={changeBackground} />}> */}
         <Route path='/projects' element={<ProjectsPage data={projects} />} />
         <Route path='/projects-2-col' element={<ProjectsPage data={projects} column={2} />} />
         <Route path='/projects-3-col' element={<ProjectsPage data={projects} column={3} />} />
@@ -29,7 +29,7 @@ export default function App({ data, background, changeBackground }) {
         <Route path='/contact' element={<ContactPage data={contact} />} />
         <Route path='/portfolio' element={<HomePage data={data} background={background} changeBackground={changeBackground} />} />
         <Route path='*' element={<NotFound />} />
-      </Route>
+      {/* </Route> */}
     </Routes>
   );
 }
