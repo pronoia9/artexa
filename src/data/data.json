@@ -102,8 +102,8 @@
       "id": 1,
       "title": "Projects",
       "subMenu": [
-        { "title": "Projects", "subtitle": "2 Columns", "path": "/projects-2-col" },
-        { "title": "Projects", "subtitle": "3 Columns", "path": "/projects-3-col" }
+        { "id": 10, "title": "Projects", "subtitle": "2 Columns", "path": "/projects-2-col" },
+        { "id": 11, "title": "Projects", "subtitle": "3 Columns", "path": "/projects-3-col" }
       ]
     },
     { "id": 2, "title": "History", "subMenu": false, "path": "/history" },
@@ -112,8 +112,8 @@
       "id": 4,
       "title": "Technologies",
       "subMenu": [
-        { "title": "Technologies", "subtitle": "2 Column", "path": "/technologies-2-col" },
-        { "title": "Technologies", "subtitle": "3 Column", "path": "/technologies-3-col" }
+        { "id": 40, "title": "Technologies", "subtitle": "2 Column", "path": "/technologies-2-col" },
+        { "id": 41, "title": "Technologies", "subtitle": "3 Column", "path": "/technologies-3-col" }
       ]
     },
     { "id": 5, "title": "About", "subMenu": false, "path": "/about" },
