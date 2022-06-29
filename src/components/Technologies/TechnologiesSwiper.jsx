@@ -47,7 +47,7 @@ export default function TechnologiesSwiper({data, }) {
           >
             {packages.map((item) => (
               <SwiperSlide key={item.id} className='swiper-slide'>
-                <TechnologiesCard key={item.id} post={item} message={message} />
+                <TechnologiesCard key={item.id} item={item} message={message} />
               </SwiperSlide>
             ))}
           </Swiper>
