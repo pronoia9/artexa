@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import NavbarButton from './NavbarButton';
 import NavbarCurrentPage from './NavbarCurrentPage';
 import NavbarList from './NavbarList';
@@ -6,6 +7,12 @@ import NavbarList from './NavbarList';
 export default function ArtMenuBar({ data, navbarActive, sidebarActive, setSidebarActive, setNavbarActive }) {
   // contains the current page
   const [currentPage, setCurrentPage] = useState('Home');
+  // react router location
+  let location = useLocation();
+
+  useEffect(() => {
+    setCurrentPage(`${location.pathname.replace('/', '')[0].toUpperCase() + location.pathname.replace('/', '').slice(1)}`);
+  }, [location]);
 
   return (
     <div className={navbarActive ? 'art-menu-bar art-active' : 'art-menu-bar'}>
