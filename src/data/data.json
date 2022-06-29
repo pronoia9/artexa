@@ -269,7 +269,8 @@
           "url": "https://pronoia9.github.io/portfolio/",
           "title": "Portfolio",
           "tags": ["React", "HTML", "CSS", "Javascript", "Database"],
-          "images": ["/images/projects/portfolio.png"]
+          "images": ["/images/projects/portfolio.png"],
+          "overview": ""
         },
         {
           "id": 1,
@@ -277,7 +278,8 @@
           "url": "https://pronoia9.github.io/ztmtcwd-robofriends/",
           "title": "Robofriends",
           "tags": ["React", "HTML", "CSS", "Javascript", "APIs"],
-          "images": ["/images/projects/robofriends.png"]
+          "images": ["/images/projects/robofriends.png"],
+          "overview": ""
         },
         {
           "id": 2,
@@ -285,7 +287,8 @@
           "url": "https://pronoia9.github.io/westsum/",
           "title": "Westsum",
           "tags": ["React", "HTML", "CSS", "Javascript", "APIs"],
-          "images": ["/images/projects/westsum1.png","/images/projects/westsum2.png","/images/projects/westsum3.png"]
+          "images": ["/images/projects/westsum1.png", "/images/projects/westsum2.png", "/images/projects/westsum3.png"],
+          "overview": ""
         },
         {
           "id": 3,
@@ -293,7 +296,8 @@
           "url": "https://pronoia9.github.io/ztmtcwd-smartbrains/",
           "title": "Smartbrains",
           "tags": ["React", "HTML", "CSS", "Javascript", "SQL", "API"],
-          "images": ["/images/projects/smartbrains.png"]
+          "images": ["/images/projects/smartbrains.png"],
+          "overview": ""
         },
         {
           "id": 4,
@@ -301,75 +305,84 @@
           "url": "https://pronoia9.github.io/advice_generator/",
           "title": "Advice Generator",
           "tags": ["React", "HTML", "CSS", "Javascript", "APIs"],
-          "images": ["/images/projects/advice_generator.png"]
+          "images": ["/images/projects/advice_generator.png"],
+          "overview": "The perfect project if you're learning how to interact with 3rd-party APIs. This challenge uses the Advice Slip API to generate random quotes of advice."
         },
         {
           "id": 5,
-          "filters": ["", "", ""],
-          "url": "",
+          "filters": ["mini", "react"],
+          "url": "https://pronoia9.github.io/time_tracking_dashboard",
           "title": "Time Tracking Dashboard",
-          "tags": ["", "", "", ""],
-          "images": ["/images/projects/.jpg", "/images/projects/.jpg"]
+          "tags": ["React", "HTML", "CSS", "Javascript"],
+          "images": ["/images/projects/time_tracking.jpg"],
+          "overview": "A perfect opportunity to practice your CSS Grid skills. For anyone wanting to take it up a notch, we provide a JSON data file to practice working with data."
         },
         {
           "id": 6,
-          "filters": ["", "", ""],
-          "url": "",
+          "filters": ["mini", "react"],
+          "url": "https://www.frontendmentor.io/challenges/tip-calculator-app-ugJNGbJUX",
           "title": "Tip Calculator App",
-          "tags": ["", "", "", ""],
-          "images": ["/images/projects/.jpg", "/images/projects/.jpg"]
+          "tags": ["React", "HTML", "CSS", "Javascript"],
+          "images": ["/images/projects/tip_calculator.jpg"],
+          "overview": "This small app is perfect for anyone starting to get to grips with JavaScript. The calculator functionality will be a nice test!"
         },
         {
           "id": 7,
-          "filters": ["", "", ""],
-          "url": "",
+          "filters": ["mini", "react"],
+          "url": "https://www.frontendmentor.io/challenges/interactive-pricing-component-t0m8PIyY8",
           "title": "Interactive Pricing Component",
-          "tags": ["", "", "", ""],
-          "images": ["/images/projects/.jpg", "/images/projects/.jpg"]
+          "tags": ["React", "HTML", "CSS", "Javascript"],
+          "images": ["/images/projects/interactive_pricing.jpg"],
+          "overview": "In this project, you'll build out an interactive pricing component complete with custom range input slider and pricing toggle. A perfect way to test your JS skills!"
         },
         {
           "id": 8,
-          "filters": ["", "", ""],
-          "url": "",
+          "filters": ["mini", "react"],
+          "url": "https://www.frontendmentor.io/challenges/tic-tac-toe-game-Re7ZF_E2v",
           "title": "Tic Tac Toe Game",
-          "tags": ["", "", "", ""],
-          "images": ["/images/projects/.jpg", "/images/projects/.jpg"]
+          "tags": ["React", "HTML", "CSS", "Javascript"],
+          "images": ["/images/projects/tic-tac-toe.jpg"],
+          "overview": "This classic practice project for web developers is a great exercise to complete. It will test your HTML semantics, your grid layout skill, as well as your JS logic."
         },
         {
           "id": 9,
-          "filters": ["", "", ""],
-          "url": "",
+          "filters": ["mini", "react"],
+          "url": "https://www.frontendmentor.io/challenges/inbrowser-markdown-editor-r16TrrQX9",
           "title": "Markdown Editor",
-          "tags": ["", "", "", ""],
-          "images": ["/images/projects/.jpg", "/images/projects/.jpg"]
+          "tags": ["React", "HTML", "CSS", "Javascript"],
+          "images": ["/images/projects/markdown_editor.jpg"],
+          "overview": "In this project, you'll build a fully-functional in-browser markdown editor application with a light/dark mode toggle. It's also perfect to build as a full-stack app!"
         },
         {
           "id": 10,
-          "filters": ["", "", ""],
-          "url": "",
+          "filters": ["mini", "react"],
+          "url": "https://www.frontendmentor.io/challenges/calculator-app-9lteq5N29",
           "title": "Calculator App",
-          "tags": ["", "", "", ""],
-          "images": ["/images/projects/calculator.jpg"]
+          "tags": ["React", "HTML", "CSS", "Javascript"],
+          "images": ["/images/projects/calculator.jpg"],
+          "overview": "This calculator app will be a great test of your CSS and JS skills especially. If you're wanting to practice using Grid, this challenge will be perfect for you!"
         },
         {
           "id": 11,
-          "filters": ["", "", ""],
+          "filters": ["mini", "react"],
           "url": "https://www.frontendmentor.io/challenges/launch-countdown-timer-N0XkGfyz-",
           "title": "Launch countdown timer",
-          "tags": ["HTML", "CSS", "JS"],
-          "images": ["/images/projects/cooldown-timer.jpg", "/images/projects/cooldown-timer_mobile.jpg"]
+          "tags": ["React", "HTML", "CSS", "JS"],
+          "images": ["/images/projects/cooldown-timer.jpg", "/images/projects/cooldown-timer_mobile.jpg"],
+          "overview": "This will be a fun one! Your challenge is to build this countdown timer. There are lots of small CSS tests in the design as well. So it should keep you busy!"
         },
         {
           "id": 12,
-          "filters": ["", "", ""],
+          "filters": ["mini", "react"],
           "url": "https://www.frontendmentor.io/challenges/todo-app-Su1_KokOW",
           "title": "Todo app",
           "tags": ["HTML", "CSS", "ReactJS", "NodeJS"],
-          "images": ["/images/projects/todo-list_1.jpg", "/images/projects/todo-list_mobile.jpg"]
+          "images": ["/images/projects/todo-list_1.jpg", "/images/projects/todo-list_mobile.jpg"],
+          "overview": ""
         },
         {
           "id": 13,
-          "filters": ["", "", ""],
+          "filters": ["mini", "react"],
           "url": "https://www.frontendmentor.io/challenges/clock-app-LMFaxFwrM",
           "title": "Clock app",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
@@ -382,7 +395,7 @@
         },
         {
           "id": 14,
-          "filters": ["", "", ""],
+          "filters": ["mini", "react"],
           "url": "https://www.frontendmentor.io/challenges/dine-restaurant-website-yAt7Vvxt7",
           "title": "Dine restaurant website",
           "tags": ["HTML", "CSS", "JavaScript"],
@@ -394,15 +407,16 @@
         },
         {
           "id": 15,
-          "filters": ["", "", ""],
+          "filters": ["mini", "react"],
           "url": "https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0",
           "title": "IP Address Tracker",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
-          "images": ["/images/projects/ip-address-tracker.jpg", "/images/projects/ip-address-tracker_mobile.jpg"]
+          "images": ["/images/projects/ip-address-tracker.jpg", "/images/projects/ip-address-tracker_mobile.jpg"],
+          "overview": ""
         },
         {
           "id": 16,
-          "filters": ["", "", ""],
+          "filters": ["mini", "react"],
           "url": "https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G",
           "title": "Pomodoro app",
           "tags": ["HTML", "CSS", "JavaScript"],
@@ -415,7 +429,7 @@
         },
         {
           "id": 17,
-          "filters": ["", "", ""],
+          "filters": ["mini", "react"],
           "url": "https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH",
           "title": "Rock, Paper, Scissors game",
           "tags": ["HTML", "CSS", "JavaScript"],
@@ -427,15 +441,16 @@
         },
         {
           "id": 18,
-          "filters": ["", "", ""],
+          "filters": ["mini", "react"],
           "url": "https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca",
           "title": "REST Countries API with color theme switcher",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
-          "images": ["/images/projects/rest-countries.jpg", "/images/projects/rest-countries_mobile.jpg"]
+          "images": ["/images/projects/rest-countries.jpg", "/images/projects/rest-countries_mobile.jpg"],
+          "overview": ""
         },
         {
           "id": 19,
-          "filters": ["", "", ""],
+          "filters": ["mini", "react"],
           "url": "https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l",
           "title": "DevJobs API",
           "tags": ["HTML", "CSS", "JavaScript", "API"],
