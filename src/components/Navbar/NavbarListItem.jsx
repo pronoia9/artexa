@@ -5,13 +5,14 @@ export default function NavbarListItem({ item, setNavbarActive, currentPage, set
   // used to open/close submenu
   // clicking on the main list item will change the active state (toggle it on/off)
   const [active, setActive] = useState(false);
+  const { subMenu, path, title, subtitle } = item;
 
-  if (item.subMenu) {
+  if (subMenu) {
     return (
-      <li className={'menu-item menu-item-has-children' + (currentPage === item.title ? ' current-menu-item' : '')}>
-        <p onClick={() => setActive(!active)}>{item.title}</p>
+      <li className={'menu-item menu-item-has-children' + (currentPage === title ? ' current-menu-item' : '')}>
+        <p onClick={() => setActive(!active)}>{title}</p>
         <ul className={'sub-menu' + (active ? ' art-active' : '')}>
-          {item.subMenu.map((li) => (
+          {subMenu.map((li) => (
             <NavbarListItem
               key={li.subtitle}
               item={li}
@@ -31,7 +32,7 @@ export default function NavbarListItem({ item, setNavbarActive, currentPage, set
     // if the current page is this list item, add a class that will highlight it
     <li className='menu-item'>
       <Link
-        to={item.path}
+        to={path}
         activeclassname='selected'
         activestyle={{
           color: '#fff',
@@ -39,7 +40,7 @@ export default function NavbarListItem({ item, setNavbarActive, currentPage, set
         }}
         onClick={(e) => {
           // if the current link items path is the current pathname
-          if (item.path === window.location.pathname) {
+          if (path === window.location.pathname) {
             // that means were on the page that this link links to, so dont do anything
             e.preventDefault();
           }
@@ -47,7 +48,7 @@ export default function NavbarListItem({ item, setNavbarActive, currentPage, set
           // and set navbar active to false to close it
           else {
             setNavbarActive(false);
-            setCurrentPage(item.title);
+            setCurrentPage(title);
             // close all the dropdown menus (submenus)
             const submenus = document.getElementsByClassName('sub-menu');
             for (let i = 0; i < submenus.length; i++) {
@@ -57,7 +58,7 @@ export default function NavbarListItem({ item, setNavbarActive, currentPage, set
           }
         }}>
         {/* show either the subtitle (if they have it, nested list items will have it), or the title  */}
-        <span>{item.subtitle || item.title}</span>
+        <span>{subtitle || title}</span>
       </Link>
     </li>
   );
