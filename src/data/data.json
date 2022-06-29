@@ -265,35 +265,35 @@
       "projects": [
         {
           "id": 0,
-          "filters": ["", "", ""],
-          "url": "",
+          "filters": ["full", "react", "database"],
+          "url": "https://pronoia9.github.io/portfolio/",
           "title": "Portfolio",
-          "tags": ["", "", "", ""],
-          "images": ["/images/projects/.jpg", "/images/projects/.jpg"]
+          "tags": ["React", "HTML", "CSS", "Javascript", "Database"],
+          "images": ["/images/projects/portfolio.png"]
         },
         {
           "id": 1,
-          "filters": ["", "", ""],
-          "url": "",
+          "filters": ["mini", "react", "api"],
+          "url": "https://pronoia9.github.io/ztmtcwd-robofriends/",
           "title": "Robofriends",
-          "tags": ["", "", "", ""],
-          "images": ["/images/projects/.jpg", "/images/projects/.jpg"]
+          "tags": ["React", "HTML", "CSS", "Javascript", "APIs"],
+          "images": ["/images/projects/robofriends.png"]
         },
         {
           "id": 2,
-          "filters": ["", "", ""],
-          "url": "",
+          "filters": ["mini", "react", "api"],
+          "url": "https://pronoia9.github.io/westsum/",
           "title": "Westsum",
-          "tags": ["", "", "", ""],
-          "images": ["/images/projects/.jpg", "/images/projects/.jpg"]
+          "tags": ["React", "HTML", "CSS", "Javascript", "APIs"],
+          "images": ["/images/projects/westsum1.png","/images/projects/westsum2.png","/images/projects/westsum3.png"]
         },
         {
           "id": 3,
-          "filters": ["", "", ""],
-          "url": "",
+          "filters": ["full", "react", "database", "api"],
+          "url": "https://pronoia9.github.io/ztmtcwd-smartbrains/",
           "title": "Smartbrains",
-          "tags": ["", "", "", ""],
-          "images": ["/images/projects/.jpg", "/images/projects/.jpg"]
+          "tags": ["React", "HTML", "CSS", "Javascript", "SQL", "API"],
+          "images": ["/images/projects/smartbrains.png"]
         },
         {
           "id": 4,
@@ -349,7 +349,7 @@
           "url": "",
           "title": "Calculator App",
           "tags": ["", "", "", ""],
-          "images": ["/images/projects/.jpg", "/images/projects/.jpg"]
+          "images": ["/images/projects/calculator.jpg"]
         },
         {
           "id": 11,
