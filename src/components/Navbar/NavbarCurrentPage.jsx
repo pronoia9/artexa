@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function MenuBarCurrentPage(props) {
+export default function MenuBarCurrentPage({ currentPage }) {
   return (
     <div className='art-current-page'>
-      <span>{props.currentPage}</span>
+      <span>{currentPage}</span>
     </div>
   );
 }
