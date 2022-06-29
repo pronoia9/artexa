@@ -34,11 +34,6 @@ export default function NavbarListItem({ item, setNavbarActive, currentPage }) {
     <li className={'menu-item' + (path === location.pathname ? ' current_page' : '')}>
       <Link
         to={path}
-        activeclassname='selected'
-        activestyle={{
-          color: '#fff',
-          textShadow: '0 0 3px var(--color-text-shadow-0)',
-        }}
         onClick={(e) => {
           // if the current link items path is the current pathname that means were on the page that this link links to, so dont do anything
           if (path === location.pathname) e.preventDefault();
