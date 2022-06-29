@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function TimelineItem({ item }) {
-  const { id, title, subtitle, date, description, button, url } = item;
+  const { id, title, subtitle, date, description, button, url, fancybox } = item;
   
   return (
     <div className='art-timeline-item'>
@@ -37,9 +37,7 @@ export default function TimelineItem({ item }) {
 
         {/* link */}
         {(button && url) && (
-          url.includes('https') ? <a className='art-link art-color-link art-w-chevron' href={url} target='_blank' rel="noreferrer">{button}</a> :
-          <a data-fancybox='history' className='art-link art-color-link art-w-chevron' href={process.env.PUBLIC_URL + url}>{button}</a>
-        )}
+          fancybox ? <a data-fancybox='history' className='art-link art-color-link art-w-chevron' href={process.env.PUBLIC_URL + url}>{button}</a> : <a className='art-link art-color-link art-w-chevron' href={url} target='_blank' rel="noreferrer">{button}</a>)}
       </div>
     </div>
   );
