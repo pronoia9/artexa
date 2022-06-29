@@ -1354,6 +1354,16 @@ blockquote {
           color: var(--color-text-0);
           text-shadow: 0 0 3px var(--color-text-shadow-0);
         }
+        
+        &.current_page {
+          color: var(--color-text-0);
+          a {
+            color: var(--color-text-0) !important;
+            span {
+              color: var(--color-text-0) !important;
+            }
+          }
+        }
 
         &.menu-item-has-children {
           padding-left: 0;
