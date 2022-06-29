@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-export default function NavbarListItem({ item, setNavbarActive, currentPage, setCurrentPage }) {
+export default function NavbarListItem({ item, setNavbarActive, currentPage }) {
+  let location = useLocation();
+
   // used to open/close submenu
   // clicking on the main list item will change the active state (toggle it on/off)
   const [active, setActive] = useState(false);
@@ -18,7 +20,6 @@ export default function NavbarListItem({ item, setNavbarActive, currentPage, set
               item={li}
               setNavbarActive={setNavbarActive}
               currentPage={currentPage}
-              setCurrentPage={setCurrentPage}
               active={active}
               setActive={setActive}
             />
@@ -30,7 +31,7 @@ export default function NavbarListItem({ item, setNavbarActive, currentPage, set
   // else return a normal list item
   return (
     // if the current page is this list item, add a class that will highlight it
-    <li className='menu-item'>
+    <li className={'menu-item' + (path === location.pathname ? ' current_page' : '')}>
       <Link
         to={path}
         activeclassname='selected'
@@ -40,7 +41,7 @@ export default function NavbarListItem({ item, setNavbarActive, currentPage, set
         }}
         onClick={(e) => {
           // if the current link items path is the current pathname
-          if (path === window.location.pathname) {
+          if (path === location.pathname) {
             // that means were on the page that this link links to, so dont do anything
             e.preventDefault();
           }
@@ -48,7 +49,6 @@ export default function NavbarListItem({ item, setNavbarActive, currentPage, set
           // and set navbar active to false to close it
           else {
             setNavbarActive(false);
-            setCurrentPage(title);
             // close all the dropdown menus (submenus)
             const submenus = document.getElementsByClassName('sub-menu');
             for (let i = 0; i < submenus.length; i++) {
