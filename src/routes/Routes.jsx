@@ -36,15 +36,15 @@ export default function App({ data, background, changeBackground }) {
         <CoursePage data={courses} />
       </Route>
 
-      <Route exact path='/blog'>
+      <Route exact path='/technologies'>
         <BlogPage data={technologies} />
       </Route>
 
-      <Route exact path='/blog-2-col'>
+      <Route exact path='/technologies-2-col'>
         <BlogPage data={technologies} column={2} />
       </Route>
 
-      <Route exact path='/blog-3-col'>
+      <Route exact path='/technologies-3-col'>
         <BlogPage data={technologies} column={3} />
       </Route>
 
