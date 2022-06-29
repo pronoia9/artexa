@@ -14,14 +14,19 @@ import Routes from './routes/Routes';
 import data from './data/data.json';
 // js
 import { rng, transition, scrollbarInit } from './assets/js/main.js';
-
 let i = rng(0, data.backgrounds.animated.length - 1);
+
 
 // TODO: <Scrollbar> is component t, need to fix warning regarding it
 
 export default function App() {
   useEffect(scrollbarInit, []);
   useEffect(transition, [window.location.pathname]);
+
+  // banner gif + background
+  const [background, setBackground] = useState();
+  useEffect(() => changeBackground(), []);
+  const changeBackground = () => setBackground(data.backgrounds.animated[rng(0, data.backgrounds.animated.length - 1)]);
 
   // sliding for left side panel
   const [sidebarActive, setSidebarActive] = useState(false);
@@ -51,10 +56,9 @@ export default function App() {
               onClick={() => {
                 navbarActive && setNavbarActive(false);
                 sidebarActive && setSidebarActive(false);
-              }}
-            ></div>
+              }}></div>
             {/* send the background state from wrapper, which changes dynamically (on input) */}
-            <Background />
+            <Background background={background} />
 
             {/* transition container */}
             <div className='transition-fade' id='transition-fade'>
@@ -66,12 +70,11 @@ export default function App() {
                 renderByPixels={true}
                 alwaysShowTracks={false}
                 continuousScrolling={true}
-                plugins={{ SmoothScrollbar }}
-              >
+                plugins={{ SmoothScrollbar }}>
                 <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
                   <div className='scroll-content'>
                     {/* routes */}
-                    <Routes data={data.main} />
+                    <Routes data={data.main} background={background} changeBackground={changeBackground} />
 
                     {/* footer */}
                     <Footer data={data.main.logos} />
