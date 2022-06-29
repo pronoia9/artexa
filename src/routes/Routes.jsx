@@ -27,7 +27,7 @@ export default function App({ data, background, changeBackground }) {
       <Route exact path='/about' element={<AboutPage hobbies={hobbies} />} />
       <Route exact path='/contact' element={<ContactPage data={contact} />} />
       <Route exact path='/portfolio' element={<HomePage data={data} background={background} changeBackground={changeBackground} />} />
-      <Route exact path='/' element={<Navigate to='/portfolio' />} />
+      <Route exact path='/' element={<HomePage data={data} background={background} changeBackground={changeBackground} />} />
       <Route path='*' element={<NotFound />} />
     </Routes>
   );
