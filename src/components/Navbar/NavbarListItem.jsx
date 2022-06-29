@@ -39,7 +39,7 @@ export default function NavbarListItem(props) {
         exact
         to={props.item.path}
         activeclassname='selected'
-        activeStyle={{
+        activestyle={{
           color: '#fff',
           textShadow: '0 0 3px var(--color-text-shadow-0)',
         }}
