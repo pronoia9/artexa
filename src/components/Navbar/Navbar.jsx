@@ -1,30 +1,23 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import NavbarButton from './NavbarButton';
 import NavbarCurrentPage from './NavbarCurrentPage';
 import NavbarList from './NavbarList';
 
-export default function ArtMenuBar(props) {
+export default function ArtMenuBar({ data, navbarActive, sidebarActive, setSidebarActive, setNavbarActive }) {
   // contains the current page
   const [currentPage, setCurrentPage] = useState('Home');
 
   return (
-    <div className={props.navbarActive ? 'art-menu-bar art-active' : 'art-menu-bar'}>
+    <div className={navbarActive ? 'art-menu-bar art-active' : 'art-menu-bar'}>
       <div id='art-menu-bar-frame' className='art-menu-bar-frame'>
         <NavbarButton
-          navbarActive={props.navbarActive}
-          setNavbarActive={props.setNavbarActive}
-          sidebarActive={props.sidebarActive}
-          setSidebarActive={props.setSidebarActive}
+          navbarActive={navbarActive}
+          setNavbarActive={setNavbarActive}
+          sidebarActive={sidebarActive}
+          setSidebarActive={setSidebarActive}
         />
-
         <NavbarCurrentPage currentPage={currentPage} />
-
-        <NavbarList
-          data={props.data}
-          currentPage={currentPage}
-          setCurrentPage={setCurrentPage}
-          setNavbarActive={props.setNavbarActive}
-        />
+        <NavbarList data={data} currentPage={currentPage} setCurrentPage={setCurrentPage} setNavbarActive={setNavbarActive} />
       </div>
     </div>
   );
