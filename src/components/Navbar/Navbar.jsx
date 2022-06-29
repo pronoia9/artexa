@@ -11,7 +11,10 @@ export default function ArtMenuBar({ data, navbarActive, sidebarActive, setSideb
   let location = useLocation();
 
   useEffect(() => {
-    setCurrentPage(`${location.pathname.replace('/', '')[0].toUpperCase() + location.pathname.replaceAll('/', '').slice(1)}`);
+    setCurrentPage(() => {
+      const loc = location.pathname.replaceAll('/', '');
+      return loc ? loc[0].toUpperCase() + loc.slice(1) : location.pathname === '/' ? 'Home' : '';
+    });
   }, [location]);
 
   return (
