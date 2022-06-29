@@ -12,7 +12,7 @@ export default function ArtMenuBar({ data, navbarActive, sidebarActive, setSideb
 
   useEffect(() => {
     setCurrentPage(() => {
-      const l = location.pathname.replaceAll('/', '').replaceAll('-', '').replace('2', '').replace('3', '').replaceAll('col', '');
+      const l = location.pathname.replaceAll('/', '').replaceAll('-', '').replace('2', '').replace('3', '').replace('col', '');
       return l === '/' ? 'Home' : l[0].toUpperCase() + l.slice(1);
     });
   }, [location]);
