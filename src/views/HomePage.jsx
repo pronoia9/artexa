@@ -1,9 +1,8 @@
-import React from 'react';
 import Banner from '../components/Banner/Banner';
 import Counters from '../components/Counter/Counters';
 import History from '../components/History/History';
 import ProjectsSwiper from '../components/Projects/ProjectsSwiper';
-import BlogSwiper from '../components/Blog/BlogSwiper';
+import TechnologiesSwiper from '../components/Technologies/TechnologiesSwiper';
 import Contact from '../components/Contact/Contact';
 
 export default function HomePage({ data, background, changeBackground }) {
@@ -23,7 +22,7 @@ export default function HomePage({ data, background, changeBackground }) {
       <History data={history} />
 
       {/* newsletter / posts */}
-      <BlogSwiper data={technologies} />
+      <TechnologiesSwiper data={technologies} />
 
       {/* contact info */}
       <Contact data={contact} />

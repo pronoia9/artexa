@@ -1,8 +1,7 @@
-import React from 'react';
-import BlogCard from './BlogCard';
+import TechnologiesCard from './TechnologiesCard';
 import SectionTitle from '../Templates/Text/SectionTitle';
 
-export default function BlogGrid(props) {
+export default function TechnologiesGrid(props) {
   return (
     <div className='container-fluid'>
       <div className='row p-30-0'>
@@ -12,7 +11,7 @@ export default function BlogGrid(props) {
         {/* content */}
         {props.data.posts.map((item) => (
           <div className={'col-lg-' + 12 / props.column}>
-            <BlogCard key={item.id} post={item} message={props.data.message} />
+            <TechnologiesCard key={item.id} post={item} message={props.data.message} />
           </div>
         ))}
       </div>

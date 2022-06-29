@@ -1,6 +1,4 @@
-import React from 'react';
-
-export default function BlogCard(props) {
+export default function TechnologiesCard(props) {
   return (
     <div className='art-a art-blog-card'>
       {/* post cover */}
@@ -17,12 +15,7 @@ export default function BlogCard(props) {
         {/* text */}
         <div className='mb-15'>{props.post.overview}</div>
         {/* link */}
-        <a
-          href={props.post.url}
-          className='art-link art-color-link art-w-chevron'
-          target='_blank'
-          rel='noreferrer'
-        >
+        <a href={props.post.url} className='art-link art-color-link art-w-chevron' target='_blank' rel='noreferrer'>
           {props.message}
         </a>
       </div>
