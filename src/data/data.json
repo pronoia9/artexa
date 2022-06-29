@@ -110,10 +110,10 @@
     { "id": 3, "title": "Courses", "subMenu": false, "path": "/courses" },
     {
       "id": 4,
-      "title": "Blog",
+      "title": "Technologies",
       "subMenu": [
-        { "title": "Blog", "subtitle": "2 Column", "path": "/blog-2-col" },
-        { "title": "Blog", "subtitle": "3 Column", "path": "/blog-3-col" }
+        { "title": "Technologies", "subtitle": "2 Column", "path": "/technologies-2-col" },
+        { "title": "Technologies", "subtitle": "3 Column", "path": "/technologies-3-col" }
       ]
     },
     { "id": 5, "title": "About", "subMenu": false, "path": "/about" },
