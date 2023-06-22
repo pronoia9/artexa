@@ -11,6 +11,14 @@ export const dataStore = create((set) => ({
   accent: 'pastels',
   setAccent: (accent) => set({ accent }),
 
+  // Sidebar/Navbar Overlay
+  overlay: false,
+  closeOverlay: () => set({ navbarOpen: false, sidebarOpen: false }),
+  navbarOpen: false,
+  setOverlay: (navbarOpen) => set({ navbarOpen }),
+  sidebarOpen: false,
+  setOverlay: (sidebarOpen) => set({ sidebarOpen }),
+
   // NAVBAR
   sidebar: {
     links: [
