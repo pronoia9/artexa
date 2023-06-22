@@ -13,7 +13,7 @@ export const themes = {
     gradient1: `linear-gradient(180deg, #1e1e28ed 0%, #1e1e28f5 70%, #1e1e28fc 80%, #1e1e28 100%)`,
     gradient2: `linear-gradient(159deg, #252532fa 0%, #23232dfa 100%)`,
     gradient4: `linear-gradient(159deg, #2d2d3ae0 0%, #2b2b35e0 100%)`,
-    gradient5: `linear-gradient(159deg, #252532fa 0%, #23232d`,
+    gradient5: `linear-gradient(159deg, #252532fa 0%, #23232d)`,
     gradient6: `linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%)`,
     gradient7: `linear-gradient(90deg, #2d2d3ae6 15%, #2d2d3ab3 50%, #2b2b35b3 100%)`,
     gradient8: `linear-gradient(159deg, #252532 0%, #23232d 100%)`,
