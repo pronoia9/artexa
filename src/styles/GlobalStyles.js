@@ -8,16 +8,16 @@ const GlobalStyles = createGlobalStyle`
 
   :root {
     /* COLORS */
-    --c-background-0: ${({ theme }) => theme.background0};
     --c-background-1: ${({ theme }) => theme.background1};
-    --c-box-shadow-0: ${({ theme }) => theme.boxShadow0};
-    --c-font-shadow-0: ${({ theme }) => theme.fontShadow0};
-    --c-font-0: ${({ theme }) => theme.font0};
+    --c-background-2: ${({ theme }) => theme.background2};
+    --c-box-shadow: ${({ theme }) => theme.boxShadow};
+    --c-font-shadow: ${({ theme }) => theme.fontShadow};
     --c-font-1: ${({ theme }) => theme.font1};
     --c-font-2: ${({ theme }) => theme.font2};
     --c-font-3: ${({ theme }) => theme.font3};
     --c-font-4: ${({ theme }) => theme.font4};
     --c-font-5: ${({ theme }) => theme.font5};
+    --c-font-6: ${({ theme }) => theme.font6};
     --c-accent-1: ${({ theme }) => theme.accent1};
     --c-accent-2: ${({ theme }) => theme.accent2};
     --c-accent-3: ${({ theme }) => theme.accent3};
@@ -267,7 +267,7 @@ const GlobalStyles = createGlobalStyle`
     margin-top: 30px;
     margin-bottom: 30px;
     background: var(--c-accent-1);
-    color: var(--c-background-0);
+    color: var(--c-background-1);
     padding: 30px;
     padding-left: 35px;
     font-weight: 400;
@@ -594,7 +594,7 @@ const GlobalStyles = createGlobalStyle`
 
   .art-preloader-load path {
     &:first-child {
-      stroke: var(--c-background-0);
+      stroke: var(--c-background-1);
     }
 
     &:last-child {
@@ -619,7 +619,7 @@ const GlobalStyles = createGlobalStyle`
 
   .art-app {
     padding: 15px;
-    background: var(--c-background-0);
+    background: var(--c-background-1);
     width: 100vw;
     height: 100%;
     position: relative;
@@ -721,7 +721,7 @@ const GlobalStyles = createGlobalStyle`
           transition: 0.55s ease-in-out;
 
           .art-curtain {
-            background: var(--c-background-1);
+            background: var(--c-background-2);
             position: absolute;
             z-index: 9;
             left: 0;
@@ -1055,7 +1055,7 @@ const GlobalStyles = createGlobalStyle`
               font-weight: 200;
               color: var(--c-text-1);
               box-shadow: 0 1px 4px 0 var(--c-box-shadow-0);
-              background: var(--c-background-0);
+              background: var(--c-background-1);
               opacity: 0;
               pointer-events: none;
               transform: translateX(20px);
@@ -1071,7 +1071,7 @@ const GlobalStyles = createGlobalStyle`
               right: -15px;
               top: 5px;
               opacity: 0;
-              background: var(--c-background-0);
+              background: var(--c-background-1);
               pointer-events: none;
               transform: translateX(20px) rotate(45deg);
               transition: 0.4s ease-in-out;
@@ -1260,7 +1260,7 @@ const GlobalStyles = createGlobalStyle`
   .art-line-progress {
     path {
       &:first-child {
-        stroke: var(--c-background-0);
+        stroke: var(--c-background-1);
       }
 
       &:last-child {
@@ -1278,7 +1278,7 @@ const GlobalStyles = createGlobalStyle`
   .art-circle-progress {
     path {
       &:first-child {
-        stroke: var(--c-background-0);
+        stroke: var(--c-background-1);
       }
 
       &:last-child {
@@ -1593,7 +1593,7 @@ const GlobalStyles = createGlobalStyle`
     box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    background: var(--c-background-1);
+    background: var(--c-background-2);
   }
 
   .art-banner {
@@ -1724,7 +1724,7 @@ const GlobalStyles = createGlobalStyle`
       right: 5px;
       height: calc(100% - 10px);
       width: 5px;
-      background: var(--c-background-0);
+      background: var(--c-background-1);
     }
 
     .art-timeline-item {
