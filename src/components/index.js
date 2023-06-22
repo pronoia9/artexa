@@ -2,6 +2,22 @@
 // HOC
 import { SectionWrapper } from './hoc';
 // Layout
+import {
+  // Footer
+  Footer,
+  // Navbar
+  Navbar, NavbarButton, NavbarCurrentPage, NavbarList, NavbarListItem,
+  // Sidebar
+  Sidebar,
+  About, AboutItem,
+  HardSkills, HardSkillsItem,
+  Languages, LanguagesItem,
+  Avatar, Name, Post, Profile,
+  Resume,
+  Social, SocialItem,
+  SoftSkills, SoftSkillsItem,
+  Strengths
+} from './layout';
 // Pages
 import { HomePage, OopsPage } from './pages/';
 // Routes
@@ -12,7 +28,20 @@ export {
   // Components
   // HOC
   SectionWrapper,
-  // Layout
+  // Layout - Footer
+  Footer,
+  // Layout - Navbar
+  Navbar, NavbarButton, NavbarCurrentPage, NavbarList, NavbarListItem,
+  // Layout - Sidebar
+  Sidebar,
+  About, AboutItem,
+  HardSkills, HardSkillsItem,
+  Languages, LanguagesItem,
+  Avatar, Name, Post, Profile,
+  Resume,
+  Social, SocialItem,
+  SoftSkills, SoftSkillsItem,
+  Strengths,
   // Pages
   HomePage, OopsPage,
   // Routes
