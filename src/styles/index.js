@@ -1,7 +1,6 @@
 // CSS
 import { normalize } from './NormalizeCSS';
 import { reset } from './ResetCSS';
-import { stylesheet } from './StylesheetCSS';
 // Themes
 import GlobalStyles from './GlobalStyles';
 import { themes, colors } from './Themes';
@@ -9,7 +8,7 @@ import { themes, colors } from './Themes';
 
 export {
   // CSS
-  normalize, reset, stylesheet,
+  normalize, reset,
   // Themes
   GlobalStyles, themes, colors,
   // Styles
