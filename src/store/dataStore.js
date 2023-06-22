@@ -29,5 +29,8 @@ export const dataStore = create((set) => ({
   setFrameLink: (link) => set({ frameLink: link }),
 
   // FOOTER
-  footer: { logos: [footer1, footer2, footer3, footer4] },
+  footer: {
+    logos: [footer1, footer2, footer3, footer4],
+    text: ['© 2023 All Rights Reserved', 'Email: rainbows@sparkles.com'],
+  },
 }));
