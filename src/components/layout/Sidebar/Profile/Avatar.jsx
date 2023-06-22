@@ -9,7 +9,6 @@ const Avatar = () => {
         <img src={data.avatar} alt='Avatar' />
         <i className='fas fa-expand' />
       </a>
-      {/* availability: change class 'art-not-available' if not available */}
       <div className={`art-lamp-light${data.available ? '' : ' art-not-available'}`}>
         <div className='art-available-lamp' />
       </div>
