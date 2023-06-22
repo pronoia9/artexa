@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useEffect } from 'react';
+import { ThemeProvider } from 'styled-components';
+import AnimatedCursor from 'react-animated-cursor';
 
-function App() {
-  const [count, setCount] = useState(0)
+import { dataStore } from './store/dataStore';
+import { GlobalStyles } from './styles';
+import { getTheme, systemThemeChangeHandler } from './utils';
 
+export default function App() {
+  const { theme, setTheme } = dataStore((state) => ({ theme: state.theme, setTheme: state.setTheme }));
+
+  // EVENT LISTENER FOR SYSTEM THEME CHANGE
+  useEffect(() => {
+    const systemThemeWatcher = window.matchMedia('(prefers-color-scheme: dark)');
+    systemThemeWatcher.addEventListener('change', (e) => systemThemeChangeHandler(e, setTheme));
+    return () => { systemThemeWatcher.removeEventListener('change', systemThemeChangeHandler);};
+  }, []);
+  
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ThemeProvider theme={getTheme(theme)}>
+      <GlobalStyles />
+      <AnimatedCursor
+        innerSize={0}
+        innerScale={0}
+        outerSize={35}
+        outerScale={2}
+        outerAlpha={0}
+        outerStyle={{
+          border: '1px solid var(--c-cursor)',
+        }}
+        clickables={['a', 'button', '.link']}
+      />
+    </ThemeProvider>
+  );
 }
-
-export default App
