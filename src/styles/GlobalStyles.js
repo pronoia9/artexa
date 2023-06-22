@@ -18,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
     --c-font-6: ${({ theme }) => theme.font6};
     --c-accent-1: ${({ theme }) => theme.accent1};
     --c-accent-2: ${({ theme }) => theme.accent2};
+    --c-accent-3: ${({ theme }) => theme.accent3};
     --c-accent-4: ${({ theme }) => theme.accent4};
     --c-accent-5: ${({ theme }) => theme.accent5};
     --c-gradient-1: ${({ theme }) => theme.gradient1};
@@ -28,7 +29,7 @@ const GlobalStyles = createGlobalStyle`
     --c-gradient-6: ${({ theme }) => theme.gradient7};
     --c-gradient-7: ${({ theme }) => theme.gradient8};
     --c-gradient-8: ${({ theme }) => theme.gradient10};
-    --c-gradient-9: linear-gradient(0.25turn, var(--c-primary-2), var(--c-primary-3), var(--c-primary-4), var(--c-primary-5));
+    --c-gradient-9: linear-gradient(0.25turn, var(--c-accent-2), var(--c-accent-3), var(--c-accent-4), var(--c-accent-5));
     --c-cursor: ${({ theme }) => theme.accent - 1};
     --f-primary: 'Poppins', sans-serif;
     --f-code: var(--f-code);
