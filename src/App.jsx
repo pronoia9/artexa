@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import AnimatedCursor from 'react-animated-cursor';
 
+import { Routes } from './components';
 import { dataStore } from './store/dataStore';
 import { GlobalStyles } from './styles';
 import { getTheme, systemThemeChangeHandler } from './utils';
@@ -19,6 +20,9 @@ export default function App() {
   return (
     <ThemeProvider theme={getTheme(theme)}>
       <GlobalStyles />
+
+      <Routes />
+      
       <AnimatedCursor
         innerSize={0}
         innerScale={0}
