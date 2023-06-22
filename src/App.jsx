@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect, useRef } from 'react';
 import { ThemeProvider } from 'styled-components';
-import SmoothScrollbar from 'smooth-scrollbar';
-import Scrollbar from 'react-smooth-scrollbar';
+// import Scrollbar from 'smooth-scrollbar';
+// import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 
 import { Routes, Navbar, Sidebar, Footer } from './components';
 import { dataStore } from './store/dataStore';
@@ -16,15 +16,7 @@ export default function App() {
     overlay: state.overlay,
     closeOverlay: state.closeOverlay,
   }));
-
-  const scrollbarOptions = {
-    damping: 0.5,
-    thumbMinSize: 20,
-    renderByPixels: true,
-    alwaysShowTracks: false,
-    continuousScrolling: true,
-    plugins: { SmoothScrollbar },
-  };
+  const scrollRef = useRef();
 
   // EVENT LISTENER FOR SYSTEM THEME CHANGE
   useEffect(() => {
@@ -33,30 +25,43 @@ export default function App() {
     return () => { systemThemeWatcher.removeEventListener('change', systemThemeChangeHandler); };
   }, []);
 
+  // useLayoutEffect(() => {
+  //   Scrollbar.use(OverscrollPlugin);
+  //   scrollRef.current && Scrollbar.init(scrollRef.current, { damping: 0.5, plugins: {  } });
+  // }, []);
+
   return (
     <ThemeProvider theme={getTheme(theme)}>
       <ThemeProvider theme={getTheme(accent)}>
         <GlobalStyles />
         <div className='art-app'>
           <div className='art-mobile-top-bar' />
+          {/* <Preloader /> */}
+
           <div className='art-app-wrapper'>
             <div className='art-app-container'>
               <Sidebar />
+              <Navbar />
+
               <div className={`art-content${overlay && ' art-active'}`}>
                 <div className='art-curtain' onClick={() => closeOverlay()} />
                 {/* <Background /> */}
+
                 <div id='transition-fade' className='transition-fade'>
-                  {/* <Scrollbar className='content-scrollbar' {...scrollbarOptions}> */}
-                    <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
-                      <div className='scroll-content'>
-                        <Routes />
-                        <Footer />
-                      </div>
+                  <div ref={scrollRef} id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
+                    <div className='scroll-content'>
+                      <Routes />
+                      <Footer />
                     </div>
-                  {/* </Scrollbar> */}
+                    <div className='scrollbar-track scrollbar-track-x'>
+                      <div className='scrollbar-thumb scrollbar-thumb-x' />
+                    </div>
+                    <div className='scrollbar-track scrollbar-track-y'>
+                      <div className='scrollbar-thumb scrollbar-thumb-y' />
+                    </div>
+                  </div>
                 </div>
               </div>
-              <Navbar />
             </div>
           </div>
         </div>
