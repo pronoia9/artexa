@@ -23,6 +23,8 @@
     "react-dom": "^18.2.0",
     "react-photoswipe-gallery": "^2.2.7",
     "react-router-dom": "^6.13.0",
+    "react-smooth-scrollbar": "^8.0.6",
+    "smooth-scrollbar": "^8.8.4",
     "styled-components": "^6.0.0-rc.5",
     "swiper": "^9.4.1",
     "three": "^0.153.0",
