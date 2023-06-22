@@ -13,9 +13,9 @@ export default function App() {
   useEffect(() => {
     const systemThemeWatcher = window.matchMedia('(prefers-color-scheme: dark)');
     systemThemeWatcher.addEventListener('change', (e) => systemThemeChangeHandler(e, setTheme));
-    return () => { systemThemeWatcher.removeEventListener('change', systemThemeChangeHandler);};
+    return () => { systemThemeWatcher.removeEventListener('change', systemThemeChangeHandler); };
   }, []);
-  
+
   return (
     <ThemeProvider theme={getTheme(theme)}>
       <GlobalStyles />
@@ -25,9 +25,7 @@ export default function App() {
         outerSize={35}
         outerScale={2}
         outerAlpha={0}
-        outerStyle={{
-          border: '1px solid var(--c-cursor)',
-        }}
+        outerStyle={{ border: '1px solid var(--c-cursor)' }}
         clickables={['a', 'button', '.link']}
       />
     </ThemeProvider>
