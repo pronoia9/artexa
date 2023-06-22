@@ -1,11 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { normalize, reset, fonts } from '.';
+import { normalize, reset } from '.';
 
 const GlobalStyles = createGlobalStyle`
   ${normalize}
   ${reset}
-  ${fonts}
 
   :root {
     /* COLORS */
