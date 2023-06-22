@@ -1,6 +1,6 @@
 // Components
 // HOC
-import { SectionWrapper } from './hoc';
+import { PageWrapper, SectionWrapper } from './hoc';
 // Layout
 import {
   // Footer
@@ -27,7 +27,7 @@ import Routes from './routes/Routes';
 export {
   // Components
   // HOC
-  SectionWrapper,
+  PageWrapper, SectionWrapper,
   // Layout - Footer
   Footer,
   // Layout - Navbar
