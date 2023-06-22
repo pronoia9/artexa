@@ -1,10 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
-import { normalize, reset } from '.';
+import { normalize, reset, fonts } from '.';
 
 const GlobalStyles = createGlobalStyle`
   ${normalize}
   ${reset}
+  ${fonts}
 
   :root {
     /* COLORS */
@@ -39,10 +40,8 @@ const GlobalStyles = createGlobalStyle`
     --c-gradient-11: ${({ theme }) => theme.gradient11};
     --c-cursor: ${({ theme }) => theme.accent};
     /* FONTS */
-    --f-primary: '';
-    --f-secondary: '';
-    --f-tertiary: '';
-    --f-code: '';
+    --f-primary: 'Poppins', sans-serif;
+    --f-code: var(--f-code);
   }
 
   *::-webkit-scrollbar {
@@ -138,7 +137,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     color: var(--c-font-2);
     font-size: 12px;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--f-primary);
     font-weight: 300;
     letter-spacing: 0.5px;
     font-smooth: subpixel-antialiased;
@@ -150,7 +149,7 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 700;
     color: var(--c-font-1);
     margin-bottom: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--f-primary);
   }
 
   h1 {
@@ -1663,7 +1662,7 @@ const GlobalStyles = createGlobalStyle`
   /* ----- typing code ----- */
 
   .art-code {
-    font-family: 'Courier Prime', monospace;
+    font-family: var(--f-code);
     color: var(--c-accent-1);
     text-shadow: 1px 1px 5px var(--c-accent-2);
 
@@ -1701,7 +1700,7 @@ const GlobalStyles = createGlobalStyle`
       .art-counter {
         color: var(--c-accent-1);
         font-weight: 600;
-        font-family: 'Poppins', sans-serif;
+        font-family: var(--f-primary);
         font-size: 22px;
       }
 
@@ -1709,7 +1708,7 @@ const GlobalStyles = createGlobalStyle`
         margin-left: 3px;
         color: var(--c-accent-1);
         font-weight: 600;
-        font-family: 'Poppins', sans-serif;
+        font-family: var(--f-primary);
         font-size: 22px;
       }
     }
