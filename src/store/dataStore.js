@@ -12,14 +12,18 @@ export const dataStore = create((set) => ({
   accent: 'pastels',
   setAccent: (accent) => set({ accent }),
 
-  // Sidebar/Navbar Overlay
+  // Sidebar / Navbar / Overlay
   overlay: false,
   closeOverlay: () => set({ navbarOpen: false, sidebarOpen: false }),
   navbarOpen: false,
-  setOverlay: (navbarOpen) => set({ navbarOpen }),
-  sidebarOpen: false,
-  setOverlay: (sidebarOpen) => set({ sidebarOpen }),
-
+  openNavbar: () => set({ navbarOpen: true, sidebarOpen: false }),
+  sidebarOpen: true,
+  openSidebar: () => set({ navbarOpen: false, sidebarOpen: true }),
+  toggleSidebar: () => set((state) => ({
+    navbarOpen: navbarOpen && !sidebarOpen ? false : state.navbarOpen,
+    sidebarOpen: !state.sidebarOpen,
+  })),
+  
   // SIDEBAR
 
   // NAVBAR
