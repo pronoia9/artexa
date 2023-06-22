@@ -1,4 +1,5 @@
 // Components
+import { Logo, Logos } from './components';
 // HOC
 import { PageWrapper, SectionWrapper } from './hoc';
 // Layout
@@ -26,6 +27,7 @@ import Routes from './routes/Routes';
 
 export {
   // Components
+  Logo, Logos,
   // HOC
   PageWrapper, SectionWrapper,
   // Layout - Footer
