@@ -41,7 +41,6 @@ export default function App() {
           <div className='art-app-wrapper'>
             <div className='art-app-container'>
               <Sidebar />
-              <Navbar />
 
               <div className={`art-content${overlay && ' art-active'}`}>
                 <div className='art-curtain' onClick={() => closeOverlay()} />
@@ -62,6 +61,8 @@ export default function App() {
                   </div>
                 </div>
               </div>
+
+              <Navbar />
             </div>
           </div>
         </div>
