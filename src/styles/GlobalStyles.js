@@ -7,33 +7,41 @@ const GlobalStyles = createGlobalStyle`
   ${reset}
 
   :root {
-    --c-background: ${({ theme }) => theme.background};
-    --c-background2: ${({ theme }) => theme.background2};
-    --c-font: ${({ theme }) => theme.font};
-    --c-accent: ${({ theme }) => theme.accent};
+    /* COLORS */
+    --c-background-0: ${({ theme }) => theme.background0};
+    --c-background-1: ${({ theme }) => theme.background1};
+    --c-box-shadow-0: ${({ theme }) => theme.boxShadow0};
+    --c-font-shadow-0: ${({ theme }) => theme.fontShadow0};
+    --c-font-0: ${({ theme }) => theme.font0};
+    --c-font-1: ${({ theme }) => theme.font1};
+    --c-font-2: ${({ theme }) => theme.font2};
+    --c-font-3: ${({ theme }) => theme.font3};
+    --c-font-4: ${({ theme }) => theme.font4};
+    --c-font-5: ${({ theme }) => theme.font5};
+    --c-accent-1: ${({ theme }) => theme.accent1};
+    --c-accent-2: ${({ theme }) => theme.accent2};
+    --c-accent-3: ${({ theme }) => theme.accent3};
+    --c-accent-4: ${({ theme }) => theme.accent4};
+    --c-accent-5: ${({ theme }) => theme.accent5};
+    --c-gradient-1: ${({ theme }) => theme.gradient1};
+    --c-gradient-2: ${({ theme }) => theme.gradient2};
+    --c-gradient-3: ${({ theme }) => theme.gradient3};
+    --c-gradient-4: ${({ theme }) => theme.gradient4};
+    --c-gradient-5: ${({ theme }) => theme.gradient5};
+    --c-gradient-6: ${({ theme }) => theme.gradient6};
+    --c-gradient-7: ${({ theme }) => theme.gradient7};
+    --c-gradient-8: ${({ theme }) => theme.gradient8};
+    --c-gradient-9: ${({ theme }) => theme.gradient9};
+    --c-gradient-10: ${({ theme }) => theme.gradient10};
+    --c-gradient-11: ${({ theme }) => theme.gradient11};
     --c-cursor: ${({ theme }) => theme.accent};
+    /* FONTS */
     --f-primary: '';
     --f-secondary: '';
     --f-tertiary: '';
     --f-code: '';
-    /* //!TEMP */
-    --color-text-0: #fafafc;
-    --color-text-1: #8c8c8e;
-    --color-text-2: #646466;
-    --color-text-3: #20202a;
-    --color-text-4: #1e1e28;
-    --color-text-5: #121217;
-    --color-background-0: #191923;
-    --color-background-1: #1e1e28e0;
-    --color-box-shadow-0: #0f0f1433;
-    --color-text-shadow-0: #fafafc66;
-    --color-gradient-1-1: #1e1e28ed;
-    --color-gradient-1-2: #1e1e28f5;
-    --color-gradient-1-3: #1e1e28fc;
-    --color-gradient-1-4: #1e1e28;
-    --color-gradient-2-1: #252532fa;
-    --color-gradient-2-2: #23232dfa;
   }
+
   *::-webkit-scrollbar {
     display: none;
     -ms-overflow-style: none;
@@ -125,7 +133,7 @@ const GlobalStyles = createGlobalStyle`
   /* ----- text defaults ----- */
 
   body {
-    color: var(--color-text-1);
+    color: var(--c-text-1);
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
@@ -137,7 +145,7 @@ const GlobalStyles = createGlobalStyle`
 
   h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
-    color: var(--color-text-0);
+    color: var(--c-text-0);
     margin-bottom: 0;
     font-family: 'Poppins', sans-serif;
   }
@@ -173,7 +181,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .art-white {
-    color: var(--color-text-0);
+    color: var(--c-text-0);
   }
 
   /* ----- container ----- */
@@ -194,7 +202,7 @@ const GlobalStyles = createGlobalStyle`
 
   .art-el-suptitle {
     margin-top: 5px;
-    color: var(--color-text-2);
+    color: var(--c-text-2);
     font-style: italic;
     font-size: 11px;
   }
@@ -202,7 +210,7 @@ const GlobalStyles = createGlobalStyle`
   /* ----- divider ----- */
 
   .art-ls-divider {
-    background: var(--color-text-2);
+    background: var(--c-text-2);
     width: 100%;
     height: 1px;
     opacity: 0.3;
@@ -212,18 +220,18 @@ const GlobalStyles = createGlobalStyle`
 
   .art-img-default {
     width: 100%;
-    box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+    box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
   }
 
   /* ----- link defaults ----- */
 
   a {
     text-decoration: none;
-    color: var(--color-text-1);
+    color: var(--c-text-1);
 
     &:hover {
       text-decoration: none;
-      color: var(--color-text-0);
+      color: var(--c-text-0);
     }
 
     &:focus {
@@ -234,7 +242,7 @@ const GlobalStyles = createGlobalStyle`
   /* ----- table ----- */
 
   .art-table {
-    color: var(--color-text-1);
+    color: var(--c-text-1);
 
     ul {
       padding: 0;
@@ -258,14 +266,14 @@ const GlobalStyles = createGlobalStyle`
   blockquote {
     margin-top: 30px;
     margin-bottom: 30px;
-    background: var(--color-primary-0);
-    color: var(--color-background-0);
+    background: var(--c-accent-1);
+    color: var(--c-background-0);
     padding: 30px;
     padding-left: 35px;
     font-weight: 400;
     font-style: italic;
     font-size: 14px;
-    box-shadow: 0 1px 4px 0 var(--color-box-shadow-0);
+    box-shadow: 0 1px 4px 0 var(--c-box-shadow-0);
     position: relative;
 
     &:before {
@@ -277,7 +285,7 @@ const GlobalStyles = createGlobalStyle`
       opacity: 0.5;
       top: 5px;
       left: 9px;
-      color: var(--color-text-0);
+      color: var(--c-text-0);
     }
 
     &:after {
@@ -289,7 +297,7 @@ const GlobalStyles = createGlobalStyle`
       opacity: 0.5;
       bottom: 5px;
       right: 9px;
-      color: var(--color-text-0);
+      color: var(--c-text-0);
       transform: rotate(180deg);
     }
   }
@@ -302,7 +310,7 @@ const GlobalStyles = createGlobalStyle`
     li {
       position: relative;
       list-style-type: none;
-      color: var(--color-text-0);
+      color: var(--c-text-0);
       margin-bottom: 5px;
 
       &:before {
@@ -313,9 +321,9 @@ const GlobalStyles = createGlobalStyle`
         width: 10px;
         height: 10px;
         border-radius: 50%;
-        border: solid 2px var(--color-primary-0);
+        border: solid 2px var(--c-accent-1);
         background: transparent;
-        box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+        box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
       }
     }
   }
@@ -331,31 +339,31 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 600;
     margin-right: 15px;
     margin-bottom: 10px;
-    color: var(--color-text-1);
+    color: var(--c-text-1);
     transition: 0.4s ease-in-out;
     cursor: pointer;
 
     &:hover {
-      color: var(--color-text-0);
-      text-shadow: 0 0 3px var(--color-text-shadow-0);
+      color: var(--c-text-0);
+      text-shadow: 0 0 3px var(--c-text-shadow-0);
     }
 
     &.art-white-link {
-      color: var(--color-text-0) !important;
+      color: var(--c-text-0) !important;
 
       &:hover {
-        color: var(--color-text-0) !important;
-        text-shadow: 0 0 3px var(--color-text-shadow-0);
+        color: var(--c-text-0) !important;
+        text-shadow: 0 0 3px var(--c-text-shadow-0);
         transform: translateX(5px);
       }
     }
 
     &.art-color-link {
-      color: var(--color-primary-0) !important;
+      color: var(--c-accent-1) !important;
 
       &:hover {
-        color: var(--color-primary-1) !important;
-        text-shadow: 0 0 3px var(--color-text-shadow-0);
+        color: var(--c-accent-2) !important;
+        text-shadow: 0 0 3px var(--c-text-shadow-0);
         transform: translateX(5px);
       }
     }
@@ -419,9 +427,9 @@ const GlobalStyles = createGlobalStyle`
 
   .art-btn {
     text-transform: uppercase;
-    box-shadow: 0 1px 4px 0 var(--color-box-shadow-0);
-    color: var(--color-text-3);
-    background: var(--color-primary-0);
+    box-shadow: 0 1px 4px 0 var(--c-box-shadow-0);
+    color: var(--c-text-3);
+    background: var(--c-accent-1);
     letter-spacing: 1.5px;
     font-weight: 600;
     display: inline-flex;
@@ -431,7 +439,7 @@ const GlobalStyles = createGlobalStyle`
     transition: 0.4s ease-in-out;
 
     &:hover {
-      background-color: var(--color-primary-2);
+      background-color: var(--c-accent-3);
     }
 
     span {
@@ -453,7 +461,7 @@ const GlobalStyles = createGlobalStyle`
 
     &:hover {
       transform: translateY(-2px);
-      color: var(--color-text-4);
+      color: var(--c-text-4);
     }
   }
 
@@ -545,9 +553,7 @@ const GlobalStyles = createGlobalStyle`
       position: relative;
       height: 100%;
       width: 100%;
-      background-image: linear-gradient(
-        180deg,       var(--color-gradient-1-1) 0%,       var(--color-gradient-1-2) 70%,       var(--color-gradient-1-3) 80%,       var(--color-gradient-1-4) 100%
-      );
+      background-image: var(--c-gradient-1);
     }
   }
 
@@ -560,7 +566,7 @@ const GlobalStyles = createGlobalStyle`
     left: 0;
     width: calc(100vw - 30px);
     height: calc(100vh - 30px);
-    background: var(--color-text-3);
+    background: var(--c-text-3);
     z-index: 999999;
     display: flex;
     align-items: center;
@@ -578,7 +584,7 @@ const GlobalStyles = createGlobalStyle`
           position: relative;
           font-size: 14px;
           font-weight: 400 !important;
-          color: var(--color-text-1) !important;
+          color: var(--c-text-1) !important;
           height: 300px;
           line-height: 350px;
         }
@@ -588,11 +594,11 @@ const GlobalStyles = createGlobalStyle`
 
   .art-preloader-load path {
     &:first-child {
-      stroke: var(--color-background-0);
+      stroke: var(--c-background-0);
     }
 
     &:last-child {
-      stroke: var(--color-primary-0);
+      stroke: var(--c-accent-1);
     }
   }
 
@@ -613,7 +619,7 @@ const GlobalStyles = createGlobalStyle`
 
   .art-app {
     padding: 15px;
-    background: var(--color-background-0);
+    background: var(--c-background-0);
     width: 100vw;
     height: 100%;
     position: relative;
@@ -634,8 +640,8 @@ const GlobalStyles = createGlobalStyle`
       z-index: 99;
       width: 100%;
       height: 70px;
-      background: var(--color-text-3);
-      box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+      background: var(--c-text-3);
+      box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
       padding: 0 30px;
       display: none;
       justify-content: space-between;
@@ -646,13 +652,13 @@ const GlobalStyles = createGlobalStyle`
       max-width: 1440px;
       margin-left: auto;
       margin-right: auto;
-      background: var(--color-text-4);
+      background: var(--c-text-4);
       background-size: cover;
       width: 100%;
       height: 100%;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+      box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
 
       .art-app-container {
         position: relative;
@@ -664,13 +670,13 @@ const GlobalStyles = createGlobalStyle`
         /* ----- menu bar ----- */
 
         .art-info-bar {
-          background: var(--color-text-3);
+          background: var(--c-text-3);
           width: 290px;
           min-width: 290px;
           height: calc(100vh - 30px);
           position: relative;
           z-index: 999;
-          box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+          box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
           transition: 0.55s ease-in-out;
 
           .art-info-bar-frame {
@@ -715,7 +721,7 @@ const GlobalStyles = createGlobalStyle`
           transition: 0.55s ease-in-out;
 
           .art-curtain {
-            background: var(--color-background-1);
+            background: var(--c-background-1);
             position: absolute;
             z-index: 9;
             left: 0;
@@ -737,7 +743,7 @@ const GlobalStyles = createGlobalStyle`
         }
 
         .art-menu-bar {
-          background: var(--color-text-3);
+          background: var(--c-text-3);
           width: 230px;
           height: calc(100vh - 30px);
           position: absolute;
@@ -745,7 +751,7 @@ const GlobalStyles = createGlobalStyle`
           right: -150px;
           top: 0;
           bottom: 0;
-          box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+          box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
           transition: 0.55s ease-in-out;
 
           .art-menu-bar-frame {
@@ -761,8 +767,8 @@ const GlobalStyles = createGlobalStyle`
               top: 0;
               left: 0;
               z-index: 9;
-              box-shadow: 0 1px 4px 0 var(--color-box-shadow-0);
-              background: linear-gradient(159deg, var(--color-gradient-2-1) 0%, var(--color-gradient-2-2) 100%);
+              box-shadow: 0 1px 4px 0 var(--c-box-shadow-0);
+              background: var(--c-gradient-2);
 
               .art-menu-bar-btn {
                 pointer-events: all;
@@ -947,9 +953,9 @@ const GlobalStyles = createGlobalStyle`
       width: 100%;
       padding: 30px;
       height: 235px;
-      background: linear-gradient(159deg, rgba(37, 37, 50, 0.98) 0%, rgba(35, 35, 45, 0.98) 100%);
+      background: var(--c-gradient-3);
       text-align: center;
-      box-shadow: 0 1px 4px 0 var(--color-box-shadow-0);
+      box-shadow: 0 1px 4px 0 var(--c-box-shadow-0);
 
       .art-avatar {
         width: 90px;
@@ -971,7 +977,7 @@ const GlobalStyles = createGlobalStyle`
           z-index: 0;
 
           i {
-            background: linear-gradient(159deg, rgba(45, 45, 58, 0.88) 0%, rgba(43, 43, 53, 0.88) 100%);
+            background: var(--c-gradient-4);
             width: 30px;
             height: 30px;
             text-align: center;
@@ -979,7 +985,7 @@ const GlobalStyles = createGlobalStyle`
             font-weight: 700;
             font-size: 11px;
             line-height: 30px;
-            color: var(--color-text-0);
+            color: var(--c-text-0);
             border-radius: 50%;
             opacity: 0;
             z-index: 1;
@@ -1019,7 +1025,7 @@ const GlobalStyles = createGlobalStyle`
             position: absolute;
             bottom: -1px;
             right: 1px;
-            background: var(--color-text-0);
+            background: var(--c-text-0);
             height: 23px;
             width: 23px;
             border-radius: 50%;
@@ -1047,9 +1053,9 @@ const GlobalStyles = createGlobalStyle`
               left: 28px;
               font-size: 10px;
               font-weight: 200;
-              color: var(--color-text-1);
-              box-shadow: 0 1px 4px 0 var(--color-box-shadow-0);
-              background: var(--color-background-0);
+              color: var(--c-text-1);
+              box-shadow: 0 1px 4px 0 var(--c-box-shadow-0);
+              background: var(--c-background-0);
               opacity: 0;
               pointer-events: none;
               transform: translateX(20px);
@@ -1065,7 +1071,7 @@ const GlobalStyles = createGlobalStyle`
               right: -15px;
               top: 5px;
               opacity: 0;
-              background: var(--color-background-0);
+              background: var(--c-background-0);
               pointer-events: none;
               transform: translateX(20px) rotate(45deg);
               transition: 0.4s ease-in-out;
@@ -1106,16 +1112,16 @@ const GlobalStyles = createGlobalStyle`
     }
 
     .art-name {
-      color: var(--color-text-0);
+      color: var(--c-text-0);
       transition: 0.4s ease-in-out;
 
       a {
-        color: var(--color-text-0);
+        color: var(--c-text-0);
         transition: 0.4s ease-in-out;
       }
 
       &:hover a {
-        color: var(--color-primary-0);
+        color: var(--c-accent-1);
       }
     }
 
@@ -1135,7 +1141,7 @@ const GlobalStyles = createGlobalStyle`
 
           .progressbar-text {
             font-size: 11px;
-            color: var(--color-text-1) !important;
+            color: var(--c-text-1) !important;
             position: relative;
             left: 45% !important;
 
@@ -1166,7 +1172,7 @@ const GlobalStyles = createGlobalStyle`
           text-align: right;
           top: -6px !important;
           font-size: 11px;
-          color: var(--color-text-1) !important;
+          color: var(--c-text-1) !important;
         }
       }
     }
@@ -1177,7 +1183,7 @@ const GlobalStyles = createGlobalStyle`
       li {
         list-style-type: none;
         margin-bottom: 5px;
-        color: var(--color-text-1);
+        color: var(--c-text-1);
 
         &:last-child {
           margin-bottom: 0;
@@ -1189,12 +1195,12 @@ const GlobalStyles = createGlobalStyle`
           content: '\f00c';
           margin-right: 5px;
           font-size: 9px;
-          color: var(--color-primary-0);
+          color: var(--c-accent-1);
           margin-right: 10px;
         }
 
         &:hover::before {
-          color: var(--color-primary-2);
+          color: var(--c-accent-3);
         }
       }
     }
@@ -1212,26 +1218,26 @@ const GlobalStyles = createGlobalStyle`
       justify-content: space-between;
       padding: 0 35px;
       height: 50px;
-      background: linear-gradient(159deg, var(--color-gradient-2-1) 0%, var(--color-gradient-2-2));
+      background: var(--c-gradient-5);
       position: absolute;
       bottom: 0;
-      box-shadow: 0 1px 4px 0 var(--color-box-shadow-0);
+      box-shadow: 0 1px 4px 0 var(--c-box-shadow-0);
       left: 0;
       width: 100%;
       z-index: 999;
 
       a {
-        color: var(--color-text-1);
+        color: var(--c-text-1);
         transition: 0.2s ease-in-out;
 
         &:hover {
-          text-shadow: 0 0 3px var(--color-text-shadow-0);
-          color: var(--color-primary-0);
+          text-shadow: 0 0 3px var(--c-text-shadow-0);
+          color: var(--c-accent-1);
         }
 
         &.social-unavailable:hover {
-          text-shadow: 0 0 3px var(--color-text-shadow-0);
-          color: var(--color-text-0);
+          text-shadow: 0 0 3px var(--c-text-shadow-0);
+          color: var(--c-text-0);
         }
       }
     }
@@ -1254,29 +1260,29 @@ const GlobalStyles = createGlobalStyle`
   .art-line-progress {
     path {
       &:first-child {
-        stroke: var(--color-background-0);
+        stroke: var(--c-background-0);
       }
 
       &:last-child {
-        stroke: var(--color-primary-0);
+        stroke: var(--c-accent-1);
       }
     }
 
     &:hover path:last-child {
       transform: scale(1.01);
       transition: right ease-in-out 1s;
-      stroke: var(--color-primary-1);
+      stroke: var(--c-accent-2);
     }
   }
 
   .art-circle-progress {
     path {
       &:first-child {
-        stroke: var(--color-background-0);
+        stroke: var(--c-background-0);
       }
 
       &:last-child {
-        stroke: var(--color-primary-0);
+        stroke: var(--c-accent-1);
       }
     }
 
@@ -1284,22 +1290,22 @@ const GlobalStyles = createGlobalStyle`
       transform: scale(1.01);
       transform-origin: center;
       transition: transform 0.5s;
-      stroke: var(--color-primary-1);
+      stroke: var(--c-accent-2);
     }
   }
 
   .art-info-bar .art-strengths p {
     display: inline-block;
-    color: var(--color-text-1);
-    background: var(--color-text-5);
+    color: var(--c-text-1);
+    background: var(--c-text-5);
     padding: 3px 10px;
     border-radius: 15px;
-    box-shadow: inset 0 3px 8px 0 var(--color-box-shadow-0);
+    box-shadow: inset 0 3px 8px 0 var(--c-box-shadow-0);
     font-size: 10px;
     margin: auto 3px 5px auto;
 
     &:hover {
-      color: var(--color-primary-2);
+      color: var(--c-accent-3);
     }
   }
 
@@ -1379,23 +1385,23 @@ const GlobalStyles = createGlobalStyle`
             font-size: 11px;
             letter-spacing: 1px;
             font-weight: 500;
-            color: var(--color-text-1);
+            color: var(--c-text-1);
             transition: 0.2s ease-in-out;
             margin-bottom: 0;
             cursor: pointer;
           }
 
           a:hover,         p:hover {
-            color: var(--color-text-0);
-            text-shadow: 0 0 3px var(--color-text-shadow-0);
+            color: var(--c-text-0);
+            text-shadow: 0 0 3px var(--c-text-shadow-0);
           }
 
           &.current_page {
-            color: var(--color-text-0);
+            color: var(--c-text-0);
             a {
-              color: var(--color-text-0) !important;
+              color: var(--c-text-0) !important;
               span {
-                color: var(--color-text-0) !important;
+                color: var(--c-text-0) !important;
               }
             }
           }
@@ -1428,8 +1434,8 @@ const GlobalStyles = createGlobalStyle`
             position: relative;
             overflow: hidden;
             pointer-events: none;
-            box-shadow: inset 0 3px 8px 0 var(--color-box-shadow-0);
-            background: var(--color-text-3);
+            box-shadow: inset 0 3px 8px 0 var(--c-box-shadow-0);
+            background: var(--c-text-3);
             filter: brightness(95%);
             max-height: 0;
             transition: max-height 0.6s ease-in-out;
@@ -1486,17 +1492,17 @@ const GlobalStyles = createGlobalStyle`
 
           &.current-menu-item {
             a:first-child,           p:first-child {
-              color: var(--color-text-0);
-              text-shadow: 0 0 3px var(--color-text-shadow-0);
+              color: var(--c-text-0);
+              text-shadow: 0 0 3px var(--c-text-shadow-0);
             }
 
             .sub-menu .menu-item a {
-              color: var(--color-text-1);
+              color: var(--c-text-1);
               text-shadow: none;
 
               &:hover {
-                color: var(--color-text-0);
-                text-shadow: 0 0 3px var(--color-text-shadow-0);
+                color: var(--c-text-0);
+                text-shadow: 0 0 3px var(--c-text-shadow-0);
               }
             }
           }
@@ -1512,7 +1518,7 @@ const GlobalStyles = createGlobalStyle`
     .art-current-page {
       width: 200px;
       transform: rotate(90deg);
-      color: var(--color-text-0);
+      color: var(--c-text-0);
       position: absolute;
       overflow: hidden;
       top: 200px;
@@ -1564,8 +1570,8 @@ const GlobalStyles = createGlobalStyle`
   /* ----- card ----- */
 
   .art-card {
-    background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
-    box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+    background: var(--c-gradient-6);
+    box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
     padding: 30px;
     margin-bottom: 30px;
 
@@ -1584,10 +1590,10 @@ const GlobalStyles = createGlobalStyle`
     width: 90%;
     height: 30px;
     margin-left: 5%;
-    box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+    box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    background: var(--color-background-1);
+    background: var(--c-background-1);
   }
 
   .art-banner {
@@ -1595,7 +1601,7 @@ const GlobalStyles = createGlobalStyle`
     background-size: cover;
     background-position: center;
     position: relative;
-    box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+    box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
     z-index: 999;
 
     .art-banner-overlay {
@@ -1603,10 +1609,10 @@ const GlobalStyles = createGlobalStyle`
       display: flex;
       padding: 60px;
       width: 100%;
-      background-image: linear-gradient(90deg, rgba(45, 45, 58, 0.9) 15%, rgba(45, 45, 58, 0.7) 50%, rgba(43, 43, 53, 0.7) 100%);
+      background-image: var(--c-gradient-7);
 
       &.art-side-overlay {
-        background-image: linear-gradient(90deg, rgba(45, 45, 58, 0.9) 15%, rgba(45, 45, 58, 0.7) 50%, rgba(43, 43, 53, 0) 100%);
+        background-image: var(--c-gradient-7);
       }
 
       .art-banner-title {
@@ -1617,7 +1623,7 @@ const GlobalStyles = createGlobalStyle`
           padding: 1px 0;
           display: inline-block;
           color: transparent;
-          background-image: linear-gradient(0.25turn, var(--color-primary-1), var(--color-primary-2), var(--color-primary-3), var(--color-primary-4));
+          background-image: var(--c-gradient-8);
           background-size: 100%;
           -webkit-background-clip: text;
           -moz-background-clip: text;
@@ -1628,7 +1634,7 @@ const GlobalStyles = createGlobalStyle`
           transition: transform 0.5s;
 
           &:hover {
-            /* text-shadow: 0.1px 0.1px 10px var(--color-primary-1); */
+            /* text-shadow: 0.1px 0.1px 10px var(--c-accent-2); */
             transform: scale(1.01);
             transition: transform 0.5s;
           }
@@ -1655,23 +1661,23 @@ const GlobalStyles = createGlobalStyle`
 
   .art-code {
     font-family: 'Courier Prime', monospace;
-    color: var(--color-primary-0);
-    text-shadow: 1px 1px 5px var(--color-primary-1);
+    color: var(--c-accent-1);
+    text-shadow: 1px 1px 5px var(--c-accent-2);
 
     i {
       font-style: normal;
-      color: var(--color-primary-4);
+      color: var(--c-accent-5);
       text-shadow: none;
     }
 
     span {
-      color: var(--color-text-0);
+      color: var(--c-text-0);
       text-shadow: none;
 
       &:hover {
         font-style: italic;
 
-        /* color: var(--color-primary-3); */
+        /* color: var(--c-accent-4); */
       }
     }
   }
@@ -1690,7 +1696,7 @@ const GlobalStyles = createGlobalStyle`
       min-width: 60px;
 
       .art-counter {
-        color: var(--color-primary-0);
+        color: var(--c-accent-1);
         font-weight: 600;
         font-family: 'Poppins', sans-serif;
         font-size: 22px;
@@ -1698,7 +1704,7 @@ const GlobalStyles = createGlobalStyle`
 
       .art-counter-plus {
         margin-left: 3px;
-        color: var(--color-primary-0);
+        color: var(--c-accent-1);
         font-weight: 600;
         font-family: 'Poppins', sans-serif;
         font-size: 22px;
@@ -1718,14 +1724,14 @@ const GlobalStyles = createGlobalStyle`
       right: 5px;
       height: calc(100% - 10px);
       width: 5px;
-      background: var(--color-background-0);
+      background: var(--c-background-0);
     }
 
     .art-timeline-item {
       position: relative;
 
       .art-timeline-mark-light {
-        background: var(--color-text-0);
+        background: var(--c-text-0);
         position: absolute;
         top: 4px;
         right: -4px;
@@ -1743,9 +1749,9 @@ const GlobalStyles = createGlobalStyle`
         width: 15px;
         height: 15px;
         border-radius: 50%;
-        border: solid 3px var(--color-primary-0);
-        background: var(--color-text-4);
-        box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+        border: solid 3px var(--c-accent-1);
+        background: var(--c-text-4);
+        box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
       }
 
       &:hover .art-timeline-mark-light {
@@ -1756,10 +1762,10 @@ const GlobalStyles = createGlobalStyle`
     .art-timeline-content {
       position: relative;
       margin-right: 45px;
-      background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+      background: var(--c-gradient-6);
       padding: 30px;
       margin-bottom: 30px;
-      box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+      box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
       transition: 0.5s ease-in-out;
 
       &:hover {
@@ -1791,12 +1797,12 @@ const GlobalStyles = createGlobalStyle`
           margin-bottom: 15px;
 
           .art-date {
-            color: var(--color-text-2);
+            color: var(--c-text-2);
             margin-left: auto;
-            background: var(--color-text-3);
+            background: var(--c-text-3);
             padding: 5px 15px;
             border-radius: 15px;
-            box-shadow: inset 0 3px 8px 0 var(--color-box-shadow-0);
+            box-shadow: inset 0 3px 8px 0 var(--c-box-shadow-0);
             font-size: 10px;
           }
         }
@@ -1810,19 +1816,19 @@ const GlobalStyles = createGlobalStyle`
     input,   textarea {
       height: 50px;
       width: 100%;
-      background: linear-gradient(159deg, #252532 0%, #23232d 100%);
+      background: var(--c-gradient-9);
       border: none;
-      color: var(--color-text-0);
+      color: var(--c-text-0);
       padding-left: 65px;
       padding-right: 15px;
-      box-shadow: inset 0 1px 4px 0 var(--color-box-shadow-0);
+      box-shadow: inset 0 1px 4px 0 var(--c-box-shadow-0);
       margin-bottom: 0;
       transition: 0.4s ease-in-out;
     }
   }
 
   ::placeholder {
-    color: var(--color-text-2);
+    color: var(--c-text-2);
   }
 
   .art-form-field {
@@ -1830,10 +1836,10 @@ const GlobalStyles = createGlobalStyle`
       padding-left: 15px;
       padding-top: 15px;
       height: 150px;
-      border-left: solid 50px var(--color-text-3);
+      border-left: solid 50px var(--c-text-3);
 
       &.art-active,     &:focus {
-        border-color: var(--color-primary-0);
+        border-color: var(--c-accent-1);
       }
     }
 
@@ -1844,8 +1850,8 @@ const GlobalStyles = createGlobalStyle`
 
   .art-input {
     &.art-active + label,   &:focus + label {
-      background: var(--color-primary-0);
-      color: var(--color-text-3);
+      background: var(--c-accent-1);
+      color: var(--c-text-3);
     }
   }
 
@@ -1855,11 +1861,11 @@ const GlobalStyles = createGlobalStyle`
 
     label {
       text-align: center;
-      color: var(--color-text-1);
+      color: var(--c-text-1);
       position: absolute;
       height: 50px;
       width: 50px;
-      background: var(--color-text-3);
+      background: var(--c-text-3);
       top: 0;
       left: 0;
       padding: 0 15px;
@@ -1883,7 +1889,7 @@ const GlobalStyles = createGlobalStyle`
       }
 
       span {
-        color: var(--color-primary-4);
+        color: var(--c-accent-5);
         margin-left: 50px;
       }
     }
@@ -1914,8 +1920,8 @@ const GlobalStyles = createGlobalStyle`
     max-width: 150px;
     transform: scale(0);
     text-transform: uppercase;
-    color: var(--color-text-0);
-    background: var(--color-text-3);
+    color: var(--c-text-0);
+    background: var(--c-text-3);
     letter-spacing: 1.5px;
     font-weight: 600;
     justify-content: center;
@@ -1932,7 +1938,7 @@ const GlobalStyles = createGlobalStyle`
   .art-blog-card, .art-project-card {
     position: relative;
     overflow: hidden;
-    box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+    box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
     margin-bottom: 30px;
   }
 
@@ -1953,7 +1959,7 @@ const GlobalStyles = createGlobalStyle`
     }
 
     .art-post-description {
-      background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+      background: var(--c-gradient-6);
       padding: 30px;
       position: relative;
       bottom: 0;
@@ -2023,9 +2029,9 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .art-pagination {
-    box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+    box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
     padding: 30px 30px 25px;
-    background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+    background: var(--c-gradient-6);
     justify-content: space-between;
     display: flex;
 
@@ -2042,7 +2048,7 @@ const GlobalStyles = createGlobalStyle`
         padding: 0 5px;
 
         &.art-active-pag {
-          color: var(--color-primary-0);
+          color: var(--c-accent-1);
         }
       }
     }
@@ -2096,10 +2102,10 @@ const GlobalStyles = createGlobalStyle`
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
-    box-shadow: 0 1px 4px 0 var(--color-box-shadow-0);
+    background: var(--c-gradient-6);
+    box-shadow: 0 1px 4px 0 var(--c-box-shadow-0);
     font-size: 11px;
-    color: var(--color-text-1);
+    color: var(--c-text-1);
     transition: 0.55s ease-in-out;
     z-index: 9;
 
@@ -2111,7 +2117,7 @@ const GlobalStyles = createGlobalStyle`
       transition: 0.2s ease-in-out;
 
       &:hover {
-        color: var(--color-text-0);
+        color: var(--c-text-0);
       }
     }
   }
@@ -2120,7 +2126,7 @@ const GlobalStyles = createGlobalStyle`
   /* ----- filter ----- */
 
   .art-filter .art-link {
-    color: var(--color-text-1);
+    color: var(--c-text-1);
     margin-bottom: 0;
     cursor: pointer;
   }
@@ -2130,7 +2136,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .art-filter .art-link.art-current {
-    color: var(--color-primary-0);
+    color: var(--c-accent-1);
   }
 
   /* ----- portfolio items ----- */
@@ -2140,7 +2146,7 @@ const GlobalStyles = createGlobalStyle`
     width: 100%;
     outline: inherit;
     overflow: hidden;
-    box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+    box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
     position: relative;
     padding-bottom: 60%;
   }
@@ -2160,13 +2166,13 @@ const GlobalStyles = createGlobalStyle`
   .art-portfolio-item-frame .art-item-hover, .art-hobbies-item-frame .art-item-hover {
     width: 27px;
     height: 27px;
-    box-shadow: 0 1px 4px 0 var(--color-box-shadow-0);
+    box-shadow: 0 1px 4px 0 var(--c-box-shadow-0);
     border-radius: 50%;
     position: absolute;
-    color: var(--color-text-0);
+    color: var(--c-text-0);
     top: 30px;
     left: 30px;
-    background: linear-gradient(159deg, #2d2d3ae0 0%, #2b2b35e0 100%);
+    background: var(--c-gradient-10);
     font-size: 11px;
     opacity: 0;
     display: flex;
@@ -2230,8 +2236,8 @@ const GlobalStyles = createGlobalStyle`
     left: 15px;
     width: calc(100% - 29px);
     padding: 30px;
-    background: linear-gradient(159deg, #2d2d3afa 0%, #2b2b35fa 100%);
-    box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+    background: var(--c-gradient-11);
+    box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
     transform: translateY(100%);
     transition: 0.55s ease-in-out;
   }
@@ -2242,17 +2248,17 @@ const GlobalStyles = createGlobalStyle`
 
   .art-grid .art-grid-item .art-item-description p.art-tag, .art-grid-item .art-item-description p.art-tag {
     display: inline-block;
-    color: var(--color-text-1);
-    background: var(--color-text-3);
+    color: var(--c-text-1);
+    background: var(--c-text-3);
     padding: 3px 12px;
     border-radius: 15px;
-    box-shadow: inset 0 3px 8px 0 var(--color-box-shadow-0);
+    box-shadow: inset 0 3px 8px 0 var(--c-box-shadow-0);
     font-size: 10px;
     margin: 0 5px 5px 0;
   }
 
   .art-grid .art-grid-item .art-item-description p.art-tag:hover, .art-grid-item .art-item-description p.art-tag:hover {
-    color: var(--color-primary-2);
+    color: var(--c-accent-3);
   }
 
   .art-grid {
@@ -2337,10 +2343,10 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .art-project-category {
-    color: var(--color-text-2);
+    color: var(--c-text-2);
     margin-left: auto;
     display: inline;
-    background: var(--color-text-3);
+    background: var(--c-text-3);
     padding: 5px 15px;
     border-radius: 15px;
     box-shadow: inset 0 3px 8px 0 rgba(15, 15, 20, 0.2);
@@ -2364,23 +2370,23 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .fancybox-toolbar {
-    background: linear-gradient(159deg, #2d2d3ae0 0%, #2b2b35e0 100%);
+    background: var(--c-gradient-10);
     display: flex;
     width: calc(100vw - 30px);
     justify-content: flex-end;
     align-items: center;
     height: 70px;
-    box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+    box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
     z-index: 999999;
     padding: 0 17px;
     transition: 0.55s ease-in-out;
 
     .fancybox-button {
       background: transparent;
-      color: var(--color-text-1);
+      color: var(--c-text-1);
 
       &:hover {
-        color: var(--color-text-0);
+        color: var(--c-text-0);
       }
 
       svg {
@@ -2410,25 +2416,25 @@ const GlobalStyles = createGlobalStyle`
     justify-content: center;
     align-items: center;
     font-weight: 400;
-    color: var(--color-text-1);
+    color: var(--c-text-1);
   }
 
   .fancybox-progress {
-    background: var(--color-primary-0);
+    background: var(--c-accent-1);
     z-index: 999999999999999999;
   }
 
   .fancybox-content .fancybox-image {
-    box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+    box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
   }
 
   .fancybox-thumbs {
-    background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
-    box-shadow: 0 3px 8px 0 var(--color-box-shadow-0);
+    background: var(--c-gradient-6);
+    box-shadow: 0 3px 8px 0 var(--c-box-shadow-0);
   }
 
   .fancybox-thumbs__list a:before {
-    border-color: var(--color-primary-0);
+    border-color: var(--c-accent-1);
     transition: 0.4s ease-in-out;
   }
 
@@ -2623,7 +2629,7 @@ const GlobalStyles = createGlobalStyle`
       width: 15px;
       height: 3px;
       border-radius: 1px;
-      background: var(--color-text-1);
+      background: var(--c-text-1);
       transition: 0.4s ease-in-out;
       backface-visibility: hidden;
 
@@ -2633,7 +2639,7 @@ const GlobalStyles = createGlobalStyle`
         width: 15px;
         height: 3px;
         border-radius: 1px;
-        background: var(--color-text-1);
+        background: var(--c-text-1);
         transition: 0.4s ease-in-out;
         backface-visibility: hidden;
       }
@@ -2668,10 +2674,10 @@ const GlobalStyles = createGlobalStyle`
     }
 
     &:hover span {
-      background: var(--color-text-0);
+      background: var(--c-text-0);
 
       &:after,     &:before {
-        background: var(--color-text-0);
+        background: var(--c-text-0);
       }
     }
   }
