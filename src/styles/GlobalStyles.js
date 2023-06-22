@@ -10,23 +10,25 @@ const GlobalStyles = createGlobalStyle`
   :root {
     /* COLORS */
     --c-background-1: ${({ theme }) => theme.background1};
-    --c-background-2: ${({ theme }) => theme.background2};
-    --c-background-fancybox: ${({ theme }) => theme.backgroundFancybox};
+    --c-background-2: #1e1e28e0;
+    --c-background-fancybox: #20202afa;
     --c-background-swiper-pagination: ${({ theme }) => theme.backgroundSwiperPagination};
-    --c-box-shadow: ${({ theme }) => theme.boxShadow};
-    --c-font-shadow: ${({ theme }) => theme.fontShadow};
+    --c-box-shadow: #0f0f1433;
+    --c-font-shadow: #fafafc66;
     --c-timelineShadow: ${({ theme }) => theme.timelineShadow};
+    --c-font: ${({ theme }) => theme.font};
     --c-font-1: ${({ theme }) => theme.font1};
     --c-font-2: ${({ theme }) => theme.font2};
     --c-font-3: ${({ theme }) => theme.font3};
-    --c-font-4: ${({ theme }) => theme.font4};
-    --c-font-5: ${({ theme }) => theme.font5};
+    --c-font-4: #20202a;
+    --c-font-5: #1e1e28;
     --c-font-6: ${({ theme }) => theme.font6};
     --c-accent-1: ${({ theme }) => theme.accent1};
     --c-accent-2: ${({ theme }) => theme.accent2};
     --c-accent-3: ${({ theme }) => theme.accent3};
     --c-accent-4: ${({ theme }) => theme.accent4};
     --c-accent-5: ${({ theme }) => theme.accent5};
+    --c-gradient: linear-gradient(0.25turn, var(--c-primary-1), var(--c-primary-2), var(--c-primary-3), var(--c-primary-4));
     --c-gradient-1: ${({ theme }) => theme.gradient1};
     --c-gradient-2: ${({ theme }) => theme.gradient2};
     --c-gradient-3: ${({ theme }) => theme.gradient3};
@@ -37,8 +39,7 @@ const GlobalStyles = createGlobalStyle`
     --c-gradient-8: ${({ theme }) => theme.gradient8};
     --c-gradient-9: ${({ theme }) => theme.gradient9};
     --c-gradient-10: ${({ theme }) => theme.gradient10};
-    --c-gradient-11: ${({ theme }) => theme.gradient11};
-    --c-cursor: ${({ theme }) => theme.accent};
+    --c-cursor: ${({ theme }) => theme.accent - 1};
     /* FONTS */
     --f-primary: 'Poppins', sans-serif;
     --f-code: var(--f-code);
@@ -60,7 +61,6 @@ const GlobalStyles = createGlobalStyle`
     min-width: 100vw;
     height: 100%;
     min-height: 100vh;
-    color: var(--c-font-1);
     overflow-x: hidden;
     transition: color 0.5s ease-in-out;
   }
@@ -135,7 +135,7 @@ const GlobalStyles = createGlobalStyle`
   /* ----- text defaults ----- */
 
   body {
-    color: var(--c-font-2);
+    color: var(--c-font);
     font-size: 12px;
     font-family: var(--f-primary);
     font-weight: 300;
@@ -204,7 +204,7 @@ const GlobalStyles = createGlobalStyle`
 
   .art-el-suptitle {
     margin-top: 5px;
-    color: var(--c-font-3);
+    color: var(--c-font-2);
     font-style: italic;
     font-size: 11px;
   }
@@ -212,7 +212,7 @@ const GlobalStyles = createGlobalStyle`
   /* ----- divider ----- */
 
   .art-ls-divider {
-    background: var(--c-font-3);
+    background: var(--c-font-2);
     width: 100%;
     height: 1px;
     opacity: 0.3;
@@ -1625,7 +1625,7 @@ const GlobalStyles = createGlobalStyle`
           padding: 1px 0;
           display: inline-block;
           color: transparent;
-          background-image: var(--c-gradient-8);
+          background-image: var(--c-gradient);
           background-size: 100%;
           -webkit-background-clip: text;
           -moz-background-clip: text;
@@ -1818,7 +1818,7 @@ const GlobalStyles = createGlobalStyle`
     input,   textarea {
       height: 50px;
       width: 100%;
-      background: var(--c-gradient-9);
+      background: var(--c-gradient-8);
       border: none;
       color: var(--c-font-1);
       padding-left: 65px;
@@ -2174,7 +2174,7 @@ const GlobalStyles = createGlobalStyle`
     color: var(--c-font-1);
     top: 30px;
     left: 30px;
-    background: var(--c-gradient-10);
+    background: var(--c-gradient-9);
     font-size: 11px;
     opacity: 0;
     display: flex;
@@ -2238,7 +2238,7 @@ const GlobalStyles = createGlobalStyle`
     left: 15px;
     width: calc(100% - 29px);
     padding: 30px;
-    background: var(--c-gradient-11);
+    background: var(--c-gradient-10);
     box-shadow: 0 3px 8px 0 var(--c-box-shadow);
     transform: translateY(100%);
     transition: 0.55s ease-in-out;
@@ -2372,7 +2372,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   .fancybox-toolbar {
-    background: var(--c-gradient-10);
+    background: var(--c-gradient-9);
     display: flex;
     width: calc(100vw - 30px);
     justify-content: flex-end;
