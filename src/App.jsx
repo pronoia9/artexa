@@ -8,7 +8,7 @@ import { GlobalStyles } from './styles';
 import { getTheme, systemThemeChangeHandler } from './utils';
 
 export default function App() {
-  const { theme, setTheme } = dataStore((state) => ({ theme: state.theme, setTheme: state.setTheme }));
+  const { theme, setTheme, accent } = dataStore((state) => ({ theme: state.theme, setTheme: state.setTheme, accent: state.accent }));
 
   // EVENT LISTENER FOR SYSTEM THEME CHANGE
   useEffect(() => {
@@ -19,19 +19,19 @@ export default function App() {
 
   return (
     <ThemeProvider theme={getTheme(theme)}>
-      <GlobalStyles />
-
-      <Routes />
-      
-      <AnimatedCursor
-        innerSize={0}
-        innerScale={0}
-        outerSize={35}
-        outerScale={2}
-        outerAlpha={0}
-        outerStyle={{ border: '1px solid var(--c-cursor)' }}
-        clickables={['a', 'button', '.link']}
-      />
+      <ThemeProvider theme={getTheme(accent)}>
+        <GlobalStyles />
+        <Routes />
+        <AnimatedCursor
+          innerSize={0}
+          innerScale={0}
+          outerSize={35}
+          outerScale={2}
+          outerAlpha={0}
+          outerStyle={{ border: '1px solid var(--c-cursor)' }}
+          clickables={['a', 'button', '.link']}
+        />
+      </ThemeProvider>
     </ThemeProvider>
   );
 }
