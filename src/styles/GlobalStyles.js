@@ -10,8 +10,11 @@ const GlobalStyles = createGlobalStyle`
     /* COLORS */
     --c-background-1: ${({ theme }) => theme.background1};
     --c-background-2: ${({ theme }) => theme.background2};
+    --c-background-fancybox: ${({ theme }) => theme.backgroundFancybox};
+    --c-background-swiper-pagination: ${({ theme }) => theme.backgroundSwiperPagination};
     --c-box-shadow: ${({ theme }) => theme.boxShadow};
     --c-font-shadow: ${({ theme }) => theme.fontShadow};
+    --c-timelineShadow: ${({ theme }) => theme.timelineShadow};
     --c-font-1: ${({ theme }) => theme.font1};
     --c-font-2: ${({ theme }) => theme.font2};
     --c-font-3: ${({ theme }) => theme.font3};
@@ -1778,7 +1781,7 @@ const GlobalStyles = createGlobalStyle`
       &:after {
         height: 10px;
         width: 10px;
-        background-color: #2b2b35fa;
+        background-color: var(--c-timelineShadow);
         transform: rotate(-135deg);
         content: '';
         position: absolute;
@@ -1987,7 +1990,7 @@ const GlobalStyles = createGlobalStyle`
 
     .swiper-pagination-bullet {
       margin-right: 10px;
-      background-color: #8c8c8e;
+      background-color: var(--c-background-swiper-pagination);
       border-radius: 5px;
       opacity: 0.5;
       height: 4px;
@@ -2000,7 +2003,7 @@ const GlobalStyles = createGlobalStyle`
 
       &.swiper-pagination-bullet-active {
         width: 20px;
-        background-color: #ffc107;
+        background-color: var(--c-accent-1);
         opacity: 1;
       }
     }
@@ -2361,7 +2364,7 @@ const GlobalStyles = createGlobalStyle`
     height: calc(100vh - 30px);
 
     .fancybox-bg {
-      background: #20202afa;
+      background: var(--c-background-fancybox);
     }
   }
 
