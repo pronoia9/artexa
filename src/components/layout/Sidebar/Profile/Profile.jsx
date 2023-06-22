@@ -1,4 +1,12 @@
+import { Avatar, Name, Post } from '.';
+
 const Profile = () => {
-  return <div>Profile</div>;
+  return (
+    <div className='art-header'>
+      <Avatar />
+      <Name />
+      <Post />
+    </div>
+  );
 };
 export default Profile;
