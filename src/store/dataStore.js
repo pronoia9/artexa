@@ -21,7 +21,7 @@ export const dataStore = create((set) => ({
   openSidebar: () => set({ navbarOpen: false, sidebarOpen: true }),
   toggleSidebar: () =>
     set((state) => ({
-      navbarOpen: navbarOpen && !sidebarOpen ? false : state.navbarOpen,
+      navbarOpen: state.navbarOpen && !state.sidebarOpen ? false : state.navbarOpen,
       sidebarOpen: !state.sidebarOpen,
     })),
 
