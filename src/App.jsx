@@ -1,7 +1,6 @@
-import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
-// import Scrollbar from 'smooth-scrollbar';
-// import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
+import { Scrollbar } from 'smooth-scrollbar-react';
 
 import { Routes, Navbar, Sidebar, Footer } from './components';
 import { dataStore } from './store/dataStore';
@@ -16,7 +15,6 @@ export default function App() {
     sideMenusOpen: state.sideMenusOpen,
     closeSideMenus: state.closeSideMenus,
   }));
-  const scrollRef = useRef();
 
   // EVENT LISTENER FOR SYSTEM THEME CHANGE
   useEffect(() => {
@@ -24,11 +22,6 @@ export default function App() {
     systemThemeWatcher.addEventListener('change', (e) => systemThemeChangeHandler(e, setTheme));
     return () => { systemThemeWatcher.removeEventListener('change', systemThemeChangeHandler); };
   }, []);
-
-  // useLayoutEffect(() => {
-  //   Scrollbar.use(OverscrollPlugin);
-  //   scrollRef.current && Scrollbar.init(scrollRef.current, { damping: 0.5, plugins: {  } });
-  // }, []);
 
   return (
     <ThemeProvider theme={getTheme(theme)}>
@@ -47,18 +40,12 @@ export default function App() {
                 {/* <Background /> */}
 
                 <div id='transition-fade' className='transition-fade'>
-                  <div ref={scrollRef} id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
+                  <Scrollbar id='scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
                     <div className='scroll-content'>
                       <Routes />
                       <Footer />
                     </div>
-                    <div className='scrollbar-track scrollbar-track-x'>
-                      <div className='scrollbar-thumb scrollbar-thumb-x' />
-                    </div>
-                    <div className='scrollbar-track scrollbar-track-y'>
-                      <div className='scrollbar-thumb scrollbar-thumb-y' />
-                    </div>
-                  </div>
+                  </Scrollbar>
                 </div>
               </div>
 

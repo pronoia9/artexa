@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { Scrollbar } from 'smooth-scrollbar-react';
 
 import { Profile, About, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials } from '.';
 import { dataStore } from '../../../store/dataStore';
@@ -9,6 +10,7 @@ const Sidebar = () => {
   return (
     <Container className='art-info-bar' active={`${sidebarOpen}`}>
       <Wrapper className='art-info-bar-frame'>
+        
         <MobileHeader className='art-info-bar-header' active={`${sidebarOpen}`}>
           <div className='art-info-bar-btn' onClick={() => toggleSidebar()}>
             <i className='fas fa-ellipsis-v' />
@@ -17,20 +19,19 @@ const Sidebar = () => {
 
         <Profile />
 
-        {/* <Scrollbar id='info-bar-scrollbar' damping={0.5} plugins={{ SmoothScrollbar }}> */}
-        <ScrollFrame id='sidebar-scrollbar' className='art-scroll-frame'>
+        <Scrollbar id='sidebar-scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
           <ScrollContent className='scroll-content'>
-            {/* <About /> <div className='art-ls-divider' /> */}
-            {/* <Languages /> <div className='art-ls-divider' /> */}
-            {/* <HardSkills /> <div className='art-ls-divider' /> */}
-            {/* <SoftSkills /> <div className='art-ls-divider' /> */}
+            <About /> <div className='art-ls-divider' />
+            <Languages /> <div className='art-ls-divider' />
+            <HardSkills /> <div className='art-ls-divider' />
+            <SoftSkills /> <div className='art-ls-divider' />
             <Strengths /> <div className='art-ls-divider' />
             <Resume />
           </ScrollContent>
-        </ScrollFrame>
-        {/* </Scrollbar> */}
+        </Scrollbar>
 
         <Socials />
+
       </Wrapper>
     </Container>
   );
@@ -97,8 +98,6 @@ const MobileHeader = styled.div`
     }
   }
 `;
-
-const ScrollFrame = styled.div``;
 
 const ScrollContent = styled.div`
   padding: 240px 0 50px;
