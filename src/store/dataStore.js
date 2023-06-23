@@ -12,6 +12,14 @@ export const dataStore = create((set) => ({
   accent: 'pastels',
   setAccent: (accent) => set({ accent }),
 
+  // ROUTES
+  routes: [
+    { title: 'Home', path: '/' },
+    { title: 'Projects', path: '/projects' },
+    { title: 'History', path: '/history' },
+    { title: 'Contact', path: '/contact' },
+  ],
+
   // Sidebar / Navbar / Overlay
   sideMenusOpen: false,
   closeSideMenus: () => set({ navbarOpen: false, sidebarOpen: false }),
@@ -53,15 +61,8 @@ export const dataStore = create((set) => ({
       { id: '4', skill: 'ReactJS', level: 70 },
       { id: '5', skill: 'NodeJS', level: 50 },
     ],
-    
-    softSkills: [
-      'Nextjs, Redux',
-      'MySQL, MongoDB, PostgresSQL',
-      'Blender, Threejs',
-      'Git, GitHub',
-      'Bash, Zsh',
-      'Photoshop, Excel',
-    ],
+
+    softSkills: ['Nextjs, Redux', 'MySQL, MongoDB, PostgresSQL', 'Blender, Threejs', 'Git, GitHub', 'Bash, Zsh', 'Photoshop, Excel'],
 
     strengths: [
       'Communicating',
