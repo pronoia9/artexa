@@ -5,7 +5,7 @@ import { Languages, LanguagesItem } from './Languages';
 import { Avatar, Name, Post, Profile } from './Profile';
 import { Resume } from './Resume';
 import { Social, SocialItem } from './Social';
-import { SoftSkills, SoftSkillsItem } from './SoftSkills';
+import { SoftSkills } from './SoftSkills';
 import { Strengths } from './Strengths';
 
 export {
@@ -16,6 +16,6 @@ export {
   Avatar, Name, Post, Profile,
   Resume,
   Social, SocialItem,
-  SoftSkills, SoftSkillsItem,
+  SoftSkills,
   Strengths,
 };

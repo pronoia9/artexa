@@ -16,7 +16,7 @@ import {
   Avatar, Name, Post, Profile,
   Resume,
   Social, SocialItem,
-  SoftSkills, SoftSkillsItem,
+  SoftSkills,
   Strengths
 } from './layout';
 // Pages
@@ -42,7 +42,7 @@ export {
   Avatar, Name, Post, Profile,
   Resume,
   Social, SocialItem,
-  SoftSkills, SoftSkillsItem,
+  SoftSkills,
   Strengths,
   // Pages
   HomePage, OopsPage,
