@@ -6,7 +6,7 @@ const NavbarButton = () => {
 
   return (
     <Container className='art-menu-bar-header'>
-      <Wrapper className={`art-menu-bar-btn${navbarOpen ? ' art-active' : ''}`} active={`${navbarOpen}`} onClick={() => toggleNavbar()}>
+      <Wrapper className={`art-menu-bar-btn${navbarOpen ? ' art-active' : ''}`} open={`${navbarOpen}`} onClick={() => toggleNavbar()}>
         <span />
       </Wrapper>
     </Container>
@@ -34,5 +34,10 @@ const Wrapper = styled.div`
   &.art-disabled {
     opacity: 0;
     pointer-events: none;
+  }
+
+  @media (max-width: 920px) {
+    transform: ${({ open }) => (open === 'true' ? 'translateX(0)' : 'translateX(-80px)')};
+    transition: 0.4s ease-in-out;
   }
 `;

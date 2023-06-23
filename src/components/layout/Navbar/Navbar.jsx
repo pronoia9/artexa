@@ -29,6 +29,18 @@ const Container = styled.div`
   z-index: 99;
   transform: ${({ open }) => open === 'true' && 'translateX(-150px)'};
   transition: 0.55s ease-in-out;
+
+  @media (max-width: 920px) {
+    position: absolute;
+    right: -230px;
+    width: 230px;
+    height: 100vh;
+    transform: ${({ open }) => open === 'true' && 'translateX(-230px)'};
+  }
+
+  @media (max-width: 230px) {
+    width: 100vw;
+  }
 `;
 
 const Wrapper = styled.div`
