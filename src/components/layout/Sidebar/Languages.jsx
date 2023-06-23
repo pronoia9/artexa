@@ -7,7 +7,7 @@ export const Languages = () => {
   return (
     <div className='art-lang-skills p-30-15'>
       {data.map((language, index) => (
-        <LanguagesItem key={`sidebar-language-${index}`} index={index} {...language} />
+        <LanguagesItem key={`sidebar-language-${index}`} {...language} index={index} />
       ))}
     </div>
   );
@@ -16,7 +16,7 @@ export const Languages = () => {
 export const LanguagesItem = (props) => {
   return (
     <div className='art-lang-skills-item'>
-      <Progress {...props} />
+      <Progress {...props} type='circle' />
       <h6>{props.language}</h6>
     </div>
   );
