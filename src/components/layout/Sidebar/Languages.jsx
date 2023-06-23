@@ -1,4 +1,4 @@
-import { ProgressCircle } from '../..';
+import { Progress } from '../..';
 
 import { dataStore } from '../../../store/dataStore';
 
@@ -16,7 +16,7 @@ export const Languages = () => {
 export const LanguagesItem = (props) => {
   return (
     <div className='art-lang-skills-item'>
-      <ProgressCircle {...props} />
+      <Progress {...props} />
       <h6>{props.language}</h6>
     </div>
   );
