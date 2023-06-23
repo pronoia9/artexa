@@ -42,8 +42,8 @@ export default function App() {
             <div className='art-app-container'>
               <Sidebar />
 
-              <div className={`art-content${overlay && ' art-active'}`}>
-                <div className='art-curtain' onClick={() => closeOverlay()} />
+              <div className={`art-content${overlay ? ' art-active' : ''}`} onClick={() => closeOverlay()}>
+                <div className='art-curtain' />
                 {/* <Background /> */}
 
                 <div id='transition-fade' className='transition-fade'>
