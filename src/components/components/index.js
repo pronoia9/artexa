@@ -1,11 +1,13 @@
-// Logos
 import Logos from './Logos';
-// Progress Bars/Circles
 import Progress from './Progress';
+import { SwiperNavigation } from './Swiper';
+import { Title, SectionTitle } from './Text';
+import { Timeline, TimelineColumn, TimelineItem } from './Timeline';
 
 export {
-  // Logos
   Logos,
-  // Progress
   Progress,
+  SwiperNavigation,
+  Title, SectionTitle,
+  Timeline, TimelineColumn, TimelineItem
 };
