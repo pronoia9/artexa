@@ -17,6 +17,7 @@
     "@types/three": "^0.152.1",
     "framer-motion": "^10.12.16",
     "leva": "^0.9.35",
+    "progressbar.js": "^1.1.0",
     "react": "^18.2.0",
     "react-animated-cursor": "^2.7.0",
     "react-countup": "^6.4.2",
