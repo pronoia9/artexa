@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { Profile, About, Languages, HardSkills, SoftSkills, Strengths, Resume, Social } from '.';
+import { Profile, About, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials } from '.';
 import { dataStore } from '../../../store/dataStore';
 
 const Sidebar = () => {
@@ -20,17 +20,17 @@ const Sidebar = () => {
         {/* <Scrollbar id='info-bar-scrollbar' damping={0.5} plugins={{ SmoothScrollbar }}> */}
         <ScrollFrame id='sidebar-scrollbar' className='art-scroll-frame'>
           <ScrollContent className='scroll-content'>
-            <About /> <div className='art-ls-divider' />
-            <Languages /> <div className='art-ls-divider' />
-            <HardSkills /> <div className='art-ls-divider' />
-            <SoftSkills /> <div className='art-ls-divider' />
+            {/* <About /> <div className='art-ls-divider' /> */}
+            {/* <Languages /> <div className='art-ls-divider' /> */}
+            {/* <HardSkills /> <div className='art-ls-divider' /> */}
+            {/* <SoftSkills /> <div className='art-ls-divider' /> */}
             <Strengths /> <div className='art-ls-divider' />
             <Resume />
           </ScrollContent>
         </ScrollFrame>
         {/* </Scrollbar> */}
 
-        <Social />
+        <Socials />
       </Wrapper>
     </Container>
   );

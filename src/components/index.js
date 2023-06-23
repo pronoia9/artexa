@@ -15,7 +15,7 @@ import {
   Languages, LanguagesItem,
   Avatar, Name, Post, Profile,
   Resume,
-  Social, SocialItem,
+  Socials, SocialsItem,
   SoftSkills,
   Strengths
 } from './layout';
@@ -41,7 +41,7 @@ export {
   Languages, LanguagesItem,
   Avatar, Name, Post, Profile,
   Resume,
-  Social, SocialItem,
+  Socials, SocialsItem,
   SoftSkills,
   Strengths,
   // Pages
