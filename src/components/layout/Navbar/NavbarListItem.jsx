@@ -13,12 +13,7 @@ const NavbarListItem = ({ title, path, index }) => {
   };
 
   return (
-    <ListItem
-      className={`menu-item${location.pathname === path ? ' current_page' : ''}`}
-      $index={index + 1}
-      $currentPage={location.pathname === path}
-      $navbarOpen={navbarOpen}
-    >
+    <ListItem className='menu-item' $index={index + 1} $currentPage={location.pathname === path} $navbarOpen={navbarOpen}>
       <Link to={path} onClick={handleClick}>
         <span>{title}</span>
       </Link>
@@ -35,47 +30,36 @@ const ListItem = styled.li`
   opacity: ${({ $navbarOpen }) => ($navbarOpen ? 1 : 0)};
   transform: ${({ $navbarOpen }) => ($navbarOpen ? 'translateX(0)' : 'translateX(60px)')};
   transition: 0.55s ease-in-out;
-  ${({ $index }) =>
-    css`
-      transition-delay: ${$index * 0.05}s;
-    `};
+  ${({ $index }) => css`transition-delay: ${$index * 0.05}s;`};
 
-  &,
-  a,
-  p,
-  span {
-    color: ${({ $currentPage }) => ($currentPage ? 'var(--c-font-1)' : 'var(--c-font-2)')} !important;
+  * {
+    color: ${({ $currentPage }) => ($currentPage ? 'var(--c-font-1)' : 'var(--c-font-2)')};
   }
 
-  a,
-  p {
+  a, p, span {
+    transition: 0.2s ease-in-out;
+  }
+
+  a, p {
     display: inline-block;
     width: 100%;
     margin-bottom: 0;
     padding: 7px 30px;
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 500;
     letter-spacing: 1px;
     text-transform: uppercase;
     cursor: pointer;
-    transition: 0.2s ease-in-out;
-
-    &:hover {
-      color: var(--c-font-1);
-      text-shadow: 0 0 3px var(--c-font-shadow);
-    }
   }
 
-  a {
-    font-weight: 400;
-    font-size: 10px;
-  }
-
-  &:first-child,
-  &:last-child {
+  &:first-child, &:last-child {
     margin-top: 15px;
   }
 
   &:hover {
+    * {
+      color: var(--c-font-1);
+      text-shadow: 0 0 3px var(--c-font-shadow);
+    }
   }
 `;

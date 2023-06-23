@@ -6,7 +6,7 @@ const Navbar = () => {
   const { navbarOpen } = dataStore((state) => ({ navbarOpen: state.navbarOpen }));
 
   return (
-    <Container className={`art-menu-bar${navbarOpen ? ' art-active' : ''}`} open={navbarOpen}>
+    <Container className='art-menu-bar' $navbarOpen={navbarOpen}>
       <Wrapper id='art-menu-bar-frame' className='art-menu-bar-frame'>
         <NavbarButton />
         <NavbarCurrentPage />
@@ -27,7 +27,7 @@ const Container = styled.div`
   background: var(--c-font-4);
   box-shadow: 0 3px 8px 0 var(--c-box-shadow);
   z-index: 99;
-  transform: ${({ open }) => open && 'translateX(-150px)'};
+  transform: ${({ $navbarOpen }) => $navbarOpen && 'translateX(-150px)'};
   transition: 0.55s ease-in-out;
 
   a {
