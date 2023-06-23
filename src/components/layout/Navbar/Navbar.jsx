@@ -59,4 +59,8 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;

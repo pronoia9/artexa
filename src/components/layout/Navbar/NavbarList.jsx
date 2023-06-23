@@ -6,7 +6,7 @@ import { NavbarListItem } from './';
 const NavbarList = () => {
   const data = dataStore((state) => state.routes);
   return (
-    <div className='art-scroll-frame'>
+    <Container className='art-scroll-frame'>
       <Navigation>
         <NavigationList className='main-menu'>
           {data.map((route, index) => (
@@ -14,17 +14,22 @@ const NavbarList = () => {
           ))}
         </NavigationList>
       </Navigation>
-    </div>
+    </Container>
   );
 };
 export default NavbarList;
+
+const Container = styled.div`
+  height: auto;
+  margin-bottom: 60px;
+`;
 
 const Navigation = styled.nav`
   position: relative;
   height: 100%;
   display: flex;
   align-items: center;
-  `;
+`;
 
 const NavigationList = styled.ul`
   position: relative;
