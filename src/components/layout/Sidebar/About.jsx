@@ -1,7 +1,6 @@
-import { AboutItem } from '../..';
-import { dataStore } from '../../../../store/dataStore';
+import { dataStore } from '../../../store/dataStore';
 
-const About = () => {
+export const About = () => {
   const data = dataStore((state) => state.sidebar.about);
 
   return (
@@ -14,4 +13,12 @@ const About = () => {
     </div>
   );
 };
-export default About;
+
+export const AboutItem = ({ title, subtitle }) => {
+  return (
+    <li>
+      <h6>{title}</h6>
+      <span>{subtitle}</span>
+    </li>
+  );
+};

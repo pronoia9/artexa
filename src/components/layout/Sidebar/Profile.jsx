@@ -1,25 +1,65 @@
 import { styled, css } from 'styled-components';
-import { dataStore } from '../../../../store/dataStore';
 
-const Avatar = () => {
+import { dataStore } from '../../../store/dataStore';
+
+export const Profile = () => (
+  <ProfileContainer className='art-header'>
+    <Avatar />
+    <Name />
+    <Post />
+  </ProfileContainer>
+);
+
+export const Avatar = () => {
   const data = dataStore((state) => state.sidebar.profile);
-
   return (
-    <Container className='art-avatar'>
-      <Curtain data-fancybox='avatar' href={data.avatar} className='art-avatar-curtain'>
-        <Image src={data.avatar} alt='Avatar' />
+    <AvatarContainer className='art-avatar'>
+      <AvatarCurtain data-fancybox='avatar' href={data.avatar} className='art-avatar-curtain'>
+        <AvatarImage src={data.avatar} alt='Avatar' />
         <i className='fas fa-expand' />
-      </Curtain>
+      </AvatarCurtain>
 
-      <Status className='art-lamp-light' available={`${data.available}`}>
-        <StatusLight className='art-available-lamp' available={`${data.available}`} />
-      </Status>
-    </Container>
+      <AvatarStatus className='art-lamp-light' available={`${data.available}`}>
+        <AvatarStatusLight className='art-available-lamp' available={`${data.available}`} />
+      </AvatarStatus>
+    </AvatarContainer>
   );
 };
-export default Avatar;
 
-const Container = styled.div`
+export const Name = () => {
+  const data = dataStore((state) => state.sidebar.profile);
+  return (
+    <NameText className='art-name mb-10'>
+      <a href={data.nameLink}>{data.name}</a>
+    </NameText>
+  );
+};
+
+export const Post = () => {
+  const data = dataStore((state) => state.sidebar.profile);
+  return (
+    <div>
+      {data.subtitle.map((s) => (
+        <div key={s}>{s}</div>
+      ))}
+    </div>
+  );
+};
+
+const ProfileContainer = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  width: 100%;
+  padding: 30px;
+  height: 235px;
+  background: var(--c-gradient-2);
+  text-align: center;
+  box-shadow: 0 1px 4px 0 var(--c-box-shadow);
+`;
+
+const AvatarContainer = styled.div`
   width: 90px;
   height: 90px;
   margin: 0 auto;
@@ -28,7 +68,7 @@ const Container = styled.div`
   margin-bottom: 15px;
 `;
 
-const Curtain = styled.div`
+const AvatarCurtain = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
@@ -71,7 +111,7 @@ const Curtain = styled.div`
   }
 `;
 
-const Image = styled.img`
+const AvatarImage = styled.img`
   position: absolute;
   width: 100%;
   height: 100%;
@@ -80,7 +120,7 @@ const Image = styled.img`
   z-index: 0;
 `;
 
-const Status = styled.div`
+const AvatarStatus = styled.div`
   z-index: 2;
 
   &:before {
@@ -93,11 +133,11 @@ const Status = styled.div`
     width: 23px;
     border-radius: 50%;
     animation: ${({ available }) => (available === 'true' ? 'puls 1s infinite' : 'none')};
-    opacity: ${({ available }) => (available !== 'true' && 0)};
+    opacity: ${({ available }) => available !== 'true' && 0};
   }
 `;
 
-const StatusLight = styled.div`
+const AvatarStatusLight = styled.div`
   position: absolute;
   bottom: 3px;
   right: 5px;
@@ -162,6 +202,17 @@ const StatusLight = styled.div`
     &:before {
       opacity: 1;
       transform: translateX(0) rotate(45deg);
+    }
+  }
+`;
+
+const NameText = styled.h5`
+  a {
+    color: var(--c-font-1);
+    transition: 0.4s ease-in-out;
+
+    &:hover {
+      color: var(--c-accent-1);
     }
   }
 `;
