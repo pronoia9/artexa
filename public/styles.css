@@ -442,43 +442,7 @@
 	/* ----- content ----- */
 	/* ----- menu bar ----- */
 }
- .art-app .art-app-wrapper .art-app-container .art-info-bar {
-	 background: var(--c-font-4);
-	 width: 290px;
-	 min-width: 290px;
-	 height: calc(100vh - 30px);
-	 position: relative;
-	 z-index: 999;
-	 box-shadow: 0 3px 8px 0 var(--c-box-shadow);
-	 transition: 0.55s ease-in-out;
-}
- .art-app .art-app-wrapper .art-app-container .art-info-bar .art-info-bar-frame {
-	 padding: 0 15px;
-}
- .art-app .art-app-wrapper .art-app-container .art-info-bar .art-info-bar-frame .art-info-bar-header {
-	 width: 100%;
-	 height: 70px;
-	 justify-content: flex-start;
-	 align-items: center;
-	 position: absolute;
-	 left: 0;
-	 top: 0;
-	 z-index: 999999999999;
-	 display: none;
-}
- .art-app .art-app-wrapper .art-app-container .art-info-bar .art-info-bar-frame .art-info-bar-header .art-info-bar-btn {
-	 margin-left: auto;
-	 pointer-events: all;
-	 font-size: 14px;
-	 padding: 30px;
-}
- .art-app .art-app-wrapper .art-app-container .art-info-bar .art-info-bar-frame .art-info-bar-header .art-info-bar-btn.art-disabled {
-	 opacity: 0;
-	 pointer-events: none;
-}
- .art-app .art-app-wrapper .art-app-container .art-info-bar .art-info-bar-frame .art-scroll-frame .scroll-content {
-	 padding: 240px 0 50px;
-}
+
  .art-app .art-app-wrapper .art-app-container .art-content {
 	 position: relative;
 	 overflow: hidden;
@@ -577,25 +541,9 @@
 		/* ----- content ----- */
 		/* ----- menu bar ----- */
 	}
-	 .art-app .art-app-wrapper .art-app-container .art-info-bar {
-		 position: absolute;
-		 left: -290px;
-		 width: 290px;
-		 height: 100vh;
-	}
-	 .art-app .art-app-wrapper .art-app-container .art-info-bar.art-active {
-		 transform: translateX(290px);
-	}
-	 .art-app .art-app-wrapper .art-app-container .art-info-bar .art-info-bar-frame .art-info-bar-header {
-		 display: flex;
-	}
-	 .art-app .art-app-wrapper .art-app-container .art-info-bar .art-info-bar-frame .art-info-bar-header .art-info-bar-btn {
-		 transform: translateX(70px);
-		 transition: 0.4s ease-in-out;
-	}
-	 .art-app .art-app-wrapper .art-app-container .art-info-bar.art-active .art-info-bar-frame .art-info-bar-btn {
-		 transform: translateX(0);
-	}
+
+
+
 	 .art-app .art-app-wrapper .art-app-container .art-content {
 		 position: relative;
 		 width: 100vw;
@@ -631,12 +579,7 @@
 	}
 }
 /* ------------------------------ app marcup (after 290px) ------------------------------ */
- @media (max-width: 290px) {
-	/* ----- info bar ----- */
-	 .art-app .art-info-bar {
-		 width: 100vw;
-	}
-}
+
 /* ------------------------------ app marcup (after 230px) ------------------------------ */
  @media (max-width: 230px) {
 	/* ----- menu bar ----- */
@@ -648,176 +591,11 @@
 	 padding-right: 0;
 }
 /* ------------------------------ info bar ------------------------------ */
- .art-info-bar {
-	 padding: 0 15px;
-	/* ----- header ----- */
-	/* ----- name ----- */
-	/* ----- language skills ----- */
-	/* ----- hard skills ----- */
-	/* ----- knowledge ----- */
-	/* ----- strengths ----- */
-	/* ----- info bar links ----- */
-	/* ----- social links ----- */
-}
+
  .art-info-bar .scroll-content {
 	 padding-top: 80px !important;
 }
- .art-info-bar .art-header {
-	 position: absolute;
-	 left: 0;
-	 top: 0;
-	 z-index: 99999;
-	 width: 100%;
-	 padding: 30px;
-	 height: 235px;
-	 background: var(--c-gradient-2);
-	 text-align: center;
-	 box-shadow: 0 1px 4px 0 var(--c-box-shadow);
-}
- .art-info-bar .art-header .art-avatar {
-	 width: 90px;
-	 height: 90px;
-	 margin: 0 auto;
-	 border-radius: 50%;
-	 position: relative;
-	 margin-bottom: 15px;
-}
- .art-info-bar .art-header .art-avatar .art-avatar-curtain {
-	 position: relative;
-	 width: 100%;
-	 height: 100%;
-	 border-radius: 50%;
-	 display: flex;
-	 justify-content: center;
-	 outline: inherit;
-	 transition: 0.2s ease-in-out;
-	 z-index: 0;
-}
- .art-info-bar .art-header .art-avatar .art-avatar-curtain i {
-	 background: var(--c-gradient-3);
-	 width: 30px;
-	 height: 30px;
-	 text-align: center;
-	 align-self: center;
-	 font-weight: 700;
-	 font-size: 11px;
-	 line-height: 30px;
-	 color: var(--c-font-1);
-	 border-radius: 50%;
-	 opacity: 0;
-	 z-index: 1;
-	 transition: 0.4s ease-in-out;
-}
- .art-info-bar .art-header .art-avatar .art-avatar-curtain img {
-	 position: absolute;
-	 width: 100%;
-	 height: 100%;
-	 object-fit: cover;
-	 border-radius: 50%;
-	 z-index: 0;
-}
- .art-info-bar .art-header .art-avatar .art-avatar-curtain:hover {
-	 opacity: 1;
-	 transition: 0.2s ease-in-out;
-	 outline: inherit;
-}
- .art-info-bar .art-header .art-avatar .art-avatar-curtain:hover i {
-	 opacity: 0.7;
-}
- .art-info-bar .art-header .art-avatar .art-avatar-curtain:hover i:hover {
-	 opacity: 1;
-	 transform: scale(1.07);
-}
- .art-info-bar .art-header .art-avatar .art-lamp-light {
-	 z-index: 2;
-}
- .art-info-bar .art-header .art-avatar .art-lamp-light:before {
-	 content: '';
-	 position: absolute;
-	 bottom: -1px;
-	 right: 1px;
-	 background: var(--c-font-1);
-	 height: 23px;
-	 width: 23px;
-	 border-radius: 50%;
-	 animation: puls 1s infinite;
-}
- .art-info-bar .art-header .art-avatar .art-lamp-light .art-available-lamp {
-	 position: absolute;
-	 bottom: 3px;
-	 right: 5px;
-	 height: 15px;
-	 width: 15px;
-	 background: greenyellow;
-	 border-radius: 50%;
-	 z-index: 0;
-	 transition: 0.4s ease-in-out;
-}
- .art-info-bar .art-header .art-avatar .art-lamp-light .art-available-lamp:after {
-	 position: relative;
-	 content: "I'm available for hire";
-	 width: 115px;
-	 display: block;
-	 padding: 5px 10px;
-	 top: -10px;
-	 left: 28px;
-	 font-size: 10px;
-	 font-weight: 200;
-	 color: var(--c-font-2);
-	 box-shadow: 0 1px 4px 0 var(--c-box-shadow);
-	 background: var(--c-background-1);
-	 opacity: 0;
-	 pointer-events: none;
-	 transform: translateX(20px);
-	 transition: 0.4s ease-in-out;
-	 text-align: left;
-}
- .art-info-bar .art-header .art-avatar .art-lamp-light .art-available-lamp:before {
-	 content: '';
-	 position: absolute;
-	 height: 5px;
-	 width: 5px;
-	 right: -15px;
-	 top: 5px;
-	 opacity: 0;
-	 background: var(--c-background-1);
-	 pointer-events: none;
-	 transform: translateX(20px) rotate(45deg);
-	 transition: 0.4s ease-in-out;
-	 z-index: 99;
-}
- .art-info-bar .art-header .art-avatar .art-lamp-light .art-available-lamp:hover {
-	 transform: scale(1);
-}
- .art-info-bar .art-header .art-avatar .art-lamp-light .art-available-lamp:hover:after {
-	 opacity: 1;
-	 transform: translateX(0);
-}
- .art-info-bar .art-header .art-avatar .art-lamp-light .art-available-lamp:hover:before {
-	 opacity: 1;
-	 transform: translateX(0) rotate(45deg);
-}
- .art-info-bar .art-header .art-avatar .art-lamp-light.art-not-available:before {
-	 opacity: 0;
-	 animation: none;
-}
- .art-info-bar .art-header .art-avatar .art-lamp-light.art-not-available .art-available-lamp {
-	 background: red;
-}
- .art-info-bar .art-header .art-avatar .art-lamp-light.art-not-available .art-available-lamp:after {
-	 content: "Sorry, I'm no longer available.";
-}
- .art-info-bar .art-name {
-	 color: var(--c-font-1);
-	 transition: 0.4s ease-in-out;
-}
- .art-info-bar .art-name a {
-	 color: var(--c-font-1);
-	 transition: 0.4s ease-in-out;
-}
- .art-info-bar .art-name:hover a {
-	 color: var(--c-accent-1);
-}
+
  .art-info-bar .art-lang-skills {
 	 display: flex;
 	 flex-wrap: wrap;
