@@ -1,5 +1,5 @@
 // Components
-import { Logo, Logos } from './components';
+import { Logo, Logos, ProgressCircle, ProgressLine } from './components';
 // HOC
 import { PageWrapper, SectionWrapper } from './hoc';
 // Layout
@@ -27,7 +27,7 @@ import Routes from './routes/Routes';
 
 export {
   // Components
-  Logo, Logos,
+  Logo, Logos, ProgressCircle, ProgressLine,
   // HOC
   PageWrapper, SectionWrapper,
   // Layout - Footer
