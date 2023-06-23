@@ -29,6 +29,7 @@ export const dataStore = create((set) => ({
   sidebar: {
     profile: {
       name: 'Jay Ansin',
+      nameLink: '/',
       subtitle: ['Full-Stack Developer,', 'Avid pet lover 🐶'],
       available: true,
       avatar,
