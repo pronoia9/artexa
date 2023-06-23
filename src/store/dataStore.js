@@ -13,8 +13,8 @@ export const dataStore = create((set) => ({
   setAccent: (accent) => set({ accent }),
 
   // Sidebar / Navbar / Overlay
-  overlay: false,
-  closeOverlay: () => set({ navbarOpen: false, sidebarOpen: false }),
+  sideMenusOpen: false,
+  closeSideMenus: () => set({ navbarOpen: false, sidebarOpen: false }),
   navbarOpen: false,
   openNavbar: () => set({ navbarOpen: true, sidebarOpen: false }),
   sidebarOpen: false,

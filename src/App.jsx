@@ -9,12 +9,12 @@ import { GlobalStyles } from './styles';
 import { getTheme, systemThemeChangeHandler } from './utils';
 
 export default function App() {
-  const { theme, setTheme, accent, overlay, closeOverlay } = dataStore((state) => ({
+  const { theme, setTheme, accent, sideMenusOpen, closeSideMenus } = dataStore((state) => ({
     theme: state.theme,
     setTheme: state.setTheme,
     accent: state.accent,
-    overlay: state.overlay,
-    closeOverlay: state.closeOverlay,
+    sideMenusOpen: state.sideMenusOpen,
+    closeSideMenus: state.closeSideMenus,
   }));
   const scrollRef = useRef();
 
@@ -42,7 +42,7 @@ export default function App() {
             <div className='art-app-container'>
               <Sidebar />
 
-              <div className={`art-content${overlay ? ' art-active' : ''}`} onClick={() => closeOverlay()}>
+              <div className={`art-content${sideMenusOpen ? ' art-active' : ''}`} onClick={() => closeSideMenus()}>
                 <div className='art-curtain' />
                 {/* <Background /> */}
 
