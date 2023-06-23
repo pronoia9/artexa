@@ -40,6 +40,16 @@ const GlobalStyles = createGlobalStyle`
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
+  body {
+    color: var(--c-font-2);
+    font-size: 13px;
+    line-height: 1.7;
+    font-family: var(--f-primary);
+    font-weight: 400;
+    letter-spacing: .25px;
+    font-smooth: subpixel-antialiased
+  }
 `;
 
 export default GlobalStyles;
