@@ -1,7 +1,8 @@
 import { styled } from 'styled-components';
 
-import { dataStore } from '../../../store/dataStore';
 import { NavbarListItem } from './';
+import { dataStore } from '../../../store/dataStore';
+import { rem } from '../../../utils';
 
 const NavbarList = () => {
   const data = dataStore((state) => state.routes);
@@ -21,7 +22,7 @@ export default NavbarList;
 
 const Container = styled.div`
   height: auto;
-  margin-bottom: 60px;
+  margin-bottom: ${rem(60)};
 `;
 
 const Navigation = styled.nav`

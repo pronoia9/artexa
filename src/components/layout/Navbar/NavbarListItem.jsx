@@ -2,6 +2,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { styled, css } from 'styled-components';
 
 import { dataStore } from '../../../store/dataStore';
+import { rem } from '../../../utils';
 
 const NavbarListItem = ({ title, path, index }) => {
   const { navbarOpen, closeNavbar } = dataStore((state) => ({ navbarOpen: state.navbarOpen, closeNavbar: state.closeNavbar }));
@@ -28,7 +29,7 @@ const ListItem = styled.li`
   list-style-type: none;
   transition: 0.55s ease-in-out;
   opacity: ${({ $navbarOpen }) => ($navbarOpen ? 1 : 0)};
-  transform: ${({ $navbarOpen }) => ($navbarOpen ? 'translateX(0)' : 'translateX(60px)')};
+  transform: ${({ $navbarOpen }) => ($navbarOpen ? 'translateX(0)' : `translateX(${rem(60)})`)};
   transition: 0.55s ease-in-out;
   ${({ $index }) => css`transition-delay: ${$index * 0.05}s;`};
 
@@ -44,26 +45,26 @@ const ListItem = styled.li`
     display: inline-block;
     width: 100%;
     margin-bottom: 0;
-    padding: 7px 30px;
-    font-size: 13px;
+    padding: ${rem(7)} ${rem(30)};
+    font-size: ${rem(13)};
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: ${rem(1)};
     text-transform: uppercase;
     cursor: pointer;
   }
 
   &:first-child {
-    margin-top: 15px;
+    margin-top: ${rem(15)};
   }
 
   &:last-child {
-    margin-bottom: 15px;
+    margin-bottom: ${rem(15)};
   }
 
   &:hover {
     * {
       color: var(--c-font-1);
-      text-shadow: 0 0 3px var(--c-font-shadow);
+      text-shadow: 0 0 ${rem(3)} var(--c-font-shadow);
     }
   }
 `;

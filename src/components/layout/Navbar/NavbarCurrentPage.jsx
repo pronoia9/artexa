@@ -2,6 +2,7 @@ import { useLocation } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 import { dataStore } from '../../../store/dataStore';
+import { rem } from '../../../utils';
 
 const NavbarCurrentPage = () => {
   const { routes, navbarOpen } = dataStore((state) => ({ routes: state.routes, navbarOpen: state.navbarOpen }));
@@ -17,13 +18,13 @@ export default NavbarCurrentPage;
 
 const Container = styled.div`
   position: absolute;
-  top: 200px;
-  left: -62px;
-  width: 200px;
+  top: ${rem(200)};
+  left: ${rem(-62)};
+  width: ${rem(200)};
   color: var(--c-font-1);
-  font-size: 11px;
+  font-size: ${rem(11)};
   font-weight: 500;
-  letter-spacing: 1px;
+  letter-spacing: ${rem(1)};
   text-transform: uppercase;
   overflow: hidden;
   opacity: ${({ $navbarOpen }) => $navbarOpen ? 0 : 1};
