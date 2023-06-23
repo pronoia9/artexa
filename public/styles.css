@@ -594,113 +594,110 @@ blockquote:after {
   .art-info-bar .scroll-content {
     padding-top: 80px !important;
   }
-
-  /* !!!!!!!!! TEST */
-  .art-app-onepage .art-app-wrapper .art-app-container .art-content {
-    padding-right: 0;
-  }
-  /* ------------------------------ info bar ------------------------------ */
-
-  .art-info-bar .art-lang-skills {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .art-info-bar .art-lang-skills .art-lang-skills-item {
-    width: 33.33333%;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  .art-info-bar .art-lang-skills .art-lang-skills-item .art-circle-progress {
-    width: 65%;
-    margin: 0 auto 15px;
-  }
-  .art-info-bar .art-lang-skills .art-lang-skills-item .art-circle-progress .progressbar-text {
-    font-size: 11px;
-    color: var(--c-font-2) !important;
-    position: relative;
-    left: 45% !important;
-  }
-  .art-info-bar .art-lang-skills .art-lang-skills-item .art-circle-progress .progressbar-text:after {
-    content: '%';
-    position: absolute;
-    right: -7px;
-  }
-  .art-info-bar .art-hard-skills .art-hard-skills-item {
-    margin-bottom: 15px;
-    position: relative;
-  }
-  .art-info-bar .art-hard-skills .art-hard-skills-item .art-skill-heading {
-    display: flex;
-    justify-content: space-between;
-  }
-  .art-info-bar .art-hard-skills .art-hard-skills-item .art-line-progress {
-    width: 100%;
-  }
-  .art-info-bar .art-hard-skills .art-hard-skills-item .art-line-progress .progressbar-text {
-    width: 100%;
-    text-align: right;
-    top: -6px !important;
-    font-size: 11px;
-    color: var(--c-font-2) !important;
-  }
-  .art-info-bar .art-knowledge-list {
-    padding-left: 0;
-  }
-  .art-info-bar .art-knowledge-list li {
-    list-style-type: none;
-    margin-bottom: 5px;
-    color: var(--c-font-2);
-  }
-  .art-info-bar .art-knowledge-list li:last-child {
-    margin-bottom: 0;
-  }
-  .art-info-bar .art-knowledge-list li:before {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    content: '\f00c';
-    margin-right: 5px;
-    font-size: 9px;
-    color: var(--c-accent-1);
-    margin-right: 10px;
-  }
-  .art-info-bar .art-knowledge-list li:hover::before {
-    color: var(--c-accent-3);
-  }
-  .art-info-bar .art-links-frame {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-  }
-  .art-info-bar .art-ls-social {
-    font-size: 1.15rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 35px;
-    height: 50px;
-    background: var(--c-gradient-4);
-    position: absolute;
-    bottom: 0;
-    box-shadow: 0 1px 4px 0 var(--c-box-shadow);
-    left: 0;
-    width: 100%;
-    z-index: 999;
-  }
-  .art-info-bar .art-ls-social a {
-    color: var(--c-font-2);
-    transition: 0.2s ease-in-out;
-  }
-  .art-info-bar .art-ls-social a:hover {
-    text-shadow: 0 0 3px var(--c-font-shadow);
-    color: var(--c-accent-1);
-  }
-  .art-info-bar .art-ls-social a.social-unavailable:hover {
-    text-shadow: 0 0 3px var(--c-font-shadow);
-    color: var(--c-font-1);
-  }
 }
+.art-app-onepage .art-app-wrapper .art-app-container .art-content {
+  padding-right: 0;
+}
+/* ------------------------------ info bar ------------------------------ */
 
+.art-info-bar .art-lang-skills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.art-info-bar .art-lang-skills .art-lang-skills-item {
+  width: 33.33333%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.art-info-bar .art-lang-skills .art-lang-skills-item .art-circle-progress {
+  width: 65%;
+  margin: 0 auto 15px;
+}
+.art-info-bar .art-lang-skills .art-lang-skills-item .art-circle-progress .progressbar-text {
+  font-size: 11px;
+  color: var(--c-font-2) !important;
+  position: relative;
+  left: 45% !important;
+}
+.art-info-bar .art-lang-skills .art-lang-skills-item .art-circle-progress .progressbar-text:after {
+  content: '%';
+  position: absolute;
+  right: -7px;
+}
+.art-info-bar .art-hard-skills .art-hard-skills-item {
+  margin-bottom: 15px;
+  position: relative;
+}
+.art-info-bar .art-hard-skills .art-hard-skills-item .art-skill-heading {
+  display: flex;
+  justify-content: space-between;
+}
+.art-info-bar .art-hard-skills .art-hard-skills-item .art-line-progress {
+  width: 100%;
+}
+.art-info-bar .art-hard-skills .art-hard-skills-item .art-line-progress .progressbar-text {
+  width: 100%;
+  text-align: right;
+  top: -6px !important;
+  font-size: 11px;
+  color: var(--c-font-2) !important;
+}
+.art-info-bar .art-knowledge-list {
+  padding-left: 0;
+}
+.art-info-bar .art-knowledge-list li {
+  list-style-type: none;
+  margin-bottom: 5px;
+  color: var(--c-font-2);
+}
+.art-info-bar .art-knowledge-list li:last-child {
+  margin-bottom: 0;
+}
+.art-info-bar .art-knowledge-list li:before {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f00c';
+  margin-right: 5px;
+  font-size: 9px;
+  color: var(--c-accent-1);
+  margin-right: 10px;
+}
+.art-info-bar .art-knowledge-list li:hover::before {
+  color: var(--c-accent-3);
+}
+.art-info-bar .art-links-frame {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.art-info-bar .art-ls-social {
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 35px;
+  height: 50px;
+  background: var(--c-gradient-4);
+  position: absolute;
+  bottom: 0;
+  box-shadow: 0 1px 4px 0 var(--c-box-shadow);
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+.art-info-bar .art-ls-social a {
+  color: var(--c-font-2);
+  transition: 0.2s ease-in-out;
+}
+.art-info-bar .art-ls-social a:hover {
+  text-shadow: 0 0 3px var(--c-font-shadow);
+  color: var(--c-accent-1);
+}
+.art-info-bar .art-ls-social a.social-unavailable:hover {
+  text-shadow: 0 0 3px var(--c-font-shadow);
+  color: var(--c-font-1);
+}
 @keyframes puls {
   0% {
     transform: scale(0.6);
