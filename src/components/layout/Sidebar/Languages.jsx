@@ -1,5 +1,4 @@
 import { Progress } from '../..';
-
 import { dataStore } from '../../../store/dataStore';
 
 export const Languages = () => {
