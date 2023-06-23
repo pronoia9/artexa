@@ -1,11 +1,11 @@
 // Logos
-import { Logo, Logos } from './Logos';
+import Logos from './Logos';
 // Progress Bars/Circles
-import { ProgressCircle, ProgressLine } from './Progress';
+import Progress from './Progress';
 
 export {
   // Logos
-  Logo, Logos,
+  Logos,
   // Progress
-  ProgressCircle, ProgressLine
+  Progress,
 };
