@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+
 import { Profile, About, Languages, HardSkills, SoftSkills, Strengths, Resume, Social } from '.';
 import { dataStore } from '../../../store/dataStore';
 
