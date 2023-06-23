@@ -17,7 +17,7 @@ export const dataStore = create((set) => ({
   closeOverlay: () => set({ navbarOpen: false, sidebarOpen: false }),
   navbarOpen: false,
   openNavbar: () => set({ navbarOpen: true, sidebarOpen: false }),
-  sidebarOpen: true,
+  sidebarOpen: false,
   openSidebar: () => set({ navbarOpen: false, sidebarOpen: true }),
   toggleSidebar: () =>
     set((state) => ({
