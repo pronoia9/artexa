@@ -6,7 +6,7 @@ const NavbarButton = () => {
 
   return (
     <Container className='art-menu-bar-header'>
-      <Wrapper className={`art-menu-bar-btn${navbarOpen ? ' art-active' : ''}`} open={navbarOpen} onClick={() => toggleNavbar()}>
+      <Wrapper className='art-menu-bar-btn' $navbarOpen={navbarOpen} onClick={() => toggleNavbar()}>
         <span />
       </Wrapper>
     </Container>
@@ -29,6 +29,11 @@ const Container = styled.div`
 `;
 
 const Wrapper = styled.div`
+  width: 15px;
+  height: 12px;
+  margin-top: -10px;
+  padding: 30px;
+  display: inline-block;
   pointer-events: all;
 
   &.art-disabled {
@@ -36,8 +41,53 @@ const Wrapper = styled.div`
     pointer-events: none;
   }
 
+  span {
+    content: '';
+    position: relative;
+    width: 15px;
+    height: 3px;
+    display: block;
+    margin: 5px 0 0;
+    background: var(--c-font-2);
+    border-radius: 1px;
+    backface-visibility: hidden;
+    transform: ${({ $navbarOpen }) => $navbarOpen && 'rotate(45deg)'};
+    transition: 0.4s ease-in-out;
+
+    &::after,
+    &:before {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 3px;
+      display: block;
+      border-radius: 1px;
+      background: var(--c-font-2);
+      backface-visibility: hidden;
+      transition: 0.4s ease-in-out;
+    }
+
+    &:before {
+      top: -5px;
+      transform: ${({ $navbarOpen }) => $navbarOpen && 'translate(0px, 5px) rotate(-90deg)'};
+    }
+
+    &:after {
+      top: 5px;
+      transform: ${({ $navbarOpen }) => $navbarOpen && 'translate(0px, -5px) rotate(-90deg)'};
+    }
+  }
+
+  &:hover {
+    span,
+    span:after,
+    span:before {
+      background: var(--c-font-1);
+    }
+  }
+
   @media (max-width: 920px) {
-    transform: ${({ open }) => (open ? 'translateX(0)' : 'translateX(-80px)')};
+    transform: ${({ $navbarOpen }) => ($navbarOpen ? 'translateX(0)' : 'translateX(-80px)')};
     transition: 0.4s ease-in-out;
   }
 `;
