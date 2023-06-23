@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Scrollbar } from 'smooth-scrollbar-react';
 
-import { Routes, Navbar, Sidebar, Footer } from './components';
+import { Routes, Background, Navbar, Sidebar, Footer } from './components';
 import { dataStore } from './store/dataStore';
 import { GlobalStyles } from './styles';
 import { getTheme, systemThemeChangeHandler } from './utils';
@@ -37,7 +37,7 @@ export default function App() {
 
               <div className={`art-content${sideMenusOpen ? ' art-active' : ''}`} onClick={() => closeSideMenus()}>
                 <div className='art-curtain' />
-                {/* <Background /> */}
+                <Background />
 
                 <div id='transition-fade' className='transition-fade'>
                   <Scrollbar id='scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>

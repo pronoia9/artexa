@@ -1,5 +1,5 @@
 // Components
-import { Logos, Progress, SwiperNavigation, Title, SectionTitle, Timeline, TimelineColumn, TimelineItem } from './components';
+import { Background, Logos, Progress, SwiperNavigation, Title, SectionTitle, Timeline, TimelineColumn, TimelineItem } from './components';
 // HOC
 import { PageWrapper, SectionWrapper } from './hoc';
 // Layout
@@ -27,7 +27,7 @@ import Routes from './routes/Routes';
 
 export {
   // Components
-  Logos, Progress, SwiperNavigation, Title, SectionTitle, Timeline, TimelineColumn, TimelineItem,
+  Background, Logos, Progress, SwiperNavigation, Title, SectionTitle, Timeline, TimelineColumn, TimelineItem,
   // HOC
   PageWrapper, SectionWrapper,
   // Layout - Footer
