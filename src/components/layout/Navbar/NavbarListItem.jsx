@@ -52,8 +52,12 @@ const ListItem = styled.li`
     cursor: pointer;
   }
 
-  &:first-child, &:last-child {
+  &:first-child {
     margin-top: 15px;
+  }
+
+  &:last-child {
+    margin-bottom: 15px;
   }
 
   &:hover {
