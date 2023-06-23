@@ -10,7 +10,6 @@ const Sidebar = () => {
   return (
     <Container className='art-info-bar' active={`${sidebarOpen}`}>
       <Wrapper className='art-info-bar-frame'>
-        
         <MobileHeader className='art-info-bar-header' active={`${sidebarOpen}`}>
           <div className='art-info-bar-btn' onClick={() => toggleSidebar()}>
             <i className='fas fa-ellipsis-v' />
@@ -31,7 +30,6 @@ const Sidebar = () => {
         </Scrollbar>
 
         <Socials />
-
       </Wrapper>
     </Container>
   );
@@ -101,4 +99,8 @@ const MobileHeader = styled.div`
 
 const ScrollContent = styled.div`
   padding: 240px 0 50px;
+
+  @media (max-width: 230px) {
+    padding-top: 80px !important;
+  }
 `;
