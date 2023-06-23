@@ -43,7 +43,7 @@ export const dataStore = create((set) => ({
     languages: [
       { id: '1', language: 'English', level: 100 },
       { id: '2', language: 'French', level: 10 },
-      { id: '2', language: 'Japanese', level: 5 },
+      { id: '3', language: 'Japanese', level: 5 },
     ],
 
     hardSkills: [
