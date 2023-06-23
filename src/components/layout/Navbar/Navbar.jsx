@@ -30,6 +30,18 @@ const Container = styled.div`
   transform: ${({ open }) => open && 'translateX(-150px)'};
   transition: 0.55s ease-in-out;
 
+  a {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+
+    &:first-child {
+      visibility: visible;
+      opacity: 1;
+      display: block;
+    }
+  }
+
   @media (max-width: 920px) {
     position: absolute;
     right: -230px;
