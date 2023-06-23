@@ -84,6 +84,7 @@ export const dataStore = create((set) => ({
       url: '',
     },
 
+    // TODO: Change non link socials with a hover info maybe
     social: [
       {
         id: 1,
