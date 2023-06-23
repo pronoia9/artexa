@@ -3,7 +3,7 @@ import * as ProgressBar from 'progressbar.js';
 
 export default function Progress(props) {
   const { type, level, index } = props;
-  if (!type || !level || !index) return <></>;
+  if (!type || !level) return <></>;
 
   useEffect(() => {
     const progress = ProgressThing(props);
