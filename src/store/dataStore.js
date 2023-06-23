@@ -15,6 +15,7 @@ export const dataStore = create((set) => ({
   // ROUTES
   routes: [
     { title: 'Home', path: '/' },
+    { title: 'About', path: '/about' },
     { title: 'Projects', path: '/projects' },
     { title: 'History', path: '/history' },
     { title: 'Contact', path: '/contact' },
@@ -25,6 +26,7 @@ export const dataStore = create((set) => ({
   closeSideMenus: () => set({ navbarOpen: false, sidebarOpen: false }),
   navbarOpen: false,
   openNavbar: () => set({ navbarOpen: true, sidebarOpen: false }),
+  closeNavbar: () => set({ navbarOpen: false }),
   toggleNavbar: () =>
     set((state) => ({
       navbarOpen: !state.navbarOpen,
@@ -32,6 +34,7 @@ export const dataStore = create((set) => ({
     })),
   sidebarOpen: false,
   openSidebar: () => set({ navbarOpen: false, sidebarOpen: true }),
+  closeSidebar: () => set({ sidebarOpen: false }),
   toggleSidebar: () =>
     set((state) => ({
       navbarOpen: state.navbarOpen && !state.sidebarOpen ? false : state.navbarOpen,
