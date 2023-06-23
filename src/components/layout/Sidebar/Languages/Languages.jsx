@@ -6,7 +6,7 @@ const Languages = () => {
   return (
     <div className='art-lang-skills p-30-15'>
       {data.map((language, index) => (
-        <LanguagesItem key={`sidebar-language-${index}`} {...language} />
+        <LanguagesItem key={`sidebar-language-${index}`} index={index} {...language} />
       ))}
     </div>
   );
