@@ -1,6 +1,8 @@
+import { styled } from 'styled-components';
+
 import { NavbarButton, NavbarCurrentPage, NavbarList } from './';
 import { dataStore } from '../../../store/dataStore';
-import { styled } from 'styled-components';
+import { rem } from '../../../utils';
 
 const Navbar = () => {
   const { navbarOpen } = dataStore((state) => ({ navbarOpen: state.navbarOpen }));
@@ -20,14 +22,14 @@ export default Navbar;
 const Container = styled.div`
   position: absolute;
   top: 0;
-  right: -150px;
+  right: ${rem(-150)};
   bottom: 0;
-  width: 230px;
-  height: calc(100vh - 30px);
+  width: ${rem(230)};
+  height: calc(100vh - ${rem(30)});
   background: var(--c-font-4);
-  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
+  box-shadow: 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
   z-index: 99;
-  transform: ${({ $navbarOpen }) => $navbarOpen && 'translateX(-150px)'};
+  transform: ${({ $navbarOpen }) => $navbarOpen && `translateX(${rem(-150)})`};
   transition: 0.55s ease-in-out;
 
   a {
@@ -42,15 +44,15 @@ const Container = styled.div`
     }
   }
 
-  @media (max-width: 920px) {
+  @media (max-width: ${rem(920)}) {
     position: absolute;
-    right: -230px;
-    width: 230px;
+    right: ${rem(-230)};
+    width: ${rem(230)};
     height: 100vh;
-    transform: ${({ open }) => open && 'translateX(-230px)'};
+    transform: ${({ open }) => open && `translateX(${rem(-230)})`};
   }
 
-  @media (max-width: 230px) {
+  @media (max-width: ${rem(230)}) {
     width: 100vw;
   }
 `;
