@@ -12,7 +12,9 @@ const Navbar = () => {
       <Wrapper id='art-menu-bar-frame' className='art-menu-bar-frame'>
         <NavbarButton />
         <NavbarCurrentPage />
-        <NavbarList />
+        <Frame className='art-scroll-frame'>
+          <NavbarList />
+        </Frame>
       </Wrapper>
     </Container>
   );
@@ -63,4 +65,9 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const Frame = styled.div`
+  height: auto;
+  margin-bottom: ${rem(60)};
 `;

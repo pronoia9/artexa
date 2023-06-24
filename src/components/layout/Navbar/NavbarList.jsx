@@ -7,25 +7,18 @@ import { rem } from '../../../utils';
 const NavbarList = () => {
   const data = dataStore((state) => state.navbar);
   return (
-    <Container className='art-scroll-frame'>
-      <Navigation>
-        <NavigationList className='main-menu'>
-          {data.map((route, index) => (
-            <NavbarListItem key={`navbarlist-${index}`} {...route} index={index} />
-          ))}
-        </NavigationList>
-      </Navigation>
+    <Container>
+      <NavigationList className='main-menu'>
+        {data.map((route, index) => (
+          <NavbarListItem key={`navbarlist-${index}`} {...route} index={index} />
+        ))}
+      </NavigationList>
     </Container>
   );
 };
 export default NavbarList;
 
-const Container = styled.div`
-  height: auto;
-  margin-bottom: ${rem(60)};
-`;
-
-const Navigation = styled.nav`
+const Container = styled.nav`
   position: relative;
   height: 100%;
   display: flex;
