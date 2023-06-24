@@ -22,23 +22,25 @@ export const dataStore = create((set) => ({
   ],
 
   // Sidebar / Navbar / Overlay
-  sideMenusOpen: true,
-  closeSideMenus: () => set({ navbarOpen: false, sidebarOpen: false }),
-  navbarOpen: true,
-  openNavbar: () => set({ navbarOpen: true, sidebarOpen: false }),
-  closeNavbar: () => set({ navbarOpen: false }),
+  curtainEnabled: false,
+  curtainClose: () => set({ navbarOpen: false, sidebarOpen: false, curtainEnabled: false }),
+  navbarOpen: false,
+  openNavbar: () => set({ navbarOpen: true, sidebarOpen: false, curtainEnabled: true }),
+  closeNavbar: () => set({ navbarOpen: false, curtainEnabled: false }),
   toggleNavbar: () =>
     set((state) => ({
       navbarOpen: !state.navbarOpen,
       sidebarOpen: state.sidebarOpen && !state.navbarOpen ? false : state.sidebarOpen,
+      curtainEnabled: !state.navbarOpen,
     })),
   sidebarOpen: false,
-  openSidebar: () => set({ navbarOpen: false, sidebarOpen: true }),
-  closeSidebar: () => set({ sidebarOpen: false }),
+  openSidebar: () => set({ navbarOpen: false, sidebarOpen: true, curtainEnabled: true }),
+  closeSidebar: () => set({ sidebarOpen: false, curtainEnabled: false }),
   toggleSidebar: () =>
     set((state) => ({
       navbarOpen: state.navbarOpen && !state.sidebarOpen ? false : state.navbarOpen,
       sidebarOpen: !state.sidebarOpen,
+      curtainEnabled: !state.sidebarOpen,
     })),
 
   // SIDEBAR
@@ -136,7 +138,10 @@ export const dataStore = create((set) => ({
   // NAVBAR
   navbar: [
     { id: 0, title: 'Home', path: '/' },
-    { id: 1, title: 'Projects', path: '/projects', 
+    {
+      id: 1,
+      title: 'Projects',
+      path: '/projects',
       // submenu: [
       //   { id: 10, title: 'Projects', subtitle: '2', path: '/projects-2' },
       //   { id: 11, title: 'Projects', subtitle: '3', path: '/projects-3' },
@@ -144,7 +149,10 @@ export const dataStore = create((set) => ({
     },
     { id: 2, title: 'History', path: '/history' },
     { id: 3, title: 'Courses', path: '/courses' },
-    { id: 4, title: 'Technologies', path: '/technologies', 
+    {
+      id: 4,
+      title: 'Technologies',
+      path: '/technologies',
       // submenu: [
       //   { id: 40, title: 'Technologies', subtitle: '2', path: '/technologies-2' },
       //   { id: 41, title: 'Technologies', subtitle: '3', path: '/technologies-3' },
