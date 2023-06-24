@@ -1,6 +1,7 @@
 import { styled, css } from 'styled-components';
 
 import { dataStore } from '../../../store/dataStore';
+import { rem } from '../../../utils';
 
 export const Profile = () => (
   <ProfileContainer className='art-header'>
@@ -50,22 +51,22 @@ const ProfileContainer = styled.div`
   position: absolute;
   left: 0;
   top: 0;
-  z-index: 99999;
   width: 100%;
-  padding: 30px;
-  height: 235px;
-  background: var(--c-gradient-2);
+  height: ${rem(235)};
+  padding: ${rem(30)};
   text-align: center;
-  box-shadow: 0 1px 4px 0 var(--c-box-shadow);
+  background: var(--c-gradient-2);
+  box-shadow: 0 ${rem(1)} ${rem(4)} 0 var(--c-box-shadow);
+  z-index: 99999;
 `;
 
 const AvatarContainer = styled.div`
-  width: 90px;
-  height: 90px;
+  position: relative;
+  width: ${rem(90)};
+  height: ${rem(90)};
   margin: 0 auto;
   border-radius: 50%;
-  position: relative;
-  margin-bottom: 15px;
+  margin-bottom: ${rem(15)};
 `;
 
 const AvatarCurtain = styled.div`
@@ -81,13 +82,13 @@ const AvatarCurtain = styled.div`
 
   i {
     background: var(--c-gradient-3);
-    width: 30px;
-    height: 30px;
+    width: ${rem(30)};
+    height: ${rem(30)};
     text-align: center;
     align-self: center;
     font-weight: 700;
-    font-size: 11px;
-    line-height: 30px;
+    font-size: ${rem(11)};
+    line-height: ${rem(30)};
     color: var(--c-font-1);
     border-radius: 50%;
     opacity: 0;
@@ -126,11 +127,11 @@ const AvatarStatus = styled.div`
   &:before {
     content: '';
     position: absolute;
-    bottom: -1px;
-    right: 1px;
+    bottom: ${rem(-1)};
+    right: ${rem(1)};
     background: var(--c-font-1);
-    height: 23px;
-    width: 23px;
+    height: ${rem(23)};
+    width: ${rem(23)};
     border-radius: 50%;
     animation: ${({ available }) => (available === 'true' ? 'puls 1s infinite' : 'none')};
     opacity: ${({ available }) => available !== 'true' && 0};
@@ -139,10 +140,10 @@ const AvatarStatus = styled.div`
 
 const AvatarStatusLight = styled.div`
   position: absolute;
-  bottom: 3px;
-  right: 5px;
-  height: 15px;
-  width: 15px;
+  bottom: ${rem(3)};
+  right: ${rem(5)};
+  height: ${rem(15)};
+  width: ${rem(15)};
   background: ${({ available }) => (available === 'true' ? 'greenyellow' : 'red')};
   border-radius: 50%;
   z-index: 0;
@@ -151,19 +152,19 @@ const AvatarStatusLight = styled.div`
   &:after {
     position: relative;
     content: "I'm available for hire";
-    width: 115px;
+    width: ${rem(115)};
     display: block;
-    padding: 5px 10px;
-    top: -10px;
-    left: 28px;
-    font-size: 10px;
+    padding: ${rem(5)} ${rem(10)};
+    top: ${rem(-10)};
+    left: ${rem(28)};
+    font-size: ${rem(10)};
     font-weight: 200;
     color: var(--c-font-2);
-    box-shadow: 0 1px 4px 0 var(--c-box-shadow);
+    box-shadow: 0 ${rem(1)} ${rem(4)} 0 var(--c-box-shadow);
     background: var(--c-background-1);
     opacity: 0;
     pointer-events: none;
-    transform: translateX(20px);
+    transform: translateX(${rem(20)});
     transition: 0.4s ease-in-out;
     text-align: left;
   }
@@ -178,14 +179,14 @@ const AvatarStatusLight = styled.div`
   &:before {
     content: '';
     position: absolute;
-    height: 5px;
-    width: 5px;
-    right: -15px;
-    top: 5px;
+    height: ${rem(5)};
+    width: ${rem(5)};
+    right: ${rem(-15)};
+    top: ${rem(5)};
     opacity: 0;
     background: var(--c-background-1);
     pointer-events: none;
-    transform: translateX(20px) rotate(45deg);
+    transform: translateX(${rem(20)}) rotate(45deg);
     transition: 0.4s ease-in-out;
     z-index: 99;
     animation: none !important;
