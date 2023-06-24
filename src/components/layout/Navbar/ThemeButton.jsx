@@ -16,16 +16,15 @@ export const ThemeButton = () => {
 
   return (
     <Container className='art-language-change' $navbarOpen={navbarOpen}>
-      <ThemeContainer $navbarOpen={navbarOpen}>
+      <ThemeContainer>
         {themes.map(({ title, icon }) => (
-          <ThemeItem key={`theme-button-${title}`} $active={theme === title} onClick={toggleTheme}>
+          <ThemeItem key={`theme-button-${title}`} $active={theme === title} $navbarOpen={navbarOpen} onClick={toggleTheme}>
             <i className={icon} />
           </ThemeItem>
         ))}
       </ThemeContainer>
 
       <AccentContainer $navbarOpen={navbarOpen}>
-        <div />
         {Object.entries(colors).map((color, index) => (
           <AccentItem
             key={`theme-button-accent-${index}`}
@@ -49,33 +48,40 @@ const Container = styled.div`
   padding: ${rem(30)} ${rem(26)};
   display: flex;
   flex-direction: ${({ $navbarOpen }) => ($navbarOpen ? 'column' : 'row')};
+  flex-direction: column;
   gap: ${rem(10)};
   box-shadow: 0 ${rem(1)} ${rem(4)} 0 var(--c-box-shadow);
   background: var(--c-gradient-3) /* linear-gradient(159deg, #252532fa 0%, #23232efa 100%) */;
-
-  & > div {
-    transition: 0.55s ease-in-out;
-  }
 `;
 
-const ThemeContainer = styled.div`
-  width: 100%;
-  display: flex;
-  gap: ${rem(10)};
-  flex-direction: ${({ $navbarOpen }) => ($navbarOpen ? 'row' : 'column')};
-`;
+const ThemeContainer = styled.div``;
 
 const ThemeItem = styled.div`
-  height: 1.75rem;
   width: 1.75rem;
+  height: 1.75rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  list-style-type: none;
   box-shadow: inset 0 ${rem(3)} ${rem(8)} 0 var (--c-box-shadow);
   background: ${({ $active }) => ($active ? 'var(--c-accent-1)' : 'var(--c-background-1)')};
   border-radius: 50%;
   cursor: ${({ $active }) => !$active && 'pointer'};
+  transition: 0.55s ease-in-out;
+
+  &:first-child {
+    margin-bottom: ${rem(10)};
+  }
+
+  ${({ $navbarOpen }) =>
+    $navbarOpen &&
+    css`
+      &:first-child {
+        transform: translateX(calc(${rem(5)} + 1.75rem));
+      }
+      &:last-child {
+        transform: translateY(calc(${rem(-10)} - 1.75rem));
+      }
+    `}
 
   i {
     color: ${({ $active }) => $active && 'var(--c-font-1)'};
@@ -86,27 +92,26 @@ const ThemeItem = styled.div`
 `;
 
 const AccentContainer = styled.div`
-  width: calc(100% - 30px);
+  position: absolute;
+  bottom: ${rem(30)};
+  left: ${rem(22.5)};
   width: 100%;
-  padding: 0;
-  margin: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  ${({ $navbarOpen }) => !$navbarOpen && css`
-    position: absolute;
-    bottom: ${rem(30)};
-    left: ${rem(79)};
-  `}
 `;
 
-const AccentItem = styled(ThemeItem)`
+const AccentItem = styled.div`
+  width: 1.75rem;
+  height: 1.75rem;
+  margin: 0 !important;
   opacity: ${({ $navbarOpen }) => ($navbarOpen ? 1 : 0)};
   background: ${({ $index }) => Object.values(colors)[$index].accent1};
   border-radius: 50%;
   border: 2px solid var(--c-font-6);
   cursor: ${({ $active }) => !$active && 'pointer'};
   transform: ${({ $navbarOpen }) => ($navbarOpen ? 'translateX(0)' : `translateX(${rem(60)})`)};
+  transition: 0.55s ease-in-out;
   ${({ $index }) => css`transition-delay: ${$index * 0.05}s;`};
 `;
