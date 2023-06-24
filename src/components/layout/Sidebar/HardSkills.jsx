@@ -1,4 +1,4 @@
-import { Progress } from "../..";
+import { Progressbar } from "../..";
 import { dataStore } from "../../../store/dataStore";
 
 export const HardSkills = () => {
@@ -17,6 +17,6 @@ export const HardSkillsItem = (props) => (
     <div className='art-skill-heading'>
       <h6>{props.skill}</h6>
     </div>
-    <Progress {...props} type='line' />
+    <Progressbar {...props} type='line' />
   </div>
 );

@@ -1,6 +1,6 @@
 import { Background } from './Background';
 import Logos from './Logos';
-import Progress from './Progress';
+import { Progressbar } from './Progressbar';
 import { SwiperNavigation } from './Swiper';
 import { Title, SectionTitle } from './Text';
 import { Timeline, TimelineColumn, TimelineItem } from './Timeline';
@@ -8,7 +8,7 @@ import { Timeline, TimelineColumn, TimelineItem } from './Timeline';
 export {
   Background,
   Logos,
-  Progress,
+  Progressbar,
   SwiperNavigation,
   Title, SectionTitle,
   Timeline, TimelineColumn, TimelineItem

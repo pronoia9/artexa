@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 import { ProgressbarInstance } from '../../utils/utils';
 
-export default function Progress(props) {
+export const Progressbar = (props) => {
   const { type, level, index } = props;
   if (!type || !level) return <></>;
 
