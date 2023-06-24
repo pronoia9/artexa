@@ -3,7 +3,8 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
   :root {
     --c-background-1: ${({ theme }) => theme.background1};
-    --c-background-2: #1e1e28e0;
+    --c-background-2: ${({ theme }) => theme.background2};
+    --c-background-3: ${({ theme }) => theme.background3};
     --c-background-fancybox: #20202afa;
     --c-background-swiper-pagination: ${({ theme }) => theme.backgroundSwiperPagination};
     --c-box-shadow: #0f0f1433;
