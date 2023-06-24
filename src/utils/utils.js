@@ -116,25 +116,31 @@ export const rng = (min, max) => Math.floor(Math.random() * (max - min + 1)) + m
 
 
 //----------------------------- PROGRESSBARS -----------------------------//
-export const progressbarLine = (index, id, level) => {
-  const bar = new ProgressBar.Line(`#${id}`, {
-    strokeWidth: 1.72,
-    easing: 'easeInOut',
-    duration: 1400,
-    // increase delay down the list (ie: 2800, 2900, 3000, 3100, 3200)
-    delay: 2700 + Number(index) * 100,
-    trailWidth: 1.72,
-    svgStyle: {
-      width: '100%',
-      height: '100%',
-    },
-    step: (state, bar) => {
-      bar.setText(level + ' %');
-    },
-  });
-  bar.animate(level / 100);
-  return bar.destroy();
-}
+export const ProgressbarInstance = ({ type = 'circle', level, index }) => {
+  switch (type) {
+    case 'circle':
+      return new ProgressBar.Circle(`#${type}prog${index}`, {
+        strokeWidth: 7,
+        easing: 'easeInOut',
+        duration: 1400,
+        delay: 2400 + Number(index) * 100,
+        trailWidth: 7,
+        step: (state, bar) => { bar.setText(level); },
+      });
+    case 'line':
+      return new ProgressBar.Line(`#${type}prog${index}`, {
+        strokeWidth: 1.72,
+        easing: 'easeInOut',
+        duration: 1400,
+        delay: 2700 + Number(index) * 100,
+        trailWidth: 7,
+        svgStyle: { width: '100%', height: '100%' },
+        step: (state, bar) => { bar.setText(level); },
+      });
+    default:
+      return null;
+  }
+};
 
 //------------------------------- COUNTERS -------------------------------//
 // function counterAnimation() {
