@@ -5,7 +5,7 @@ import { dataStore } from '../../../store/dataStore';
 import { rem } from '../../../utils';
 
 const NavbarList = () => {
-  const data = dataStore((state) => state.routes);
+  const data = dataStore((state) => state.navbar);
   return (
     <Container className='art-scroll-frame'>
       <Navigation>
