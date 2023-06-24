@@ -422,49 +422,6 @@ blockquote:after {
 }
 /* ------------------------------ info bar ------------------------------ */
 
-.art-info-bar .art-lang-skills {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-.art-info-bar .art-lang-skills .art-lang-skills-item {
-  width: 33.33333%;
-  text-align: center;
-  margin-bottom: 15px;
-}
-.art-info-bar .art-lang-skills .art-lang-skills-item .art-circle-progress {
-  width: 65%;
-  margin: 0 auto 15px;
-}
-.art-info-bar .art-lang-skills .art-lang-skills-item .art-circle-progress .progressbar-text {
-  font-size: 11px;
-  color: var(--c-font-2) !important;
-  position: relative;
-  left: 45% !important;
-}
-.art-info-bar .art-lang-skills .art-lang-skills-item .art-circle-progress .progressbar-text:after {
-  content: '%';
-  position: absolute;
-  right: -7px;
-}
-.art-info-bar .art-hard-skills .art-hard-skills-item {
-  margin-bottom: 15px;
-  position: relative;
-}
-.art-info-bar .art-hard-skills .art-hard-skills-item .art-skill-heading {
-  display: flex;
-  justify-content: space-between;
-}
-.art-info-bar .art-hard-skills .art-hard-skills-item .art-line-progress {
-  width: 100%;
-}
-.art-info-bar .art-hard-skills .art-hard-skills-item .art-line-progress .progressbar-text {
-  width: 100%;
-  text-align: right;
-  top: -6px !important;
-  font-size: 11px;
-  color: var(--c-font-2) !important;
-}
 .art-info-bar .art-knowledge-list {
   padding-left: 0;
 }
