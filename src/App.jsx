@@ -8,12 +8,12 @@ import { GlobalStyles } from './styles';
 import { getTheme, systemThemeChangeHandler } from './utils';
 
 export default function App() {
-  const { theme, setTheme, accent, sideMenusOpen, closeSideMenus } = dataStore((state) => ({
+  const { theme, setTheme, accent, curtainEnabled, curtainClose } = dataStore((state) => ({
     theme: state.theme,
     setTheme: state.setTheme,
     accent: state.accent,
-    sideMenusOpen: state.sideMenusOpen,
-    closeSideMenus: state.closeSideMenus,
+    curtainEnabled: state.curtainEnabled,
+    curtainClose: state.curtainClose,
   }));
 
   // EVENT LISTENER FOR SYSTEM THEME CHANGE
@@ -35,7 +35,7 @@ export default function App() {
             <div className='art-app-container'>
               <Sidebar />
 
-              <div className={`art-content${sideMenusOpen ? ' art-active' : ''}`} onClick={() => closeSideMenus()}>
+              <div className={`art-content${curtainEnabled ? ' art-active' : ''}`} onClick={() => curtainClose()}>
                 <div className='art-curtain' />
                 <Background />
 
