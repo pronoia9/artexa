@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 import { dataStore } from '../../../store/dataStore';
 import { rem } from '../../../utils';
 
-const NavbarButton = () => {
+export const NavbarButton = () => {
   const { navbarOpen, toggleNavbar } = dataStore((state) => ({ navbarOpen: state.navbarOpen, toggleNavbar: state.toggleNavbar }));
 
   return (
@@ -14,7 +14,6 @@ const NavbarButton = () => {
     </Container>
   );
 };
-export default NavbarButton;
 
 const Container = styled.div`
   position: absolute;

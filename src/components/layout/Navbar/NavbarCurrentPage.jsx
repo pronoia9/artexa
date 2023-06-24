@@ -4,7 +4,7 @@ import { styled } from 'styled-components';
 import { dataStore } from '../../../store/dataStore';
 import { rem } from '../../../utils';
 
-const NavbarCurrentPage = () => {
+export const NavbarCurrentPage = () => {
   const { routes, navbarOpen } = dataStore((state) => ({ routes: state.routes, navbarOpen: state.navbarOpen }));
   let location = useLocation();
 
@@ -14,7 +14,6 @@ const NavbarCurrentPage = () => {
     </Container>
   );
 };
-export default NavbarCurrentPage;
 
 const Container = styled.div`
   position: absolute;

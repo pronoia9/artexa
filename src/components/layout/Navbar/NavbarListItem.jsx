@@ -5,7 +5,7 @@ import { dataStore } from '../../../store/dataStore';
 import { rem } from '../../../utils';
 import { useState } from 'react';
 
-const NavbarListItem = ({ title, path, index, submenu }) => {
+export const NavbarListItem = ({ title, path, index, submenu }) => {
   const { navbarOpen, closeNavbar } = dataStore((state) => ({ navbarOpen: state.navbarOpen, closeNavbar: state.closeNavbar }));
   let location = useLocation();
   const [submenuOpen, setSubMenuOpen] = useState(false);
@@ -44,7 +44,6 @@ const NavbarListItem = ({ title, path, index, submenu }) => {
     </ListItem>
   );
 };
-export default NavbarListItem;
 
 const ListItem = styled.li`
   position: relative;

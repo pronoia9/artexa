@@ -2,9 +2,8 @@ import { styled } from 'styled-components';
 
 import { NavbarListItem } from './';
 import { dataStore } from '../../../store/dataStore';
-import { rem } from '../../../utils';
 
-const NavbarList = () => {
+export const NavbarList = () => {
   const data = dataStore((state) => state.navbar);
   return (
     <Container>
@@ -16,7 +15,6 @@ const NavbarList = () => {
     </Container>
   );
 };
-export default NavbarList;
 
 const Container = styled.nav`
   position: relative;

@@ -1,10 +1,10 @@
 import { styled } from 'styled-components';
 
-import { NavbarButton, NavbarCurrentPage, NavbarList } from './';
+import { NavbarButton, NavbarCurrentPage, NavbarList, ThemeButton } from './';
 import { dataStore } from '../../../store/dataStore';
 import { rem } from '../../../utils';
 
-const Navbar = () => {
+export const Navbar = () => {
   const { navbarOpen } = dataStore((state) => ({ navbarOpen: state.navbarOpen }));
 
   return (
@@ -14,12 +14,12 @@ const Navbar = () => {
         <NavbarCurrentPage />
         <Frame className='art-scroll-frame'>
           <NavbarList />
+          <ThemeButton />
         </Frame>
       </Wrapper>
     </Container>
   );
 };
-export default Navbar;
 
 const Container = styled.div`
   position: absolute;
