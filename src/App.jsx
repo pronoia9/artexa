@@ -1,98 +1,59 @@
-/* eslint-disable no-unused-vars */
-import React, { useState, useEffect } from 'react';
-import SmoothScrollbar from 'smooth-scrollbar';
-import Scrollbar from 'react-smooth-scrollbar';
-// bg
-import Background from './components/Background';
-// side panels
-import InfoBar from './components/Sidebar/InfoBar';
-import Navbar from './components/Navbar/Navbar';
-// middle
-import Footer from './components/Footer';
-import Routes from './routes/Routes';
-// data
-import data from './data/data.json';
-// js
-import { rng, transition, scrollbarInit } from './assets/js/main.js';
-let i = rng(0, data.backgrounds.animated.length - 1);
+import { useEffect } from 'react';
+import { ThemeProvider } from 'styled-components';
+import { Scrollbar } from 'smooth-scrollbar-react';
 
-
-// TODO: <Scrollbar> is component t, need to fix warning regarding it
+import { Routes, Background, Navbar, Sidebar, Footer } from './components';
+import { dataStore } from './store/dataStore';
+import { GlobalStyles } from './styles';
+import { getTheme, systemThemeChangeHandler } from './utils';
 
 export default function App() {
-  useEffect(scrollbarInit, []);
-  useEffect(transition, [window.location.pathname]);
+  const { theme, setTheme, accent, curtainEnabled, curtainClose } = dataStore((state) => ({
+    theme: state.theme,
+    setTheme: state.setTheme,
+    accent: state.accent,
+    curtainEnabled: state.curtainEnabled,
+    curtainClose: state.curtainClose,
+  }));
 
-  // banner gif + background
-  const [background, setBackground] = useState();
-  useEffect(() => changeBackground(), []);
-  const changeBackground = () => setBackground(data.backgrounds.animated[rng(0, data.backgrounds.animated.length - 1)]);
-
-  // sliding for left side panel
-  const [sidebarActive, setSidebarActive] = useState(false);
-
-  // sliding for right side menu
-  const [navbarActive, setNavbarActive] = useState(false);
+  // EVENT LISTENER FOR SYSTEM THEME CHANGE
+  useEffect(() => {
+    const systemThemeWatcher = window.matchMedia('(prefers-color-scheme: dark)');
+    systemThemeWatcher.addEventListener('change', (e) => systemThemeChangeHandler(e, setTheme));
+    return () => { systemThemeWatcher.removeEventListener('change', systemThemeChangeHandler); };
+  }, []);
 
   return (
-    <div className='art-app'>
-      <div className='art-mobile-top-bar'></div>
+    <ThemeProvider theme={getTheme(theme)}>
+      <ThemeProvider theme={getTheme(accent)}>
+        <GlobalStyles />
+        <div className='art-app'>
+          <div className='art-mobile-top-bar' />
+          {/* <Preloader /> */}
 
-      <div className='art-app-wrapper'>
-        <div className='art-app-container'>
-          <InfoBar
-            data={data.sidebar}
-            navbarActive={navbarActive}
-            setNavbarActive={setNavbarActive}
-            sidebarActive={sidebarActive}
-            setSidebarActive={setSidebarActive}
-          />
-          {/* body (content area, middle section) */}
-          {/* activate/show curtain (css) if any of the panels are open/active */}
-          <div className={navbarActive || sidebarActive ? 'art-content art-active' : 'art-content'}>
-            {/* curtain */}
-            <div
-              className='art-curtain'
-              onClick={() => {
-                navbarActive && setNavbarActive(false);
-                sidebarActive && setSidebarActive(false);
-              }}></div>
-            {/* send the background state from wrapper, which changes dynamically (on input) */}
-            <Background background={background} />
+          <div className='art-app-wrapper'>
+            <div className='art-app-container'>
+              <Sidebar />
 
-            {/* transition container */}
-            <div className='transition-fade' id='transition-fade'>
-              {/* scroll frame */}
-              <Scrollbar
-                className='content-scrollbar'
-                damping={0.5}
-                thumbMinSize={20}
-                renderByPixels={true}
-                alwaysShowTracks={false}
-                continuousScrolling={true}
-                plugins={{ SmoothScrollbar }}>
-                <div id='scrollbar' className='art-scroll-frame' data-scrollbar='true' tabIndex='-1'>
-                  <div className='scroll-content'>
-                    {/* routes */}
-                    <Routes data={data.main} background={background} changeBackground={changeBackground} />
+              <div className={`art-content${curtainEnabled ? ' art-active' : ''}`} onClick={() => curtainClose()}>
+                <div className='art-curtain' />
+                <Background />
 
-                    {/* footer */}
-                    <Footer data={data.main.logos} />
-                  </div>
+                <div id='transition-fade' className='transition-fade'>
+                  <Scrollbar id='scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
+                    <div className='scroll-content'>
+                      <Routes />
+                      <Footer />
+                    </div>
+                  </Scrollbar>
                 </div>
-              </Scrollbar>
+              </div>
+
+              <Navbar />
             </div>
           </div>
-
-          <Navbar
-            data={data.navbar}
-            navbarActive={navbarActive}
-            setNavbarActive={setNavbarActive}
-            sidebarActive={sidebarActive}
-            setSidebarActive={setSidebarActive}
-          />
         </div>
-      </div>
-    </div>
+      </ThemeProvider>
+    </ThemeProvider>
   );
 }
