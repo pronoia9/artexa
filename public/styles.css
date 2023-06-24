@@ -422,29 +422,6 @@ blockquote:after {
 }
 /* ------------------------------ info bar ------------------------------ */
 
-.art-info-bar .art-knowledge-list {
-  padding-left: 0;
-}
-.art-info-bar .art-knowledge-list li {
-  list-style-type: none;
-  margin-bottom: 5px;
-  color: var(--c-font-2);
-}
-.art-info-bar .art-knowledge-list li:last-child {
-  margin-bottom: 0;
-}
-.art-info-bar .art-knowledge-list li:before {
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  content: '\f00c';
-  margin-right: 5px;
-  font-size: 9px;
-  color: var(--c-accent-1);
-  margin-right: 10px;
-}
-.art-info-bar .art-knowledge-list li:hover::before {
-  color: var(--c-accent-3);
-}
 .art-info-bar .art-links-frame {
   display: flex;
   justify-content: space-between;
