@@ -1,7 +1,7 @@
+import { styled } from 'styled-components';
 import { useEffect } from 'react';
 
-import { ProgressbarInstance } from '../../utils/utils';
-import { styled } from 'styled-components';
+import { ProgressbarInstance, rem } from '../../utils';
 
 export const Progressbar = (props) => {
   const { type, level, index } = props;
@@ -21,30 +21,33 @@ export const Progressbar = (props) => {
 const Container = styled.div`
   .progressbar-text {
     position: relative;
-    left: 45% !important;
-    font-size: 11px;
-    color: var(--c-font-1) !important;
+    left: 40% !important;
+    color: var(--c-font-3) !important;
+    font-size: ${rem(13)};
 
     &:after {
       content: '%';
       position: absolute;
-      right: -7px;
+      right: -1.25ch;
     }
   }
 
   &.art-circle-progress {
     width: 65%;
-    margin: 0 auto 15px;
+    margin: 0 auto ${rem(15)};
   }
 
   &.art-line-progress {
     width: 100%;
 
     .progressbar-text {
-      top: -6px !important;
+      top: ${rem(-6)} !important;
       width: 100%;
       text-align: right;
-      color: var(--c-font-3) !important;
+
+      &:after {
+        right: -1.5ch;
+      }
     }
   }
 `;

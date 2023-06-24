@@ -27,4 +27,8 @@ export const HardSkillsItem = (props) => (
 const ItemContainer = styled.div`
   position: relative;
   margin-bottom: ${rem(15)};
+
+  h6 {
+    font-size: ${rem(13)};
+  }
 `;

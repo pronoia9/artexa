@@ -34,4 +34,8 @@ const ItemContainer = styled.div`
   width: 33.33333%;
   text-align: center;
   margin-bottom: ${rem(15)};
+
+  h6 {
+    font-size: ${rem(13)};
+  }
 `;
