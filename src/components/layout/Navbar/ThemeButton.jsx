@@ -1,7 +1,7 @@
 import { styled, css } from 'styled-components';
 
 import { dataStore } from '../../../store/dataStore';
-import { themes, colors } from '../../../styles';
+import { colors } from '../../../styles';
 import { rem } from '../../../utils';
 
 export const ThemeButton = () => {
@@ -31,6 +31,7 @@ export const ThemeButton = () => {
             $navbarOpen={navbarOpen}
             $index={index}
             $active={accent === color[0]}
+            $colors={[color[1]]}
             onClick={() => accent !== color[0] && setAccent(color[0])}
           />
         ))}
@@ -67,20 +68,13 @@ const ThemeItem = styled.div`
   border-radius: 50%;
   cursor: ${({ $active }) => !$active && 'pointer'};
   transition: 0.55s ease-in-out;
-
-  &:first-child {
-    margin-bottom: ${rem(10)};
-  }
+  
+  &:first-child { margin-bottom: ${rem(10)}; }
 
   ${({ $navbarOpen }) =>
-    $navbarOpen &&
-    css`
-      &:first-child {
-        transform: translateX(calc(${rem(5)} + 1.75rem));
-      }
-      &:last-child {
-        transform: translateY(calc(${rem(-10)} - 1.75rem));
-      }
+    $navbarOpen &&css`
+      &:first-child { transform: translateX(calc(${rem(5)} + 1.75rem)); }
+      &:last-child { transform: translateY(calc(${rem(-10)} - 1.75rem)); }
     `}
 
   i {
@@ -94,24 +88,35 @@ const ThemeItem = styled.div`
 const AccentContainer = styled.div`
   position: absolute;
   bottom: ${rem(30)};
-  left: ${rem(22.5)};
-  width: 100%;
+  left: ${rem(25)};
+  right: ${rem(25)};
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
+  gap: ${rem(10)};
+  /* justify-content: flex-end; */
+  /* flex-wrap: wrap-reverse; */
+  overflow: auto !important;
 `;
 
 const AccentItem = styled.div`
+  position: relative;
   width: 1.75rem;
   height: 1.75rem;
-  margin: 0 !important;
+  flex-shrink: 0;
   opacity: ${({ $navbarOpen }) => ($navbarOpen ? 1 : 0)};
-  background: ${({ $index }) => Object.values(colors)[$index].accent1};
+  background: ${({ $index }) => `linear-gradient(45deg, 
+    ${Object.entries(colors)[$index][1].accent1} 0%, 
+    ${Object.entries(colors)[$index][1].accent2} 25%, 
+    ${Object.entries(colors)[$index][1].accent3} 50%, 
+    ${Object.entries(colors)[$index][1].accent4} 75%, 
+    ${Object.entries(colors)[$index][1].accent5} 100%)
+  `};
   border-radius: 50%;
-  border: 2px solid var(--c-font-6);
   cursor: ${({ $active }) => !$active && 'pointer'};
   transform: ${({ $navbarOpen }) => ($navbarOpen ? 'translateX(0)' : `translateX(${rem(60)})`)};
   transition: 0.55s ease-in-out;
   ${({ $index }) => css`transition-delay: ${$index * 0.05}s;`};
+  display: ${({ $active }) => $active && 'none'};
 `;
