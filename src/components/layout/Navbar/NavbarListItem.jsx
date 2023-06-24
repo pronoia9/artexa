@@ -1,9 +1,9 @@
+import { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { styled, css } from 'styled-components';
 
 import { dataStore } from '../../../store/dataStore';
 import { rem } from '../../../utils';
-import { useState } from 'react';
 
 export const NavbarListItem = ({ title, path, index, submenu }) => {
   const { navbarOpen, closeNavbar } = dataStore((state) => ({ navbarOpen: state.navbarOpen, closeNavbar: state.closeNavbar }));
@@ -85,15 +85,15 @@ const ListItem = styled.li`
   /* Submenu */
   i {
     position: absolute;
-    top: 12.5px;
-    right: 30px;
+    top: ${rem(12.5)};
+    right: ${rem(30)};
     display: inline-block;
-    font-size: 9px;
+    font-size: ${rem(9)};
     font-weight: 900;
     font-style: normal;
     font-variant: normal;
     text-rendering: auto;
-    transform: translateX(5px);
+    transform: translateX(${rem(5)});
     transition: 0.4s ease-in-out;
   }
 
@@ -107,10 +107,10 @@ const ListItem = styled.li`
     .sub-menu {
       position: relative;
       width: 100%;
-      max-height: ${({ $submenuopen }) => $submenuopen ? '500px' : 0};
+      max-height: ${({ $submenuopen }) => $submenuopen ? rem(500) : 0};
       padding-left: 0;
       display: block;
-      box-shadow: inset 0 3px 8px 0 var(--c-box-shadow);
+      box-shadow: inset 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
       background: var(--c-background-1);
       filter: brightness(95%);
       pointer-events: ${({ $submenuopen }) => $submenuopen ? 'all' : 'none'};
@@ -121,7 +121,7 @@ const ListItem = styled.li`
         opacity: ${({$submenuopen }) => $submenuopen ? 1 : 0};
 
         a {
-          font-size: 11px;
+          font-size: ${rem(11)};
         }
       }
     }
