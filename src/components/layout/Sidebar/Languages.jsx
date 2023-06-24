@@ -33,5 +33,5 @@ const LanguagesContainer = styled.div`
 const ItemContainer = styled.div`
   width: 33.33333%;
   text-align: center;
-  margin-bottom: 15px;
+  margin-bottom: ${rem(15)};
 `;
