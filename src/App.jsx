@@ -20,9 +20,7 @@ export default function App() {
   useEffect(() => {
     const systemThemeWatcher = window.matchMedia('(prefers-color-scheme: dark)');
     systemThemeWatcher.addEventListener('change', (e) => systemThemeChangeHandler(e, setTheme));
-    return () => {
-      systemThemeWatcher.removeEventListener('change', systemThemeChangeHandler);
-    };
+    return () => { systemThemeWatcher.removeEventListener('change', systemThemeChangeHandler); };
   }, []);
 
   return (
@@ -138,6 +136,10 @@ const Content = styled.div`
     .art-scroll-frame {
       height: calc(100vh - ${rem(70)});
     }
+  }
+
+  @media (max-width: 230px) {
+    padding-right: 0;
   }
 `;
 
