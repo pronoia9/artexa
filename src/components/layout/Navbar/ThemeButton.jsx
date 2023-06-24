@@ -4,18 +4,22 @@ import { dataStore } from '../../../store/dataStore';
 import { rem } from '../../../utils';
 
 export const ThemeButton = () => {
-  const { theme, toggleTheme } = dataStore((state) => ({ theme: state.theme, toggleTheme: state.toggleTheme }));
+  const { themes, theme, toggleTheme } = dataStore((state) => ({
+    themes: state.themes,
+    theme: state.theme,
+    toggleTheme: state.toggleTheme
+  }));
+  
   return (
     <ThemeList className='art-language-change'>
-      <ThemeListItem $active={theme === 'light'} onClick={toggleTheme}>
-        <i className='far fa-sun' />
-      </ThemeListItem>
-      <ThemeListItem $active={theme === 'dark'} onClick={toggleTheme}>
-        <i className='far fa-moon' />
-      </ThemeListItem>
+      {themes.map(({ title, icon }) => (
+        <ThemeListItem key={`theme-button-${title}`} $active={theme === title} onClick={toggleTheme}>
+          <i className={icon} />
+        </ThemeListItem>
+      ))}
     </ThemeList>
   );
-}
+};
 
 const ThemeList = styled.div`
   position: absolute;

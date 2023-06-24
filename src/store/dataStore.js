@@ -8,6 +8,10 @@ export const dataStore = create((set) => ({
   theme: getSystemTheme(),
   setTheme: (theme) => set({ theme }),
   toggleTheme: () => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
+  themes: [
+    { title: 'light', icon: 'far fa-sun' },
+    { title: 'dark', icon: 'far fa-moon' },
+  ],
   // ACCENT / COLORS
   accent: 'pastels',
   setAccent: (accent) => set({ accent }),
