@@ -636,36 +636,6 @@ blockquote {
   }
 }
 
-/* ----- banner ----- */
-
-
-.art-banner {
-  .art-banner-overlay {
-    .art-banner-title {
-      h1 {
-        padding: 1px 0;
-        display: inline-block;
-        color: transparent;
-        background-image: linear-gradient(0.25turn, var(--c-accent-2), var(--c-accent-3), var(--c-accent-4), var(--c-accent-5));
-        background-size: 100%;
-        -webkit-background-clip: text;
-        -moz-background-clip: text;
-        -ms-background-clip: text;
-        -o-background-clip: text;
-        background-clip: text;
-        background-clip: text;
-        transition: transform 0.5s;
-
-        &:hover {
-          /* text-shadow: 0.1px 0.1px 10px var(--c-accent-2); */
-          transform: scale(1.01);
-          transition: transform 0.5s;
-        }
-      }
-    }
-  }
-}
-
 /* ----- typing code ----- */
 
 .art-code {
@@ -1430,22 +1400,9 @@ blockquote {
 }
 
 /* ------------------------------ content (after 1600px) ------------------------------ */
-@media (max-width: 1600px) {
-  .art-banner .art-banner-overlay {
-    .art-banner-title h1 {
-      font-size: 42px;
-    }
-  }
-}
+
 
 /* ------------------------------ content (after 1400px) ------------------------------ */
-@media (max-width: 1400px) {
-  .art-banner .art-banner-overlay {
-    .art-banner-title h1 {
-      font-size: 36px;
-    }
-  }
-}
 
 /* ------------------------------ content (after 1200px) ------------------------------ */
 @media (max-width: 1200px) {
@@ -1460,12 +1417,6 @@ blockquote {
 @media (max-width: 920px) {
   .art-banner .art-banner-overlay {
     .art-banner-title {
-      text-align: center;
-
-      h1 {
-        font-size: 46px;
-      }
-
       .art-buttons-frame {
         text-align: center;
         display: flex;
