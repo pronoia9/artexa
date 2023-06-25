@@ -638,43 +638,10 @@ blockquote {
 
 /* ----- banner ----- */
 
-.art-banner-back {
-  content: '';
-  position: absolute;
-  z-index: 0;
-  top: -30px;
-  width: 90%;
-  height: 30px;
-  margin-left: 5%;
-  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px;
-  background: var(--c-bg-banner-back);
-}
 
 .art-banner {
-  transition: 0.55s ease-in-out;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
-  z-index: 999;
-
   .art-banner-overlay {
-    position: relative;
-    display: flex;
-    padding: 60px;
-    width: 100%;
-    background-image: linear-gradient(90deg, rgba(45, 45, 58, 0.9) 15%, rgba(45, 45, 58, 0.7) 50%, rgba(43, 43, 53, 0.7) 100%);
-
-    &.art-side-overlay {
-      background-image: linear-gradient(90deg, rgba(45, 45, 58, 0.9) 15%, rgba(45, 45, 58, 0.7) 50%, rgba(43, 43, 53, 0) 100%);
-    }
-
     .art-banner-title {
-      width: 100%;
-      align-self: center;
-
       h1 {
         padding: 1px 0;
         display: inline-block;
@@ -694,20 +661,6 @@ blockquote {
           transform: scale(1.01);
           transition: transform 0.5s;
         }
-      }
-    }
-
-    .art-banner-photo {
-      width: 390px;
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      transition: all 0.5s;
-
-      &:hover {
-        transform: scale(1.15);
-        transform-origin: right bottom;
-        transition: transform 0.5s;
       }
     }
   }
@@ -1482,36 +1435,20 @@ blockquote {
     .art-banner-title h1 {
       font-size: 42px;
     }
-
-    .art-banner-photo {
-      width: 360px;
-    }
   }
 }
 
 /* ------------------------------ content (after 1400px) ------------------------------ */
 @media (max-width: 1400px) {
-  .art-banner-back {
-    display: none;
-  }
-
   .art-banner .art-banner-overlay {
     .art-banner-title h1 {
       font-size: 36px;
-    }
-
-    .art-banner-photo {
-      width: 320px;
     }
   }
 }
 
 /* ------------------------------ content (after 1200px) ------------------------------ */
 @media (max-width: 1200px) {
-  .art-banner .art-banner-overlay .art-banner-photo {
-    display: none;
-  }
-
   .art-grid {
     &.art-grid-2-col .art-grid-item, &.art-grid-3-col .art-grid-item {
       width: 50%;
@@ -1522,8 +1459,6 @@ blockquote {
 /* ------------------------------ content (after 920px) ------------------------------ */
 @media (max-width: 920px) {
   .art-banner .art-banner-overlay {
-    padding: 60px 30px;
-
     .art-banner-title {
       text-align: center;
 

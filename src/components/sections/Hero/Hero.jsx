@@ -70,6 +70,10 @@ const Overlay = styled.div`
   padding: 60px;
   width: 100%;
   background-image: linear-gradient(90deg, rgba(45, 45, 58, 0.9) 15%, rgba(45, 45, 58, 0.7) 50%, rgba(43, 43, 53, 0.7) 100%);
+
+  @media (max-width: 920px) {
+    padding: 60px 30px;
+  }
 `;
 
 const Title = styled.div`
