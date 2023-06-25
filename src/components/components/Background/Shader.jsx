@@ -7,8 +7,8 @@ import { dataStore } from '../../../store/dataStore';
 import { colors } from '../../../styles';
 import { rgbaToHex } from '../../../utils';
 import vertexShader from './vertexShader.glsl';
-import fragmentShaderLight from './fragmentShader1.glsl';
-import fragmentShaderDark from './fragmentShader2.glsl';
+import fragmentShaderLight from './fragmentShaderLight.glsl';
+import fragmentShaderDark from './fragmentShaderDark.glsl';
 
 export const Shader = () => (
   <Canvas>
