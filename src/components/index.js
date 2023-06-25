@@ -24,6 +24,7 @@ import { HomePage, OopsPage } from './pages/';
 // Routes
 import Routes from './routes/Routes';
 // Sections
+import { Hero } from './sections';
 
 export {
   // Components
@@ -49,4 +50,5 @@ export {
   // Routes
   Routes,
   // Sections
+  Hero,
 };
