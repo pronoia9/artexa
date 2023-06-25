@@ -73,12 +73,12 @@ const ThemeItem = styled.div`
 
   ${({ $navbarOpen }) =>
     $navbarOpen &&css`
-      &:first-child { transform: translateX(calc(${rem(5)} + 1.75rem)); }
+      &:first-child { transform: translateX(calc(${rem(5)} + 1.75rem + 0.5rem)); }
       &:last-child { transform: translateY(calc(${rem(-10)} - 1.75rem)); }
     `}
 
   i {
-    color: ${({ $active }) => $active && 'var(--c-font-2)'};
+    color: ${({ $active }) => !$active ? 'var(--c-font-2)' : 'var(--c-font-dark)'};
     font-size: 1rem;
     font-weight: 600;
     transition: 0.4s ease-in-out;
@@ -98,8 +98,8 @@ const AccentContainer = styled.div`
 
 const AccentItem = styled.div`
   position: relative;
-  width: 1rem;
-  height: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
   opacity: ${({ $navbarOpen }) => ($navbarOpen ? 1 : 0)};
   background: ${({ $index }) => `linear-gradient(45deg, 
     ${Object.entries(colors)[$index][1].accent1} 0%, 
@@ -112,7 +112,10 @@ const AccentItem = styled.div`
   cursor: ${({ $active }) => !$active && 'pointer'};
   transform: ${({ $navbarOpen }) => ($navbarOpen ? 'translateX(0)' : `translateX(${rem(60)})`)};
   transition: 0.55s ease-in-out;
-  ${({ $index }) => css`transition-delay: ${$index * 0.05}s;`};
+  ${({ $index }) =>
+    css`
+      transition-delay: ${$index * 0.05}s;
+    `};
 
   &:before {
     content: '';
@@ -120,10 +123,14 @@ const AccentItem = styled.div`
     bottom: -0.25rem;
     left: -0.25rem;
     background: inherit;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 50%;
     display: ${({ $active }) => !$active && 'none'};
     animation: ${({ $active }) => $active && 'puls 1s infinite'};
+  }
+
+  &:hover {
+    transform: ${({ $active }) => !$active && `scale(1.25)`};
   }
 `;
