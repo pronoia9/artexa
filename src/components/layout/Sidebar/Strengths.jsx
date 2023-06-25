@@ -15,14 +15,14 @@ export const Strengths = () => {
 };
 
 const StrengthItem = styled.div`
-  margin: auto 3px 5px auto;
-  padding: 3px 10px;
+  margin: auto ${rem(3)} ${rem(5)} auto;
+  padding: ${rem(3)} ${rem(10)};
   display: inline-block;
   color: var(--c-font-1);
-  font-size: 10px;
+  font-family: var(--f-tertiary);
   background: var(--c-bg);
-  border-radius: 15px;
-  box-shadow: inset 0 3px 8px 0 var(--c-box-shadow);
+  border-radius: ${rem(15)};
+  box-shadow: inset 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
 
   &:hover {
     color: var(--c-accent-3);

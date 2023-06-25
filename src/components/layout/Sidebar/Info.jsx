@@ -1,3 +1,4 @@
+import { styled } from 'styled-components';
 import { dataStore } from '../../../store/dataStore';
 
 export const Info = () => {
@@ -16,9 +17,15 @@ export const Info = () => {
 
 export const InfoItem = ({ title, subtitle }) => {
   return (
-    <li>
-      <h6>{title}</h6>
+    <ListItem>
+      <span>{title}</span>
       <span>{subtitle}</span>
-    </li>
+    </ListItem>
   );
 };
+
+const ListItem = styled.li`
+  span:first-child {
+    color: var(--c-font-2);
+  }
+`;

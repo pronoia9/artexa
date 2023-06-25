@@ -18,7 +18,7 @@ export const HardSkills = () => {
 export const HardSkillsItem = (props) => (
   <ItemContainer className='art-hard-skills-item'>
     <div className='art-skill-heading'>
-      <h6>{props.skill}</h6>
+      <span>{props.skill}</span>
     </div>
     <Progressbar {...props} type='line' />
   </ItemContainer>
@@ -27,9 +27,5 @@ export const HardSkillsItem = (props) => (
 const ItemContainer = styled.div`
   position: relative;
   margin-bottom: ${rem(15)};
-
-  h6 {
-    color: var(--c-font-2);
-    font-size: ${rem(13)};
-  }
+  color: var(--c-font-2);
 `;

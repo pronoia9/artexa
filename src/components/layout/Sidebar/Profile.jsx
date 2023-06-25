@@ -207,7 +207,7 @@ const AvatarStatusLight = styled.div`
   }
 `;
 
-const NameText = styled.h5`
+const NameText = styled.h3`
   a {
     color: var(--c-font-2);
     transition: 0.4s ease-in-out;

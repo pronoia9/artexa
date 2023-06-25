@@ -19,7 +19,7 @@ export const LanguagesItem = (props) => {
   return (
     <ItemContainer className='art-lang-skills-item'>
       <Progressbar {...props} type='circle' />
-      <h6>{props.language}</h6>
+      <span>{props.language}</span>
     </ItemContainer>
   );
 };
@@ -34,9 +34,5 @@ const ItemContainer = styled.div`
   width: 33.33333%;
   text-align: center;
   margin-bottom: ${rem(15)};
-
-  h6 {
-    color: var(--c-font-2);
-    font-size: ${rem(13)};
-  }
+  color: var(--c-font-2);
 `;
