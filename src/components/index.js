@@ -10,7 +10,7 @@ import {
   Navbar, NavbarButton, NavbarCurrentPage, NavbarList, NavbarListItem,
   // Sidebar
   Sidebar,
-  About, AboutItem,
+  Info, InfoItem,
   HardSkills, HardSkillsItem,
   Languages, LanguagesItem,
   Avatar, Name, Post, Profile,
@@ -24,7 +24,18 @@ import { HomePage, OopsPage } from './pages/';
 // Routes
 import Routes from './routes/Routes';
 // Sections
-import { Hero } from './sections';
+import {
+  About,
+  Contact, ContactCard, ContactCardItem, ContactForm,
+  Counters, Counter,
+  Courses,
+  Hero,
+  History,
+  Hobbies, HobbiesCard,
+  ProjectsCard, ProjectsFilter, ProjectsGrid, ProjectsSwiper,
+  Services, ServicesCard,
+  TechnologiesCard, TechnologiesGrid, TechnologiesSwiper,
+} from './sections';
 
 export {
   // Components
@@ -37,7 +48,7 @@ export {
   Navbar, NavbarButton, NavbarCurrentPage, NavbarList, NavbarListItem,
   // Layout - Sidebar
   Sidebar,
-  About, AboutItem,
+  Info, InfoItem,
   HardSkills, HardSkillsItem,
   Languages, LanguagesItem,
   Avatar, Name, Post, Profile,
@@ -50,5 +61,14 @@ export {
   // Routes
   Routes,
   // Sections
+  About,
+  Contact, ContactCard, ContactCardItem, ContactForm,
+  Counters, Counter,
+  Courses,
   Hero,
+  History,
+  Hobbies, HobbiesCard,
+  ProjectsCard, ProjectsFilter, ProjectsGrid, ProjectsSwiper,
+  Services, ServicesCard,
+  TechnologiesCard, TechnologiesGrid, TechnologiesSwiper,
 };

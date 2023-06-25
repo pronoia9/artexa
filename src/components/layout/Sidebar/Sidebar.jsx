@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import { Scrollbar } from 'smooth-scrollbar-react';
 
-import { Profile, About, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials } from '.';
+import { Profile, Info, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials } from '..';
 import { dataStore } from '../../../store/dataStore';
 import { rem } from '../../../utils';
 
@@ -21,7 +21,7 @@ const Sidebar = () => {
 
         <Scrollbar id='sidebar-scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
           <ScrollContent className='scroll-content'>
-            <About /> <div className='art-ls-divider' />
+            <Info /> <div className='art-ls-divider' />
             <Languages /> <div className='art-ls-divider' />
             <HardSkills /> <div className='art-ls-divider' />
             <SoftSkills /> <div className='art-ls-divider' />
