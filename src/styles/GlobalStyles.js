@@ -685,7 +685,6 @@ blockquote {
     .art-counter {
       color: var(--c-accent-1);
       font-weight: 600;
-      font-family: 'Poppins', sans-serif;
       font-size: 22px;
     }
 
@@ -693,7 +692,6 @@ blockquote {
       margin-left: 3px;
       color: var(--c-accent-1);
       font-weight: 600;
-      font-family: 'Poppins', sans-serif;
       font-size: 22px;
     }
   }
