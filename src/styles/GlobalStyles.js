@@ -11,11 +11,11 @@ const GlobalStyles = createGlobalStyle`
     --c-bg-menu-2: ${({ theme }) => theme.backgroundMenu2};
     --c-bg-img-hover: ${({ theme }) => theme.backgroundImageHover};
 
-    --c-bg-fancybox: ${({ theme }) => theme.backgroundFancybox};
+    --c-bg-fancybox: rgba(32, 32, 42, 0.98);
     --c-bg-pagination: ${({ theme }) => theme.backgroundSwiperPagination};
     
-    --c-box-shadow: #0f0f1433;
-    --c-font-shadow: #fafafc66;
+    --c-box-shadow: rgba(15, 15, 20, 0.2);
+    --c-font-shadow: rgba(250, 250, 252, 0.4);
     --c-timelineShadow: ${({ theme }) => theme.timelineShadow};
 
     --c-font-1: ${({ theme }) => theme.font1};
