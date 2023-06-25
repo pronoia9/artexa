@@ -79,6 +79,10 @@ const Overlay = styled.div`
 const Title = styled.div`
   width: 100%;
   align-self: center;
+
+  @media (max-width: 700px) {
+    text-align: center;
+  }
 `;
 
 const Avatar = styled.img`
