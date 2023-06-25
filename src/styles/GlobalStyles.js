@@ -143,22 +143,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 62px;
+  font-size: 52px;
   font-weight: 800;
 }
 
 h4 {
-  font-size: 27px;
+  font-size: 17px;
   font-weight: 600;
 }
 
 h5 {
-  font-size: 24px;
+  font-size: 14px;
   font-weight: 600;
 }
 
 h6 {
-  font-size: 22px;
+  font-size: 12px;
   font-weight: 400;
 }
 
