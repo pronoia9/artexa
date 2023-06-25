@@ -20,7 +20,7 @@ import {
   Strengths
 } from './layout';
 // Pages
-import { HomePage, NotFound } from './pages/';
+import { AboutPage, ContactPage, CoursePage, HistoryPage, HomePage, NotFound, ProjectsPage, TechnologiesPage } from './pages/';
 // Routes
 import Routes from './routes/Routes';
 // Sections
@@ -57,7 +57,7 @@ export {
   SoftSkills,
   Strengths,
   // Pages
-  HomePage, NotFound,
+  AboutPage, ContactPage, CoursePage, HistoryPage, HomePage, NotFound, ProjectsPage, TechnologiesPage,
   // Routes
   Routes,
   // Sections
