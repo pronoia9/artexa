@@ -39,11 +39,11 @@ export const Name = () => {
 export const Post = () => {
   const data = dataStore((state) => state.sidebar.profile);
   return (
-    <div>
+    <PostContainer>
       {data.subtitle.map((s) => (
         <div key={s}>{s}</div>
       ))}
-    </div>
+    </PostContainer>
   );
 };
 
@@ -216,4 +216,8 @@ const NameText = styled.h5`
       color: var(--c-accent-1);
     }
   }
+`;
+
+const PostContainer = styled.div`
+  color: var(--c-font-1);
 `;
