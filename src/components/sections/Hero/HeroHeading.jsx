@@ -7,7 +7,7 @@ export const HeroHeading = () => {
   return (
     <GradientHeading className='mb-15'>
       {data.map((text, index) => (
-        <div key={`hero-heading-${index}`}>{text}</div>
+        <h1 key={`hero-heading-${index}`}>{text}</h1>
       ))}
     </GradientHeading>
   );
