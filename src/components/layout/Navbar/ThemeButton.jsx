@@ -94,7 +94,6 @@ const AccentContainer = styled.div`
   flex-direction: row;
   justify-content: space-evenly;
   gap: ${rem(10)};
-  overflow: auto !important;
 `;
 
 const AccentItem = styled.div`
@@ -114,4 +113,17 @@ const AccentItem = styled.div`
   transform: ${({ $navbarOpen }) => ($navbarOpen ? 'translateX(0)' : `translateX(${rem(60)})`)};
   transition: 0.55s ease-in-out;
   ${({ $index }) => css`transition-delay: ${$index * 0.05}s;`};
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -0.25rem;
+    left: -0.25rem;
+    background: inherit;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    display: ${({ $active }) => !$active && 'none'};
+    animation: ${({ $active }) => $active && 'puls 1s infinite'};
+  }
 `;
