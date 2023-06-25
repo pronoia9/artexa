@@ -49,7 +49,6 @@ export default function App() {
           hasBlendMode={true}
           innerStyle={{
             backgroundColor: 'var(--c-accent-5)',
-            border: '3px solid var(--c-accent-5)',
           }}
           outerStyle={{
             border: '3px solid var(--c-accent-5)',
