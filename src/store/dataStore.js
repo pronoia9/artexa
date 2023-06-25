@@ -178,4 +178,13 @@ export const dataStore = create((set) => ({
     logos: [footer1, footer2, footer3, footer4],
     text: ['© 2023 All Rights Reserved', 'Email: rainbows@sparkles.com'],
   },
+
+  // SECTIONS
+  // hero
+  hero: {
+    heading: ['hi.', 'welcome.'],
+    avatar: '/images/bitmoji/side-wave.png',
+    typed: ['Hello Wor-', 'I like to make websites.', 'Also 3d web apps.', 'I do other stuff as well.', '... but mostly not relevant.'],
+    button: { text: 'beam me up scotty', url: '' },
+  },
 }));
