@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import { avatar, footer1, footer2, footer3, footer4 } from '../assets';
+import { avatar, wave, footer1, footer2, footer3, footer4 } from '../assets';
 import { getSystemTheme } from '../utils';
 
 export const dataStore = create((set) => ({
@@ -183,7 +183,7 @@ export const dataStore = create((set) => ({
   // hero
   hero: {
     heading: ['hi.', 'welcome.'],
-    avatar: '/images/bitmoji/side-wave.png',
+    avatar: wave,
     typed: ['Hello Wor-', 'I like to make websites.', 'Also 3d web apps.', 'I do other stuff as well.', '... but mostly not relevant.'],
     button: { text: 'beam me up scotty', url: '' },
   },
