@@ -262,13 +262,13 @@ void main() {
 
   vec3 color = blend;
 
-  float r = color[0];
-  float g = color[1];
-  float b = color[2];
+  // float r = color[0];
+  // float g = color[1];
+  // float b = color[2];
 
-  vec3 hsb = rgb2hsv(vec3(r, g, b));
-  hsb[1] -= rand(coord) * 0.15;
-  vec3 rgb = hsv2rgb(hsb);
+  // vec3 hsb = rgb2hsv(vec3(r, g, b));
+  // hsb[1] -= rand(coord) * 0.15;
+  // vec3 rgb = hsv2rgb(hsb);
 
-  gl_FragColor = vec4(rgb, 1.0);
+  gl_FragColor = vec4(color, 1.0);
 }
