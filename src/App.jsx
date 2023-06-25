@@ -8,10 +8,11 @@ import { GlobalStyles } from './styles';
 import { getTheme, systemThemeChangeHandler, rem } from './utils';
 
 export default function App() {
-  const { theme, setTheme, accent } = dataStore((state) => ({
+  const { theme, setTheme, accent, cursorOptions } = dataStore((state) => ({
     theme: state.theme,
     setTheme: state.setTheme,
     accent: state.accent,
+    cursorOptions: state.cursorOptions,
   }));
 
   // EVENT LISTENER FOR SYSTEM THEME CHANGE
@@ -39,36 +40,7 @@ export default function App() {
           </Wrapper>
         </AppContainer>
 
-        <AnimatedCursor
-          innerSize={40}
-          innerScale={0}
-          trailingSpeed={1}
-          outerSize={40}
-          outerScale={2}
-          outerAlpha={0}
-          hasBlendMode={true}
-          innerStyle={{
-            backgroundColor: 'var(--c-accent-5)',
-          }}
-          outerStyle={{
-            border: '3px solid var(--c-accent-5)',
-          }}
-          clickables={[
-            'a',
-            'input[type="text"]',
-            'input[type="email"]',
-            'input[type="number"]',
-            'input[type="submit"]',
-            'input[type="image"]',
-            'label[for]',
-            'select',
-            'textarea',
-            'button',
-            '.link',
-            '.art-menu-bar-header',
-            '.theme-button',
-          ]}
-        />
+        <AnimatedCursor {...cursorOptions} />
       </ThemeProvider>
     </ThemeProvider>
   );
