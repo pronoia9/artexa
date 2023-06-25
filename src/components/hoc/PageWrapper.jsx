@@ -1,11 +1,75 @@
+import { styled } from 'styled-components';
+import { Scrollbar } from 'smooth-scrollbar-react';
+
+import { Background, Footer } from '..';
+import { dataStore } from '../../store/dataStore';
+import { rem } from '../../utils';
+
 const PageWrapper = (Component, idName) =>
   function HOC(props) {
+    const { curtainEnabled, curtainClose } = dataStore((state) => ({
+      curtainEnabled: state.curtainEnabled,
+      curtainClose: state.curtainClose,
+    }));
+
     return (
-      <div id={idName} className='container-fluid'>
-        <div className='row p-30-0'>
-          <Component {...props} />
+      <Content className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()}>
+        <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
+        <Background />
+        <div id='transition-fade' className='transition-fade'>
+          <Scrollbar id='scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
+            <div className='scroll-content'>
+              {/* <Routes /> */}
+              <Component {...props} />
+              <Footer />
+            </div>
+          </Scrollbar>
         </div>
-      </div>
+      </Content>
     );
   };
 export default PageWrapper;
+
+const Content = styled.div`
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - ${rem(30)});
+  padding-right: ${rem(80)};
+  overflow: hidden;
+  transform: ${({ $curtainEnabled }) => $curtainEnabled && `translateX(${rem(-150)})`};
+  transition: 0.55s ease-in-out;
+
+  @media (max-width: ${rem(920)}) {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding-right: 0;
+    padding-top: ${rem(70)};
+    transform: ${({ $curtainEnabled }) => $curtainEnabled && 'none'};
+
+    .art-scroll-frame {
+      height: calc(100vh - ${rem(70)});
+    }
+  }
+
+  @media (max-width: 230px) {
+    padding-right: 0;
+  }
+`;
+
+const Curtain = styled.div`
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 40, 0.88);
+  opacity: ${({ $curtainEnabled }) => ($curtainEnabled ? 0.7 : 0)};
+  pointer-events: ${({ $curtainEnabled }) => ($curtainEnabled ? 'all' : 'none')};
+  z-index: 9;
+  transition: 0.55s ease-in-out;
+
+  @media (max-width: ${rem(920)}) {
+    pointer-events: ${({ $curtainEnabled }) => $curtainEnabled && 'all'};
+    opacity: ${({ $curtainEnabled }) => $curtainEnabled && 1};
+  }
+`;
