@@ -2,18 +2,18 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --c-bg: ${({ theme }) => theme.background};
+    --c-bg: ${({ theme }) => theme.bg};
 
-    --c-bg-wrapper: ${({ theme }) => theme.backgroundWrapper};
-    --c-bg-banner-back: ${({ theme }) => theme.backgroundBannerBack};
-    --c-bg-background-overlay: ${({ theme }) => theme.gradientBackgroundOverlay};
+    --c-bg-wrapper: ${({ theme }) => theme.bgWrapper};
+    --c-bg-banner-back: ${({ theme }) => theme.bgBannerBack};
 
-    --c-bg-menu-1: ${({ theme }) => theme.backgroundMenu1};
-    --c-bg-menu-2: ${({ theme }) => theme.backgroundMenu2};
-    --c-bg-img-hover: ${({ theme }) => theme.backgroundImageHover};
+    --c-bg-menu-1: ${({ theme }) => theme.bgMenu1};
+    --c-bg-menu-2: ${({ theme }) => theme.bgMenu2};
+    --c-bg-img-hover: ${({ theme }) => theme.bgImageHover};
+    --c-bg-background-overlay: ${({ theme }) => theme.bgBackgroundOverlay};
 
     --c-bg-fancybox: rgba(32, 32, 42, 0.98);
-    --c-bg-pagination: ${({ theme }) => theme.backgroundSwiperPagination};
+    --c-bg-pagination: ${({ theme }) => theme.bgSwiperPagination};
     
     --c-box-shadow: rgba(15, 15, 20, 0.2);
     --c-font-shadow: rgba(250, 250, 252, 0.4);
