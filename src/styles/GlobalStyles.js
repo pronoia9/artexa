@@ -4,26 +4,25 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --c-bg-1: ${({ theme }) => theme.background1};
     --c-bg-2: ${({ theme }) => theme.background2};
-    --c-bg-3: ${({ theme }) => theme.background3};
+
+    --c-bg-wrapper: ${({ theme }) => theme.backgroundWrapper};
+    --c-bg-banner-back: ${({ theme }) => theme.backgroundBannerBack};
 
     --c-bg-menu-1: ${({ theme }) => theme.backgroundMenu1};
     --c-bg-menu-2: ${({ theme }) => theme.backgroundMenu2};
     --c-bg-img-hover: ${({ theme }) => theme.backgroundImageHover};
 
-    --c-bg-fancybox: #20202afa;
+    --c-bg-fancybox: ${({ theme }) => theme.backgroundFancybox};
     --c-bg-pagination: ${({ theme }) => theme.backgroundSwiperPagination};
     
     --c-box-shadow: #0f0f1433;
     --c-font-shadow: #fafafc66;
     --c-timelineShadow: ${({ theme }) => theme.timelineShadow};
 
-    --c-font: ${({ theme }) => theme.font};
     --c-font-1: ${({ theme }) => theme.font1};
     --c-font-2: ${({ theme }) => theme.font2};
     --c-font-3: ${({ theme }) => theme.font3};
-    --c-font-4: #20202a;
-    --c-font-5: #1e1e28;
-    --c-font-6: ${({ theme }) => theme.font6};
+    --c-font-dark: #20202a;
 
     --c-accent-1: ${({ theme }) => theme.accent1};
     --c-accent-2: ${({ theme }) => theme.accent2};
@@ -145,7 +144,7 @@ const GlobalStyles = createGlobalStyle`
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
-  color: var(--c-font-1);
+  color: var(--c-font-2);
   margin-bottom: 0;
   font-family: 'Poppins', sans-serif;
 }
@@ -181,7 +180,7 @@ h6 {
 }
 
 .art-white {
-  color: var(--c-font-1);
+  color: var(--c-font-2);
 }
 
 /* ----- container ----- */
@@ -227,11 +226,11 @@ h6 {
 
 a {
   text-decoration: none;
-  color: var(--c-font-2);
+  color: var(--c-font-1);
 
   &:hover {
     text-decoration: none;
-    color: var(--c-font-1);
+    color: var(--c-font-2);
   }
 
   &:focus {
@@ -242,7 +241,7 @@ a {
 /* ----- table ----- */
 
 .art-table {
-  color: var(--c-font-2);
+  color: var(--c-font-1);
 
   ul {
     padding: 0;
@@ -267,7 +266,7 @@ blockquote {
   margin-top: 30px;
   margin-bottom: 30px;
   background: var(--c-accent-1);
-  color: var(--c-bg-1);
+  color: rgb(25, 25, 35);
   padding: 30px;
   padding-left: 35px;
   font-weight: 400;
@@ -285,7 +284,7 @@ blockquote {
     opacity: 0.5;
     top: 5px;
     left: 9px;
-    color: var(--c-font-1);
+    color: var(--c-font-2);
   }
 
   &:after {
@@ -297,7 +296,7 @@ blockquote {
     opacity: 0.5;
     bottom: 5px;
     right: 9px;
-    color: var(--c-font-1);
+    color: var(--c-font-2);
     transform: rotate(180deg);
   }
 }
@@ -310,7 +309,7 @@ blockquote {
   li {
     position: relative;
     list-style-type: none;
-    color: var(--c-font-1);
+    color: var(--c-font-2);
     margin-bottom: 5px;
 
     &:before {
@@ -339,20 +338,20 @@ blockquote {
   font-weight: 600;
   margin-right: 15px;
   margin-bottom: 10px;
-  color: var(--c-font-2);
+  color: var(--c-font-1);
   transition: 0.4s ease-in-out;
   cursor: pointer;
 
   &:hover {
-    color: var(--c-font-1);
+    color: var(--c-font-2);
     text-shadow: 0 0 3px var(--c-font-shadow);
   }
 
   &.art-white-link {
-    color: var(--c-font-1) !important;
+    color: var(--c-font-2) !important;
 
     &:hover {
-      color: var(--c-font-1) !important;
+      color: var(--c-font-2) !important;
       text-shadow: 0 0 3px var(--c-font-shadow);
       transform: translateX(5px);
     }
@@ -584,7 +583,7 @@ blockquote {
         position: relative;
         font-size: 14px;
         font-weight: 400 !important;
-        color: var(--c-font-2) !important;
+        color: var(--c-font-1) !important;
         height: 300px;
         line-height: 350px;
       }
@@ -594,7 +593,7 @@ blockquote {
 
 .art-preloader-load path {
   &:first-child {
-    stroke: var(--c-bg-1);
+    stroke: rgb(25, 25, 35);
   }
 
   &:last-child {
@@ -699,7 +698,7 @@ blockquote {
   box-shadow: 0 3px 8px 0 var(--c-box-shadow);
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  background: var(--c-bg-2);
+  background: var(--c-bg-banner-back);
 }
 
 .art-banner {
@@ -777,7 +776,7 @@ blockquote {
   }
 
   span {
-    color: var(--c-font-1);
+    color: var(--c-font-2);
     text-shadow: none;
 
     &:hover {
@@ -830,14 +829,14 @@ blockquote {
     right: 5px;
     height: calc(100% - 10px);
     width: 5px;
-    background: var(--c-bg-1);
+    background: rgb(25, 25, 35);
   }
 
   .art-timeline-item {
     position: relative;
 
     .art-timeline-mark-light {
-      background: var(--c-font-1);
+      background: var(--c-font-2);
       position: absolute;
       top: 4px;
       right: -4px;
@@ -924,7 +923,7 @@ blockquote {
     width: 100%;
     background: linear-gradient(159deg, #252532 0%, #23232d 100%);
     border: none;
-    color: var(--c-font-1);
+    color: var(--c-font-2);
     padding-left: 65px;
     padding-right: 15px;
     box-shadow: inset 0 1px 4px 0 var(--c-box-shadow);
@@ -967,7 +966,7 @@ blockquote {
 
   label {
     text-align: center;
-    color: var(--c-font-2);
+    color: var(--c-font-1);
     position: absolute;
     height: 50px;
     width: 50px;
@@ -1026,7 +1025,7 @@ blockquote {
   max-width: 150px;
   transform: scale(0);
   text-transform: uppercase;
-  color: var(--c-font-1);
+  color: var(--c-font-2);
   background: var(--c-font-4);
   letter-spacing: 1.5px;
   font-weight: 600;
@@ -1211,7 +1210,7 @@ footer {
   background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
   box-shadow: 0 1px 4px 0 var(--c-box-shadow);
   font-size: 11px;
-  color: var(--c-font-2);
+  color: var(--c-font-1);
   transition: 0.55s ease-in-out;
   z-index: 9;
 
@@ -1223,7 +1222,7 @@ footer {
     transition: 0.2s ease-in-out;
 
     &:hover {
-      color: var(--c-font-1);
+      color: var(--c-font-2);
     }
   }
 }
@@ -1232,7 +1231,7 @@ footer {
 /* ----- filter ----- */
 
 .art-filter .art-link {
-  color: var(--c-font-2);
+  color: var(--c-font-1);
   margin-bottom: 0;
   cursor: pointer;
 }
@@ -1275,7 +1274,7 @@ footer {
   box-shadow: 0 1px 4px 0 var(--c-box-shadow);
   border-radius: 50%;
   position: absolute;
-  color: var(--c-font-1);
+  color: var(--c-font-2);
   top: 30px;
   left: 30px;
   background: linear-gradient(159deg, #2d2d3ae0 0%, #2b2b35e0 100%);
@@ -1354,7 +1353,7 @@ footer {
 
 .art-grid .art-grid-item .art-item-description p.art-tag, .art-grid-item .art-item-description p.art-tag {
   display: inline-block;
-  color: var(--c-font-2);
+  color: var(--c-font-1);
   background: var(--c-font-4);
   padding: 3px 12px;
   border-radius: 15px;
@@ -1489,10 +1488,10 @@ footer {
 
   .fancybox-button {
     background: transparent;
-    color: var(--c-font-2);
+    color: var(--c-font-1);
 
     &:hover {
-      color: var(--c-font-1);
+      color: var(--c-font-2);
     }
 
     svg {
@@ -1522,7 +1521,7 @@ footer {
   justify-content: center;
   align-items: center;
   font-weight: 400;
-  color: var(--c-font-2);
+  color: var(--c-font-1);
 }
 
 .fancybox-progress {

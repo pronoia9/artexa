@@ -95,7 +95,7 @@ const Wrapper = styled.div`
   height: 100%;
   margin-left: auto;
   margin-right: auto;
-  background: var(--c-font-5);
+  background: var(--c-bg-wrapper);
   background-size: cover;
   box-shadow: 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
   overflow: hidden;
@@ -148,7 +148,7 @@ const Curtain = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--c-bg-2);
+  background: rgba(30, 30, 40, 0.88);
   opacity: ${({ $curtainEnabled }) => ($curtainEnabled ? 0.7 : 0)};
   pointer-events: ${({ $curtainEnabled }) => ($curtainEnabled ? 'all' : 'none')};
   z-index: 9;

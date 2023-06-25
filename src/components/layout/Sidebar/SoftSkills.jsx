@@ -23,7 +23,7 @@ const SkillsList = styled.ul`
 
 const ListItem = styled.li`
   margin-bottom: ${rem(5)};
-  color: var(--c-font-2);
+  color: var(--c-font-1);
   list-style-type: none;
 
   i {

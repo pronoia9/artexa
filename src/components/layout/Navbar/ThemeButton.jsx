@@ -78,7 +78,7 @@ const ThemeItem = styled.div`
     `}
 
   i {
-    color: ${({ $active }) => $active && 'var(--c-font-1)'};
+    color: ${({ $active }) => $active && 'var(--c-font-2)'};
     font-size: 1rem;
     font-weight: 600;
     transition: 0.4s ease-in-out;

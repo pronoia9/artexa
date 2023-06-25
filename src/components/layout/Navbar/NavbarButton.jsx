@@ -44,7 +44,7 @@ const Wrapper = styled.div`
   
   &:hover {
     span, span:after, span:before {
-      background: var(--c-font-1);
+      background: var(--c-font-2);
     }
   }
   
@@ -61,7 +61,7 @@ const Button = styled.span`
   height: ${rem(3)};
   display: block;
   margin: ${rem(5)} 0 0;
-  background: var(--c-font-2);
+  background: var(--c-font-1);
   border-radius: ${rem(1)};
   backface-visibility: hidden;
   transform: ${({ $navbarOpen }) => $navbarOpen && 'rotate(45deg)'};
@@ -74,7 +74,7 @@ const Button = styled.span`
     height: ${rem(3)};
     display: block;
     border-radius: ${rem(1)};
-    background: var(--c-font-2);
+    background: var(--c-font-1);
     backface-visibility: hidden;
     transition: 0.4s ease-in-out;
   }

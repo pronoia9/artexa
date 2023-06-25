@@ -56,9 +56,9 @@ const ListItem = styled.li`
   ${({ $index }) =>css` transition-delay: ${$index * 0.05}s;`};
 
   * {
-    color: ${({ $currentPage }) => ($currentPage ? 'var(--c-font-1)' : 'var(--c-font-2)')};
+    color: ${({ $currentPage }) => ($currentPage ? 'var(--c-font-2)' : 'var(--c-font-1)')};
     &:hover {
-      color: var(--c-font-1);
+      color: var(--c-font-2);
       text-shadow: 0 0 ${rem(3)} var(--c-font-shadow);
     }
   }

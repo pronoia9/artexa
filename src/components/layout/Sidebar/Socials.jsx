@@ -37,7 +37,7 @@ const SocialsContainer = styled.div`
 `;
 
 const SocialsLink = styled.a`
-  color: var(--c-font-2);
+  color: var(--c-font-1);
   transition: 0.2s ease-in-out;
 
   &:hover {
@@ -46,6 +46,6 @@ const SocialsLink = styled.a`
   }
 
   &.social-unavailable:hover {
-    color: var(--c-font-1);
+    color: var(--c-font-2);
   }
 `;

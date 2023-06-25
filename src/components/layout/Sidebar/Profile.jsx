@@ -84,7 +84,7 @@ const AvatarCurtain = styled.div`
     width: ${rem(30)};
     height: ${rem(30)};
     align-self: center;
-    color: var(--c-font-1);
+    color: var(--c-font-2);
     font-size: ${rem(11)};
     font-weight: 700;
     line-height: ${rem(30)};
@@ -159,7 +159,7 @@ const AvatarStatusLight = styled.div`
     left: ${rem(28)};
     font-size: ${rem(10)};
     font-weight: 200;
-    color: var(--c-font-2);
+    color: var(--c-font-1);
     box-shadow: 0 ${rem(1)} ${rem(4)} 0 var(--c-box-shadow);
     background: var(--c-bg-1);
     opacity: 0;
@@ -209,7 +209,7 @@ const AvatarStatusLight = styled.div`
 
 const NameText = styled.h5`
   a {
-    color: var(--c-font-1);
+    color: var(--c-font-2);
     transition: 0.4s ease-in-out;
 
     &:hover {

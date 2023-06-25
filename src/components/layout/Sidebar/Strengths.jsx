@@ -18,7 +18,7 @@ const StrengthItem = styled.div`
   margin: auto 3px 5px auto;
   padding: 3px 10px;
   display: inline-block;
-  color: var(--c-font-2);
+  color: var(--c-font-1);
   font-size: 10px;
   background: var(--c-bg-1);
   border-radius: 15px;

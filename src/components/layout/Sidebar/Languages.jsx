@@ -36,6 +36,7 @@ const ItemContainer = styled.div`
   margin-bottom: ${rem(15)};
 
   h6 {
+    color: var(--c-font-2);
     font-size: ${rem(13)};
   }
 `;
