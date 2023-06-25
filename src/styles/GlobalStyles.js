@@ -43,14 +43,6 @@ const GlobalStyles = createGlobalStyle`
     --c-cursor: ${({ theme }) => theme.accent - 1};
     --f-primary: 'Poppins', sans-serif;
     --f-code: var(--f-code);
-    
-    /* TEMP */
-    --color-gradient-1-1:#1e1e28ed;
-    --color-gradient-1-2:#1e1e28f5;
-    --color-gradient-1-3:#1e1e28fc;
-    --color-gradient-1-4:#1e1e28;
-    --color-gradient-2-1:#252532fa;
-    --color-gradient-2-2:#23232dfa;
   }
 
   *::-webkit-scrollbar {
@@ -121,7 +113,6 @@ const GlobalStyles = createGlobalStyle`
       - blog
       - pagination
       - logos
-      - footer
 9. portfolio
       - filter
       - portfolio items
@@ -135,18 +126,13 @@ const GlobalStyles = createGlobalStyle`
       - out animation 
                                                                                     -*/
 
-:root {
-
-}
-
 /* ------------------------------ common ------------------------------ */
 /* ----- title defaults ----- */
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  color: var(--c-font-2);
   margin-bottom: 0;
-  font-family: 'Poppins', sans-serif;
+  color: var(--c-font-2);
+  font-weight: 700;
 }
 
 h1 {
@@ -1180,35 +1166,6 @@ blockquote {
 
   &:hover {
     opacity: 1;
-  }
-}
-
-/* ----- footer ----- */
-
-footer {
-  width: 100%;
-  padding: 17px 30px 7px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
-  box-shadow: 0 1px 4px 0 var(--c-box-shadow);
-  font-size: 11px;
-  color: var(--c-font-1);
-  transition: 0.55s ease-in-out;
-  z-index: 9;
-
-  div {
-    margin-bottom: 10px;
-  }
-
-  a {
-    transition: 0.2s ease-in-out;
-
-    &:hover {
-      color: var(--c-font-2);
-    }
   }
 }
 
