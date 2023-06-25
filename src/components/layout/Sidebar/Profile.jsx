@@ -20,8 +20,8 @@ export const Avatar = () => {
         <i className='fas fa-expand' />
       </AvatarCurtain>
 
-      <AvatarStatus className='art-lamp-light' available={`${data.available}`}>
-        <AvatarStatusLight className='art-available-lamp' available={`${data.available}`} />
+      <AvatarStatus className='art-lamp-light' $available={data.available}>
+        <AvatarStatusLight className='art-available-lamp' $available={data.available} />
       </AvatarStatus>
     </AvatarContainer>
   );
@@ -133,8 +133,8 @@ const AvatarStatus = styled.div`
     height: ${rem(23)};
     width: ${rem(23)};
     border-radius: 50%;
-    animation: ${({ available }) => (available === 'true' ? 'puls 1s infinite' : 'none')};
-    opacity: ${({ available }) => available !== 'true' && 0};
+    animation: ${({ $available }) => ($available ? 'puls 1s infinite' : 'none')};
+    opacity: ${({ $available }) => !$available  && 0};
   }
 `;
 
@@ -144,7 +144,7 @@ const AvatarStatusLight = styled.div`
   right: ${rem(5)};
   height: ${rem(15)};
   width: ${rem(15)};
-  background: ${({ available }) => (available === 'true' ? 'greenyellow' : 'red')};
+  background: ${({ $available }) => ($available ? 'greenyellow' : 'red')};
   border-radius: 50%;
   z-index: 0;
   transition: 0.4s ease-in-out;
@@ -168,8 +168,8 @@ const AvatarStatusLight = styled.div`
     transition: 0.4s ease-in-out;
     text-align: left;
   }
-  ${({ available }) =>
-    available !== 'true' &&
+  ${({ $available }) =>
+    $available &&
     css`
       &:after {
         content: "Sorry, I'm no longer available, but feel free to contact me.";
