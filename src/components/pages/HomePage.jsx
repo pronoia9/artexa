@@ -1,7 +1,16 @@
-import { PageWrapper } from '..';
+import { Contact, Counters, Hero, History, PageWrapper, ProjectsSwiper, TechnologiesSwiper } from '..';
 
 const HomePage = () => {
-  return <div></div>;
+  return (
+    <>
+      <Hero />
+      <Counters />
+      <ProjectsSwiper />
+      <History />
+      <TechnologiesSwiper />
+      <Contact />
+    </>
+  );
 };
 
 export default PageWrapper(HomePage, 'homepage');
