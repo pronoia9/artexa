@@ -52,7 +52,7 @@ const Container = styled.div`
   flex-direction: column;
   gap: ${rem(10)};
   box-shadow: 0 ${rem(1)} ${rem(4)} 0 var(--c-box-shadow);
-  background: var(--c-gradient-3) /* linear-gradient(159deg, #252532fa 0%, #23232efa 100%) */;
+  background: var(--c-bg-menu-2);
 `;
 
 const ThemeContainer = styled.div``;
@@ -92,19 +92,15 @@ const AccentContainer = styled.div`
   right: ${rem(25)};
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: space-evenly;
   gap: ${rem(10)};
-  /* justify-content: flex-end; */
-  /* flex-wrap: wrap-reverse; */
   overflow: auto !important;
 `;
 
 const AccentItem = styled.div`
   position: relative;
-  width: 1.75rem;
-  height: 1.75rem;
-  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
   opacity: ${({ $navbarOpen }) => ($navbarOpen ? 1 : 0)};
   background: ${({ $index }) => `linear-gradient(45deg, 
     ${Object.entries(colors)[$index][1].accent1} 0%, 
@@ -118,5 +114,4 @@ const AccentItem = styled.div`
   transform: ${({ $navbarOpen }) => ($navbarOpen ? 'translateX(0)' : `translateX(${rem(60)})`)};
   transition: 0.55s ease-in-out;
   ${({ $index }) => css`transition-delay: ${$index * 0.05}s;`};
-  display: ${({ $active }) => $active && 'none'};
 `;
