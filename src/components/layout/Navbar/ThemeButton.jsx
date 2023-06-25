@@ -16,13 +16,13 @@ export const ThemeButton = () => {
 
   return (
     <Container className='art-language-change' $navbarOpen={navbarOpen}>
-      <ThemeContainer>
+      <div>
         {themes.map(({ title, icon }) => (
           <ThemeItem key={`theme-button-${title}`} $active={theme === title} $navbarOpen={navbarOpen} onClick={toggleTheme}>
             <i className={icon} />
           </ThemeItem>
         ))}
-      </ThemeContainer>
+      </div>
 
       <AccentContainer $navbarOpen={navbarOpen}>
         {Object.entries(colors).map((color, index) => (
@@ -53,9 +53,8 @@ const Container = styled.div`
   gap: ${rem(10)};
   box-shadow: 0 ${rem(1)} ${rem(4)} 0 var(--c-box-shadow);
   background: var(--c-bg-menu-2);
+  isolation: isolate;
 `;
-
-const ThemeContainer = styled.div``;
 
 const ThemeItem = styled.div`
   width: 1.75rem;
@@ -68,17 +67,25 @@ const ThemeItem = styled.div`
   border-radius: 50%;
   cursor: ${({ $active }) => !$active && 'pointer'};
   transition: 0.55s ease-in-out;
+  z-index: 1;
   
-  &:first-child { margin-bottom: ${rem(10)}; }
+  &:first-child {
+    margin-bottom: ${rem(10)}; 
+  }
 
   ${({ $navbarOpen }) =>
     $navbarOpen &&css`
-      &:first-child { transform: translateX(calc(${rem(5)} + 1.75rem + 0.5rem)); }
-      &:last-child { transform: translateY(calc(${rem(-10)} - 1.75rem)); }
+      &:first-child {
+        transform: translateX(calc(${rem(5)} + 1.75rem + 0.5rem)); 
+      }
+
+      &:last-child {
+        transform: translateY(calc(${rem(-10)} - 1.75rem)); 
+      }
     `}
 
   i {
-    color: ${({ $active }) => !$active ? 'var(--c-font-2)' : 'var(--c-font-dark)'};
+    color: ${({ $active }) => !$active ? 'var(--c-font-2)' : 'var(--c-bg-wrapper)'};
     font-size: 1rem;
     font-weight: 600;
     transition: 0.4s ease-in-out;
@@ -94,6 +101,7 @@ const AccentContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
   gap: ${rem(10)};
+  z-index: -1;
 `;
 
 const AccentItem = styled.div`
@@ -112,10 +120,7 @@ const AccentItem = styled.div`
   cursor: ${({ $active }) => !$active && 'pointer'};
   transform: ${({ $navbarOpen }) => ($navbarOpen ? 'translateX(0)' : `translateX(${rem(60)})`)};
   transition: 0.55s ease-in-out;
-  ${({ $index }) =>
-    css`
-      transition-delay: ${$index * 0.05}s;
-    `};
+  ${({ $index }) => css`transition-delay: ${$index * 0.05}s;`};
 
   &:before {
     content: '';
