@@ -6,6 +6,7 @@ const GlobalStyles = createGlobalStyle`
 
     --c-bg-wrapper: ${({ theme }) => theme.backgroundWrapper};
     --c-bg-banner-back: ${({ theme }) => theme.backgroundBannerBack};
+    --c-bg-background-overlay: ${({ theme }) => theme.gradientBackgroundOverlay};
 
     --c-bg-menu-1: ${({ theme }) => theme.backgroundMenu1};
     --c-bg-menu-2: ${({ theme }) => theme.backgroundMenu2};
@@ -29,7 +30,6 @@ const GlobalStyles = createGlobalStyle`
     --c-accent-4: ${({ theme }) => theme.accent4};
     --c-accent-5: ${({ theme }) => theme.accent5};
 
-    --c-gradient-1: ${({ theme }) => theme.gradient1};
     --c-gradient-2: ${({ theme }) => theme.gradient2};
     --c-gradient-3: ${({ theme }) => theme.gradient4};
     --c-gradient-4: ${({ theme }) => theme.gradient5};
@@ -514,25 +514,6 @@ blockquote {
 }
 
 /* ------------------------------ app marcup ------------------------------ */
-/* ----- top background ----- */
-
-.art-top-bg {
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  background-position: center;
-  height: 400px;
-  background-size: cover;
-
-  .art-top-bg-overlay {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    background-image: linear-gradient(180deg, var(--color-gradient-1-1) 0%, var(--color-gradient-1-2) 70%, var(--color-gradient-1-3) 80%, var(--color-gradient-1-4) 100%);
-  }
-}
-
 /* ----- preloader ----- */
 
 .art-preloader {
