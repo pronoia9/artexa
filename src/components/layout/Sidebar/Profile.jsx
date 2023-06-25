@@ -129,7 +129,7 @@ const AvatarStatus = styled.div`
     position: absolute;
     bottom: ${rem(-1)};
     right: ${rem(1)};
-    background: var(--c-bg-img-hover);
+    background: ${({ $available }) => ($available ? 'greenyellow' : 'red')};
     height: ${rem(23)};
     width: ${rem(23)};
     border-radius: 50%;
