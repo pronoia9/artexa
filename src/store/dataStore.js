@@ -18,11 +18,14 @@ export const dataStore = create((set) => ({
 
   // ROUTES
   routes: [
-    { title: 'Home', path: '/' },
     { title: 'About', path: '/about' },
-    { title: 'Projects', path: '/projects' },
-    { title: 'History', path: '/history' },
     { title: 'Contact', path: '/contact' },
+    { title: 'Courses', path: '/courses' },
+    { title: 'History', path: '/history' },
+    { title: 'Projects', path: '/projects' },
+    { title: 'Technologies', path: '/technologies' },
+    { title: 'Home', path: '/' },
+    { title: 'NotFound', path: '' },
   ],
 
   // Sidebar / Navbar / Overlay

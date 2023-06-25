@@ -1,11 +1,19 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { HomePage } from '..';
+import { AboutPage, ContactPage, CoursePage, HistoryPage, HomePage, NotFound, ProjectsPage, TechnologiesPage } from '..';
 
 export default function AllRoutes() {
   return (
     <Routes>
+      <Route path='/projects' element={<ProjectsPage />} />
+      <Route path='/history' element={<HistoryPage />} />
+      <Route path='/courses' element={<CoursePage />} />
+      <Route path='/technologies' element={<TechnologiesPage />} />
+      <Route path='/about' element={<AboutPage />} />
+      <Route path='/contact' element={<ContactPage />} />
+      <Route path='/portfolio' element={<HomePage />} />
       <Route exact path='/' element={<HomePage />} />
+      <Route path='*' element={<NotFound />} />
     </Routes>
   );
 }
