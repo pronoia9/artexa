@@ -183,14 +183,6 @@ h6 {
   color: var(--c-font-2);
 }
 
-/* ----- container ----- */
-
-.container-fluid {
-  overflow: hidden;
-  padding: 0 30px;
-  position: relative;
-}
-
 /* ----- buttons frame ----- */
 
 .art-buttons-frame a {
@@ -617,13 +609,6 @@ blockquote {
 
 /* ------------------------------ app marcup (after 920px) ------------------------------ */
 @media (max-width: 920px) {
-  /* ----- container ----- */
-
-  .container-fluid {
-    padding-left: 15px;
-    padding-right: 15px;
-  }
-
   /* ----- preloader ----- */
 
   .art-preloader {

@@ -53,7 +53,7 @@ export const themes = {
 
     font1: '#5c5c6f',
     font2: '#1e1e28',
-    font3: '#1e1e28',
+    font3: '#5c5c6f',
 
     ...{
       gradient1: `linear-gradient(180deg,#f0f0f6ed 0%,#f0f0f6f5 70%,#f0f0f6fc 80%,#f0f0f6 100%)`,

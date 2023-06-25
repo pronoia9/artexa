@@ -1,4 +1,4 @@
-import { Logos } from '../..';
+import { Logos, SectionWrapper } from '../..';
 import { dataStore } from '../../../store/dataStore';
 
 const Footer = () => {
@@ -7,13 +7,11 @@ const Footer = () => {
   return (
     <>
       <Logos logos={data.logos} />
-      <div className='container-fluid'>
-        <footer>
-          <div>{data.text[0]}</div>
-          <div>{data.text[1]}</div>
-        </footer>
-      </div>
+      <footer>
+        <div>{data.text[0]}</div>
+        <div>{data.text[1]}</div>
+      </footer>
     </>
   );
 };
-export default Footer;
+export default SectionWrapper(Footer, 'footer');
