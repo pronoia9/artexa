@@ -26,7 +26,7 @@ const FooterContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   color: var(--c-font-1);
-  font-size: 11px;
+  font-family: var(--f-tertiary);
   background: var(--c-bg-menu-2);
   box-shadow: 0 1px 4px 0 var(--c-box-shadow);
   z-index: 9;
