@@ -1,7 +1,6 @@
 export const themes = {
   dark: {
-    background1: 'rgb(25, 25, 35)',
-    background2: 'rgba(30, 30, 40, 0.878)',
+    background: 'rgb(25, 25, 35)',
 
     backgroundWrapper: 'rgb(30, 30, 40)',
     backgroundBannerBack: 'rgba(30, 30, 40, 0.878)',
@@ -34,8 +33,7 @@ export const themes = {
   },
 
   light: {
-    background1: '#c0c0ca',
-    background2: '#e0e0e6',
+    background: '#c0c0ca',
 
     backgroundWrapper: '#f0f0f6',
     backgroundBannerBack: '#ffffffe0',

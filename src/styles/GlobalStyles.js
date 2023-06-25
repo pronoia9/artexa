@@ -2,8 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   :root {
-    --c-bg-1: ${({ theme }) => theme.background1};
-    --c-bg-2: ${({ theme }) => theme.background2};
+    --c-bg: ${({ theme }) => theme.background};
 
     --c-bg-wrapper: ${({ theme }) => theme.backgroundWrapper};
     --c-bg-banner-back: ${({ theme }) => theme.backgroundBannerBack};

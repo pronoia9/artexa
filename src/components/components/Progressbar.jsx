@@ -21,7 +21,7 @@ export const Progressbar = (props) => {
 const Container = styled.div`
   path {
     &:first-child {
-      stroke: var(--c-bg-1);
+      stroke: var(--c-bg);
     }
 
     &:last-child {

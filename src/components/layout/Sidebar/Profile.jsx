@@ -161,7 +161,7 @@ const AvatarStatusLight = styled.div`
     font-weight: 200;
     color: var(--c-font-1);
     box-shadow: 0 ${rem(1)} ${rem(4)} 0 var(--c-box-shadow);
-    background: var(--c-bg-1);
+    background: var(--c-bg);
     opacity: 0;
     pointer-events: none;
     transform: translateX(${rem(20)});
@@ -184,7 +184,7 @@ const AvatarStatusLight = styled.div`
     right: ${rem(-15)};
     top: ${rem(5)};
     opacity: 0;
-    background: var(--c-bg-1);
+    background: var(--c-bg);
     pointer-events: none;
     transform: translateX(${rem(20)}) rotate(45deg);
     transition: 0.4s ease-in-out;

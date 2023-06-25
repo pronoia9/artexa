@@ -20,7 +20,7 @@ const StrengthItem = styled.div`
   display: inline-block;
   color: var(--c-font-1);
   font-size: 10px;
-  background: var(--c-bg-1);
+  background: var(--c-bg);
   border-radius: 15px;
   box-shadow: inset 0 3px 8px 0 var(--c-box-shadow);
 

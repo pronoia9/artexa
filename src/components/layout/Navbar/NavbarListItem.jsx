@@ -111,7 +111,7 @@ const ListItem = styled.li`
       padding-left: 0;
       display: block;
       box-shadow: inset 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
-      background: var(--c-bg-1);
+      background: var(--c-bg);
       filter: brightness(95%);
       pointer-events: ${({ $submenuopen }) => $submenuopen ? 'all' : 'none'};
       overflow: hidden;

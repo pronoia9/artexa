@@ -63,7 +63,7 @@ const AppContainer = styled.div`
   width: 100vw;
   height: 100%;
   padding: ${rem(15)};
-  background: var(--c-bg-1);
+  background: var(--c-bg);
   overflow: hidden;
 
   @media (max-width: ${rem(920)}) {
