@@ -28,9 +28,10 @@ const Container = styled.div`
   bottom: 0;
   width: ${rem(230)};
   height: calc(100vh - ${rem(30)});
-  background: var(--c-font-4);
+  background: var(--c-bg-menu-1);
   box-shadow: 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
   z-index: 99;
+  isolation: isolate;
   transform: ${({ $navbarOpen }) => $navbarOpen && `translateX(${rem(-150)})`};
   transition: 0.55s ease-in-out;
 

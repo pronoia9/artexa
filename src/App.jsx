@@ -77,7 +77,7 @@ const TopBar = styled.div`
   height: ${rem(70)};
   padding: 0 ${rem(30)};
   display: none;
-  background: var(--c-font-4);
+  background: var(--c-bg-menu-1);
   box-shadow: 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
   z-index: 99;
 
