@@ -1,6 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
+  @font-face { font-family: 'Caveat'; src: url('src/assets/fonts/Caveat/Caveat-VariableFont_wght.ttf'); }
+  @font-face { font-family: 'Caveat Brush'; src: url('src/assets/fonts/Caveat_Brush/CaveatBrush-Regular.ttf'); }
+  @font-face { font-family: 'Jost'; src: url('src/assets/fonts/Jost/Jost-VariableFont_wght.ttf'); }
+  @font-face { font-family: 'Fira Code'; src: url('src/assets/fonts/Fira_Mono/FiraMono-Regular.ttf'); }
+
   :root {
     --c-bg: ${({ theme }) => theme.bg};
 
@@ -40,8 +45,10 @@ const GlobalStyles = createGlobalStyle`
     --c-gradient-9: linear-gradient(0.25turn, var(--c-accent-2), var(--c-accent-3), var(--c-accent-4), var(--c-accent-5));
 
     --c-cursor: ${({ theme }) => theme.accent - 1};
-    --f-primary: 'Poppins', sans-serif;
-    --f-code: var(--f-code);
+    --f-primary: 'Jost';
+    --f-secondary: 'Caveat';
+    --f-tertiary: 'Caveat Brush';
+    --f-code: 'Fira Code';
   }
 
   *::-webkit-scrollbar {
@@ -51,7 +58,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
-    color: var(--c-font-2);
+    color: var(--c-font-1);
     font-size: 13px;
     line-height: 1.7;
     font-family: var(--f-primary);
@@ -131,26 +138,27 @@ const GlobalStyles = createGlobalStyle`
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0;
   color: var(--c-font-2);
+  font-family: var(--f-secondary);
   font-weight: 700;
 }
 
 h1 {
-  font-size: 52px;
+  font-size: 62px;
   font-weight: 800;
 }
 
 h4 {
-  font-size: 17px;
+  font-size: 27px;
   font-weight: 600;
 }
 
 h5 {
-  font-size: 14px;
+  font-size: 24px;
   font-weight: 600;
 }
 
 h6 {
-  font-size: 12px;
+  font-size: 22px;
   font-weight: 400;
 }
 
