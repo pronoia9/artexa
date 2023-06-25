@@ -92,7 +92,7 @@ const AccentContainer = styled.div`
   right: ${rem(25)};
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   gap: ${rem(10)};
 `;
 
