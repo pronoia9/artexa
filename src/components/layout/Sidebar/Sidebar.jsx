@@ -43,9 +43,10 @@ const Container = styled.div`
   min-width: ${rem(290)};
   height: calc(100vh - ${rem(30)});
   padding: 0 ${rem(15)};
-  background: var(--c-font-4);
+  background: var(--c-bg-menu-1);
   box-shadow: 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
   z-index: 999;
+  isolation: isolate;
   transition: 0.55s ease-in-out;
 
   @media (max-width: ${rem(920)}) {
@@ -100,8 +101,4 @@ const MobileHeader = styled.div`
 
 const ScrollContent = styled.div`
   padding: ${rem(240)} 0 ${rem(50)};
-
-  @media (max-width: ${rem(230)}) {
-    padding-top: ${rem(80)} !important;
-  }
 `;

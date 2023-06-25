@@ -19,19 +19,19 @@ export const SoftSkills = () => {
 
 const SkillsList = styled.ul`
   padding-left: 0;
-
-  i {
-    margin-right: 10px;
-    color: var(--c-accent-1);
-    font-size: 9px;
-    font-weight: 900;
-  }
 `;
 
 const ListItem = styled.li`
-  margin-bottom: 5px;
+  margin-bottom: ${rem(5)};
   color: var(--c-font-2);
   list-style-type: none;
+
+  i {
+    margin-right: ${rem(5)};
+    color: var(--c-accent-1);
+    font-size: ${rem(9)};
+    font-weight: 900;
+  }
 
   &:last-child {
     margin-bottom: 0;

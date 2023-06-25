@@ -1,13 +1,30 @@
+import { styled } from "styled-components";
+
 import { dataStore } from "../../../store/dataStore";
+import { rem } from "../../../utils";
 
 export const Strengths = () => {
   const data = dataStore((state) => state.sidebar.strengths);
   return (
     <div className='art-strengths p-15-15'>
       {data.map((strength, index) => (
-        <p key={`sidebar-strenghts-${index}`}>{strength}</p>
+        <StrengthItem key={`sidebar-strenghts-${index}`}>{strength}</StrengthItem>
       ))}
     </div>
   );
 };
 
+const StrengthItem = styled.div`
+  margin: auto 3px 5px auto;
+  padding: 3px 10px;
+  display: inline-block;
+  color: var(--c-font-2);
+  font-size: 10px;
+  background: var(--c-bg-1);
+  border-radius: 15px;
+  box-shadow: inset 0 3px 8px 0 var(--c-box-shadow);
+
+  &:hover {
+    color: var(--c-accent-3);
+  }
+`;

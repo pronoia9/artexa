@@ -55,7 +55,7 @@ const ProfileContainer = styled.div`
   height: ${rem(235)};
   padding: ${rem(30)};
   text-align: center;
-  background: var(--c-gradient-2);
+  background: var(--c-bg-menu-2);
   box-shadow: 0 ${rem(1)} ${rem(4)} 0 var(--c-box-shadow);
   z-index: 99999;
 `;
@@ -81,15 +81,15 @@ const AvatarCurtain = styled.div`
   z-index: 0;
 
   i {
-    background: var(--c-gradient-3);
     width: ${rem(30)};
     height: ${rem(30)};
-    text-align: center;
     align-self: center;
-    font-weight: 700;
-    font-size: ${rem(11)};
-    line-height: ${rem(30)};
     color: var(--c-font-1);
+    font-size: ${rem(11)};
+    font-weight: 700;
+    line-height: ${rem(30)};
+    text-align: center;
+    background: var(--c-gradient-3);
     border-radius: 50%;
     opacity: 0;
     z-index: 1;
@@ -161,7 +161,7 @@ const AvatarStatusLight = styled.div`
     font-weight: 200;
     color: var(--c-font-2);
     box-shadow: 0 ${rem(1)} ${rem(4)} 0 var(--c-box-shadow);
-    background: var(--c-background-1);
+    background: var(--c-bg-1);
     opacity: 0;
     pointer-events: none;
     transform: translateX(${rem(20)});
@@ -184,7 +184,7 @@ const AvatarStatusLight = styled.div`
     right: ${rem(-15)};
     top: ${rem(5)};
     opacity: 0;
-    background: var(--c-background-1);
+    background: var(--c-bg-1);
     pointer-events: none;
     transform: translateX(${rem(20)}) rotate(45deg);
     transition: 0.4s ease-in-out;

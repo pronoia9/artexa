@@ -64,7 +64,7 @@ const ThemeItem = styled.div`
   align-items: center;
   justify-content: center;
   box-shadow: inset 0 ${rem(3)} ${rem(8)} 0 var (--c-box-shadow);
-  background: ${({ $active }) => ($active ? 'var(--c-accent-1)' : 'var(--c-background-1)')};
+  background: ${({ $active }) => ($active ? 'var(--c-accent-1)' : 'var(--c-bg-1)')};
   border-radius: 50%;
   cursor: ${({ $active }) => !$active && 'pointer'};
   transition: 0.55s ease-in-out;

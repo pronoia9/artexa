@@ -19,6 +19,16 @@ export const Progressbar = (props) => {
 };
 
 const Container = styled.div`
+  path {
+    &:first-child {
+      stroke: var(--c-bg-1);
+    }
+
+    &:last-child {
+      stroke: var(--c-accent-1);
+    }
+  }
+
   .progressbar-text {
     position: relative;
     left: 40% !important;
@@ -35,6 +45,13 @@ const Container = styled.div`
   &.art-circle-progress {
     width: 65%;
     margin: 0 auto ${rem(15)};
+
+    &:hover path:last-child {
+      transform: scale(1.01);
+      transform-origin: center;
+      transition: transform 0.5s;
+      stroke: var(--c-accent-2);
+    }
   }
 
   &.art-line-progress {
@@ -48,6 +65,12 @@ const Container = styled.div`
       &:after {
         right: -1.5ch;
       }
+    }
+
+    &:hover path:last-child {
+      transform: scale(1.01);
+      transition: right ease-in-out 1s;
+      stroke: var(--c-accent-2);
     }
   }
 `;

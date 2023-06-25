@@ -63,7 +63,7 @@ const AppContainer = styled.div`
   width: 100vw;
   height: 100%;
   padding: ${rem(15)};
-  background: var(--c-background-1);
+  background: var(--c-bg-1);
   overflow: hidden;
 
   @media (max-width: ${rem(920)}) {
@@ -148,7 +148,7 @@ const Curtain = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: var(--c-background-2);
+  background: var(--c-bg-2);
   opacity: ${({ $curtainEnabled }) => ($curtainEnabled ? 0.7 : 0)};
   pointer-events: ${({ $curtainEnabled }) => ($curtainEnabled ? 'all' : 'none')};
   z-index: 9;
