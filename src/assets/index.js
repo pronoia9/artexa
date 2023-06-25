@@ -1,13 +1,9 @@
-// Sidebar
+import { bgBlue, bgGreen, bgPastel, bgPink, bgPurple, bgRed, bgYellow } from './bg';
 import { avatar } from './sidebar';
-// Footer
 import { footer1, footer2, footer3, footer4 } from './footer';
-// Projects
 
 export {
-  // Sidebar
+  bgBlue, bgGreen, bgPastel, bgPink, bgPurple, bgRed, bgYellow,
   avatar,
-  // Footer
   footer1, footer2, footer3, footer4,
-  // Projects
 }
