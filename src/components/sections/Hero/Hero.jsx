@@ -2,7 +2,7 @@ import { HeroButton, HeroHeading, HeroTyped, SectionWrapper } from '../..';
 import { dataStore } from '../../../store/dataStore';
 
 const Hero = () => {
-  const data = dataStore((state) => state.hero);
+  const { data, accent } = dataStore((state) => ({ data: state.hero, accent: state.accent }));
 
   const beamMeUpScotty = () => {};
 

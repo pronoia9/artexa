@@ -5,5 +5,6 @@ import bgPink from './bg-pink.jpg';
 import bgPurple from './bg-purple.jpg';
 import bgRed from './bg-red.jpg';
 import bgYellow from './bg-yellow.jpg';
+import wave from './sticker.png';
 
-export { bgBlue, bgGreen, bgPastel, bgPink, bgPurple, bgRed, bgYellow };
+export { bgBlue, bgGreen, bgPastel, bgPink, bgPurple, bgRed, bgYellow, wave };
