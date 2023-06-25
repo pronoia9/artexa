@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
 
     --c-bg-menu-1: ${({ theme }) => theme.backgroundMenu1};
     --c-bg-menu-2: ${({ theme }) => theme.backgroundMenu2};
+    --c-bg-img-hover: ${({ theme }) => theme.backgroundImageHover};
 
     --c-bg-fancybox: #20202afa;
     --c-bg-pagination: ${({ theme }) => theme.backgroundSwiperPagination};

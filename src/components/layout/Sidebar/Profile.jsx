@@ -129,12 +129,12 @@ const AvatarStatus = styled.div`
     position: absolute;
     bottom: ${rem(-1)};
     right: ${rem(1)};
-    background: var(--c-font-1);
+    background: var(--c-bg-img-hover);
     height: ${rem(23)};
     width: ${rem(23)};
     border-radius: 50%;
     animation: ${({ $available }) => ($available ? 'puls 1s infinite' : 'none')};
-    opacity: ${({ $available }) => !$available  && 0};
+    opacity: ${({ $available }) => !$available && 0};
   }
 `;
 
