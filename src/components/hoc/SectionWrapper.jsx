@@ -1,5 +1,4 @@
 import { styled } from 'styled-components';
-import { motion } from 'framer-motion';
 
 const SectionWrapper = (Component, idName) =>
   function HOC(props) {
@@ -11,7 +10,7 @@ const SectionWrapper = (Component, idName) =>
   };
 export default SectionWrapper;
 
-const Container = styled(motion.section)`
+const Container = styled.section`
   overflow: hidden;
   padding: 0 30px;
   position: relative;
