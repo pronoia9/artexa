@@ -17,9 +17,20 @@ export const systemThemeChangeHandler = (e, setTheme) => { setTheme(e.matches ? 
 //----------------------------- RANDOM UTILS -----------------------------//
 export const lowerCase = (t) => `${t}`.toLowerCase();
 
+export const rng = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
 export const rem = (val) => `${parseInt(val) / 16}rem`;
 
-export const rng = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+export const rgbaToHex = (rgbaColor) => {
+  // Extract the RGBA values
+  const rgbaValues = rgbaColor.match(/(\d+(\.\d+)?)/g);
+  const red = parseInt(rgbaValues[0]);
+  const green = parseInt(rgbaValues[1]);
+  const blue = parseInt(rgbaValues[2]);
+  // Convert RGB to hex
+  const hexValue = ((red << 16) | (green << 8) | blue).toString(16).padStart(6, '0');
+  return '#' + hexValue;
+}
 
 //------------------------------- PRELOADER ------------------------------//
 // function loading() {
