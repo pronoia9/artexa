@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { ThemeProvider, styled } from 'styled-components';
+import AnimatedCursor from 'react-animated-cursor';
 
 import { Routes, Navbar, Sidebar } from './components';
 import { dataStore } from './store/dataStore';
@@ -31,14 +32,42 @@ export default function App() {
 
           <Wrapper className='art-app-wrapper'>
             <Container className='art-app-container'>
-              
               <Sidebar />
               <Routes />
               <Navbar />
-
             </Container>
           </Wrapper>
         </AppContainer>
+
+        <AnimatedCursor
+          innerSize={40}
+          innerScale={0}
+          trailingSpeed={1}
+          outerSize={40}
+          outerScale={2}
+          outerAlpha={0}
+          hasBlendMode={true}
+          innerStyle={{
+            backgroundColor: 'var(--c-accent-5)',
+            border: '3px solid var(--c-accent-5)',
+          }}
+          outerStyle={{
+            border: '3px solid var(--c-accent-5)',
+          }}
+          clickables={[
+            'a',
+            'input[type="text"]',
+            'input[type="email"]',
+            'input[type="number"]',
+            'input[type="submit"]',
+            'input[type="image"]',
+            'label[for]',
+            'select',
+            'textarea',
+            'button',
+            '.link',
+          ]}
+        />
       </ThemeProvider>
     </ThemeProvider>
   );
