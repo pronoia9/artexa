@@ -5,8 +5,10 @@ import { shaderMaterial } from '@react-three/drei';
 
 import { dataStore } from '../../../store/dataStore';
 import { colors } from '../../../styles';
+import { rgbaToHex } from '../../../utils';
 import vertexShader from './vertexShader.glsl';
-import fragmentShader from './fragmentShader.glsl';
+import fragmentShaderLight from './fragmentShader1.glsl';
+import fragmentShaderDark from './fragmentShader2.glsl';
 
 export const Shader = () => (
   <Canvas>
@@ -15,7 +17,7 @@ export const Shader = () => (
       <ShaderMaterial />
     </Plane>
   </Canvas>
-); 
+);
 
 export const Plane = ({ children }) => {
   const { viewport } = useThree();
@@ -25,10 +27,10 @@ export const Plane = ({ children }) => {
       {children}
     </mesh>
   );
-}
+};
 
 export const ShaderMaterial = () => {
-  const accent = dataStore((state) => state.accent);
+  const { accent, theme } = dataStore((state) => ({ accent: state.accent, theme: state.theme }));
   const ref = useRef();
 
   extend({
@@ -39,19 +41,20 @@ export const ShaderMaterial = () => {
         uLowGpu: false,
         uVeryLowGpu: false,
         uSpeedColor: 20.0,
-        uColor1: new Color(colors[accent].accent1),
-        uColor2: new Color(colors[accent].accent2),
-        uColor3: new Color(colors[accent].accent3),
-        uColor4: new Color(colors[accent].accent4),
-        uColor5: new Color(colors[accent].accent5),
+        uColor1: new Color(rgbaToHex(colors[accent].accent1)),
+        uColor2: new Color(rgbaToHex(colors[accent].accent2)),
+        uColor3: new Color(rgbaToHex(colors[accent].accent3)),
+        uColor4: new Color(rgbaToHex(colors[accent].accent4)),
+        uColor5: new Color(rgbaToHex(colors[accent].accent5)),
       },
       vertexShader,
-      fragmentShader
+      theme === 'light' ? fragmentShaderLight : fragmentShaderDark
     ),
   });
 
   useFrame((state, delta) => {
     ref.current.uTime += delta * 10;
   });
-  return <noisyColorV1ShaderMaterial ref={ref} />;
-}
+
+  return <noisyColorV1ShaderMaterial key={`shadermaterial-${theme}-${accent}`} ref={ref} />;
+};
