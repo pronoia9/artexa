@@ -26,7 +26,7 @@ export const ThemeButton = () => {
     <Container className='art-language-change' $navbarOpen={navbarOpen}>
       <div>
         {themes.map(({ title, icon }) => (
-          <ThemeItem key={`theme-button-${title}`} $active={theme === title} $navbarOpen={navbarOpen} onClick={() => handleThemeClick(title)}>
+          <ThemeItem className='theme-button' key={`theme-button-${title}`} $active={theme === title} $navbarOpen={navbarOpen} onClick={() => handleThemeClick(title)}>
             <i className={icon} />
           </ThemeItem>
         ))}
@@ -36,6 +36,7 @@ export const ThemeButton = () => {
         {Object.entries(colors).map((color, index) => (
           <AccentItem
             key={`theme-button-accent-${index}`}
+            className='theme-button'
             $navbarOpen={navbarOpen}
             $index={index}
             $active={accent === color[0]}

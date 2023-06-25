@@ -65,6 +65,8 @@ export default function App() {
             'textarea',
             'button',
             '.link',
+            '.art-menu-bar-header',
+            '.theme-button',
           ]}
         />
       </ThemeProvider>
