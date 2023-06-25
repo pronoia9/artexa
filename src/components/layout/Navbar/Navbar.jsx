@@ -24,15 +24,15 @@ export const Navbar = () => {
 const Container = styled.div`
   position: absolute;
   top: 0;
-  right: ${rem(-150)};
+  right: ${rem(-230)};
   bottom: 0;
-  width: ${rem(230)};
+  width: ${rem(330)};
   height: calc(100vh - ${rem(30)});
   background: var(--c-bg-menu-1);
   box-shadow: 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
   z-index: 99;
   isolation: isolate;
-  transform: ${({ $navbarOpen }) => $navbarOpen && `translateX(${rem(-150)})`};
+  transform: ${({ $navbarOpen }) => $navbarOpen && `translateX(${rem(-230)})`};
   transition: 0.55s ease-in-out;
 
   a {
