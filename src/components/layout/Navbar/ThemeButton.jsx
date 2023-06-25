@@ -14,11 +14,19 @@ export const ThemeButton = () => {
     setAccent: state.setAccent,
   }));
 
+  const handleThemeClick = (title) => {
+    theme !== title && toggleTheme();
+  };
+  
+  const handleAccentClick = (color) => {
+    accent !== color && setAccent(color);
+  };
+
   return (
     <Container className='art-language-change' $navbarOpen={navbarOpen}>
       <div>
         {themes.map(({ title, icon }) => (
-          <ThemeItem key={`theme-button-${title}`} $active={theme === title} $navbarOpen={navbarOpen} onClick={toggleTheme}>
+          <ThemeItem key={`theme-button-${title}`} $active={theme === title} $navbarOpen={navbarOpen} onClick={() => handleThemeClick(title)}>
             <i className={icon} />
           </ThemeItem>
         ))}
@@ -32,7 +40,7 @@ export const ThemeButton = () => {
             $index={index}
             $active={accent === color[0]}
             $colors={[color[1]]}
-            onClick={() => accent !== color[0] && setAccent(color[0])}
+            onClick={() => handleAccentClick(color[0])}
           />
         ))}
       </AccentContainer>
@@ -101,7 +109,7 @@ const AccentContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
   gap: ${rem(10)};
-  z-index: -1;
+  z-index: ${({ $navbarOpen }) => $navbarOpen ? 0 : -1};
 `;
 
 const AccentItem = styled.div`
