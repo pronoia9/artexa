@@ -4,7 +4,7 @@ const GlobalStyles = createGlobalStyle`
   @font-face { font-family: 'Caveat'; src: url('src/assets/fonts/Caveat/Caveat-VariableFont_wght.ttf'); }
   @font-face { font-family: 'Caveat Brush'; src: url('src/assets/fonts/Caveat_Brush/CaveatBrush-Regular.ttf'); }
   @font-face { font-family: 'Jost'; src: url('src/assets/fonts/Jost/Jost-VariableFont_wght.ttf'); }
-  @font-face { font-family: 'Fira Code'; src: url('src/assets/fonts/Fira_Mono/FiraMono-Regular.ttf'); }
+  @font-face { font-family: 'Operator Mono'; src: url('src/assets/fonts/Operator_Mono/Operator Mono_Light Nerd_Font_Complete.otf'); }
 
   :root {
     --c-bg: ${({ theme }) => theme.bg};
@@ -48,7 +48,7 @@ const GlobalStyles = createGlobalStyle`
     --f-primary: 'Jost';
     --f-secondary: 'Caveat';
     --f-tertiary: 'Caveat Brush';
-    --f-code: 'Fira Code';
+    --f-code: 'Operator Mono', monospace;
   }
 
   *::-webkit-scrollbar {
@@ -647,7 +647,7 @@ blockquote {
 /* ----- typing code ----- */
 
 .art-code {
-  font-family: 'Courier Prime', monospace;
+  font-family: var(--f-code);
   color: var(--c-accent-1);
   text-shadow: 1px 1px 5px var(--c-accent-2);
 
