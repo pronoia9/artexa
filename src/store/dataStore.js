@@ -64,7 +64,7 @@ export const dataStore = create((set) => ({
       '.art-knowledge-list li',
       '.art-hard-skills-item',
       '.art-lang-skills-item',
-      'canvas.hovered',
+      '.laptop-hover',
     ],
   },
 
