@@ -1,12 +1,18 @@
 import { styled } from 'styled-components';
-import { Shader } from './Shader';
 
-export const Background = () => (
-  <Container className='art-top-bg'>
-    <Shader />
-    <Overlay className='art-top-bg-overlay' />
-  </Container>
-);
+import { Shader } from './Shader';
+import { dataStore } from '../../../store/dataStore';
+
+export const Background = () => {
+  const { accent } = dataStore((state) => ({ accent: state.accent }));
+
+  return (
+    <Container className='art-top-bg' $accent={accent}>
+      {/* <Shader /> */}
+      <Overlay className='art-top-bg-overlay' />
+    </Container>
+  );
+};
 
 const Container = styled.div`
   position: absolute;
@@ -14,6 +20,9 @@ const Container = styled.div`
   width: 100%;
   height: 400px;
   overflow: hidden;
+  background: ${({ $accent = 'pastels' }) => `url('src/assets/hero/bg-${$accent}.jpg')`};
+  background-position: center;
+  background-size: cover;
 `;
 
 const Overlay = styled(Container)`
