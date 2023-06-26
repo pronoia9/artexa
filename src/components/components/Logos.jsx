@@ -1,14 +1,12 @@
-export default function Logos({ logos }) {
-  return (
-    <div className='container-fluid'>
-      <div className='row'>
-        {logos.map((logo, index) => (
-          <Logo key={`${index}-logo`} image={logo} />
-        ))}
-      </div>
+export const Logos = ({ logos }) => (
+  <div className='container-fluid'>
+    <div className='row'>
+      {logos.map((logo, index) => (
+        <Logo key={`${index}-logo`} image={logo} />
+      ))}
     </div>
-  );
-}
+  </div>
+);
 
 export const Logo = ({ image }) => (
   <div className='col-6 col-lg-3'>

@@ -5,7 +5,7 @@ import { Background, Footer } from '..';
 import { dataStore } from '../../store/dataStore';
 import { rem } from '../../utils';
 
-const PageWrapper = (Component, idName) =>
+export const PageWrapper = (Component, idName) =>
   function HOC(props) {
     const { curtainEnabled, curtainClose } = dataStore((state) => ({
       curtainEnabled: state.curtainEnabled,
@@ -28,7 +28,6 @@ const PageWrapper = (Component, idName) =>
       </Content>
     );
   };
-export default PageWrapper;
 
 const Content = styled.div`
   position: relative;

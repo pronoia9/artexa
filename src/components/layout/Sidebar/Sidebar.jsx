@@ -1,11 +1,11 @@
 import { styled } from 'styled-components';
 import { Scrollbar } from 'smooth-scrollbar-react';
 
-import { Profile, Info, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials } from '..';
+import { Profile, Info, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { rem } from '../../../utils';
 
-const Sidebar = () => {
+export const Sidebar = () => {
   const { sidebarOpen, toggleSidebar } = dataStore((state) => ({ sidebarOpen: state.sidebarOpen, toggleSidebar: state.toggleSidebar }));
 
   return (
@@ -35,7 +35,6 @@ const Sidebar = () => {
     </Container>
   );
 };
-export default Sidebar;
 
 const Container = styled.div`
   position: relative;

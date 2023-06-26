@@ -1,4 +1,4 @@
-import { Title } from '.';
+import { Title } from '..';
 
 export const Timeline = ({ column, title, list }) => <TimelineColumn column={props.column} title={props.title} list={props.list} />;
 

@@ -10,13 +10,10 @@ import vertexShader from './vertexShader.glsl';
 import fragmentShaderLight from './fragmentShaderLight.glsl';
 import fragmentShaderDark from './fragmentShaderDark.glsl';
 
-export const Shader = () => (
-  <Canvas>
-    <color args={['#31AFD4']} attach='background' />
-    <Plane>
-      <ShaderMaterial />
-    </Plane>
-  </Canvas>
+export const Shader = (props) => (
+  <Plane {...props}>
+    <ShaderMaterial />
+  </Plane>
 );
 
 export const Plane = ({ children }) => {

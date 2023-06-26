@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-const SectionWrapper = (Component, idName) =>
+export const SectionWrapper = (Component, idName) =>
   function HOC(props) {
     return (
       <Container className='container-fluid' id={idName}>
@@ -8,7 +8,6 @@ const SectionWrapper = (Component, idName) =>
       </Container>
     );
   };
-export default SectionWrapper;
 
 const Container = styled.section`
   overflow: hidden;

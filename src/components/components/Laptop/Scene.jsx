@@ -6,7 +6,7 @@ import { a as three } from '@react-spring/three';
 import { a as web } from '@react-spring/web';
 import { keyframes, styled } from 'styled-components';
 
-import { Laptop } from '.';
+import { Laptop } from '../..';
 import { dataStore } from '../../../store/dataStore';
 
 export const Scene = () => {
@@ -19,7 +19,7 @@ export const Scene = () => {
   );
 };
 
-const SceneContents = () => {
+export const SceneContents = () => {
   const { laptopOpen, toggleLaptopOpen } = dataStore((state) => ({
     laptopOpen: state.laptopOpen,
     toggleLaptopOpen: state.toggleLaptopOpen,

@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { NavbarButton, NavbarCurrentPage, NavbarList, ThemeButton } from './';
+import { NavbarButton, NavbarCurrentPage, NavbarList, ThemeButton } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { rem } from '../../../utils';
 

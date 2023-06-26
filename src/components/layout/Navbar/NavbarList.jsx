@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { NavbarListItem } from './';
+import { NavbarListItem } from '../..';
 import { dataStore } from '../../../store/dataStore';
 
 export const NavbarList = () => {

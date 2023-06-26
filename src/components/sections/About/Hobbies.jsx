@@ -1,6 +1,3 @@
-import { SectionWrapper } from '../..';
-
-const Hobbies = () => {
+export const Hobbies = () => {
   return <div>Hobbies</div>;
 };
-export default SectionWrapper(Hobbies, 'hobbies');

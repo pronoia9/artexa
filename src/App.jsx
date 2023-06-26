@@ -1,7 +1,7 @@
 import { ThemeProvider, styled } from 'styled-components';
 import AnimatedCursor from 'react-animated-cursor';
 
-import { Routes, Navbar, Sidebar, Scene } from './components';
+import { PageRoutes, Navbar, Sidebar, Scene } from './components';
 import { dataStore } from './store/dataStore';
 import { GlobalStyles } from './styles';
 import { getThemeObject, rem } from './utils';
