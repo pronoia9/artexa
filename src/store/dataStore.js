@@ -2,19 +2,26 @@ import { create } from 'zustand';
 
 import { avatar, wave, footer1, footer2, footer3, footer4 } from '../assets';
 import { getThemeFromStorage } from '../utils';
+import { saveThemeToStorage } from '../utils/utils';
 
 export const dataStore = create((set) => ({
   // THEME
   theme: getThemeFromStorage('theme'),
-  setTheme: (theme) => set({ theme }),
-  toggleTheme: () => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
+  toggleTheme: () => set((state) => {
+    const newTheme = state.theme === 'light' ? 'dark' : 'light'
+    saveThemeToStorage('theme', newTheme);
+    return { theme: newTheme };
+  }),
   themes: [
     { title: 'light', icon: 'far fa-sun' },
     { title: 'dark', icon: 'far fa-moon' },
   ],
   // ACCENT / COLORS
   accent: getThemeFromStorage('accent'),
-  setAccent: (accent) => set({ accent }),
+  setAccent: (accent) => set(() => {
+    saveThemeToStorage('accent', accent)
+    return { accent };
+  }),
 
   cursorOptions: {
     innerSize: 40,
