@@ -3,19 +3,15 @@ import { Canvas } from '@react-three/fiber';
 import { Environment, ContactShadows, OrbitControls } from '@react-three/drei';
 import { useSpring } from '@react-spring/core';
 import { a as three } from '@react-spring/three';
-import { a as web } from '@react-spring/web';
-import { keyframes, styled } from 'styled-components';
 
 import { Laptop } from '../..';
 import { dataStore } from '../../../store/dataStore';
 
 export const Scene = () => {
   return (
-    <Container>
-      <Canvas dpr={[1, 2]} camera={{ position: [22.5, 13, -37], fov: 35 }} >
-        <SceneContents />
-      </Canvas>
-    </Container>
+    <Canvas dpr={[1, 2]} camera={{ position: [22.5, 13, -37], fov: 35 }}>
+      <SceneContents />
+    </Canvas>
   );
 };
 
@@ -40,19 +36,3 @@ export const SceneContents = () => {
     </>
   );
 };
-
-const bgAnimation = keyframes`
-  0% {  background-position: left; }
-  100% {  background-position: right; }
-`;
-
-const Container = styled(web.main)`
-  width: 100vw;
-  min-width: 100vw;
-  height: 10vh;
-  min-height: 100vh;
-  background: var(--c-bg);
-  background-image: linear-gradient(45deg, var(--c-accent-1), var(--c-accent-2), var(--c-accent-3), var(--c-accent-4), var(--c-accent-5));
-  background-size: 400%;
-  animation: ${bgAnimation} 20s infinite alternate;
-`;

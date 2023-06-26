@@ -1,4 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes } from 'styled-components';
+
+const bgAnimation = keyframes` 0% {  background-position: left; } 100% {  background-position: right; }`;
 
 const GlobalStyles = createGlobalStyle`
   @font-face { font-family: 'Caveat'; src: url('src/assets/fonts/Caveat/Caveat-VariableFont_wght.ttf'); }
@@ -65,6 +67,17 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     letter-spacing: .25px;
     font-smooth: subpixel-antialiased
+  }
+
+  #root {
+    width: 100vw;
+    min-width: 100vw;
+    height: 10vh;
+    min-height: 100vh;
+    background: var(--c-bg);
+    background-image: linear-gradient(45deg, var(--c-accent-1), var(--c-accent-2), var(--c-accent-3), var(--c-accent-4), var(--c-accent-5));
+    background-size: 400%;
+    animation: ${bgAnimation} 20s infinite alternate;
   }
 
 /* ----------------------------- Author: Nazar Miller ----------------------------- */
