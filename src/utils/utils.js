@@ -6,13 +6,18 @@ import { themes, colors } from '../styles/Themes';
 const storageKey = 'artexaSettings';
 
 //------------------------------ THEME STUFF -----------------------------//
+
+// Get the system theme based on the user's OS preference
 export const getSystemTheme = () => (window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
+// Get the theme object based on the provided theme name
 export const getThemeObject = (theme) => themes[theme] || colors[theme] || {};
 
+// Get the theme or accent object from local storage based on the provided type
 export const getThemeFromStorage = (type) => {
   const storedSettings = JSON.parse(localStorage.getItem(storageKey));
   if (!storedSettings) {
+    // If no settings found in local storage, set the default settings and return the requested type
     const settings = { theme: getSystemTheme(), accent: 'pastels' };
     localStorage.setItem(storageKey, JSON.stringify(settings));
     return settings[type] || {};
@@ -20,20 +25,27 @@ export const getThemeFromStorage = (type) => {
   return storedSettings[type] || {};
 };
 
+// Save the theme or accent value to local storage based on the provided type
 export const saveThemeToStorage = (type, value) => {
   const storedSettings = JSON.parse(localStorage.getItem(storageKey));
   localStorage.setItem(storageKey, JSON.stringify({ ...storedSettings, [type]: value }));
 };
 
+// Check if the theme is dark
 export const isDarkTheme = (theme) => theme === 'dark';
 
 //----------------------------- RANDOM UTILS -----------------------------//
+
+// Convert a string to lowercase
 export const lowerCase = (t) => `${t}`.toLowerCase();
 
+// Generate a random number between min and max (inclusive)
 export const rng = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 
+// Convert a pixel value to rem
 export const rem = (val) => `${parseInt(val) / 16}rem`;
 
+// Convert an RGBA color to hex format
 export const rgbaToHex = (rgbaColor) => {
   // Extract the RGBA values
   const rgbaValues = rgbaColor.match(/(\d+(\.\d+)?)/g);
