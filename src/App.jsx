@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { ThemeProvider, styled } from 'styled-components';
 import AnimatedCursor from 'react-animated-cursor';
 
@@ -7,31 +8,40 @@ import { GlobalStyles } from './styles';
 import { getThemeObject, rem } from './utils';
 
 export default function App() {
-  const { theme, accent, cursorOptions } = dataStore((state) => ({
+  const [show, setShow] = useState(false);
+  const { theme, accent, cursorOptions, laptopOpen } = dataStore((state) => ({
     theme: state.theme,
     accent: state.accent,
     cursorOptions: state.cursorOptions,
+    laptopOpen: state.laptopOpen,
   }));
+
+  useEffect(() => {
+    setTimeout(() => {
+      setShow(laptopOpen);
+    }, laptopOpen ? 3000 : 0);
+  }, [laptopOpen]);
 
   return (
     <ThemeProvider theme={getThemeObject(theme)}>
       <ThemeProvider theme={getThemeObject(accent)}>
         <GlobalStyles />
-        {/* <AppContainer className='art-app'> */}
-          {/* <TopBar className='art-mobile-top-bar' /> */}
 
-          {/* <Preloader /> */}
-
-          {/* <Wrapper className='art-app-wrapper'>
-            <Container className='art-app-container'>
-              <Sidebar />
-              <Routes />
-              <Navbar />
-            </Container>
-          </Wrapper> */}
-        {/* </AppContainer> */}
-
-        <Scene />
+        {show ? (
+          <AppContainer className='art-app' $show={show} $laptopOpen={laptopOpen}>
+            <TopBar className='art-mobile-top-bar' />
+            {/* <Preloader /> */}
+            <Wrapper className='art-app-wrapper'>
+              <Container className='art-app-container'>
+                <Sidebar />
+                <PageRoutes />
+                <Navbar />
+              </Container>
+            </Wrapper>
+          </AppContainer>
+        ) : (
+          <Scene />
+        )}
 
         <div className='animated-cursor'>
           <AnimatedCursor {...cursorOptions} />
