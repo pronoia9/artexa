@@ -1,9 +1,9 @@
 // import anime from 'animejs/lib/anime.es.js';
-// import SmoothScrollbar from 'smooth-scrollbar';
-// import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 import * as ProgressBar from 'progressbar.js';
 
 import { themes, colors } from '../styles/Themes';
+
+const storageKey = 'artexaSettings';
 
 //------------------------------ THEME STUFF -----------------------------//
 export const getSystemTheme = () => (window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
@@ -11,15 +11,19 @@ export const getSystemTheme = () => (window?.matchMedia('(prefers-color-scheme: 
 export const getThemeObject = (theme) => themes[theme] || colors[theme] || {};
 
 export const getThemeFromStorage = (type) => {
-  const storageKey = 'artexaSettings';
   const storedSettings = JSON.parse(localStorage.getItem(storageKey));
-  if (storedSettings) {
+  if (!storedSettings) {
     const settings = { theme: getSystemTheme(), accent: 'pastels' };
     localStorage.setItem(storageKey, JSON.stringify(settings));
-    return settings[type] || {}
+    return settings[type] || {};
   }
   return storedSettings[type] || {};
 };
+
+export const saveThemeToStorage = (type, value) => {
+  const storedSettings = JSON.parse(localStorage.getItem(storageKey));
+  localStorage.setItem(storageKey, JSON.stringify({ ...storedSettings, [type]: value }));
+}
 
 export const isDarkTheme = (theme) => theme === 'dark';
 
