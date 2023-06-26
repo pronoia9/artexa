@@ -8,6 +8,7 @@ export const dataStore = create((set) => ({
   // LAPTOP
   laptopOpen: false,
   setLaptopOpen: (laptopOpen) => set({ laptopOpen }),
+  toggleLaptopOpen: () => set((state) => ({ laptopOpen: !state.laptopOpen })),
   laptopHover: false,
   setLaptopHover: (laptopHover) =>
     set((state) => {
