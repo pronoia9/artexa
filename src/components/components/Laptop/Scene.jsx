@@ -4,11 +4,16 @@ import { Environment, ContactShadows, OrbitControls } from '@react-three/drei';
 import { useSpring } from '@react-spring/core';
 import { a as three } from '@react-spring/three';
 import { a as web } from '@react-spring/web';
-
-import { Laptop } from '.';
 import { keyframes, styled } from 'styled-components';
 
+import { Laptop } from '.';
+import { dataStore } from '../../../store/dataStore';
+
 export const Scene = () => {
+  const { laptopOpen, setLaptopOpen } = dataStore((state) => ({
+    laptopOpen: state.laptopOpen,
+    setLaptopOpen: state.setLaptopOpen,
+  }));
   const [open, setOpen] = useState(false);
   const props = useSpring({ open: Number(open) });
 
@@ -18,7 +23,7 @@ export const Scene = () => {
         <three.pointLight position={[10, 10, 10]} intensity={1.5} color={props.open.to([0, 1], ['#f0f0f0', '#d25578'])} />
         <Suspense fallback={null}>
           <group rotation={[0, Math.PI, 0]} onClick={(e) => (e.stopPropagation(), setOpen(!open))}>
-            <Laptop open={open} hinge={props.open.to([0, 1], [1.575, -0.425])} />
+            <Laptop open={open} hinge={props.open.to([0, 1], [-3.109, -4.70])} scale={6} />
           </group>
           <Environment preset='city' />
         </Suspense>

@@ -9,7 +9,7 @@ import { a as web } from '@react-spring/web';
 export const Laptop = ({ open, hinge, ...props }) => {
   const group = useRef();
   // Load model
-  const { nodes, materials } = useGLTF('/mac-draco.glb');
+  const { nodes, materials } = useGLTF('/macbook.glb');
   // Take care of cursor state on hover
   const [hovered, setHovered] = useState(false);
   useEffect(() => void (document.body.style.cursor = hovered ? 'pointer' : 'auto'), [hovered]);
@@ -30,21 +30,23 @@ export const Laptop = ({ open, hinge, ...props }) => {
       onPointerOver={(e) => (e.stopPropagation(), setHovered(true))}
       onPointerOut={(e) => setHovered(false)}
       dispose={null}
-      position={[0, 0, 0]}
+      position={[0, -4, 0]}
     >
-      <three.group rotation-x={hinge} position={[0, -0.04, 0.41]}>
-        <group position={[0, 2.96, -0.13]} rotation={[Math.PI / 2, 0, 0]}>
-          <mesh material={materials.aluminium} geometry={nodes['Cube008'].geometry} />
-          <mesh material={materials['matte.001']} geometry={nodes['Cube008_1'].geometry} />
-          <mesh material={materials['screen.001']} geometry={nodes['Cube008_2'].geometry} />
-        </group>
-      </three.group>
-      <mesh material={materials.keys} geometry={nodes.keyboard.geometry} position={[1.79, 0, 3.45]} />
-      <group position={[0, -0.1, 3.39]}>
-        <mesh material={materials.aluminium} geometry={nodes['Cube002'].geometry} />
-        <mesh material={materials.trackpad} geometry={nodes['Cube002_1'].geometry} />
+      <group position={[0.026, 0.077, -0.831]} rotation={[1.586, 0, 0]}>
+        <mesh castShadow receiveShadow geometry={nodes.Macbook_1.geometry} material={materials['Body Material']} />
+        <mesh castShadow receiveShadow geometry={nodes.Macbook_2.geometry} material={materials['Bezel Material']} />
+        <mesh castShadow receiveShadow geometry={nodes.Macbook_3.geometry} material={materials['Keys Material']} />
+        <mesh castShadow receiveShadow geometry={nodes.Macbook_4.geometry} material={materials['Keys Light']} />
       </group>
-      <mesh material={materials.touchbar} geometry={nodes.touchbar.geometry} position={[0, -0.03, 1.2]} />
+      <three.group position={[0.026, 0.077, -0.811]} rotation-x={hinge}>
+        <mesh castShadow receiveShadow geometry={nodes.MacbookDisplay_1.geometry} material={materials['Body Material']} />
+        <mesh castShadow receiveShadow geometry={nodes.MacbookDisplay_2.geometry} material={materials['Bezel Material']} />
+        <mesh castShadow receiveShadow geometry={nodes.MacbookDisplay_3.geometry} material={materials['Apple Logo']} />
+        <mesh castShadow receiveShadow geometry={nodes.MacbookDisplay_4.geometry} material={materials['Camera Lens']} />
+        <mesh castShadow receiveShadow geometry={nodes.MacbookDisplay_5.geometry} material={materials['Bezel Material']} />
+        <mesh castShadow receiveShadow geometry={nodes.MacbookScreen.geometry} material={materials['Keys Light']} position={[0, 0.005, 0]} />
+      </three.group>
     </group>
   );
 }
+useGLTF.preload('/macbook.glb');
