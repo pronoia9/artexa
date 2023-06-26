@@ -1,7 +1,7 @@
 import { ThemeProvider, styled } from 'styled-components';
 import AnimatedCursor from 'react-animated-cursor';
 
-import { Routes, Navbar, Sidebar } from './components';
+import { Routes, Navbar, Sidebar, Scene } from './components';
 import { dataStore } from './store/dataStore';
 import { GlobalStyles } from './styles';
 import { getThemeObject, rem } from './utils';
@@ -17,21 +17,25 @@ export default function App() {
     <ThemeProvider theme={getThemeObject(theme)}>
       <ThemeProvider theme={getThemeObject(accent)}>
         <GlobalStyles />
-        <AppContainer className='art-app'>
-          <TopBar className='art-mobile-top-bar' />
+        {/* <AppContainer className='art-app'> */}
+          {/* <TopBar className='art-mobile-top-bar' /> */}
 
           {/* <Preloader /> */}
 
-          <Wrapper className='art-app-wrapper'>
+          {/* <Wrapper className='art-app-wrapper'>
             <Container className='art-app-container'>
               <Sidebar />
               <Routes />
               <Navbar />
             </Container>
-          </Wrapper>
-        </AppContainer>
+          </Wrapper> */}
+        {/* </AppContainer> */}
 
-        <AnimatedCursor {...cursorOptions} />
+        <Scene />
+
+        <div className='animated-cursor'>
+          <AnimatedCursor {...cursorOptions} />
+        </div>
       </ThemeProvider>
     </ThemeProvider>
   );
