@@ -5,6 +5,13 @@ import { getThemeFromStorage } from '../utils';
 import { saveThemeToStorage } from '../utils/utils';
 
 export const dataStore = create((set) => ({
+  // LAPTOP
+  laptopOpen: false,
+  setLaptopOpen: (laptopOpen) => set({ laptopOpen }),
+  toggleLaptopOpen: () => set((state) => ({ laptopOpen: !state.laptopOpen })),
+  laptopHover: false,
+  setLaptopHover: (laptopHover) => set({ laptopHover }),
+
   // THEME
   theme: getThemeFromStorage('theme'),
   toggleTheme: () =>
@@ -57,6 +64,7 @@ export const dataStore = create((set) => ({
       '.art-knowledge-list li',
       '.art-hard-skills-item',
       '.art-lang-skills-item',
+      'canvas.hovered',
     ],
   },
 
