@@ -7,21 +7,23 @@ import { saveThemeToStorage } from '../utils/utils';
 export const dataStore = create((set) => ({
   // THEME
   theme: getThemeFromStorage('theme'),
-  toggleTheme: () => set((state) => {
-    const newTheme = state.theme === 'light' ? 'dark' : 'light'
-    saveThemeToStorage('theme', newTheme);
-    return { theme: newTheme };
-  }),
+  toggleTheme: () =>
+    set((state) => {
+      const newTheme = state.theme === 'light' ? 'dark' : 'light';
+      saveThemeToStorage('theme', newTheme);
+      return { theme: newTheme };
+    }),
   themes: [
     { title: 'light', icon: 'far fa-sun' },
     { title: 'dark', icon: 'far fa-moon' },
   ],
   // ACCENT / COLORS
   accent: getThemeFromStorage('accent'),
-  setAccent: (accent) => set(() => {
-    saveThemeToStorage('accent', accent)
-    return { accent };
-  }),
+  setAccent: (accent) =>
+    set(() => {
+      saveThemeToStorage('accent', accent);
+      return { accent };
+    }),
 
   cursorOptions: {
     innerSize: 40,
