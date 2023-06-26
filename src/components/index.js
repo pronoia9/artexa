@@ -1,5 +1,5 @@
 // Components
-import { Background, Logos, Progressbar, SwiperNavigation, Title, SectionTitle, Timeline, TimelineColumn, TimelineItem } from './components';
+import { Background, Laptop, Scene, Logos, Progressbar, SwiperNavigation, Title, SectionTitle, Timeline, TimelineColumn, TimelineItem } from './components';
 // HOC
 import { PageWrapper, SectionWrapper } from './hoc';
 // Layout
@@ -39,7 +39,7 @@ import {
 
 export {
   // Components
-  Background, Logos, Progressbar, SwiperNavigation, Title, SectionTitle, Timeline, TimelineColumn, TimelineItem,
+  Background, Laptop, Scene, Logos, Progressbar, SwiperNavigation, Title, SectionTitle, Timeline, TimelineColumn, TimelineItem,
   // HOC
   PageWrapper, SectionWrapper,
   // Layout - Footer
