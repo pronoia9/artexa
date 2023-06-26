@@ -1,7 +1,6 @@
 // ---- COMPONENTS
 // -- Background
-import { Background } from './components/Background/Background';
-import { Shader, Plane, ShaderMaterial } from './components/Background/Shader';
+import { Background } from './components/Background';
 // -- Laptop
 import { Laptop } from './components/Laptop/Laptop';
 import { Scene, SceneContents } from './components/Laptop/Scene';
@@ -91,7 +90,7 @@ import TechnologiesSwiper from './sections/Technologies/TechnologiesSwiper';
 
 export {
   // ---- COMPONENTS ----
-  Background, Shader, Plane, ShaderMaterial,
+  Background,
   Laptop, Scene, SceneContents,
   Logos, Logo,
   Progressbar,

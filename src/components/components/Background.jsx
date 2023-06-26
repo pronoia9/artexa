@@ -1,14 +1,12 @@
 import { styled } from 'styled-components';
 
-import { Shader } from './Shader';
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../store/dataStore';
 
 export const Background = () => {
   const { accent } = dataStore((state) => ({ accent: state.accent }));
 
   return (
     <Container className='art-top-bg' $accent={accent}>
-      {/* <Shader /> */}
       <Overlay className='art-top-bg-overlay' />
     </Container>
   );
