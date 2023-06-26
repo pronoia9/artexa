@@ -8,9 +8,16 @@ export const dataStore = create((set) => ({
   // LAPTOP
   laptopOpen: false,
   setLaptopOpen: (laptopOpen) => set({ laptopOpen }),
-  toggleLaptopOpen: () => set((state) => ({ laptopOpen: !state.laptopOpen })),
   laptopHover: false,
-  setLaptopHover: (laptopHover) => set({ laptopHover }),
+  setLaptopHover: (laptopHover) =>
+    set((state) => {
+      const [outer, inner] = document.querySelectorAll('.animated-cursor div');
+      inner.style.width  = (laptopHover && !state.laptopOpen) ? 0 : '40px';
+      inner.style.height = (laptopHover && !state.laptopOpen) ? 0 : '40px';
+      outer.style.width  = (laptopHover && !state.laptopOpen) ? '80px' : '40px';
+      outer.style.height = (laptopHover && !state.laptopOpen) ? '80px' : '40px';
+      return { laptopHover };
+    }),
 
   // THEME
   theme: getThemeFromStorage('theme'),
@@ -64,7 +71,6 @@ export const dataStore = create((set) => ({
       '.art-knowledge-list li',
       '.art-hard-skills-item',
       '.art-lang-skills-item',
-      '.laptop-hover',
     ],
   },
 
