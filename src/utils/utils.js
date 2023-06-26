@@ -8,11 +8,20 @@ import { themes, colors } from '../styles/Themes';
 //------------------------------ THEME STUFF -----------------------------//
 export const getSystemTheme = () => (window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 
-export const getTheme = (theme) => themes[theme] || colors[theme] || {};
+export const getThemeObject = (theme) => themes[theme] || colors[theme] || {};
+
+export const getThemeFromStorage = (type) => {
+  const storageKey = 'artexaSettings';
+  const storedSettings = JSON.parse(localStorage.getItem(storageKey));
+  if (storedSettings) {
+    const settings = { theme: getSystemTheme(), accent: 'pastels' };
+    localStorage.setItem(storageKey, JSON.stringify(settings));
+    return settings[type] || {}
+  }
+  return storedSettings[type] || {};
+};
 
 export const isDarkTheme = (theme) => theme === 'dark';
-
-export const systemThemeChangeHandler = (e, setTheme) => { setTheme(e.matches ? 'dark' : 'light'); };
 
 //----------------------------- RANDOM UTILS -----------------------------//
 export const lowerCase = (t) => `${t}`.toLowerCase();

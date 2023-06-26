@@ -1,11 +1,11 @@
 import { create } from 'zustand';
 
 import { avatar, wave, footer1, footer2, footer3, footer4 } from '../assets';
-import { getSystemTheme } from '../utils';
+import { getThemeFromStorage } from '../utils';
 
 export const dataStore = create((set) => ({
   // THEME
-  theme: getSystemTheme(),
+  theme: getThemeFromStorage('theme'),
   setTheme: (theme) => set({ theme }),
   toggleTheme: () => set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
   themes: [
@@ -13,7 +13,7 @@ export const dataStore = create((set) => ({
     { title: 'dark', icon: 'far fa-moon' },
   ],
   // ACCENT / COLORS
-  accent: 'pastels',
+  accent: getThemeFromStorage('accent'),
   setAccent: (accent) => set({ accent }),
 
   cursorOptions: {
