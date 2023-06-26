@@ -1,30 +1,21 @@
-import { useEffect } from 'react';
 import { ThemeProvider, styled } from 'styled-components';
 import AnimatedCursor from 'react-animated-cursor';
 
 import { Routes, Navbar, Sidebar } from './components';
 import { dataStore } from './store/dataStore';
 import { GlobalStyles } from './styles';
-import { getTheme, systemThemeChangeHandler, rem } from './utils';
+import { getThemeObject, rem } from './utils';
 
 export default function App() {
-  const { theme, setTheme, accent, cursorOptions } = dataStore((state) => ({
+  const { theme, accent, cursorOptions } = dataStore((state) => ({
     theme: state.theme,
-    setTheme: state.setTheme,
     accent: state.accent,
     cursorOptions: state.cursorOptions,
   }));
 
-  // EVENT LISTENER FOR SYSTEM THEME CHANGE
-  useEffect(() => {
-    const systemThemeWatcher = window.matchMedia('(prefers-color-scheme: dark)');
-    systemThemeWatcher.addEventListener('change', (e) => systemThemeChangeHandler(e, setTheme));
-    return () => { systemThemeWatcher.removeEventListener('change', systemThemeChangeHandler); };
-  }, []);
-
   return (
-    <ThemeProvider theme={getTheme(theme)}>
-      <ThemeProvider theme={getTheme(accent)}>
+    <ThemeProvider theme={getThemeObject(theme)}>
+      <ThemeProvider theme={getThemeObject(accent)}>
         <GlobalStyles />
         <AppContainer className='art-app'>
           <TopBar className='art-mobile-top-bar' />
