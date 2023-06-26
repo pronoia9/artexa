@@ -16,6 +16,7 @@
     "@react-three/drei": "^9.77.1",
     "@react-three/fiber": "^8.13.3",
     "@types/three": "^0.152.1",
+    "framer-motion": "^10.12.17",
     "leva": "^0.9.35",
     "maath": "^0.7.0",
     "photoswipe": "^5.3.7",
