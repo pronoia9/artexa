@@ -24,7 +24,7 @@ const SceneContents = () => {
     laptopOpen: state.laptopOpen,
     toggleLaptopOpen: state.toggleLaptopOpen,
   }));
-  const props = useSpring({ open: Number(laptopOpen) });
+  const props = useSpring({ open: Number(laptopOpen), config: { duration: 1500 } });
 
   return (
     <>
