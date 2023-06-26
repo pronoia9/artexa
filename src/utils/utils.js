@@ -23,7 +23,7 @@ export const getThemeFromStorage = (type) => {
 export const saveThemeToStorage = (type, value) => {
   const storedSettings = JSON.parse(localStorage.getItem(storageKey));
   localStorage.setItem(storageKey, JSON.stringify({ ...storedSettings, [type]: value }));
-}
+};
 
 export const isDarkTheme = (theme) => theme === 'dark';
 
@@ -43,7 +43,7 @@ export const rgbaToHex = (rgbaColor) => {
   // Convert RGB to hex
   const hexValue = ((red << 16) | (green << 8) | blue).toString(16).padStart(6, '0');
   return '#' + hexValue;
-}
+};
 
 //------------------------------- PRELOADER ------------------------------//
 // function loading() {
@@ -67,28 +67,6 @@ export const rgbaToHex = (rgbaColor) => {
 //     complete: (anim) => (document.getElementById('art-preloader').style = 'display: none'),
 //   });
 
-//   // laoding bar animation
-//   var bar = new ProgressBar.Line(
-//     '#preloader',
-//     {
-//       strokeWidth: 1.7,
-//       easing: 'easeInOut',
-//       duration: 1400,
-//       delay: 750,
-//       trailWidth: 1.7,
-//       svgStyle: {
-//         width: '100%',
-//         height: '100%',
-//       },
-//       step: (state, bar) => {
-//         bar.setText(Math.round(bar.value() * 100) + ' %');
-//       },
-//     },
-//     []
-//   );
-//   bar.animate(1);
-// }
-
 // ----------------------------- TRANSITION ----------------------------- //
 // function transition() {
 //   // since the transition-fade containers opacity changes after the first time this function is called
@@ -107,37 +85,6 @@ export const rgbaToHex = (rgbaColor) => {
 //     console.log(e);
 //   }
 // }
-
-//-----------------------------  SCROLLBAR  ------------------------------//
-// function scrollbarInit() {
-//   SmoothScrollbar.use(OverscrollPlugin);
-//   // content scroll (mid-section)
-//   try {
-//     SmoothScrollbar.init(document.getElementById('scrollbar'), {
-//       plugins: {
-//         effect: 'bounce',
-//         damping: 0.2,
-//         maxOverscroll: 150,
-//         glowColor: '#222a2s',
-//       },
-//     });
-
-//     // info bar scroll (left panel)
-//     SmoothScrollbar.init(document.getElementById('sidebar-scrollbar'), {
-//       plugins: {
-//         effect: 'bounce',
-//         damping: 0.2,
-//         maxOverscroll: 150,
-//         glowColor: '#222a2s',
-//       },
-//     });
-//   } catch (e) {
-//     console.log(e);
-//   }
-// }
-
-//------------------------------  FANCYBOX  ------------------------------//
-
 
 //----------------------------- PROGRESSBARS -----------------------------//
 export const ProgressbarInstance = ({ type = 'circle', level, index }) => {
@@ -160,6 +107,16 @@ export const ProgressbarInstance = ({ type = 'circle', level, index }) => {
         trailWidth: 7,
         svgStyle: { width: '100%', height: '100%' },
         step: (state, bar) => { bar.setText(level); },
+      });
+    case 'preloader':
+      return new ProgressBar.Line('#preloader', {
+        strokeWidth: 1.7,
+        easing: 'easeInOut',
+        duration: 1400,
+        delay: 750,
+        trailWidth: 1.7,
+        svgStyle: { width: '100%', height: '100%', },
+        step: (state, bar) => { bar.setText(Math.round(bar.value() * 100) + ' %'); },
       });
     default:
       return null;
