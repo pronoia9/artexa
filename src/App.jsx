@@ -18,13 +18,9 @@ export default function App() {
   }));
 
   useEffect(() => {
-    setTimeout(
-      () => {
-        setShow(laptopOpen);
-      },
-      laptopOpen ? 3000 : 0
-    );
-  }, [laptopOpen]);
+    if (laptopOpen) setTimeout(() => { setShow(laptopOpen); }, 3000);
+    else setShow(laptopOpen);
+  }, [laptopOpen, show]);
 
   return (
     <ThemeProvider theme={getThemeObject(theme)}>
@@ -33,7 +29,7 @@ export default function App() {
 
         <AnimatePresence>
           {show && (
-            <AppContainer key={`app-appcontainer-${show}`} className='art-app' {...appContainerMotion}>
+            <AppContainer key={`app-appcontainer-${show}`} className='art-app' {...appContainerMotion()}>
               <TopBar className='art-mobile-top-bar' />
               {/* <Preloader /> */}
               <Wrapper className='art-app-wrapper'>
@@ -45,7 +41,7 @@ export default function App() {
               </Wrapper>
             </AppContainer>
           )}
-          {!show && <Scene show={show} />}
+          {!show && <Scene />}
         </AnimatePresence>
 
         <div className='animated-cursor'>
