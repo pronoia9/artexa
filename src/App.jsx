@@ -28,7 +28,7 @@ export default function App() {
         <GlobalStyles />
 
         <AnimatePresence>
-          {show && (
+          {show !== 'enable temp' && (
             <AppContainer key={`app-appcontainer-${show}`} className='art-app' {...appContainerMotion()}>
               <TopBar className='art-mobile-top-bar' />
               {/* <Preloader /> */}
@@ -41,7 +41,7 @@ export default function App() {
               </Wrapper>
             </AppContainer>
           )}
-          {!show && <Scene />}
+          {!show === 'disable temp' && <Scene />}
         </AnimatePresence>
 
         <div className='animated-cursor'>

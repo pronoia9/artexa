@@ -3,12 +3,12 @@ import { Contact, Counters, Hero, History, PageWrapper, ProjectsSwiper, Technolo
 const HomePage = () => {
   return (
     <>
-      <Hero />
-      <Counters />
-      <ProjectsSwiper />
-      <History />
-      <TechnologiesSwiper />
-      <Contact />
+      <Hero framerDelay={1} />
+      <Counters framerDelay={2} />
+      <ProjectsSwiper framerDelay={3} />
+      <History framerDelay={4} />
+      <TechnologiesSwiper framerDelay={5} />
+      <Contact framerDelay={6} />
     </>
   );
 };

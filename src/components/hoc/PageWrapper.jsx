@@ -1,5 +1,6 @@
-import { styled } from 'styled-components';
 import { Scrollbar } from 'smooth-scrollbar-react';
+import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { Background, Footer } from '..';
 import { dataStore } from '../../store/dataStore';
@@ -11,18 +12,37 @@ export const PageWrapper = (Component, idName) =>
       curtainEnabled: state.curtainEnabled,
       curtainClose: state.curtainClose,
     }));
-
+console.log(props);
     return (
       <Content className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()}>
         <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
         <Background />
         <div id='transition-fade' className='transition-fade'>
           <Scrollbar id='scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
-            <div className='scroll-content'>
+            <motion.div
+              className='scroll-content'
+              initial='hidden'
+              animate='visible'
+              varians={{
+                visible: {
+                  opacity: 1,
+                  transition: {
+                    when: 'beforeChildren',
+                    staggerChildren: 0.3,
+                  },
+                },
+                hidden: {
+                  opacity: 0,
+                  transition: {
+                    when: 'afterChildren',
+                  },
+                },
+              }}
+            >
               {/* <Routes /> */}
               <Component {...props} />
-              <Footer />
-            </div>
+              <Footer framerDelay={props?.framerDelay} />
+            </motion.div>
           </Scrollbar>
         </div>
       </Content>
