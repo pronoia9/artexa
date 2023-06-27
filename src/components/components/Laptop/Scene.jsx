@@ -3,15 +3,23 @@ import { Canvas } from '@react-three/fiber';
 import { Environment, ContactShadows, OrbitControls } from '@react-three/drei';
 import { useSpring } from '@react-spring/core';
 import { a as three } from '@react-spring/three';
+import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { Laptop } from '../..';
 import { dataStore } from '../../../store/dataStore';
 
-export const Scene = () => {
+export const Scene = ({ show }) => {
   return (
-    <Canvas dpr={[1, 2]} camera={{ position: [22.5, 13, -37], fov: 35 }}>
-      <SceneContents />
-    </Canvas>
+    <Container
+      initial={{ opacity: 1 }}
+      // animate={{ opacity: !show ? 1 : 0 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5, delay: 1, ease: 'easeInOut' }}>
+      <Canvas dpr={[1, 2]} camera={{ position: [22.5, 13, -37], fov: 35 }}>
+        <SceneContents />
+      </Canvas>
+    </Container>
   );
 };
 
@@ -36,3 +44,15 @@ export const SceneContents = () => {
     </>
   );
 };
+
+const Container = styled(motion.div)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+`;

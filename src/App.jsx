@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { ThemeProvider, styled } from 'styled-components';
 import AnimatedCursor from 'react-animated-cursor';
+import { ThemeProvider, styled } from 'styled-components';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { PageRoutes, Navbar, Sidebar, Scene } from './components';
 import { dataStore } from './store/dataStore';
@@ -17,9 +18,12 @@ export default function App() {
   }));
 
   useEffect(() => {
-    setTimeout(() => {
-      setShow(laptopOpen);
-    }, laptopOpen ? 3000 : 0);
+    setTimeout(
+      () => {
+        setShow(laptopOpen);
+      },
+      laptopOpen ? 5000 : 0
+    );
   }, [laptopOpen]);
 
   return (
@@ -27,21 +31,28 @@ export default function App() {
       <ThemeProvider theme={getThemeObject(accent)}>
         <GlobalStyles />
 
-        {show ? (
-          <AppContainer className='art-app' $show={show} $laptopOpen={laptopOpen}>
-            <TopBar className='art-mobile-top-bar' />
-            {/* <Preloader /> */}
-            <Wrapper className='art-app-wrapper'>
-              <Container className='art-app-container'>
-                <Sidebar />
-                <PageRoutes />
-                <Navbar />
-              </Container>
-            </Wrapper>
-          </AppContainer>
-        ) : (
-          <Scene />
-        )}
+        <AnimatePresence>
+          {show && (
+            <AppContainer
+              key={`app-appcontainer-${show}`}
+              className='art-app'
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, ease: 'easeInOut' }}
+            >
+              <TopBar className='art-mobile-top-bar' />
+              {/* <Preloader /> */}
+              <Wrapper className='art-app-wrapper'>
+                <Container className='art-app-container'>
+                  <Sidebar />
+                  <PageRoutes />
+                  <Navbar />
+                </Container>
+              </Wrapper>
+            </AppContainer>
+          )}
+          {!show && <Scene show={show} />}
+        </AnimatePresence>
 
         <div className='animated-cursor'>
           <AnimatedCursor {...cursorOptions} />
@@ -51,13 +62,14 @@ export default function App() {
   );
 }
 
-const AppContainer = styled.div`
+const AppContainer = styled(motion.div)`
   position: relative;
   width: 100vw;
   height: 100%;
   padding: ${rem(15)};
   background: var(--c-bg);
   overflow: hidden;
+  z-index: 1;
 
   @media (max-width: ${rem(920)}) {
     padding: 0;
@@ -107,4 +119,16 @@ const Container = styled.div`
   @media (max-width: ${rem(920)}) {
     width: 100%;
   }
+`;
+
+const SceneContainer = styled(motion.div)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  min-width: 100vw;
+  height: 100%;
+  min-height: 100vh;
 `;
