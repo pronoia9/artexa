@@ -10,9 +10,9 @@ import { Laptop } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { sceneMotion } from '../../../utils';
 
-export const Scene = ({ show }) => {
+export const Scene = () => {
   return (
-    <Container {...sceneMotion}>
+    <Container {...sceneMotion()}>
       <Canvas dpr={[1, 2]} camera={{ position: [22.5, 13, -37], fov: 35 }}>
         <SceneContents />
       </Canvas>
