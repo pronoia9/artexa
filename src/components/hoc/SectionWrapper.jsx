@@ -1,19 +1,11 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
+import { sectionWrapperMotion } from '../../utils';
 
 export const SectionWrapper = (Component, idName) =>
   function HOC(props) {
     return (
-      <Container
-        className='container-fluid'
-        id={idName}
-        initial='hidden'
-        animate='visible'
-        variants={{
-          visible: { opacity: 1, y: 0, transition: { delay: props?.framerDelay || 1 * 0.3 } },
-          hidden: { opacity: 0, y: 500 },
-        }}
-      >
+      <Container className='container-fluid' id={idName} {...sectionWrapperMotion(props?.framerDelay)}>
         <Component {...props} />
       </Container>
     );

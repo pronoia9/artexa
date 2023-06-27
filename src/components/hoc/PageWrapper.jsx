@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import { Background, Footer } from '..';
 import { dataStore } from '../../store/dataStore';
-import { rem } from '../../utils';
+import { pageWrapperMotion, rem } from '../../utils';
 
 export const PageWrapper = (Component, idName) =>
   function HOC(props) {
@@ -12,33 +12,14 @@ export const PageWrapper = (Component, idName) =>
       curtainEnabled: state.curtainEnabled,
       curtainClose: state.curtainClose,
     }));
-console.log(props);
+
     return (
       <Content className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()}>
         <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
         <Background />
         <div id='transition-fade' className='transition-fade'>
           <Scrollbar id='scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
-            <motion.div
-              className='scroll-content'
-              initial='hidden'
-              animate='visible'
-              varians={{
-                visible: {
-                  opacity: 1,
-                  transition: {
-                    when: 'beforeChildren',
-                    staggerChildren: 0.3,
-                  },
-                },
-                hidden: {
-                  opacity: 0,
-                  transition: {
-                    when: 'afterChildren',
-                  },
-                },
-              }}
-            >
+            <motion.div className='scroll-content' {...pageWrapperMotion}>
               {/* <Routes /> */}
               <Component {...props} />
               <Footer framerDelay={props?.framerDelay} />
