@@ -8,14 +8,11 @@ import { motion } from 'framer-motion';
 
 import { Laptop } from '../..';
 import { dataStore } from '../../../store/dataStore';
+import { sceneMotion } from '../../../utils';
 
 export const Scene = ({ show }) => {
   return (
-    <Container
-      initial={{ opacity: 1 }}
-      // animate={{ opacity: !show ? 1 : 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.5, delay: 1, ease: 'easeInOut' }}>
+    <Container {...sceneMotion}>
       <Canvas dpr={[1, 2]} camera={{ position: [22.5, 13, -37], fov: 35 }}>
         <SceneContents />
       </Canvas>

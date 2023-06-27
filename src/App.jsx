@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { PageRoutes, Navbar, Sidebar, Scene } from './components';
 import { dataStore } from './store/dataStore';
 import { GlobalStyles } from './styles';
-import { getThemeObject, rem } from './utils';
+import { appContainerMotion, getThemeObject, rem } from './utils';
 
 export default function App() {
   const [show, setShow] = useState(false);
@@ -22,7 +22,7 @@ export default function App() {
       () => {
         setShow(laptopOpen);
       },
-      laptopOpen ? 5000 : 0
+      laptopOpen ? 3000 : 0
     );
   }, [laptopOpen]);
 
@@ -33,13 +33,7 @@ export default function App() {
 
         <AnimatePresence>
           {show && (
-            <AppContainer
-              key={`app-appcontainer-${show}`}
-              className='art-app'
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
-            >
+            <AppContainer key={`app-appcontainer-${show}`} className='art-app' {...appContainerMotion}>
               <TopBar className='art-mobile-top-bar' />
               {/* <Preloader /> */}
               <Wrapper className='art-app-wrapper'>
