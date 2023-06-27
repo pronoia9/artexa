@@ -13,12 +13,15 @@ export const dataStore = create((set) => ({
   setLaptopHover: (laptopHover) =>
     set((state) => {
       const [outer, inner] = document.querySelectorAll('.animated-cursor div');
-      inner.style.width  = (laptopHover && !state.laptopOpen) ? 0 : '40px';
-      inner.style.height = (laptopHover && !state.laptopOpen) ? 0 : '40px';
-      outer.style.width  = (laptopHover && !state.laptopOpen) ? '80px' : '40px';
-      outer.style.height = (laptopHover && !state.laptopOpen) ? '80px' : '40px';
+      inner.style.width = laptopHover && !state.laptopOpen ? 0 : '40px';
+      inner.style.height = laptopHover && !state.laptopOpen ? 0 : '40px';
+      outer.style.width = laptopHover && !state.laptopOpen ? '80px' : '40px';
+      outer.style.height = laptopHover && !state.laptopOpen ? '80px' : '40px';
       return { laptopHover };
     }),
+  cameraPosition: [],
+  cameraPositions: { start: [22.5, 13, -37], end: [0, 0, -1] },
+  setCameraPosition: (cameraPosition) => set({ cameraPosition }),
 
   // THEME
   theme: getThemeFromStorage('theme'),
