@@ -32,7 +32,11 @@ export const SceneContents = () => {
       <three.pointLight position={[10, 10, 10]} intensity={1.5} color={props.open.to([0, 1], ['#f0f0f0', '#d25578'])} />
       <Suspense fallback={null}>
         <group rotation={[0, Math.PI, 0]} onClick={(e) => (e.stopPropagation(), toggleLaptopOpen())}>
-          <Laptop hinge={props.open.to([0, 1], [0, -Math.PI / 2])} scale={30} position={[0, -4, 0]} />
+          <Laptop
+            hinge={props.open.to([0, 1], [0, -Math.PI / 2])}
+            elevate={props.open.to([0, 1], [-4, -6])}
+            scale={50}
+          />
         </group>
         <Environment preset='city' />
       </Suspense>
