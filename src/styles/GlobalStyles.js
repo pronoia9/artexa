@@ -44,7 +44,8 @@ const GlobalStyles = createGlobalStyle`
     --c-gradient-6: ${({ theme }) => theme.gradient7};
     --c-gradient-7: ${({ theme }) => theme.gradient8};
     --c-gradient-8: ${({ theme }) => theme.gradient10};
-    --c-gradient-9: linear-gradient(0.25turn, var(--c-accent-2), var(--c-accent-3), var(--c-accent-4), var(--c-accent-5));
+    --c-gradient-accent-1: linear-gradient(0.25turn, var(--c-accent-2), var(--c-accent-3), var(--c-accent-4), var(--c-accent-5));
+    --c-gradient-accent-2: linear-gradient(45deg, var(--c-accent-1), var(--c-accent-2), var(--c-accent-3), var(--c-accent-4), var(--c-accent-5));
 
     --c-cursor: ${({ theme }) => theme.accent - 1};
     --f-primary: 'Jost';
@@ -75,7 +76,7 @@ const GlobalStyles = createGlobalStyle`
     height: 10vh;
     min-height: 100vh;
     background: var(--c-bg);
-    background-image: linear-gradient(45deg, var(--c-accent-1), var(--c-accent-2), var(--c-accent-3), var(--c-accent-4), var(--c-accent-5));
+    background-image: var(--c-gradient-accent-2);
     background-size: 400%;
     animation: ${bgAnimation} 20s infinite alternate;
   }
