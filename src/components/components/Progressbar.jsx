@@ -1,5 +1,6 @@
-import { styled } from 'styled-components';
 import { useEffect } from 'react';
+import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { ProgressbarInstance, rem } from '../../utils';
 
@@ -13,10 +14,10 @@ export const Progressbar = (props) => {
     return () => { progress?.destroy(); };
   }, []);
 
-  return <Container id={`${type}prog${index}`} className={`art-${type}-progress`} />;
+  return <Container {...props} id={`${type}prog${index}`} className={`art-${type}-progress`} />;
 };
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   path {
     &:first-child {
       stroke: var(--c-bg);

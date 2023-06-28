@@ -13,7 +13,7 @@ export const appMotion = {
     animate: { opacity: 1 },
     transition: { duration: 0.5, delay: 0.1, ease: 'easeInOut' },
   },
-  wrapper: {}
+  wrapper: {},
 };
 /***********************  1. App End  ***********************/
 /*
@@ -54,26 +54,15 @@ export const pageWrapperMotion = {
   initial: 'hidden',
   animate: 'visible',
   variants: {
-    visible: {
-      opacity: 1,
-      transition: {
-        when: 'beforeChildren',
-        staggerChildren: 0.1,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      transition: {
-        when: 'afterChildren',
-      },
-    },
+    hidden: { opacity: 0, transition: { when: 'afterChildren' } },
+    visible: { opacity: 1, transition: { when: 'beforeChildren', staggerChildren: 0.1 } },
   },
 };
 
 export const sectionWrapperMotion = {
   variants: {
-    visible: { opacity: 1, y: 0, transition: { type: 'spring', when: 'beforeChildren', staggerChildren: 0.1 } },
     hidden: { opacity: 0, y: 250, when: 'afterChildren' },
+    visible: { opacity: 1, y: 0, transition: { type: 'spring', when: 'beforeChildren', staggerChildren: 0.1 } },
   },
 };
 /***********************  3. HOC End  ***********************/
@@ -87,7 +76,30 @@ export const sectionWrapperMotion = {
 */
 /**********************  4. Layout Start  **********************/
 // Sidebar
-export const sidebarMotion = {};
+export const sidebarMotion = {
+  languages: {
+    container: {
+      initial: 'hidden',
+      animate: 'visible',
+      variants: {
+        hidden: { opacity: 0, transition: { when: 'beforeChildren' } },
+        visible: { opacity: 1, transition: { when: 'beforeChildren', staggerChildren: 0.5 } },
+      },
+    },
+    language: {
+      variants: {
+        hidden: { opacity: 0, scale: 0 },
+        visible: { opacity: 1, scale: 1, transition: { type: 'spring', when: 'beforeChildren', staggerChildren: 0.25 } },
+      },
+    },
+    items: {
+      variants: {
+        hidden: { opacity: 0, scale: 0 },
+        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
+      },
+    },
+  },
+};
 // Navbar
 export const navbarMotion = {};
 // Footer
@@ -108,14 +120,14 @@ export const heroMotion = {
 export const countersMotion = {
   frame: {
     variants: {
+      hidden: { opacity: 0 },
       visible: { opacity: 1, transition: { type: 'spring', when: 'beforeChildren', staggerChildren: 0.1 } },
-      hidden: { opacity: 0, when: 'afterChildren' },
     },
   },
   contents: {
     variants: {
-      visible: { opacity: 1, scale: 1, },
-      hidden: { opacity: 0, scale: 0, },
+      hidden: { opacity: 0, scale: 0 },
+      visible: { opacity: 1, scale: 1 },
     },
   },
 };
