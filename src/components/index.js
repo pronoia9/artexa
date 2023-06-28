@@ -6,6 +6,8 @@ import { Laptop } from './components/Laptop/Laptop';
 import { Scene, SceneContents } from './components/Laptop/Scene';
 // -- Logos
 import { Logos, Logo } from './components/Logos';
+// -- Preloader
+import { Preloader } from './components/Preloader';
 // -- Progressbar
 import { Progressbar } from './components/Progressbar';
 // -- Swiper
@@ -93,6 +95,7 @@ export {
   Background,
   Laptop, Scene, SceneContents,
   Logos, Logo,
+  Preloader,
   Progressbar,
   SwiperNavigation,
   Title, SectionTitle,

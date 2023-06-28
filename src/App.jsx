@@ -3,7 +3,7 @@ import AnimatedCursor from 'react-animated-cursor';
 import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { PageRoutes, Navbar, Sidebar, Scene } from './components';
+import { PageRoutes, Navbar, Sidebar, Scene, Preloader } from './components';
 import { dataStore } from './store/dataStore';
 import { GlobalStyles } from './styles';
 import { appContainerMotion, getThemeObject, rem } from './utils';
@@ -30,20 +30,18 @@ export default function App() {
       <ThemeProvider theme={getThemeObject(accent)}>
         <GlobalStyles />
 
-        {show !== 'enable temp' && (
-          <AppContainer key={`app-appcontainer-${show}`} className='art-app' {...appContainerMotion()}>
-            <TopBar className='art-mobile-top-bar' />
-            {/* <Preloader /> */}
-            <Wrapper className='art-app-wrapper'>
-              <Container className='art-app-container'>
-                <Sidebar />
-                <PageRoutes />
-                <Navbar />
-              </Container>
-            </Wrapper>
-          </AppContainer>
-        )}
-        {!show === 'disable temp' && <Scene />}
+        <AppContainer key={`app-appcontainer-${show}`} className='art-app' {...appContainerMotion()}>
+          <TopBar className='art-mobile-top-bar' />
+          <Wrapper className='art-app-wrapper'>
+            <Container className='art-app-container'>
+              <Preloader />
+              {/* <Scene /> */}
+              {/* <Sidebar />
+              <PageRoutes />
+              <Navbar /> */}
+            </Container>
+          </Wrapper>
+        </AppContainer>
 
         <div className='animated-cursor'>
           <AnimatedCursor {...cursorOptions} />
