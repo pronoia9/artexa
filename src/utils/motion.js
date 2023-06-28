@@ -34,10 +34,17 @@ export const laptopMotion = (laptopOpen) => ({
     animate: laptopOpen ? 'open' : 'close',
   },
   elevate: {
-    variants: { close: { y: -4 }, open: { y: -5.5 } },
+    variants: {
+      initial: { y: 0 },
+      close: { y: -4, transition: { type: 'spring' } },
+      open: { y: -5.5, transition: { type: 'spring' } },
+    },
   },
   display: {
-    variants: { close: { rotateX: 0 }, open: { rotateX: -Math.PI / 2 } },
+    variants: {
+      close: { rotateX: 0 },
+      open: { rotateX: -Math.PI / 2 },
+    },
     transition: { duration: 1.5 },
   },
 });
