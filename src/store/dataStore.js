@@ -19,7 +19,6 @@ export const dataStore = create((set) => ({
       outer.style.height = laptopHover && !state.laptopOpen ? '80px' : '40px';
       return { laptopHover };
     }),
-  cameraPositions: { start: [22.5, 13, -37], end: [0, 0, -1] },
 
   // THEME
   theme: getThemeFromStorage('theme'),
