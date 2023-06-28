@@ -49,7 +49,7 @@ export const laptopMotion = (laptopOpen) => ({
 export const pageWrapperMotion = {
   initial: 'hidden',
   animate: 'visible',
-  varians: {
+  variants: {
     visible: {
       opacity: 1,
       transition: {
