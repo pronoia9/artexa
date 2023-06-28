@@ -11,9 +11,9 @@ export const SoftSkills = () => {
     <SkillsList className='art-knowledge-list p-15-0' {...sidebarMotion.sidebarSection}>
       {data.map((row, index) => (
         <li key={`sidebar-softskills-${index}`}>
-          <ListItem key={`sidebar-softskills-${index}`} {...sidebarMotion.softSkills.frame}>
-            <i className='fas fa-check' {...sidebarMotion.softSkills.items} />
-            <span {...sidebarMotion.softSkills.items}>{row.map((s) => s.title).join(', ')}</span>
+          <ListItem key={`sidebar-softskills-${index}-items`} {...sidebarMotion.softSkills.frame}>
+            <motion.i className='fas fa-check' {...sidebarMotion.softSkills.check} />
+            <motion.span {...sidebarMotion.softSkills.item}>{row.map((s) => s.title).join(', ')}</motion.span>
           </ListItem>
         </li>
       ))}
@@ -27,8 +27,6 @@ const SkillsList = styled(motion.ul)`
 
 const ListItem = styled(motion.div)`
   margin-bottom: ${rem(5)};
-  color: var(--c-font-1);
-  list-style-type: none;
 
   i {
     margin-right: ${rem(5)};
@@ -41,7 +39,9 @@ const ListItem = styled(motion.div)`
     margin-bottom: 0;
   }
 
-  &:hover i {
-    color: var(--c-accent-3);
+  &:hover {
+    i {
+      color: var(--c-accent-3);
+    }
   }
 `;
