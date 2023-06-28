@@ -2,11 +2,13 @@ export const themes = {
   dark: {
     bg: 'rgba(25, 25, 35, 1)',
     bgWrapper: 'rgba(30, 30, 40, 1)',
+    bgHeroOverlay: 'linear-gradient(90deg, rgba(45, 45, 58, 0.9) 15%, rgba(45, 45, 58, 0.7) 50%, rgba(43, 43, 53, 0.7) 100%)',
     bgBannerBack: 'rgba(30, 30, 40, 0.878)',
     bgMenu1: 'rgba(32, 32, 42, 1)',
     bgMenu2: 'linear-gradient(159deg, rgba(37, 37, 50, 0.98) 0%, rgba(36, 36, 46, 0.98) 100%)',
     bgImageHover: 'linear-gradient(159deg, rgba(45, 45, 58, 0.878) 0%, rgba(43, 43, 53, 0.878) 100%)',
-    bgBackgroundOverlay: 'linear-gradient(180deg, rgba(30, 30, 40, 0.85) 0%, rgba(30, 30, 40, 0.9) 70%, rgba(30, 30, 40, 0.95) 80%, rgba(30, 30, 40, 1) 100%)',
+    bgBackgroundOverlay:
+      'linear-gradient(180deg, rgba(30, 30, 40, 0.85) 0%, rgba(30, 30, 40, 0.9) 70%, rgba(30, 30, 40, 0.95) 80%, rgba(30, 30, 40, 1) 100%)',
     bgSwiperPagination: 'rgba(140, 140, 142, 1)',
     timelineShadow: 'rgba(43, 43, 53, 0.98)',
     font1: 'rgba(140, 140, 142, 1)',
@@ -24,11 +26,14 @@ export const themes = {
   light: {
     bg: 'rgba(192, 192, 202, 1)',
     bgWrapper: 'rgba(240, 240, 246, 1)',
+    // bgHeroOverlay: 'linear-gradient(90deg, rgba(45, 45, 58, 0.4) 15%, rgba(45, 45, 58, 0.3) 50%, rgba(43, 43, 53, 0.3) 100%)',
+    bgHeroOverlay: 'linear-gradient(90deg, rgba(210, 210, 197, 0.4) 15%, rgba(210, 210, 197, 0.3) 50%, rgba(212, 212, 202, 0.3) 100%)',
     bgBannerBack: 'rgba(255, 255, 255, 0.878)',
     bgMenu1: 'rgba(244, 244, 246, 1)',
     bgMenu2: 'linear-gradient(159deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.949) 100%)',
     bgImageHover: 'linear-gradient(159deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.949) 100%)',
-    bgBackgroundOverlay: 'linear-gradient(180deg, rgba(240, 240, 246, 0.55) 0%, rgba(240, 240, 246, 0.70) 70%, rgba(240, 240, 246, 0.85) 80%, rgba(240, 240, 246, 1) 100%)',
+    bgBackgroundOverlay:
+      'linear-gradient(180deg, rgba(240, 240, 246, 0.55) 0%, rgba(240, 240, 246, 0.70) 70%, rgba(240, 240, 246, 0.85) 80%, rgba(240, 240, 246, 1) 100%)',
     bgSwiperPagination: 'rgba(92, 92, 111, 1)',
     timelineShadow: 'rgba(255, 255, 255, 1)',
     font1: 'rgba(92, 92, 111, 1)',
