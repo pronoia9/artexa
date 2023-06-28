@@ -1,7 +1,5 @@
 import { createGlobalStyle, keyframes } from 'styled-components';
 
-const bgAnimation = keyframes` 0% {  background-position: left; } 100% {  background-position: right; }`;
-
 const GlobalStyles = createGlobalStyle`
   @font-face { font-family: 'Caveat'; src: url('src/assets/fonts/Caveat/Caveat-VariableFont_wght.ttf'); }
   @font-face { font-family: 'Caveat Brush'; src: url('src/assets/fonts/Caveat_Brush/CaveatBrush-Regular.ttf'); }
@@ -56,6 +54,14 @@ const GlobalStyles = createGlobalStyle`
     --f-code: 'Operator Mono', monospace;
   }
 
+  html, body, #root {
+    width: 100vw;
+    min-width: 100vw;
+    height: 10vh;
+    min-height: 100vh;
+    background: var(--c-bg);
+  }
+
   *::-webkit-scrollbar {
     display: none;
     -ms-overflow-style: none;
@@ -70,17 +76,6 @@ const GlobalStyles = createGlobalStyle`
     font-weight: 400;
     letter-spacing: .25px;
     font-smooth: subpixel-antialiased
-  }
-
-  #root {
-    width: 100vw;
-    min-width: 100vw;
-    height: 10vh;
-    min-height: 100vh;
-    background: var(--c-bg);
-    background-image: var(--c-gradient-accent-2);
-    background-size: 400%;
-    animation: ${bgAnimation} 20s infinite alternate;
   }
 
   button {
