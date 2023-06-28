@@ -4,14 +4,17 @@ import { dataStore } from '../../../store/dataStore';
 import { rem } from '../../../utils';
 
 export const SoftSkills = () => {
-  const data = dataStore((state) => state.sidebar.softSkills);
+  const data = dataStore((state) => state.sidebar.skills.soft);
+  console.log(data);
   return (
     <SkillsList className='art-knowledge-list p-15-0'>
-      {data.map((skills, index) => (
-        <ListItem key={`sidebar-softskills-${index}`}>
-          <i className='fas fa-check' />
-          {skills}
-        </ListItem>
+      {data.map((row, index) => (
+        <div key={`sidebar-softskills-${index}`}>
+          <ListItem key={`sidebar-softskills-${index}`}>
+            <i className='fas fa-check' />
+            {row.map((s) => s.title).join(', ')}
+          </ListItem>
+        </div>
       ))}
     </SkillsList>
   );

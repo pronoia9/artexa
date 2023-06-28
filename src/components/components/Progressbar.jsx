@@ -10,9 +10,7 @@ export const Progressbar = (props) => {
   useEffect(() => {
     const progress = ProgressbarInstance(props);
     progress?.animate(level / 100);
-    return () => {
-      progress?.destroy();
-    };
+    return () => { progress?.destroy(); };
   }, []);
 
   return <Container id={`${type}prog${index}`} className={`art-${type}-progress`} />;
@@ -31,7 +29,6 @@ const Container = styled.div`
 
   .progressbar-text {
     position: relative;
-    left: 40% !important;
     color: var(--c-font-3) !important;
     font-size: ${rem(13)};
   }

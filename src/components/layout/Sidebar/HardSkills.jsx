@@ -5,7 +5,7 @@ import { dataStore } from "../../../store/dataStore";
 import { rem } from "../../../utils";
 
 export const HardSkills = () => {
-  const data = dataStore((state) => state.sidebar.hardSkills);
+  const data = dataStore((state) => state.sidebar.skills.hard);
   return (
     <div className='art-hard-skills p-30-15'>
       {data.map((skill, index) => (
@@ -18,9 +18,9 @@ export const HardSkills = () => {
 export const HardSkillsItem = (props) => (
   <ItemContainer className='art-hard-skills-item'>
     <div className='art-skill-heading'>
-      <span>{props.skill}</span>
+      <span>{props.title}</span>
     </div>
-    <Progressbar {...props} type='line' />
+    <Progressbar {...props} type='line' hide={true} />
   </ItemContainer>
 );
 
