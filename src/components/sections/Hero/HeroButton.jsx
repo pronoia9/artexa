@@ -1,13 +1,18 @@
+import { styled } from 'styled-components';
+
 import { dataStore } from '../../../store/dataStore';
+import { GradientButton } from '../../../styles/ButtonStyles';
 
 export const HeroButton = ({ handleClick }) => {
   const data = dataStore((state) => state.hero.button);
 
   return (
-    <div className='art-buttons-frame'>
+    <Button className='art-buttons-frame'>
       <a href={data.url} className='art-btn art-btn-md' onClick={handleClick}>
         <span>{data.text}</span>
       </a>
-    </div>
+    </Button>
   );
 };
+
+const Button = styled(GradientButton)``;
