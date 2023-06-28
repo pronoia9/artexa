@@ -2,6 +2,7 @@ import { styled, css } from 'styled-components';
 
 import { dataStore } from '../../../store/dataStore';
 import { rem } from '../../../utils';
+import { Tooltip } from '../../../styles';
 
 export const Profile = () => (
   <ProfileContainer className='art-header'>
@@ -138,7 +139,7 @@ const AvatarStatus = styled.div`
   }
 `;
 
-const AvatarStatusLight = styled.div`
+const AvatarStatusLight = styled(Tooltip)`
   position: absolute;
   bottom: ${rem(3)};
   right: ${rem(5)};
@@ -150,26 +151,17 @@ const AvatarStatusLight = styled.div`
   transition: 0.4s ease-in-out;
 
   &:after {
-    position: relative;
     content: "I'm available for hire";
-    width: ${rem(115)};
-    display: block;
-    padding: ${rem(5)} ${rem(10)};
+    position: relative;
     top: ${rem(-10)};
     left: ${rem(28)};
-    font-size: ${rem(10)};
-    font-weight: 200;
+    width: ${rem(115)};
+    padding: ${rem(5)} ${rem(10)};
+    display: block;
     color: var(--c-font-1);
-    box-shadow: 0 ${rem(1)} ${rem(4)} 0 var(--c-box-shadow);
-    background: var(--c-bg);
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(${rem(20)});
-    transition: 0.4s ease-in-out;
-    text-align: left;
   }
   ${({ $available }) =>
-    $available &&
+    !$available &&
     css`
       &:after {
         content: "Sorry, I'm no longer available, but feel free to contact me.";
@@ -177,33 +169,10 @@ const AvatarStatusLight = styled.div`
     `}
 
   &:before {
-    content: '';
-    position: absolute;
+    top: ${rem(5)};
     height: ${rem(5)};
     width: ${rem(5)};
     right: ${rem(-15)};
-    top: ${rem(5)};
-    opacity: 0;
-    background: var(--c-bg);
-    pointer-events: none;
-    transform: translateX(${rem(20)}) rotate(45deg);
-    transition: 0.4s ease-in-out;
-    z-index: 99;
-    animation: none !important;
-  }
-
-  &:hover {
-    transform: scale(1);
-
-    &:after {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    &:before {
-      opacity: 1;
-      transform: translateX(0) rotate(45deg);
-    }
   }
 `;
 
