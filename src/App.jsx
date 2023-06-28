@@ -24,9 +24,9 @@ export default function App() {
     else setShow(laptopOpen);
   }, [laptopOpen, show]);
 
-  // Disable loading after 5s
+  // Disable loading after 5s + 2.2s
   useEffect(() => {
-    setTimeout(() => { setLoading(false); }, 5000);
+    setTimeout(() => { setLoading(false); }, 7200);
     return () => clearTimeout();
   }, []);
 
@@ -35,11 +35,12 @@ export default function App() {
       <ThemeProvider theme={getThemeObject(accent)}>
         <GlobalStyles />
 
-        <AppContainer key={`app-appcontainer-${loading}-${show}`} className='art-app' {...appContainerMotion()}>
+        <AppContainer key='app-appcontainer' className='art-app' {...appContainerMotion()}>
           <TopBar className='art-mobile-top-bar' />
+          {loading && <Preloader />}
+
           <Wrapper className='art-app-wrapper'>
             <Container className='art-app-container'>
-              <Preloader />
               {!loading && show && (
                 <>
                   <Sidebar />
@@ -109,7 +110,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   position: relative;
   display: flex;
   flex-wrap: nowrap;
