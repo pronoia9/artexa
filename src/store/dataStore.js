@@ -78,6 +78,7 @@ export const dataStore = create((set) => ({
       '.art-lang-skills-item',
       '.art-brand',
       '.hero-heading',
+      '.art-available-lamp',
     ],
   },
 
