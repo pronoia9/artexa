@@ -34,12 +34,12 @@ const Container = styled.div`
     left: 40% !important;
     color: var(--c-font-3) !important;
     font-size: ${rem(13)};
+  }
 
-    &:after {
-      content: '%';
-      position: absolute;
-      right: -1.25ch;
-    }
+  &:hover path:last-child {
+    transform: scale(1.01);
+    stroke: var(--c-accent-2);
+    transition: transform 0.5s;
   }
 
   &.art-circle-progress {
@@ -47,10 +47,7 @@ const Container = styled.div`
     margin: 0 auto ${rem(15)};
 
     &:hover path:last-child {
-      transform: scale(1.01);
       transform-origin: center;
-      transition: transform 0.5s;
-      stroke: var(--c-accent-2);
     }
   }
 
@@ -68,9 +65,18 @@ const Container = styled.div`
     }
 
     &:hover path:last-child {
-      transform: scale(1.01);
       transition: right ease-in-out 1s;
-      stroke: var(--c-accent-2);
+    }
+  }
+
+  &.art-preloader-progress {
+    margin-top: ${rem(5)};
+    width: ${rem(200)};
+
+    .progressbar-text {
+      left: 50% !important;
+      height: ${rem(300)};
+      line-height: ${rem(350)};
     }
   }
 `;
