@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
     --c-bg: ${({ theme }) => theme.bg};
 
     --c-bg-wrapper: ${({ theme }) => theme.bgWrapper};
+    --c-bg-hero-overlay: ${({ theme }) => theme.bgHeroOverlay};
     --c-bg-banner-back: ${({ theme }) => theme.bgBannerBack};
 
     --c-bg-menu-1: ${({ theme }) => theme.bgMenu1};
@@ -30,6 +31,7 @@ const GlobalStyles = createGlobalStyle`
     --c-font-2: ${({ theme }) => theme.font2};
     --c-font-3: ${({ theme }) => theme.font3};
     --c-font-dark: #20202a;
+    --c-font-light: #efefef;
 
     --c-accent-1: ${({ theme }) => theme.accent1};
     --c-accent-2: ${({ theme }) => theme.accent2};
@@ -631,12 +633,12 @@ blockquote {
 
 .art-code {
   font-family: var(--f-code);
-  color: var(--c-accent-1);
-  text-shadow: 1px 1px 5px var(--c-accent-2);
+  color: var(--c-accent-4);
+  text-shadow: 1px 1px 5px var(--c-accent-4);
 
   i {
     font-style: normal;
-    color: var(--c-accent-5);
+    color: var(--c-accent-3);
     text-shadow: none;
   }
 
@@ -646,7 +648,6 @@ blockquote {
 
     &:hover {
       font-style: italic;
-
       /* color: var(--c-accent-4); */
     }
   }
