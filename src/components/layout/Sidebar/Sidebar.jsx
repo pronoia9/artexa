@@ -10,7 +10,7 @@ export const Sidebar = () => {
   const { sidebarOpen, toggleSidebar } = dataStore((state) => ({ sidebarOpen: state.sidebarOpen, toggleSidebar: state.toggleSidebar }));
 
   return (
-    <Container className='art-info-bar' $active={sidebarOpen}>
+    <Container className='art-info-bar' $active={sidebarOpen} {...sidebarMotion.sidebar}>
       <Wrapper className='art-info-bar-frame'>
         <MobileHeader className='art-info-bar-header' $active={sidebarOpen}>
           <div className='art-info-bar-btn' onClick={() => toggleSidebar()}>
@@ -21,12 +21,12 @@ export const Sidebar = () => {
         <Profile />
 
         <Scrollbar id='sidebar-scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
-          <ScrollContent className='scroll-content' {...sidebarMotion.sidebar}>
-            <Info /> <motion.div className='art-ls-divider' {...sidebarMotion.sidebarSection} />
-            <Languages /> <motion.div className='art-ls-divider' {...sidebarMotion.sidebarSection} />
-            <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.sidebarSection} />
-            <SoftSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.sidebarSection} />
-            <Strengths /> <motion.div className='art-ls-divider' {...sidebarMotion.sidebarSection} />
+          <ScrollContent className='scroll-content'>
+            <Info /> <motion.div className='art-ls-divider' {...sidebarMotion.divider} />
+            <Languages /> <motion.div className='art-ls-divider' {...sidebarMotion.divider} />
+            <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider} />
+            <SoftSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider} />
+            <Strengths /> <motion.div className='art-ls-divider' {...sidebarMotion.divider} />
             <Resume />
           </ScrollContent>
         </Scrollbar>
@@ -37,7 +37,7 @@ export const Sidebar = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   position: relative;
   width: ${rem(290)};
   min-width: ${rem(290)};

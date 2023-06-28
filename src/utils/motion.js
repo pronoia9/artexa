@@ -82,13 +82,35 @@ export const sidebarMotion = {
     animate: 'visible',
     variants: {
       hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { staggerChildren: 1 } },
+      visible: { opacity: 1, transition: { staggerChildren: 0.75 } },
     },
   },
   sidebarSection: {
     variants: {
       hidden: { opacity: 0 },
       visible: { opacity: 1, transition: { staggerChildren: 0.25 } },
+    },
+  },
+  // Divider
+  divider: {
+    variants: {
+      hidden: { opacity: 0, x: 100 },
+      visible: { opacity: 1, x: 0, transition: { type: 'tween', ease: 'linear', duration: 0.75 } },
+    },
+  },
+  // TODO: Info
+  info: {
+    frame: {
+      variants: {
+        hidden: { opacity: 0, y: -100 },
+        visible: { opacity: 1, y: 0, transition: { type: 'spring', staggerChildren: 0.25 } },
+      },
+    },
+    items: {
+      variants: {
+        hidden: { opacity: 0, scale: 0 },
+        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
+      },
     },
   },
   // Languages
@@ -108,12 +130,6 @@ export const sidebarMotion = {
   },
   // Hard Skills
   hardSkills: {
-    container: {
-      variants: {
-        hidden: { opacity: 0, transition: { when: 'beforeChildren' } },
-        visible: { opacity: 1, transition: { when: 'beforeChildren', staggerChildren: 0.25 } },
-      },
-    },
     frame: {
       variants: {
         hidden: { opacity: 0, y: 200 },
@@ -127,12 +143,47 @@ export const sidebarMotion = {
       },
     },
   },
+  // TODO: Soft Skills
+  softSkills: {
+    frame: {
+      variants: {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { type: 'spring', staggerChildren: 0.25 } },
+      },
+    },
+    check: {
+      variants: {
+        hidden: { opacity: 0, scale: 0 },
+        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
+      },
+    },
+    item: {
+      variants: {
+        hidden: { opacity: 0, x: 100 },
+        visible: { opacity: 1, x: 0, transition: { type: 'spring' } },
+      },
+    },
+  },
+  // TODO: Strengths
+  strengths: {
+    variants: {
+      hidden: { opacity: 0, scale: 0 },
+      visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
+    },
+  },
+  // TODO: Resume
+  resume: {
+    variants: {
+      hidden: { opacity: 0, scale: 0 },
+      visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
+    },
+  },
 };
 // Navbar
 export const navbarMotion = {};
 // Footer
 export const footerMotion = {};
-/***********************  4. Layouy End  ***********************/
+/***********************  4. Layout End  ***********************/
 /*
 
 */
