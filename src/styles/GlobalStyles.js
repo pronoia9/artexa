@@ -507,51 +507,6 @@ blockquote {
 }
 
 /* ------------------------------ app marcup ------------------------------ */
-/* ----- preloader ----- */
-
-.art-preloader {
-  margin: 15px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: calc(100vw - 30px);
-  height: calc(100vh - 30px);
-  background: var(--c-font-4);
-  z-index: 999999;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  .art-preloader-content {
-    margin-bottom: 15px;
-    text-align: center;
-
-    .art-preloader-load {
-      margin-top: 5px;
-      width: 200px;
-
-      .progressbar-text {
-        position: relative;
-        font-size: 14px;
-        font-weight: 400 !important;
-        color: var(--c-font-1) !important;
-        height: 300px;
-        line-height: 350px;
-      }
-    }
-  }
-}
-
-.art-preloader-load path {
-  &:first-child {
-    stroke: rgb(25, 25, 35);
-  }
-
-  &:last-child {
-    stroke: var(--c-accent-1);
-  }
-}
-
 /* ----- scroll frame ----- */
 
 .art-scroll-frame {
@@ -568,14 +523,6 @@ blockquote {
 
 /* ------------------------------ app marcup (after 920px) ------------------------------ */
 @media (max-width: 920px) {
-  /* ----- preloader ----- */
-
-  .art-preloader {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-  }
-
   /* ----- scroll frame ----- */
 
   .art-scroll-frame {
