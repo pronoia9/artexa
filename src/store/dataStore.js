@@ -605,7 +605,7 @@ export const dataStore = create((set) => ({
         subtitle: '3D Modelling',
         description: `Immerse yourself in the tranquility of Serene Vistas, a captivating landscape that brings nature to life. This isometric diorama showcases lush trees, majestic rocks, and a serene lake, all rendered in delightful low poly style. Lose yourself in the beauty and serenity of this picturesque creation.`,
         link: '/works',
-        image: road,
+        image: 'road',
         year: 2023,
         date: new Date('May 3, 2023'),
         categories: ['3D', 'Blender'],
