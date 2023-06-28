@@ -46,6 +46,7 @@ const ItemContainer = styled(Tooltip)`
             top: -50%;
             right: 5%;
             max-width: 90%;
+            transform: scale(0.75);
             transition-delay: 1s;
           }
         `
