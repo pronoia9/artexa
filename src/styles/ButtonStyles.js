@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const Button = styled.button`
+export const Button = styled(motion.button)`
   display: inline-flex;
   justify-content: center;
   align-content: center;
@@ -38,6 +39,11 @@ export const ButtonSmall = styled(Button)`
 `;
 
 export const GradientButton = styled(ButtonMedium)`
-  background: none;
+  background: var(--c-accent-1);
   background-image: var(--c-gradient-accent-2);
+  background-size: 400%;
+
+  * {
+    color: var(--c-font-dark);
+  }
 `;
