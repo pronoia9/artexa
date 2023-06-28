@@ -629,30 +629,6 @@ blockquote {
   }
 }
 
-/* ----- typing code ----- */
-
-.art-code {
-  font-family: var(--f-code);
-  color: var(--c-accent-4);
-  text-shadow: 1px 1px 5px var(--c-accent-4);
-
-  i {
-    font-style: normal;
-    color: var(--c-accent-3);
-    text-shadow: none;
-  }
-
-  span {
-    color: var(--c-font-2);
-    text-shadow: none;
-
-    &:hover {
-      font-style: italic;
-      /* color: var(--c-accent-4); */
-    }
-  }
-}
-
 /* ----- counters ----- */
 
 .art-counter-frame {
@@ -1423,11 +1399,6 @@ blockquote {
         }
       }
     }
-  }
-
-  .art-code {
-    min-height: 70px;
-    margin-bottom: 0;
   }
 
   .art-timeline .art-timeline-content {
