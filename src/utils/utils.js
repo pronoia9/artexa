@@ -65,28 +65,6 @@ export const rgbaToHex = (rgbaColor) => {
   return '#' + hexValue;
 };
 
-//------------------------------- PRELOADER ------------------------------//
-// function loading() {
-//   // fade in animation
-//   anime({
-//     targets: '.art-preloader .art-preloader-content',
-//     opacity: [0, 1],
-//     delay: 200,
-//     duration: 600,
-//     easing: 'linear',
-//     complete: (anim) => (document.getElementById('art-preloader').style = 'display: flex'),
-//   });
-
-//   // fade out animation
-//   anime({
-//     targets: '.art-preloader',
-//     opacity: [1, 0],
-//     delay: 2200,
-//     duration: 400,
-//     easing: 'linear',
-//     complete: (anim) => (document.getElementById('art-preloader').style = 'display: none'),
-//   });
-
 // ----------------------------- TRANSITION ----------------------------- //
 // function transition() {
 //   // since the transition-fade containers opacity changes after the first time this function is called
@@ -143,17 +121,6 @@ export const ProgressbarInstance = ({ type = 'circle', level, index }) => {
       return null;
   }
 };
-
-//------------------------------- COUNTERS -------------------------------//
-// function counterAnimation() {
-//   anime({
-//     targets: '.art-counter-frame',
-//     opacity: [0, 1],
-//     duration: 800,
-//     delay: 2300,
-//     easing: 'linear',
-//   });
-// }
 
 //--------------------------------- FORM ---------------------------------//
 // submit button and form button animation
