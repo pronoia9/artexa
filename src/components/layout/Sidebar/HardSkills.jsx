@@ -10,7 +10,7 @@ export const HardSkills = () => {
   const data = dataStore((state) => state.sidebar.skills.hard);
 
   return (
-    <SkillsContainer className='art-hard-skills p-30-15' {...sidebarMotion.sidebarSection}>
+    <SkillsContainer className='art-hard-skills p-30-30' {...sidebarMotion.sidebarSection}>
       {data.map((skill, index) => (
         <HardSkillsItem key={`sidebar-hardskill-item-${index}`} {...skill} index={index} />
       ))}
@@ -20,10 +20,10 @@ export const HardSkills = () => {
 
 export const HardSkillsItem = (props) => (
   <ItemContainer className='art-hard-skills-item' $description={props.description} {...sidebarMotion.hardSkills.frame}>
-    <motion.div className='art-skill-heading'>
+    <motion.div className='art-skill-heading' {...sidebarMotion.hardSkills.items}>
       <span>{props.title}</span>
     </motion.div>
-    <Progressbar {...props} type='line' hide={true}  />
+    <Progressbar {...props} type='line' hide={true} {...sidebarMotion.hardSkills.items} />
   </ItemContainer>
 );
 

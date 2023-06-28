@@ -82,7 +82,7 @@ export const sidebarMotion = {
     animate: 'visible',
     variants: {
       hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { staggerChildren: 0.75 } },
+      visible: { opacity: 1, transition: { staggerChildren: 0.5 } },
     },
   },
   sidebarSection: {
@@ -95,18 +95,24 @@ export const sidebarMotion = {
   divider: {
     variants: {
       hidden: { opacity: 0, x: 100 },
-      visible: { opacity: 1, x: 0, transition: { type: 'tween', ease: 'linear', duration: 0.75 } },
+      visible: { opacity: 1, x: 0, transition: { type: 'tween', ease: 'linear', duration: 0.5 } },
     },
   },
-  // TODO: Info
+  // Info
   info: {
     frame: {
       variants: {
-        hidden: { opacity: 0, y: -100 },
-        visible: { opacity: 1, y: 0, transition: { type: 'spring', staggerChildren: 0.25 } },
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { type: 'spring', staggerChildren: 0.5 } },
       },
     },
-    items: {
+    title: {
+      variants: {
+        hidden: { opacity: 0, scale: 0, x: 50 },
+        visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.5, ease: 'linear' } },
+      },
+    },
+    subtitle: {
       variants: {
         hidden: { opacity: 0, scale: 0 },
         visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
@@ -132,18 +138,13 @@ export const sidebarMotion = {
   hardSkills: {
     frame: {
       variants: {
-        hidden: { opacity: 0, y: 200 },
+        hidden: { opacity: 0, y: 100 },
         visible: { opacity: 1, y: 0, transition: { type: 'spring', staggerChildren: 0.25 } },
       },
     },
-    items: {
-      variants: {
-        hidden: { opacity: 0, scale: 0 },
-        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
-      },
-    },
+    items: {},
   },
-  // TODO: Soft Skills
+  // Soft Skills
   softSkills: {
     frame: {
       variants: {
@@ -164,18 +165,34 @@ export const sidebarMotion = {
       },
     },
   },
-  // TODO: Strengths
+  // Strengths
   strengths: {
-    variants: {
-      hidden: { opacity: 0, scale: 0 },
-      visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
+    frame: {
+      variants: {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+      },
+    },
+    item: {
+      variants: {
+        hidden: { opacity: 0, scale: 0 },
+        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
+      },
     },
   },
-  // TODO: Resume
+  // Resume
   resume: {
-    variants: {
-      hidden: { opacity: 0, scale: 0 },
-      visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
+    text: {
+      variants: {
+        hidden: { opacity: 0, x: 100 },
+        visible: { opacity: 1, x: 0, transition: { type: 'tween', duration: 0.5, ease: 'linear' } },
+      },
+    },
+    icon: {
+      variants: {
+        hidden: { opacity: 0, scale: 0 },
+        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
+      },
     },
   },
 };

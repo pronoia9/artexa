@@ -21,8 +21,8 @@ export const Info = () => {
 export const InfoItem = ({ title, subtitle }) => {
   return (
     <ListItem {...sidebarMotion.info.frame}>
-      <span {...sidebarMotion.info.items}>{title}</span>
-      <span {...sidebarMotion.info.items}>{subtitle}</span>
+      <motion.span {...sidebarMotion.info.title}>{title}</motion.span>
+      <motion.span {...sidebarMotion.info.subtitle}>{subtitle}</motion.span>
     </ListItem>
   );
 };
