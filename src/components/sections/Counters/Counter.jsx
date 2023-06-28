@@ -2,19 +2,19 @@ import CountUp from 'react-countup';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { counterMotion, rem } from '../../../utils';
+import { countersMotion, rem } from '../../../utils';
 
 export const Counter = ({ index, number, text, accent, length }) => {
   return (
     <div className={`col-md-${12 / length} col-sm-12`}>
-      <Frame className='art-counter-frame' {...counterMotion(index)}>
+      <Frame className='art-counter-frame' {...countersMotion.frame}>
         <Box className='art-counter-box'>
-          <CounterContainer id={`art-counter-${index}`} className='art-counter'>
+          <CounterContainer id={`art-counter-${index}`} className='art-counter' {...countersMotion.contents}>
             <CountUp end={number} duration={5} delay={2.5} />
             <CounterAccent class='art-counter-plus'>{accent}</CounterAccent>
           </CounterContainer>
         </Box>
-        <CounterTitle>{text}</CounterTitle>
+        <CounterTitle {...countersMotion.contents}>{text}</CounterTitle>
       </Frame>
     </div>
   );
@@ -48,7 +48,7 @@ const Box = styled.div`
   }
 `;
 
-const CounterContainer = styled.div`
+const CounterContainer = styled(motion.div)`
   position: relative;
   color: var(--c-accent-1);
   font-weight: 600;
@@ -61,6 +61,6 @@ const CounterAccent = styled.span`
   margin-left: ${rem(3)};
 `;
 
-const CounterTitle = styled.span`
+const CounterTitle = styled(motion.span)`
   color: var(--c-font-2);
 `;

@@ -73,12 +73,12 @@ export const pageWrapperMotion = {
   },
 };
 
-export const sectionWrapperMotion = (framerDelay = 1) => ({
+export const sectionWrapperMotion = {
   variants: {
     visible: { opacity: 1, y: 0, transition: { type: 'spring', when: 'beforeChildren', staggerChildren: 0.1 } },
     hidden: { opacity: 0, y: 250, when: 'afterChildren' },
   },
-});
+};
 /***********************  3. HOC End  ***********************/
 /*
 
@@ -97,10 +97,18 @@ export const heroMotion = {
 };
 
 // COUNTERS
-export const counterMotion = (index) => ({
-  variants: {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { duration: 0.5,  ease: 'linear' } },
+export const countersMotion = {
+  frame: {
+    variants: {
+      visible: { opacity: 1, transition: { type: 'spring', when: 'beforeChildren', staggerChildren: 0.1 } },
+      hidden: { opacity: 0, when: 'afterChildren' },
+    },
   },
-});
+  contents: {
+    variants: {
+      visible: { opacity: 1, scale: 1, },
+      hidden: { opacity: 0, scale: 0, },
+    },
+  },
+};
 /***********************  5. Sections End  ***********************/
