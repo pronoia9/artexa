@@ -2,13 +2,11 @@ import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 
 import { Progressbar } from '..';
-import { dataStore } from '../../store/dataStore';
 import { preloaderMotion } from '../../utils/motion';
 
 export const Preloader = () => {
-  const loading = dataStore((state) => state.loading);
   return (
-    <Container id='art-preloader' className='art-preloader' {...preloaderMotion(loading)}>
+    <Container id='art-preloader' className='art-preloader' {...preloaderMotion}>
       <Wrapper className='art-preloader-content'>
         <h1>Welcome</h1>
         <Progressbar type='preloader' level={100} />
