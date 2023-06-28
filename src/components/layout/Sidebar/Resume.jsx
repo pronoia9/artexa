@@ -1,12 +1,13 @@
 import { styled } from "styled-components";
+import { motion } from "framer-motion";
 
 import { dataStore } from "../../../store/dataStore";
-import { rem } from "../../../utils";
+import { rem, sidebarMotion } from "../../../utils";
 
 export const Resume = () => {
   const data = dataStore((state) => state.sidebar.resume);
   return (
-    <Container className='art-links-frame p-15-15'>
+    <Container className='art-links-frame p-15-15' {...sidebarMotion.sidebarSection}>
       <a href={data.url} className='art-link art-color-link' download>
         {data.title} <i className='fas fa-download' />
       </a>
@@ -14,7 +15,7 @@ export const Resume = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
   justify-content: space-between;
   flex-direction: column;

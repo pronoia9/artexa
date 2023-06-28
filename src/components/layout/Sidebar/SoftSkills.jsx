@@ -1,13 +1,14 @@
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { dataStore } from '../../../store/dataStore';
-import { rem } from '../../../utils';
+import { rem, sidebarMotion } from '../../../utils';
 
 export const SoftSkills = () => {
   const data = dataStore((state) => state.sidebar.skills.soft);
   
   return (
-    <SkillsList className='art-knowledge-list p-15-0'>
+    <SkillsList className='art-knowledge-list p-15-0' {...sidebarMotion.sidebarSection}>
       {data.map((row, index) => (
         <div key={`sidebar-softskills-${index}`}>
           <ListItem key={`sidebar-softskills-${index}`}>
@@ -20,7 +21,7 @@ export const SoftSkills = () => {
   );
 };
 
-const SkillsList = styled.ul`
+const SkillsList = styled(motion.ul)`
   padding-left: 0;
 `;
 

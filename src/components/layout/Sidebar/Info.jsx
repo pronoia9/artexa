@@ -1,17 +1,20 @@
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
+
 import { dataStore } from '../../../store/dataStore';
+import { sidebarMotion } from '../../../utils';
 
 export const Info = () => {
   const data = dataStore((state) => state.sidebar.about);
 
   return (
-    <div className='art-table p-15-15'>
+    <motion.div className='art-table p-15-15' {...sidebarMotion.sidebarSection}>
       <ul>
         {data.map((item) => (
           <InfoItem key={item.id} {...item} />
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 };
 
@@ -24,7 +27,7 @@ export const InfoItem = ({ title, subtitle }) => {
   );
 };
 
-const ListItem = styled.li`
+const ListItem = styled(motion.li)`
   span:first-child {
     color: var(--c-font-2);
   }

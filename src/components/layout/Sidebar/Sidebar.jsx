@@ -1,9 +1,10 @@
-import { styled } from 'styled-components';
 import { Scrollbar } from 'smooth-scrollbar-react';
+import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { Profile, Info, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials } from '../..';
 import { dataStore } from '../../../store/dataStore';
-import { rem } from '../../../utils';
+import { rem, sidebarMotion } from '../../../utils';
 
 export const Sidebar = () => {
   const { sidebarOpen, toggleSidebar } = dataStore((state) => ({ sidebarOpen: state.sidebarOpen, toggleSidebar: state.toggleSidebar }));
@@ -20,12 +21,12 @@ export const Sidebar = () => {
         <Profile />
 
         <Scrollbar id='sidebar-scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
-          <ScrollContent className='scroll-content'>
-            <Info /> <div className='art-ls-divider' />
-            <Languages /> <div className='art-ls-divider' />
-            <HardSkills /> <div className='art-ls-divider' />
-            <SoftSkills /> <div className='art-ls-divider' />
-            <Strengths /> <div className='art-ls-divider' />
+          <ScrollContent className='scroll-content' {...sidebarMotion.sidebar}>
+            <Info /> <div className='art-ls-divider' {...sidebarMotion.sidebarSection} />
+            <Languages /> <div className='art-ls-divider' {...sidebarMotion.sidebarSection} />
+            <HardSkills /> <div className='art-ls-divider' {...sidebarMotion.sidebarSection} />
+            <SoftSkills /> <div className='art-ls-divider' {...sidebarMotion.sidebarSection} />
+            <Strengths /> <div className='art-ls-divider' {...sidebarMotion.sidebarSection} />
             <Resume />
           </ScrollContent>
         </Scrollbar>
@@ -98,6 +99,6 @@ const MobileHeader = styled.div`
   }
 `;
 
-const ScrollContent = styled.div`
+const ScrollContent = styled(motion.div)`
   padding: ${rem(240)} 0 ${rem(50)};
 `;

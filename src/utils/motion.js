@@ -77,19 +77,47 @@ export const sectionWrapperMotion = {
 /**********************  4. Layout Start  **********************/
 // Sidebar
 export const sidebarMotion = {
-  languages: {
-    container: {
-      initial: 'hidden',
-      animate: 'visible',
-      variants: {
-        hidden: { opacity: 0, transition: { when: 'beforeChildren' } },
-        visible: { opacity: 1, transition: { when: 'beforeChildren', staggerChildren: 0.5 } },
-      },
+  sidebar: {
+    initial: 'hidden',
+    animate: 'visible',
+    variants: {
+      hidden: { opacity: 0 },
+      visible: { opacity: 1, transition: { staggerChildren: 1 } },
     },
-    language: {
+  },
+  sidebarSection: {
+    variants: {
+      hidden: { opacity: 0 },
+      visible: { opacity: 1, transition: { staggerChildren: 0.25 } },
+    },
+  },
+  // Languages
+  languages: {
+    frame: {
       variants: {
         hidden: { opacity: 0, scale: 0 },
-        visible: { opacity: 1, scale: 1, transition: { type: 'spring', when: 'beforeChildren', staggerChildren: 0.25 } },
+        visible: { opacity: 1, scale: 1, transition: { type: 'spring', staggerChildren: 0.25 } },
+      },
+    },
+    items: {
+      variants: {
+        hidden: { opacity: 0, scale: 0 },
+        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
+      },
+    },
+  },
+  // Hard Skills
+  hardSkills: {
+    container: {
+      variants: {
+        hidden: { opacity: 0, transition: { when: 'beforeChildren' } },
+        visible: { opacity: 1, transition: { when: 'beforeChildren', staggerChildren: 0.25 } },
+      },
+    },
+    frame: {
+      variants: {
+        hidden: { opacity: 0, y: 200 },
+        visible: { opacity: 1, y: 0, transition: { type: 'spring', staggerChildren: 0.25 } },
       },
     },
     items: {

@@ -1,20 +1,21 @@
 import { styled } from "styled-components";
+import { motion } from "framer-motion";
 
 import { dataStore } from "../../../store/dataStore";
-import { rem } from "../../../utils";
+import { rem, sidebarMotion } from "../../../utils";
 
 export const Strengths = () => {
   const data = dataStore((state) => state.sidebar.strengths);
   return (
-    <div className='art-strengths p-15-15'>
+    <motion.div className='art-strengths p-15-15' {...sidebarMotion.sidebarSection}>
       {data.map((strength, index) => (
         <StrengthItem key={`sidebar-strenghts-${index}`}>{strength}</StrengthItem>
       ))}
-    </div>
+    </motion.div>
   );
 };
 
-const StrengthItem = styled.div`
+const StrengthItem = styled(motion.div)`
   margin: auto ${rem(3)} ${rem(5)} auto;
   padding: ${rem(3)} ${rem(10)};
   display: inline-block;
