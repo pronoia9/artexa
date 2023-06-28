@@ -16,7 +16,7 @@ export const appContainerMotion = () => ({
 export const preloaderMotion = (loading) => ({
   initial: { opacity: 0 },
   animate: { opacity: 1, transition: { delay: 0.2, duration: 0.6 } },
-  exit: { opacity: 0, transition: { delay: 2.2, duration: 10 } },
+  exit: { opacity: 0, transition: { delay: 2.2, duration: 0.4 } },
   // animate: loading ? 'fadeIn' : 'fadeOut',
   // variants: {
   //   loading: { opacity: 1, transition: { delay: 0.2, duration: 0.6 } },
