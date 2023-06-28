@@ -156,9 +156,6 @@ const AvatarStatusLight = styled(Tooltip)`
     top: ${rem(-10)};
     left: ${rem(28)};
     width: ${rem(115)};
-    padding: ${rem(5)} ${rem(10)};
-    display: block;
-    color: var(--c-font-1);
   }
   ${({ $available }) =>
     !$available &&
