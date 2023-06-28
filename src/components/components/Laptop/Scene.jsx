@@ -10,33 +10,29 @@ import { dataStore } from '../../../store/dataStore';
 import { laptopMotion, sceneMotion } from '../../../utils';
 
 export const Scene = () => {
-  return (
-    <Container {...sceneMotion()}>
-      <Canvas dpr={[1, 2]} camera={{ position: [22.5, 13, -37], fov: 35 }}>
-        <SceneContents />
-      </Canvas>
-    </Container>
-  );
-};
-
-export const SceneContents = () => {
   const { laptopOpen, toggleLaptopOpen } = dataStore((state) => ({
     laptopOpen: state.laptopOpen,
     toggleLaptopOpen: state.toggleLaptopOpen,
   }));
 
   return (
-    <>
-      <Suspense fallback={null}>
-        <motion.group {...laptopMotion(laptopOpen).container} rotation={[0, Math.PI, 0]}>
-          <Laptop scale={50} onClick={(e) => (e.stopPropagation(), toggleLaptopOpen())} />
-          <motion.pointLight position={[10, 10, 10]} intensity={1.5} color='#f0f0f0' />
-          <ContactShadows opacity={0.4} scale={50} blur={1.75} far={4.5} />
-          <Environment preset='city' />
-        </motion.group>
-      </Suspense>
-      <OrbitControls />
-    </>
+    <Container {...sceneMotion()}>
+      <Canvas dpr={[1, 2]} camera={{ position: [22.5, 13, -37], fov: 35 }}>
+        {/* Controls */}
+        <OrbitControls />
+        {/* Lights */}
+        <motion.pointLight position={[10, 10, 10]} intensity={1.5} color='#f0f0f0' />
+        {/* Shadows */}
+        <ContactShadows position={[0, -4.5, 0]} opacity={0.4} scale={50} blur={1.75} far={4.5} />
+        {/* Model */}
+        <Suspense fallback={null}>
+          <motion.group {...laptopMotion(laptopOpen).container} rotation={[0, Math.PI, 0]}>
+            <Laptop scale={50} onClick={(e) => (e.stopPropagation(), toggleLaptopOpen())} />
+            <Environment preset='city' />
+          </motion.group>
+        </Suspense>
+      </Canvas>
+    </Container>
   );
 };
 

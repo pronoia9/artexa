@@ -3,7 +3,7 @@
 import { Background } from './components/Background';
 // -- Laptop
 import { Laptop } from './components/Laptop/Laptop';
-import { Scene, SceneContents } from './components/Laptop/Scene';
+import { Scene } from './components/Laptop/Scene';
 // -- Logos
 import { Logos, Logo } from './components/Logos';
 // -- Preloader
@@ -93,7 +93,7 @@ import TechnologiesSwiper from './sections/Technologies/TechnologiesSwiper';
 export {
   // ---- COMPONENTS ----
   Background,
-  Laptop, Scene, SceneContents,
+  Laptop, Scene,
   Logos, Logo,
   Preloader,
   Progressbar,
