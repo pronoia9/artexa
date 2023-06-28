@@ -571,34 +571,6 @@ blockquote {
   }
 }
 
-/* ----- counters ----- */
-
-.art-counter-frame {
-  display: flex;
-  align-items: center;
-  margin-bottom: 30px;
-  padding-left: 12.5%;
-  opacity: 0;
-  position: relative;
-
-  .art-counter-box {
-    min-width: 60px;
-
-    .art-counter {
-      color: var(--c-accent-1);
-      font-weight: 600;
-      font-size: 22px;
-    }
-
-    .art-counter-plus {
-      margin-left: 3px;
-      color: var(--c-accent-1);
-      font-weight: 600;
-      font-size: 22px;
-    }
-  }
-}
-
 /* ----- timeline ----- */
 
 .art-timeline {
@@ -1347,10 +1319,6 @@ blockquote {
     margin-right: 30px;
   }
 
-  .art-counter-frame {
-    padding-left: 5%;
-  }
-
   .fancybox-container {
     margin: 0;
     width: 100vw;
@@ -1398,10 +1366,6 @@ blockquote {
   .art-m-hidden {
     display: none;
   }
-
-  .art-counter-frame {
-    padding-left: 15%;
-  }
 }
 
 /* ------------------------------ content (after 500px) ------------------------------ */
@@ -1418,14 +1382,6 @@ blockquote {
   .art-grid {
     &.art-grid-2-col .art-grid-item, &.art-grid-3-col .art-grid-item {
       width: 100%;
-    }
-  }
-
-  .art-counter-frame {
-    padding-left: 10%;
-
-    .art-counter-box {
-      min-width: 30px;
     }
   }
 }
