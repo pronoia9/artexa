@@ -85,6 +85,17 @@ export const sectionWrapperMotion = {
 /*
 
 */
+/**********************  4. Layout Start  **********************/
+// Sidebar
+export const sidebarMotion = {};
+// Navbar
+export const navbarMotion = {};
+// Footer
+export const footerMotion = {};
+/***********************  4. Layouy End  ***********************/
+/*
+
+*/
 /**********************  5. Sections Start  **********************/
 // HERO
 export const heroMotion = {
