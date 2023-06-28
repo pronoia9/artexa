@@ -10,7 +10,6 @@ export default defineConfig({
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
   },
   optimizeDeps: {
-    exclude: ['react-photoswipe-gallery'],
-    include: ['prop-types', 'react-dom'],
+    exclude: ['react-countup.js'],
   },
 });
