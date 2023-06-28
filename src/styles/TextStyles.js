@@ -22,9 +22,11 @@ export const Tooltip = styled.div`
   position: relative;
 
   &:after {
-    content: 'Tooltip Content';
+    content: "A weaver of the web's foundational tapestry, crafting structured elegance that dances across the digital realm, guiding users on a visual journey of enchantment.";
     position: absolute;
+    padding: ${rem(5)} ${rem(10)};
     display: block;
+    color: var(--c-font-1);
     font-size: ${rem(10)};
     font-weight: 200;
     text-align: left;
