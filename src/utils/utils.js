@@ -85,7 +85,7 @@ export const rgbaToHex = (rgbaColor) => {
 // }
 
 //----------------------------- PROGRESSBARS -----------------------------//
-export const ProgressbarInstance = ({ type = 'circle', level, index }) => {
+export const ProgressbarInstance = ({ type = 'circle', level, index, hide }) => {
   const id = `#${type}prog${index}`;
   switch (type) {
     case 'circle':
@@ -95,7 +95,7 @@ export const ProgressbarInstance = ({ type = 'circle', level, index }) => {
         duration: 1400,
         delay: 2400 + Number(index) * 100,
         trailWidth: 7,
-        step: (state, bar) => { bar.setText(level + '%'); },
+        step: (state, bar) => { bar.setText(`${level}%`); },
       });
     case 'line':
       return new ProgressBar.Line(id, {
@@ -105,7 +105,7 @@ export const ProgressbarInstance = ({ type = 'circle', level, index }) => {
         delay: 2700 + Number(index) * 100,
         trailWidth: 7,
         svgStyle: { width: '100%', height: '100%' },
-        step: (state, bar) => { bar.setText(level + ' %'); },
+        step: (state, bar) => { bar.setText(!hide ? `${level} %`: ''); },
       });
     case 'preloader':
       return new ProgressBar.Line(id, {
