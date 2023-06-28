@@ -5,7 +5,7 @@ import { rem } from '../../../utils';
 
 export const SoftSkills = () => {
   const data = dataStore((state) => state.sidebar.skills.soft);
-  console.log(data);
+  
   return (
     <SkillsList className='art-knowledge-list p-15-0'>
       {data.map((row, index) => (
