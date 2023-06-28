@@ -21,6 +21,7 @@ export const Button = styled(motion.button)`
   }
 
   * {
+    margin: 0 !important;
     align-self: center;
     transition: 0.2s ease-in-out;
   }
