@@ -24,9 +24,9 @@ export default function App() {
     else setShow(laptopOpen);
   }, [laptopOpen, show]);
 
-  // Disable loading after 5s + 2.2s
+  // Disable loading after 5s + 2s
   useEffect(() => {
-    setTimeout(() => { setLoading(false); }, 7200);
+    setTimeout(() => { setLoading(false); }, 7000);
     return () => clearTimeout();
   }, []);
 
