@@ -4,6 +4,19 @@ export const sceneMotion = () => ({
   transition: { duration: 0.5, delay: 5, ease: 'easeInOut' },
 });
 
+export const laptopMotion = (laptopOpen) => ({
+  container: {
+    animate: laptopOpen ? 'open' : 'close',
+  },
+  elevate: {
+    variants: { close: { y: -4 }, open: { y: -5.5 } },
+  },
+  display: {
+    variants: { close: { rotateX: 0 }, open: { rotateX: -Math.PI / 2 } },
+    transition: { duration: 1.5 },
+  },
+});
+
 export const appContainerMotion = () => ({
   initial: { opacity: 0 },
   animate: { opacity: 1 },
