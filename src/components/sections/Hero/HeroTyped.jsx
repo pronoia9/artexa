@@ -1,8 +1,9 @@
-import { useEffect, useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import Typed from 'typed.js';
 import { styled } from 'styled-components';
 
 import { dataStore } from '../../../store/dataStore';
+import { rem } from '../../../utils';
 
 export const HeroTyped = () => {
   const data = dataStore((state) => state.hero.typed);
@@ -11,10 +12,10 @@ export const HeroTyped = () => {
   useLayoutEffect(() => {
     const typed = new Typed(typedRef.current, {
       strings: [...data],
-      typeSpeed: 100,
-      backSpeed: 25,
+      typeSpeed: 25,
+      backSpeed: 10,
       smartBackspace: true,
-      startDelay: 2000,
+      startDelay: 2500,
       backDelay: 1000,
       loop: true,
       loopCount: Infinity,
@@ -32,6 +33,13 @@ export const HeroTyped = () => {
 };
 
 const Container = styled.div`
+  max-width: 75%;
+  min-height: ${rem(82)}; /* 3 lines */
+  margin: 0;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+
   code {
     font-family: var(--f-code);
     color: #e5c07b;
@@ -50,8 +58,20 @@ const Container = styled.div`
     }
   }
 
-  @media (max-width: 920px) {
-    min-height: 70px;
+  @media (max-width: 1150px) { min-height: ${rem(109)}; /* 4 lines */ }
+  @media (max-width: 1110px) { min-height: ${rem(136)}; /* 5 lines */ }
+
+  @media (max-width: 921px) {
     margin-bottom: 0;
+    min-height: ${rem(82)}; /* 3 lines */
   }
+
+  @media (max-width: 700px) {
+    max-width: 100%;
+  }
+
+  @media (max-width: 519px) { min-height: ${rem(109)}; /* 4 lines */ }
+  @media (max-width: 408px) { min-height: ${rem(136)}; /* 5 lines */ }
+  @media (max-width: 352px) { min-height: ${rem(164)}; /* 6 lines */ }
+  @media (max-width: 328px) { min-height: ${rem(191)}; /* 7 lines */ }
 `;
