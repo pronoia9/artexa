@@ -139,6 +139,11 @@ export const dataStore = create((set) => ({
     skills: {
       hard: [
         {
+          title: 'HTML',
+          description: `A weaver of the web's foundational tapestry, crafting structured elegance that dances across the digital realm, guiding users on a visual journey of enchantment.`,
+          level: 85,
+        },
+        {
           title: 'CSS',
           description: `A virtuoso of style and form, fashioning the visual symphony that adorns the web's canvas, harmonizing colors, layouts, and animations to create an immersive experience.`,
           level: 70,
@@ -161,13 +166,6 @@ export const dataStore = create((set) => ({
       ],
 
       soft: [
-        [
-          {
-            title: 'HTML',
-            description: `A weaver of the web's foundational tapestry, crafting structured elegance that dances across the digital realm, guiding users on a visual journey of enchantment.`,
-            level: 85,
-          },
-        ],
         [
           {
             title: 'Nextjs',
