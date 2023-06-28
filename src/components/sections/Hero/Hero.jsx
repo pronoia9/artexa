@@ -1,6 +1,8 @@
 import { styled } from 'styled-components';
+
 import { HeroButton, HeroHeading, HeroTyped, SectionWrapper } from '../..';
 import { dataStore } from '../../../store/dataStore';
+import { rem } from '../../../utils';
 
 const Hero = () => {
   const { data, accent } = dataStore((state) => ({ data: state.hero, accent: state.accent }));
@@ -79,8 +81,14 @@ const Overlay = styled.div`
 const Title = styled.div`
   width: 100%;
   align-self: center;
-
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: ${rem(15)};
+  
   @media (max-width: 700px) {
+    align-items: center;
     text-align: center;
   }
 `;
