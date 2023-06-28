@@ -108,31 +108,32 @@ export const rgbaToHex = (rgbaColor) => {
 
 //----------------------------- PROGRESSBARS -----------------------------//
 export const ProgressbarInstance = ({ type = 'circle', level, index }) => {
+  const id = `#${type}prog${index}`;
   switch (type) {
     case 'circle':
-      return new ProgressBar.Circle(`#${type}prog${index}`, {
+      return new ProgressBar.Circle(id, {
         strokeWidth: 7,
         easing: 'easeInOut',
         duration: 1400,
         delay: 2400 + Number(index) * 100,
         trailWidth: 7,
-        step: (state, bar) => { bar.setText(level); },
+        step: (state, bar) => { bar.setText(level + '%'); },
       });
     case 'line':
-      return new ProgressBar.Line(`#${type}prog${index}`, {
+      return new ProgressBar.Line(id, {
         strokeWidth: 1.72,
         easing: 'easeInOut',
         duration: 1400,
         delay: 2700 + Number(index) * 100,
         trailWidth: 7,
         svgStyle: { width: '100%', height: '100%' },
-        step: (state, bar) => { bar.setText(level); },
+        step: (state, bar) => { bar.setText(level + ' %'); },
       });
     case 'preloader':
-      return new ProgressBar.Line('#preloader', {
+      return new ProgressBar.Line(id, {
         strokeWidth: 1.7,
         easing: 'easeInOut',
-        duration: 1400,
+        duration: 5000,
         delay: 750,
         trailWidth: 1.7,
         svgStyle: { width: '100%', height: '100%', },
