@@ -11,7 +11,7 @@ export const Counter = ({ index, number, text, accent, length }) => {
         <Box className='art-counter-box'>
           <CounterContainer id={`art-counter-${index}`} className='art-counter' {...countersMotion.contents}>
             <CountUp end={number} duration={5} delay={2.5} />
-            <CounterAccent class='art-counter-plus'>{accent}</CounterAccent>
+            <CounterAccent className='art-counter-plus'>{accent}</CounterAccent>
           </CounterContainer>
         </Box>
         <CounterTitle {...countersMotion.contents}>{text}</CounterTitle>
