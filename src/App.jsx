@@ -10,6 +10,7 @@ import { appContainerMotion, getThemeObject, rem } from './utils';
 
 export default function App() {
   const [show, setShow] = useState(false);
+  const [loading, setLoading] = useState(true);
   const { theme, accent, cursorOptions, laptopOpen } = dataStore((state) => ({
     theme: state.theme,
     accent: state.accent,
@@ -18,12 +19,15 @@ export default function App() {
   }));
 
   useEffect(() => {
-    if (laptopOpen)
-      setTimeout(() => {
-        setShow(laptopOpen);
-      }, 3000);
+    if (laptopOpen) setTimeout(() => { setShow(laptopOpen); }, 3000);
     else setShow(laptopOpen);
   }, [laptopOpen, show]);
+
+  // Disable loading after 5s
+  useEffect(() => {
+    setTimeout(() => { setLoading(false); }, 5000);
+    return () => clearTimeout();
+  }, []);
 
   return (
     <ThemeProvider theme={getThemeObject(theme)}>
@@ -34,11 +38,15 @@ export default function App() {
           <TopBar className='art-mobile-top-bar' />
           <Wrapper className='art-app-wrapper'>
             <Container className='art-app-container'>
-              <Preloader />
-              {/* <Scene /> */}
-              {/* <Sidebar />
-              <PageRoutes />
-              <Navbar /> */}
+              {loading && <Preloader />}
+              {!loading && show && (
+                <>
+                  <Sidebar />
+                  <PageRoutes />
+                  <Navbar />
+                </>
+              )}
+              {!loading && !show && <Scene />}
             </Container>
           </Wrapper>
         </AppContainer>
