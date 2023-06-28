@@ -1,4 +1,5 @@
-import { useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
+import Typed from 'typed.js';
 import { styled } from 'styled-components';
 
 import { dataStore } from '../../../store/dataStore';
@@ -7,30 +8,28 @@ export const HeroTyped = () => {
   const data = dataStore((state) => state.hero.typed);
   const typedRef = useRef();
 
+  useLayoutEffect(() => {
+    const typed = new Typed(typedRef.current, {
+      strings: [...data],
+      typeSpeed: 100,
+      backSpeed: 25,
+      smartBackspace: true,
+      startDelay: 2000,
+      backDelay: 1000,
+      loop: true,
+      loopCount: Infinity,
+    });
+    return () => { typed.destroy(); };
+  }, []);
+
   return (
     <Container className='art-lg-text art-code mb-25'>
       <code>
-        &lt;<i>code</i>&gt; <span ref={typedRef}>asfafag</span> &lt;/<i>code</i>&gt;
+        &lt;<i>code</i>&gt; <span ref={typedRef} /> &lt;/<i>code</i>&gt;
       </code>
     </Container>
   );
 };
-{
-  /* <Typed
-    loop
-    typeSpeed={100}
-    backSpeed={25}
-    strings={props.typed}
-    smartBackspace
-    shuffle={false}
-    backDelay={1}
-    fadeOut={false}
-    fadeOutDelay={100}
-    loopCount={0}
-    showCursor
-    cursorChar='|'
-  />{' '} */
-}
 
 const Container = styled.div`
   code {
