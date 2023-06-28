@@ -39,6 +39,7 @@ export const themes = {
     font1: 'rgba(92, 92, 111, 1)',
     font2: 'rgba(30, 30, 40, 1)',
     font3: 'rgba(92, 92, 111, 1)',
+    typedFilter: true,
     gradient2: 'linear-gradient(159deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.949) 100%)',
     gradient3: 'linear-gradient(159deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.949) 100%)',
     gradient4: 'linear-gradient(159deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.949) 100%)',
