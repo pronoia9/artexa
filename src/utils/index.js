@@ -11,7 +11,7 @@ import {
   ProgressbarInstance,
   rgbaToHex,
 } from './utils';
-import { sceneMotion, appContainerMotion, pageWrapperMotion, sectionWrapperMotion, laptopMotion, heroMotion } from './motion';
+import { sceneMotion, appContainerMotion, pageWrapperMotion, sectionWrapperMotion, laptopMotion, heroMotion, counterMotion } from './motion';
 
 export {
   getSystemTheme,
@@ -31,5 +31,6 @@ export {
   pageWrapperMotion,
   sectionWrapperMotion,
   laptopMotion,
-  heroMotion
+  heroMotion,
+  counterMotion,
 };

@@ -91,9 +91,16 @@ export const sectionWrapperMotion = (framerDelay = 1) => ({
 
 */
 /**********************  5. Sections Start  **********************/
+// HERO
 export const heroMotion = {
   button: {
     whileHover: { backgroundPosition: '100% 100%', scale: 1.05 },
   },
 };
+
+// COUNTERS
+export const counterMotion = (index) => ({
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 0.8, delay: 2.3 + (index * 0.2), ease: 'linear' } }
+});
 /***********************  5. Sections End  ***********************/
