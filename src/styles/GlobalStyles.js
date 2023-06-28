@@ -80,6 +80,15 @@ const GlobalStyles = createGlobalStyle`
     animation: ${bgAnimation} 20s infinite alternate;
   }
 
+  button {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: none;
+    background: none;
+    background-color: transparent;
+  }
+
 /* ----------------------------- Author: Nazar Miller ----------------------------- */
                                                                                     /*-
 1. common
