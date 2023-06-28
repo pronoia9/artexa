@@ -235,19 +235,20 @@ export const dataStore = create((set) => ({
     },
 
     strengths: [
-      'Communicating',
-      'Team oriented',
+      'Curious',
       'Organizational',
       'Logical thinking',
       'Detail oriented',
       'Flexible',
-      'Caring',
       'Dedicated',
-      'Punctual',
       'Focused',
-      'Loyal',
       'Adaptable',
+      'Caring',
+      'Punctual',
+      'Loyal',
       'Tech savvy',
+      'Communicating',
+      'Team oriented',
     ],
 
     resume: {
