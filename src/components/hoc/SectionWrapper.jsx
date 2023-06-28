@@ -5,7 +5,7 @@ import { sectionWrapperMotion } from '../../utils';
 export const SectionWrapper = (Component, idName) =>
   function HOC(props) {
     return (
-      <Container className='container-fluid' id={idName} {...sectionWrapperMotion(props?.framerDelay)}>
+      <Container className='container-fluid' id={idName} {...sectionWrapperMotion}>
         <Component {...props} />
       </Container>
     );

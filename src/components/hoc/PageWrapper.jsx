@@ -22,7 +22,7 @@ export const PageWrapper = (Component, idName) =>
             <motion.div className='scroll-content' {...pageWrapperMotion}>
               {/* <Routes /> */}
               <Component {...props} />
-              <Footer framerDelay={props?.framerDelay} />
+              <Footer />
             </motion.div>
           </Scrollbar>
         </div>

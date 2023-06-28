@@ -4,14 +4,14 @@ import { AboutPage, ContactPage, CoursePage, HistoryPage, HomePage, NotFound, Pr
 
 export const PageRoutes = () => (
   <Routes>
-    <Route path='/projects' element={<ProjectsPage framerDelay={5} />} />
-    <Route path='/history' element={<HistoryPage framerDelay={5} />} />
-    <Route path='/courses' element={<CoursePage framerDelay={5} />} />
-    <Route path='/technologies' element={<TechnologiesPage framerDelay={5} />} />
-    <Route path='/about' element={<AboutPage framerDelay={5} />} />
-    <Route path='/contact' element={<ContactPage framerDelay={5} />} />
-    <Route path='/portfolio' element={<HomePage framerDelay={5} />} />
-    <Route exact path='/' element={<HomePage framerDelay={7} />} />
-    <Route path='*' element={<NotFound framerDelay={5} />} />
+    <Route path='/projects' element={<ProjectsPage />} />
+    <Route path='/history' element={<HistoryPage />} />
+    <Route path='/courses' element={<CoursePage />} />
+    <Route path='/technologies' element={<TechnologiesPage />} />
+    <Route path='/about' element={<AboutPage />} />
+    <Route path='/contact' element={<ContactPage />} />
+    <Route path='/portfolio' element={<HomePage />} />
+    <Route exact path='/' element={<HomePage />} />
+    <Route path='*' element={<NotFound />} />
   </Routes>
 );
