@@ -38,16 +38,21 @@ const ItemContainer = styled(Tooltip)`
   position: relative;
   color: var(--c-font-2);
 
-  &::after {
-    max-width: 90%;
-    top: -50%;
-    right: 5%;
-    transition-delay: 1s;
-  }
-
-  ${({ $description }) => $description && css`
-    &::after {
-      content: $description;
-    }
-  `}
+  ${({ $description }) =>
+    $description
+      ? css`
+          &::after {
+            content: $description;
+            top: -50%;
+            right: 5%;
+            max-width: 90%;
+            transition-delay: 1s;
+          }
+        `
+      : css`
+          &::after,
+          &::before {
+            content: none;
+          }
+        `}
 `;
