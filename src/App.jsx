@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import AnimatedCursor from 'react-animated-cursor';
 import { ThemeProvider, styled } from 'styled-components';
-import { AnimatePresence, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { PageRoutes, Navbar, Sidebar, Scene } from './components';
 import { dataStore } from './store/dataStore';
@@ -18,7 +18,10 @@ export default function App() {
   }));
 
   useEffect(() => {
-    if (laptopOpen) setTimeout(() => { setShow(laptopOpen); }, 3000);
+    if (laptopOpen)
+      setTimeout(() => {
+        setShow(laptopOpen);
+      }, 3000);
     else setShow(laptopOpen);
   }, [laptopOpen, show]);
 
@@ -27,22 +30,20 @@ export default function App() {
       <ThemeProvider theme={getThemeObject(accent)}>
         <GlobalStyles />
 
-        <AnimatePresence>
-          {show !== 'enable temp' && (
-            <AppContainer key={`app-appcontainer-${show}`} className='art-app' {...appContainerMotion()}>
-              <TopBar className='art-mobile-top-bar' />
-              {/* <Preloader /> */}
-              <Wrapper className='art-app-wrapper'>
-                <Container className='art-app-container'>
-                  <Sidebar />
-                  <PageRoutes />
-                  <Navbar />
-                </Container>
-              </Wrapper>
-            </AppContainer>
-          )}
-          {!show === 'disable temp' && <Scene />}
-        </AnimatePresence>
+        {show !== 'enable temp' && (
+          <AppContainer key={`app-appcontainer-${show}`} className='art-app' {...appContainerMotion()}>
+            <TopBar className='art-mobile-top-bar' />
+            {/* <Preloader /> */}
+            <Wrapper className='art-app-wrapper'>
+              <Container className='art-app-container'>
+                <Sidebar />
+                <PageRoutes />
+                <Navbar />
+              </Container>
+            </Wrapper>
+          </AppContainer>
+        )}
+        {!show === 'disable temp' && <Scene />}
 
         <div className='animated-cursor'>
           <AnimatedCursor {...cursorOptions} />
