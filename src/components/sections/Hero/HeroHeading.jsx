@@ -26,17 +26,19 @@ const Container = styled.div`
 
   h1 {
     color: #ffffff;
-  }
+    font-size: 80px;
+    line-height: 2ch;
 
-  @media (max-width: ${rem(1600)}) {
-    font-size: ${rem(62)};
-  }
+    @media (max-width: ${rem(1600)}) {
+      font-size: ${rem(72)};
+    }
 
-  @media (max-width: ${rem(1400)}) {
-    font-size: ${rem(56)};
-  }
+    @media (max-width: ${rem(1400)}) {
+      font-size: ${rem(66)};
+    }
 
-  @media (max-width: ${rem(700)}) {
-    font-size: ${rem(46)};
+    @media (max-width: ${rem(700)}) {
+      font-size: ${rem(56)};
+    }
   }
 `;
