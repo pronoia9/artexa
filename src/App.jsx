@@ -37,18 +37,18 @@ export default function App() {
 
         <AppContainer key='app-appcontainer' className='art-app' {...appContainerMotion()}>
           <TopBar className='art-mobile-top-bar' />
-          {loading && <Preloader />}
+          {loading === 'TEMPORARILY DISABLE' && <Preloader />}
 
           <Wrapper className='art-app-wrapper'>
             <Container className='art-app-container'>
-              {!loading && show && (
+              {!loading !== 'TEMPORARILY ENABLE' && show !== 'TEMPORARILY ENABLE' && (
                 <>
                   <Sidebar />
                   <PageRoutes />
                   <Navbar />
                 </>
               )}
-              {!loading && !show && <Scene />}
+              {!loading && !show === 'TEMPORARILY DISABLE' && <Scene />}
             </Container>
           </Wrapper>
         </AppContainer>
