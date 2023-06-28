@@ -1,8 +1,9 @@
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { rem } from '../utils';
 
-export const GradientHeading = styled.div`
+export const GradientHeading = styled(motion.div)`
   transition: transform 0.5s ease-in-out;
   padding: 1rem 0;
 
@@ -18,7 +19,7 @@ export const GradientHeading = styled.div`
   }
 `;
 
-export const Tooltip = styled.div`
+export const Tooltip = styled(motion.div)`
   position: relative;
 
   &:after {
