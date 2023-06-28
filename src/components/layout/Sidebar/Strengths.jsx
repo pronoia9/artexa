@@ -9,7 +9,7 @@ export const Strengths = () => {
   return (
     <motion.div className='art-strengths p-15-15' {...sidebarMotion.sidebarSection}>
       {data.map((strength, index) => (
-        <StrengthItem key={`sidebar-strenghts-${index}`}>{strength}</StrengthItem>
+        <StrengthItem key={`sidebar-strenghts-${index}`} {...sidebarMotion.strengths}>{strength}</StrengthItem>
       ))}
     </motion.div>
   );

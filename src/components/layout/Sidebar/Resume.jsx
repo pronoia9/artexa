@@ -2,15 +2,15 @@ import { styled } from "styled-components";
 import { motion } from "framer-motion";
 
 import { dataStore } from "../../../store/dataStore";
-import { rem, sidebarMotion } from "../../../utils";
+import { sidebarMotion } from "../../../utils";
 
 export const Resume = () => {
   const data = dataStore((state) => state.sidebar.resume);
   return (
     <Container className='art-links-frame p-15-15' {...sidebarMotion.sidebarSection}>
-      <a href={data.url} className='art-link art-color-link' download>
+      <motion.a href={data.url} className='art-link art-color-link' download {...sidebarMotion.resume}>
         {data.title} <i className='fas fa-download' />
-      </a>
+      </motion.a>
     </Container>
   );
 };

@@ -20,9 +20,9 @@ export const Info = () => {
 
 export const InfoItem = ({ title, subtitle }) => {
   return (
-    <ListItem>
-      <span>{title}</span>
-      <span>{subtitle}</span>
+    <ListItem {...sidebarMotion.info.frame}>
+      <span {...sidebarMotion.info.items}>{title}</span>
+      <span {...sidebarMotion.info.items}>{subtitle}</span>
     </ListItem>
   );
 };

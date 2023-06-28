@@ -6,16 +6,16 @@ import { rem, sidebarMotion } from '../../../utils';
 
 export const SoftSkills = () => {
   const data = dataStore((state) => state.sidebar.skills.soft);
-  
+
   return (
     <SkillsList className='art-knowledge-list p-15-0' {...sidebarMotion.sidebarSection}>
       {data.map((row, index) => (
-        <div key={`sidebar-softskills-${index}`}>
-          <ListItem key={`sidebar-softskills-${index}`}>
-            <i className='fas fa-check' />
-            {row.map((s) => s.title).join(', ')}
+        <li key={`sidebar-softskills-${index}`}>
+          <ListItem key={`sidebar-softskills-${index}`} {...sidebarMotion.softSkills.frame}>
+            <i className='fas fa-check' {...sidebarMotion.softSkills.items} />
+            <span {...sidebarMotion.softSkills.items}>{row.map((s) => s.title).join(', ')}</span>
           </ListItem>
-        </div>
+        </li>
       ))}
     </SkillsList>
   );
@@ -25,7 +25,7 @@ const SkillsList = styled(motion.ul)`
   padding-left: 0;
 `;
 
-const ListItem = styled.li`
+const ListItem = styled(motion.div)`
   margin-bottom: ${rem(5)};
   color: var(--c-font-1);
   list-style-type: none;
