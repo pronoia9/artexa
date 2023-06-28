@@ -432,46 +432,6 @@ blockquote {
 
 /* ------------------------------ button ------------------------------ */
 
-.art-btn {
-  text-transform: uppercase;
-  box-shadow: 0 1px 4px 0 var(--c-box-shadow);
-  color: var(--c-font-4);
-  background: var(--c-accent-1);
-  letter-spacing: 1.5px;
-  font-weight: 600;
-  display: inline-flex;
-  justify-content: center;
-  align-content: center;
-  border: none;
-  transition: 0.4s ease-in-out;
-
-  &:hover {
-    background-color: var(--c-accent-3);
-  }
-
-  span {
-    align-self: center;
-    transition: 0.2s ease-in-out;
-  }
-
-  &.art-btn-md {
-    height: 45px;
-    font-size: 11px;
-    padding: 0 35px;
-  }
-
-  &.art-btn-sm {
-    height: 40px;
-    font-size: 11px;
-    padding: 0 30px;
-  }
-
-  &:hover {
-    transform: translateY(-2px);
-    color: var(--c-font-5);
-  }
-}
-
 .btn-v2 {
   cursor: pointer;
 }
