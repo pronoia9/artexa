@@ -1,14 +1,13 @@
 import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment, ContactShadows, OrbitControls } from '@react-three/drei';
-import { useSpring } from '@react-spring/core';
-import { a as three } from '@react-spring/three';
 import { styled } from 'styled-components';
-import { motion } from 'framer-motion';
+import { motion } from 'framer-motion-3d';
+import { m } from 'framer-motion';
 
 import { Laptop } from '../..';
 import { dataStore } from '../../../store/dataStore';
-import { sceneMotion } from '../../../utils';
+import { laptopMotion, sceneMotion } from '../../../utils';
 
 export const Scene = () => {
   return (
@@ -25,28 +24,23 @@ export const SceneContents = () => {
     laptopOpen: state.laptopOpen,
     toggleLaptopOpen: state.toggleLaptopOpen,
   }));
-  const props = useSpring({ open: Number(laptopOpen), config: { duration: 1500 } });
 
   return (
     <>
-      <three.pointLight position={[10, 10, 10]} intensity={1.5} color={props.open.to([0, 1], ['#f0f0f0', '#d25578'])} />
       <Suspense fallback={null}>
-        <group rotation={[0, Math.PI, 0]} onClick={(e) => (e.stopPropagation(), toggleLaptopOpen())}>
-          <Laptop
-            hinge={props.open.to([0, 1], [0, -Math.PI / 2])}
-            elevate={props.open.to([0, 1], [-4, -6])}
-            scale={50}
-          />
-        </group>
-        <Environment preset='city' />
+        <motion.group {...laptopMotion(laptopOpen).container} rotation={[0, Math.PI, 0]}>
+          <Laptop scale={50} onClick={(e) => (e.stopPropagation(), toggleLaptopOpen())} />
+          <motion.pointLight position={[10, 10, 10]} intensity={1.5} color='#f0f0f0' />
+          <ContactShadows opacity={0.4} scale={50} blur={1.75} far={4.5} />
+          <Environment preset='city' />
+        </motion.group>
       </Suspense>
-      <ContactShadows position={[0, -4.5, 0]} opacity={0.4} scale={20} blur={1.75} far={4.5} />
       <OrbitControls />
     </>
   );
 };
 
-const Container = styled(motion.div)`
+const Container = styled(m.div)`
   position: absolute;
   top: 0;
   right: 0;
