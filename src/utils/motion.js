@@ -1,3 +1,23 @@
+/*
+    1. App
+    2. 3D
+    3. HOC
+    4. Pages
+    5. Sections
+*/
+
+
+/**********************  1. App Start  **********************/
+export const appContainerMotion = () => ({
+  initial: { opacity: 0 },
+  animate: { opacity: 1 },
+  transition: { duration: 0.5, delay: 0.1, ease: 'easeInOut' },
+});
+/***********************  1. App End  ***********************/
+/*
+
+*/
+/**********************  2. 3D Start  **********************/
 export const sceneMotion = () => ({
   initial: { opacity: 1 },
   exit: { opacity: 0 },
@@ -16,13 +36,11 @@ export const laptopMotion = (laptopOpen) => ({
     transition: { duration: 1.5 },
   },
 });
+/***********************  2. 3D End  ***********************/
+/*
 
-export const appContainerMotion = () => ({
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  transition: { duration: 0.5, delay: 0.1, ease: 'easeInOut' },
-});
-
+*/
+/**********************  3. HOC Start  **********************/
 export const pageWrapperMotion = {
   initial: 'hidden',
   animate: 'visible',
@@ -51,3 +69,19 @@ export const sectionWrapperMotion = (framerDelay = 1) => ({
     hidden: { opacity: 0, y: 250 },
   },
 });
+/***********************  3. HOC End  ***********************/
+/*
+
+*/
+/**********************  4. Pages Start  **********************/
+/***********************  4. Pages End  ***********************/
+/*
+
+*/
+/**********************  5. Sections Start  **********************/
+export const heroMotion = {
+  button: {
+    whileHover: { backgroundPosition: '100% 100%', scale: 1.05 },
+  },
+};
+/***********************  5. Sections End  ***********************/
