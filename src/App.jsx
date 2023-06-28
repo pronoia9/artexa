@@ -10,8 +10,9 @@ import { appContainerMotion, getThemeObject, rem } from './utils';
 
 export default function App() {
   const [show, setShow] = useState(false);
-  const [loading, setLoading] = useState(true);
-  const { theme, accent, cursorOptions, laptopOpen } = dataStore((state) => ({
+  const { loading, setLoading, theme, accent, cursorOptions, laptopOpen } = dataStore((state) => ({
+    loading: state.loading,
+    setLoading: state.setLoading,
     theme: state.theme,
     accent: state.accent,
     cursorOptions: state.cursorOptions,

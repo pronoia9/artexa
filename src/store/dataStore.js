@@ -5,6 +5,10 @@ import { getThemeFromStorage } from '../utils';
 import { saveThemeToStorage } from '../utils/utils';
 
 export const dataStore = create((set) => ({
+  // LOADING (PRELOADER)
+  loading: true,
+  setLoading: (loading) => set({ loading }),
+
   // LAPTOP
   laptopOpen: false,
   setLaptopOpen: (laptopOpen) => set({ laptopOpen }),
