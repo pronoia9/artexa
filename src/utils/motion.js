@@ -7,16 +7,13 @@
 */
 
 /**********************  1. App Start  **********************/
-export const appContainerMotion = () => ({
-  initial: { opacity: 0 },
-  animate: { opacity: 1 },
-  transition: { duration: 0.5, delay: 0.1, ease: 'easeInOut' },
-});
-
-export const preloaderMotion = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { delay: 0.2, duration: 0.6 } },
-  exit: { opacity: 0, transition: { delay: 2.2, duration: 0.4 } },
+export const appMotion = {
+  appContainer: {
+    initial: { opacity: 0 },
+    animate: { opacity: 1 },
+    transition: { duration: 0.5, delay: 0.1, ease: 'easeInOut' },
+  },
+  wrapper: {}
 };
 /***********************  1. App End  ***********************/
 /*
@@ -112,3 +109,13 @@ export const countersMotion = {
   },
 };
 /***********************  5. Sections End  ***********************/
+/*
+
+*/
+/**********************  5. Components Start  **********************/
+export const preloaderMotion = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { delay: 0.2, duration: 0.6 } },
+  exit: { opacity: 0, transition: { delay: 2.2, duration: 0.4 } },
+};
+/***********************  5. Components End  ***********************/

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { PageRoutes, Navbar, Sidebar, Scene, Preloader } from './components';
 import { dataStore } from './store/dataStore';
 import { GlobalStyles } from './styles';
-import { appContainerMotion, getThemeObject, rem } from './utils';
+import { appMotion, getThemeObject, rem } from './utils';
 
 export default function App() {
   const [show, setShow] = useState(false);
@@ -35,7 +35,7 @@ export default function App() {
       <ThemeProvider theme={getThemeObject(accent)}>
         <GlobalStyles />
 
-        <AppContainer key='app-appcontainer' className='art-app' {...appContainerMotion()}>
+        <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
           <TopBar className='art-mobile-top-bar' />
           {loading === 'TEMPORARILY DISABLE' && <Preloader />}
 
