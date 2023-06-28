@@ -18,6 +18,7 @@ export const HeroHeading = () => {
 const Container = styled.div`
   display: inline-block;
   transition: 0.3s ease-in-out;
+  margin: 0;
 
   &:hover {
     text-shadow: ${rem(0.1)} ${rem(0.1)} ${rem(2)} var(--c-accent-2);
