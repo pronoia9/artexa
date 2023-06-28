@@ -13,11 +13,11 @@ export const appContainerMotion = () => ({
   transition: { duration: 0.5, delay: 0.1, ease: 'easeInOut' },
 });
 
-export const preloaderMotion = ({
+export const preloaderMotion = {
   initial: { opacity: 0 },
   animate: { opacity: 1, transition: { delay: 0.2, duration: 0.6 } },
   exit: { opacity: 0, transition: { delay: 2.2, duration: 0.4 } },
-});
+};
 /***********************  1. App End  ***********************/
 /*
 
@@ -74,11 +74,9 @@ export const pageWrapperMotion = {
 };
 
 export const sectionWrapperMotion = (framerDelay = 1) => ({
-  initial: 'hidden',
-  animate: 'visible',
   variants: {
-    visible: { opacity: 1, y: 0, transition: { delay: framerDelay || 1 * 0.1 } },
-    hidden: { opacity: 0, y: 250 },
+    visible: { opacity: 1, y: 0, transition: { type: 'spring', when: 'beforeChildren', staggerChildren: 0.1 } },
+    hidden: { opacity: 0, y: 250, when: 'afterChildren' },
   },
 });
 /***********************  3. HOC End  ***********************/
@@ -100,7 +98,9 @@ export const heroMotion = {
 
 // COUNTERS
 export const counterMotion = (index) => ({
-  initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 0.8, delay: 2.3 + (index * 0.2), ease: 'linear' } }
+  variants: {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.5,  ease: 'linear' } },
+  },
 });
 /***********************  5. Sections End  ***********************/
