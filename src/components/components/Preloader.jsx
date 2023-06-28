@@ -1,14 +1,18 @@
-import { motion } from "framer-motion";
-import { styled } from "styled-components";
-import { Progressbar } from "./Progressbar";
+import { motion } from 'framer-motion';
+import { styled } from 'styled-components';
+
+import { Progressbar } from '..';
+import { dataStore } from '../../store/dataStore';
+import { preloaderMotion } from '../../utils/motion';
 
 export const Preloader = () => {
+  const loading = dataStore((state) => state.loading);
   return (
-    <Container id='art-preloader' className='art-preloader'>
-      <div className='art-preloader-content'>
+    <Container id='art-preloader' className='art-preloader' {...preloaderMotion(loading)}>
+      <Wrapper className='art-preloader-content'>
         <h1>Welcome</h1>
         <Progressbar type='preloader' level={100} />
-      </div>
+      </Wrapper>
     </Container>
   );
 };
@@ -23,17 +27,17 @@ const Container = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--c-font-4);
+  pointer-events: 'none';
   z-index: 999999;
-
-  .art-preloader-content {
-    margin-bottom: 15px;
-    text-align: center;
-  }
 
   @media (max-width: 920px) {
     margin: 0;
     width: 100vw;
     height: 100vh;
   }
+`;
+
+const Wrapper = styled.div`
+  margin-bottom: 15px;
+  text-align: center;
 `;

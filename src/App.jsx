@@ -35,11 +35,11 @@ export default function App() {
       <ThemeProvider theme={getThemeObject(accent)}>
         <GlobalStyles />
 
-        <AppContainer key={`app-appcontainer-${show}`} className='art-app' {...appContainerMotion()}>
+        <AppContainer key={`app-appcontainer-${loading}-${show}`} className='art-app' {...appContainerMotion()}>
           <TopBar className='art-mobile-top-bar' />
           <Wrapper className='art-app-wrapper'>
             <Container className='art-app-container'>
-              {loading && <Preloader />}
+              <Preloader />
               {!loading && show && (
                 <>
                   <Sidebar />
