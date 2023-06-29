@@ -1,14 +1,15 @@
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { NavbarButton, NavbarCurrentPage, NavbarList, ThemeButton } from '../..';
 import { dataStore } from '../../../store/dataStore';
-import { rem } from '../../../utils';
+import { navbarMotion, rem } from '../../../utils';
 
 export const Navbar = () => {
   const { navbarOpen } = dataStore((state) => ({ navbarOpen: state.navbarOpen }));
 
   return (
-    <Container className='art-menu-bar' $navbarOpen={navbarOpen}>
+    <Container className='art-menu-bar' $navbarOpen={navbarOpen} {...navbarMotion.navbar(navbarOpen)}>
       <Wrapper id='art-menu-bar-frame' className='art-menu-bar-frame'>
         <NavbarButton />
         <NavbarCurrentPage />
@@ -21,7 +22,7 @@ export const Navbar = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   position: absolute;
   top: 0;
   right: ${rem(-225)};
@@ -32,8 +33,6 @@ const Container = styled.div`
   box-shadow: 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
   z-index: 99;
   isolation: isolate;
-  transform: ${({ $navbarOpen }) => $navbarOpen && `translateX(${rem(-225)})`};
-  transition: 0.55s ease-in-out;
 
   a {
     display: none;
@@ -52,7 +51,7 @@ const Container = styled.div`
     right: ${rem(-230)};
     width: ${rem(230)};
     height: 100vh;
-    transform: ${({ open }) => open && `translateX(${rem(-230)})`};
+    transform: ${({ $navbarOpen }) => $navbarOpen && `translateX(${rem(-230)})`};
   }
 
   @media (max-width: ${rem(230)}) {

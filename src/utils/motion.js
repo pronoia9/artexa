@@ -141,7 +141,17 @@ export const sidebarMotion = {
 };
 
 // Navbar
-export const navbarMotion = {};
+export const navbarMotion = {
+  navbar: (navbarOpen) => ({
+    initial: 'hidden',
+    animate: navbarOpen ? 'visible' : 'hidden',
+    transition: { type: 'tween', duration: 0.55, ease: 'easeInOut' },
+    variants: {
+      hidden: { x: 0 },
+      visible: { x: -225 },
+    },
+  }),
+};
 
 // Footer
 export const footerMotion = {};
