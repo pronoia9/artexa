@@ -91,6 +91,7 @@ export const sidebarMotion = {
       visible: { opacity: 1, transition: { staggerChildren, delay } },
     },
   }),
+
   // Divider
   divider: (delay = 0) => ({
     variants: {
@@ -98,8 +99,10 @@ export const sidebarMotion = {
       visible: { opacity: 1, x: 0, transition: { type: 'tween', ease: 'linear', duration: 0.5, delay } },
     },
   }),
+
   // TODO: Profile
   profile: {},
+
   // Info
   info: {
     frame: {
@@ -121,6 +124,7 @@ export const sidebarMotion = {
       },
     },
   },
+
   // Languages
   languages: {
     frame: {
@@ -136,6 +140,7 @@ export const sidebarMotion = {
       },
     },
   },
+
   // Hard Skills
   hardSkills: {
     frame: {
@@ -151,6 +156,7 @@ export const sidebarMotion = {
       },
     },
   },
+
   // Soft Skills
   softSkills: {
     frame: {
@@ -172,6 +178,7 @@ export const sidebarMotion = {
       },
     },
   },
+
   // Strengths
   strengths: {
     variants: {
@@ -179,6 +186,7 @@ export const sidebarMotion = {
       visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
     },
   },
+
   // Resume
   resume: {
     frame: {},
@@ -195,7 +203,8 @@ export const sidebarMotion = {
       },
     },
   },
-  // TODO: Socials
+
+  // Socials
   socials: {
     variants: {
       hidden: { opacity: 0, scale: 0 },
@@ -203,8 +212,10 @@ export const sidebarMotion = {
     },
   },
 };
+
 // Navbar
 export const navbarMotion = {};
+
 // Footer
 export const footerMotion = {};
 /***********************  4. Layout End  ***********************/
