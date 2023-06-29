@@ -9,7 +9,16 @@ export const Sidebar = () => {
   const { sidebarOpen, toggleSidebar } = dataStore((state) => ({ sidebarOpen: state.sidebarOpen, toggleSidebar: state.toggleSidebar }));
 
   return (
-    <Container className='art-info-bar' $active={sidebarOpen} {...sidebarMotion.sidebar}>
+    <Container
+      className='art-info-bar'
+      $active={sidebarOpen}
+      initial='hidden'
+      animate='visible'
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 2.5 } },
+      }}
+    >
       <Wrapper className='art-info-bar-frame'>
         <MobileHeader className='art-info-bar-header' $active={sidebarOpen}>
           <div className='art-info-bar-btn' onClick={() => toggleSidebar()}>
@@ -20,12 +29,18 @@ export const Sidebar = () => {
         <Profile />
 
         <ScrollFrame className='art-scroll-frame'>
-          <ScrollContent className='scroll-content'>
-            <Info /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(0.75 * 0.666)} />
-            <Languages /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(2.5 * 0.666)} />
-            <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(4 * 0.666)} />
-            <SoftSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(5.5 * 0.666)} />
-            <Strengths /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(8.25 * 0.666)} />
+          <ScrollContent
+            className='scroll-content'
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.5 } },
+            }}
+          >
+            <Info /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(0.75 * 0.666 + 2.5)} />
+            <Languages /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(2.5 * 0.666 + 2.5)} />
+            <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(4 * 0.666 + 2.5)} />
+            <SoftSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(5.5 * 0.666 + 2.5)} />
+            <Strengths /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(8.5 * 0.666 + 2.5)} />
             <Resume />
           </ScrollContent>
         </ScrollFrame>
@@ -103,6 +118,6 @@ const ScrollFrame = styled.div`
   overflow-y: scroll;
 `;
 
-const ScrollContent = styled.div`
+const ScrollContent = styled(motion.div)`
   padding: ${rem(240)} 0 ${rem(50)};
 `;

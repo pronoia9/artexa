@@ -100,7 +100,7 @@ export const sidebarMotion = {
     },
   }),
 
-  // TODO: Profile
+  // Profile
   profile: {
     container: {
       variants: {
@@ -242,12 +242,14 @@ export const sidebarMotion = {
   },
 
   // Socials
-  socials: {
+  socials: (index = 1) => ({
+    initial: 'hidden',
+    animate: 'visible',
     variants: {
       hidden: { opacity: 0, scale: 0 },
-      visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
+      visible: { opacity: 1, scale: 1, transition: { type: 'spring', delay: 0.1 * index + (6.25 + 2.5) } },
     },
-  },
+  }),
 };
 
 // Navbar

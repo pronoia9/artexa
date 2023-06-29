@@ -7,16 +7,22 @@ import { sidebarMotion } from '../../../utils';
 export const Socials = () => {
   const data = dataStore((state) => state.sidebar.social);
   return (
-    <SocialsContainer className='art-ls-social' {...sidebarMotion.sidebarSection(0.25, 6.25)}>
+    <SocialsContainer className='art-ls-social'>
       {data.map((social, index) => (
-        <SocialsItem key={`sidebar-socials-${index}`} {...social} />
+        <SocialsItem key={`sidebar-socials-${index}`} {...social} index={index} />
       ))}
     </SocialsContainer>
   );
 };
 
-export const SocialsItem = ({ id, platform, favicon, fancybox, url }) => (
-  <SocialsLink className={platform} href={url} target={!fancybox ? '_blank' : ''} rel={!fancybox ? 'noopener noreferrer' : ''} {...sidebarMotion.socials}>
+export const SocialsItem = ({ id, platform, favicon, fancybox, url, index }) => (
+  <SocialsLink
+    className={platform}
+    href={url}
+    target={!fancybox ? '_blank' : ''}
+    rel={!fancybox ? 'noopener noreferrer' : ''}
+    {...sidebarMotion.socials(index)}
+  >
     <i className={favicon} />
   </SocialsLink>
 );
