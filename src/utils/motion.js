@@ -126,18 +126,9 @@ export const sidebarMotion = {
 
   // Hard Skills
   hardSkills: {
-    frame: {
-      variants: {
-        hidden: { opacity: 0, y: 100 },
-        visible: { opacity: 1, y: 0, transition: { type: 'spring', staggerChildren: 0.25 } },
-      },
-    },
-    items: {
-      variants: {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { type: 'spring' } },
-      },
-    },
+    container: { variants: staggerContainer(0.1) },
+    item: { variants: slideIn({ staggerChildren: 0.33 }, 'down') },
+    items: { variants: fadeIn() },
   },
 
   // Soft Skills
