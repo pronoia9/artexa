@@ -9,7 +9,7 @@ export const Navbar = () => {
   const { navbarOpen } = dataStore((state) => ({ navbarOpen: state.navbarOpen }));
 
   return (
-    <Container className='art-menu-bar' $navbarOpen={navbarOpen} {...navbarMotion.navbar(navbarOpen)}>
+    <Container className='art-menu-bar' {...navbarMotion.navbar(navbarOpen)}>
       <Wrapper id='art-menu-bar-frame' className='art-menu-bar-frame'>
         <NavbarButton />
         <NavbarCurrentPage />
@@ -48,10 +48,7 @@ const Container = styled(motion.div)`
 
   @media (max-width: ${rem(920)}) {
     position: absolute;
-    right: ${rem(-230)};
-    width: ${rem(230)};
     height: 100vh;
-    transform: ${({ $navbarOpen }) => $navbarOpen && `translateX(${rem(-230)})`};
   }
 
   @media (max-width: ${rem(230)}) {
