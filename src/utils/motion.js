@@ -151,7 +151,7 @@ export const navbarMotion = {
       visible: { x: -225 },
     },
   }),
-  navbarButton: {
+  button: {
     path1: {
       variants: {
         hidden: { d: 'M 2 2.5 L 20 2.5' },
@@ -172,6 +172,8 @@ export const navbarMotion = {
       },
     },
   },
+  list: {},
+  item: {}
 };
 
 // Footer

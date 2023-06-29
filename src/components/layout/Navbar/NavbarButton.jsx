@@ -13,9 +13,9 @@ export const NavbarButton = () => {
     <Container className='art-menu-bar-header'>
       <Wrapper className='art-menu-bar-btn' onClick={() => toggleNavbar()}>
         <svg width='23' height='23' viewBox='0 0 23 23'>
-          <Path {...navbarMotion.navbarButton.path1} />
-          <Path d='M 2 9.423 L 20 9.423' {...navbarMotion.navbarButton.path2} />
-          <Path {...navbarMotion.navbarButton.path3} />
+          <Path {...navbarMotion.button.path1} />
+          <Path d='M 2 9.423 L 20 9.423' {...navbarMotion.button.path2} />
+          <Path {...navbarMotion.button.path3} />
         </svg>
       </Wrapper>
     </Container>
