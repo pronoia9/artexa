@@ -77,24 +77,10 @@ export const sectionWrapperMotion = {
 /**********************  4. Layout Start  **********************/
 // Sidebar
 export const sidebarMotion = {
-  sidebar: {
-    initial: 'hidden',
-    animate: 'visible',
-    variants: staggerContainer(2.5),
-  },
-
+  sidebar: { initial: 'hidden', animate: 'visible', variants: staggerContainer(2.5) },
   scrollContent: { variants: staggerContainer(0.5) },
-
   // Divider
   divider: (delay = 0) => ({ variants: slideIn({ type: 'tween', ease: 'linear', duration: 0.5, delay }, 'right', '100') }),
-
-  sidebarSection: (staggerChildren = 0.25, delay = 0) => ({
-    variants: {
-      hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { staggerChildren, delay } },
-    },
-  }),
-
   // Profile
   profile: {
     container: { variants: staggerContainer(0.25) },
@@ -106,7 +92,6 @@ export const sidebarMotion = {
     postLine: { variants: staggerContainer(0.05) },
     text: { variants: zoomIn() },
   },
-
   // Info
   info: {
     container: { variants: staggerContainer(0.25) },
@@ -115,7 +100,6 @@ export const sidebarMotion = {
     char: { variants: zoomIn() },
     subtitle: { variants: zoomIn() },
   },
-
   // Languages
   languages: {
     container: { variants: staggerContainer(0.25) },
@@ -124,14 +108,12 @@ export const sidebarMotion = {
     text: { variants: staggerContainer(0.05) },
     char: { variants: zoomIn() },
   },
-
   // Hard Skills
   hardSkills: {
     container: { variants: staggerContainer(0.1) },
     item: { variants: slideIn({ staggerChildren: 0.33 }, 'down') },
     items: { variants: fadeIn() },
   },
-
   // Soft Skills
   softSkills: {
     container: { variants: staggerContainer(0.5) },
@@ -140,30 +122,17 @@ export const sidebarMotion = {
     text: { variants: staggerContainer(0.01) },
     char: { variants: textVariant() },
   },
-
   // Strengths
   strengths: {
     container: { variants: staggerContainer(0.1) },
     item: { variants: zoomIn() },
   },
-
   // Resume
   resume: {
-    frame: {},
-    text: {
-      variants: {
-        hidden: { opacity: 0, x: 100 },
-        visible: { opacity: 1, x: 0, transition: { type: 'tween', duration: 0.5, ease: 'linear' } },
-      },
-    },
-    icon: {
-      variants: {
-        hidden: { opacity: 0, scale: 0 },
-        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
-      },
-    },
+    container: { variants: staggerContainer(0.5, 1) },
+    text: { variants: fadeIn({ type: 'tween', duration: 0.5, ease: 'linear' }, 'up', '100') },
+    icon: { variants: zoomIn() },
   },
-
   // Socials
   socials: (index = 1) => ({
     initial: 'hidden',
@@ -171,6 +140,13 @@ export const sidebarMotion = {
     variants: {
       hidden: { opacity: 0, scale: 0 },
       visible: { opacity: 1, scale: 1, transition: { type: 'spring', delay: 0.1 * index + (6.25 + 2.5) } },
+    },
+  }),
+  //
+  sidebarSection: (staggerChildren = 0.25, delay = 0) => ({
+    variants: {
+      hidden: { opacity: 0 },
+      visible: { opacity: 1, transition: { staggerChildren, delay } },
     },
   }),
 };
