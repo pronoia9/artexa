@@ -8,7 +8,7 @@ export const SoftSkills = () => {
   const data = dataStore((state) => state.sidebar.skills.soft);
 
   return (
-    <SkillsList className='art-knowledge-list p-15-0' {...sidebarMotion.sidebarSection}>
+    <SkillsList className='art-knowledge-list p-15-0' {...sidebarMotion.sidebarSection(0.15)}>
       {data.map((row, index) => (
         <li key={`sidebar-softskills-${index}`}>
           <ListItem key={`sidebar-softskills-${index}-items`} {...sidebarMotion.softSkills.frame}>

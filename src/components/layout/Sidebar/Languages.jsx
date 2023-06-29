@@ -8,7 +8,7 @@ import { rem, sidebarMotion } from '../../../utils';
 export const Languages = () => {
   const data = dataStore((state) => state.sidebar.languages);
   return (
-    <LanguagesContainer className='art-lang-skills p-30-15' {...sidebarMotion.sidebarSection}>
+    <LanguagesContainer className='art-lang-skills p-30-15' {...sidebarMotion.sidebarSection()}>
       {data.map((language, index) => (
         <LanguagesItem key={`sidebar-language-${index}`} {...language} index={index} />
       ))}

@@ -7,11 +7,11 @@ import { sidebarMotion } from "../../../utils";
 export const Resume = () => {
   const data = dataStore((state) => state.sidebar.resume);
   return (
-    <Container className='art-links-frame p-15-15' {...sidebarMotion.sidebarSection}>
-      <motion.a href={data.url} className='art-link art-color-link' download {...sidebarMotion.resume.sidebarSection}>
+    <Container className='art-links-frame p-15-15' {...sidebarMotion.sidebarSection(0.25, 8.75 * 0.666)}>
+      <a href={data.url} className='art-link art-color-link' download>
         <motion.span {...sidebarMotion.resume.text}>{data.title}</motion.span>{' '}
         <motion.i {...sidebarMotion.resume.icon} className='fas fa-download' />
-      </motion.a>
+      </a>
     </Container>
   );
 };

@@ -85,19 +85,19 @@ export const sidebarMotion = {
       visible: { opacity: 1, transition: { staggerChildren: 0.5 } },
     },
   },
-  sidebarSection: {
+  sidebarSection: (staggerChildren = 0.25, delay = 0) => ({
     variants: {
       hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { staggerChildren: 0.25 } },
+      visible: { opacity: 1, transition: { staggerChildren, delay } },
     },
-  },
+  }),
   // Divider
-  divider: {
+  divider: (delay = 0) => ({
     variants: {
       hidden: { opacity: 0, x: 100 },
-      visible: { opacity: 1, x: 0, transition: { type: 'tween', ease: 'linear', duration: 0.5 } },
+      visible: { opacity: 1, x: 0, transition: { type: 'tween', ease: 'linear', duration: 0.5, delay } },
     },
-  },
+  }),
   // Info
   info: {
     frame: {
@@ -142,7 +142,12 @@ export const sidebarMotion = {
         visible: { opacity: 1, y: 0, transition: { type: 'spring', staggerChildren: 0.25 } },
       },
     },
-    items: {},
+    items: {
+      variants: {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { type: 'spring' } },
+      },
+    },
   },
   // Soft Skills
   softSkills: {
@@ -167,21 +172,14 @@ export const sidebarMotion = {
   },
   // Strengths
   strengths: {
-    frame: {
-      variants: {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-      },
-    },
-    item: {
-      variants: {
-        hidden: { opacity: 0, scale: 0 },
-        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
-      },
+    variants: {
+      hidden: { opacity: 0, scale: 0 },
+      visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
     },
   },
   // Resume
   resume: {
+    frame: {},
     text: {
       variants: {
         hidden: { opacity: 0, x: 100 },

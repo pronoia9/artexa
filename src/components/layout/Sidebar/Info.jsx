@@ -8,7 +8,7 @@ export const Info = () => {
   const data = dataStore((state) => state.sidebar.about);
 
   return (
-    <motion.div className='art-table p-15-15' {...sidebarMotion.sidebarSection}>
+    <motion.div className='art-table p-15-15' {...sidebarMotion.sidebarSection()}>
       <ul>
         {data.map((item) => (
           <InfoItem key={item.id} {...item} />

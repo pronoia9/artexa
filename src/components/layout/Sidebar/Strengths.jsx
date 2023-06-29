@@ -6,10 +6,11 @@ import { rem, sidebarMotion } from "../../../utils";
 
 export const Strengths = () => {
   const data = dataStore((state) => state.sidebar.strengths);
+  
   return (
-    <motion.div className='art-strengths p-15-15' {...sidebarMotion.strengths.frame}>
+    <motion.div className='art-strengths p-15-15' {...sidebarMotion.sidebarSection(0.15)}>
       {data.map((strength, index) => (
-        <StrengthItem key={`sidebar-strenghts-${index}`} {...sidebarMotion.strengths.item}>{strength}</StrengthItem>
+        <StrengthItem key={`sidebar-strenghts-${index}`} {...sidebarMotion.strengths}>{strength}</StrengthItem>
       ))}
     </motion.div>
   );

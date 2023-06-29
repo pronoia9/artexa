@@ -22,11 +22,11 @@ export const Sidebar = () => {
 
         <Scrollbar id='sidebar-scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
           <ScrollContent className='scroll-content'>
-            <Info /> <motion.div className='art-ls-divider' {...sidebarMotion.divider} />
-            <Languages /> <motion.div className='art-ls-divider' {...sidebarMotion.divider} />
-            <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider} />
-            <SoftSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider} />
-            <Strengths /> <motion.div className='art-ls-divider' {...sidebarMotion.divider} />
+            <Info /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(0.75 * 0.666)} />
+            <Languages /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(2 * 0.666)} />
+            <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(3.75 * 0.666)} />
+            <SoftSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(5.25 * 0.666)} />
+            <Strengths /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(8 * 0.666)} />
             <Resume />
           </ScrollContent>
         </Scrollbar>

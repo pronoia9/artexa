@@ -10,7 +10,7 @@ export const HardSkills = () => {
   const data = dataStore((state) => state.sidebar.skills.hard);
 
   return (
-    <SkillsContainer className='art-hard-skills p-30-30' {...sidebarMotion.sidebarSection}>
+    <SkillsContainer className='art-hard-skills p-30-30' {...sidebarMotion.sidebarSection(0.1)}>
       {data.map((skill, index) => (
         <HardSkillsItem key={`sidebar-hardskill-item-${index}`} {...skill} index={index} />
       ))}
