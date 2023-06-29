@@ -1,4 +1,3 @@
-import { Scrollbar } from 'smooth-scrollbar-react';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -10,7 +9,7 @@ export const Sidebar = () => {
   const { sidebarOpen, toggleSidebar } = dataStore((state) => ({ sidebarOpen: state.sidebarOpen, toggleSidebar: state.toggleSidebar }));
 
   return (
-    <Container className='art-info-bar' $active={sidebarOpen} {...sidebarMotion.sidebar}>
+    <Container className='art-info-bar' $active={sidebarOpen}>
       <Wrapper className='art-info-bar-frame'>
         <MobileHeader className='art-info-bar-header' $active={sidebarOpen}>
           <div className='art-info-bar-btn' onClick={() => toggleSidebar()}>
@@ -20,8 +19,8 @@ export const Sidebar = () => {
 
         <Profile />
 
-        <Scrollbar id='sidebar-scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
-          <ScrollContent className='scroll-content'>
+        <ScrollFrame className='art-scroll-frame'>
+          <ScrollContent className='scroll-content' {...sidebarMotion.sidebar}>
             <Info /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(0.75 * 0.666)} />
             <Languages /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(2.5 * 0.666)} />
             <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(4 * 0.666)} />
@@ -29,7 +28,7 @@ export const Sidebar = () => {
             <Strengths /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(8.25 * 0.666)} />
             <Resume />
           </ScrollContent>
-        </Scrollbar>
+        </ScrollFrame>
 
         <Socials />
       </Wrapper>
@@ -97,6 +96,11 @@ const MobileHeader = styled.div`
       transition: 0.4s ease-in-out;
     }
   }
+`;
+
+const ScrollFrame = styled(motion.div)`
+  overflow-x: hidden;
+  overflow-y: scroll;
 `;
 
 const ScrollContent = styled(motion.div)`
