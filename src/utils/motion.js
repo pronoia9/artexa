@@ -145,10 +145,10 @@ export const navbarMotion = {
   navbar: (navbarOpen) => ({
     initial: 'hidden',
     animate: navbarOpen ? 'visible' : 'hidden',
-    transition: { type: 'tween', duration: navbarOpen ? 0.55 : 1.55, ease: 'easeInOut' },
+    transition: { type: 'tween', duration: navbarOpen ? 0.55 : 0.75, ease: 'easeInOut' },
     variants: {
       hidden: { x: 0, staggerChildren: 0, when: 'afterChildren' },
-      visible: { x: -225, staggerChildren: 0, when: 'beforeChildren' },
+      visible: { x: -225, staggerChildren: 0 },
     },
   }),
   button: {
@@ -174,8 +174,8 @@ export const navbarMotion = {
   },
   list: {
     variants: {
-      hidden: { opacity: 0, transition: { staggerChildren: 0.01, when: 'afterChildren' } },
-      visible: { opacity: 1, transition: { staggerChildren: 0.05, when: 'beforeChildren' } },
+      hidden: { transition: { staggerChildren: 0.05 } },
+      visible: { transition: { staggerChildren: 0.05 } },
     },
   },
   item: {

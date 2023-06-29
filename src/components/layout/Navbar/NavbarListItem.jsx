@@ -22,9 +22,7 @@ export const NavbarListItem = ({ title, path, index, submenu }) => {
   return (
     <ListItem
       className={`menu-item ${submenu ? ' menu-item-has-children' : ''}`}
-      $index={index + 1}
       $currentPage={location.pathname === path}
-      $navbarOpen={navbarOpen}
       $submenuopen={submenu && submenuOpen}
       {...navbarMotion.item}
     >
@@ -51,11 +49,6 @@ const ListItem = styled(motion.li)`
   position: relative;
   width: 100%;
   list-style-type: none;
-  transition: 0.55s ease-in-out;
-  opacity: ${({ $navbarOpen }) => ($navbarOpen ? 1 : 0)};
-  transform: ${({ $navbarOpen }) => ($navbarOpen ? 'translateX(0)' : `translateX(${rem(60)})`)};
-  transition: 0.55s ease-in-out;
-  ${({ $index }) =>css` transition-delay: ${$index * 0.05}s;`};
 
   * {
     color: ${({ $currentPage }) => ($currentPage ? 'var(--c-font-2)' : 'var(--c-font-1)')};
@@ -65,11 +58,14 @@ const ListItem = styled(motion.li)`
     }
   }
 
-  a, p, span {
+  a,
+  p,
+  span {
     transition: 0.2s ease-in-out;
   }
 
-  a, p {
+  a,
+  p {
     display: inline-block;
     width: 100%;
     margin-bottom: 0;
@@ -81,8 +77,12 @@ const ListItem = styled(motion.li)`
     cursor: pointer;
   }
 
-  &:first-child { margin-top: ${rem(15)}; }
-  &:last-child { margin-bottom: ${rem(15)}; }
+  &:first-child {
+    margin-top: ${rem(15)};
+  }
+  &:last-child {
+    margin-bottom: ${rem(15)};
+  }
 
   /* Submenu */
   i {
@@ -104,23 +104,27 @@ const ListItem = styled(motion.li)`
     padding-left: 0;
     padding-right: 0;
 
-    &:hover { i { transform: rotate(90deg); } }
+    &:hover {
+      i {
+        transform: rotate(90deg);
+      }
+    }
 
     .sub-menu {
       position: relative;
       width: 100%;
-      max-height: ${({ $submenuopen }) => $submenuopen ? rem(500) : 0};
+      max-height: ${({ $submenuopen }) => ($submenuopen ? rem(500) : 0)};
       padding-left: 0;
       display: block;
       box-shadow: inset 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
       background: var(--c-bg);
       filter: brightness(95%);
-      pointer-events: ${({ $submenuopen }) => $submenuopen ? 'all' : 'none'};
+      pointer-events: ${({ $submenuopen }) => ($submenuopen ? 'all' : 'none')};
       overflow: hidden;
       transition: max-height 0.6s ease-in-out;
 
       .menu-item {
-        opacity: ${({$submenuopen }) => $submenuopen ? 1 : 0};
+        opacity: ${({ $submenuopen }) => ($submenuopen ? 1 : 0)};
 
         a {
           font-size: ${rem(11)};
