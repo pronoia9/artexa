@@ -111,8 +111,9 @@ export const sidebarMotion = {
   info: {
     container: { variants: staggerContainer(0.25) },
     item: { variants: staggerContainer(0.5) },
-    title: { variants: slideIn({}, 'left') },
-    subtitle: { variants: zoomIn() },
+    title: { variants: staggerContainer(0.05) },
+    char: { variants: zoomIn() },
+    subtitle: { variants: zoomIn() }
   },
 
   // Languages
@@ -265,7 +266,7 @@ export function slideIn(transitionOptions = {}, direction, amount) {
     hidden: {
       opacity: 0,
       x: direction === 'left' ? `-${num}` : direction === 'right' ? `${num}` : 0,
-      y: direction === 'up' ? `${num}` : direction === 'down' ? `${num}` : 0,
+      y: direction === 'up' ? `${num}` : direction === 'down' ? `-${num}` : 0,
     },
     visible: { opacity: 1, x: 0, y: 0, transition: { type: 'spring', ...transitionOptions } },
   };

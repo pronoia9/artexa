@@ -10,18 +10,24 @@ export const Info = () => {
   return (
     <motion.div className='art-table p-15-15' {...sidebarMotion.info.container}>
       <ul>
-        {data.map((item) => (
-          <InfoItem key={item.id} {...item} />
+        {data.map((item, index) => (
+          <InfoItem key={item.id} {...item} index={index} />
         ))}
       </ul>
     </motion.div>
   );
 };
 
-export const InfoItem = ({ title, subtitle }) => {
+export const InfoItem = ({ title, subtitle, index }) => {
   return (
     <ListItem {...sidebarMotion.info.item}>
-      <motion.span {...sidebarMotion.info.title}>{title}</motion.span>
+      <motion.span {...sidebarMotion.info.title}>
+        {title.split('').map((char, i) => (
+          <motion.span key={`sidebar-info-${index}-${i}`} {...sidebarMotion.info.char}>
+            {char}
+          </motion.span>
+        ))}
+      </motion.span>
       <motion.span {...sidebarMotion.info.subtitle}>{subtitle}</motion.span>
     </ListItem>
   );
