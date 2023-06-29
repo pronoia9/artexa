@@ -159,18 +159,8 @@ export const heroMotion = {
 
 // COUNTERS
 export const countersMotion = {
-  frame: {
-    variants: {
-      hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { type: 'spring', when: 'beforeChildren', staggerChildren: 0.1 } },
-    },
-  },
-  contents: {
-    variants: {
-      hidden: { opacity: 0, scale: 0 },
-      visible: { opacity: 1, scale: 1 },
-    },
-  },
+  frame: { variants: staggerContainer(0.1) },
+  contents: { variants: zoomIn() },
 };
 /***********************  5. Sections End  ***********************/
 /*
