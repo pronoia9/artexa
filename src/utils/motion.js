@@ -143,10 +143,8 @@ export const sidebarMotion = {
 
   // Strengths
   strengths: {
-    variants: {
-      hidden: { opacity: 0, scale: 0 },
-      visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
-    },
+    container: { variants: staggerContainer(0.1) },
+    item: { variants: zoomIn() },
   },
 
   // Resume
