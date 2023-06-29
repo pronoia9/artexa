@@ -101,7 +101,44 @@ export const sidebarMotion = {
   }),
 
   // TODO: Profile
-  profile: {},
+  profile: {
+    container: {
+      variants: {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 1 } },
+      },
+    },
+    avatarItem: {
+      variants: {
+        hidden: { opacity: 0, scale: 0 },
+        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
+      },
+    },
+    nameContainer: {
+      variants: {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
+      },
+    },
+    postContainer: {
+      variants: {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 1 } },
+      },
+    },
+    postLine: {
+      variants: {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.05 } },
+      },
+    },
+    text: {
+      variants: {
+        hidden: { opacity: 0, scale: 0 },
+        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
+      },
+    },
+  },
 
   // Info
   info: {
