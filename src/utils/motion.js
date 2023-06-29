@@ -109,40 +109,19 @@ export const sidebarMotion = {
 
   // Info
   info: {
-    frame: {
-      variants: {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { type: 'spring', staggerChildren: 0.5 } },
-      },
-    },
-    title: {
-      variants: {
-        hidden: { opacity: 0, scale: 0, x: 50 },
-        visible: { opacity: 1, scale: 1, x: 0, transition: { duration: 0.5, ease: 'linear' } },
-      },
-    },
-    subtitle: {
-      variants: {
-        hidden: { opacity: 0, scale: 0 },
-        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
-      },
-    },
+    container: { variants: staggerContainer(0.25) },
+    item: { variants: staggerContainer(0.5) },
+    title: { variants: slideIn({}, 'left') },
+    subtitle: { variants: zoomIn() },
   },
 
   // Languages
   languages: {
-    frame: {
-      variants: {
-        hidden: { opacity: 0, scale: 0 },
-        visible: { opacity: 1, scale: 1, transition: { type: 'spring', staggerChildren: 0.25 } },
-      },
-    },
-    items: {
-      variants: {
-        hidden: { opacity: 0, scale: 0 },
-        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
-      },
-    },
+    container: { variants: staggerContainer(0.25) },
+    item: { variants: staggerContainer(0.25) },
+    bar: { variants: zoomIn() },
+    text: { variants: staggerContainer(0.05) },
+    char: { variants: zoomIn() },
   },
 
   // Hard Skills

@@ -8,7 +8,7 @@ export const Info = () => {
   const data = dataStore((state) => state.sidebar.about);
 
   return (
-    <motion.div className='art-table p-15-15' {...sidebarMotion.sidebarSection()}>
+    <motion.div className='art-table p-15-15' {...sidebarMotion.info.container}>
       <ul>
         {data.map((item) => (
           <InfoItem key={item.id} {...item} />
@@ -20,7 +20,7 @@ export const Info = () => {
 
 export const InfoItem = ({ title, subtitle }) => {
   return (
-    <ListItem {...sidebarMotion.info.frame}>
+    <ListItem {...sidebarMotion.info.item}>
       <motion.span {...sidebarMotion.info.title}>{title}</motion.span>
       <motion.span {...sidebarMotion.info.subtitle}>{subtitle}</motion.span>
     </ListItem>
