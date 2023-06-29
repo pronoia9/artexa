@@ -80,23 +80,22 @@ export const sidebarMotion = {
   sidebar: {
     initial: 'hidden',
     animate: 'visible',
-    variants: {
-      hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { staggerChildren: 0.5 } },
-    },
+    variants: staggerContainer(2.5),
   },
+
+  scrollContent: {
+    variants: staggerContainer(0.5),
+  },
+
+  // Divider
+  divider: (delay = 0) => ({
+    variants: slideIn({ type: 'tween', ease: 'linear', duration: 0.5, delay }, 'right', '100'),
+  }),
+
   sidebarSection: (staggerChildren = 0.25, delay = 0) => ({
     variants: {
       hidden: { opacity: 0 },
       visible: { opacity: 1, transition: { staggerChildren, delay } },
-    },
-  }),
-
-  // Divider
-  divider: (delay = 0) => ({
-    variants: {
-      hidden: { opacity: 0, x: 100 },
-      visible: { opacity: 1, x: 0, transition: { type: 'tween', ease: 'linear', duration: 0.5, delay } },
     },
   }),
 
@@ -295,3 +294,48 @@ export const preloaderMotion = {
   exit: { opacity: 0, transition: { delay: 2.2, duration: 0.4 } },
 };
 /***********************  5. Components End  ***********************/
+
+export function textVariant(transitionOptions = {}) {
+  return {
+    hidden: { y: -50, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { type: 'spring', ...transitionOptions } },
+  };
+}
+
+export function fadeIn(transitionOptions = {}, direction, amount) {
+  const num = amount || 100;
+  return {
+    hidden: {
+      x: direction === 'left' ? num : direction === 'right' ? -num : 0,
+      y: direction === 'up' ? num : direction === 'down' ? -num : 0,
+      opacity: 0,
+    },
+    visible: { x: 0, y: 0, opacity: 1, transition: { type: 'spring', ...transitionOptions } },
+  };
+}
+
+export function zoomIn(transitionOptions = {}) {
+  return {
+    hidden: { scale: 0, opacity: 0 },
+    visible: { scale: 1, opacity: 1, transition: { type: 'spring', ...transitionOptions } },
+  };
+}
+
+export function slideIn(transitionOptions = {}, direction, amount) {
+  const num = amount || '100%';
+  return {
+    hidden: {
+      opacity: 0,
+      x: direction === 'left' ? `-${num}` : direction === 'right' ? `${num}` : 0,
+      y: direction === 'up' ? `${num}` : direction === 'down' ? `${num}` : 0,
+    },
+    visible: { opacity: 1, x: 0, y: 0, transition: { type: 'spring', ...transitionOptions } },
+  };
+}
+
+export function staggerContainer(staggerChildren = 0.5, delayChildren = 0, transitionOptions = {}) {
+  return {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren, delayChildren, ...transitionOptions } },
+  };
+}
