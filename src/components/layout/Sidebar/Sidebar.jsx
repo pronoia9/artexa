@@ -9,7 +9,7 @@ export const Sidebar = () => {
   const { sidebarOpen, toggleSidebar } = dataStore((state) => ({ sidebarOpen: state.sidebarOpen, toggleSidebar: state.toggleSidebar }));
 
   return (
-    <Container className='art-info-bar' $active={sidebarOpen}>
+    <Container className='art-info-bar' $active={sidebarOpen} {...sidebarMotion.sidebar}>
       <Wrapper className='art-info-bar-frame'>
         <MobileHeader className='art-info-bar-header' $active={sidebarOpen}>
           <div className='art-info-bar-btn' onClick={() => toggleSidebar()}>
@@ -20,7 +20,7 @@ export const Sidebar = () => {
         <Profile />
 
         <ScrollFrame className='art-scroll-frame'>
-          <ScrollContent className='scroll-content' {...sidebarMotion.sidebar}>
+          <ScrollContent className='scroll-content'>
             <Info /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(0.75 * 0.666)} />
             <Languages /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(2.5 * 0.666)} />
             <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(4 * 0.666)} />
@@ -98,11 +98,11 @@ const MobileHeader = styled.div`
   }
 `;
 
-const ScrollFrame = styled(motion.div)`
+const ScrollFrame = styled.div`
   overflow-x: hidden;
   overflow-y: scroll;
 `;
 
-const ScrollContent = styled(motion.div)`
+const ScrollContent = styled.div`
   padding: ${rem(240)} 0 ${rem(50)};
 `;
