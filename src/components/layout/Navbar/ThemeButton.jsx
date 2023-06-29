@@ -1,8 +1,9 @@
 import { styled, css } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { dataStore } from '../../../store/dataStore';
 import { colors } from '../../../styles';
-import { rem } from '../../../utils';
+import { navbarMotion, rem } from '../../../utils';
 
 export const ThemeButton = () => {
   const { navbarOpen, themes, theme, toggleTheme, accent, setAccent } = dataStore((state) => ({
@@ -17,7 +18,7 @@ export const ThemeButton = () => {
   const handleThemeClick = (title) => {
     theme !== title && toggleTheme();
   };
-  
+
   const handleAccentClick = (color) => {
     accent !== color && setAccent(color);
   };
@@ -26,13 +27,19 @@ export const ThemeButton = () => {
     <Container className='art-language-change' $navbarOpen={navbarOpen}>
       <div>
         {themes.map(({ title, icon }) => (
-          <ThemeItem className='theme-button' key={`theme-button-${title}`} $active={theme === title} $navbarOpen={navbarOpen} onClick={() => handleThemeClick(title)}>
+          <ThemeItem
+            className='theme-button'
+            key={`theme-button-${title}`}
+            $active={theme === title}
+            $navbarOpen={navbarOpen}
+            onClick={() => handleThemeClick(title)}
+          >
             <i className={icon} />
           </ThemeItem>
         ))}
       </div>
 
-      <AccentContainer $navbarOpen={navbarOpen}>
+      <AccentContainer $navbarOpen={navbarOpen} {...navbarMotion.accentContainer}>
         {Object.entries(colors).map((color, index) => (
           <AccentItem
             key={`theme-button-accent-${index}`}
@@ -42,6 +49,8 @@ export const ThemeButton = () => {
             $active={accent === color[0]}
             $colors={[color[1]]}
             onClick={() => handleAccentClick(color[0])}
+            whileHover={{ scale: accent !== color[0] ? 1.75 : 1 }}
+            {...navbarMotion.accent}
           />
         ))}
       </AccentContainer>
@@ -77,31 +86,32 @@ const ThemeItem = styled.div`
   cursor: ${({ $active }) => !$active && 'pointer'};
   transition: 0.55s ease-in-out;
   z-index: 1;
-  
+
   &:first-child {
-    margin-bottom: ${rem(10)}; 
+    margin-bottom: ${rem(10)};
   }
 
   ${({ $navbarOpen }) =>
-    $navbarOpen &&css`
+    $navbarOpen &&
+    css`
       &:first-child {
-        transform: translateX(calc(${rem(5)} + 1.75rem + 0.5rem)); 
+        transform: translateX(calc(${rem(5)} + 1.75rem + 0.5rem));
       }
 
       &:last-child {
-        transform: translateY(calc(${rem(-10)} - 1.75rem)); 
+        transform: translateY(calc(${rem(-10)} - 1.75rem));
       }
     `}
 
   i {
-    color: ${({ $active }) => !$active ? 'var(--c-font-2)' : 'var(--c-bg-wrapper)'};
+    color: ${({ $active }) => (!$active ? 'var(--c-font-2)' : 'var(--c-bg-wrapper)')};
     font-size: 1rem;
     font-weight: 600;
     transition: 0.4s ease-in-out;
   }
 `;
 
-const AccentContainer = styled.div`
+const AccentContainer = styled(motion.div)`
   position: absolute;
   bottom: ${rem(30)};
   left: ${rem(25)};
@@ -110,14 +120,13 @@ const AccentContainer = styled.div`
   flex-direction: row;
   justify-content: space-around;
   gap: ${rem(10)};
-  z-index: ${({ $navbarOpen }) => $navbarOpen ? 0 : -1};
+  z-index: ${({ $navbarOpen }) => ($navbarOpen ? 0 : -1)};
 `;
 
-const AccentItem = styled.div`
+const AccentItem = styled(motion.div)`
   position: relative;
   width: 1.5rem;
   height: 1.5rem;
-  opacity: ${({ $navbarOpen }) => ($navbarOpen ? 1 : 0)};
   background: ${({ $index }) => `linear-gradient(45deg, 
     ${Object.entries(colors)[$index][1].accent1} 0%, 
     ${Object.entries(colors)[$index][1].accent2} 25%, 
@@ -127,9 +136,6 @@ const AccentItem = styled.div`
   `};
   border-radius: 50%;
   cursor: ${({ $active }) => !$active && 'pointer'};
-  transform: ${({ $navbarOpen }) => ($navbarOpen ? 'translateX(0)' : `translateX(${rem(60)})`)};
-  transition: 0.55s ease-in-out;
-  ${({ $index }) => css`transition-delay: ${$index * 0.05}s;`};
 
   &:before {
     content: '';
@@ -142,9 +148,5 @@ const AccentItem = styled.div`
     border-radius: 50%;
     display: ${({ $active }) => !$active && 'none'};
     animation: ${({ $active }) => $active && 'puls 1s infinite'};
-  }
-
-  &:hover {
-    transform: ${({ $active }) => !$active && `scale(1.25)`};
   }
 `;

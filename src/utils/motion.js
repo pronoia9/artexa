@@ -80,7 +80,7 @@ export const sidebarMotion = {
   sidebar: { initial: 'hidden', animate: 'visible', variants: staggerContainer(2.5) },
   scrollContent: { variants: staggerContainer(0.5) },
   // Divider
-  divider: (delay = 0) => ({ variants: slideIn({ type: 'tween', ease: 'linear', duration: 0.5, delay }, 'right', '100') }),
+  divider: (delay = 0) => ({ variants: fadeIn({ type: 'tween', ease: 'linear', duration: 0.5, delay }, 'right', '100') }),
   // Profile
   profile: {
     container: { variants: staggerContainer(0.25) },
@@ -185,6 +185,10 @@ export const navbarMotion = {
       visible: { opacity: 1, x: 0 },
     },
   },
+  themeContainer: { variants: staggerContainerMirror(0.5) },
+  theme: { variants: {} },
+  accentContainer: { variants: staggerContainerMirror(0.05) },
+  accent: { variants: slideIn({}, 'right', '60px') },
 };
 
 // Footer
@@ -225,18 +229,6 @@ export function textVariant(transitionOptions = {}) {
   };
 }
 
-export function fadeIn(transitionOptions = {}, direction, amount) {
-  const num = amount || 100;
-  return {
-    hidden: {
-      x: direction === 'left' ? num : direction === 'right' ? -num : 0,
-      y: direction === 'up' ? num : direction === 'down' ? -num : 0,
-      opacity: 0,
-    },
-    visible: { x: 0, y: 0, opacity: 1, transition: { type: 'spring', ...transitionOptions } },
-  };
-}
-
 export function zoomIn(transitionOptions = {}) {
   return {
     hidden: { scale: 0, opacity: 0 },
@@ -244,21 +236,39 @@ export function zoomIn(transitionOptions = {}) {
   };
 }
 
+export function fadeIn(transitionOptions = {}, direction, amount) {
+  const num = amount || 100;
+  return {
+    hidden: {
+      x: direction === 'left' ? -num : direction === 'right' ? num : 0,
+      y: direction === 'up' ? num : direction === 'down' ? -num : 0,
+      opacity: 0,
+    },
+    visible: { x: 0, y: 0, opacity: 1, transition: { type: 'spring', ...transitionOptions } },
+  };
+}
+
 export function slideIn(transitionOptions = {}, direction, amount) {
   const num = amount || '100%';
   return {
     hidden: {
-      opacity: 0,
       x: direction === 'left' ? `-${num}` : direction === 'right' ? `${num}` : 0,
       y: direction === 'up' ? `${num}` : direction === 'down' ? `-${num}` : 0,
     },
-    visible: { opacity: 1, x: 0, y: 0, transition: { type: 'spring', ...transitionOptions } },
+    visible: { x: 0, y: 0, transition: { type: 'spring', ...transitionOptions } },
   };
 }
 
 export function staggerContainer(staggerChildren = 0.5, delayChildren = 0, transitionOptions = {}) {
   return {
     hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren, delayChildren, ...transitionOptions } },
+  };
+}
+
+export function staggerContainerMirror(staggerChildren = 0.5, delayChildren = 0, transitionOptions = {}) {
+  return {
+    hidden: { opacity: 0, transition: { staggerChildren, delayChildren, ...transitionOptions } },
     visible: { opacity: 1, transition: { staggerChildren, delayChildren, ...transitionOptions } },
   };
 }
