@@ -1,9 +1,10 @@
 import { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { styled, css } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { dataStore } from '../../../store/dataStore';
-import { rem } from '../../../utils';
+import { navbarMotion, rem } from '../../../utils';
 
 export const NavbarListItem = ({ title, path, index, submenu }) => {
   const { navbarOpen, closeNavbar } = dataStore((state) => ({ navbarOpen: state.navbarOpen, closeNavbar: state.closeNavbar }));
@@ -25,6 +26,7 @@ export const NavbarListItem = ({ title, path, index, submenu }) => {
       $currentPage={location.pathname === path}
       $navbarOpen={navbarOpen}
       $submenuopen={submenu && submenuOpen}
+      {...navbarMotion.item}
     >
       {submenu ? (
         <>
@@ -45,7 +47,7 @@ export const NavbarListItem = ({ title, path, index, submenu }) => {
   );
 };
 
-const ListItem = styled.li`
+const ListItem = styled(motion.li)`
   position: relative;
   width: 100%;
   list-style-type: none;

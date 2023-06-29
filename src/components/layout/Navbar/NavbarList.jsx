@@ -1,13 +1,15 @@
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { NavbarListItem } from '../..';
 import { dataStore } from '../../../store/dataStore';
+import { navbarMotion } from '../../../utils';
 
 export const NavbarList = () => {
   const data = dataStore((state) => state.navbar);
   return (
     <Container>
-      <NavigationList className='main-menu'>
+      <NavigationList className='main-menu' {...navbarMotion.list}>
         {data.map((route, index) => (
           <NavbarListItem key={`navbarlist-${index}`} {...route} index={index} />
         ))}
@@ -23,7 +25,7 @@ const Container = styled.nav`
   align-items: center;
 `;
 
-const NavigationList = styled.ul`
+const NavigationList = styled(motion.ul)`
   position: relative;
   bottom: -5%;
   width: 100%;
