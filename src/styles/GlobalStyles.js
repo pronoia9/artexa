@@ -85,6 +85,10 @@ const GlobalStyles = createGlobalStyle`
     border: none;
     background: none;
     background-color: transparent;
+
+    &:focus {
+      outline: none;
+    }
   }
 
 /* ----------------------------- Author: Nazar Miller ----------------------------- */
