@@ -7,7 +7,7 @@ import { sidebarMotion } from '../../../utils';
 export const Socials = () => {
   const data = dataStore((state) => state.sidebar.social);
   return (
-    <SocialsContainer className='art-ls-social'>
+    <SocialsContainer className='art-ls-social' {...sidebarMotion.socials.container}>
       {data.map((social, index) => (
         <SocialsItem key={`sidebar-socials-${index}`} {...social} index={index} />
       ))}
@@ -21,7 +21,7 @@ export const SocialsItem = ({ id, platform, favicon, fancybox, url, index }) => 
     href={url}
     target={!fancybox ? '_blank' : ''}
     rel={!fancybox ? 'noopener noreferrer' : ''}
-    {...sidebarMotion.socials(index)}
+    {...sidebarMotion.socials.item}
   >
     <i className={favicon} />
   </SocialsLink>

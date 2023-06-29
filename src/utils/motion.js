@@ -134,21 +134,10 @@ export const sidebarMotion = {
     icon: { variants: zoomIn() },
   },
   // Socials
-  socials: (index = 1) => ({
-    initial: 'hidden',
-    animate: 'visible',
-    variants: {
-      hidden: { opacity: 0, scale: 0 },
-      visible: { opacity: 1, scale: 1, transition: { type: 'spring', delay: 0.1 * index + (6.25 + 2.5) } },
-    },
-  }),
-  //
-  sidebarSection: (staggerChildren = 0.25, delay = 0) => ({
-    variants: {
-      hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { staggerChildren, delay } },
-    },
-  }),
+  socials: {
+    container: { variants: staggerContainer(0.1, 3.5) },
+    item: { variants: zoomIn() },
+  },
 };
 
 // Navbar
