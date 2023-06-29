@@ -1,11 +1,13 @@
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { dataStore } from '../../../store/dataStore';
+import { sidebarMotion } from '../../../utils';
 
 export const Socials = () => {
   const data = dataStore((state) => state.sidebar.social);
   return (
-    <SocialsContainer className='art-ls-social'>
+    <SocialsContainer className='art-ls-social' {...sidebarMotion.sidebarSection(0.25, 6.25)}>
       {data.map((social, index) => (
         <SocialsItem key={`sidebar-socials-${index}`} {...social} />
       ))}
@@ -14,12 +16,12 @@ export const Socials = () => {
 };
 
 export const SocialsItem = ({ id, platform, favicon, fancybox, url }) => (
-  <SocialsLink className={platform} href={url} target={!fancybox ? '_blank' : ''} rel={!fancybox ? 'noopener noreferrer' : ''} data-fancybox={fancybox}>
+  <SocialsLink className={platform} href={url} target={!fancybox ? '_blank' : ''} rel={!fancybox ? 'noopener noreferrer' : ''} {...sidebarMotion.socials}>
     <i className={favicon} />
   </SocialsLink>
 );
 
-const SocialsContainer = styled.div`
+const SocialsContainer = styled(motion.div)`
   position: absolute;
   bottom: 0;
   left: 0;
@@ -36,7 +38,7 @@ const SocialsContainer = styled.div`
   isolation: isolate;
 `;
 
-const SocialsLink = styled.a`
+const SocialsLink = styled(motion.a)`
   color: var(--c-font-1);
   transition: 0.2s ease-in-out;
 

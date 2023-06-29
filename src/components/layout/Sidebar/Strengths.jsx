@@ -8,7 +8,7 @@ export const Strengths = () => {
   const data = dataStore((state) => state.sidebar.strengths);
   
   return (
-    <motion.div className='art-strengths p-15-15' {...sidebarMotion.sidebarSection(0.15)}>
+    <motion.div className='art-strengths p-15-15' {...sidebarMotion.sidebarSection(0.1)}>
       {data.map((strength, index) => (
         <StrengthItem key={`sidebar-strenghts-${index}`} {...sidebarMotion.strengths}>{strength}</StrengthItem>
       ))}

@@ -98,6 +98,8 @@ export const sidebarMotion = {
       visible: { opacity: 1, x: 0, transition: { type: 'tween', ease: 'linear', duration: 0.5, delay } },
     },
   }),
+  // TODO: Profile
+  profile: {},
   // Info
   info: {
     frame: {
@@ -191,6 +193,13 @@ export const sidebarMotion = {
         hidden: { opacity: 0, scale: 0 },
         visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
       },
+    },
+  },
+  // TODO: Socials
+  socials: {
+    variants: {
+      hidden: { opacity: 0, scale: 0 },
+      visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
     },
   },
 };

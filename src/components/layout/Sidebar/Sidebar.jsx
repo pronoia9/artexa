@@ -26,7 +26,7 @@ export const Sidebar = () => {
             <Languages /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(2.5 * 0.666)} />
             <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(4 * 0.666)} />
             <SoftSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(5.5 * 0.666)} />
-            <Strengths /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(9.5 * 0.666)} />
+            <Strengths /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(8.25 * 0.666)} />
             <Resume />
           </ScrollContent>
         </Scrollbar>
