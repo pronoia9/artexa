@@ -113,7 +113,7 @@ export const sidebarMotion = {
     item: { variants: staggerContainer(0.5) },
     title: { variants: staggerContainer(0.05) },
     char: { variants: zoomIn() },
-    subtitle: { variants: zoomIn() }
+    subtitle: { variants: zoomIn() },
   },
 
   // Languages
@@ -134,24 +134,11 @@ export const sidebarMotion = {
 
   // Soft Skills
   softSkills: {
-    frame: {
-      variants: {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { type: 'spring', staggerChildren: 0.25 } },
-      },
-    },
-    check: {
-      variants: {
-        hidden: { opacity: 0, scale: 0 },
-        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
-      },
-    },
-    item: {
-      variants: {
-        hidden: { opacity: 0, x: 100 },
-        visible: { opacity: 1, x: 0, transition: { type: 'spring' } },
-      },
-    },
+    container: { variants: staggerContainer(0.5) },
+    item: { variants: staggerContainer(0.25) },
+    check: { variants: zoomIn() },
+    text: { variants: staggerContainer(0.01) },
+    char: { variants: textVariant() },
   },
 
   // Strengths
