@@ -141,8 +141,8 @@ export const sidebarMotion = {
 };
 
 // Navbar
-export const navbarMotion = (navbarOpen) => ({
-  navbar: {
+export const navbarMotion = {
+  navbar: (navbarOpen) => ({
     initial: 'hidden',
     animate: navbarOpen ? 'visible' : 'hidden',
     transition: { type: 'tween', duration: 0.55, ease: 'easeInOut' },
@@ -150,9 +150,29 @@ export const navbarMotion = (navbarOpen) => ({
       hidden: { x: 0 },
       visible: { x: -225 },
     },
+  }),
+  navbarButton: {
+    path1: {
+      variants: {
+        hidden: { d: 'M 2 2.5 L 20 2.5' },
+        visible: { d: 'M 3 16.5 L 17 2.5' },
+      },
+    },
+    path2: {
+      variants: {
+        hidden: { opacity: 1 },
+        visible: { opacity: 0 },
+      },
+      transition: { duration: 0.1 },
+    },
+    path3: {
+      variants: {
+        hidden: { d: 'M 2 16.346 L 20 16.346' },
+        visible: { d: 'M 3 2.5 L 17 16.346' },
+      },
+    },
   },
-  navbarButton: {},
-});
+};
 
 // Footer
 export const footerMotion = {};

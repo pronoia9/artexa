@@ -1,18 +1,22 @@
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { dataStore } from '../../../store/dataStore';
-import { rem } from '../../../utils';
+import { navbarMotion, rem } from '../../../utils';
+
+const Path = (props) => <motion.path fill='transparent' strokeWidth='3' strokeLinecap='round' {...props} />;
 
 export const NavbarButton = () => {
-  const { navbarOpen, toggleNavbar } = dataStore((state) => ({
-    navbarOpen: state.navbarOpen,
-    toggleNavbar: state.toggleNavbar
-  }));
+  const toggleNavbar = dataStore((state) => state.toggleNavbar);
 
   return (
     <Container className='art-menu-bar-header'>
       <Wrapper className='art-menu-bar-btn' onClick={() => toggleNavbar()}>
-        <Button $navbarOpen={navbarOpen} />
+        <svg width='23' height='23' viewBox='0 0 23 23'>
+          <Path {...navbarMotion.navbarButton.path1} />
+          <Path d='M 2 9.423 L 20 9.423' {...navbarMotion.navbarButton.path2} />
+          <Path {...navbarMotion.navbarButton.path3} />
+        </svg>
       </Wrapper>
     </Container>
   );
@@ -26,64 +30,23 @@ const Container = styled.div`
   height: ${rem(70)};
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   background: var(--c-gradient-2);
   box-shadow: 0 ${rem(1)} ${rem(4)} 0 var(--c-box-shadow);
   z-index: 9;
 `;
 
-const Wrapper = styled.div`
-  width: ${rem(15)};
-  height: ${rem(12)};
-  margin-top: ${rem(-10)};
+const Wrapper = styled.button`
   padding: ${rem(30)};
-  display: inline-block;
-  pointer-events: all;
 
-  &.art-disabled {
-    opacity: 0;
-    pointer-events: none;
-  }
-  
-  &:hover {
-    span, span:after, span:before {
-      background: var(--c-font-2);
-    }
-  }
-`;
-
-const Button = styled.span`
-  content: '';
-  position: relative;
-  width: ${rem(15)};
-  height: ${rem(3)};
-  display: block;
-  margin: ${rem(5)} 0 0;
-  background: var(--c-font-1);
-  border-radius: ${rem(1)};
-  backface-visibility: hidden;
-  transform: ${({ $navbarOpen }) => $navbarOpen && 'rotate(45deg)'};
-  transition: 0.4s ease-in-out;
-
-  &::after, &:before {
-    content: '';
-    position: absolute;
+  svg {
+    stroke: var(--c-font-1);
     width: ${rem(15)};
-    height: ${rem(3)};
-    display: block;
-    border-radius: ${rem(1)};
-    background: var(--c-font-1);
-    backface-visibility: hidden;
-    transition: 0.4s ease-in-out;
+    height: ${rem(15)};
   }
 
-  &:before {
-    top: ${rem(-5)};
-    transform: ${({ $navbarOpen }) => $navbarOpen && `translate(0px, ${rem(5)}) rotate(-90deg)`};
-  }
-
-  &:after {
-    top: ${rem(5)};
-    transform: ${({ $navbarOpen }) => $navbarOpen && `translate(0px, ${rem(-5)}) rotate(-90deg)`};
+  &:hover {
+    svg {
+      stroke: var(--c-font-2);
+    }
   }
 `;
