@@ -124,12 +124,12 @@ export const sidebarMotion = {
   },
   // Strengths
   strengths: {
-    container: { variants: staggerContainer(0.1) },
+    container: { variants: staggerContainer(0.1, 1) },
     item: { variants: zoomIn() },
   },
   // Resume
   resume: {
-    container: { variants: staggerContainer(0.5, 1) },
+    container: { variants: staggerContainer(0.5, 2) },
     text: { variants: fadeIn({ type: 'tween', duration: 0.5, ease: 'linear' }, 'up', '100') },
     icon: { variants: zoomIn() },
   },

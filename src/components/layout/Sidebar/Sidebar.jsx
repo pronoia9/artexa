@@ -23,9 +23,9 @@ export const Sidebar = () => {
           <ScrollContent className='scroll-content' {...sidebarMotion.scrollContent}>
             <Info />       <motion.div className='art-ls-divider' {...sidebarMotion.divider(0.75 * 0.666 + 2.5)} />
             <Languages />  <motion.div className='art-ls-divider' {...sidebarMotion.divider(2.5 * 0.666 + 2.5)} />
-            <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(4 * 0.666 + 2.5)} />
-            <SoftSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(5.5 * 0.666 + 2.5)} />
-            <Strengths />  <motion.div className='art-ls-divider' {...sidebarMotion.divider(8.5 * 0.666 + 2.5)} />
+            <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(4.25 * 0.666 + 2.5)} />
+            <SoftSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(7.25 * 0.666 + 2.5)} />
+            <Strengths />  <motion.div className='art-ls-divider' {...sidebarMotion.divider(9.5 * 0.666 + 2.5)} />
             <Resume />
           </ScrollContent>
         </ScrollFrame>
