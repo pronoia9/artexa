@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { styled, css } from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -6,19 +7,19 @@ import { Tooltip } from '../../../styles';
 import { rem, sidebarMotion } from '../../../utils';
 
 export const Profile = () => (
-  <ProfileContainer className='art-header' {...sidebarMotion.sidebarSection()}>
-    <Avatar />
-    <motion.div initial='hidden' animate='visible' {...sidebarMotion.profile.container}>
+  <ProfileContainer className='art-header' {...sidebarMotion.profile.container}>
+    <Avatar {...sidebarMotion.profile.avatarContainer} />
+    <motion.div initial='hidden' animate='visible' {...sidebarMotion.profile.textContainer}>
       <Name {...sidebarMotion.profile.nameContainer} />
       <Post {...sidebarMotion.profile.postContainer} />
     </motion.div>
   </ProfileContainer>
 );
 
-export const Avatar = () => {
+export const Avatar = (props) => {
   const data = dataStore((state) => state.sidebar.profile);
   return (
-    <AvatarContainer className='art-avatar' initial='hidden' animate='visible' {...sidebarMotion.profile.container}>
+    <AvatarContainer className='art-avatar' initial='hidden' animate='visible' {...props}>
       <AvatarCurtain data-fancybox='avatar' href={data.avatar} className='art-avatar-curtain'>
         <AvatarImage src={data.avatar} alt='Avatar' {...sidebarMotion.profile.avatarItem} />
         <i className='fas fa-expand' />
@@ -35,13 +36,13 @@ export const Name = (props) => {
   const data = dataStore((state) => state.sidebar.profile);
   return (
     <NameText className='art-name mb-10' {...props}>
-      <a href={data.nameLink}>
+      <Link to={data.nameLink}>
         {data.name.split('').map((char, index) => (
           <motion.span key={`sidebar-profile-name-${index}`} {...sidebarMotion.profile.text}>
             {char}
           </motion.span>
         ))}
-      </a>
+      </Link>
     </NameText>
   );
 };

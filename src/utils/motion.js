@@ -83,14 +83,10 @@ export const sidebarMotion = {
     variants: staggerContainer(2.5),
   },
 
-  scrollContent: {
-    variants: staggerContainer(0.5),
-  },
+  scrollContent: { variants: staggerContainer(0.5) },
 
   // Divider
-  divider: (delay = 0) => ({
-    variants: slideIn({ type: 'tween', ease: 'linear', duration: 0.5, delay }, 'right', '100'),
-  }),
+  divider: (delay = 0) => ({ variants: slideIn({ type: 'tween', ease: 'linear', duration: 0.5, delay }, 'right', '100') }),
 
   sidebarSection: (staggerChildren = 0.25, delay = 0) => ({
     variants: {
@@ -101,42 +97,14 @@ export const sidebarMotion = {
 
   // Profile
   profile: {
-    container: {
-      variants: {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren: 1 } },
-      },
-    },
-    avatarItem: {
-      variants: {
-        hidden: { opacity: 0, scale: 0 },
-        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
-      },
-    },
-    nameContainer: {
-      variants: {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
-      },
-    },
-    postContainer: {
-      variants: {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren: 1 } },
-      },
-    },
-    postLine: {
-      variants: {
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { staggerChildren: 0.05 } },
-      },
-    },
-    text: {
-      variants: {
-        hidden: { opacity: 0, scale: 0 },
-        visible: { opacity: 1, scale: 1, transition: { type: 'spring' } },
-      },
-    },
+    container: { variants: staggerContainer(0.25) },
+    avatarContainer: { variants: staggerContainer(1) },
+    avatarItem: { variants: zoomIn() },
+    textContainer: { variants: staggerContainer(1) },
+    nameContainer: { variants: staggerContainer(0.1) },
+    postContainer: { variants: staggerContainer(1) },
+    postLine: { variants: staggerContainer(0.05) },
+    text: { variants: zoomIn() },
   },
 
   // Info
