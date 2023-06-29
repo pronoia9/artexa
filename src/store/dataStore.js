@@ -52,12 +52,8 @@ export const dataStore = create((set) => ({
     outerScale: 2,
     outerAlpha: 0,
     hasBlendMode: true,
-    innerStyle: {
-      backgroundColor: 'var(--c-accent-5)',
-    },
-    outerStyle: {
-      border: '3px solid var(--c-accent-5)',
-    },
+    innerStyle: { backgroundColor: 'var(--c-accent-5)', },
+    outerStyle: { border: '3px solid var(--c-accent-5)', },
     clickables: [
       'a',
       'input[type="text"]',
@@ -79,6 +75,7 @@ export const dataStore = create((set) => ({
       '.art-brand',
       '.hero-heading',
       '.art-available-lamp',
+      '.art-avatar',
     ],
   },
 
