@@ -4,11 +4,14 @@ import { dataStore } from '../../../store/dataStore';
 import { rem } from '../../../utils';
 
 export const NavbarButton = () => {
-  const { navbarOpen, toggleNavbar } = dataStore((state) => ({ navbarOpen: state.navbarOpen, toggleNavbar: state.toggleNavbar }));
+  const { navbarOpen, toggleNavbar } = dataStore((state) => ({
+    navbarOpen: state.navbarOpen,
+    toggleNavbar: state.toggleNavbar
+  }));
 
   return (
     <Container className='art-menu-bar-header'>
-      <Wrapper className='art-menu-bar-btn' $navbarOpen={navbarOpen} onClick={() => toggleNavbar()}>
+      <Wrapper className='art-menu-bar-btn' onClick={() => toggleNavbar()}>
         <Button $navbarOpen={navbarOpen} />
       </Wrapper>
     </Container>
@@ -46,11 +49,6 @@ const Wrapper = styled.div`
     span, span:after, span:before {
       background: var(--c-font-2);
     }
-  }
-  
-  @media (max-width: ${rem(920)}) {
-    transform: ${({ $navbarOpen }) => ($navbarOpen ? 'translateX(0)' : `translateX(${rem(-80)})`)};
-    transition: 0.4s ease-in-out;
   }
 `;
 
