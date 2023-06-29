@@ -147,8 +147,8 @@ export const navbarMotion = {
     animate: navbarOpen ? 'visible' : 'hidden',
     transition: { type: 'tween', duration: 0.55, ease: 'easeInOut' },
     variants: {
-      hidden: { x: 0 },
-      visible: { x: -225 },
+      hidden: { x: 0, when: 'afterChildren' },
+      visible: { x: -225, when: 'beforeChildren' },
     },
   }),
   button: {
@@ -172,8 +172,15 @@ export const navbarMotion = {
       },
     },
   },
-  list: {},
-  item: {}
+  list: { variants: staggerContainer(0.05), },
+  item: (navbarOpen) => ({
+    transition: { type: 'tween', duration: 0.55, ease: 'easeInOut' },
+    // animate: { x: navbarOpen ? 0 : 60 },
+    variants: {
+      hidden: { x: 60 },
+      visible: { x: 0 },
+    },
+  }),
 };
 
 // Footer
