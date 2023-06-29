@@ -141,8 +141,8 @@ export const sidebarMotion = {
 };
 
 // Navbar
-export const navbarMotion = {
-  navbar: (navbarOpen) => ({
+export const navbarMotion = (navbarOpen) => ({
+  navbar: {
     initial: 'hidden',
     animate: navbarOpen ? 'visible' : 'hidden',
     transition: { type: 'tween', duration: 0.55, ease: 'easeInOut' },
@@ -150,8 +150,9 @@ export const navbarMotion = {
       hidden: { x: 0 },
       visible: { x: -225 },
     },
-  }),
-};
+  },
+  navbarButton: {},
+});
 
 // Footer
 export const footerMotion = {};

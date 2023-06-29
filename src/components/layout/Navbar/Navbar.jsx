@@ -9,7 +9,7 @@ export const Navbar = () => {
   const { navbarOpen } = dataStore((state) => ({ navbarOpen: state.navbarOpen }));
 
   return (
-    <Container className='art-menu-bar' {...navbarMotion.navbar(navbarOpen)}>
+    <Container className='art-menu-bar' {...navbarMotion(navbarOpen).navbar}>
       <Wrapper id='art-menu-bar-frame' className='art-menu-bar-frame'>
         <NavbarButton />
         <NavbarCurrentPage />
