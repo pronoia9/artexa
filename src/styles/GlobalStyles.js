@@ -781,56 +781,6 @@ blockquote {
 
 /* ----- navigation/pagination ----- */
 
-.art-slider-navigation {
-  padding: 15px 0 0;
-  display: flex;
-  justify-content: space-between;
-  cursor: pointer !important;
-
-  .swiper-pagination-bullet {
-    height: 4px;
-    margin-right: 10px;
-    background-color: var(--c-bg-pagination);
-    border-radius: 5px;
-    opacity: 0.5;
-    transition: 0.4s ease-in-out;
-
-    &:focus {
-      outline: inherit;
-    }
-
-    &:hover {
-      background-color: var(--c-accent-4);
-      transform: scale(1.1);
-    }
-
-    &.swiper-pagination-bullet-active {
-      width: 20px;
-      background-color: var(--c-accent-1);
-      opacity: 1;
-    }
-  }
-
-  .art-slider-nav-frame {
-    display: flex;
-
-    .art-slider-nav {
-      margin-left: 15px;
-      cursor: pointer;
-      transition: 0.4s ease-in-out;
-
-      &.swiper-button-disabled {
-        opacity: 0.2;
-        cursor: not-allowed;
-      }
-
-      &:focus {
-        outline: inherit;
-      }
-    }
-  }
-}
-
 ${'' /* .art-pagination {
   box-shadow: 0 3px 8px 0 var(--c-box-shadow);
   padding: 30px 30px 25px;
