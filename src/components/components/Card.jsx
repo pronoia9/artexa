@@ -1,10 +1,13 @@
 import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
+import { rem } from '../../utils';
 
-export const Card = ({ classes = '', title = 'Title', subtitle, link = '/', image = '/src/assets/hero/bg-blue.jpg', ...props }) => {
+export const Card = (props) => {
+  const { index, swiper, id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes } = props;
+
   return (
-    <Container className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acl`}>
+    <Container className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acl`} $swiper={swiper}>
       <ImageLink className='art-port-cover' href={image}>
         <img src={image} alt='item' />
         <span className='art-item-hover'>
@@ -13,9 +16,7 @@ export const Card = ({ classes = '', title = 'Title', subtitle, link = '/', imag
       </ImageLink>
 
       <Overlay className='art-post-description'>
-        {/* <a href='#.'> */}
-        <Title className='mb-15'>{title}</Title>
-        {/* </a> */}
+        {/* <a href='#.'> */}<Title className='mb-15'>{title}</Title>{/* </a> */}
         {subtitle && <div className='mb-15'>{subtitle}</div>}
 
         {props.children}
@@ -33,13 +34,14 @@ const Container = styled(motion.div)`
   position: relative;
   overflow: hidden;
   box-shadow: 0 3px 8px 0 var(--c-box-shadow);
-  margin-bottom: 30px;
+  margin-bottom: ${({ $swiper }) => !$swiper && rem(30)};
 `;
 
 const ImageLink = styled.a`
   position: relative;
   padding-bottom: 60%;
   display: block;
+  background: var(--c-bg);
 
   img {
     width: 100%;

@@ -3,10 +3,11 @@ import { styled } from 'styled-components';
 import { Card } from '../..';
 import { Tag } from '../../../styles';
 
-export const ProjectsCard = ({ index, swiper, id, title, subtitle, description, link, links, image, images, year, date, categories, tags }) => {
+export const ProjectsCard = (props) => {
+  const { index, swiper, id, title, subtitle, description, link, links, image, images, year, date, categories, tags } = props;
   return (
     <>
-      <Card title={title} link={`/projects/${id}`}>
+      <Card {...props} link={`/projects/${id}`}>
         <TagsContainer className='mb-15'>
           {[swiper ? categories : tags].flat().map((tag) => (
             <Tag key={`project-${title}-tags-${tag}`} className='art-tag'>
