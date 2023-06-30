@@ -1,13 +1,19 @@
 import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
-import { rem } from '../../utils';
+
+import { cardMotion, rem } from '../../utils';
 
 export const Card = (props) => {
   const { index, swiper, id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes } = props;
 
   return (
-    <Container className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acl`} $swiper={swiper}>
+    <Container
+      className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acl`}
+      $swiper={swiper}
+      key={`card-${index}-${title}`}
+      {...cardMotion.container(index)}
+    >
       <ImageLink className='art-port-cover' href={image}>
         <img src={image} alt='item' />
         <span className='art-item-hover'>
