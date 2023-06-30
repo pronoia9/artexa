@@ -292,11 +292,11 @@ export const cardMotion = {
 
 */
 /**********************  8. Utils Start  **********************/
-export const textType = (speed = 0.05) => ({
-  text: { variants: staggerContainer(speed) },
+export const textType = {
+  text: (speed) => ({ variants: staggerContainer(speed || 0.05) }),
   char: { variants: textVariant() },
-})
-  
+};
+
 export function textVariant(transitionOptions = {}) {
   return {
     hidden: { y: -50, opacity: 0 },
