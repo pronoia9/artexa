@@ -523,7 +523,7 @@ export const dataStore = create((set) => ({
         year: 2023,
         date: new Date('June 12, 2023'),
         categories: ['React', 'Design', 'Frontend Mentor'],
-        tags: ['React', 'Vitejs', 'HTML', 'CSS', 'Styled Components', 'Frontend Mentor', 'Styled Components', 'React Tooltip', 'Zustand', 'Frontend'],
+        tags: ['React', 'Vitejs', 'HTML', 'CSS', 'Styled Components', 'Frontend Mentor', 'React Tooltip', 'Zustand', 'Frontend'],
         info: [],
       },
       {
