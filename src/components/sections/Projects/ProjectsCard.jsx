@@ -1,8 +1,8 @@
 export const ProjectsCard = ({ index, swiper, id, title, subtitle, description, link, links, image, images, year, date, categories, tags }) => {
   return (
     <div className={`art-grid-item${swiper ? ' art-project-swiper-card' : ''}`}>
-      <a data-fancybox='projects' href='/favicon-16x16.png' className={'art-a art-portfolio-item-frame art-square'}>
-        <img src='/favicon-16x16.png' alt='item' />
+      <a data-fancybox='projects' href='/src/assets/hero/bg-blue.jpg' className={'art-a art-portfolio-item-frame art-square'}>
+        <img src='/src/assets/hero/bg-blue.jpg' alt='item' />
         <span className='art-item-hover'>
           <i className='fas fa-expand' />
         </span>
