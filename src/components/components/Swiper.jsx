@@ -1,5 +1,5 @@
 export const SwiperNavigation = (props) => (
-  <div className='col-lg-12 p-0-30'>
+  <div className='col-lg-12 p-0-30 acl'>
     <div className='art-slider-navigation'>
       {/* left side */}
       <div className='art-sn-left'>
