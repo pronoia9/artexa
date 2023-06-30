@@ -82,7 +82,7 @@ export const sidebarMotion = {
     initial: 'hidden',
     animate: 'visible',
     variants: {
-      hidden: { opacity: 0, x: -200, },
+      hidden: { opacity: 0, x: -200 },
       visible: { opacity: 1, x: 0, y: 0, transition: { staggerChildren: 0.25, when: 'beforeChildren', delayChildren: 0.5 } },
     },
   },
@@ -221,7 +221,8 @@ export const heroMotion = {
   },
   typed: { variants: fadeIn({ delay: 1.75, bounce: 0.5 }, 'down') },
   button: {
-    whileHover: { backgroundPosition: '100% 100%', scale: 1.05 },
+    whileHover: { backgroundPosition: '100% 100%', scale: 1.15, transition: { ease: 'easeOut', duration: 0.1 } },
+    variants: fadeIn({ type: 'tween', ease: 'easeIn', duration: 2 }),
   },
 };
 
