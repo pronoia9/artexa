@@ -245,8 +245,14 @@ export const projectsMotion = {
   container: {
     initial: 'hidden',
     animate: 'visible',
-    variants: staggerContainer(0.25, 0.75),
+    exit: 'hidden',
+    hover: 'hover',
+    variants: staggerContainer(0.5, 4),
   },
+  title: { variants: fadeIn() },
+  swiper: { variants: staggerContainerMirror(0.5) },
+  card: { variants: zoomIn() },
+  navigation: { variants: fadeIn() },
 };
 /***********************  6. Sections End  ***********************/
 /*
