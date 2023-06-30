@@ -53,16 +53,17 @@ export const laptopMotion = (laptopOpen) => ({
 export const pageWrapperMotion = {
   initial: 'hidden',
   animate: 'visible',
+  exit: 'hidden',
   variants: {
     hidden: { opacity: 0, transition: { when: 'afterChildren' } },
-    visible: { opacity: 1, transition: { when: 'beforeChildren', staggerChildren: 0.1 } },
+    visible: { opacity: 1, transition: { when: 'beforeChildren', staggerChildren: 1 } },
   },
 };
 
 export const sectionWrapperMotion = {
   variants: {
     hidden: { opacity: 0, y: 250, when: 'afterChildren' },
-    visible: { opacity: 1, y: 0, transition: { type: 'spring', when: 'beforeChildren', staggerChildren: 0.1 } },
+    visible: { opacity: 1, y: 0, transition: { type: 'spring', when: 'beforeChildren', staggerChildren: 0.25 } },
   },
 };
 /***********************  3. HOC End  ***********************/
@@ -77,7 +78,14 @@ export const sectionWrapperMotion = {
 /**********************  4. Layout Start  **********************/
 // Sidebar
 export const sidebarMotion = {
-  sidebar: { initial: 'hidden', animate: 'visible', variants: staggerContainer(2.5) },
+  sidebar: {
+    initial: 'hidden',
+    animate: 'visible',
+    variants: {
+      hidden: { opacity: 0, x: -200, },
+      visible: { opacity: 1, x: 0, y: 0, transition: { staggerChildren: 0.25, when: 'beforeChildren', delayChildren: 0.5 } },
+    },
+  },
   scrollContent: { variants: staggerContainer(0.5) },
   // Divider
   divider: (delay = 0) => ({ variants: fadeIn({ type: 'tween', ease: 'linear', duration: 0.5, delay }, 'right', '100') }),
@@ -135,7 +143,7 @@ export const sidebarMotion = {
   },
   // Socials
   socials: {
-    container: { variants: staggerContainer(0.1, 3.5) },
+    container: { variants: staggerContainer(0.1, 7.5) },
     item: { variants: zoomIn() },
   },
 };
