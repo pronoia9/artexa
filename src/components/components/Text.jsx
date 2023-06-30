@@ -19,7 +19,7 @@ export const Title = (props) => (
 
 export const SectionTitle = ({ column = 1, title, rightTitle, rightClass, ...props }) => (
   <motion.div className={`col-lg-${12 / column}`} {...props}>
-    <Title title={title}>
+    <Title title={title} speed={props.speed}>
       {rightTitle && (
         <TitleRightFrame className='art-right-frame'>
           <div className={rightClass}>{rightTitle}</div>
