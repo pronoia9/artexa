@@ -22,7 +22,7 @@ export const Card = (props) => {
         {props.children}
 
         <ProjectLink to={link} className='art-link art-color-link art-w-chevron'>
-          Read More
+          Learn More
           <i className='fas fa-chevron-right' />
         </ProjectLink>
       </Overlay>
