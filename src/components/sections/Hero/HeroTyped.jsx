@@ -1,9 +1,10 @@
 import { useLayoutEffect, useRef } from 'react';
 import Typed from 'typed.js';
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { dataStore } from '../../../store/dataStore';
-import { rem } from '../../../utils';
+import { heroMotion, rem } from '../../../utils';
 
 export const HeroTyped = () => {
   const data = dataStore((state) => state.hero.typed);
@@ -24,7 +25,7 @@ export const HeroTyped = () => {
   }, []);
 
   return (
-    <Container className='art-lg-text art-code mb-25'>
+    <Container className='art-lg-text art-code' {...heroMotion.typed}>
       <code>
         &lt;<i>code</i>&gt; <span ref={typedRef} /> &lt;/<i>code</i>&gt;
       </code>
@@ -32,9 +33,10 @@ export const HeroTyped = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   max-width: 75%;
   min-height: ${rem(82)}; /* 3 lines */
+  /* margin-bottom: ${rem(25)}; */
   margin: 0;
   /* display: flex; */
   /* justify-content: center; */

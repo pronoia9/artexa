@@ -213,11 +213,13 @@ export const heroMotion = {
     animate: 'visible',
     variants: staggerContainer(0.25, 0.75),
   },
+  background: {},
   heading: {
     container: { variants: staggerContainer(0.5) },
     text: { variants: staggerContainer(0.05) },
     char: { variants: textVariant() },
   },
+  typed: { variants: fadeIn({ delay: 1.75, bounce: 0.5 }, 'down') },
   button: {
     whileHover: { backgroundPosition: '100% 100%', scale: 1.05 },
   },
