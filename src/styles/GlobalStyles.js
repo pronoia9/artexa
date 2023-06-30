@@ -779,52 +779,44 @@ blockquote {
   margin: 0;
 }
 
-/* ----- blog ----- */
-
-.art-blog-slider .art-blog-card {
-  margin-bottom: 0;
-}
-
 /* ----- navigation/pagination ----- */
 
 .art-slider-navigation {
   padding: 15px 0 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
   justify-content: space-between;
+  cursor: pointer !important;
 
   .swiper-pagination-bullet {
+    height: 4px;
     margin-right: 10px;
-    background-color: #8c8c8e;
+    background-color: var(--c-bg-pagination);
     border-radius: 5px;
     opacity: 0.5;
-    height: 4px;
-    -webkit-transition: 0.4s ease-in-out;
     transition: 0.4s ease-in-out;
 
     &:focus {
       outline: inherit;
     }
 
+    &:hover {
+      background-color: var(--c-accent-4);
+      transform: scale(1.1);
+    }
+
     &.swiper-pagination-bullet-active {
       width: 20px;
-      background-color: #ffc107;
+      background-color: var(--c-accent-1);
       opacity: 1;
     }
   }
 
   .art-slider-nav-frame {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
 
     .art-slider-nav {
       margin-left: 15px;
       cursor: pointer;
-      -webkit-transition: 0.4s ease-in-out;
       transition: 0.4s ease-in-out;
 
       &.swiper-button-disabled {
@@ -839,7 +831,7 @@ blockquote {
   }
 }
 
-.art-pagination {
+${'' /* .art-pagination {
   box-shadow: 0 3px 8px 0 var(--c-box-shadow);
   padding: 30px 30px 25px;
   background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
@@ -867,7 +859,7 @@ blockquote {
   .art-link {
     margin: 0;
   }
-}
+} */}
 
 /* ----- hobbies ----- */
 
