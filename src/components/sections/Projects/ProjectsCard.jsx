@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 import { styled } from 'styled-components';
 import { Card } from '../..';
+import { Tag } from '../../../styles';
 
 export const ProjectsCard = ({ index, swiper, id, title, subtitle, description, link, links, image, images, year, date, categories, tags }) => {
   return (
@@ -9,9 +10,9 @@ export const ProjectsCard = ({ index, swiper, id, title, subtitle, description, 
       <Card title={title} link={`/projects/${id}`}>
         <TagsContainer className='mb-15'>
           {[swiper ? categories : tags].flat().map((tag) => (
-            <p key={`project-${title}-tags-${tag}`} className='art-tag'>
+            <Tag key={`project-${title}-tags-${tag}`} className='art-tag'>
               {tag}
-            </p>
+            </Tag>
           ))}
         </TagsContainer>
       </Card>
