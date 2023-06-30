@@ -12,7 +12,7 @@ const ProjectsSwiper = () => {
 
   return (
     <motion.div {...projectsMotion.container}>
-      <SectionTitle title='Projects' {...projectsMotion.title} />
+      <SectionTitle title='Projects' speed={0.05} />
 
       <motion.div {...projectsMotion.swiper}>
         <Swiper
