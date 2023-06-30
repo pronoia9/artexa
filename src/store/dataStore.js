@@ -360,7 +360,7 @@ export const dataStore = create((set) => ({
 
   // Projects
   projects: {
-    filter: [
+    filters: [
       { title: 'all', filter: '' },
       { title: 'react', filter: 'react' },
       { title: '3d', filter: '3d' },
