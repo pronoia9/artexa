@@ -1,8 +1,8 @@
-import { styled } from "styled-components";
 import { motion } from "framer-motion";
 
 import { dataStore } from "../../../store/dataStore";
-import { rem, sidebarMotion } from "../../../utils";
+import { sidebarMotion } from "../../../utils";
+import { Tag } from "../../../styles";
 
 export const Strengths = () => {
   const data = dataStore((state) => state.sidebar.strengths);
@@ -10,23 +10,8 @@ export const Strengths = () => {
   return (
     <motion.div className='art-strengths p-15-15' {...sidebarMotion.strengths.container}>
       {data.map((strength, index) => (
-        <StrengthItem key={`sidebar-strenghts-${index}`} {...sidebarMotion.strengths.item}>{strength}</StrengthItem>
+        <Tag key={`sidebar-strenghts-${index}`} {...sidebarMotion.strengths.item}>{strength}</Tag>
       ))}
     </motion.div>
   );
 };
-
-const StrengthItem = styled(motion.div)`
-  margin: auto ${rem(3)} ${rem(5)} auto;
-  padding: ${rem(3)} ${rem(10)};
-  display: inline-block;
-  color: var(--c-font-1);
-  font-family: var(--f-tertiary);
-  background: var(--c-bg);
-  border-radius: ${rem(15)};
-  box-shadow: inset 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
-
-  &:hover {
-    color: var(--c-accent-3);
-  }
-`;

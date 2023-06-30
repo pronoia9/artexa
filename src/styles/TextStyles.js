@@ -66,14 +66,19 @@ export const Tooltip = styled(motion.div)`
   }
 `;
 
-export const Tag = styled(motion.p)`
+export const Tag = styled(motion.p)`  
+  margin: auto ${rem(3)} ${rem(5)} auto;
+  padding: ${rem(3)} ${rem(10)};
   display: inline-block;
-  margin: 0 5px 5px 0;
-  padding: 3px 12px;
   color: var(--c-font-1);
+  font-size: ${rem(10)};
   font-family: var(--f-tertiary);
-  font-size: 10px;
   background: var(--c-bg);
-  border-radius: 15px;
-  box-shadow: inset 0 3px 8px 0 var(--c-box-shadow);
+  border-radius: ${rem(15)};
+  box-shadow: inset 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--c-accent-3);
+  }
 `;
