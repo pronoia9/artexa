@@ -11,6 +11,7 @@ import {
   ProgressbarInstance,
   rgbaToHex,
 } from './utils';
+
 import {
   appMotion,
   sceneMotion,
@@ -21,9 +22,17 @@ import {
   navbarMotion,
   footerMotion,
   heroMotion,
-  projectsMotion,
   countersMotion,
+  projectsMotion,
+  preloaderMotion,
   cardMotion,
+  textType,
+  textVariant,
+  zoomIn,
+  fadeIn,
+  slideIn,
+  staggerContainer,
+  staggerContainerMirror,
 } from './motion';
 
 export {
@@ -48,7 +57,15 @@ export {
   navbarMotion,
   footerMotion,
   heroMotion,
-  projectsMotion,
   countersMotion,
+  projectsMotion,
+  preloaderMotion,
   cardMotion,
+  textType,
+  textVariant,
+  zoomIn,
+  fadeIn,
+  slideIn,
+  staggerContainer,
+  staggerContainerMirror,
 };

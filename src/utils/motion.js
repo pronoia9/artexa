@@ -249,10 +249,16 @@ export const projectsMotion = {
     hover: 'hover',
     variants: staggerContainer(0.5, 4),
   },
-  title: { variants: fadeIn() },
+  title: { variants: staggerContainer(0.05) },
+  char: { variants: textVariant() },
   swiper: { variants: staggerContainerMirror(0.5) },
-  card: { variants: zoomIn() },
-  navigation: { variants: fadeIn() },
+  card: {
+    variants: {
+      hidden: { opacity: 0, scale: 0, transition: { staggerChildren: 0.1 } },
+      visible: { opacity: 1, scale: 1, transition: { type: 'tween', duration: 0.15, ease: 'easeIn', staggerChildren: 0.1 } },
+    },
+  },
+  navigation: { variants: fadeIn({ delay: 6.5 }) },
 };
 /***********************  6. Sections End  ***********************/
 /*
@@ -286,6 +292,11 @@ export const cardMotion = {
 
 */
 /**********************  8. Utils Start  **********************/
+export const textType = (speed = 0.05) => ({
+  text: { variants: staggerContainer(speed) },
+  char: { variants: textVariant() },
+})
+  
 export function textVariant(transitionOptions = {}) {
   return {
     hidden: { y: -50, opacity: 0 },

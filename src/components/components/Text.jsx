@@ -1,10 +1,15 @@
 import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
+import { textType } from '../../utils';
 
 export const Title = (props) => (
   <TitleContainer className='art-section-title' {...props}>
     <TitleFrame className='art-title-frame'>
-      <h2>{props.title}</h2>
+      <motion.h2 {...textType().text}>
+        {props.title.split('').map((char, index) => (
+          <motion.span key={`section-title-${props.title}-${index}`} {...textType().char}>{char}</motion.span>
+        ))}
+      </motion.h2>
     </TitleFrame>
     {props.children}
   </TitleContainer>
