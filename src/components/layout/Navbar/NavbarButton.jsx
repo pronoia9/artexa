@@ -1,4 +1,4 @@
-import { styled } from 'styled-components';
+import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { dataStore } from '../../../store/dataStore';
@@ -7,11 +7,14 @@ import { navbarMotion, rem } from '../../../utils';
 const Path = (props) => <motion.path fill='transparent' strokeWidth='3' strokeLinecap='round' {...props} />;
 
 export const NavbarButton = () => {
-  const toggleNavbar = dataStore((state) => state.toggleNavbar);
+  const { navbarOpen, toggleNavbar } = dataStore((state) => ({
+    navbarOpen: state.navbarOpen,
+    toggleNavbar: state.toggleNavbar,
+  }));
 
   return (
     <Container className='art-menu-bar-header'>
-      <Wrapper className='art-menu-bar-btn' onClick={() => toggleNavbar()}>
+      <Wrapper className='art-menu-bar-btn' onClick={() => toggleNavbar()} $navbarOpen={navbarOpen}>
         <svg width='23' height='23' viewBox='0 0 23 23'>
           <Path {...navbarMotion.button.path1} />
           <Path d='M 2 9.423 L 20 9.423' {...navbarMotion.button.path2} />
@@ -48,5 +51,13 @@ const Wrapper = styled.button`
     svg {
       stroke: var(--c-font-2);
     }
+  }
+
+  @media (max-width: ${rem(920)}) {
+    position: absolute;
+    left: ${({ $navbarOpen }) => ($navbarOpen ? 0 : rem(-77.5))};
+    /* transition: left 0.5s; */
+    transition: ${({ $navbarOpen }) => `left ${$navbarOpen ? '0.5s' : '0.85s'}`};
+    /* transition-delay: ${({ $navbarOpen }) => ($navbarOpen ? '0s' : '0s')}; */
   }
 `;

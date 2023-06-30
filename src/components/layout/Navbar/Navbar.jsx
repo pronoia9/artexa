@@ -47,7 +47,7 @@ const Container = styled(motion.div)`
   }
 
   @media (max-width: ${rem(920)}) {
-    position: absolute;
+    right: ${rem(-300)};
     height: 100vh;
   }
 
