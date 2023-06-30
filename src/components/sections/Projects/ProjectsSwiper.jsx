@@ -1,15 +1,17 @@
 import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { motion } from 'framer-motion';
 
 import { ProjectsCard, SectionTitle, SectionWrapper, SwiperNavigation } from '../..';
 import { dataStore } from '../../../store/dataStore';
+import { projectsMotion } from '../../../utils';
 
 const ProjectsSwiper = () => {
   const projects = dataStore((state) => state.projects.projects);
   SwiperCore.use([Autoplay]);
 
   return (
-    <>
+    <motion.div {...projectsMotion.container}>
       <SectionTitle title='Projects' />
 
       <Swiper
@@ -34,7 +36,7 @@ const ProjectsSwiper = () => {
       </Swiper>
 
       <SwiperNavigation section='project' />
-    </>
+    </motion.div>
   );
 };
 export default SectionWrapper(ProjectsSwiper, 'projects-swiper');
