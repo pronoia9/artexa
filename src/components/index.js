@@ -1,20 +1,13 @@
 // ---- COMPONENTS
-// -- Background
 import { Background } from './components/Background';
-// -- Laptop
+import { Card } from './components/Card';
 import { Laptop } from './components/Laptop/Laptop';
 import { Scene } from './components/Laptop/Scene';
-// -- Logos
 import { Logos, Logo } from './components/Logos';
-// -- Preloader
 import { Preloader } from './components/Preloader';
-// -- Progressbar
 import { Progressbar } from './components/Progressbar';
-// -- Swiper
 import { SwiperNavigation } from './components/Swiper';
-// -- Text
 import { Title, SectionTitle } from './components/Text';
-// -- Timeline
 import { Timeline, TimelineColumn, TimelineItem } from './components/Timeline';
 
 // --- HOC
@@ -22,16 +15,13 @@ import { PageWrapper } from './hoc/PageWrapper';
 import { SectionWrapper } from './hoc/SectionWrapper';
 
 // ---- LAYOUT
-// -- Footer
 import Footer from './layout/Footer/Footer';
-// -- Navbar
 import { Navbar } from './layout/Navbar/Navbar';
 import { NavbarButton } from './layout/Navbar/NavbarButton';
 import { NavbarCurrentPage } from './layout/Navbar/NavbarCurrentPage';
 import { NavbarList } from './layout/Navbar/NavbarList';
 import { NavbarListItem } from './layout/Navbar/NavbarListItem';
 import { ThemeButton } from './layout/Navbar/ThemeButton';
-// -- Sidebar
 import { HardSkills, HardSkillsItem } from './layout/Sidebar/HardSkills';
 import { Info, InfoItem } from './layout/Sidebar/Info';
 import { Languages, LanguagesItem } from './layout/Sidebar/Languages';
@@ -93,6 +83,7 @@ import TechnologiesSwiper from './sections/Technologies/TechnologiesSwiper';
 export {
   // ---- COMPONENTS ----
   Background,
+  Card,
   Laptop, Scene,
   Logos, Logo,
   Preloader,
