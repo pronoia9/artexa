@@ -21,5 +21,9 @@ export const ProjectsCard = ({ index, swiper, id, title, subtitle, description, 
 };
 
 const TagsContainer = styled.div`
-  min-height: 58px;  /* 2 lines */
+  min-height: 58px; /* 2 lines */
+
+  p {
+    background: var(--c-bg-menu-2);
+  }
 `;
