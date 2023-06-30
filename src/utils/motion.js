@@ -214,6 +214,7 @@ export const footerMotion = {};
 
 */
 /**********************  6. Sections Start  **********************/
+/*************  Home Page Start  *************/
 // HERO
 export const heroMotion = {
   hero: {
@@ -242,17 +243,27 @@ export const countersMotion = {
 
 // PROJECTS
 export const projectsMotion = {
-  container: {
-    initial: 'hidden',
-    animate: 'visible',
-    exit: 'hidden',
-    hover: 'hover',
-    variants: staggerContainer(0.5, 4),
-  },
+  container: { ...motionStates(), variants: staggerContainer(0.5, 4), },
   swiper: { variants: staggerContainerMirror(0.5) },
   card: { variants: zoomIn({ type: 'tween', duration: 0.1, ease: 'easeIn', staggerChildren: 0.1 }) },
   navigation: { variants: fadeIn({ delay: 6.25 }) },
 };
+
+// HISTORY
+export const historyMotion = {
+  container: { ...motionStates(), variants: staggerContainer(0.5, 4) },
+};
+
+// TECHNOLOGIES
+export const technologyMotion = {
+  container: { ...motionStates(), variants: staggerContainer(0.5, 4) },
+};
+
+// CONTACT
+export const contactMotion = {
+  container: { ...motionStates(), variants: staggerContainer(0.5, 4) },
+};
+/**************  Home Page End  **************/
 /***********************  6. Sections End  ***********************/
 /*
 
@@ -285,6 +296,15 @@ export const cardMotion = {
 
 */
 /**********************  8. Utils Start  **********************/
+export function motionStates() {
+  return {
+    initial: 'hidden',
+    animate: 'visible',
+    exit: 'hidden',
+    hover: 'hover',
+  };
+}
+
 export const textType = {
   text: (speed) => ({ variants: staggerContainer(speed || 0.05) }),
   char: { variants: textVariant() },
