@@ -1,30 +1,24 @@
-export const ProjectsCard = ({ index, type = '', id, title, subtitle, description, link, links, image, images, year, date, categories, tags }) => {
+export const ProjectsCard = ({ index, swiper, id, title, subtitle, description, link, links, image, images, year, date, categories, tags }) => {
   return (
-    <div className={`art-grid-item${type ? ` ${type}` : ''}`}>
-      {/* project image */}
-      <a data-fancybox='projects' href={images[0]} className={'art-a art-portfolio-item-frame art-square'}>
-        <img src={images[0]} alt='item' />
+    <div className={`art-grid-item${swiper ? ' art-project-swiper-card' : ''}`}>
+      <a data-fancybox='projects' href='/favicon-16x16.png' className={'art-a art-portfolio-item-frame art-square'}>
+        <img src='/favicon-16x16.png' alt='item' />
         <span className='art-item-hover'>
           <i className='fas fa-expand' />
         </span>
       </a>
 
-      {/* project description */}
       <div className='art-item-description'>
-        {/* title */}
         <h5 className='mb-15'>{title}</h5>
-        {/* overview */}
-        <div className='mb-15'>{subtitle}</div>
-        {/* tags */}
+        {!swiper && <div className='mb-15'>{subtitle}</div>}
         <div className='mb-15'>
-          {tags.map((t) => (
-            <p key={`project-${title}-tags`} className='art-tag'>
-              {t}
+          {[swiper ? categories : tags].flat().map((tag) => (
+            <p key={`project-${title}-tags-${tag}`} className='art-tag'>
+              {tag}
             </p>
           ))}
         </div>
 
-        {/* link */}
         <a href={`/projects/${id}`} className='art-link art-color-link art-w-chevron' target='_blank' rel='noreferrer'>
           Read More
         </a>
