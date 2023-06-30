@@ -208,6 +208,16 @@ export const footerMotion = {};
 /**********************  5. Sections Start  **********************/
 // HERO
 export const heroMotion = {
+  hero: {
+    initial: 'hidden',
+    animate: 'visible',
+    variants: staggerContainer(0.25, 0.75),
+  },
+  heading: {
+    container: { variants: staggerContainer(0.5) },
+    text: { variants: staggerContainer(0.05) },
+    char: { variants: textVariant() },
+  },
   button: {
     whileHover: { backgroundPosition: '100% 100%', scale: 1.05 },
   },

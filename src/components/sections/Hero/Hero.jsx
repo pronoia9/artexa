@@ -1,8 +1,9 @@
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { HeroButton, HeroHeading, HeroTyped, SectionWrapper } from '../..';
 import { dataStore } from '../../../store/dataStore';
-import { rem } from '../../../utils';
+import { heroMotion, rem } from '../../../utils';
 
 const Hero = () => {
   const { data, accent } = dataStore((state) => ({ data: state.hero, accent: state.accent }));
@@ -12,7 +13,7 @@ const Hero = () => {
   };
 
   return (
-    <Container>
+    <Container {...heroMotion.hero}>
       <Wrapper>
         {/* Background */}
         <Banner className='art-a art-banner' $accent={accent}>
@@ -35,7 +36,7 @@ const Hero = () => {
 };
 export default SectionWrapper(Hero, 'hero');
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: flex;
   flex-wrap: wrap;
   margin-right: -15px;
