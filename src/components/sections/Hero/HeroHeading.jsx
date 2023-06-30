@@ -1,21 +1,26 @@
 import { styled } from 'styled-components';
 
 import { dataStore } from '../../../store/dataStore';
-import { rem } from '../../../utils';
+import { heroMotion, rem } from '../../../utils';
+import { motion } from 'framer-motion';
 
 export const HeroHeading = () => {
   const data = dataStore((state) => state.hero.heading);
 
   return (
-    <Container className='mb-15 hero-heading'>
+    <Container className='mb-15 hero-heading' {...heroMotion.heading.container}>
       {data.map((text, index) => (
-        <h1 key={`hero-heading-${index}`}>{text}</h1>
+        <motion.h1 key={`hero-heading-${index}`} {...heroMotion.heading.text}>
+          {text.split('').map((char, i) => (
+            <motion.span key={`hero-heading-${index}-${i}`} {...heroMotion.heading.char}>{char}</motion.span>
+          ))}
+        </motion.h1>
       ))}
     </Container>
   );
 };
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   display: inline-block;
   transition: 0.3s ease-in-out;
   margin: 0;
