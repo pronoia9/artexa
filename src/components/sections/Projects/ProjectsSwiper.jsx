@@ -4,11 +4,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { ProjectsCard, SectionTitle, SectionWrapper, SwiperNavigation } from '../..';
 import { dataStore } from '../../../store/dataStore';
 
-SwiperCore.use([Navigation, Pagination, A11y]);
-
 const ProjectsSwiper = () => {
-  const data = dataStore((state) => state.projects);
-  const { filters, projects } = data;
+  const projects = dataStore((state) => state.projects.projects);
+  SwiperCore.use([Autoplay]);
 
   return (
     <div className='row p-30-0'>
@@ -18,6 +16,7 @@ const ProjectsSwiper = () => {
       {/* project items  */}
       <div className='col-lg-12'>
         <Swiper
+          modules={[Navigation, Pagination, A11y]}
           spaceBetween={30}
           slidesPerView={3}
           speed={900}
