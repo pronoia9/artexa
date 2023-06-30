@@ -21,7 +21,9 @@ import {
   navbarMotion,
   footerMotion,
   heroMotion,
+  projectsMotion,
   countersMotion,
+  cardMotion,
 } from './motion';
 
 export {
@@ -46,5 +48,7 @@ export {
   navbarMotion,
   footerMotion,
   heroMotion,
+  projectsMotion,
   countersMotion,
+  cardMotion,
 };

@@ -2,8 +2,11 @@
     1. App
     2. 3D
     3. HOC
-    4. Pages
-    5. Sections
+    4. Layout
+    5. Pages
+    6. Sections
+    7. Components
+    8. Utils
 */
 
 /**********************  1. App Start  **********************/
@@ -17,6 +20,7 @@ export const appMotion = {
 };
 /***********************  1. App End  ***********************/
 /*
+
 
 */
 /**********************  2. 3D Start  **********************/
@@ -48,6 +52,7 @@ export const laptopMotion = (laptopOpen) => ({
 /***********************  2. 3D End  ***********************/
 /*
 
+
 */
 /**********************  3. HOC Start  **********************/
 export const pageWrapperMotion = {
@@ -69,10 +74,6 @@ export const sectionWrapperMotion = {
 /***********************  3. HOC End  ***********************/
 /*
 
-*/
-/**********************  4. Pages Start  **********************/
-/***********************  4. Pages End  ***********************/
-/*
 
 */
 /**********************  4. Layout Start  **********************/
@@ -204,8 +205,15 @@ export const footerMotion = {};
 /***********************  4. Layout End  ***********************/
 /*
 
+
 */
-/**********************  5. Sections Start  **********************/
+/**********************  5. Pages Start  **********************/
+/***********************  5. Pages End  ***********************/
+/*
+
+
+*/
+/**********************  6. Sections Start  **********************/
 // HERO
 export const heroMotion = {
   hero: {
@@ -231,18 +239,47 @@ export const countersMotion = {
   frame: { variants: staggerContainer(0.1) },
   contents: { variants: zoomIn() },
 };
-/***********************  5. Sections End  ***********************/
+
+// PROJECTS
+export const projectsMotion = {
+  container: {
+    initial: 'hidden',
+    animate: 'visible',
+    variants: staggerContainer(0.25, 0.75),
+  },
+};
+/***********************  6. Sections End  ***********************/
 /*
 
+
 */
-/**********************  5. Components Start  **********************/
+/**********************  7. Components Start  **********************/
+// PRELOADER
 export const preloaderMotion = {
   initial: { opacity: 0 },
   animate: { opacity: 1, transition: { delay: 0.2, duration: 0.6 } },
   exit: { opacity: 0, transition: { delay: 2.2, duration: 0.4 } },
 };
-/***********************  5. Components End  ***********************/
 
+// CARD
+export const cardMotion = {
+  container: (index) => ({
+    initial: 'hidden',
+    animate: 'visible',
+    exit: 'hidden',
+    variants: {
+      hidden: { opacity: 0, scale: 0, transition: { staggerChildren: 0.25 } },
+      visible: { opacity: 1, scale: 1, transition: { type: 'tween', delay: 4.5 + 0.25 * index, duration: 0.25, ease: 'easeIn' } },
+    },
+    transition: { type: 'tween', delay: 0.1 * index, duration: 0.25, ease: 'easeInOut' },
+  }),
+};
+/***********************  7. Components End  ***********************/
+/*
+
+
+*/
+/**********************  8. Utils Start  **********************/
 export function textVariant(transitionOptions = {}) {
   return {
     hidden: { y: -50, opacity: 0 },
@@ -293,3 +330,4 @@ export function staggerContainerMirror(staggerChildren = 0.5, delayChildren = 0,
     visible: { opacity: 1, transition: { staggerChildren, delayChildren, ...transitionOptions } },
   };
 }
+/***********************  8. Utils End  ***********************/
