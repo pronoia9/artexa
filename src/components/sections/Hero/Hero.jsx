@@ -12,8 +12,8 @@ const Hero = () => {
   };
 
   return (
-    <div className='row p-60-0 p-lg-30-0 p-md-15-0'>
-      <div className='col-lg-12'>
+    <Container>
+      <Wrapper>
         {/* Background */}
         <Banner className='art-a art-banner' $accent={accent}>
           <div className='art-banner-back' />
@@ -29,11 +29,37 @@ const Hero = () => {
             <Avatar src={data.avatar} className='art-banner-photo' alt='Banner Profile' />
           </Overlay>
         </Banner>
-      </div>
-    </div>
+      </Wrapper>
+    </Container>
   );
 };
 export default SectionWrapper(Hero, 'hero');
+
+const Container = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  padding-top: 60px;
+  padding-bottom: 0;
+
+  @media (max-width: 920px) {
+    padding-top: 15px;
+  }
+
+  @media (max-width: 1400px) {
+    padding-top: 30px;
+  }
+`;
+
+const Wrapper = styled.div`
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+`;
 
 const Banner = styled.div`
   transition: 0.55s ease-in-out;
@@ -86,7 +112,7 @@ const Title = styled.div`
   align-items: flex-start;
   justify-content: center;
   gap: ${rem(15)};
-  
+
   @media (max-width: 700px) {
     align-items: center;
     text-align: center;
