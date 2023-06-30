@@ -57,7 +57,7 @@ const Wrapper = styled.button`
     position: absolute;
     left: ${({ $navbarOpen }) => ($navbarOpen ? 0 : rem(-77.5))};
     /* transition: left 0.5s; */
-    transition: ${({ $navbarOpen }) => `left ${$navbarOpen ? '0.5s' : '0.85s'}`};
+    transition: ${({ $navbarOpen }) => `left ${$navbarOpen ? '0.5s' : '0.75s'}`};
     /* transition-delay: ${({ $navbarOpen }) => ($navbarOpen ? '0s' : '0s')}; */
   }
 `;
