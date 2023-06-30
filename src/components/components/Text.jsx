@@ -1,7 +1,8 @@
+import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 
 export const Title = (props) => (
-  <TitleContainer className='art-section-title'>
+  <TitleContainer className='art-section-title' {...props}>
     <TitleFrame className='art-title-frame'>
       <h2>{props.title}</h2>
     </TitleFrame>
@@ -9,8 +10,8 @@ export const Title = (props) => (
   </TitleContainer>
 );
 
-export const SectionTitle = ({ column = 1, title, rightTitle, rightClass }) => (
-  <div className={`col-lg-${12 / column}`}>
+export const SectionTitle = ({ column = 1, title, rightTitle, rightClass, ...props }) => (
+  <motion.div className={`col-lg-${12 / column}`} {...props}>
     <Title title={title}>
       {rightTitle && (
         <TitleRightFrame className='art-right-frame'>
@@ -18,10 +19,10 @@ export const SectionTitle = ({ column = 1, title, rightTitle, rightClass }) => (
         </TitleRightFrame>
       )}
     </Title>
-  </div>
+  </motion.div>
 );
 
-const TitleContainer = styled.div`
+const TitleContainer = styled(motion.div)`
   display: flex;
   justify-content: space-between;
 
