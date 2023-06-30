@@ -545,22 +545,6 @@ blockquote {
 /* ------------------------------ menu bar ------------------------------ */
 
 /* ------------------------------ content ------------------------------ */
-/* ----- section title ----- */
-
-.art-section-title {
-  display: flex;
-  justify-content: space-between;
-
-  .art-title-frame {
-    align-self: center;
-    position: relative;
-    margin-bottom: 30px;
-  }
-
-  .art-right-frame {
-    padding-bottom: 30px;
-  }
-}
 
 /* ----- card ----- */
 
@@ -1342,15 +1326,6 @@ blockquote {
 
 /* ------------------------------ content (after 768px) ------------------------------ */
 @media (max-width: 768px) {
-  .art-section-title {
-    flex-direction: column;
-
-    .art-right-frame {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
   .art-grid {
     &.art-grid-2-col .art-grid-item, &.art-grid-3-col .art-grid-item {
       width: 100%;
@@ -1374,15 +1349,6 @@ blockquote {
 
 /* ------------------------------ content (after 500px) ------------------------------ */
 @media (max-width: 500px) {
-  .art-section-title {
-    flex-direction: column;
-
-    .art-right-frame {
-      margin-left: auto;
-      margin-right: auto;
-    }
-  }
-
   .art-grid {
     &.art-grid-2-col .art-grid-item, &.art-grid-3-col .art-grid-item {
       width: 100%;
