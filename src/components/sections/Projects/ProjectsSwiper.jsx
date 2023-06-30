@@ -12,7 +12,7 @@ const ProjectsSwiper = () => {
 
   return (
     <motion.div {...projectsMotion.container}>
-      <SectionTitle title='Projects' />
+      <SectionTitle title='Projects' {...projectsMotion.title} />
 
       <Swiper
         modules={[Navigation, Pagination, A11y]}
@@ -35,7 +35,7 @@ const ProjectsSwiper = () => {
         ))}
       </Swiper>
 
-      <SwiperNavigation section='project' />
+      <SwiperNavigation section='project' {...projectsMotion.navigation} />
     </motion.div>
   );
 };
