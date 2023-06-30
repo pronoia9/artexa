@@ -14,26 +14,28 @@ const ProjectsSwiper = () => {
     <motion.div {...projectsMotion.container}>
       <SectionTitle title='Projects' {...projectsMotion.title} />
 
-      <Swiper
-        modules={[Navigation, Pagination, A11y]}
-        spaceBetween={30}
-        slidesPerView={3}
-        speed={900}
-        autoplay={{ delay: 3000 }}
-        breakpoints={{
-          320: { slidesPerView: 1, spaceBetween: 10 },
-          640: { slidesPerView: 2, spaceBetween: 10 },
-          1200: { slidesPerView: 3, spaceBetween: 30 },
-        }}
-        navigation={{ nextEl: '.art-project-swiper-next', prevEl: '.art-project-swiper-prev' }}
-        pagination={{ el: '.project-swiper-pagination', type: 'bullets', clickable: true }}
-      >
-        {projects.map((project, index) => (
-          <SwiperSlide key={`projects-swiper-slide-${index}`} className='swiper-slide art-grid art-grid-3-col art-gallery'>
-            <ProjectsCard key={`projects-projects-card-${index}`} swiper={true} index={index} {...project} />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <motion.div {...projectsMotion.swiper}>
+        <Swiper
+          modules={[Navigation, Pagination, A11y]}
+          spaceBetween={30}
+          slidesPerView={3}
+          speed={900}
+          autoplay={{ delay: 3000 }}
+          breakpoints={{
+            320: { slidesPerView: 1, spaceBetween: 10 },
+            640: { slidesPerView: 2, spaceBetween: 10 },
+            1200: { slidesPerView: 3, spaceBetween: 30 },
+          }}
+          navigation={{ nextEl: '.art-project-swiper-next', prevEl: '.art-project-swiper-prev' }}
+          pagination={{ el: '.project-swiper-pagination', type: 'bullets', clickable: true }}
+        >
+          {projects.map((project, index) => (
+            <SwiperSlide key={`projects-swiper-slide-${index}`} className='swiper-slide art-grid art-grid-3-col art-gallery'>
+              <ProjectsCard key={`projects-projects-card-${index}`} swiper={true} index={index} {...project} motion={projectsMotion.card} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </motion.div>
 
       <SwiperNavigation section='project' {...projectsMotion.navigation} />
     </motion.div>
