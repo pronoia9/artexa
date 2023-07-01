@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@fancyapps/ui": "^5.0.19",
     "@react-three/drei": "^9.77.1",
     "@react-three/fiber": "^8.13.3",
     "@types/three": "^0.152.1",
