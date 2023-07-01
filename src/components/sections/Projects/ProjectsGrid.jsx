@@ -1,7 +1,8 @@
 import { styled } from 'styled-components';
-import { ProjectsFilter, SectionWrapper, SectionTitle, Card } from '../..';
-import { dataStore } from '../../../store/dataStore';
 import { motion } from 'framer-motion';
+
+import { ProjectsFilter, SectionWrapper, SectionTitle, ProjectsCard } from '../..';
+import { dataStore } from '../../../store/dataStore';
 
 const ProjectsGrid = () => {
   const data = dataStore((state) => state.projects);
@@ -13,7 +14,9 @@ const ProjectsGrid = () => {
         <ProjectsFilter />
       </SectionTitle>
       <div className={'art-grid art-grid-2-col art-gallery'}>
-        {data.projects.map((project, index) => <Card key={`projects-grid-item-${index}`} index={index} {...project} />)}
+        {data.projects.map((project, index) => (
+          <ProjectsCard key={`projects-grid-item-${index}`} index={index} classes='art-grid-item' {...project} />
+        ))}
       </div>
     </Container>
   );
