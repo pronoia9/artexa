@@ -245,7 +245,8 @@ export const countersMotion = {
 export const projectsMotion = {
   container: { ...motionStates(), variants: staggerContainer(0.5, 4) },
   swiper: { variants: staggerContainerMirror(0.5) },
-  card: { variants: zoomIn({ type: 'tween', duration: 0.1, ease: 'easeIn', staggerChildren: 0.1 }) },
+  grid: { variants: staggerContainerMirror(0.05) },
+  card: { variants: zoomIn({ type: 'tween', duration: 0.01, ease: 'linear', staggerChildren: 0.1 }) },
   navigation: { variants: fadeIn({ delay: 6.25 }) },
   filters: { variants: staggerContainer(0.15) },
   filter: { variants: zoomIn({ type: 'tween', duration: 0.1, ease: 'easeIn' }) },
