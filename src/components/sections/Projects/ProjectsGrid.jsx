@@ -8,12 +8,17 @@ import { GradientButton } from '../../../styles';
 import { lowerCase, projectsMotion, setProjectsCount } from '../../../utils';
 
 const ProjectsGrid = ({ limit }) => {
-  const data = dataStore((state) => state.projects.projects);
-  const [filterKey, setFilterKey] = useState(''),
-    [projects, setProjects] = useState(data),
-    [rows, setRows] = useState(3),
-    [cols, setCols] = useState(2),
-    [count, setCount] = useState();
+  const { data, filterKey, rows, setRows, cols, setCols, count, setCount } = dataStore((state) => ({
+    data:      state.projects.projects,
+    filterKey: state.projects.filterKey,
+    rows:      state.projects.rows,
+    setRows:   state.projects.setRows,
+    cols:      state.projects.cols,
+    setCols:   state.projects.setCols,
+    count:     state.projects.count,
+    setCount:  state.projects.setCount,
+  }));
+  const [projects, setProjects] = useState(data);
   const topRef = useRef();
 
   // Checks whether or not all the projects are shown with the filter applied
@@ -35,14 +40,14 @@ const ProjectsGrid = ({ limit }) => {
   // Handle filtering projects when filter key changes
   useEffect(() => {
     setProjects(
-      [!filterKey
-        ? data
-        : data.filter(
-            (p) => lowerCase(p.categories.join('')).includes(filterKey) || lowerCase(p.tags.join('')).includes(filterKey)),
+      [
+        !filterKey
+          ? data
+          : data.filter((p) => lowerCase(p.categories.join('')).includes(filterKey) || lowerCase(p.tags.join('')).includes(filterKey)),
       ].flat()
     );
   }, [filterKey]);
-
+useEffect(() => console.log(filterKey), [filterKey])
   // Sets count when the window is resized
   useEffect(() => {
     const resize = () => { setCount(setProjectsCount(rows, cols)); };
@@ -53,10 +58,10 @@ const ProjectsGrid = ({ limit }) => {
   return (
     <Container ref={topRef} className='row p-30-0' {...projectsMotion.container}>
       <SectionTitle title='Projects'>
-        <ProjectsFilters filterKey={filterKey} setFilterKey={setFilterKey} />
+        <ProjectsFilters />
       </SectionTitle>
 
-      <Grid className={`art-grid art-grid-${cols}-col art-gallery`} {...projectsMotion.swiper}>
+      <Grid key={`projects-grid-`} className={`art-grid art-grid-${cols}-col art-gallery`} {...projectsMotion.swiper}>
         {projects.slice(0, limit ? count : projects.length).map((project, index) => (
           <ProjectsCard key={`projects-grid-item-${index}`} index={index} hide={true} classes='art-grid-item' {...project} {...projectsMotion.card} />
         ))}
