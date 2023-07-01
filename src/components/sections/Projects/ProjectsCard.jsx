@@ -6,17 +6,15 @@ import { Tag } from '../../../styles';
 export const ProjectsCard = (props) => {
   const { index, swiper, id, title, subtitle, description, link, links, image, images, year, date, categories, tags } = props;
   return (
-    <>
-      <Card {...props} subtitle={null} section='projects'>
-        <TagsContainer className='mb-15'>
-          {[swiper ? categories : tags].flat().map((tag) => (
-            <Tag key={`project-${title}-tags-${tag}`} className='art-tag'>
-              {tag}
-            </Tag>
-          ))}
-        </TagsContainer>
-      </Card>
-    </>
+    <Card {...props} subtitle={null} section='projects'>
+      <TagsContainer className='mb-15'>
+        {[swiper ? categories : tags].flat().map((tag) => (
+          <Tag key={`project-${title}-tags-${tag}`} className='art-tag'>
+            {tag}
+          </Tag>
+        ))}
+      </TagsContainer>
+    </Card>
   );
 };
 
