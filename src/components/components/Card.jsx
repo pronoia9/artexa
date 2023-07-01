@@ -36,8 +36,18 @@ export const Card = (props) => {
 const Container = styled(motion.div)`
   position: relative;
   overflow: hidden;
-  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
   margin-bottom: ${({ $swiper }) => !$swiper && rem(30)};
+
+  ${({ $swiper }) =>
+    $swiper &&
+    css`
+      background: var(--c-bg-card-overlay);
+      box-shadow: 0 3px 8px 0 var(--c-box-shadow);
+    `}
+
+  &.art-fluid-card {
+    height: calc(100% - 30px);
+  }
 
   &:hover {
     .art-post-description {
