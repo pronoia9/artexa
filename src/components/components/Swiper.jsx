@@ -1,9 +1,9 @@
-import { motion } from "framer-motion";
-import { styled } from "styled-components";
+import { motion } from 'framer-motion';
+import { styled } from 'styled-components';
 
 export const SwiperNavigation = ({ section, ...props }) => (
-
-    <Navigation className='art-slider-navigation acc' {...props}>
+  <motion.div className='col-lg-12 p-0-30' {...props}>
+    <Navigation className='art-slider-navigation acc'>
       <div className='art-sn-left'>
         <div className={`swiper-pagination ${section}-swiper-pagination`} />
       </div>
@@ -19,7 +19,7 @@ export const SwiperNavigation = ({ section, ...props }) => (
         </NavFrame>
       </div>
     </Navigation>
-
+  </motion.div>
 );
 
 const Navigation = styled(motion.div)`

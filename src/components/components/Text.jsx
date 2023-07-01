@@ -3,21 +3,23 @@ import { styled } from 'styled-components';
 import { textType } from '../../utils';
 
 export const SectionTitle = ({ column = 1, title = 'Missing Section Title', speed = 0.05, children, ...props }) => (
-  <Container className='art-section-title' {...props}>
-    <Frame className='art-title-frame'>
-      <motion.h2 {...textType.text(speed)}>
-        {title.split('').map((char, index) => (
-          <motion.span key={`section-title-${title}-${index}`} {...textType.char}>
-            {char}
-          </motion.span>
-        ))}
-      </motion.h2>
-    </Frame>
-    {children && <RightFrame className='art-right-frame'>{children}</RightFrame>}
-  </Container>
+  <motion.div className={'col-lg-' + (12 / props.column || 12)} {...props}>
+    <Container className='art-section-title'>
+      <Frame className='art-title-frame'>
+        <motion.h2 {...textType.text(speed)}>
+          {title.split('').map((char, index) => (
+            <motion.span key={`section-title-${title}-${index}`} {...textType.char}>
+              {char}
+            </motion.span>
+          ))}
+        </motion.h2>
+      </Frame>
+      {children && <RightFrame className='art-right-frame'>{children}</RightFrame>}
+    </Container>
+  </motion.div>
 );
 
-const Container = styled(motion.div)`
+const Container = styled.div`
   position: relative;
   width: 100%;
   flex: 0 0 100%;

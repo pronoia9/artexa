@@ -11,10 +11,10 @@ const ProjectsSwiper = () => {
   SwiperCore.use([Autoplay]);
 
   return (
-    <motion.div {...projectsMotion.container}>
+    <motion.div {...projectsMotion.container} className='row p-30-0'>
       <SectionTitle title='Projects' speed={0.05} />
 
-      <motion.div {...projectsMotion.swiper}>
+      <motion.div {...projectsMotion.swiper} className='col-lg-12'>
         <Swiper
           modules={[Navigation, Pagination, A11y]}
           spaceBetween={30}

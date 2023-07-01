@@ -9,7 +9,7 @@ const ProjectsGrid = () => {
   const { filters, projects } = data;
 
   return (
-    <Container>
+    <Container className='row p-30-0'>
       <SectionTitle title='Projects'>
         <ProjectsFilter />
       </SectionTitle>
