@@ -21,14 +21,14 @@ const ProjectsGrid = ({ limit }) => {
 
   // Add more rows or return to default on button click
   const handleButtonClick = () => {
-    if (!showingAllProjects()) setRows((prev) => prev + 1);
+    if (!showingAllProjects()) setRows((prev) => prev + 2);
     else {
       setRows(3);
       setCount(cols * 3);
       topRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
-
+  
   // Update projects count whenever cols or rows changes
   useEffect(() => setCount(setProjectsCount(rows, cols)), [rows, cols]);
 
@@ -51,7 +51,7 @@ const ProjectsGrid = ({ limit }) => {
   }, []);
 
   return (
-    <Container className='row p-30-0'>
+    <Container ref={topRef} className='row p-30-0'>
       <SectionTitle title='Projects'>
         <ProjectsFilters filterKey={filterKey} setFilterKey={setFilterKey} />
       </SectionTitle>
@@ -62,9 +62,11 @@ const ProjectsGrid = ({ limit }) => {
         ))}
       </Grid>
 
-      <Button className='art-buttons-frame acc' onClick={handleButtonClick}>
-        View {!showingAllProjects() ? 'More' : 'Less'}
-      </Button>
+      {projects.length > count && (
+        <Button className='art-buttons-frame acc' onClick={handleButtonClick}>
+          View {!showingAllProjects() ? 'More' : 'Less'}
+        </Button>
+      )}
     </Container>
   );
 };
