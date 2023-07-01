@@ -229,10 +229,6 @@ export const heroMotion = {
     char: { variants: textVariant() },
   },
   typed: { variants: fadeIn({ delay: 1.75, bounce: 0.5 }, 'down') },
-  button: {
-    whileHover: { backgroundPosition: '100% 100%', scale: 1.15, transition: { ease: 'easeOut', duration: 0.1 } },
-    variants: fadeIn({ type: 'tween', ease: 'easeIn', duration: 2 }),
-  },
 };
 
 // COUNTERS
@@ -292,6 +288,14 @@ export const cardMotion = {
     },
     transition: { type: 'tween', delay: 0.1 * index, duration: 0.25, ease: 'easeInOut' },
   }),
+};
+
+// BUTTONS
+export const buttonMotion = {
+  gradient: {
+    whileHover: { backgroundPosition: '100% 100%', scale: 1.15, transition: { ease: 'easeOut', duration: 0.1 } },
+    variants: fadeIn({ type: 'tween', ease: 'easeIn', duration: 2 }),
+  },
 };
 /***********************  7. Components End  ***********************/
 /*
