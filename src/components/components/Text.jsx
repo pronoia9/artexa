@@ -3,23 +3,24 @@ import { styled } from 'styled-components';
 import { textType } from '../../utils';
 
 export const SectionTitle = ({ column = 1, title = 'Missing Section Title', speed = 0.05, children, ...props }) => (
-  <motion.div className={`col-lg-${12 / column}`} {...props}>
-    <TitleContainer className='art-section-title'>
-      <TitleFrame className='art-title-frame'>
-        <motion.h2 {...textType.text(speed)}>
-          {title.split('').map((char, index) => (
-            <motion.span key={`section-title-${title}-${index}`} {...textType.char}>
-              {char}
-            </motion.span>
-          ))}
-        </motion.h2>
-      </TitleFrame>
-      {children && <TitleRightFrame className='art-right-frame'>{children}</TitleRightFrame>}
-    </TitleContainer>
-  </motion.div>
+  <Container className='art-section-title' {...props}>
+    <Frame className='art-title-frame'>
+      <motion.h2 {...textType.text(speed)}>
+        {title.split('').map((char, index) => (
+          <motion.span key={`section-title-${title}-${index}`} {...textType.char}>
+            {char}
+          </motion.span>
+        ))}
+      </motion.h2>
+    </Frame>
+    {children && <RightFrame className='art-right-frame'>{children}</RightFrame>}
+  </Container>
 );
 
-const TitleContainer = styled(motion.div)`
+const Container = styled(motion.div)`
+  position: relative;
+  width: 100%;
+  flex: 0 0 100%;
   display: flex;
   justify-content: space-between;
 
@@ -32,13 +33,13 @@ const TitleContainer = styled(motion.div)`
   }
 `;
 
-const TitleFrame = styled.div`
+const Frame = styled.div`
   align-self: center;
   position: relative;
   margin-bottom: 30px;
 `;
 
-const TitleRightFrame = styled.div`
+const RightFrame = styled.div`
   padding-bottom: 30px;
 
   @media (max-width: 768px) {
