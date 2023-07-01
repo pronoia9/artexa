@@ -1,12 +1,13 @@
-import { css, styled } from 'styled-components';
+import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
 import { dataStore } from '../../../store/dataStore';
-import { lowerCase } from '../../../utils';
+import { lowerCase, projectsMotion } from '../../../utils';
 
-export const ProjectsFilters = (props) => {
+export const ProjectsFilters = ({ cols, ...props }) => {
   const data = dataStore((state) => state.projects.filters);
   return (
-    <Container className='art-filter acc'>
+    <Container className='art-filter acc' {...projectsMotion.filters}>
       {data.map((filter, index) => (
         <FilterItem key={`projects-filter-${index} acc`} {...filter} {...props} />
       ))}
@@ -15,17 +16,15 @@ export const ProjectsFilters = (props) => {
 };
 
 export const FilterItem = ({ title, filter, filterKey, setFilterKey }) => {
-  const handleClick = () => {
-    setFilterKey(lowerCase(filter));
-  };
+  const handleClick = () => { setFilterKey(lowerCase(filter)); };
   return (
-    <Item className='art-link' onClick={handleClick} $active={lowerCase(filterKey) === lowerCase(filter)}>
+    <Item className='art-link' onClick={handleClick} $active={lowerCase(filterKey) === lowerCase(filter)} {...projectsMotion.filter}>
       {title}
     </Item>
   );
 };
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   @media (max-width: 768px) {
     text-align: center;
     display: flex;
@@ -37,7 +36,7 @@ const Container = styled.div`
   }
 `;
 
-const Item = styled.button`
+const Item = styled(motion.button)`
   margin-bottom: 0;
   color: ${({ $active }) => (!$active ? 'var(--c-font-1)' : `var(--c-accent-1)`)} !important;
 
