@@ -16,14 +16,6 @@ export const Button = styled(motion.button)`
   box-shadow: 0 1px 4px 0 var(--c-box-shadow);
   transition: 0.4s ease-in-out;
 
-  &, * {
-    max-width: 200px;
-
-    &:first-child {
-      margin-bottom: 15px;
-    }
-  }
-
   &:hover {
     background-color: var(--c-accent-3);
     transform: translateY(-2px);
