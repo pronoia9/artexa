@@ -5,28 +5,32 @@ import { motion } from 'framer-motion';
 import { ProjectsFilters, SectionWrapper, SectionTitle, ProjectsCard } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { GradientButton } from '../../../styles';
-import { buttonMotion, lowerCase, projectsMotion, setProjectsCount } from '../../../utils';
+import { buttonMotion, lowerCase, projectsMotion, getProjectsCount } from '../../../utils';
 
 const ProjectsGrid = ({ limit }) => {
-  const { data, filterKey, rows, setRows, cols, setCols, count, setCount } = dataStore((state) => ({
-    data:      state.projects.projects,
+  const { projects, filteredProjects, setFilteredProjects, filterKey, rows, setRows, cols, setCols, count, setCount } = dataStore((state) => ({
+    projects: state.projects.projects,
+    filteredProjects: state.projects.filteredProjects,
+    setFilteredProjects: state.projects.setFilteredProjects,
     filterKey: state.projects.filterKey,
-    rows:      state.projects.rows,
-    setRows:   state.projects.setRows,
-    cols:      state.projects.cols,
-    setCols:   state.projects.setCols,
-    count:     state.projects.count,
-    setCount:  state.projects.setCount,
+    rows: state.projects.rows,
+    setRows: state.projects.setRows,
+    cols: state.projects.cols,
+    setCols: state.projects.setCols,
+    count: state.projects.count,
+    setCount: state.projects.setCount,
   }));
-  const [projects, setProjects] = useState(data);
   const topRef = useRef();
 
+  // Set Filtered Projects
+  useEffect(() => { setFilteredProjects(projects); }, []);
+
   // Checks whether or not all the projects are shown with the filter applied
-  const showingAllProjects = () => !(projects.slice(0, count).length < projects.length);
+  const showingAllProjects = () => !(filteredProjects.slice(0, count).length < projects.length);
 
   // Add more rows or return to default on button click
   const handleButtonClick = () => {
-    if (!showingAllProjects()) setRows((prev) => prev + 2);
+    if (!showingAllProjects()) setRows(rows + 2);
     else {
       setRows(3);
       setCount(cols * 3);
@@ -34,23 +38,25 @@ const ProjectsGrid = ({ limit }) => {
     }
   };
 
-  // Update projects count whenever cols or rows changes
-  useEffect(() => setCount(setProjectsCount(rows, cols)), [rows, cols]);
+  // Update projects count whenever cols or rows changes (dont make it exceed the filtered projects length)
+  useEffect(() => { filteredProjects.length && setCount(Math.min(getProjectsCount(rows, cols), filteredProjects.length)); }, [rows, cols]);
 
   // Handle filtering projects when filter key changes
   useEffect(() => {
-    setProjects(
+    setFilteredProjects(
       [
         !filterKey
-          ? data
-          : data.filter((p) => lowerCase(p.categories.join('')).includes(filterKey) || lowerCase(p.tags.join('')).includes(filterKey)),
+          ? projects
+          : projects.filter((p) => lowerCase(p.categories.join('')).includes(filterKey) || lowerCase(p.tags.join('')).includes(filterKey)),
       ].flat()
     );
+    // Update rows (if the new filtered projects are less than before, need to lower rows) (count will be updated whenever rows are updated)
+    filteredProjects.length && setRows(Math.min(rows, Math.round(filteredProjects.length / cols)));
   }, [filterKey]);
-useEffect(() => console.log(filterKey), [filterKey])
+
   // Sets count when the window is resized
   useEffect(() => {
-    const resize = () => { setCount(setProjectsCount(rows, cols)); };
+    const resize = () => { setCount(Math.min(getProjectsCount(rows, cols), filteredProjects.length)); };
     window.addEventListener('resize', resize);
     return () => { window.removeEventListener('resize', resize); };
   }, []);
@@ -62,12 +68,21 @@ useEffect(() => console.log(filterKey), [filterKey])
       </SectionTitle>
 
       <Grid className={`art-grid art-grid-${cols}-col art-gallery`} {...projectsMotion.grid}>
-        {projects.slice(0, limit ? count : projects.length).map((project, index) => (
-          <ProjectsCard key={`projects-grid-item-${project.title}`} index={index} hide={true} classes='art-grid-item' {...project} {...projectsMotion.card} />
-        ))}
+        {Array.from(limit ? filteredProjects.slice(0, count) : filteredProjects)
+          .flat()
+          .map((project, index) => (
+            <ProjectsCard
+              key={`projects-grid-item-${project.title}`}
+              index={index}
+              hide={true}
+              classes='art-grid-item'
+              {...project}
+              {...projectsMotion.card}
+            />
+          ))}
       </Grid>
 
-      {limit && projects.length > count && (
+      {limit && filteredProjects.length > getProjectsCount() && (
         <Button className='art-buttons-frame acc' onClick={handleButtonClick} {...buttonMotion.gradient}>
           View {!showingAllProjects() ? 'More' : 'Less'}
         </Button>

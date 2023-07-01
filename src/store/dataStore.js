@@ -377,6 +377,8 @@ export const dataStore = create((set) => ({
     setCols: (cols) => set((state) => ({ projects: { ...state.projects, cols: cols } })),
     count: 6,
     setCount: (count) => set((state) => ({ projects: { ...state.projects, count: count } })),
+    filteredProjects: [],
+    setFilteredProjects: (filteredProjects) => set((state) => ({ projects: { ...state.projects, filteredProjects: filteredProjects } })),
     projects: [
       {
         id: 'ugAU0ari79',
