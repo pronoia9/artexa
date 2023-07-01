@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { ProjectsFilters, SectionWrapper, SectionTitle, ProjectsCard } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { GradientButton } from '../../../styles';
-import { lowerCase, projectsMotion, setProjectsCount } from '../../../utils';
+import { buttonMotion, lowerCase, projectsMotion, setProjectsCount } from '../../../utils';
 
 const ProjectsGrid = ({ limit }) => {
   const { data, filterKey, rows, setRows, cols, setCols, count, setCount } = dataStore((state) => ({
@@ -61,14 +61,14 @@ useEffect(() => console.log(filterKey), [filterKey])
         <ProjectsFilters />
       </SectionTitle>
 
-      <Grid key={`projects-grid-`} className={`art-grid art-grid-${cols}-col art-gallery`} {...projectsMotion.swiper}>
+      <Grid className={`art-grid art-grid-${cols}-col art-gallery`} {...projectsMotion.grid}>
         {projects.slice(0, limit ? count : projects.length).map((project, index) => (
-          <ProjectsCard key={`projects-grid-item-${index}`} index={index} hide={true} classes='art-grid-item' {...project} {...projectsMotion.card} />
+          <ProjectsCard key={`projects-grid-item-${project.title}`} index={index} hide={true} classes='art-grid-item' {...project} {...projectsMotion.card} />
         ))}
       </Grid>
 
       {limit && projects.length > count && (
-        <Button className='art-buttons-frame acc' onClick={handleButtonClick}>
+        <Button className='art-buttons-frame acc' onClick={handleButtonClick} {...buttonMotion.gradient}>
           View {!showingAllProjects() ? 'More' : 'Less'}
         </Button>
       )}

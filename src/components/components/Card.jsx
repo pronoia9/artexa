@@ -14,7 +14,7 @@ export const Card = ({
       className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`}
       $swiper={swiper}
       $hide={hide}
-      key={`${section}-card-${index}-${title}`}
+      key={`${section}-card-${title}`}
       {...props}
     >
       <ImageLink className='art-port-cover' href={`/src/assets/${section}/${lowerCase(title).replaceAll(' ', '-')}.jpg`}>
