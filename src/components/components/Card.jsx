@@ -9,7 +9,7 @@ export const Card = (props) => {
 
   return (
     <Container
-      className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acl`}
+      className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`}
       $swiper={swiper}
       key={`card-${index}-${title}`}
       {...motion}
