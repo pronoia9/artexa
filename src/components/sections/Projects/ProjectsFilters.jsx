@@ -15,7 +15,9 @@ export const ProjectsFilters = (props) => {
 };
 
 export const FilterItem = ({ title, filter, filterKey, setFilterKey }) => {
-  const handleClick = (filter) => setFilterKey(lowerCase(filter));
+  const handleClick = () => {
+    setFilterKey(lowerCase(filter));
+  };
   return (
     <Item className='art-link' onClick={handleClick} $active={lowerCase(filterKey) === lowerCase(filter)}>
       {title}
