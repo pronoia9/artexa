@@ -52,11 +52,11 @@ const ProjectsGrid = ({ limit }) => {
         {projects.map((project, index) => (
           <ProjectsCard key={`projects-grid-item-${index}`} index={index} hide={true} classes='art-grid-item' {...project} />
         ))}
-
-        <Button className='art-buttons-frame acc' onClick={handleButtonClick}>
-          View {!showingAllProjects() ? 'More' : 'Less'}
-        </Button>
       </Grid>
+
+      <Button className='art-buttons-frame acc' onClick={handleButtonClick}>
+        View {!showingAllProjects() ? 'More' : 'Less'}
+      </Button>
     </Container>
   );
 };
