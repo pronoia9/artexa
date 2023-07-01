@@ -16,7 +16,7 @@ export const ProjectsFilters = (props) => {
         <FilterItem
           key={`projects-filter-${index} acc`}
           {...f}
-          onClick={() => { console.log('clicking', f.filter), setFilterKey(lowerCase(f.filter)); }}
+          onClick={() => { setFilterKey(lowerCase(f.filter)); }}
           active={filterKey === f.filter}
           {...projectsMotion.filter}
           {...props}
