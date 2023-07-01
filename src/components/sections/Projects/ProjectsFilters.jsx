@@ -4,21 +4,31 @@ import { motion } from 'framer-motion';
 import { dataStore } from '../../../store/dataStore';
 import { lowerCase, projectsMotion } from '../../../utils';
 
-export const ProjectsFilters = ({ cols, ...props }) => {
-  const data = dataStore((state) => state.projects.filters);
+export const ProjectsFilters = (props) => {
+  const { data, filterKey, setFilterKey } = dataStore((state) => ({
+    data: state.projects.filters,
+    filterKey: state.projects.filterKey,
+    setFilterKey: state.projects.setFilterKey,
+  }));
   return (
     <Container className='art-filter acc' {...projectsMotion.filters}>
-      {data.map((filter, index) => (
-        <FilterItem key={`projects-filter-${index} acc`} {...filter} {...props} />
+      {data.map((f, index) => (
+        <FilterItem
+          key={`projects-filter-${index} acc`}
+          {...f}
+          onClick={() => { console.log('clicking', f.filter), setFilterKey(lowerCase(f.filter)); }}
+          active={filterKey === f.filter}
+          {...projectsMotion.filter}
+          {...props}
+        />
       ))}
     </Container>
   );
 };
 
-export const FilterItem = ({ title, filter, filterKey, setFilterKey }) => {
-  const handleClick = () => { setFilterKey(lowerCase(filter)); };
+export const FilterItem = ({ title, filter, active, ...props }) => {
   return (
-    <Item className='art-link' onClick={handleClick} $active={lowerCase(filterKey) === lowerCase(filter)} {...projectsMotion.filter}>
+    <Item className='art-link' $active={active} {...props}>
       {title}
     </Item>
   );
