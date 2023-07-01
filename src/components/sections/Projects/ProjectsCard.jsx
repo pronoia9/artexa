@@ -22,6 +22,7 @@ export const ProjectsCard = (props) => {
 
 const TagsContainer = styled.div`
   height: calc(58px); /* 2 lines */
+  overflow: hidden;
 
   p {
     background: var(--c-bg-menu-2);
