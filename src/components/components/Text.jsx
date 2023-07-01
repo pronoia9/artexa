@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 import { textType } from '../../utils';
 
 export const SectionTitle = ({ column = 1, title = 'Missing Section Title', speed = 0.05, children, ...props }) => (
-  <motion.div className={`${12 / column}`} {...props}>
+  <motion.div className={`col-lg-${12 / column}`} {...props}>
     <TitleContainer className='art-section-title'>
       <TitleFrame className='art-title-frame'>
         <motion.h2 {...textType.text(speed)}>
