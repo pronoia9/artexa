@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 export const Button = styled(motion.button)`
   display: inline-flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-content: center;
   background: var(--c-accent-1);
@@ -10,9 +11,18 @@ export const Button = styled(motion.button)`
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  text-align: center;
   border: none;
   box-shadow: 0 1px 4px 0 var(--c-box-shadow);
   transition: 0.4s ease-in-out;
+
+  &, * {
+    max-width: 200px;
+
+    &:first-child {
+      margin-bottom: 15px;
+    }
+  }
 
   &:hover {
     background-color: var(--c-accent-3);
@@ -44,7 +54,7 @@ export const GradientButton = styled(ButtonMedium)`
   background-image: var(--c-gradient-accent-2);
   background-size: 400%;
 
-  * {
+  &, * {
     color: var(--c-font-dark);
   }
 `;
