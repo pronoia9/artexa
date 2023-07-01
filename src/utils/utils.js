@@ -65,6 +65,9 @@ export const rgbaToHex = (rgbaColor) => {
   return '#' + hexValue;
 };
 
+export const setProjectsCount = (rows = 3, cols = 2) =>
+  (window.innerWidth > 1020 ? cols : window.innerWidth > 768 ? Math.max(cols - 1, 1) : Math.max(cols - 2, 1)) * rows;
+
 // ----------------------------- TRANSITION ----------------------------- //
 // function transition() {
 //   // since the transition-fade containers opacity changes after the first time this function is called

@@ -10,6 +10,7 @@ import {
   rem,
   ProgressbarInstance,
   rgbaToHex,
+  setProjectsCount,
 } from './utils';
 
 import {
@@ -51,6 +52,7 @@ export {
   rem,
   ProgressbarInstance,
   rgbaToHex,
+  setProjectsCount,
   // Motion
   appMotion,
   sceneMotion,
