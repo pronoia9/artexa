@@ -10,13 +10,7 @@ export const Card = ({
   ...props
 }) => {
   return (
-    <Container
-      className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`}
-      $swiper={swiper}
-      $hide={hide}
-      key={`${section}-card-${title}`}
-      {...props}
-    >
+    <Container className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`} $swiper={swiper} $hide={hide} {...props}>
       <ImageLink className='art-port-cover' href={`/src/assets/${section}/${lowerCase(title).replaceAll(' ', '-')}.jpg`}>
         <img src={`/src/assets/${section}/${lowerCase(title).replaceAll(' ', '-')}.jpg`} alt='item' />
         <HoverIcon className='art-item-hover'>
@@ -25,9 +19,7 @@ export const Card = ({
       </ImageLink>
 
       <Overlay className='art-post-description' $hide={hide}>
-        {/* <a href='#.'> */}
-        <Title className='mb-15'>{title}</Title>
-        {/* </a> */}
+        {/* <a href='#.'> */}<Title className='mb-15'>{title}</Title>{/* </a> */}
         {subtitle && <div className='mb-15'>{subtitle}</div>}
 
         {props.children}
