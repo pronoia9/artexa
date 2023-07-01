@@ -7,7 +7,7 @@ import { Logos, Logo } from './components/Logos';
 import { Preloader } from './components/Preloader';
 import { Progressbar } from './components/Progressbar';
 import { SwiperNavigation } from './components/Swiper';
-import { Title, SectionTitle } from './components/Text';
+import { SectionTitle } from './components/Text';
 import { Timeline, TimelineColumn, TimelineItem } from './components/Timeline';
 
 // --- HOC
@@ -89,7 +89,7 @@ export {
   Preloader,
   Progressbar,
   SwiperNavigation,
-  Title, SectionTitle,
+  SectionTitle,
   Timeline, TimelineColumn, TimelineItem,
 
   // ---- HOC ----

@@ -2,30 +2,20 @@ import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 import { textType } from '../../utils';
 
-export const Title = (props) => (
-  <TitleContainer className='art-section-title' {...props}>
-    <TitleFrame className='art-title-frame'>
-      <motion.h2 {...textType.text(props.speed)}>
-        {props.title.split('').map((char, index) => (
-          <motion.span key={`section-title-${props.title}-${index}`} {...textType.char}>
-            {char}
-          </motion.span>
-        ))}
-      </motion.h2>
-    </TitleFrame>
-    {props.children}
-  </TitleContainer>
-);
-
-export const SectionTitle = ({ column = 1, title, rightTitle, rightClass, ...props }) => (
-  <motion.div className={`col-lg-${12 / column}`} {...props}>
-    <Title title={title} speed={props.speed}>
-      {rightTitle && (
-        <TitleRightFrame className='art-right-frame'>
-          <div className={rightClass}>{rightTitle}</div>
-        </TitleRightFrame>
-      )}
-    </Title>
+export const SectionTitle = ({ column = 1, title = 'Missing Section Title', speed = 0.05, children, ...props }) => (
+  <motion.div className={`${12 / column}`} {...props}>
+    <TitleContainer className='art-section-title'>
+      <TitleFrame className='art-title-frame'>
+        <motion.h2 {...textType.text(speed)}>
+          {title.split('').map((char, index) => (
+            <motion.span key={`section-title-${title}-${index}`} {...textType.char}>
+              {char}
+            </motion.span>
+          ))}
+        </motion.h2>
+      </TitleFrame>
+      {children && <TitleRightFrame className='art-right-frame'>{children}</TitleRightFrame>}
+    </TitleContainer>
   </motion.div>
 );
 

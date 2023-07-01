@@ -1,4 +1,4 @@
-import { Title } from '..';
+import { SectionTitle } from '..';
 
 export const Timeline = ({ column, title, list }) => <TimelineColumn column={props.column} title={props.title} list={props.list} />;
 
@@ -6,7 +6,7 @@ export const TimelineColumn = ({ column, title, list }) => (
   // half screen panel
   <div className={'col-lg-' + 12 / column}>
     {/* title */}
-    <Title title={title} />
+    <SectionTitle title={title} />
 
     {/* items container */}
     <div className='art-timeline art-gallery'>
