@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { styled } from "styled-components";
 
 export const SwiperNavigation = ({ section, ...props }) => (
-  <motion.div className='col-lg-12 p-0-30 acl' {...props}>
-    <Navigation className='art-slider-navigation'>
+
+    <Navigation className='art-slider-navigation acc' {...props}>
       <div className='art-sn-left'>
         <div className={`swiper-pagination ${section}-swiper-pagination`} />
       </div>
@@ -19,14 +19,23 @@ export const SwiperNavigation = ({ section, ...props }) => (
         </NavFrame>
       </div>
     </Navigation>
-  </motion.div>
+
 );
 
-const Navigation = styled.div`
+const Navigation = styled(motion.div)`
+  position: relative;
+  width: 100%;
   padding: 15px 0 0;
   display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   cursor: pointer !important;
+
+  .swiper-pagination {
+    position: static;
+    left: 0 !important;
+  }
 
   .swiper-pagination-bullet {
     height: 4px;
