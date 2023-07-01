@@ -11,13 +11,26 @@ const ProjectsGrid = ({ limit }) => {
   const data = dataStore((state) => state.projects.projects);
   const [filterKey, setFilterKey] = useState(''),
     [projects, setProjects] = useState(data),
-    [cols, setCols] = useState(2),
     [rows, setRows] = useState(3),
-    [count, setCount] = useState(2 * 3);
+    [cols, setCols] = useState(2),
+    [count, setCount] = useState();
   const topRef = useRef();
 
   // Checks whether or not all the projects are shown with the filter applied
   const showingAllProjects = () => !(projects.slice(0, count).length < projects.length);
+
+  // Add more rows or return to default on button click
+  const handleButtonClick = () => {
+    if (!showingAllProjects()) setRows((prev) => prev + 1);
+    else {
+      setRows(3);
+      setCount(cols * 3);
+      topRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  // Update projects count whenever cols or rows changes
+  useEffect(() => setCount(setProjectsCount(rows, cols)), [rows, cols]);
 
   // Handle filtering projects when filter key changes
   useEffect(() => {
@@ -30,17 +43,12 @@ const ProjectsGrid = ({ limit }) => {
     );
   }, [filterKey]);
 
-  // Update projects count whenever cols or rows changes
-  useEffect(() => setCount(rows * cols), [rows, cols]);
-
-  const handleButtonClick = () => {
-    if (!showingAllProjects()) setRows((prev) => prev + 1);
-    else {
-      setRows(2);
-      setCount(rows);
-      topRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  // Sets count when the window is resized
+  useEffect(() => {
+    const resize = () => { setCount(setProjectsCount(rows, cols)); };
+    window.addEventListener('resize', resize);
+    return () => { window.removeEventListener('resize', resize); };
+  }, []);
 
   return (
     <Container className='row p-30-0'>
@@ -49,7 +57,7 @@ const ProjectsGrid = ({ limit }) => {
       </SectionTitle>
 
       <Grid className={`art-grid art-grid-${cols}-col art-gallery`}>
-        {projects.map((project, index) => (
+        {projects.slice(0, count).map((project, index) => (
           <ProjectsCard key={`projects-grid-item-${index}`} index={index} hide={true} classes='art-grid-item' {...project} />
         ))}
       </Grid>
