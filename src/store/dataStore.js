@@ -52,8 +52,8 @@ export const dataStore = create((set) => ({
     outerScale: 2,
     outerAlpha: 0,
     hasBlendMode: true,
-    innerStyle: { backgroundColor: 'var(--c-accent-5)', },
-    outerStyle: { border: '3px solid var(--c-accent-5)', },
+    innerStyle: { backgroundColor: 'var(--c-accent-5)' },
+    outerStyle: { border: '3px solid var(--c-accent-5)' },
     clickables: [
       'a',
       'input[type="text"]',
@@ -369,7 +369,14 @@ export const dataStore = create((set) => ({
       { title: 'fullstack', filter: 'fullstack' },
       { title: 'nextjs', filter: 'nextjs' },
     ],
-
+    filterKey: '',
+    setFilterKey: (filterKey) => set((state) => ({ projects: { ...state.projects, filterKey: filterKey } })),
+    rows: 3,
+    setRows: (rows) => set((state) => ({ projects: { ...state.projects, rows: rows } })),
+    cols: 2,
+    setCols: (cols) => set((state) => ({ projects: { ...state.projects, cols: cols } })),
+    count: 6,
+    setCount: (count) => set((state) => ({ projects: { ...state.projects, count: count } })),
     projects: [
       {
         id: 'ugAU0ari79',
