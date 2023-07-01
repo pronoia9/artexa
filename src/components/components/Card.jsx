@@ -21,8 +21,8 @@ export const Card = (props) => {
       key={`card-${index}-${title}`}
       {...motion}
     >
-      <ImageLink className='art-port-cover' href={`/src/assets/${section}/${title.replaceAll(' ', '')}`}>
-        <img src={`/src/assets/${section}/${title.replaceAll(' ', '')}`} alt='item' />
+      <ImageLink className='art-port-cover' href={`/src/assets/${section}/${lowerCase(title).replaceAll(' ', '-')}.jpg`}>
+        <img src={`/src/assets/${section}/${lowerCase(title).replaceAll(' ', '-')}.jpg`} alt='item' />
         <HoverIcon className='art-item-hover'>
           <i className='fas fa-expand' />
         </HoverIcon>
@@ -73,6 +73,7 @@ const ImageLink = styled.a`
   padding-bottom: 60%;
   display: block;
   background: var(--c-bg);
+  overflow: hidden;
 
   img {
     width: 100%;
