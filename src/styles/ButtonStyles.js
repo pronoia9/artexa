@@ -44,7 +44,7 @@ export const ButtonSmall = styled(Button)`
 export const GradientButton = styled(ButtonMedium)`
   background: var(--c-accent-1);
   background-image: var(--c-gradient-accent-2);
-  background-size: 400%;
+  background-size: 200%;
 
   &, *, &:hover, &:hover * {
     color: var(--c-font-dark);
