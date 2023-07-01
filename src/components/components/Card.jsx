@@ -1,28 +1,25 @@
 import { Link } from 'react-router-dom';
-import { styled } from 'styled-components';
+import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { rem } from '../../utils';
 
 export const Card = (props) => {
-  const { index, swiper, motion, id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes } = props;
+  const { index, swiper, motion, hide, id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes } = props;
 
   return (
-    <Container
-      className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`}
-      $swiper={swiper}
-      key={`card-${index}-${title}`}
-      {...motion}
-    >
+    <Container className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`} $swiper={swiper} $hide={hide} key={`card-${index}-${title}`} {...motion}>
       <ImageLink className='art-port-cover' href={image}>
         <img src={image} alt='item' />
-        <span className='art-item-hover'>
+        <HoverIcon className='art-item-hover'>
           <i className='fas fa-expand' />
-        </span>
+        </HoverIcon>
       </ImageLink>
 
-      <Overlay className='art-post-description'>
-        {/* <a href='#.'> */}<Title className='mb-15'>{title}</Title>{/* </a> */}
+      <Overlay className='art-post-description' $hide={hide}>
+        {/* <a href='#.'> */}
+        <Title className='mb-15'>{title}</Title>
+        {/* </a> */}
         {subtitle && <div className='mb-15'>{subtitle}</div>}
 
         {props.children}
@@ -41,6 +38,12 @@ const Container = styled(motion.div)`
   overflow: hidden;
   box-shadow: 0 3px 8px 0 var(--c-box-shadow);
   margin-bottom: ${({ $swiper }) => !$swiper && rem(30)};
+
+  &:hover {
+    .art-post-description {
+      transform: translateY(0);
+    }
+  }
 `;
 
 const ImageLink = styled.a`
@@ -62,15 +65,59 @@ const ImageLink = styled.a`
     img {
       transform: scale(1.07);
     }
+
+    .art-item-hover {
+      opacity: 0.5;
+    }
+  }
+`;
+
+const HoverIcon = styled.div`
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 27px;
+  height: 27px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--c-font-2);
+  font-size: ${rem(11)};
+  font-weight: 700;
+  line-height: ${rem(30)};
+  text-align: center;
+  background: var(--c-gradient-3);
+  border-radius: 50%;
+  box-shadow: 0 1px 4px 0 var(--c-box-shadow);
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+
+  &:hover {
+    opacity: 1;
+    transform: scale(1.07);
   }
 `;
 
 const Overlay = styled.div`
-  position: absolute;
+  position: relative;
   bottom: 0;
   padding: 30px;
-  position: relative;
+  color: var(--c-font-2);
   background: var(--c-bg-card-overlay);
+
+  ${({ $hide }) =>
+    $hide &&
+    css`
+      position: absolute;
+      bottom: 0;
+      left: 15px;
+      width: calc(100% - 29px);
+      padding: 30px;
+      box-shadow: 0 3px 8px 0 var(--c-box-shadow);
+      z-index: 9;
+      transform: translateY(100%);
+      transition: 0.55s ease-in-out;
+    `}
 `;
 
 const Title = styled.h5`
