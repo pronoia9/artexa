@@ -9,10 +9,11 @@ export const Card = ({
   id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes,
   ...props
 }) => {
+  const imgPath = `/src/assets/${section}/${lowerCase(title).replaceAll(' – ', '-').replaceAll(' ', '-')}.jpg`;
   return (
     <Container className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`} $swiper={swiper} $hide={hide} {...props}>
-      <ImageLink className='art-port-cover' href={`/src/assets/${section}/${lowerCase(title).replaceAll(' ', '-')}.jpg`}>
-        <img src={`/src/assets/${section}/${lowerCase(title).replaceAll(' ', '-')}.jpg`} alt='item' />
+      <ImageLink className='art-port-cover' href={imgPath}>
+        <img src={imgPath} alt='item' />
         <HoverIcon className='art-item-hover'>
           <i className='fas fa-expand' />
         </HoverIcon>
