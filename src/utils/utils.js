@@ -65,12 +65,6 @@ export const rgbaToHex = (rgbaColor) => {
   return '#' + hexValue;
 };
 
-export const getProjectsRows = (rows = 3) =>
-  window.innerWidth > 1020 ? rows : window.innerWidth > 768 ? Math.max(rows - 1, 2) : Math.max(rows - 1, 1);
-
-export const getProjectsCols = (cols = 2) =>
-  window.innerWidth > 1020 ? cols : window.innerWidth > 768 ? Math.max(cols - 1, 2) : Math.max(cols - 1, 1);
-
 export const getProjectsCount = (rows = 3, cols = 2) =>
   (window.innerWidth > 1020 ? cols : window.innerWidth > 768 ? Math.max(cols - 1, 2) : Math.max(cols - 1, 1)) * rows;
 

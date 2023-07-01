@@ -10,8 +10,6 @@ import {
   rem,
   ProgressbarInstance,
   rgbaToHex,
-  getProjectsRows,
-  getProjectsCols,
   getProjectsCount,
 } from './utils';
 
@@ -55,8 +53,6 @@ export {
   rem,
   ProgressbarInstance,
   rgbaToHex,
-  getProjectsRows,
-  getProjectsCols,
   getProjectsCount,
   // Motion
   appMotion,
