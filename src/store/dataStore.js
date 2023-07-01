@@ -46,7 +46,7 @@ export const dataStore = create((set) => ({
 
   cursorOptions: {
     innerSize: 40,
-    innerScale: 0,
+    innerScale: 0.1,
     trailingSpeed: 1,
     outerSize: 40,
     outerScale: 2,
