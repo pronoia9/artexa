@@ -28,7 +28,7 @@ const ProjectsGrid = ({ limit }) => {
       topRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
-  
+
   // Update projects count whenever cols or rows changes
   useEffect(() => setCount(setProjectsCount(rows, cols)), [rows, cols]);
 
@@ -57,12 +57,12 @@ const ProjectsGrid = ({ limit }) => {
       </SectionTitle>
 
       <Grid className={`art-grid art-grid-${cols}-col art-gallery`}>
-        {projects.slice(0, count).map((project, index) => (
+        {projects.slice(0, limit ? count : projects.length).map((project, index) => (
           <ProjectsCard key={`projects-grid-item-${index}`} index={index} hide={true} classes='art-grid-item' {...project} />
         ))}
       </Grid>
 
-      {projects.length > count && (
+      {limit && projects.length > count && (
         <Button className='art-buttons-frame acc' onClick={handleButtonClick}>
           View {!showingAllProjects() ? 'More' : 'Less'}
         </Button>
