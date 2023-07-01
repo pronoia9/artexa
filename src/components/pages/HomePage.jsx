@@ -1,4 +1,4 @@
-import { Contact, Counters, Hero, History, PageWrapper, ProjectsSwiper, TechnologiesSwiper } from '..';
+import { Contact, Counters, Hero, History, PageWrapper, ProjectsGrid, ProjectsSwiper, TechnologiesSwiper } from '..';
 
 const HomePage = () => {
   return (
@@ -6,6 +6,7 @@ const HomePage = () => {
       <Hero />
       <Counters />
       <ProjectsSwiper />
+      <ProjectsGrid />
       <History />
       <TechnologiesSwiper />
       <Contact />
