@@ -768,7 +768,8 @@ blockquote {
 
 /* ----- navigation/pagination ----- */
 
-${'' /* .art-pagination {
+${
+  '' /* .art-pagination {
   box-shadow: 0 3px 8px 0 var(--c-box-shadow);
   padding: 30px 30px 25px;
   background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
@@ -796,7 +797,8 @@ ${'' /* .art-pagination {
   .art-link {
     margin: 0;
   }
-} */}
+} */
+}
 
 /* ----- hobbies ----- */
 
@@ -834,22 +836,6 @@ ${'' /* .art-pagination {
 }
 
 /* ------------------------------ portfolio ------------------------------ */
-/* ----- filter ----- */
-
-.art-filter .art-link {
-  color: var(--c-font-1);
-  margin-bottom: 0;
-  cursor: pointer;
-}
-
-.art-link:last-child {
-  margin-right: 15px;
-}
-
-.art-filter .art-link.art-current {
-  color: var(--c-accent-1);
-}
-
 /* ----- portfolio items ----- */
 
 .art-portfolio-item-frame, .art-hobbies-item-frame {
@@ -881,9 +867,11 @@ ${'' /* .art-pagination {
 }
 
 .art-grid {
-  ${'' /* display: grid;
+  ${
+    '' /* display: grid;
   grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
-  grid-template-rows: masonry; */}
+  grid-template-rows: masonry; */
+  }
   transition: 0.55s ease-in-out;
   width: 100%;
 
@@ -952,7 +940,8 @@ ${'' /* .art-pagination {
   }
 }
 
-${'' /* .art-project-swiper-card {
+${
+  '' /* .art-project-swiper-card {
   width: 100% !important;
   padding: 0 !important;
 
@@ -960,7 +949,8 @@ ${'' /* .art-project-swiper-card {
     left: 0 !important;
     width: 100% !important;
   }
-} */}
+} */
+}
 
 /* ----- touch device ----- */
 @media (pointer: coarse) {
@@ -1126,7 +1116,7 @@ ${'' /* .art-project-swiper-card {
         flex-wrap: wrap;
         flex-direction: column;
 
-        a {
+        &, * {
           max-width: 200px;
           margin: 0 auto;
 
@@ -1164,16 +1154,6 @@ ${'' /* .art-project-swiper-card {
   .art-grid {
     &.art-grid-2-col .art-grid-item, &.art-grid-3-col .art-grid-item {
       width: 100%;
-    }
-  }
-
-  .art-filter {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-
-    a {
-      margin: 0 0 10px;
     }
   }
 
