@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { ProjectsFilters, SectionWrapper, SectionTitle, ProjectsCard } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { GradientButton } from '../../../styles';
-import { lowerCase, setProjectsCount } from '../../../utils';
+import { lowerCase, projectsMotion, setProjectsCount } from '../../../utils';
 
 const ProjectsGrid = ({ limit }) => {
   const data = dataStore((state) => state.projects.projects);
@@ -51,14 +51,14 @@ const ProjectsGrid = ({ limit }) => {
   }, []);
 
   return (
-    <Container ref={topRef} className='row p-30-0'>
+    <Container ref={topRef} className='row p-30-0' {...projectsMotion.container}>
       <SectionTitle title='Projects'>
         <ProjectsFilters filterKey={filterKey} setFilterKey={setFilterKey} />
       </SectionTitle>
 
-      <Grid className={`art-grid art-grid-${cols}-col art-gallery`}>
+      <Grid className={`art-grid art-grid-${cols}-col art-gallery`} {...projectsMotion.swiper}>
         {projects.slice(0, limit ? count : projects.length).map((project, index) => (
-          <ProjectsCard key={`projects-grid-item-${index}`} index={index} hide={true} classes='art-grid-item' {...project} />
+          <ProjectsCard key={`projects-grid-item-${index}`} index={index} hide={true} classes='art-grid-item' {...project} {...projectsMotion.card} />
         ))}
       </Grid>
 
@@ -76,7 +76,7 @@ const Container = styled(motion.div)`
   padding-top: 30px;
 `;
 
-const Grid = styled.div``;
+const Grid = styled(motion.div)``;
 
 const Button = styled(GradientButton)`
   text-align: center;
