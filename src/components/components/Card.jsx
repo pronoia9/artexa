@@ -4,15 +4,11 @@ import { motion } from 'framer-motion';
 
 import { rem, lowerCase } from '../../utils';
 
-export const Card = (props) => {
-  const {
-    // general
-    index, swiper, motion, hide, section,
-    // projects
-    id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes,
-    // technologies
-  } = props;
-
+export const Card = ({
+  index, swiper, hide, section,
+  id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes,
+  ...props
+}) => {
   return (
     <Container
       className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`}
