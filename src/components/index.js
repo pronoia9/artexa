@@ -69,7 +69,7 @@ import { HeroTyped } from './sections/Hero/HeroTyped';
 import History from './sections/History/History';
 // -- Projects
 import { ProjectsCard } from './sections/Projects/ProjectsCard';
-import { ProjectsFilter } from './sections/Projects/ProjectsFilter';
+import { ProjectsFilters, FilterItem } from './sections/Projects/ProjectsFilters';
 import ProjectsGrid from './sections/Projects/ProjectsGrid';
 import ProjectsSwiper from './sections/Projects/ProjectsSwiper';
 // -- Services
@@ -113,7 +113,7 @@ export {
   Courses,
   Hero, HeroButton, HeroHeading, HeroTyped,
   History,
-  ProjectsCard, ProjectsFilter, ProjectsGrid, ProjectsSwiper,
+  ProjectsCard, ProjectsFilters, FilterItem, ProjectsGrid, ProjectsSwiper,
   Services, ServicesCard,
   TechnologiesCard, TechnologiesGrid, TechnologiesSwiper,
 };
