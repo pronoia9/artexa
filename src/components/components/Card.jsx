@@ -2,15 +2,27 @@ import { Link } from 'react-router-dom';
 import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { rem } from '../../utils';
+import { rem, lowerCase } from '../../utils';
 
 export const Card = (props) => {
-  const { index, swiper, motion, hide, id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes } = props;
+  const {
+    // general
+    index, swiper, motion, hide, section,
+    // projects
+    id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes,
+    // technologies
+  } = props;
 
   return (
-    <Container className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`} $swiper={swiper} $hide={hide} key={`card-${index}-${title}`} {...motion}>
-      <ImageLink className='art-port-cover' href={image}>
-        <img src={image} alt='item' />
+    <Container
+      className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`}
+      $swiper={swiper}
+      $hide={hide}
+      key={`card-${index}-${title}`}
+      {...motion}
+    >
+      <ImageLink className='art-port-cover' href={`/src/assets/${section}/${title.replaceAll(' ', '')}`}>
+        <img src={`/src/assets/${section}/${title.replaceAll(' ', '')}`} alt='item' />
         <HoverIcon className='art-item-hover'>
           <i className='fas fa-expand' />
         </HoverIcon>
@@ -24,7 +36,7 @@ export const Card = (props) => {
 
         {props.children}
 
-        <ProjectLink to={link} className='art-link art-color-link art-w-chevron'>
+        <ProjectLink to={link || `/${section}/${id}`} className='art-link art-color-link art-w-chevron'>
           Learn More
           <i className='fas fa-chevron-right' />
         </ProjectLink>

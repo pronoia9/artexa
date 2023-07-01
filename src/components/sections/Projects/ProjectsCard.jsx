@@ -7,7 +7,7 @@ export const ProjectsCard = (props) => {
   const { index, swiper, id, title, subtitle, description, link, links, image, images, year, date, categories, tags } = props;
   return (
     <>
-      <Card {...props} link={`/projects/${id}`} subtitle={null}>
+      <Card {...props} subtitle={null} section='projects'>
         <TagsContainer className='mb-15'>
           {[swiper ? categories : tags].flat().map((tag) => (
             <Tag key={`project-${title}-tags-${tag}`} className='art-tag'>
