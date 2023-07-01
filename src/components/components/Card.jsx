@@ -2,18 +2,17 @@ import { Link } from 'react-router-dom';
 import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { rem, lowerCase } from '../../utils';
+import { rem } from '../../utils';
 
 export const Card = ({
   index, swiper, hide, section,
   id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes,
   ...props
 }) => {
-  const imgPath = `/src/assets/${section}/${lowerCase(title).replaceAll(' – ', '-').replaceAll(' ', '-')}.jpg`;
   return (
     <Container className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`} $swiper={swiper} $hide={hide} {...props}>
-      <ImageLink className='art-port-cover' href={imgPath}>
-        <img src={imgPath} alt='item' />
+      <ImageLink className='art-port-cover' href={image}>
+        <img src={image} alt='item' />
         <HoverIcon className='art-item-hover'>
           <i className='fas fa-expand' />
         </HoverIcon>
