@@ -15,7 +15,7 @@ export const Card = ({
       $swiper={swiper}
       $hide={hide}
       key={`card-${index}-${title}`}
-      {...motion}
+      {...props}
     >
       <ImageLink className='art-port-cover' href={`/src/assets/${section}/${lowerCase(title).replaceAll(' ', '-')}.jpg`}>
         <img src={`/src/assets/${section}/${lowerCase(title).replaceAll(' ', '-')}.jpg`} alt='item' />
