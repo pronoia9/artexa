@@ -1,6 +1,7 @@
 export const themes = {
   dark: {
     bg: 'rgba(25, 25, 35, 1)',
+    bg2: 'rgb(45, 45, 58)',
     bgWrapper: 'rgba(30, 30, 40, 1)',
     bgHeroOverlay: 'linear-gradient(90deg, rgba(45, 45, 58, 0.9) 15%, rgba(45, 45, 58, 0.7) 50%, rgba(43, 43, 53, 0.7) 100%)',
     bgBannerBack: 'rgba(30, 30, 40, 0.878)',
@@ -26,6 +27,7 @@ export const themes = {
 
   light: {
     bg: 'rgba(192, 192, 202, 1)',
+    bg2: 'rgba(255,255,255,1)',
     bgWrapper: 'rgba(240, 240, 246, 1)',
     // bgHeroOverlay: 'linear-gradient(90deg, rgba(45, 45, 58, 0.4) 15%, rgba(45, 45, 58, 0.3) 50%, rgba(43, 43, 53, 0.3) 100%)',
     bgHeroOverlay: 'linear-gradient(90deg, rgba(210, 210, 197, 0.4) 15%, rgba(210, 210, 197, 0.3) 50%, rgba(212, 212, 202, 0.3) 100%)',
