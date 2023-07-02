@@ -25,6 +25,7 @@ import 'swiper/css/scrollbar';
 // import 'swiper/css/thumbs';
 // import 'swiper/css/virtual';
 // import 'swiper/css/zoom';
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import App from './App.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
