@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { ProjectsFilters, SectionWrapper, SectionTitle, ProjectsCard } from '../..';
+import { ProjectsFilters, SectionWrapper, SectionTitle, ProjectsCard, Fancybox } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { GradientButton } from '../../../styles';
 import { buttonMotion, lowerCase, projectsMotion, getProjectsCount } from '../../../utils';
@@ -96,7 +96,7 @@ const Container = styled(motion.div)`
   padding-top: 30px;
 `;
 
-const Grid = styled(motion.div)``;
+const Grid = styled(Fancybox)``;
 
 const Button = styled(GradientButton)`
   text-align: center;
