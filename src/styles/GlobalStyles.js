@@ -8,6 +8,7 @@ const GlobalStyles = createGlobalStyle`
 
   :root {
     --c-bg: ${({ theme }) => theme.bg};
+    --c-bg-2: ${({ theme }) => theme.bg2};
 
     --c-bg-wrapper: ${({ theme }) => theme.bgWrapper};
     --c-bg-hero-overlay: ${({ theme }) => theme.bgHeroOverlay};
@@ -545,104 +546,6 @@ button {
 
 /* ------------------------------ content ------------------------------ */
 
-/* ----- timeline ----- */
-
-.art-timeline {
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 10px;
-    right: 5px;
-    height: calc(100% - 10px);
-    width: 5px;
-    background: rgb(25, 25, 35);
-  }
-
-  .art-timeline-item {
-    position: relative;
-
-    .art-timeline-mark-light {
-      background: var(--c-font-2);
-      position: absolute;
-      top: 4px;
-      right: -4px;
-      width: 23px;
-      height: 23px;
-      opacity: 0;
-      border-radius: 50%;
-      transition: 0.4s ease-in-out;
-    }
-
-    .art-timeline-mark {
-      position: absolute;
-      top: 8px;
-      right: 0;
-      width: 15px;
-      height: 15px;
-      border-radius: 50%;
-      border: solid 3px var(--c-accent-1);
-      background: var(--c-font-5);
-      box-shadow: 0 3px 8px 0 var(--c-box-shadow);
-    }
-
-    &:hover .art-timeline-mark-light {
-      animation: puls 1s infinite;
-    }
-  }
-
-  .art-timeline-content {
-    position: relative;
-    margin-right: 45px;
-    background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
-    padding: 30px;
-    margin-bottom: 30px;
-    box-shadow: 0 3px 8px 0 var(--c-box-shadow);
-    transition: 0.5s ease-in-out;
-
-    &:hover {
-      opacity: 0.9;
-      transform: scale(1.01);
-      transform-origin: right top;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    &:after {
-      height: 10px;
-      width: 10px;
-      background-color: #2b2b35fa;
-      transform: rotate(-135deg);
-      content: '';
-      position: absolute;
-      top: 11px;
-      right: -5px;
-      border-top-right-radius: 50%;
-    }
-
-    .art-card-header {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-
-      .art-right-side {
-        margin-bottom: 15px;
-
-        .art-date {
-          color: var(--c-font-3);
-          margin-left: auto;
-          background: var(--c-font-4);
-          padding: 5px 15px;
-          border-radius: 15px;
-          box-shadow: inset 0 3px 8px 0 var(--c-box-shadow);
-          font-size: 10px;
-        }
-      }
-    }
-  }
-}
-
 /* ----- contact form ----- */
 
 .art-form-field {
@@ -1126,10 +1029,6 @@ ${
         }
       }
     }
-  }
-
-  .art-timeline .art-timeline-content {
-    margin-right: 30px;
   }
 
   .fancybox__container {
