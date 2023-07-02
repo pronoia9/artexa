@@ -924,7 +924,7 @@ export const dataStore = create((set) => ({
       [
         { title: 'Mobile',  description: '+1 234 56 78' },
         { title: 'Home',    description: 'N/A' },
-        { title: 'Address', description: '42 Hilarity Lane, Whimsyville, Quirkshire, Chuckleville, 12345' },
+        { title: 'Address', description: '42 Hilarity Lane, Chuckleville, 12345' },
       ],
     ],
     form: {
