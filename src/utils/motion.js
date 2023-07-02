@@ -95,11 +95,8 @@ export const sidebarMotion = {
     container: { variants: staggerContainer(0.25) },
     avatarContainer: { variants: staggerContainer(1) },
     avatarItem: { variants: zoomIn() },
-    textContainer: { variants: staggerContainer(1) },
-    nameContainer: { variants: staggerContainer(0.1) },
-    postContainer: { variants: staggerContainer(1) },
-    postLine: { variants: staggerContainer(0.05) },
-    text: { variants: zoomIn() },
+    texts: { variants: staggerContainer(0.5, 1.5) },
+    posts: { variants: staggerContainer(0.5) },
   },
   // Info
   info: {
@@ -225,8 +222,6 @@ export const heroMotion = {
   background: {},
   heading: {
     container: { variants: staggerContainer(0.5) },
-    text: { variants: staggerContainer(0.05) },
-    char: { variants: textVariant() },
   },
   typed: { variants: fadeIn({ delay: 1.75, bounce: 0.5 }, 'down') },
 };

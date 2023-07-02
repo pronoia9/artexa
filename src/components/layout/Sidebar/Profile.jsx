@@ -1,29 +1,30 @@
 import { Link } from 'react-router-dom';
 import { styled, css } from 'styled-components';
 import { motion } from 'framer-motion';
+import { Fancybox } from '../../components/Fancybox';
 
+import { SplitText } from '../../components/SplitText';
 import { dataStore } from '../../../store/dataStore';
 import { Tooltip } from '../../../styles';
 import { rem, sidebarMotion } from '../../../utils';
 
 export const Profile = () => (
   <ProfileContainer className='art-header' {...sidebarMotion.profile.container}>
-    <Avatar {...sidebarMotion.profile.avatarContainer} />
-    <motion.div initial='hidden' animate='visible' {...sidebarMotion.profile.textContainer}>
-      <Name {...sidebarMotion.profile.nameContainer} />
-      <Post {...sidebarMotion.profile.postContainer} />
+    <Avatar />
+    <motion.div initial='hidden' animate='visible' {...sidebarMotion.profile.texts}>
+      <Name />
+      <Post />
     </motion.div>
   </ProfileContainer>
 );
 
-export const Avatar = (props) => {
+export const Avatar = () => {
   const data = dataStore((state) => state.sidebar.profile);
   return (
-    <AvatarContainer className='art-avatar' initial='hidden' animate='visible' {...props}>
-      <AvatarCurtain data-fancybox='avatar' href={data.avatar} className='art-avatar-curtain'>
-        <AvatarImage src={data.avatar} alt='Avatar' {...sidebarMotion.profile.avatarItem} />
-        <i className='fas fa-expand' />
-      </AvatarCurtain>
+    <AvatarContainer className='art-avatar' {...sidebarMotion.profile.avatarContainer}>
+      <Fancybox>
+        <AvatarImage data-fancybox='gallery' src={data.avatar} alt='Avatar' {...sidebarMotion.profile.avatarItem} />
+      </Fancybox>
 
       <AvatarStatus className='art-lamp-light' $available={data.available} {...sidebarMotion.profile.avatarItem}>
         <AvatarStatusLight className='art-available-lamp' $available={data.available} />
@@ -32,33 +33,25 @@ export const Avatar = (props) => {
   );
 };
 
-export const Name = (props) => {
+export const Name = () => {
   const data = dataStore((state) => state.sidebar.profile);
   return (
-    <NameText className='art-name mb-10' {...props}>
+    <NameText className='art-name mb-10'>
       <Link to={data.nameLink}>
-        {data.name.split('').map((char, index) => (
-          <motion.span key={`sidebar-profile-name-${index}`} {...sidebarMotion.profile.text}>
-            {char}
-          </motion.span>
-        ))}
+        <SplitText>{data.name}</SplitText>
       </Link>
     </NameText>
   );
 };
 
-export const Post = (props) => {
+export const Post = () => {
   const data = dataStore((state) => state.sidebar.profile);
   return (
-    <PostContainer {...props}>
+    <PostContainer {...sidebarMotion.profile.posts}>
       {data.subtitle.map((line, index) => (
-        <motion.div key={`sidebar-profile-post-${index}`} {...sidebarMotion.profile.postLine}>
-          {line.split('').map((char, i) => (
-            <motion.span key={`sidebar-profile-subtitle-${index}-${i}`} {...sidebarMotion.profile.text}>
-              {char}
-            </motion.span>
-          ))}
-        </motion.div>
+        <div key={`sidebar-profile-post-${index}`}>
+          <SplitText speed={0.025}>{line}</SplitText>
+        </div>
       ))}
     </PostContainer>
   );
@@ -189,7 +182,7 @@ const AvatarStatusLight = styled(Tooltip)`
   }
 `;
 
-const NameText = styled(motion.h3)`
+const NameText = styled.h3`
   a {
     color: var(--c-font-2);
     transition: 0.4s ease-in-out;
