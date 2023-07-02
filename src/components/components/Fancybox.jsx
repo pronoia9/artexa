@@ -23,7 +23,6 @@ export const Fancybox = ({ styles, ...props }) => {
   return (
     <motion.div ref={containerRef} {...props}>
       {props.children}
-      <i className='fas fa-expand' />
     </motion.div>
   );
 };
