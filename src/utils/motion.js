@@ -100,10 +100,8 @@ export const sidebarMotion = {
   },
   // Info
   info: {
-    container: { variants: staggerContainer(0.25) },
+    container: { variants: staggerContainer(1) },
     item: { variants: staggerContainer(0.5) },
-    title: { variants: staggerContainer(0.05) },
-    char: { variants: zoomIn() },
     subtitle: { variants: zoomIn() },
   },
   // Languages

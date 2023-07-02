@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 
 import { dataStore } from '../../../store/dataStore';
 import { sidebarMotion } from '../../../utils';
+import { SplitText } from '../../components/SplitText';
 
 export const Info = () => {
   const data = dataStore((state) => state.sidebar.about);
@@ -21,13 +22,7 @@ export const Info = () => {
 export const InfoItem = ({ title, subtitle, index }) => {
   return (
     <ListItem {...sidebarMotion.info.item}>
-      <motion.span {...sidebarMotion.info.title}>
-        {title.split('').map((char, i) => (
-          <motion.span key={`sidebar-info-${index}-${i}`} {...sidebarMotion.info.char}>
-            {char}
-          </motion.span>
-        ))}
-      </motion.span>
+      <SplitText>{title}</SplitText>
       <motion.span {...sidebarMotion.info.subtitle}>{subtitle}</motion.span>
     </ListItem>
   );
