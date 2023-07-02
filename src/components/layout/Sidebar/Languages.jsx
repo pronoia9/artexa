@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Progressbar } from '../..';
+import { Progressbar, SplitText } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { rem, sidebarMotion } from '../../../utils';
 
@@ -20,13 +20,7 @@ export const LanguagesItem = (props) => {
   return (
     <ItemContainer className='art-lang-skills-item' {...sidebarMotion.languages.item}>
       <Progressbar {...props} type='circle' {...sidebarMotion.languages.bar} />
-      <motion.span {...sidebarMotion.languages.text}>
-        {props.language.split('').map((char, index) => (
-          <motion.span key={`sidebar-language-${props.index}-${index}`} {...sidebarMotion.languages.char}>
-            {char}
-          </motion.span>
-        ))}
-      </motion.span>
+      <SplitText speed={0.025}>{props.language}</SplitText>
     </ItemContainer>
   );
 };

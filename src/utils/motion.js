@@ -109,8 +109,6 @@ export const sidebarMotion = {
     container: { variants: staggerContainer(0.25) },
     item: { variants: staggerContainer(0.25) },
     bar: { variants: zoomIn() },
-    text: { variants: staggerContainer(0.05) },
-    char: { variants: zoomIn() },
   },
   // Hard Skills
   hardSkills: {
