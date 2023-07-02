@@ -8,8 +8,8 @@ export const TimelineColumn = ({ column = 1, title = '', data = [] }) => (
     <SectionTitle title={title} />
 
     <Container className='art-timeline'>
-      {data.map((item) => (
-        <TimelineItem key={item.id} {...item} />
+      {data.map((item, index) => (
+        <TimelineItem key={`timeline-item-${index}-${item?.title}`} {...item} />
       ))}
     </Container>
   </div>
