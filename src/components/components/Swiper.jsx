@@ -19,8 +19,8 @@ export const Swiper = ({ section, navProps, autoplay, children, ...props }) => {
             640: { slidesPerView: 2, spaceBetween: 10 },
             1200: { slidesPerView: 3, spaceBetween: 30 },
           }}
-          navigation={{ nextEl: '.art-project-swiper-next', prevEl: '.art-project-swiper-prev' }}
-          pagination={{ el: '.project-swiper-pagination', type: 'bullets', clickable: true }}
+          navigation={{ nextEl: `.art-${section}-swiper-next`, prevEl: `.art-${section}-swiper-prev` }}
+          pagination={{ el: `.${section}-swiper-pagination`, type: 'bullets', clickable: true }}
         >
           {children}
         </SwiperNative>
