@@ -1,7 +1,11 @@
-export const ContactList = ({ cols, list, ...props }) => {
+import { styled } from 'styled-components';
+import { SplitText } from '../../components/SplitText';
+import { motion } from 'framer-motion';
+
+export const ContactList = ({ cols, list }) => {
   return (
-    <div className={`col-lg-${12 / cols}`}>
-      <div className='art-a art-card'>
+    <motion.div className={`col-lg-${12 / cols}`}>
+      <Container className='art-a art-card'>
         <div className='art-table p-15-15'>
           <ul>
             {list.map((info, index) => (
@@ -9,16 +13,27 @@ export const ContactList = ({ cols, list, ...props }) => {
             ))}
           </ul>
         </div>
-      </div>
-    </div>
+      </Container>
+    </motion.div>
   );
 };
 
 export const ContactListItem = ({ title, description }) => {
   return (
-    <li>
-      <h6>{title}</h6>
-      <span>{description}</span>
-    </li>
+    <motion.li>
+      <h5><SplitText>{title}</SplitText>:</h5>
+      <SplitText>{description}</SplitText>
+    </motion.li>
   );
 };
+
+const Container = styled.div`
+  padding: 30px;
+  margin-bottom: 30px;
+  background: var(--c-bg-card-overlay);
+  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
+
+  h5 {
+    font-family: var(--f-tertiary);
+  }
+`;
