@@ -2,7 +2,7 @@ import { useRef, useEffect } from 'react';
 import { Fancybox as NativeFancybox } from '@fancyapps/ui';
 import { motion } from 'framer-motion';
 
-export const Fancybox = ({ styles, ...props }) => {
+export const Fancybox = (props) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
