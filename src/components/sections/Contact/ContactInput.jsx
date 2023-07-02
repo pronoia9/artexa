@@ -37,7 +37,7 @@ const Container = styled.div`
     &.art-active + label,
     &:focus + label {
       background: var(--c-accent-1);
-      color: var(--c-font-4);
+      color: var(--c-font-dark);
     }
   }
 
@@ -49,20 +49,21 @@ const Container = styled.div`
 const Input = styled(Field)`
   height: 50px;
   width: 100%;
-  background: var(--c-bg-input);
-  border: none;
-  color: var(--c-font-2);
+  margin-bottom: 0;
   padding-left: 15px;
   padding-right: 15px;
-  box-shadow: inset 0 1px 4px 0 var(--c-box-shadow);
-  margin-bottom: 0;
-  border-left: solid 50px var(--c-bg);
+  background: var(--c-bg-input);
+  color: var(--c-font-2);
+  border: none;
+  border-left: solid 50px #20202a;
+  box-shadow: inset 0 1px 4px 0 rgba(15, 15, 20, 0.1);
   transition: 0.4s ease-in-out;
 
   &:focus {
     outline: none;
 
-    &, &.art-active {
+    &,
+    &.art-active {
       border-color: var(--c-accent-1);
     }
   }
@@ -74,7 +75,7 @@ const Label = styled.label`
   position: absolute;
   height: 50px;
   width: 50px;
-  background: var(--c-bg);
+  background: var(--c-bg-input-label);
   top: 0;
   left: 0;
   padding: 0 15px;
