@@ -56,7 +56,7 @@ const ProjectsGrid = ({ limit }) => {
 
   // Sets count when the window is resized
   useEffect(() => {
-    const resize = () => { setCount(Math.min(getProjectsCount(rows, cols), filteredProjects.length)); };
+    const resize = () => { setCount(Math.min(getProjectsCount(rows, cols), filteredProjects.length || Infinity)); };
     window.addEventListener('resize', resize);
     return () => { window.removeEventListener('resize', resize); };
   }, []);
