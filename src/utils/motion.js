@@ -230,7 +230,7 @@ export const countersMotion = {
 
 // PROJECTS
 export const projectsMotion = {
-  container: (stagger = 0.5, delay = 4) => ({ ...motionStates(), variants: staggerContainer(stagger, delay) }),
+  container: (stagger = 0.5, delay = 3.5) => ({ ...motionStates(), variants: staggerContainer(stagger, delay) }),
   filters: { variants: staggerContainer(0.15) },
   filter: { variants: zoomIn({ type: 'tween', duration: 0.1, ease: 'easeIn' }) },
   grid: { variants: staggerContainerMirror(0.1) },
