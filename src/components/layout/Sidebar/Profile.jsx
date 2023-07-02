@@ -6,7 +6,7 @@ import { Fancybox } from '../../components/Fancybox';
 import { SplitText } from '../../components/SplitText';
 import { dataStore } from '../../../store/dataStore';
 import { Tooltip } from '../../../styles';
-import { rem, sidebarMotion } from '../../../utils';
+import { openFancybox, rem, sidebarMotion } from '../../../utils';
 
 export const Profile = () => (
   <ProfileContainer className='art-header' {...sidebarMotion.profile.container}>
@@ -22,7 +22,7 @@ export const Avatar = () => {
   const data = dataStore((state) => state.sidebar.profile);
   return (
     <AvatarContainer className='art-avatar' {...sidebarMotion.profile.avatarContainer}>
-      <AvatarCurtain data-fancybox='avatar' href={data.avatar} className='art-avatar-curtain'>
+      <AvatarCurtain data-fancybox='avatar' href={data.avatar} className='art-avatar-curtain' onClick={() => openFancybox(data.avatar)}>
         <AvatarImage src={data.avatar} alt='Avatar' {...sidebarMotion.profile.avatarItem} />
         <i className='fas fa-expand' />
       </AvatarCurtain>
