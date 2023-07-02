@@ -54,10 +54,10 @@ const Container = styled(motion.div)`
   .art-timeline-mark-light {
     background: var(--c-font-2);
     position: absolute;
-    top: 4px;
-    right: -4px;
-    width: 23px;
-    height: 23px;
+    top: ${rem(4)};
+    right: ${rem(-4)};
+    width: ${rem(23)};
+    height: ${rem(23)};
     opacity: 0;
     border-radius: 50%;
     transition: 0.4s ease-in-out;
@@ -65,14 +65,14 @@ const Container = styled(motion.div)`
 
   .art-timeline-mark {
     position: absolute;
-    top: 8px;
+    top: ${rem(8)};
     right: 0;
-    width: 15px;
-    height: 15px;
+    width: ${rem(15)};
+    height: ${rem(15)};
     border-radius: 50%;
-    border: solid 3px var(--c-accent-1);
+    border: solid ${rem(3)} var(--c-accent-1);
     background: var(--c-font-5);
-    box-shadow: 0 3px 8px 0 var(--c-box-shadow);
+    box-shadow: 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
   }
 
   &:hover .art-timeline-mark-light {
@@ -82,11 +82,11 @@ const Container = styled(motion.div)`
 
 const Content = styled.div`
   position: relative;
-  margin-right: 45px;
+  margin-right: ${rem(45)};
   background: var(--c-bg-card-overlay);
-  padding: 30px;
-  margin-bottom: 30px;
-  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
+  padding: ${rem(30)};
+  margin-bottom: ${rem(30)};
+  box-shadow: 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
   transition: 0.5s ease-in-out;
 
   &:hover {
@@ -97,14 +97,14 @@ const Content = styled.div`
   }
 
   &:after {
-    height: 10px;
-    width: 10px;
+    height: ${rem(10)};
+    width: ${rem(10)};
     background-color: var(--c-bg-2);
     transform: rotate(-135deg);
     content: '';
     position: absolute;
-    top: 11px;
-    right: -5px;
+    top: ${rem(11)};
+    right: ${rem(-5)};
     border-top-right-radius: 50%;
   }
 
@@ -118,8 +118,8 @@ const Title = styled.h5`
 `;
 
 const Subtitle = styled.h5`
-  margin-top: 10px;
-  font-size: 0.85rem;
+  margin-top: ${rem(10)};
+  font-size: ${rem(14)};
 `;
 
 const Header = styled.div`
@@ -137,8 +137,8 @@ const Dates = styled(Tag)`
   font-family: var(--f-primary);
   color: var(--c-font-3);
   margin-left: auto;
-  padding: 5px 15px;
-  border-radius: 15px;
-  box-shadow: inset 0 3px 8px 0 var(--c-box-shadow);
-  font-size: 10px;
+  padding: ${rem(5)} ${rem(15)};
+  border-radius: ${rem(15)};
+  box-shadow: inset 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
+  font-size: ${rem(10)};
 `;
