@@ -2,7 +2,7 @@ import { SwiperSlide } from 'swiper/react';
 import { motion } from 'framer-motion';
 
 import { Swiper } from '../../components/Swiper';
-import { ProjectsCard, SectionTitle, SectionWrapper, SwiperNavigation } from '../..';
+import { ProjectsCard, SectionTitle, SectionWrapper } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { projectsMotion } from '../../../utils';
 
