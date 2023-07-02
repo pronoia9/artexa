@@ -81,9 +81,10 @@ import { ProjectsSwiper } from './sections/Projects/ProjectsSwiper';
 import Services from './sections/Services/Services';
 import { ServicesCard } from './sections/Services/ServicesCard';
 // -- Technologies
+import Technologies from './sections/Technologies/Technologies';
 import { TechnologiesCard } from './sections/Technologies/TechnologiesCard';
-import TechnologiesGrid from './sections/Technologies/TechnologiesGrid';
-import TechnologiesSwiper from './sections/Technologies/TechnologiesSwiper';
+import { TechnologiesGrid } from './sections/Technologies/TechnologiesGrid';
+import { TechnologiesSwiper } from './sections/Technologies/TechnologiesSwiper';
 
 export {
   // ---- COMPONENTS ----
@@ -122,5 +123,5 @@ export {
   History,
   Projects, ProjectsCard, ProjectsFilters, FilterItem, ProjectsGrid, ProjectsSwiper,
   Services, ServicesCard,
-  TechnologiesCard, TechnologiesGrid, TechnologiesSwiper,
+  Technologies, TechnologiesCard, TechnologiesGrid, TechnologiesSwiper,
 };
