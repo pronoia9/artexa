@@ -11,7 +11,7 @@ export const Card = ({
 }) => {
   return (
     <Container className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`} $swiper={swiper} $hide={hide} {...props}>
-      <ImageLink className='art-port-cover' href={image}>
+      <ImageLink className='art-port-cover' data-fancybox='gallery' href={image}>
         <img src={image} alt='item' />
         <HoverIcon className='art-item-hover'>
           <i className='fas fa-expand' />

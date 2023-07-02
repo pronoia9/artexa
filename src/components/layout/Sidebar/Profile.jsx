@@ -22,9 +22,10 @@ export const Avatar = () => {
   const data = dataStore((state) => state.sidebar.profile);
   return (
     <AvatarContainer className='art-avatar' {...sidebarMotion.profile.avatarContainer}>
-      <Fancybox>
-        <AvatarImage data-fancybox='gallery' src={data.avatar} alt='Avatar' {...sidebarMotion.profile.avatarItem} />
-      </Fancybox>
+      <AvatarCurtain data-fancybox='avatar' href={data.avatar} className='art-avatar-curtain'>
+        <AvatarImage src={data.avatar} alt='Avatar' {...sidebarMotion.profile.avatarItem} />
+        <i className='fas fa-expand' />
+      </AvatarCurtain>
 
       <AvatarStatus className='art-lamp-light' $available={data.available} {...sidebarMotion.profile.avatarItem}>
         <AvatarStatusLight className='art-available-lamp' $available={data.available} />
