@@ -10,6 +10,6 @@ export default defineConfig({
     __APP_VERSION__: JSON.stringify(process.env.npm_package_version),
   },
   optimizeDeps: {
-    exclude: ['react-countup.js'],
+    exclude: ['react-countup.js', 'yup.js', 'formik.js'],
   },
 });
