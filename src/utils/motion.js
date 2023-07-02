@@ -245,7 +245,7 @@ export const historyMotion = {
 };
 
 // TECHNOLOGIES
-export const technologyMotion = {
+export const technologiesMotion = {
   container: { ...motionStates(), variants: staggerContainer(0.5, 4) },
 };
 
