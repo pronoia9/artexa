@@ -1,17 +1,19 @@
 import { Link } from 'react-router-dom';
 import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
+import { Fancybox } from '@fancyapps/ui';
 
-import { rem } from '../../utils';
+import { openFancybox, rem } from '../../utils';
 
 export const Card = ({
   index, swiper, hide, section,
   id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes,
   ...props
 }) => {
+
   return (
     <Container className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`} $swiper={swiper} $hide={hide} {...props}>
-      <ImageLink className='art-port-cover' data-fancybox='gallery' href={image}>
+      <ImageLink className='art-port-cover' data-fancybox='gallery' onClick={() => openFancybox(image)}>
         <img src={image} alt='item' />
         <HoverIcon className='art-item-hover'>
           <i className='fas fa-expand' />
