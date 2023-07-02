@@ -1,13 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { styled } from 'styled-components';
-import { motion } from 'framer-motion';
 
-import { ProjectsFilters, SectionWrapper, SectionTitle, ProjectsCard, Fancybox } from '../..';
+import { ProjectsCard, Fancybox } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { GradientButton } from '../../../styles';
 import { buttonMotion, lowerCase, projectsMotion, getProjectsCount } from '../../../utils';
 
-const ProjectsGrid = ({ limit }) => {
+export const ProjectsGrid = ({ limit }) => {
   const { projects, filteredProjects, setFilteredProjects, filterKey, rows, setRows, cols, setCols, count, setCount } = dataStore((state) => ({
     projects: state.projects.projects,
     filteredProjects: state.projects.filteredProjects,
@@ -62,12 +61,8 @@ const ProjectsGrid = ({ limit }) => {
   }, []);
 
   return (
-    <Container ref={topRef} className='row p-30-0' {...projectsMotion.container}>
-      <SectionTitle title='Projects'>
-        <ProjectsFilters />
-      </SectionTitle>
-
-      <Grid className={`art-grid art-grid-${cols}-col art-gallery`} {...projectsMotion.grid}>
+    <>
+      <Fancybox className={`art-grid art-grid-${cols}-col art-gallery`} {...projectsMotion.grid}>
         {Array.from(limit ? filteredProjects.slice(0, count) : filteredProjects)
           .flat()
           .map((project, index) => (
@@ -80,23 +75,16 @@ const ProjectsGrid = ({ limit }) => {
               {...projectsMotion.card}
             />
           ))}
-      </Grid>
+      </Fancybox>
 
       {limit && filteredProjects.length > getProjectsCount() && (
         <Button className='art-buttons-frame acc' onClick={handleButtonClick} {...buttonMotion.gradient}>
           View {!showingAllProjects() ? 'More' : 'Less'}
         </Button>
       )}
-    </Container>
+    </>
   );
 };
-export default SectionWrapper(ProjectsGrid, 'projects-grid');
-
-const Container = styled(motion.div)`
-  padding-top: 30px;
-`;
-
-const Grid = styled(Fancybox)``;
 
 const Button = styled(GradientButton)`
   text-align: center;
