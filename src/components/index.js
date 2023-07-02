@@ -57,6 +57,7 @@ import { HobbiesCard } from './sections/About/HobbiesCard';
 // -- Contact
 import Contact from './sections/Contact/Contact';
 import { ContactList, ContactListItem } from './sections/Contact/ContactList';
+import { ContactInput } from './sections/Contact/ContactInput';
 import { ContactForm } from './sections/Contact/ContactForm';
 // -- Counters
 import Counters from './sections/Counters/Counters';
@@ -114,7 +115,7 @@ export {
 
   // ---- SECTIONS ----
   About, Hobbies, HobbiesCard,
-  Contact, ContactList, ContactListItem, ContactForm,
+  Contact, ContactForm, ContactInput, ContactList, ContactListItem,
   Counters, Counter,
   Courses,
   Hero, HeroButton, HeroHeading, HeroTyped,
