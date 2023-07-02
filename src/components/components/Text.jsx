@@ -1,17 +1,15 @@
 import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
+
+import { SplitText } from '..';
 import { textType } from '../../utils';
 
 export const SectionTitle = ({ column = 1, title = 'Missing Section Title', speed = 0.05, children, ...props }) => (
   <motion.div className={'col-lg-' + (12 / props.column || 12)} {...props}>
     <Container className='art-section-title'>
       <Frame className='art-title-frame'>
-        <motion.h2 {...textType.text(speed)}>
-          {title.split('').map((char, index) => (
-            <motion.span key={`section-title-${title}-${index}`} {...textType.char}>
-              {char}
-            </motion.span>
-          ))}
+        <motion.h2>
+          <SplitText speed={speed}>{title}</SplitText>
         </motion.h2>
       </Frame>
       {children && <RightFrame className='art-right-frame'>{children}</RightFrame>}
