@@ -1,4 +1,4 @@
-// import anime from 'animejs/lib/anime.es.js';
+import { Fancybox } from '@fancyapps/ui';
 import * as ProgressBar from 'progressbar.js';
 
 import { themes, colors } from '../styles/Themes';
@@ -149,3 +149,9 @@ export const ProgressbarInstance = ({ type = 'circle', level, index, hide }) => 
 //   });
 //   return true;
 // }
+
+//------------------------------- FANCYBOX -------------------------------//
+
+export const openFancybox = (image) => {
+  Fancybox.show([{ src: image, type: 'image' }]);
+}

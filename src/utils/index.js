@@ -11,6 +11,7 @@ import {
   ProgressbarInstance,
   rgbaToHex,
   getProjectsCount,
+  openFancybox,
 } from './utils';
 
 import {
@@ -54,6 +55,7 @@ export {
   ProgressbarInstance,
   rgbaToHex,
   getProjectsCount,
+  openFancybox,
   // Motion
   appMotion,
   sceneMotion,
