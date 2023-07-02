@@ -2,9 +2,8 @@ import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 
 import { SplitText } from '..';
-import { textType } from '../../utils';
 
-export const SectionTitle = ({ column = 1, title = 'Missing Section Title', speed = 0.05, children, ...props }) => (
+export const SectionTitle = ({ column = 1, title = 'Missing Section Title', speed, children, ...props }) => (
   <motion.div className={'col-lg-' + (12 / props.column || 12)} {...props}>
     <Container className='art-section-title'>
       <Frame className='art-title-frame'>
