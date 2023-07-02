@@ -187,7 +187,7 @@ h6 {
 }
 
 .art-white {
-  color: var(--c-font-2);
+  color: var(--c-font-light);
 }
 
 /* ----- buttons frame ----- */
@@ -439,73 +439,28 @@ button {
 
 /* ------------------------------ space ------------------------------ */
 
-.p-30-0 {
-  padding-top: 30px;
-  padding-bottom: 0;
-}
-
-.p-0-30 {
-  padding-top: 0;
-  padding-bottom: 30px;
-}
-
-.p-30-30 {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.p-30-15 {
-  padding-top: 30px;
-  padding-bottom: 15px;
-}
-
-.p-15-15 {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-
-.p-15-0 {
-  padding-top: 15px;
-  padding-bottom: 0;
-}
-
-.p-60-0 {
-  padding-top: 60px;
-  padding-bottom: 0;
-}
-
-.p-230-0 {
-  padding-top: 230px;
-  padding-bottom: 0;
-}
-
-.mb-10 {
-  margin-bottom: 10px;
-}
-
-.mb-15 {
-  margin-bottom: 15px;
-}
-
-.mb-25, .mb-30 {
-  margin-bottom: 25px;
-}
+.p-30-0  { padding-top: 30px;  padding-bottom: 0; }
+.p-0-30  { padding-top: 0;     padding-bottom: 30px; }
+.p-30-30 { padding-top: 30px;  padding-bottom: 30px; }
+.p-30-15 { padding-top: 30px;  padding-bottom: 15px; }
+.p-15-15 { padding-top: 15px;  padding-bottom: 15px; }
+.p-15-0  { padding-top: 15px;  padding-bottom: 0; }
+.p-60-0  { padding-top: 60px;  padding-bottom: 0; }
+.p-230-0 { padding-top: 230px; padding-bottom: 0; }
+.mb-10   { margin-bottom: 10px; }
+.mb-15   { margin-bottom: 15px; }
+.mb-25   { margin-bottom: 25px; }
+.mb-30   { margin-bottom: 30px; }
 
 @media (max-width: 1400px) {
-  .p-lg-30-0 {
-    padding-top: 30px;
-    padding-bottom: 0;
-  }
+  .p-lg-30-0 { padding-top: 30px; padding-bottom: 0; }
 }
 
 @media (max-width: 920px) {
-  .p-md-15-0 {
-    padding-top: 15px;
-    padding-bottom: 0;
-  }
+  .p-md-15-0 { padding-top: 15px; padding-bottom: 0; }
 }
 
-/* ------------------------------ app marcup ------------------------------ */
+/* ------------------------------ xxxxxxxxxx ------------------------------ */
 /* ----- scroll frame ----- */
 
 .art-scroll-frame {
@@ -522,8 +477,6 @@ button {
 
 /* ------------------------------ app marcup (after 920px) ------------------------------ */
 @media (max-width: 920px) {
-  /* ----- scroll frame ----- */
-
   .art-scroll-frame {
     height: 100vh;
   }
@@ -541,8 +494,6 @@ button {
     opacity: 0;
   }
 }
-
-/* ------------------------------ menu bar ------------------------------ */
 
 /* ------------------------------ content ------------------------------ */
 
@@ -905,100 +856,89 @@ ${
   margin: 15px;
   width: calc(100vw - 30px);
   height: calc(100vh - 30px);
-}
-
-.fancybox__backdrop {
-  background: #20202afa;
-}
-
-.fancybox__is-open .fancybox__bg {
-  opacity: 1;
-}
-
-.fancybox__toolbar {
-  background: linear-gradient(159deg, #2d2d3ae0 0%, #2b2b35e0 100%);
-  display: flex;
-  width: calc(100vw - 30px);
-  justify-content: flex-end;
-  align-items: center;
-  height: 70px;
-  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
-  z-index: 999999;
-  padding: 0 17px;
-  transition: 0.55s ease-in-out;
-}
-
-.f-button {
-  background: transparent;
-  color: var(--c-font-1);
-
-  &:hover {
-    color: var(--c-font-2);
+  .fancybox__backdrop {
+    background: #20202afa;
   }
 
-  svg {
-    width: 20px;
+  .fancybox__is-open .fancybox__bg {
+    opacity: 1;
+  }
+
+  .fancybox__toolbar {
+    background: linear-gradient(159deg, #2d2d3ae0 0%, #2b2b35e0 100%);
+    display: flex;
+    width: calc(100vw - 30px);
+    justify-content: flex-end;
+    align-items: center;
+    height: 70px;
+    box-shadow: 0 3px 8px 0 var(--c-box-shadow);
+    z-index: 999999;
+    padding: 0 17px;
+    transition: 0.55s ease-in-out;
+  }
+
+  .f-button {
+    background: transparent;
+    color: var(--c-font-1);
+
+    &:hover {
+      color: var(--c-font-2);
+    }
+
+    svg {
+      width: 20px;
+    }
+  }
+
+  .fancybox__slide {
+    padding: 130px 0 60px;
+  }
+
+  .fancybox__navigation .fancybox__button {
+    background-color: transparent;
+    margin: 0 15px;
+  }
+
+  .fancybox__infobar {
+    top: 0;
+    left: 0;
+    font-size: 11px;
+    margin-left: 5px;
+    z-index: 9999999999999;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    color: var(--c-font-1);
+  }
+
+  .fancybox__progress {
+    background: var(--c-accent-1);
+    z-index: 999999999999999999;
+  }
+
+  .fancybox__content .fancybox__image {
+    box-shadow: 0 3px 8px 0 var(--c-box-shadow);
+  }
+
+  .fancybox__thumbs {
+    background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+    box-shadow: 0 3px 8px 0 var(--c-box-shadow);
+  }
+
+  .fancybox__thumbs__list a:before {
+    border-color: var(--c-accent-1);
+    transition: 0.4s ease-in-out;
+  }
+
+  .fancybox__button[disabled] {
+    transform: scale(0);
+    pointer-events: none;
+    transition: 0.4s ease-in-out;
   }
 }
-
-.fancybox__slide {
-  padding: 130px 0 60px;
-}
-
-.fancybox__navigation .fancybox__button {
-  background-color: transparent;
-  margin: 0 15px;
-}
-
-.fancybox__infobar {
-  top: 0;
-  left: 0;
-  font-size: 11px;
-  margin-left: 5px;
-  z-index: 9999999999999;
-  height: 70px;
-  width: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 400;
-  color: var(--c-font-1);
-}
-
-.fancybox__progress {
-  background: var(--c-accent-1);
-  z-index: 999999999999999999;
-}
-
-.fancybox__content .fancybox__image {
-  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
-}
-
-.fancybox__thumbs {
-  background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
-  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
-}
-
-.fancybox__thumbs__list a:before {
-  border-color: var(--c-accent-1);
-  transition: 0.4s ease-in-out;
-}
-
-.fancybox__button[disabled] {
-  transform: scale(0);
-  pointer-events: none;
-  transition: 0.4s ease-in-out;
-}
-
-.art-recomendation-popup {
-  background-color: transparent;
-  max-width: 50%;
-}
-
-/* ------------------------------ content (after 1600px) ------------------------------ */
-
-
-/* ------------------------------ content (after 1400px) ------------------------------ */
 
 /* ------------------------------ content (after 1200px) ------------------------------ */
 @media (max-width: 1200px) {
@@ -1076,8 +1016,6 @@ ${
   transition: 0.55s ease-in-out;
 }
 
-/* ----- in animation ----- */
-
 .transition-fade {
   /* transition: 0.55s ease-in-out; */
   opacity: 1;
@@ -1087,61 +1025,26 @@ ${
     opacity: 1;
   }
 
-  .art-price.art-popular-price {
+  ${'' /* .art-price.art-popular-price {
     transform: scale(1.03);
-  }
+  } */}
 }
-
-/* ----- out animation ----- */
-
-html.is-animating {
-  .transition-fade {
-    opacity: 0;
-
-    .art-a {
-      transform: scale(0.93);
-      opacity: 0;
-    }
-  }
-
-  .art-a, .art-current-page {
-    opacity: 0;
-  }
-}
-
-/* ----- in animation ----- */
 
 .fade-right {
   transform: translateX(0);
   opacity: 1;
 }
 
-/* ----- out animation ----- */
-
-html.is-animating .fade-right {
-  transform: translateX(-60px);
-  opacity: 0;
-}
-
-/* ----- in animation ----- */
-
 .fade-left {
   transform: translateX(0);
   opacity: 1;
 }
 
-/* ----- out animation ----- */
-
-html.is-animating .fade-left {
-  transform: translateX(60px);
-  opacity: 0;
-}
-
-@media (max-width: 920px) {
+${'' /* @media (max-width: 920px) {
   .transition-fade .art-price.art-popular-price {
     transform: scale(1);
   }
-}
+} */}
 `;
 
 export default GlobalStyles;
