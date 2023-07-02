@@ -1,11 +1,11 @@
-import { Contact, Counters, Hero, History, PageWrapper, ProjectsGrid, TechnologiesSwiper } from '..';
+import { Contact, Counters, Hero, History, PageWrapper, Projects, ProjectsGrid, TechnologiesSwiper } from '..';
 
 const HomePage = () => {
   return (
     <>
       <Hero />
       <Counters />
-      <ProjectsGrid limit={true} />
+      <Projects type='grid' limit={true} />
       <History />
       <TechnologiesSwiper />
       <Contact />
