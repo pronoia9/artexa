@@ -1,6 +1,15 @@
-import { useEffect, useRef } from 'react';
-import SplitType from 'split-type';
+import { motion } from 'framer-motion';
 
-export const SplitText = ({ text, children, ...props }) => {
-  return <span {...props}>{text}</span>;
+import { textType } from '../../utils';
+
+export const SplitText = ({ speed, children }) => {
+  return (
+    <motion.span className='split-text' {...textType.text(speed)}>
+      {`${children}`.split('').map((char, index) => (
+        <motion.span key={`split-text-${children}-${index}-${char}`} {...textType.char}>
+          {char}
+        </motion.span>
+      ))}
+    </motion.span>
+  );
 };
