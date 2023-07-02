@@ -19,6 +19,7 @@ const GlobalStyles = createGlobalStyle`
     --c-bg-img-hover: ${({ theme }) => theme.bgImageHover};
     --c-bg-background-overlay: ${({ theme }) => theme.bgBackgroundOverlay};
     --c-bg-input: ${({ theme }) => theme.bgInput};
+    --c-bg-input-label: ${({ theme }) => theme.bgInputLabel};
 
     --c-bg-fancybox: rgba(32, 32, 42, 0.98);
     --c-bg-pagination: ${({ theme }) => theme.bgSwiperPagination};
@@ -497,6 +498,14 @@ button {
 }
 
 /* ------------------------------ content ------------------------------ */
+
+.art-card {
+  padding: 30px;
+  margin-bottom: 30px;
+  background: var(--c-bg-card-overlay);
+  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
+}
+
 /* ----- navigation/pagination ----- */
 
 ${
