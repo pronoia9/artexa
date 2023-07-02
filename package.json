@@ -15,6 +15,7 @@
     "@react-three/drei": "^9.77.1",
     "@react-three/fiber": "^8.13.3",
     "@types/three": "^0.152.1",
+    "formik": "^2.4.2",
     "framer-motion": "^10.12.17",
     "framer-motion-3d": "^10.12.16",
     "leva": "^0.9.35",
@@ -29,6 +30,7 @@
     "swiper": "^9.4.1",
     "three": "^0.153.0",
     "typed.js": "^2.0.16",
+    "yup": "^1.2.0",
     "zustand": "^4.3.8"
   },
   "devDependencies": {
