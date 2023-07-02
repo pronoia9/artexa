@@ -771,4 +771,72 @@ export const dataStore = create((set) => ({
       },
     ].sort((a, b) => b?.dates[0] - a?.dates[0]),
   },
+
+  // Technologies
+  technologies: {
+    title: 'Technologies | Libraries',
+    message: 'Read More',
+    list: [
+      {
+        title: 'Styled Components',
+        subtitle: 'Styling your way with speed, strong typing, and flexibility.',
+        link: 'https://styled-components.com',
+        image: '/src/assets/technologies/styled-components.jpg',
+      },
+      {
+        title: 'Threejs',
+        subtitle: '',
+        link: '',
+        image: '/src/assets/technologies/threejs.jpg',
+      },
+      {
+        title: 'React Three Fiber',
+        subtitle: '',
+        link: '',
+        image: '/src/assets/technologies/react-three-fiber.jpeg',
+      },
+      {
+        title: 'React Three Drei',
+        subtitle: '',
+        link: '',
+        image: '/src/assets/technologies/react-three-drei.jpeg',
+      },
+      {
+        title: 'Fancybox',
+        subtitle: 'JavaScript lightbox library for presenting various types of media.',
+        link: 'https://fancyapps.com/fancybox/',
+        image: '/src/assets/technologies/fancybox.jpg',
+      },
+      {
+        title: 'Typedjs',
+        subtitle: 'A JavaScript Typing Animation. Typed.js is a library that types.',
+        link: 'https://github.com/mattboldt/typed.js/',
+        image: '/src/assets/technologies/typedjs.jpeg',
+      },
+      {
+        title: 'Swiper',
+        subtitle: 'Modern mobile touch slider with transitions and amazing behavior.',
+        link: 'https://swiperjs.com/',
+        image: '/src/assets/technologies/swiper.jpg',
+      },
+      {
+        title: 'Formik',
+        subtitle: 'Formik makes debugging, testing, and reasoning about your forms a breeze.',
+        link: 'https://formik.org/',
+        image: '/src/assets/technologies/formik.jpeg',
+      },
+      {
+        title: 'EmailJS',
+        subtitle: 'EmailJS helps to send emails using client-side technologies...',
+        link: 'https://www.emailjs.com/',
+        image: '/src/assets/technologies/emailjs.jpg',
+      },
+      {
+        title: 'Smooth Scrollbar React',
+        subtitle: 'A wrapper for smooth-scrollbar to React Component.',
+        link: 'https://github.com/nghiepdev/smooth-scrollbar-react',
+        image: '/src/assets/technologies/smooth-scrollbar.jpg',
+      },
+    ],
+  },
 }));
