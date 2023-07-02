@@ -1,9 +1,11 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
+
 import { Tag } from '../../../styles';
+import { rem } from '../../../utils';
 
 export const TimelineItem = (props) => {
-  const { id, title, subtitle, description, dates, button, url, fancybox } = props;
+  const { id, title, subtitle, description, dates, image, link } = props;
 
   dates[0] = new Date(dates[0]).toLocaleDateString('en-us', { year: 'numeric', month: 'short' });
   dates[1] = dates[1]
@@ -31,22 +33,16 @@ export const TimelineItem = (props) => {
           )}
         </Header>
 
-        {/* content */}
         <p>{description}</p>
-        {/* <ul> {list.map((c) => ( <li key={c}>{c}</li> ))} </ul> */}
 
-        {/* link */}
-        {button &&
-          url &&
-          (fancybox ? (
-            <a data-fancybox='history' className='art-link art-color-link art-w-chevron' href={process.env.PUBLIC_URL + url}>
-              {button}
-            </a>
-          ) : (
-            <a className='art-link art-color-link art-w-chevron' href={url} target='_blank' rel='noreferrer'>
-              {button}
-            </a>
-          ))}
+        <a
+          className='art-link art-color-link art-w-chevron'
+          href={link || image || ''}
+          {...(image ? { 'data-fancybox': 'history' } : { target: '_blank', rel: 'noreferrer' })}
+        >
+          {link ? 'Link' : image ? 'Certificate' : 'Suprise!'}
+          <i className='fas fa-chevron-right' aria-hidden='true' />
+        </a>
       </Content>
     </Container>
   );
