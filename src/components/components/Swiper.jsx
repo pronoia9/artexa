@@ -1,9 +1,38 @@
 import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
+import { Swiper as SwiperNative } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
+
+export const Swiper = ({ section, navProps, autoplay, children, ...props }) => {
+  if (autoplay) SwiperCore.use([Autoplay]);
+  return (
+    <>
+      <motion.div className='col-lg-12' {...props}>
+        <SwiperNative
+          modules={[Navigation, Pagination, A11y]}
+          spaceBetween={30}
+          slidesPerView={3}
+          speed={900}
+          autoplay={{ delay: 3000 }}
+          breakpoints={{
+            320: { slidesPerView: 1, spaceBetween: 10 },
+            640: { slidesPerView: 2, spaceBetween: 10 },
+            1200: { slidesPerView: 3, spaceBetween: 30 },
+          }}
+          navigation={{ nextEl: '.art-project-swiper-next', prevEl: '.art-project-swiper-prev' }}
+          pagination={{ el: '.project-swiper-pagination', type: 'bullets', clickable: true }}
+        >
+          {children}
+        </SwiperNative>
+      </motion.div>
+      <SwiperNavigation section={section} {...navProps} />
+    </>
+  );
+};
 
 export const SwiperNavigation = ({ section, ...props }) => (
   <motion.div className='col-lg-12 p-0-30' {...props}>
-    <Navigation className='art-slider-navigation acc'>
+    <NavContainer className='art-slider-navigation acc'>
       <div className='art-sn-left'>
         <div className={`swiper-pagination ${section}-swiper-pagination`} />
       </div>
@@ -18,11 +47,11 @@ export const SwiperNavigation = ({ section, ...props }) => (
           </Nav>
         </NavFrame>
       </div>
-    </Navigation>
+    </NavContainer>
   </motion.div>
 );
 
-const Navigation = styled(motion.div)`
+const NavContainer = styled(motion.div)`
   position: relative;
   width: 100%;
   padding: 15px 0 0;
