@@ -1,4 +1,4 @@
-import { ContactCard, ContactForm, SectionTitle, SectionWrapper } from '../..';
+import { ContactList, ContactForm, SectionTitle, SectionWrapper } from '../..';
 import { dataStore } from '../../../store/dataStore';
 
 const Contact = () => {
@@ -9,7 +9,7 @@ const Contact = () => {
       <SectionTitle title={data.title} />
 
       {data.info.map((info, index) => (
-        <ContactCard key={`contact-card-${index}`} {...info} length={data.info.length} />
+        <ContactList key={`contact-card-${index}`} list={info} cols={data.info.length} />
       ))}
 
       <ContactForm />
