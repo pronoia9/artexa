@@ -53,9 +53,9 @@ export default function App() {
           </Wrapper>
         </AppContainer>
 
-        <div className='animated-cursor'>
+        <AnimatedCursorContainer className='animated-cursor'>
           <AnimatedCursor {...cursorOptions} />
-        </div>
+        </AnimatedCursorContainer>
       </ThemeProvider>
     </ThemeProvider>
   );
@@ -118,4 +118,9 @@ const Container = styled(motion.div)`
   @media (max-width: ${rem(920)}) {
     width: 100%;
   }
+`;
+
+const AnimatedCursorContainer = styled.div`
+  position: relative;
+  z-index: 99999999999999999999;
 `;
