@@ -82,7 +82,6 @@ import Services from './sections/Services/Services';
 import { ServicesCard } from './sections/Services/ServicesCard';
 // -- Technologies
 import Technologies from './sections/Technologies/Technologies';
-import { TechnologiesCard } from './sections/Technologies/TechnologiesCard';
 import { TechnologiesGrid } from './sections/Technologies/TechnologiesGrid';
 import { TechnologiesSwiper } from './sections/Technologies/TechnologiesSwiper';
 
@@ -123,5 +122,5 @@ export {
   History,
   Projects, ProjectsCard, ProjectsFilters, FilterItem, ProjectsGrid, ProjectsSwiper,
   Services, ServicesCard,
-  Technologies, TechnologiesCard, TechnologiesGrid, TechnologiesSwiper,
+  Technologies, TechnologiesGrid, TechnologiesSwiper,
 };
