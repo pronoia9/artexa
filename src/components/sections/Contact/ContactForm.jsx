@@ -7,8 +7,8 @@ import { dataStore } from '../../../store/dataStore';
 export const ContactForm = () => {
   const data = dataStore((state) => state.contact.form);
 
-  const handleSubmit = () => { }
-  
+  const handleSubmit = () => {};
+
   const formikOptions = {
     initialValues: data.default,
     validationSchema: Yup.object({
@@ -27,10 +27,10 @@ export const ContactForm = () => {
         <Formik {...formikOptions}>
           {(formik) => (
             <Form id='form' className='art-contact-form'>
-              <ContactInput name='name' type='text' icon='fas fa-user' formik={formik} />
-              <ContactInput name='subject' type='text' icon='fas fa-inbox' formik={formik} />
-              <ContactInput name='email' type='email' icon='fas fa-at' formik={formik} />
-              <ContactInput name='message' type='textarea' icon='fas fa-envelope' formik={formik} as='textarea' />
+              <ContactInput name='name' type='text' icon='fas fa-user' $active={formik.values.name} formik={formik} />
+              <ContactInput name='subject' type='text' icon='fas fa-inbox' $active={formik.values.subject} formik={formik} />
+              <ContactInput name='email' type='email' icon='fas fa-at' $active={formik.values.email} formik={formik} />
+              <ContactInput name='message' type='textarea' icon='fas fa-envelope' as='textarea' $active={formik.values.message} formik={formik} />
             </Form>
           )}
         </Formik>
