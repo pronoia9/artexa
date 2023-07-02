@@ -911,4 +911,25 @@ export const dataStore = create((set) => ({
       },
     ],
   },
+
+  // Contact
+  contact: {
+    title: 'Contact Information',
+    info: [
+      [
+        { title: 'Email',   description: 'jayansin9@gmail.com' },
+        { title: 'Skype',   description: '@jayansin' },
+        { title: 'Discord', description: '¬ _¬#6475' },
+      ],
+      [
+        { title: 'Mobile',  description: '+1 234 56 78' },
+        { title: 'Home',    description: 'N/A' },
+        { title: 'Address', description: '42 Hilarity Lane, Whimsyville, Quirkshire, Chuckleville, 12345' },
+      ],
+    ],
+    form: {
+      title: 'Get in touch',
+      default: { name: '', email: '', subject: '', message: '' },
+    },
+  },
 }));
