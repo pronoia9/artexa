@@ -1,20 +1,3 @@
-import { SectionTitle } from '..';
-
-export const Timeline = ({ titles, children }) =>
-  children.map((tc, index) => <TimelineColumn column={children.length} title={titles[index]} key={`timeline-column-${index}`} data={tc} />);
-
-export const TimelineColumn = ({ column = 1, title = '', data = [] }) => (
-  <div className={'col-lg-' + 12 / column}>
-    <SectionTitle title={title} />
-
-    <div className='art-timeline art-gallery'>
-      {data.map((item) => (
-        <TimelineItem key={item.id} {...item} />
-      ))}
-    </div>
-  </div>
-);
-
 export const TimelineItem = (props) => {
   const { id, title, subtitle, description, dates, button, url, fancybox } = props;
 

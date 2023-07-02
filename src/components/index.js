@@ -10,7 +10,9 @@ import { Progressbar } from './components/Progressbar';
 import { SplitText } from './components/SplitText';
 import { Swiper, SwiperNavigation } from './components/Swiper';
 import { SectionTitle } from './components/Text';
-import { Timeline, TimelineColumn, TimelineItem } from './components/Timeline';
+import { Timeline } from './components/Timeline/Timeline';
+import { TimelineColumn } from './components/Timeline/TimelineColumn';
+import { TimelineItem } from './components/Timeline/TimelineItem';
 
 // --- HOC
 import { PageWrapper } from './hoc/PageWrapper';
