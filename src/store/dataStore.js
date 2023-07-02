@@ -776,6 +776,12 @@ export const dataStore = create((set) => ({
   technologies: {
     title: 'Technologies | Libraries',
     message: 'Read More',
+    rows: 3,
+    setRows: (rows) => set((state) => ({ technologies: { ...state.technologies, rows: rows } })),
+    cols: 2,
+    setCols: (cols) => set((state) => ({ technologies: { ...state.technologies, cols: cols } })),
+    count: 6,
+    setCount: (count) => set((state) => ({ technologies: { ...state.technologies, count: count } })),
     list: [
       {
         title: 'Styled Components',
