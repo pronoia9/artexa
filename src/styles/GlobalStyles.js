@@ -80,19 +80,6 @@ const GlobalStyles = createGlobalStyle`
     font-smooth: subpixel-antialiased
   }
 
-  button {
-    margin: 0;
-    padding: 0;
-    outline: none;
-    border: none;
-    background: none;
-    background-color: transparent;
-
-    &:focus {
-      outline: none;
-    }
-  }
-
 /* ----------------------------- Author: Nazar Miller ----------------------------- */
                                                                                     /*-
 1. common
@@ -431,6 +418,19 @@ blockquote {
 }
 
 /* ------------------------------ button ------------------------------ */
+
+button {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
+}
 
 .btn-v2 {
   cursor: pointer;
@@ -998,21 +998,21 @@ ${
 
 /* ----- fancybox customization ----- */
 
-.fancybox-container {
+.fancybox__container {
   margin: 15px;
   width: calc(100vw - 30px);
   height: calc(100vh - 30px);
-
-  .fancybox-bg {
-    background: #20202afa;
-  }
 }
 
-.fancybox-is-open .fancybox-bg {
+.fancybox__backdrop {
+  background: #20202afa;
+}
+
+.fancybox__is-open .fancybox__bg {
   opacity: 1;
 }
 
-.fancybox-toolbar {
+.fancybox__toolbar {
   background: linear-gradient(159deg, #2d2d3ae0 0%, #2b2b35e0 100%);
   display: flex;
   width: calc(100vw - 30px);
@@ -1023,31 +1023,31 @@ ${
   z-index: 999999;
   padding: 0 17px;
   transition: 0.55s ease-in-out;
+}
 
-  .fancybox-button {
-    background: transparent;
-    color: var(--c-font-1);
+.f-button {
+  background: transparent;
+  color: var(--c-font-1);
 
-    &:hover {
-      color: var(--c-font-2);
-    }
+  &:hover {
+    color: var(--c-font-2);
+  }
 
-    svg {
-      width: 20px;
-    }
+  svg {
+    width: 20px;
   }
 }
 
-.fancybox-slide--image {
+.fancybox__slide {
   padding: 130px 0 60px;
 }
 
-.fancybox-navigation .fancybox-button {
+.fancybox__navigation .fancybox__button {
   background-color: transparent;
   margin: 0 15px;
 }
 
-.fancybox-infobar {
+.fancybox__infobar {
   top: 0;
   left: 0;
   font-size: 11px;
@@ -1062,26 +1062,26 @@ ${
   color: var(--c-font-1);
 }
 
-.fancybox-progress {
+.fancybox__progress {
   background: var(--c-accent-1);
   z-index: 999999999999999999;
 }
 
-.fancybox-content .fancybox-image {
+.fancybox__content .fancybox__image {
   box-shadow: 0 3px 8px 0 var(--c-box-shadow);
 }
 
-.fancybox-thumbs {
+.fancybox__thumbs {
   background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
   box-shadow: 0 3px 8px 0 var(--c-box-shadow);
 }
 
-.fancybox-thumbs__list a:before {
+.fancybox__thumbs__list a:before {
   border-color: var(--c-accent-1);
   transition: 0.4s ease-in-out;
 }
 
-.fancybox-button[disabled] {
+.fancybox__button[disabled] {
   transform: scale(0);
   pointer-events: none;
   transition: 0.4s ease-in-out;
@@ -1132,17 +1132,17 @@ ${
     margin-right: 30px;
   }
 
-  .fancybox-container {
+  .fancybox__container {
     margin: 0;
     width: 100vw;
     height: 100vh;
   }
 
-  .fancybox-toolbar {
+  .fancybox__toolbar {
     width: 100vw;
   }
 
-  .fancybox-navigation {
+  .fancybox__navigation {
     width: 100%;
     position: absolute;
     bottom: 35px;
