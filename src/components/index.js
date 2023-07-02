@@ -1,11 +1,13 @@
 // ---- COMPONENTS
 import { Background } from './components/Background';
 import { Card } from './components/Card';
+import { Fancybox } from './components/Fancybox';
 import { Laptop } from './components/Laptop/Laptop';
 import { Scene } from './components/Laptop/Scene';
 import { Logos, Logo } from './components/Logos';
 import { Preloader } from './components/Preloader';
 import { Progressbar } from './components/Progressbar';
+import { SplitText } from './components/SplitText';
 import { SwiperNavigation } from './components/Swiper';
 import { SectionTitle } from './components/Text';
 import { Timeline, TimelineColumn, TimelineItem } from './components/Timeline';
@@ -84,10 +86,12 @@ export {
   // ---- COMPONENTS ----
   Background,
   Card,
+  Fancybox,
   Laptop, Scene,
   Logos, Logo,
   Preloader,
   Progressbar,
+  SplitText,
   SwiperNavigation,
   SectionTitle,
   Timeline, TimelineColumn, TimelineItem,
