@@ -1,13 +1,12 @@
-export const ContactList = ({ cols, ...props }) => {
-  console.log(props);
+export const ContactList = ({ cols, list, ...props }) => {
   return (
-    <div className={'col-lg-' + 12 / cols}>
+    <div className={`col-lg-${12 / cols}`}>
       <div className='art-a art-card'>
         <div className='art-table p-15-15'>
           <ul>
-            {/* {props.info.map((i) => (
-              <ContactCardInfo key={i.id} id={i.id} info={i} />
-            ))} */}
+            {list.map((info, index) => (
+              <ContactListItem key={`contact-list-item-${index}`} {...info} />
+            ))}
           </ul>
         </div>
       </div>
@@ -15,4 +14,11 @@ export const ContactList = ({ cols, ...props }) => {
   );
 };
 
-export const ContactListItem = () => <></>;
+export const ContactListItem = ({ title, description }) => {
+  return (
+    <li>
+      <h6>{title}</h6>
+      <span>{description}</span>
+    </li>
+  );
+};
