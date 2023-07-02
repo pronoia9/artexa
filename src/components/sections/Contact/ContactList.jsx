@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
-import { SplitText } from '../../components/SplitText';
 import { motion } from 'framer-motion';
+
+import { SplitText } from '../..';
 
 export const ContactList = ({ cols, list }) => {
   return (
