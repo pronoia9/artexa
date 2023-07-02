@@ -1,5 +1,6 @@
 import { styled } from 'styled-components';
 
+import { SplitText } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { heroMotion, rem } from '../../../utils';
 import { motion } from 'framer-motion';
@@ -10,11 +11,9 @@ export const HeroHeading = () => {
   return (
     <Container className='mb-15 hero-heading' {...heroMotion.heading.container}>
       {data.map((text, index) => (
-        <motion.h1 key={`hero-heading-${index}`} {...heroMotion.heading.text}>
-          {text.split('').map((char, i) => (
-            <motion.span key={`hero-heading-${index}-${i}`} {...heroMotion.heading.char}>{char}</motion.span>
-          ))}
-        </motion.h1>
+        <h1 key={`hero-heading-${index}`}>
+          <SplitText>{text}</SplitText>
+        </h1>
       ))}
     </Container>
   );
