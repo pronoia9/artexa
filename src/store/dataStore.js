@@ -710,14 +710,6 @@ export const dataStore = create((set) => ({
         dates: [new Date('May 2016'), new Date('May 2019')],
         description: `Embarking on a thrilling three-year adventure at Seneca College, I delved into the captivating realm of Computer Programming and Analysis. Armed with programming languages, design wizardry, and system sorcery, I honed my skills in crafting dynamic web applications across diverse operating systems. Alongside, I ventured into the realm of advanced option courses, unlocking hidden levels of technical prowess.`,
       },
-    ],
-    courses: [
-      {
-        title: 'Complete React Developer with Redux, Hooks, GraphQL',
-        subtitle: 'by Andrei Neagoie, Senior Software Developer',
-        dates: [new Date('June 7, 2022')],
-        description: `Immerse yourself in the mystical realm of React.js mastery with the guidance of the revered React.js sages. Together, we unravel the secrets of Redux, dance with React Hooks, wield GraphQL's power, and summon the mighty Context API. Brace yourself as we embark on an epic journey, conquering Firebase, Redux-Saga, Stripe, and more, crafting enchanting and powerful web applications from scratch.`,
-      },
       {
         title: 'The Complete Web Developer',
         subtitle: 'by Andrei Neagoie, Senior Software Developer',
@@ -730,6 +722,14 @@ export const dataStore = create((set) => ({
         dates: [new Date('February 16, 2021'), new Date('March 10, 2021')],
         description: `Step into the mystical realm of web development under the guidance of Dr. Angela Yu, the lead enchantress at the App Brewery. Brace yourself for a whirlwind of incantations and coding charms as you journey through the realms of HTML, CSS, and JavaScript. Join a league of extraordinary developers and unlock the secrets to conjuring captivating web experiences.`,
       },
+      // {
+      //   title: 'Complete React Developer with Redux, Hooks, GraphQL',
+      //   subtitle: 'by Andrei Neagoie, Senior Software Developer',
+      //   dates: [new Date('June 7, 2022'), 'Ongoing'],
+      //   description: `Immerse yourself in the mystical realm of React.js mastery with the guidance of the revered React.js sages. Together, we unravel the secrets of Redux, dance with React Hooks, wield GraphQL's power, and summon the mighty Context API. Brace yourself as we embark on an epic journey, conquering Firebase, Redux-Saga, Stripe, and more, crafting enchanting and powerful web applications from scratch.`,
+      // },
+    ],
+    courses: [
       {
         title: 'ThreeJS Journey',
         subtitle: 'by Bruno Simon',
