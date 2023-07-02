@@ -29,11 +29,6 @@ export const ContactListItem = ({ title, description }) => {
 };
 
 const Container = styled.div`
-  padding: 30px;
-  margin-bottom: 30px;
-  background: var(--c-bg-card-overlay);
-  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
-
   h5 {
     font-family: var(--f-tertiary);
   }
