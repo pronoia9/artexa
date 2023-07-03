@@ -1,12 +1,17 @@
+import { useRef } from 'react';
+
 import { SectionWrapper, ProjectsFilters, ProjectsGrid, ProjectsSwiper, SectionTitle } from '../..';
 
-export const Projects = ({ type = 'grid', limit, ...props }) => {
+export default SectionWrapper(({ type = 'grid', ...props }) => {
+  const ref = useRef(null);
+
   return (
     <>
-      <SectionTitle title='Projects'>{type === 'grid' && <ProjectsFilters />}</SectionTitle>
+      <SectionTitle title='Projects' ref={ref}>
+        {type === 'grid' && <ProjectsFilters />}
+      </SectionTitle>
       {type === 'grid' && <ProjectsGrid {...props} />}
       {type === 'swiper' && <ProjectsSwiper {...props} />}
     </>
   );
-};
-export default SectionWrapper(Projects, `projects`);
+}, `projects`);
