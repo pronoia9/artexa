@@ -1,7 +1,8 @@
-import { motion } from 'framer-motion';
+// import { styled } from 'styled-components';
+// import { motion } from 'framer-motion';
+
 import { Counter, SectionWrapper } from '../..';
 import { dataStore } from '../../../store/dataStore';
-import { styled } from 'styled-components';
 
 export default SectionWrapper(() => {
   const data = dataStore((state) => state.counters);
