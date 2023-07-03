@@ -210,7 +210,7 @@ export const footerMotion = {};
 /*************  Home Page Start  *************/
 // HERO
 export const heroMotion = {
-  container: (stagger, delay) => ({ ...motionStates(), variants: staggerContainer(stagger, delay) }),
+  container: (stagger = 0.5, delay = 0) => ({ ...motionStates(), variants: staggerContainer(stagger, delay) }),
   heading: { variants: staggerContainer(0.5) },
   typed: { variants: fadeIn({}, 'down') },
   button: { variants: zoomIn({ type: 'tween', duration: 0.5 }) },
@@ -218,7 +218,8 @@ export const heroMotion = {
 
 // COUNTERS
 export const countersMotion = {
-  frame: { variants: staggerContainer(0.1) },
+  container: (stagger = 0.5, delay = 0) => ({ variants: staggerContainer(stagger, delay) }),
+  frame: { variants: staggerContainer(0.05) },
   contents: { variants: zoomIn() },
 };
 
