@@ -931,7 +931,7 @@ export const dataStore = create((set) => ({
     ],
     form: {
       title: 'Get in touch',
-      default: { name: '', email: '', subject: '', message: '' },
+      default: { name: '', subject: '', email: '', message: '' },
     },
   },
 }));
