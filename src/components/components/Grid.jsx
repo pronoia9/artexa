@@ -31,9 +31,7 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
   };
 
   // Update projects count whenever cols or rows changes (dont make it exceed the filtered projects length)
-  useEffect(() => {
-    data.length && setCount(Math.min(getProjectsCount(rows, cols), data.length || Infinity));
-  }, [rows, cols]);
+  useEffect(() => { data.length && setCount(Math.min(getProjectsCount(rows, cols), data.length || Infinity)); }, [rows, cols]);
 
   // Sets count when the window is resized
   useEffect(() => {
