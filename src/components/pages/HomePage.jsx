@@ -1,4 +1,4 @@
-import { Contact, Counters, Hero, History, PageWrapper, Projects, Technologies } from '..';
+import { PageWrapper, Hero, Counters, Projects, History, Technologies, Contact, } from '..';
 import { contactMotion, countersMotion, heroMotion, historyMotion, projectsMotion, technologiesMotion } from '../../utils';
 
 const HomePage = () => {
