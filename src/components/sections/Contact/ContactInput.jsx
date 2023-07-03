@@ -22,6 +22,9 @@ export const ContactInput = ({ name, type, placeholder, icon, active, as }) => {
 const Container = styled.div`
   position: relative;
   margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 
   textarea {
     padding-top: 15px;

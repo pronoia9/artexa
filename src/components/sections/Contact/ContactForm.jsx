@@ -15,6 +15,7 @@ export const ContactForm = () => {
     initialValues: data.default,
     validationSchema: Yup.object({
       name: Yup.string().max(35, 'Must be 35 characters or less').required('Required'),
+      subject: Yup.string().max(100, 'Must be 100 characters or less').required('Required'),
       email: Yup.string().email('Invalid email address').required('Required'),
       message: Yup.string().max(800, 'Must be 800 characters or less').required('Required'),
     }),
@@ -53,6 +54,11 @@ export const ContactForm = () => {
 const ButtonContainer = styled.div`
   position: relative;
   height: 45px;
+  /* margin-top: 5px; */
+
+  button {
+    float: right;
+  }
 
   .art-submit {
     position: relative;
