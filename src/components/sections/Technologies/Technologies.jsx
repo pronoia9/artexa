@@ -1,12 +1,15 @@
+import { useRef } from 'react';
+
 import { SectionWrapper, SectionTitle, TechnologiesGrid, TechnologiesSwiper } from '../..';
 
-export const Technologies = ({ type = 'swiper', limit, ...props }) => {
+export default SectionWrapper(({ type = 'swiper', ...props }) => {
+  const ref = useRef(null);
+
   return (
     <>
-      <SectionTitle title='Techolonies' />
-      {type === 'grid' && <TechnologiesGrid limit={limit} {...props} />}
+      <SectionTitle title='Techolonies' ref={ref} />
+      {type === 'grid' && <TechnologiesGrid {...props} />}
       {type === 'swiper' && <TechnologiesSwiper {...props} />}
     </>
   );
-};
-export default SectionWrapper(Technologies, 'technologies');
+}, 'technologies');
