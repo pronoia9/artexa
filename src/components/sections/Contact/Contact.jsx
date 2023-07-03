@@ -1,7 +1,7 @@
 import { ContactList, ContactForm, SectionTitle, SectionWrapper } from '../..';
 import { dataStore } from '../../../store/dataStore';
 
-const Contact = () => {
+export default SectionWrapper(() => {
   const data = dataStore((state) => state.contact);
 
   return (
@@ -13,5 +13,4 @@ const Contact = () => {
       <ContactForm />
     </>
   );
-};
-export default SectionWrapper(Contact, 'contact');
+}, 'contact');

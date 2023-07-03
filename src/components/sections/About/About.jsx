@@ -1,6 +1,5 @@
 import { SectionWrapper } from '../..';
 
-const About = () => {
+export default SectionWrapper(() => {
   return <div>About</div>;
-};
-export default SectionWrapper(About, 'about');
+}, 'about');

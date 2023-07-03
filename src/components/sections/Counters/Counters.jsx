@@ -1,7 +1,7 @@
 import { Counter, SectionWrapper } from '../..';
 import { dataStore } from '../../../store/dataStore';
 
-const Counters = () => {
+export default SectionWrapper(() => {
   const data = dataStore((state) => state.counters);
 
   return (
@@ -11,5 +11,4 @@ const Counters = () => {
       ))}
     </>
   );
-};
-export default SectionWrapper(Counters, 'counters');
+}, 'counters');

@@ -5,11 +5,12 @@ import { HeroButton, HeroHeading, HeroTyped, SectionWrapper } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { heroMotion, rem } from '../../../utils';
 
-const Hero = () => {
+export default SectionWrapper(() => {
   const { data, accent } = dataStore((state) => ({ data: state.hero, accent: state.accent }));
 
   const beamMeUpScotty = (e) => {
     e.preventDefault();
+    // TODO: Find something cool to do here
   };
 
   return (
@@ -30,8 +31,7 @@ const Hero = () => {
       </Banner>
     </div>
   );
-};
-export default SectionWrapper(Hero, 'hero');
+}, 'hero');
 
 const Banner = styled.div`
   transition: 0.55s ease-in-out;
