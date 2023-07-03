@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
 export const ServicesCard = ({ title, subtitle, description, link, ...props }) => {
@@ -10,9 +11,9 @@ export const ServicesCard = ({ title, subtitle, description, link, ...props }) =
             <p>{description}</p>
           </div>
           <div className='art-buttons-frame'>
-            <a className='art-link art-color-link art-w-chevron' href={link}>
+            <Link className='art-link art-color-link art-w-chevron' to='/contact'>
               Order now
-            </a>
+            </Link>
           </div>
         </Wrapper>
       </Card>
