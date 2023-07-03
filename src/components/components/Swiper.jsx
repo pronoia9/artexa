@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 import { Card, Fancybox } from '..';
 
-export const Swiper = ({ section, data, navProps, autoplay, options, children, ...props }) => {
+export const Swiper = ({ section, data, navProps, autoplay, swiperOptions, navigation = true, children, ...props }) => {
   if (autoplay) SwiperCore.use([Autoplay]);
   return (
     <>
@@ -23,24 +23,18 @@ export const Swiper = ({ section, data, navProps, autoplay, options, children, .
           }}
           navigation={{ nextEl: `.art-${section}-swiper-next`, prevEl: `.art-${section}-swiper-prev` }}
           pagination={{ el: `.${section}-swiper-pagination`, type: 'bullets', clickable: true }}
-          {...options}
+          {...swiperOptions}
         >
           {children}
           {data?.map((item, index) => (
             <SwiperSlide key={`${section}-swiper-slide-${index}`} className='swiper-slide art-grid art-grid-3-col art-gallery'>
-              <Card
-                key={`${section}-swiper-card-${index}`}
-                swiper={true}
-                index={index}
-                section={section}
-                {...item}
-                subtitle={null}
-              />
+              <Card key={`${section}-swiper-card-${index}`} swiper={true} index={index} section={section} {...item} subtitle={null} />
             </SwiperSlide>
           ))}
         </SwiperNative>
       </Fancybox>
-      <SwiperNavigation section={section} {...navProps} />
+
+      {navigation && <SwiperNavigation section={section} {...navProps} />}
     </>
   );
 };
