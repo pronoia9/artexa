@@ -11,6 +11,7 @@ import {
   ProgressbarInstance,
   rgbaToHex,
   getProjectsCount,
+  handleFormSubmit,
   openFancybox,
 } from './utils';
 
@@ -55,6 +56,7 @@ export {
   ProgressbarInstance,
   rgbaToHex,
   getProjectsCount,
+  handleFormSubmit,
   openFancybox,
   // Motion
   appMotion,

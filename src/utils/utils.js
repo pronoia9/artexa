@@ -132,23 +132,7 @@ export const ProgressbarInstance = ({ type = 'circle', level, index, hide }) => 
 };
 
 //--------------------------------- FORM ---------------------------------//
-// submit button and form button animation
-// function formButtonAnimation() {
-//   var tl = anime.timeline({
-//     easing: 'easeOutExpo',
-//   });
-
-//   tl.add({
-//     targets: '.art-submit',
-//     opacity: 0,
-//     scale: 0.5,
-//   }).add({
-//     targets: '.art-success',
-//     scale: 1,
-//     height: '45px',
-//   });
-//   return true;
-// }
+export const handleFormSubmit = (values, { setSubmitting, resetForm }) => {};
 
 //------------------------------- FANCYBOX -------------------------------//
 

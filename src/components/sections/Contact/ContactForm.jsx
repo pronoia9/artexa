@@ -1,15 +1,14 @@
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
+import { styled } from 'styled-components';
 
 import { SectionTitle, ContactInput } from '../../';
 import { dataStore } from '../../../store/dataStore';
 import { GradientButton } from '../../../styles';
-import { styled } from 'styled-components';
+import { handleFormSubmit } from '../../../utils';
 
 export const ContactForm = () => {
   const data = dataStore((state) => state.contact.form);
-
-  const handleSubmit = (values, { setSubmitting, resetForm }) => {};
 
   const formikOptions = {
     initialValues: data.default,
@@ -19,7 +18,7 @@ export const ContactForm = () => {
       email: Yup.string().email('Invalid email address').required('Required'),
       message: Yup.string().max(800, 'Must be 800 characters or less').required('Required'),
     }),
-    onSubmit: handleSubmit,
+    onSubmit: handleFormSubmit,
   };
 
   return (
