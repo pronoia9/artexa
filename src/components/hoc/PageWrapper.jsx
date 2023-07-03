@@ -14,23 +14,21 @@ export const PageWrapper = (Component, idName) =>
     }));
 
     return (
-      <Content className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()}>
+      <Content className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion}>
         <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
         <Background />
-        <div id='transition-fade' className='transition-fade'>
-          <Scrollbar id='scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
-            <motion.div className='scroll-content' {...pageWrapperMotion}>
-              {/* <Routes /> */}
-              <Component {...props} />
-              <Footer />
-            </motion.div>
-          </Scrollbar>
-        </div>
+
+        <Scrollbar id='scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
+          <div>
+            <Component {...props} />
+          </div>
+          <Footer />
+        </Scrollbar>
       </Content>
     );
   };
 
-const Content = styled.div`
+const Content = styled(motion.div)`
   position: relative;
   width: 100vw;
   height: calc(100vh - ${rem(30)});
