@@ -27,7 +27,7 @@ export const ContactInput = ({ name, icon, active, ...props }) => {
 
 const Container = styled.div`
   position: relative;
-  margin-bottom: 0;
+  margin-top: 5px;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -35,7 +35,6 @@ const Container = styled.div`
   input, textarea {
     height: 50px;
     width: 100%;
-    margin-bottom: 0;
     padding-left: 15px;
     padding-right: 15px;
     background: var(--c-bg-input);
@@ -79,22 +78,22 @@ const Container = styled.div`
 `;
 
 const Label = styled.label`
-  text-align: center;
-  color: var(--c-font-1);
   position: absolute;
-  height: 50px;
-  width: 50px;
-  background: var(--c-bg-input-label);
   top: 0;
+  height: 50px;
   left: 0;
+  width: 50px;
   padding: 0 15px;
-  text-transform: uppercase;
+  color: var(--c-font-1);
   font-size: 11px;
+  font-weight: 500;
   line-height: 50px;
   letter-spacing: 1px;
-  font-weight: 500;
-  transition: 0.4s ease-in-out;
+  text-align: center;
+  text-transform: uppercase;
+  background: var(--c-bg-input-label);
   cursor: text;
+  transition: 0.4s ease-in-out;
 `;
 
 const Validation = styled.div`
@@ -108,6 +107,6 @@ const Validation = styled.div`
 
   &, span {
     color: var(--c-accent-5);
-    margin-left: 50px;
+    margin-left: 30px;
   }
 `;
