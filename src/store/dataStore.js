@@ -778,7 +778,7 @@ export const dataStore = create((set) => ({
     message: 'Read More',
     rows: 3,
     setRows: (rows) => set((state) => ({ technologies: { ...state.technologies, rows: rows } })),
-    cols: 2,
+    cols: 3,
     setCols: (cols) => set((state) => ({ technologies: { ...state.technologies, cols: cols } })),
     count: 6,
     setCount: (count) => set((state) => ({ technologies: { ...state.technologies, count: count } })),
