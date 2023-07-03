@@ -1,12 +1,15 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
+
 import { sectionWrapperMotion } from '../../utils';
 
 export const SectionWrapper = (Component, idName) =>
   function HOC(props) {
     return (
       <Container className='container-fluid' id={idName} {...sectionWrapperMotion}>
-        <Component {...props} />
+        <motion.div className={`row ${idName !== 'hero' ? 'p-30-0' : 'p-60-0 p-lg-30-0 p-md-15-0'}`} {...props?.motion}>
+          <Component {...props} />
+        </motion.div>
       </Container>
     );
   };

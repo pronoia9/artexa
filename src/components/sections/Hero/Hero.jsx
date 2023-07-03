@@ -13,54 +13,25 @@ const Hero = () => {
   };
 
   return (
-    <Container {...heroMotion.hero}>
-      <Wrapper>
-        {/* Background */}
-        <Banner className='art-a art-banner' $accent={accent}>
-          <div className='art-banner-back' />
-          <div className='art-banner-dec' />
+    <div className='col-lg-12'>
+      <Banner className='art-a art-banner' $accent={accent}>
+        <div className='art-banner-back' />
+        <div className='art-banner-dec' />
 
-          <Overlay className='art-banner-overlay'>
-            <Title className='art-banner-title'>
-              <HeroHeading />
-              <HeroTyped />
-              <HeroButton handleClick={beamMeUpScotty} />
-            </Title>
+        <Overlay className='art-banner-overlay'>
+          <Title className='art-banner-title'>
+            <HeroHeading />
+            <HeroTyped />
+            <HeroButton handleClick={beamMeUpScotty} />
+          </Title>
 
-            <Avatar src={data.avatar} className='art-banner-photo' alt='Banner Profile' />
-          </Overlay>
-        </Banner>
-      </Wrapper>
-    </Container>
+          <Avatar src={data.avatar} className='art-banner-photo' alt='Banner Profile' />
+        </Overlay>
+      </Banner>
+    </div>
   );
 };
 export default SectionWrapper(Hero, 'hero');
-
-const Container = styled(motion.div)`
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-  padding-top: 60px;
-  padding-bottom: 0;
-
-  @media (max-width: 920px) {
-    padding-top: 15px;
-  }
-
-  @media (max-width: 1400px) {
-    padding-top: 30px;
-  }
-`;
-
-const Wrapper = styled.div`
-  position: relative;
-  flex: 0 0 100%;
-  width: 100%;
-  max-width: 100%;
-  padding-right: 15px;
-  padding-left: 15px;
-`;
 
 const Banner = styled.div`
   transition: 0.55s ease-in-out;
