@@ -24,6 +24,7 @@ export const Swiper = ({ section, data, navProps, autoplay, children, ...props }
           navigation={{ nextEl: `.art-${section}-swiper-next`, prevEl: `.art-${section}-swiper-prev` }}
           pagination={{ el: `.${section}-swiper-pagination`, type: 'bullets', clickable: true }}
         >
+          {children}
           {data?.map((item, index) => (
             <SwiperSlide key={`${section}-swiper-slide-${index}`} className='swiper-slide art-grid art-grid-3-col art-gallery'>
               <Card
