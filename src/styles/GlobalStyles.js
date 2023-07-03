@@ -276,28 +276,24 @@ blockquote {
   box-shadow: 0 1px 4px 0 var(--c-box-shadow);
   position: relative;
 
-  &:before {
+  i:first-child {
     position: absolute;
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    ${'' /* content: '\f10d'; */}
-    font-size: 18px;
-    opacity: 0.5;
     top: 5px;
     left: 9px;
     color: var(--c-font-2);
+    font-size: 18px;
+    font-weight: 900;
+    opacity: 0.5;
   }
 
-  &:after {
+  i:last-child {
     position: absolute;
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    ${'' /* content: '\f10d'; */}
-    font-size: 18px;
-    opacity: 0.5;
     bottom: 5px;
     right: 9px;
     color: var(--c-font-2);
+    font-weight: 900;
+    font-size: 18px;
+    opacity: 0.5;
     transform: rotate(180deg);
   }
 }
