@@ -1,7 +1,5 @@
-import { PageWrapper } from '..';
+import { Contact, PageWrapper } from '..';
 
-const ContactPage = () => {
-  return <div>Page</div>;
-};
-
-export default PageWrapper(ContactPage, 'contact-page');
+export default PageWrapper(() => {
+  return <Contact />;
+}, 'contact-page');

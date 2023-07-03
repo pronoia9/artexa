@@ -1,7 +1,5 @@
-import { PageWrapper } from '..';
+import { Courses, PageWrapper } from '..';
 
-const CoursePage = () => {
-  return <div>Page</div>;
-};
-
-export default PageWrapper(CoursePage, 'course-page');
+export default PageWrapper(() => {
+  return <Courses />;
+}, 'course-page');

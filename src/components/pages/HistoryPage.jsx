@@ -1,7 +1,5 @@
-import { PageWrapper } from '..';
+import { History, PageWrapper } from '..';
 
-const HistoryPage = () => {
-  return <div>Page</div>;
-};
-
-export default PageWrapper(HistoryPage, 'history-page');
+export default PageWrapper(() => {
+  return <History />;
+}, 'history-page');

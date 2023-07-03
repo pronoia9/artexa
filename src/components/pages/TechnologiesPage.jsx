@@ -1,8 +1,5 @@
-import { PageWrapper } from "..";
+import { PageWrapper, Technologies } from '..';
 
-
-const TechnologiesPage = () => {
-  return <div>TechnologiesPage</div>;
-};
-
-export default PageWrapper(TechnologiesPage, 'technologies-page');
+export default PageWrapper(() => {
+  return <Technologies type='grid' limit={false} />;
+}, 'technologies-page');

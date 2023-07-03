@@ -1,7 +1,5 @@
-import { PageWrapper } from '..';
+import { PageWrapper, Projects } from '..';
 
-const ProjectsPage = () => {
-  return <div>Page</div>;
-};
-
-export default PageWrapper(ProjectsPage, 'projects-page');
+export default PageWrapper(() => {
+  return <Projects type='grid' limit={false} />;
+}, 'projects-page');

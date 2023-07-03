@@ -1,6 +1,5 @@
 import { PageWrapper } from '..';
 
-const NotFound = () => {
+export default PageWrapper(() => {
   return <div>NotFound</div>;
-};
-export default PageWrapper(NotFound, 'notfound');
+}, 'notfound');
