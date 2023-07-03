@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
 import { styled } from 'styled-components';
-import { motion } from 'framer-motion';
 
 import { Card, Fancybox } from '..';
 import { dataStore } from '../../store/dataStore';
-import { GradientButton, Tag } from '../../styles';
+import { GradientButton } from '../../styles';
 import { buttonMotion, getProjectsCount } from '../../utils';
 
 export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, buttonText, topRef, ...props }) => {
@@ -17,7 +16,7 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
     setCount: state[section].setCount,
     defaults: state[section].defaults,
   }));
-  
+
   // Checks whether or not all the projects are shown with the filter applied
   const showingAllData = () => !(data.slice(0, count).length < data.length);
 
@@ -27,12 +26,14 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
     else {
       setRows(defaults.rows || 3);
       setCount((defaults.cols || 2) * (defaults.rows || 3));
-      topRef?.scrollIntoView({ behavior: 'smooth' });
+      topRef?.current?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
   // Update projects count whenever cols or rows changes (dont make it exceed the filtered projects length)
-  useEffect(() => { data.length && setCount(Math.min(getProjectsCount(rows, cols), data.length || Infinity)); }, [rows, cols]);
+  useEffect(() => {
+    data.length && setCount(Math.min(getProjectsCount(rows, cols), data.length || Infinity));
+  }, [rows, cols]);
 
   // Sets count when the window is resized
   useEffect(() => {
@@ -55,10 +56,8 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
             subtitle={null}
             classes='art-grid-item'
             {...cardMotion}
-          >
-            {section === 'projects' && <ProjectsTags {...item} />}
-          </Card>
-        ))}
+          />
+          ))}
       </Fancybox>
 
       {limit && data.length > getProjectsCount() && (
@@ -70,28 +69,9 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
   );
 };
 
-const ProjectsTags = ({ title, tags }) => (
-  <TagsContainer className='mb-15'>
-    {tags?.map((tag) => (
-      <Tag key={`project-${title}-tags-${tag}`} className='art-tag'>
-        {tag}
-      </Tag>
-    ))}
-  </TagsContainer>
-);
-
 const Button = styled(GradientButton)`
   text-align: center;
   display: flex;
   max-width: 200px;
   margin: 0 auto;
-`;
-
-const TagsContainer = styled(motion.div)`
-  height: calc(58px); /* 2 lines */
-  overflow: hidden;
-
-  p {
-    background: var(--c-bg-menu-2);
-  }
 `;

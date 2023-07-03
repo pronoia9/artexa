@@ -3,6 +3,17 @@ import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { rem } from '../../utils';
+import { Tag } from '../../styles';
+
+const Tags = ({ title, tags }) => (
+  <TagsContainer className='mb-15'>
+    {tags?.map((tag) => (
+      <Tag key={`project-${title}-tags-${tag}`} className='art-tag'>
+        {tag}
+      </Tag>
+    ))}
+  </TagsContainer>
+);
 
 export const Card = ({
   index, swiper, hide, section,
@@ -11,7 +22,13 @@ export const Card = ({
 }) => {
 
   return (
-    <Container className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`} $swiper={swiper} $hide={hide} {...props} key={`${section}-card-${title}`}>
+    <Container
+      className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`}
+      $swiper={swiper}
+      $hide={hide}
+      {...props}
+      key={`${section}-card-${title}`}
+    >
       <ImageLink className='art-port-cover' data-fancybox={section} href={image}>
         <img src={image} alt='item' />
         <HoverIcon className='art-item-hover'>
@@ -23,7 +40,7 @@ export const Card = ({
         {/* <a href='#.'> */}<Title className='mb-15'>{title}</Title>{/* </a> */}
         {subtitle && <div className='mb-15'>{subtitle}</div>}
 
-        {props.children}
+        {!swiper && categories?.length && <Tags title={title} tags={categories} />}
 
         <ProjectLink to={link || `/${section}/${id}`} className='art-link art-color-link art-w-chevron'>
           Learn More
@@ -141,3 +158,12 @@ const Title = styled.h5`
 `;
 
 const ProjectLink = styled(Link)``;
+
+const TagsContainer = styled(motion.div)`
+  height: calc(58px); /* 2 lines */
+  overflow: hidden;
+
+  p {
+    background: var(--c-bg-menu-2);
+  }
+`;
