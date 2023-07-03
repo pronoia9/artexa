@@ -29,7 +29,7 @@ export const Card = ({
       {...props}
       key={`${section}-card-${title}`}
     >
-      <ImageLink className='art-port-cover' data-fancybox={section} href={image}>
+      <ImageLink className='art-port-cover' data-fancybox={`fancybox${section}`} href={image}>
         <img src={image} alt='item' />
         <HoverIcon className='art-item-hover'>
           <i className='fas fa-expand' />
@@ -42,10 +42,10 @@ export const Card = ({
 
         {!swiper && categories?.length && <Tags title={title} tags={categories} />}
 
-        <ProjectLink to={link || `/${section}/${id}`} className='art-link art-color-link art-w-chevron'>
+        <Link to={link || `/${section}/${id}`} className='art-link art-color-link art-w-chevron'>
           Learn More
           <i className='fas fa-chevron-right' />
-        </ProjectLink>
+        </Link>
       </Overlay>
     </Container>
   );
@@ -156,8 +156,6 @@ const Title = styled.h5`
   word-wrap: break-word;
   letter-spacing: 0.1ch;
 `;
-
-const ProjectLink = styled(Link)``;
 
 const TagsContainer = styled(motion.div)`
   height: calc(58px); /* 2 lines */

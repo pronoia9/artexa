@@ -3,13 +3,13 @@ import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Card } from './Card';
+import { Card, Fancybox } from '..';
 
 export const Swiper = ({ section, data, navProps, autoplay, children, ...props }) => {
   if (autoplay) SwiperCore.use([Autoplay]);
   return (
     <>
-      <motion.div className='col-lg-12' {...props}>
+      <Fancybox className='col-lg-12' {...props}>
         <SwiperNative
           modules={[Navigation, Pagination, A11y]}
           spaceBetween={30}
@@ -30,13 +30,14 @@ export const Swiper = ({ section, data, navProps, autoplay, children, ...props }
                 key={`${section}-swiper-card-${index}`}
                 swiper={true}
                 index={index}
+                section={section}
                 {...item}
                 subtitle={null}
               />
             </SwiperSlide>
           ))}
         </SwiperNative>
-      </motion.div>
+      </Fancybox>
       <SwiperNavigation section={section} {...navProps} />
     </>
   );
