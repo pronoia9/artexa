@@ -84,10 +84,12 @@ const GlobalStyles = createGlobalStyle`
   }
 
   * {
-    ${'' /* transition: 
+    ${
+      '' /* transition: 
       background-color 0.6s ease-in-out, 
       background 0.6s ease-in-out, 
-      color 0.6s ease-in-out !important; */}
+      color 0.6s ease-in-out !important; */
+    }
   }
 
 /* ----------------------------- Author: Nazar Miller ----------------------------- */
@@ -477,6 +479,15 @@ button {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+}
+
+.scroll-content {
+}
+
+.art-scroll-frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 
