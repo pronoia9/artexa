@@ -9,6 +9,7 @@ import { Logos, Logo } from './components/Logos';
 import { Preloader } from './components/Preloader';
 import { Progressbar } from './components/Progressbar';
 import { SplitText } from './components/SplitText';
+import { SVGs } from './components/SVGs';
 import { Swiper, SwiperNavigation } from './components/Swiper';
 import { SectionTitle } from './components/Text';
 import { Timeline } from './components/Timeline/Timeline';
@@ -96,6 +97,7 @@ export {
   Preloader,
   Progressbar,
   SplitText,
+  SVGs,
   Swiper, SwiperNavigation,
   SectionTitle,
   Timeline, TimelineColumn, TimelineItem,
