@@ -7,12 +7,14 @@ import { rem } from '../../../utils';
 export const TimelineItem = (props) => {
   const { id, title, subtitle, description, dates, image, link } = props;
 
-  dates[0] = new Date(dates[0]).toLocaleDateString('en-us', { year: 'numeric', month: 'short' });
-  dates[1] = dates[1]
-    ? dates[1] === 'Ongoing'
-      ? 'Ongoing'
-      : new Date(dates[1]).toLocaleDateString('en-us', { year: 'numeric', month: 'short' })
-    : null;
+  if (dates) {
+    dates[0] = new Date(dates[0] || '')?.toLocaleDateString('en-us', { year: 'numeric', month: 'short' }) || '';
+    dates[1] = dates[1]
+      ? dates[1] === 'Ongoing'
+        ? 'Ongoing'
+        : new Date(dates[1]).toLocaleDateString('en-us', { year: 'numeric', month: 'short' })
+      : '';
+  }
 
   return (
     <Container className='art-timeline-item acc'>
@@ -26,7 +28,7 @@ export const TimelineItem = (props) => {
             <Subtitle className='art-el-suptitle mb-15'>{subtitle}</Subtitle>
           </div>
 
-          {dates.length && (
+          {dates?.length && (
             <div className='art-right-side'>
               <Dates className='art-date'>{`${dates[0]}${dates[1] && dates[0] !== dates[1] ? ` - ${dates[1]}` : ''}`}</Dates>
             </div>
@@ -120,6 +122,7 @@ const Title = styled.h5`
 const Subtitle = styled.h5`
   margin-top: ${rem(10)};
   font-size: ${rem(14)};
+  font-family: var(--f-code);
 `;
 
 const Header = styled.div`
