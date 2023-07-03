@@ -18,5 +18,5 @@ export default SectionWrapper(() => {
 const Container = styled(motion.div)`
   width: 100%;
   padding: 15px;
-  margin: 0 15px 0;
+  margin: 0 15px 15px;
 `;
