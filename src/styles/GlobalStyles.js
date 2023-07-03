@@ -83,6 +83,13 @@ const GlobalStyles = createGlobalStyle`
     font-smooth: subpixel-antialiased
   }
 
+  * {
+    transition: 
+      background-color 0.6s ease-in-out, 
+      background 0.6s ease-in-out, 
+      color 0.6s ease-in-out !important;
+  }
+
 /* ----------------------------- Author: Nazar Miller ----------------------------- */
                                                                                     /*-
 1. common
