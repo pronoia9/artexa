@@ -22,7 +22,7 @@ export const Counter = ({ index, number, text, accent, length }) => {
 
 const Frame = styled(motion.div)`
   position: relative;
-  /* margin-bottom: ${rem(30)}; */
+  margin-bottom: ${rem(30)};
   padding-left: 12.5%;
   display: flex;
   align-items: center;
