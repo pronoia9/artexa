@@ -21,6 +21,7 @@ import { PageWrapper } from './hoc/PageWrapper';
 import { SectionWrapper } from './hoc/SectionWrapper';
 
 // ---- LAYOUT
+// Navbar
 import Footer from './layout/Footer/Footer';
 import { Navbar } from './layout/Navbar/Navbar';
 import { NavbarButton } from './layout/Navbar/NavbarButton';
@@ -28,15 +29,23 @@ import { NavbarCurrentPage } from './layout/Navbar/NavbarCurrentPage';
 import { NavbarList } from './layout/Navbar/NavbarList';
 import { NavbarListItem } from './layout/Navbar/NavbarListItem';
 import { ThemeButton } from './layout/Navbar/ThemeButton';
-import { HardSkills, HardSkillsItem } from './layout/Sidebar/HardSkills';
-import { Info, InfoItem } from './layout/Sidebar/Info';
-import { Languages, LanguagesItem } from './layout/Sidebar/Languages';
-import { Profile, Avatar, Name, Post } from './layout/Sidebar/Profile';
-import { Resume } from './layout/Sidebar/Resume';
+// Sidebar
 import { Sidebar } from './layout/Sidebar/Sidebar';
-import { Socials, SocialsItem } from './layout/Sidebar/Socials';
-import { SoftSkills } from './layout/Sidebar/SoftSkills';
-import { Strengths } from './layout/Sidebar/Strengths';
+import { HardSkills } from './layout/Sidebar/HardSkills/HardSkills';
+import { HardSkillsItem } from './layout/Sidebar/HardSkills/HardSkillsItem';
+import { Info } from './layout/Sidebar/Info/Info';
+import { InfoItem } from './layout/Sidebar/Info/InfoItem';
+import { Languages } from './layout/Sidebar/Languages/Languages';
+import { LanguagesItem } from './layout/Sidebar/Languages/LanguagesItem';
+import { Profile } from './layout/Sidebar/Profile/Profile';
+import { ProfileAvatar } from './layout/Sidebar/Profile/ProfileAvatar';
+import { ProfileName } from './layout/Sidebar/Profile/ProfileName';
+import { ProfilePost } from './layout/Sidebar/Profile/ProfilePost';
+import { Resume } from './layout/Sidebar/Resume/Resume';
+import { Socials } from './layout/Sidebar/Socials/Socials';
+import { SocialsItem } from './layout/Sidebar/Socials/SocialsItem';
+import { SoftSkills } from './layout/Sidebar/SoftSkills/SoftSkills';
+import { Strengths } from './layout/Sidebar/Strengths/Strengths';
 
 // ---- PAGES
 import AboutPage from './pages/AboutPage';
@@ -108,7 +117,7 @@ export {
   // ---- LAYOUT ----
   Footer,
   Navbar, NavbarButton, NavbarCurrentPage, NavbarList, NavbarListItem, ThemeButton,
-  Sidebar, HardSkills, HardSkillsItem, Info, InfoItem, Languages, LanguagesItem, Profile, Avatar, Name, Post, Resume, Socials, SocialsItem, SoftSkills, Strengths,
+  Sidebar, HardSkills, HardSkillsItem, Info, InfoItem, Languages, LanguagesItem, Profile, ProfileAvatar, ProfileName, ProfilePost, Resume, Socials, SocialsItem, SoftSkills, Strengths,
 
   // ---- PAGES ----
   AboutPage, ContactPage, CoursePage, HistoryPage, HomePage, NotFound, ProjectsPage, TechnologiesPage,

@@ -1,25 +1,13 @@
-import { Link } from 'react-router-dom';
 import { styled, css } from 'styled-components';
 import { motion } from 'framer-motion';
-import { Fancybox } from '../../components/Fancybox';
 
-import { SplitText } from '../../components/SplitText';
-import { dataStore } from '../../../store/dataStore';
-import { Tooltip } from '../../../styles';
-import { openFancybox, rem, sidebarMotion } from '../../../utils';
+import { dataStore } from '../../../../store/dataStore';
+import { Tooltip } from '../../../../styles';
+import { openFancybox, rem, sidebarMotion } from '../../../../utils';
 
-export const Profile = () => (
-  <ProfileContainer className='art-header' {...sidebarMotion.profile.container}>
-    <Avatar />
-    <motion.div initial='hidden' animate='visible' {...sidebarMotion.profile.texts}>
-      <Name />
-      <Post />
-    </motion.div>
-  </ProfileContainer>
-);
-
-export const Avatar = () => {
+export const ProfileAvatar = () => {
   const data = dataStore((state) => state.sidebar.profile);
+
   return (
     <AvatarContainer className='art-avatar' {...sidebarMotion.profile.avatarContainer}>
       <AvatarCurtain data-fancybox='avatar' href={data.avatar} className='art-avatar-curtain' onClick={() => openFancybox(data.avatar)}>
@@ -33,43 +21,6 @@ export const Avatar = () => {
     </AvatarContainer>
   );
 };
-
-export const Name = () => {
-  const data = dataStore((state) => state.sidebar.profile);
-  return (
-    <NameText className='art-name mb-10'>
-      <Link to={data.nameLink}>
-        <SplitText>{data.name}</SplitText>
-      </Link>
-    </NameText>
-  );
-};
-
-export const Post = () => {
-  const data = dataStore((state) => state.sidebar.profile);
-  return (
-    <PostContainer {...sidebarMotion.profile.posts}>
-      {data.subtitle.map((line, index) => (
-        <div key={`sidebar-profile-post-${index}`}>
-          <SplitText speed={0.025}>{line}</SplitText>
-        </div>
-      ))}
-    </PostContainer>
-  );
-};
-
-const ProfileContainer = styled(motion.div)`
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: ${rem(235)};
-  padding: ${rem(30)};
-  text-align: center;
-  background: var(--c-bg-menu-2);
-  box-shadow: 0 ${rem(1)} ${rem(4)} 0 var(--c-box-shadow);
-  z-index: 99999;
-`;
 
 const AvatarContainer = styled(motion.div)`
   position: relative;
@@ -181,19 +132,4 @@ const AvatarStatusLight = styled(Tooltip)`
     width: ${rem(5)};
     right: ${rem(-15)};
   }
-`;
-
-const NameText = styled.h3`
-  a {
-    color: var(--c-font-2);
-    transition: 0.4s ease-in-out;
-
-    &:hover {
-      color: var(--c-accent-1);
-    }
-  }
-`;
-
-const PostContainer = styled(motion.div)`
-  color: var(--c-font-1);
 `;

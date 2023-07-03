@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 
-import { dataStore } from "../../../store/dataStore";
-import { sidebarMotion } from "../../../utils";
-import { Tag } from "../../../styles";
+import { dataStore } from "../../../../store/dataStore";
+import { sidebarMotion } from "../../../../utils";
+import { Tag } from "../../../../styles";
 
 export const Strengths = () => {
   const data = dataStore((state) => state.sidebar.strengths);

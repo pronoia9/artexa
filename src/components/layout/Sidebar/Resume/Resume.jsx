@@ -1,8 +1,8 @@
 import { styled } from "styled-components";
 import { motion } from "framer-motion";
 
-import { dataStore } from "../../../store/dataStore";
-import { sidebarMotion } from "../../../utils";
+import { dataStore } from "../../../../store/dataStore";
+import { sidebarMotion } from "../../../../utils";
 
 export const Resume = () => {
   const data = dataStore((state) => state.sidebar.resume);
