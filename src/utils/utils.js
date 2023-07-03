@@ -1,3 +1,4 @@
+import emailjs from '@emailjs/browser';
 import { Fancybox } from '@fancyapps/ui';
 import * as ProgressBar from 'progressbar.js';
 
@@ -132,10 +133,25 @@ export const ProgressbarInstance = ({ type = 'circle', level, index, hide }) => 
 };
 
 //--------------------------------- FORM ---------------------------------//
-export const handleFormSubmit = (values, { setSubmitting, resetForm }) => {};
+export const handleFormSubmit = (values, { setSubmitting, resetForm }, setSuccess) => {
+  emailjs
+    .send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, values, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
+    .then(
+      (result) => {
+        setSuccess(true);
+        setTimeout(() => {
+          resetForm();
+          setSuccess(false);
+        }, 5000);
+      },
+      (error) => {
+        console.log('Error sending message.', error.text);
+      }
+    );
+};
 
 //------------------------------- FANCYBOX -------------------------------//
 
 export const openFancybox = (image) => {
   Fancybox.show([{ src: image, type: 'image' }]);
-}
+};

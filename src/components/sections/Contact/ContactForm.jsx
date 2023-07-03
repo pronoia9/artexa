@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { styled } from 'styled-components';
@@ -5,9 +6,10 @@ import { styled } from 'styled-components';
 import { SectionTitle, ContactInput } from '../../';
 import { dataStore } from '../../../store/dataStore';
 import { GradientButton } from '../../../styles';
-import { handleFormSubmit } from '../../../utils';
+import { buttonMotion, handleFormSubmit } from '../../../utils';
 
 export const ContactForm = () => {
+  const [success, setSuccess] = useState(false);
   const data = dataStore((state) => state.contact.form);
 
   const formikOptions = {
@@ -16,9 +18,9 @@ export const ContactForm = () => {
       name: Yup.string().max(35, 'Must be 35 characters or less').required('Required'),
       subject: Yup.string().max(100, 'Must be 100 characters or less').required('Required'),
       email: Yup.string().email('Invalid email address').required('Required'),
-      message: Yup.string().max(800, 'Must be 800 characters or less').required('Required'),
+      // message: Yup.string().max(800, 'Must be 800 characters or less').required('Required'),
     }),
-    onSubmit: handleFormSubmit,
+    onSubmit: (values, actions) => handleFormSubmit(values, actions, setSuccess),
   };
 
   return (
@@ -35,12 +37,10 @@ export const ContactForm = () => {
               <ContactInput name='message' type='textarea' icon='fas fa-envelope' as='textarea' active={formik.values.message} />
 
               <ButtonContainer className='art-submit-frame'>
-                <GradientButton className='art-submit' type='submit'>
-                  <span>Send Message</span>
+                <GradientButton className='art-submit' type='submit' {...buttonMotion.gradient}>
+                  {success ? 'Message Sent' : formik.isSubmitting ? 'Sending Message' : 'Send Message'}
+                  {success ? <i className='fas fa-check' /> : !formik.isSubmitting && <i className='far fa-paper-plane' />}
                 </GradientButton>
-                <div className='art-success'>
-                  Success <i className='fas fa-check' />
-                </div>
               </ButtonContainer>
             </Form>
           )}
@@ -53,42 +53,21 @@ export const ContactForm = () => {
 const ButtonContainer = styled.div`
   position: relative;
   height: 45px;
-  /* margin-top: 5px; */
+  /* width: 200px;
+  margin: 0 auto; */
 
   button {
-    float: right;
-  }
-
-  .art-submit {
     position: relative;
     margin: 0;
     overflow: hidden;
     z-index: 999;
+    float: right;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
 
     &:focus {
       outline: inherit;
     }
-  }
-
-  .art-success {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 0;
-    margin: 0;
-    margin-top: -15px;
-    padding: 15px 35px 0;
-    max-width: 150px;
-    justify-content: center;
-    align-content: center;
-    color: var(--c-font-2);
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    background: var(--c-font-4);
-    border: none;
-    overflow: hidden;
-    transform: scale(0);
   }
 `;
