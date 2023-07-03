@@ -354,9 +354,9 @@ export const dataStore = create((set) => ({
 
   // Counters
   counters: [
-    { id: 1, number: new Date().getFullYear() - new Date('2021').getFullYear(), text: 'Years Experience' },
+    { id: 1, number: new Date().getFullYear() - new Date('2021').getFullYear(), text: 'Years Experience', accent: '+' },
     { id: 2, number: 3, text: 'Certificates' },
-    { id: 3, number: 85, text: 'Completed Projects' },
+    { id: 3, number: 85, text: 'Completed Projects', accent: '~' },
   ],
 
   // Projects
