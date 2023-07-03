@@ -1,20 +1,23 @@
+import { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 
 import { SplitText } from '..';
 
-export const SectionTitle = ({ column = 1, title = 'Missing Section Title', speed, children, ...props }) => (
-  <motion.div className={'col-lg-' + (12 / props.column || 12)} {...props}>
-    <Container className='art-section-title'>
-      <Frame className='art-title-frame'>
-        <motion.h2>
-          <SplitText speed={speed}>{title}</SplitText>
-        </motion.h2>
-      </Frame>
-      {children && <RightFrame className='art-right-frame'>{children}</RightFrame>}
-    </Container>
-  </motion.div>
-);
+export const SectionTitle = forwardRef(function SectionTitle({ column = 1, title = 'Missing Section Title', speed, children, ...props }, ref) {
+  return (
+    <motion.div ref={ref} className={'col-lg-' + (12 / props.column || 12)} {...props}>
+      <Container className='art-section-title'>
+        <Frame className='art-title-frame'>
+          <motion.h2>
+            <SplitText speed={speed}>{title}</SplitText>
+          </motion.h2>
+        </Frame>
+        {children && <RightFrame className='art-right-frame'>{children}</RightFrame>}
+      </Container>
+    </motion.div>
+  );
+})
 
 const Container = styled.div`
   position: relative;
