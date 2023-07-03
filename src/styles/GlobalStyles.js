@@ -550,7 +550,9 @@ button {
 
   &:hover {
     opacity: 1;
-    transform: scale(1.07);
+    i {
+      transform: scale(1.07);
+    }
   }
 }
 
