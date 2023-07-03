@@ -1,12 +1,10 @@
-import { useEffect, useRef } from 'react';
-import { styled } from 'styled-components';
+import { useEffect } from 'react';
 
-import { ProjectsCard, Fancybox, Grid } from '../..';
+import { Grid } from '../..';
 import { dataStore } from '../../../store/dataStore';
-import { GradientButton } from '../../../styles';
-import { buttonMotion, lowerCase, projectsMotion, getProjectsCount } from '../../../utils';
+import { lowerCase, projectsMotion } from '../../../utils';
 
-export const ProjectsGrid = ({ limit }) => {
+export const ProjectsGrid = (props) => {
   const { projects, filteredProjects, setFilteredProjects, filterKey, rows, setRows, cols, setCols, count, setCount } = dataStore((state) => ({
     projects: state.projects.projects,
     filteredProjects: state.projects.filteredProjects,
@@ -19,69 +17,21 @@ export const ProjectsGrid = ({ limit }) => {
     count: state.projects.count,
     setCount: state.projects.setCount,
   }));
-  const topRef = useRef();
 
   // Set Filtered Projects
   useEffect(() => { setFilteredProjects(projects); }, []);
 
-  // Checks whether or not all the projects are shown with the filter applied
-  const showingAllProjects = () => !(filteredProjects.slice(0, count).length < projects.length);
-
-  // Add more rows or return to default on button click
-  const handleButtonClick = () => {
-    if (!showingAllProjects()) setRows(rows + 2);
-    else {
-      setRows(3);
-      setCount(cols * 3);
-      topRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  // Update projects count whenever cols or rows changes (dont make it exceed the filtered projects length)
-  useEffect(() => { filteredProjects.length && setCount(Math.min(getProjectsCount(rows, cols), filteredProjects.length)); }, [rows, cols]);
-
   // Handle filtering projects when filter key changes
   useEffect(() => {
     setFilteredProjects(
-      [
-        !filterKey
-          ? projects
-          : projects.filter((p) => lowerCase(p.categories.join('')).includes(filterKey) || lowerCase(p.tags.join('')).includes(filterKey)),
+      [!filterKey
+        ? projects
+        : projects.filter((p) => lowerCase(p.categories.join('')).includes(filterKey) || lowerCase(p.tags.join('')).includes(filterKey)),
       ].flat()
     );
     // Update rows (if the new filtered projects are less than before, need to lower rows) (count will be updated whenever rows are updated)
     filteredProjects.length && setRows(Math.min(rows, Math.round(filteredProjects.length / cols)));
   }, [filterKey]);
 
-  // Sets count when the window is resized
-  useEffect(() => {
-    const resize = () => { setCount(Math.min(getProjectsCount(rows, cols), filteredProjects.length || Infinity)); };
-    window.addEventListener('resize', resize);
-    return () => { window.removeEventListener('resize', resize); };
-  }, []);
-
-  return (
-    <>
-      <Grid
-        cols={cols}
-        section='projects'
-        data={Array.from(limit ? filteredProjects.slice(0, count) : filteredProjects).flat()}
-        gridMotion={projectsMotion.grid}
-        cardMotion={projectsMotion.card}
-      />
-
-      {limit && filteredProjects.length > getProjectsCount() && (
-        <Button className='art-buttons-frame acc' onClick={handleButtonClick} {...buttonMotion.gradient}>
-          View {!showingAllProjects() ? 'More' : 'Less'}
-        </Button>
-      )}
-    </>
-  );
+  return <Grid section='projects' data={filteredProjects} gridMotion={projectsMotion.grid} cardMotion={projectsMotion.card} {...props} />;
 };
-
-const Button = styled(GradientButton)`
-  text-align: center;
-  display: flex;
-  max-width: 200px;
-  margin: 0 auto;
-`;
