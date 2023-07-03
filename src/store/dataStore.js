@@ -1173,18 +1173,16 @@ export const dataStore = create((set) => ({
 
   // About
   about: {
-    hobbies: {
-      images: [
-        '/src/assets/hobbies/baking.png',
-        '/src/assets/hobbies/bean bag chair chill.png',
-        '/src/assets/hobbies/dop pooping.png',
-        '/src/assets/hobbies/gaming.png',
-        '/src/assets/hobbies/keyboard smash.png',
-        '/src/assets/hobbies/love this with cat.png',
-        '/src/assets/hobbies/sticker-2.png',
-        '/src/assets/hobbies/sticker-3.png',
-        '/src/assets/hobbies/sticker.png',
-      ],
-    },
+    hobbies: [
+      { title: 'Baking', image: '/src/assets/hobbies/baking.png' },
+      { title: 'Reading', image: '/src/assets/hobbies/bean bag chair chill.png' },
+      { title: 'Walking', image: '/src/assets/hobbies/dop pooping.png' },
+      { title: 'Playing Games', image: '/src/assets/hobbies/gaming.png' },
+      { title: 'Computering', image: '/src/assets/hobbies/keyboard smash.png' },
+      { title: 'Cat Loving', image: '/src/assets/hobbies/love this with cat.png' },
+      { title: 'Playing with Dog', image: '/src/assets/hobbies/sticker-2.png' },
+      { title: 'Watching Stuff', image: '/src/assets/hobbies/sticker-3.png' },
+      { title: 'Listening to Music', image: '/src/assets/hobbies/sticker.png' },
+    ],
   },
 }));
