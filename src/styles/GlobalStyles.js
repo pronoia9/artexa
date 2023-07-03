@@ -767,7 +767,7 @@ ${
 .art-project-cover {
   position: relative;
   overflow: hidden;
-  box-shadow: 0 3px 8px 0 rgba(15, 15, 20, 0.2);
+  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
   margin-bottom: 30px;
 
   .art-portfolio-item-frame {
@@ -779,10 +779,10 @@ ${
   color: var(--c-font-3);
   margin-left: auto;
   display: inline;
-  background: var(--c-font-4);
+  background: var(--c-bg);
   padding: 5px 15px;
   border-radius: 15px;
-  box-shadow: inset 0 3px 8px 0 rgba(15, 15, 20, 0.2);
+  box-shadow: inset 0 3px 8px 0 var(--c-box-shadow);
   font-size: 10px;
 }
 

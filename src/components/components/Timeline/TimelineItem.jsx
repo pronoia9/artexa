@@ -54,14 +54,14 @@ const Container = styled(motion.div)`
   position: relative;
 
   .art-timeline-mark-light {
-    background: var(--c-font-2);
     position: absolute;
     top: ${rem(4)};
     right: ${rem(-4)};
     width: ${rem(23)};
     height: ${rem(23)};
-    opacity: 0;
+    background: var(--c-font-2);
     border-radius: 50%;
+    opacity: 0;
     transition: 0.4s ease-in-out;
   }
 
@@ -73,7 +73,7 @@ const Container = styled(motion.div)`
     height: ${rem(15)};
     border-radius: 50%;
     border: solid ${rem(3)} var(--c-accent-1);
-    background: var(--c-font-5);
+    background: var(--c-bg-menu-1);
     box-shadow: 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
   }
 
