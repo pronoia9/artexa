@@ -210,16 +210,10 @@ export const footerMotion = {};
 /*************  Home Page Start  *************/
 // HERO
 export const heroMotion = {
-  hero: {
-    initial: 'hidden',
-    animate: 'visible',
-    variants: staggerContainer(0.25, 0.75),
-  },
-  background: {},
-  heading: {
-    container: { variants: staggerContainer(0.5) },
-  },
-  typed: { variants: fadeIn({ delay: 1.75, bounce: 0.5 }, 'down') },
+  container: (stagger, delay) => ({ ...motionStates(), variants: staggerContainer(stagger, delay) }),
+  heading: { variants: staggerContainer(0.5) },
+  typed: { variants: fadeIn({}, 'down') },
+  button: { variants: zoomIn({ type: 'tween', duration: 0.5 }) },
 };
 
 // COUNTERS

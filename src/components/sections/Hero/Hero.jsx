@@ -1,9 +1,8 @@
 import { styled } from 'styled-components';
-import { motion } from 'framer-motion';
 
 import { HeroButton, HeroHeading, HeroTyped, SectionWrapper } from '../..';
 import { dataStore } from '../../../store/dataStore';
-import { heroMotion, rem } from '../../../utils';
+import { rem } from '../../../utils';
 
 export default SectionWrapper(() => {
   const { data, accent } = dataStore((state) => ({ data: state.hero, accent: state.accent }));
@@ -11,6 +10,7 @@ export default SectionWrapper(() => {
   const beamMeUpScotty = (e) => {
     e.preventDefault();
     // TODO: Find something cool to do here
+    // ! Idea 1: Enter the laptop scene from the start
   };
 
   return (

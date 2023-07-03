@@ -4,7 +4,7 @@ import { contactMotion, heroMotion, historyMotion, projectsMotion, technologiesM
 const HomePage = () => {
   return (
     <>
-      <Hero motion={heroMotion.hero} />
+      <Hero motion={heroMotion.container(0.75, 0.75)} />
       <Counters motion={{}} />
       <Projects motion={projectsMotion.container()} type='grid' limit={true} />
       <History motion={historyMotion} />
