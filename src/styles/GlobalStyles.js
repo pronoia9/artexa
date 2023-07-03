@@ -542,6 +542,12 @@ button {
   opacity: 0;
   transition: 0.4s ease-in-out;
 
+  &.center {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
   &:hover {
     opacity: 1;
     transform: scale(1.07);
