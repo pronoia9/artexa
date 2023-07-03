@@ -371,6 +371,7 @@ export const dataStore = create((set) => ({
     ],
     filterKey: '',
     setFilterKey: (filterKey) => set((state) => ({ projects: { ...state.projects, filterKey: filterKey } })),
+    defaults: { rows: 3, cols: 2 },
     rows: 3,
     setRows: (rows) => set((state) => ({ projects: { ...state.projects, rows: rows } })),
     cols: 2,
@@ -776,6 +777,7 @@ export const dataStore = create((set) => ({
   technologies: {
     title: 'Technologies | Libraries',
     message: 'Read More',
+    defaults: { rows: 3, cols: 3 },
     rows: 3,
     setRows: (rows) => set((state) => ({ technologies: { ...state.technologies, rows: rows } })),
     cols: 3,
@@ -917,13 +919,13 @@ export const dataStore = create((set) => ({
     title: 'Contact Information',
     info: [
       [
-        { title: 'Email',   description: 'jayansin9@gmail.com' },
-        { title: 'Skype',   description: '@jayansin' },
+        { title: 'Email', description: 'jayansin9@gmail.com' },
+        { title: 'Skype', description: '@jayansin' },
         { title: 'Discord', description: '¬ _¬#6475' },
       ],
       [
-        { title: 'Mobile',  description: '+1 234 56 78' },
-        { title: 'Home',    description: 'N/A' },
+        { title: 'Mobile', description: '+1 234 56 78' },
+        { title: 'Home', description: 'N/A' },
         { title: 'Address', description: '42 Hilarity Lane, Chuckleville, 12345' },
       ],
     ],
