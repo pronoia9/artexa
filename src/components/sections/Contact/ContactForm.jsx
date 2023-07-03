@@ -18,7 +18,7 @@ export const ContactForm = () => {
       name: Yup.string().max(35, 'Must be 35 characters or less').required('Required'),
       subject: Yup.string().max(100, 'Must be 100 characters or less').required('Required'),
       email: Yup.string().email('Invalid email address').required('Required'),
-      // message: Yup.string().max(800, 'Must be 800 characters or less').required('Required'),
+      message: Yup.string().max(800, 'Must be 800 characters or less').required('Required'),
     }),
     onSubmit: (values, actions) => handleFormSubmit(values, actions, setSuccess),
   };
@@ -34,7 +34,7 @@ export const ContactForm = () => {
               <ContactInput name='name' type='text' icon='fas fa-user' active={formik.values.name} />
               <ContactInput name='subject' type='text' icon='fas fa-inbox' active={formik.values.subject} />
               <ContactInput name='email' type='email' icon='fas fa-at' active={formik.values.email} />
-              <ContactInput name='message' type='textarea' icon='fas fa-envelope' as='textarea' active={formik.values.message} />
+              <ContactInput name='message' as='textarea' icon='fas fa-envelope' active={formik.values.message} />
 
               <ButtonContainer className='art-submit-frame'>
                 <GradientButton className='art-submit' type='submit' {...buttonMotion.gradient}>
