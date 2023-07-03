@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { styled } from 'styled-components';
 
-import { Card, Fancybox } from '../..';
+import { Card, Fancybox, Grid } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { GradientButton } from '../../../styles';
 import { buttonMotion, getProjectsCount, technologiesMotion } from '../../../utils';
@@ -45,20 +45,13 @@ export const TechnologiesGrid = ({ limit }) => {
 
   return (
     <>
-      <Fancybox className={`art-grid art-grid-${cols}-col art-gallery`} {...technologiesMotion.grid}>
-        {Array.from(limit ? data.slice(0, count) : data)
-          .flat()
-          .map((tech, index) => (
-            <Card
-              key={`technologies-grid-item-${index}`}
-              index={index}
-              hide={true}
-              classes='art-grid-item'
-              {...tech}
-              {...technologiesMotion.card}
-            />
-          ))}
-      </Fancybox>
+      <Grid
+        cols={cols}
+        section='technologies'
+        data={Array.from(limit ? data.slice(0, count) : data).flat()}
+        gridMotion={technologiesMotion.grid}
+        cardMotion={technologiesMotion.card}
+      />
 
       {limit && data.length > getProjectsCount() && (
         <Button className='art-buttons-frame acc' onClick={handleButtonClick} {...buttonMotion.gradient}>

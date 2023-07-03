@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { styled } from 'styled-components';
 
-import { ProjectsCard, Fancybox } from '../..';
+import { ProjectsCard, Fancybox, Grid } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { GradientButton } from '../../../styles';
 import { buttonMotion, lowerCase, projectsMotion, getProjectsCount } from '../../../utils';
@@ -62,20 +62,13 @@ export const ProjectsGrid = ({ limit }) => {
 
   return (
     <>
-      <Fancybox className={`art-grid art-grid-${cols}-col art-gallery`} {...projectsMotion.grid}>
-        {Array.from(limit ? filteredProjects.slice(0, count) : filteredProjects)
-          .flat()
-          .map((project, index) => (
-            <ProjectsCard
-              key={`projects-grid-item-${project.title}`}
-              index={index}
-              hide={true}
-              classes='art-grid-item'
-              {...project}
-              {...projectsMotion.card}
-            />
-          ))}
-      </Fancybox>
+      <Grid
+        cols={cols}
+        section='projects'
+        data={Array.from(limit ? filteredProjects.slice(0, count) : filteredProjects).flat()}
+        gridMotion={projectsMotion.grid}
+        cardMotion={projectsMotion.card}
+      />
 
       {limit && filteredProjects.length > getProjectsCount() && (
         <Button className='art-buttons-frame acc' onClick={handleButtonClick} {...buttonMotion.gradient}>
