@@ -4,7 +4,7 @@ import { styled } from 'styled-components';
 import { Card, Fancybox } from '..';
 import { dataStore } from '../../store/dataStore';
 import { GradientButton } from '../../styles';
-import { buttonMotion, getProjectsCount } from '../../utils';
+import { buttonMotion, getProjectsCount, rem } from '../../utils';
 
 export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, buttonText, topRef, ...props }) => {
   const { rows, setRows, cols, setCols, count, setCount, defaults } = dataStore((state) => ({
@@ -70,6 +70,7 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
 const Button = styled(GradientButton)`
   text-align: center;
   display: flex;
-  max-width: 200px;
+  max-width: ${rem(200)};
   margin: 0 auto;
+  margin-bottom: ${rem(30)};
 `;
