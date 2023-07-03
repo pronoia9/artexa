@@ -48,6 +48,7 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
           <Card
             key={`${section}-grid-item-${index}-${item?.title}`}
             {...item}
+            section={section}
             index={index}
             swiper={false}
             hide={true}
