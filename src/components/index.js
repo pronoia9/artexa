@@ -2,6 +2,7 @@
 import { Background } from './components/Background';
 import { Card } from './components/Card';
 import { Fancybox } from './components/Fancybox';
+import { Grid } from './components/Grid';
 import { Laptop } from './components/Laptop/Laptop';
 import { Scene } from './components/Laptop/Scene';
 import { Logos, Logo } from './components/Logos';
@@ -90,6 +91,7 @@ export {
   Background,
   Card,
   Fancybox,
+  Grid,
   Laptop, Scene,
   Logos, Logo,
   Preloader,
