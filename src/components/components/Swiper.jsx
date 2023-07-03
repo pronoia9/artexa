@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 import { Card, Fancybox } from '..';
 
-export const Swiper = ({ section, data, navProps, autoplay, children, ...props }) => {
+export const Swiper = ({ section, data, navProps, autoplay, options, children, ...props }) => {
   if (autoplay) SwiperCore.use([Autoplay]);
   return (
     <>
@@ -23,6 +23,7 @@ export const Swiper = ({ section, data, navProps, autoplay, children, ...props }
           }}
           navigation={{ nextEl: `.art-${section}-swiper-next`, prevEl: `.art-${section}-swiper-prev` }}
           pagination={{ el: `.${section}-swiper-pagination`, type: 'bullets', clickable: true }}
+          {...options}
         >
           {children}
           {data?.map((item, index) => (
