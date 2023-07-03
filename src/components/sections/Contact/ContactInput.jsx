@@ -1,10 +1,16 @@
 import { Field, ErrorMessage } from 'formik';
 import { styled } from 'styled-components';
 
-export const ContactInput = ({ name, type, placeholder, icon, active, as }) => {
+export const ContactInput = ({ name, icon, active, ...props }) => {
   return (
     <Container className='art-form-field'>
-      <Input id={name} name={name} className={`art-input${active ? ' art-active' : ''}`} type={type} placeholder={placeholder} as={as} />
+      <Field
+        id={name}
+        name={name}
+        className={`art-input${active ? ' art-active' : ''}`}
+        placeholder={`${name[0].toUpperCase()}${name.substring(1)}`}
+        {...props}
+      />
 
       <Label htmlFor={name}>
         <i className={icon} />
@@ -26,6 +32,29 @@ const Container = styled.div`
   flex-direction: column;
   gap: 0;
 
+  input, textarea {
+    height: 50px;
+    width: 100%;
+    margin-bottom: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    background: var(--c-bg-input);
+    color: var(--c-font-2);
+    border: none;
+    border-left: solid 50px #20202a;
+    box-shadow: inset 0 1px 4px 0 rgba(15, 15, 20, 0.1);
+    transition: 0.4s ease-in-out;
+
+    &:focus {
+      outline: none;
+
+      &,
+      &.art-active {
+        border-color: var(--c-accent-1);
+      }
+    }
+  }
+
   textarea {
     padding-top: 15px;
     height: 150px;
@@ -45,30 +74,7 @@ const Container = styled.div`
   }
 
   ::placeholder {
-    color: var(--c-font-3);
-  }
-`;
-
-const Input = styled(Field)`
-  height: 50px;
-  width: 100%;
-  margin-bottom: 0;
-  padding-left: 15px;
-  padding-right: 15px;
-  background: var(--c-bg-input);
-  color: var(--c-font-2);
-  border: none;
-  border-left: solid 50px #20202a;
-  box-shadow: inset 0 1px 4px 0 rgba(15, 15, 20, 0.1);
-  transition: 0.4s ease-in-out;
-
-  &:focus {
-    outline: none;
-
-    &,
-    &.art-active {
-      border-color: var(--c-accent-1);
-    }
+    color: var(--c-font-1);
   }
 `;
 
@@ -100,7 +106,7 @@ const Validation = styled.div`
     padding-top: 1px;
   }
 
-  span {
+  &, span {
     color: var(--c-accent-5);
     margin-left: 50px;
   }
