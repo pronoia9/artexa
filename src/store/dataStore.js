@@ -1,8 +1,7 @@
 import { create } from 'zustand';
 
 import { avatar, wave, footer1, footer2, footer3, footer4 } from '../assets';
-import { getThemeFromStorage } from '../utils';
-import { saveThemeToStorage } from '../utils/utils';
+import { getThemeFromStorage, saveThemeToStorage } from '../utils';
 
 export const dataStore = create((set) => ({
   // LOADING (PRELOADER)
