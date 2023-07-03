@@ -31,9 +31,9 @@ export const Card = ({
     >
       <ImageLink className='art-port-cover' data-fancybox={`fancybox${section}`} href={image}>
         <img src={image} alt='item' />
-        <HoverIcon className='art-item-hover'>
+        <div className='art-item-hover'>
           <i className='fas fa-expand' />
-        </HoverIcon>
+        </div>
       </ImageLink>
 
       <Overlay className='art-post-description' $hide={hide}>
@@ -98,32 +98,6 @@ const ImageLink = styled.a`
     .art-item-hover {
       opacity: 0.5;
     }
-  }
-`;
-
-const HoverIcon = styled.div`
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  width: 27px;
-  height: 27px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--c-font-2);
-  font-size: ${rem(11)};
-  font-weight: 700;
-  line-height: ${rem(30)};
-  text-align: center;
-  background: var(--c-gradient-3);
-  border-radius: 50%;
-  box-shadow: 0 1px 4px 0 var(--c-box-shadow);
-  opacity: 0;
-  transition: 0.4s ease-in-out;
-
-  &:hover {
-    opacity: 1;
-    transform: scale(1.07);
   }
 `;
 
