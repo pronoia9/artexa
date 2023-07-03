@@ -1,9 +1,11 @@
-import { motion } from 'framer-motion';
-import { styled } from 'styled-components';
-import { Swiper as SwiperNative } from 'swiper/react';
+import { Swiper as SwiperNative, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
+import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
-export const Swiper = ({ section, navProps, autoplay, children, ...props }) => {
+import { Card } from './Card';
+
+export const Swiper = ({ section, data, navProps, autoplay, children, ...props }) => {
   if (autoplay) SwiperCore.use([Autoplay]);
   return (
     <>
@@ -22,7 +24,17 @@ export const Swiper = ({ section, navProps, autoplay, children, ...props }) => {
           navigation={{ nextEl: `.art-${section}-swiper-next`, prevEl: `.art-${section}-swiper-prev` }}
           pagination={{ el: `.${section}-swiper-pagination`, type: 'bullets', clickable: true }}
         >
-          {children}
+          {data?.map((item, index) => (
+            <SwiperSlide key={`${section}-swiper-slide-${index}`} className='swiper-slide art-grid art-grid-3-col art-gallery'>
+              <Card
+                key={`${section}-swiper-card-${index}`}
+                swiper={true}
+                index={index}
+                {...item}
+                subtitle={null}
+              />
+            </SwiperSlide>
+          ))}
         </SwiperNative>
       </motion.div>
       <SwiperNavigation section={section} {...navProps} />
