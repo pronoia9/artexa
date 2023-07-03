@@ -1170,4 +1170,21 @@ export const dataStore = create((set) => ({
       default: { name: '', subject: '', email: '', message: '' },
     },
   },
+
+  // About
+  about: {
+    hobbies: {
+      images: [
+        '/src/assets/hobbies/baking.png',
+        '/src/assets/hobbies/bean bag chair chill.png',
+        '/src/assets/hobbies/dop pooping.png',
+        '/src/assets/hobbies/gaming.png',
+        '/src/assets/hobbies/keyboard smash.png',
+        '/src/assets/hobbies/love this with cat.png',
+        '/src/assets/hobbies/sticker-2.png',
+        '/src/assets/hobbies/sticker-3.png',
+        '/src/assets/hobbies/sticker.png',
+      ],
+    },
+  },
 }));
