@@ -1,5 +1,15 @@
-import { SectionWrapper } from '../..';
+import { SectionTitle, SectionWrapper, ServicesCard } from '../..';
+import { dataStore } from '../../../store/dataStore';
 
 export default SectionWrapper(() => {
-  return <div>Services</div>;
+  const services = dataStore((state) => state.services);
+
+  return (
+    <>
+      <SectionTitle title={services.title} />
+      {services.list.map((service, index) => (
+        <ServicesCard key={`services-${index}-${service?.title}`} {...service} />
+      ))}
+    </>
+  );
 }, 'services');
