@@ -1,12 +1,10 @@
 import { useState } from 'react';
 import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import { styled } from 'styled-components';
 
 import { SectionTitle, ContactInput, ButtonGradient } from '../../';
 import { dataStore } from '../../../store/dataStore';
-import { GradientButton } from '../../../styles';
-import { buttonMotion, handleFormSubmit } from '../../../utils';
+import { handleFormSubmit } from '../../../utils';
 
 export const ContactForm = () => {
   const [success, setSuccess] = useState(false);
@@ -36,12 +34,6 @@ export const ContactForm = () => {
               <ContactInput name='email' type='email' icon='fas fa-at' active={formik.values.email} />
               <ContactInput name='message' as='textarea' icon='fas fa-envelope' active={formik.values.message} />
 
-              {/* <ButtonContainer className='art-submit-frame'>
-                <GradientButton className='art-submit' type='submit' {...buttonMotion.gradient}>
-                  {success ? 'Message Sent' : formik.isSubmitting ? 'Sending Message' : 'Send Message'}
-                  {success ? <i className='fas fa-check' /> : !formik.isSubmitting && <i className='far fa-paper-plane' />}
-                </GradientButton>
-              </ButtonContainer> */}
               <ButtonGradient
                 className='art-submit'
                 type='submit'
@@ -57,25 +49,3 @@ export const ContactForm = () => {
     </div>
   );
 };
-
-// const ButtonContainer = styled.div`
-//   position: relative;
-//   height: 45px;
-//   /* width: 200px;
-//   margin: 0 auto; */
-
-//   button {
-//     position: relative;
-//     margin: 0;
-//     overflow: hidden;
-//     z-index: 999;
-//     float: right;
-//     display: flex;
-//     flex-direction: row;
-//     gap: 5px;
-
-//     &:focus {
-//       outline: inherit;
-//     }
-//   }
-// `;
