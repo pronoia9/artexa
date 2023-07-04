@@ -29,6 +29,8 @@ export const ContactListItem = ({ title, description }) => {
 };
 
 const Container = styled.div`
+  margin-bottom: 30px;
+  
   h5 {
     font-family: var(--f-tertiary);
   }
