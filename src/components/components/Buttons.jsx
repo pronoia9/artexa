@@ -7,7 +7,7 @@ import { styled } from 'styled-components';
 export const Button = (props) => {
   const { link, title, children } = props;
   return !link ? (
-    <span className='art-link art-color-link art-w-chevron acc' {...props}>
+    <span className='art-link art-color-link acc' {...props}>
       {title}
       {children}
     </span>
@@ -16,7 +16,7 @@ export const Button = (props) => {
   );
 };
 
-export const ButtonLink = ({ link, title, arrow = true, children, ...props }) => {
+export const ButtonLink = ({ link, title, arrow = true, children, icon, ...props }) => {
   const handleClick = (e) => {
     if (props['data-fancybox']) {
       e.preventDefault();
@@ -27,7 +27,7 @@ export const ButtonLink = ({ link, title, arrow = true, children, ...props }) =>
     <Link to={link} className='art-link art-color-link art-w-chevron acc' {...props} onClick={handleClick}>
       {title}
       {children}
-      {arrow && <i className='fas fa-chevron-right' aria-hidden='true' />}
+      {(arrow || icon) && <i className={icon || 'fas fa-chevron-right'} aria-hidden='true' />}
     </Link>
   );
 };
