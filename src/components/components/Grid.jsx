@@ -1,10 +1,9 @@
 import { useEffect } from 'react';
 import { styled } from 'styled-components';
 
-import { Card, Fancybox } from '..';
+import { Fancybox, Card, ButtonGradient } from '..';
 import { dataStore } from '../../store/dataStore';
-import { GradientButton } from '../../styles';
-import { buttonMotion, getProjectsCount, rem } from '../../utils';
+import { getProjectsCount, rem } from '../../utils';
 
 export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, buttonText, topRef, ...props }) => {
   const { rows, setRows, cols, setCols, count, setCount, defaults } = dataStore((state) => ({
@@ -44,31 +43,29 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
     <>
       <div ref={topRef} />
       <Fancybox className={`art-grid art-grid-${cols}-col art-gallery`} {...gridMotion} {...props}>
-        {Array.from(limit ? data.slice(0, count) : data).flat().map((item, index) => (
-          <Card
-            key={`${section}-grid-item-${index}-${item?.title}`}
-            {...item}
-            section={section}
-            index={index}
-            swiper={false}
-            hide={true}
-            subtitle={null}
-            classes='art-grid-item'
-            {...cardMotion}
-          />
+        {Array.from(limit ? data.slice(0, count) : data)
+          .flat()
+          .map((item, index) => (
+            <Card
+              key={`${section}-grid-item-${index}-${item?.title}`}
+              {...item}
+              section={section}
+              index={index}
+              swiper={false}
+              hide={true}
+              subtitle={null}
+              classes='art-grid-item'
+              {...cardMotion}
+            />
           ))}
       </Fancybox>
 
-      {limit && data.length > getProjectsCount() && (
-        <Button className='art-buttons-frame acc' onClick={handleButtonClick} {...buttonMotion.gradient}>
-          View {!showingAllData() ? 'More' : 'Less'}
-        </Button>
-      )}
+      {limit && data.length > getProjectsCount() && <Button title={`View ${!showingAllData() ? 'More' : 'Less'}`} onClick={handleButtonClick} />}
     </>
   );
 };
 
-const Button = styled(GradientButton)`
+const Button = styled(ButtonGradient)`
   text-align: center;
   display: flex;
   max-width: ${rem(200)};
