@@ -1,6 +1,6 @@
 // ---- COMPONENTS
 import { Background } from './components/Background';
-import { ButtonLink, ButtonGradient } from './components/Buttons';
+import { Button, ButtonLink, ButtonGradient } from './components/Buttons';
 import { Card } from './components/Card';
 import { Fancybox } from './components/Fancybox';
 import { Grid } from './components/Grid';
@@ -103,7 +103,7 @@ import { TechnologiesSwiper } from './sections/Technologies/TechnologiesSwiper';
 export {
   // ---- COMPONENTS ----
   Background,
-  ButtonLink, ButtonGradient,
+  Button, ButtonLink, ButtonGradient,
   Card,
   Fancybox,
   Grid,
