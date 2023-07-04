@@ -13,5 +13,5 @@ export default PageWrapper(() => {
     !data && navigate('/projects');
   }, []);
 
-  return <Project />;
+  return <Project project={data} />;
 }, 'single-project-page');
