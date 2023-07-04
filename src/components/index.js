@@ -54,6 +54,7 @@ import CoursePage from './pages/CoursePage';
 import HistoryPage from './pages/HistoryPage';
 import HomePage from './pages/HomePage';
 import NotFound from './pages/NotFound';
+import ProjectPage from './pages/ProjectPage';
 import ProjectsPage from './pages/ProjectsPage';
 import TechnologiesPage from './pages/TechnologiesPage';
 
@@ -121,7 +122,7 @@ export {
   Sidebar, HardSkills, HardSkillsItem, Info, InfoItem, Languages, LanguagesItem, Profile, ProfileAvatar, ProfileName, ProfilePost, Resume, Socials, SocialsItem, SoftSkills, Strengths,
 
   // ---- PAGES ----
-  AboutPage, ContactPage, CoursePage, HistoryPage, HomePage, NotFound, ProjectsPage, TechnologiesPage,
+  AboutPage, ContactPage, CoursePage, HistoryPage, HomePage, NotFound, ProjectPage, ProjectsPage, TechnologiesPage,
 
   // ---- ROUTES ----
   PageRoutes,
