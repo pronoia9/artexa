@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { rem } from '../utils';
+import { rem, rng } from '../utils';
 
 export const GradientHeading = styled(motion.div)`
   transition: transform 0.5s ease-in-out;
@@ -66,7 +66,7 @@ export const Tooltip = styled(motion.div)`
   }
 `;
 
-export const Tag = styled(motion.p)`  
+export const Tag = styled(motion.p)`
   margin: auto ${rem(3)} ${rem(5)} auto;
   padding: ${rem(3)} ${rem(10)};
   display: inline-block;
@@ -79,6 +79,6 @@ export const Tag = styled(motion.p)`
   transition: color 0.2s ease-in-out;
 
   &:hover {
-    color: var(--c-accent-3);
+    color: ${({ $rng }) => `var(--c-accent-${$rng || 3})`};
   }
 `;
