@@ -1,6 +1,7 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
+import { ButtonLink } from '../..';
 import { Tag } from '../../../styles';
 import { rem } from '../../../utils';
 
@@ -37,14 +38,11 @@ export const TimelineItem = (props) => {
 
         <p>{description}</p>
 
-        <a
-          className='art-link art-color-link art-w-chevron'
-          href={link || image || ''}
+        <ButtonLink
+          link={link || image}
+          title={link ? 'Link' : image ? 'Certificate' : 'Suprise!'}
           {...(image ? { 'data-fancybox': 'history' } : { target: '_blank', rel: 'noreferrer' })}
-        >
-          {link ? 'Link' : image ? 'Certificate' : 'Suprise!'}
-          <i className='fas fa-chevron-right' aria-hidden='true' />
-        </a>
+        />
       </Content>
     </Container>
   );

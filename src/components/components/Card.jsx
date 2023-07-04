@@ -1,7 +1,7 @@
-import { Link } from 'react-router-dom';
 import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
+import { ButtonLink } from './Buttons';
 import { rem } from '../../utils';
 import { Tag } from '../../styles';
 
@@ -42,10 +42,10 @@ export const Card = ({
 
         {!swiper && categories?.length && <Tags title={title} tags={categories} />}
 
-        <Link to={link || `/${section}/${id}`} className='art-link art-color-link art-w-chevron'>
-          Learn More
-          <i className='fas fa-chevron-right' />
-        </Link>
+        <ButtonLink
+          link={link || `/${section}/${id}`}
+          title='Learn More'
+        />
       </Overlay>
     </Container>
   );

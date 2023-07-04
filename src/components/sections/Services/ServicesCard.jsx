@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { styled } from "styled-components";
+import { ButtonLink } from "../../components/Buttons";
 
 export const ServicesCard = ({ title, subtitle, description, link, ...props }) => {
   return (
@@ -10,11 +11,7 @@ export const ServicesCard = ({ title, subtitle, description, link, ...props }) =
             <h5 className='mb-15'>{title}</h5>
             <p>{description}</p>
           </div>
-          <div className='art-buttons-frame'>
-            <Link className='art-link art-color-link art-w-chevron' to='/contact'>
-              Order now
-            </Link>
-          </div>
+          <ButtonLink title='Order Now' link='/contact' />
         </Wrapper>
       </Card>
     </div>
