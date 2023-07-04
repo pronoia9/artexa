@@ -32,9 +32,10 @@ export const ButtonLink = ({ link, title, arrow = true, children, ...props }) =>
   );
 };
 
-export const ButtonGradient = ({ children, ...props }) => {
+export const ButtonGradient = ({ title, children, ...props }) => {
   return (
     <GradientButton className='art-buttons-frame' {...props} {...buttonMotion.gradient}>
+      {title}
       {children}
     </GradientButton>
   );
