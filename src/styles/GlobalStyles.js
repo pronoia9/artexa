@@ -356,20 +356,20 @@ blockquote {
   }
 
   &.art-white-link {
-    color: var(--c-font-2) !important;
+    color: var(--c-font-2);
 
     &:hover {
-      color: var(--c-font-2) !important;
+      color: var(--c-font-2);
       text-shadow: 0 0 3px var(--c-font-shadow);
       transform: translateX(5px);
     }
   }
 
   &.art-color-link {
-    color: var(--c-accent-1) !important;
+    color: var(--c-accent-1);
 
     &:hover {
-      color: var(--c-accent-2) !important;
+      color: var(--c-accent-2);
       text-shadow: 0 0 3px var(--c-font-shadow);
       transform: translateX(5px);
     }
