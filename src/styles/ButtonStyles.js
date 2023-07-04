@@ -47,6 +47,6 @@ export const GradientButton = styled(ButtonMedium)`
   background-size: 200%;
 
   &, *, &:hover, &:hover * {
-    color: var(--c-font-dark);
+    color: var(--c-font-dark) !important;
   }
 `;
