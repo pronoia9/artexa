@@ -72,7 +72,7 @@ export const Tag = styled(motion.p)`
   display: inline-block;
   color: var(--c-font-1);
   font-size: ${rem(10)};
-  font-family: var(--f-tertiary);
+  font-family: var(--f-code);
   background: var(--c-bg);
   border-radius: ${rem(15)};
   box-shadow: inset 0 ${rem(3)} ${rem(8)} 0 var(--c-box-shadow);
