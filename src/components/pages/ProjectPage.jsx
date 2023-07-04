@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { PageWrapper, Project } from '..';
+import { PageWrapper, ProjectBanner, ProjectInfo, ProjectScreenshots } from '..';
 import { dataStore } from '../../store/dataStore';
 
 export default PageWrapper(() => {
@@ -13,5 +13,11 @@ export default PageWrapper(() => {
     !data && navigate('/projects');
   }, []);
 
-  return <Project project={data} />;
+  return (
+    <>
+      <ProjectBanner project={data} />
+      <ProjectInfo project={data} />
+      <ProjectScreenshots project={data} />
+    </>
+  );
 }, 'single-project-page');

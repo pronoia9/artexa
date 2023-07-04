@@ -84,7 +84,6 @@ import { HeroTyped } from './sections/Hero/HeroTyped';
 // -- History
 import History from './sections/History/History';
 // -- Projects
-import Project from './sections/Project/Project';
 import ProjectBanner from './sections/Project/ProjectBanner';
 import ProjectInfo from './sections/Project/ProjectInfo';
 import ProjectScreenshots from './sections/Project/ProjectScreenshots';
@@ -137,7 +136,7 @@ export {
   Courses,
   Hero, HeroButton, HeroHeading, HeroTyped,
   History,
-  Project, ProjectBanner, ProjectInfo, ProjectScreenshots,
+  ProjectBanner, ProjectInfo, ProjectScreenshots,
   Projects, ProjectsFilters, FilterItem, ProjectsGrid, ProjectsSwiper,
   Services, ServicesCard,
   Technologies, TechnologiesGrid, TechnologiesSwiper,
