@@ -339,16 +339,17 @@ blockquote {
 
 .art-link {
   position: relative;
-  text-transform: uppercase;
-  font-size: 10px;
-  display: inline-block;
-  letter-spacing: 1.5px;
-  font-weight: 600;
   margin-right: 15px;
   margin-bottom: 10px;
+  display: inline-block;
   color: var(--c-font-1);
-  transition: 0.4s ease-in-out;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-align: center;
+  text-transform: uppercase;
   cursor: pointer;
+  transition: 0.4s ease-in-out;
 
   &:hover {
     color: var(--c-font-2);
@@ -376,17 +377,17 @@ blockquote {
   }
 
   &.art-w-chevron {
-    padding-right: 10px;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
     i {
-      position: absolute;
       font-weight: 900;
-      display: inline-block;
       font-style: normal;
       font-variant: normal;
       text-rendering: auto;
       font-size: 9px;
-      top: 17.5%;
       transform: translateX(5px);
       transition: 0.4s ease-in-out;
     }
@@ -396,32 +397,6 @@ blockquote {
 
       i {
         transform: translateX(10px);
-      }
-    }
-  }
-
-  &:last-child {
-    margin-bottom: 0;
-    margin-right: 0;
-  }
-
-  i {
-    font-size: 9px;
-    margin-left: 3px;
-  }
-
-  &.art-left-link {
-    padding-left: 10px;
-    padding-right: 0;
-
-    &.art-w-chevron {
-      i {
-        left: 0;
-        transform: translateX(0);
-      }
-
-      &:hover:after {
-        transform: translateX(-5px);
       }
     }
   }
