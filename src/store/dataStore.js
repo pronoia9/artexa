@@ -406,7 +406,11 @@ export const dataStore = create((set) => ({
           'Frontend',
           'Shaders',
         ],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       {
         id: 'ndAD7gUinD',
@@ -433,7 +437,11 @@ export const dataStore = create((set) => ({
           'React Three Postprocessing',
           'Frontend',
         ],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       {
         id: 'Fwzoyy6FYR',
@@ -476,7 +484,11 @@ export const dataStore = create((set) => ({
           'Mongoose',
           'Nodejs',
         ],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       {
         id: 'cDKI2bhikl',
@@ -516,7 +528,11 @@ export const dataStore = create((set) => ({
           'Nodejs',
           'AI',
         ],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       {
         id: 'l8eP5m0yme',
@@ -529,7 +545,11 @@ export const dataStore = create((set) => ({
         date: new Date('June 12, 2023'),
         categories: ['React', 'Design', 'Frontend Mentor'],
         tags: ['React', 'Vitejs', 'HTML', 'CSS', 'Styled Components', 'Frontend Mentor', 'React Tooltip', 'Zustand', 'Frontend'],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       {
         id: '2MEdjsJRsp',
@@ -542,7 +562,11 @@ export const dataStore = create((set) => ({
         date: new Date('July 8, 2022'),
         categories: ['React', 'Design', 'Frontend Mentor'],
         tags: ['React', 'Vitejs', 'HTML', 'CSS', 'Javascript', 'Frontend', 'Styled Components', 'Frontend Mentor'],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       {
         id: 'kFlQKDQ0Dn',
@@ -555,7 +579,11 @@ export const dataStore = create((set) => ({
         date: new Date('July 1, 2022'),
         categories: ['React', 'Design', 'Frontend Mentor'],
         tags: ['React', 'Vitejs', 'HTML', 'CSS', 'Javascript', 'Frontend', 'Styled Components', 'Frontend Mentor'],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       {
         id: 'nvnlXUQYeV',
@@ -568,7 +596,11 @@ export const dataStore = create((set) => ({
         date: new Date('June 23, 2022'),
         categories: ['React', 'Design', 'Frontend Mentor'],
         tags: ['React', 'Vitejs', 'HTML', 'CSS', 'Javascript', 'Frontend', 'Styled Components', 'Frontend Mentor', 'API', 'Axios'],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       {
         id: 'hqQykrd1zz',
@@ -581,7 +613,11 @@ export const dataStore = create((set) => ({
         date: new Date('May 10, 2022'),
         categories: ['React', 'Design', 'API'],
         tags: ['React', 'Vitejs', 'HTML', 'CSS', 'Javascript', 'Frontend', 'Styled Components', 'API', 'Axios', 'GSAP'],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       {
         id: 'UjX7wDmwGm',
@@ -594,7 +630,11 @@ export const dataStore = create((set) => ({
         date: new Date('May 9, 2023'),
         categories: ['3D', 'Blender'],
         tags: ['3D', 'Blender'],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       {
         id: 'EKrNnJbOUp',
@@ -606,7 +646,11 @@ export const dataStore = create((set) => ({
         date: new Date('May 3, 2023'),
         categories: ['3D', 'Blender'],
         tags: ['3D', 'Blender'],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       {
         id: 'ZIbglpS8sO',
@@ -618,7 +662,11 @@ export const dataStore = create((set) => ({
         date: new Date('May 4, 2023'),
         categories: ['3D', 'Blender'],
         tags: ['3D', 'Blender'],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       {
         id: 'K6lI4mp9DP',
@@ -630,7 +678,11 @@ export const dataStore = create((set) => ({
         date: new Date('May 10, 2023'),
         categories: ['3D', 'Blender'],
         tags: ['3D', 'Blender'],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       {
         id: 'f1rStP0rtf0',
@@ -643,7 +695,11 @@ export const dataStore = create((set) => ({
         dates: ['March 11, 2021', 'June 29, 2022'],
         categories: [],
         tags: [],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       {
         id: 'D1g1tAlM4g1c',
@@ -656,7 +712,11 @@ export const dataStore = create((set) => ({
         date: new Date(''),
         categories: [],
         tags: [],
-        info: [],
+        info: [
+          { title: 'Date Started', subtitle: '???' },
+          { title: 'Date Completed', subtitle: '???' },
+          { title: 'Status', subtitle: 'Complete' },
+        ],
       },
       // {
       //   id: '',
@@ -669,20 +729,7 @@ export const dataStore = create((set) => ({
       //   date: new Date(''),
       //   categories: [],
       //   tags: [],
-      //   info: [],
-      // },
-      // {
-      //   id: '',
-      //   title: '',
-      //   subtitle: '',
-      //   description: ``,
-      //   links: { repo: '', live: '' },
-      //   image: '',
-      //   year: '',
-      //   date: new Date(''),
-      //   categories: [],
-      //   tags: [],
-      //   info: [],
+      //   info: [  { title: 'Date Started', subtitle: '???' },  { title: 'Date Completed', subtitle: '???' },  { title: 'Status', subtitle: 'Complete' }, ],
       // },
     ].sort((a, b) => b.date - a.date),
   },
