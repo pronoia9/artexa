@@ -1,4 +1,5 @@
-import { SectionWrapper } from '../../';
+import { SectionWrapper, SectionTitle } from '../../';
+import { Tag } from '../../../styles';
 
 export default SectionWrapper(({ project }) => {
   const { title, image, categories } = project;

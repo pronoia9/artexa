@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { PageWrapper, ProjectBanner, ProjectInfo, ProjectScreenshots } from '..';
+import { PageWrapper, ProjectBanner, ProjectInfo, ProjectScreenshots, Fancybox } from '..';
 import { dataStore } from '../../store/dataStore';
 
 export default PageWrapper(() => {
@@ -13,10 +13,10 @@ export default PageWrapper(() => {
   }, []);
 
   return (
-    <>
+    <Fancybox>
       <ProjectBanner project={data} />
       <ProjectInfo project={data} />
       <ProjectScreenshots project={data} />
-    </>
+    </Fancybox>
   );
 }, 'single-project-page');

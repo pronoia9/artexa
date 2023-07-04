@@ -1,26 +1,25 @@
-import { SectionWrapper } from '../../';
+import { SectionWrapper, SectionTitle } from '../../';
 
 export default SectionWrapper(({ project }) => {
   const { id, title, subtitle, description, links, image, year, date, categories, tags, info } = project;
-  
+
   return (
     <>
       <SectionTitle title='Project Details' />
-      <div class='col-lg-8'>
-        <div class='art-a art-card art-fluid-card'>
-          <h5 class='mb-15'>Description</h5>
-          <div class='mb-15'>{description}</div>
-
-          <div class='art-buttons-frame'>
-            <a href='https://www.behance.net/gallery/83236527/VIE' class='art-link art-color-link art-w-chevron' target='_blank'>
+      <div className='col-lg-8'>
+        <div className='art-a art-card art-fluid-card'>
+          <h5 className='mb-15'>Description</h5>
+          <div className='mb-15'>{description}</div>
+          <div className='art-buttons-frame'>
+            <a href='https://www.behance.net/gallery/83236527/VIE' className='art-link art-color-link art-w-chevron' target='_blank'>
               Read More
             </a>
           </div>
         </div>
       </div>
-      <div class='col-lg-4'>
-        <div class='art-a art-card'>
-          <div class='art-table p-15-15'>
+      <div className='col-lg-4'>
+        <div className='art-a art-card'>
+          <div className='art-table p-15-15'>
             <ul>
               <li>
                 <h6>Order Date:</h6>
