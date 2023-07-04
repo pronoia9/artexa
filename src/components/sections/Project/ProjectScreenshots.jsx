@@ -2,9 +2,7 @@ import { styled } from 'styled-components';
 
 import { Fancybox, SectionWrapper } from '../../';
 
-export default SectionWrapper(({ project }) => {
-  const { image, images } = project;
-  
+export default SectionWrapper(({ images }) => {
   return (
     <Grid>
       {images?.map((img) => (

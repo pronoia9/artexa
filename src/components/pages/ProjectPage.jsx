@@ -16,7 +16,7 @@ export default PageWrapper(() => {
     <Fancybox>
       <ProjectBanner project={data} />
       <ProjectInfo project={data} />
-      <ProjectScreenshots project={data} />
+      {data?.images && <ProjectScreenshots images={images} />}
     </Fancybox>
   );
 }, 'single-project-page');
