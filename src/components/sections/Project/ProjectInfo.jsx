@@ -1,7 +1,9 @@
 import { styled } from 'styled-components';
-import { SectionWrapper, SectionTitle, ButtonLink } from '../../';
 import { motion } from 'framer-motion';
+
+import { SectionWrapper, SectionTitle, ButtonLink } from '../../';
 import { Tag } from '../../../styles';
+import { rng } from '../../../utils';
 
 const ListItem = ({ title, subtitle }) => (
   <ListItemContainer>
@@ -20,9 +22,9 @@ export default SectionWrapper(({ project }) => {
         <div className='art-a art-card art-fluid-card'>
           <DescriptionTitle className='mb-15'>Description</DescriptionTitle>
           <Description className='mb-15'>{description}</Description>
-          <Tags>
+          <Tags className='art-tags acc'>
             {tags?.map((tag, index) => (
-              <Tag key={`project-${title}-tags-${index}`}>{tag}</Tag>
+              <Tag key={`project-${title}-tags-${index}`} $rng={rng(1, 5)}>{tag}</Tag>
             ))}
           </Tags>
         </div>
@@ -53,9 +55,6 @@ const DescriptionTitle = styled.h5`
 const Description = styled.p``;
 
 const Tags = styled.div`
-  p {
-    font-family: var(--f-code);
-  }
 `;
 
 const Links = styled.div`
