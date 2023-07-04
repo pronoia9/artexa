@@ -5,9 +5,8 @@ import { PageWrapper, ProjectBanner, ProjectInfo, ProjectScreenshots } from '..'
 import { dataStore } from '../../store/dataStore';
 
 export default PageWrapper(() => {
-  const { projectId } = useParams();
+  const { projectId } = useParams(), navigate = useNavigate();
   const data = dataStore((state) => state.projects.projects.find((prj) => prj.id === projectId));
-  const navigate = useNavigate();
 
   useEffect(() => {
     !data && navigate('/projects');
