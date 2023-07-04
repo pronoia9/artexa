@@ -3,9 +3,9 @@ import { styled } from 'styled-components';
 
 import { Fancybox, Card, ButtonGradient } from '..';
 import { dataStore } from '../../store/dataStore';
-import { getProjectsCount, rem } from '../../utils';
+import { getProjectsCount } from '../../utils';
 
-export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, buttonText, topRef, ...props }) => {
+export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, buttonText, ...props }) => {
   const { rows, setRows, cols, setCols, count, setCount, defaults } = dataStore((state) => ({
     rows: state[section].rows,
     setRows: state[section].setRows,
@@ -30,18 +30,23 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
   };
 
   // Update projects count whenever cols or rows changes (dont make it exceed the filtered projects length)
-  useEffect(() => { data.length && setCount(Math.min(getProjectsCount(rows, cols), data.length || Infinity)); }, [rows, cols]);
+  useEffect(() => {
+    data.length && setCount(Math.min(getProjectsCount(rows, cols), data.length || Infinity));
+  }, [rows, cols]);
 
   // Sets count when the window is resized
   useEffect(() => {
-    const resize = () => { setCount(Math.min(getProjectsCount(rows, cols), data.length || Infinity)); };
+    const resize = () => {
+      setCount(Math.min(getProjectsCount(rows, cols), data.length || Infinity));
+    };
     window.addEventListener('resize', resize);
-    return () => { window.removeEventListener('resize', resize); };
+    return () => {
+      window.removeEventListener('resize', resize);
+    };
   }, []);
 
   return (
     <>
-      <div ref={topRef} />
       <Fancybox className={`art-grid art-grid-${cols}-col art-gallery`} {...gridMotion} {...props}>
         {Array.from(limit ? data.slice(0, count) : data)
           .flat()
@@ -60,15 +65,9 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
           ))}
       </Fancybox>
 
-      {limit && data.length > getProjectsCount() && <Button title={`View ${!showingAllData() ? 'More' : 'Less'}`} onClick={handleButtonClick} />}
+      {limit && data.length > getProjectsCount() && (
+        <ButtonGradient title={`View ${!showingAllData() ? 'More' : 'Less'}`} onClick={handleButtonClick} $position='center' />
+      )}
     </>
   );
 };
-
-const Button = styled(ButtonGradient)`
-  text-align: center;
-  display: flex;
-  max-width: ${rem(200)};
-  margin: 0 auto;
-  margin-bottom: ${rem(30)};
-`;

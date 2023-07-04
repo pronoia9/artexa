@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { HeroButton, HeroHeading, HeroTyped, SectionWrapper } from '../..';
+import { HeroHeading, HeroTyped, ButtonGradient, SectionWrapper } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { rem } from '../../../utils';
 
@@ -23,7 +23,7 @@ export default SectionWrapper(() => {
           <Title className='art-banner-title'>
             <HeroHeading />
             <HeroTyped />
-            <HeroButton handleClick={beamMeUpScotty} />
+            <ButtonGradient title={data.button.text} onClick={beamMeUpScotty} />
           </Title>
 
           <Avatar src={data.avatar} className='art-banner-photo' alt='Banner Profile' />

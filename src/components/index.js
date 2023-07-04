@@ -79,7 +79,6 @@ import { Counter } from './sections/Counters/Counter';
 import Courses from './sections/Courses/Courses';
 // -- Hero
 import Hero from './sections/Hero/Hero';
-import { HeroButton } from './sections/Hero/HeroButton';
 import { HeroHeading } from './sections/Hero/HeroHeading';
 import { HeroTyped } from './sections/Hero/HeroTyped';
 // -- History
@@ -136,7 +135,7 @@ export {
   Contact, ContactForm, ContactInput, ContactList, ContactListItem,
   Counters, Counter,
   Courses,
-  Hero, HeroButton, HeroHeading, HeroTyped,
+  Hero, HeroHeading, HeroTyped,
   History,
   ProjectBanner, ProjectInfo, ProjectScreenshots,
   Projects, ProjectsFilters, FilterItem, ProjectsGrid, ProjectsSwiper,
