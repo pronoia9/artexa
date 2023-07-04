@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { styled } from 'styled-components';
 
 import { Fancybox, Card, ButtonGradient } from '..';
 import { dataStore } from '../../store/dataStore';
