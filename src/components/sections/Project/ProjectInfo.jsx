@@ -1,8 +1,17 @@
 import { styled } from 'styled-components';
 import { SectionWrapper, SectionTitle, ButtonLink } from '../../';
+import { motion } from 'framer-motion';
+import { Tag } from '../../../styles';
+
+const ListItem = ({ title, subtitle }) => (
+  <ListItemContainer>
+    <h6>{title}:</h6>
+    <span>{subtitle}</span>
+  </ListItemContainer>
+);
 
 export default SectionWrapper(({ project }) => {
-  const { id, title, subtitle, description, links, image, year, date, categories, tags, info } = project;
+  const { id, title, subtitle, description, links, image, year, date, dates, categories, tags, info } = project;
 
   return (
     <>
@@ -11,38 +20,26 @@ export default SectionWrapper(({ project }) => {
         <div className='art-a art-card art-fluid-card'>
           <DescriptionTitle className='mb-15'>Description</DescriptionTitle>
           <Description className='mb-15'>{description}</Description>
-          <Links className='acc'>
-            {links.repo && <ButtonLink title='Repository' link={links.repo} icon='fa-brands fa-github' />}
-            {links.live && <ButtonLink title='Live Site' link={links.live} icon='fa-solid fa-globe' />}
-          </Links>
+          <Tags>
+            {tags?.map((tag, index) => (
+              <Tag key={`project-${title}-tags-${index}`}>{tag}</Tag>
+            ))}
+          </Tags>
         </div>
       </div>
       <div className='col-lg-4'>
         <div className='art-a art-card'>
           <div className='art-table p-15-15'>
-            <ul>
-              <li>
-                <h6>Order Date:</h6>
-                <span>24.12.2019</span>
-              </li>
-              <li>
-                <h6>Final Date:</h6>
-                <span>12.03.2020</span>
-              </li>
-              <li>
-                <h6>Status:</h6>
-                <span>Completed</span>
-              </li>
-              <li>
-                <h6>Client:</h6>
-                <span>Envato Market</span>
-              </li>
-              <li>
-                <h6>Location:</h6>
-                <span>Ukraine, Lviv</span>
-              </li>
-            </ul>
+            <ListContainer>
+              {info?.map((li, index) => (
+                <ListItem key={`project-${title}-info-${index}`} {...li} />
+              ))}
+            </ListContainer>
           </div>
+          <Links className='acc'>
+            {links.repo && <ButtonLink title='Repository' link={links.repo} icon='fa-brands fa-github' />}
+            {links.live && <ButtonLink title='Live Site' link={links.live} icon='fa-solid fa-globe' />}
+          </Links>
         </div>
       </div>
     </>
@@ -55,18 +52,47 @@ const DescriptionTitle = styled.h5`
 
 const Description = styled.p``;
 
+const Tags = styled.div`
+  p {
+    font-family: var(--f-code);
+  }
+`;
+
 const Links = styled.div`
   display: flex;
-  flex-direction: row;
-  gap: 2rem;
+  flex-direction: column;
+  gap: 1rem;
 
   a {
     color: var(--c-accent-1);
-    flex-direction: row-reverse !important;
-    gap: 1rem;
+    gap: 0.75rem;
+
+    &:hover {
+      i {
+        transform: scale(1.2) !important;
+      }
+    }
   }
 
   i {
     font-size: 1rem !important;
+    transform: translateX(0) !important;
+  }
+
+  @media (max-width: 991px) {
+    flex-direction: row;
+    gap: 2rem;
+
+    a {
+      flex-direction: row-reverse !important;
+    }
+  }
+`;
+
+const ListContainer = styled(motion.ul)``;
+
+const ListItemContainer = styled(motion.li)`
+  h6 {
+    font-family: var(--f-primary);
   }
 `;
