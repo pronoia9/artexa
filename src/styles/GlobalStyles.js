@@ -789,9 +789,12 @@ ${
 /* ----- fancybox customization ----- */
 
 .fancybox__container {
-  margin: 15px;
-  width: calc(100vw - 30px);
-  height: calc(100vh - 30px);
+  ${'' /* margin: 15px; */}
+  ${'' /* width: calc(100vw - 30px); */}
+  ${'' /* height: calc(100vh - 30px); */}
+  border: 15px solid var(--c-bg);
+  overflow: hidden;
+  
   .fancybox__backdrop {
     background: #20202afa;
   }
@@ -801,9 +804,9 @@ ${
   }
 
   .fancybox__toolbar {
-    background: linear-gradient(159deg, #2d2d3ae0 0%, #2b2b35e0 100%);
+    background: var(--c-bg-img-hover);
     display: flex;
-    width: calc(100vw - 30px);
+    ${'' /* width: calc(100vw - 30px); */}
     justify-content: flex-end;
     align-items: center;
     height: 70px;
@@ -860,8 +863,9 @@ ${
   }
 
   .fancybox__thumbs {
-    background: linear-gradient(159deg, #2d2d3a 0%, #2b2b35 100%);
+    background: var(--c-bg-card-overlay);
     box-shadow: 0 3px 8px 0 var(--c-box-shadow);
+    z-index: 999999;
   }
 
   .fancybox__thumbs__list a:before {
