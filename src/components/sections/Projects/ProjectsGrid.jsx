@@ -33,5 +33,5 @@ export const ProjectsGrid = (props) => {
     filteredProjects.length && setRows(Math.min(rows, Math.round(filteredProjects.length / cols)));
   }, [filterKey]);
 
-  return <Grid section='projects' data={filteredProjects} gridMotion={projectsMotion.grid} cardMotion={projectsMotion.card} {...props} />;
+  return <Grid section='projects' data={filteredProjects} gridMotion={projectsMotion.grid} cardMotion={projectsMotion.card} buttonMotion={projectsMotion.button} {...props} />;
 };
