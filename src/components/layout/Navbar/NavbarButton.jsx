@@ -33,7 +33,7 @@ const Container = styled.div`
   height: ${rem(70)};
   display: flex;
   align-items: center;
-  background: var(--c-gradient-2);
+  background: var(--c-gradient-1);
   box-shadow: 0 ${rem(1)} ${rem(4)} 0 var(--c-box-shadow);
   z-index: 9;
 `;
