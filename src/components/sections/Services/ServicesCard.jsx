@@ -1,19 +1,22 @@
 import { styled } from "styled-components";
-import { ButtonLink } from "../../components/Buttons";
+import { motion } from "framer-motion";
 
-export const ServicesCard = ({ title, subtitle, description, link, ...props }) => {
+import { ButtonLink } from "../..";
+import { servicesMotion } from "../../../utils";
+
+export const ServicesCard = ({ title, subtitle, description, link }) => {
   return (
-    <div className='col-lg-4 col-md-6 col-sm-12 mb-30'>
+    <motion.div className='col-lg-4 col-md-6 col-sm-12 mb-30' {...servicesMotion.card}>
       <Card className='art-a art-card art-service-icon-box'>
         <Wrapper className='art-service-ib-content'>
           <div>
-            <h5 className='mb-15'>{title}</h5>
-            <p>{description}</p>
+            <motion.h5 className='mb-15' {...servicesMotion.item}>{title}</motion.h5>
+            <motion.p {...servicesMotion.item}>{description}</motion.p>
           </div>
-          <ButtonLink title='Order Now' link='/contact' />
+          <ButtonLink title='Order Now' link='/contact' {...servicesMotion.item}/>
         </Wrapper>
       </Card>
-    </div>
+    </motion.div>
   );
 };
 
