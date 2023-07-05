@@ -94,10 +94,6 @@ const ImageLink = styled.a`
     img {
       transform: scale(1.07);
     }
-
-    .art-item-hover {
-      opacity: 0.5;
-    }
   }
 `;
 

@@ -12,7 +12,10 @@ export const ProfileAvatar = () => {
     <AvatarContainer className='art-avatar' {...sidebarMotion.profile.avatarContainer}>
       <AvatarCurtain data-fancybox='avatar' href={data.avatar} className='art-avatar-curtain' onClick={() => openFancybox(data.avatar)}>
         <AvatarImage src={data.avatar} alt='Avatar' {...sidebarMotion.profile.avatarItem} />
-        <i className='fas fa-expand' />
+        {/* <i className='fas fa-expand' /> */}
+        <div className='art-item-hover'>
+          <i className='fas fa-expand' />
+        </div>
       </AvatarCurtain>
 
       <AvatarStatus className='art-lamp-light' $available={data.available} {...sidebarMotion.profile.avatarItem}>
@@ -41,37 +44,6 @@ const AvatarCurtain = styled.div`
   outline: inherit;
   transition: 0.2s ease-in-out;
   z-index: 0;
-
-  i {
-    width: ${rem(30)};
-    height: ${rem(30)};
-    align-self: center;
-    color: var(--c-font-2);
-    font-size: ${rem(11)};
-    font-weight: 700;
-    line-height: ${rem(30)};
-    text-align: center;
-    background: var(--c-gradient-3);
-    border-radius: 50%;
-    opacity: 0;
-    z-index: 1;
-    transition: 0.4s ease-in-out;
-  }
-
-  &:hover {
-    opacity: 1;
-    transition: 0.2s ease-in-out;
-    outline: inherit;
-
-    i {
-      opacity: 0.7;
-
-      &:hover {
-        opacity: 1;
-        transform: scale(1.07);
-      }
-    }
-  }
 `;
 
 const AvatarImage = styled(motion.img)`

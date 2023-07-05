@@ -32,13 +32,8 @@ const GlobalStyles = createGlobalStyle`
     --c-accent-4: ${({ theme }) => theme.accent4};
     --c-accent-5: ${({ theme }) => theme.accent5};
 
+    --c-gradient-1: ${({ theme }) => theme.gradient1};
     --c-gradient-2: ${({ theme }) => theme.gradient2};
-    --c-gradient-3: ${({ theme }) => theme.gradient3};
-    --c-gradient-4: ${({ theme }) => theme.gradient4};
-    --c-gradient-5: ${({ theme }) => theme.gradient5};
-    --c-gradient-6: ${({ theme }) => theme.gradient6};
-    --c-gradient-7: ${({ theme }) => theme.gradient7};
-    --c-gradient-8: ${({ theme }) => theme.gradient8};
     --c-gradient-accent-1: linear-gradient(0.25turn, var(--c-accent-2), var(--c-accent-3), var(--c-accent-4), var(--c-accent-5));
     --c-gradient-accent-2: linear-gradient(45deg, var(--c-accent-1), var(--c-accent-2), var(--c-accent-3), var(--c-accent-4), var(--c-accent-5));
 
@@ -488,6 +483,19 @@ button {
   box-shadow: 0 3px 8px 0 var(--c-box-shadow);
 }
 
+*:has(& > .art-item-hover) {
+  &:hover {
+    .art-item-hover {
+      opacity: 0.7;
+
+      &:hover {
+        opacity: 1;
+        transform: scale(1.07);
+      }
+    }
+  }
+}
+
 .art-item-hover {
   position: absolute;
   top: 30px;
@@ -502,10 +510,11 @@ button {
   font-weight: 700;
   line-height: ${rem(30)};
   text-align: center;
-  background: var(--c-gradient-3);
+  background: var(--c-gradient-2);
   border-radius: 50%;
   box-shadow: 0 1px 4px 0 var(--c-box-shadow);
   opacity: 0;
+  z-index: 10;
   transition: 0.4s ease-in-out;
 
   &.center {
@@ -515,10 +524,8 @@ button {
   }
 
   &:hover {
-    opacity: 1;
-    i {
-      transform: scale(1.07);
-    }
+    opacity: 1 !important;
+    transform: scale(1.07);
   }
 }
 
