@@ -1,16 +1,15 @@
 import { PageWrapper, Hero, Counters, Services, Projects, History, Technologies, Contact } from '..';
-import { contactMotion, countersMotion, heroMotion, historyMotion, projectsMotion, servicesMotion, technologiesMotion } from '../../utils';
 
 const HomePage = () => {
   return (
     <>
-      <Hero motion={heroMotion.container(0.75, 0.75)} />
-      <Counters motion={countersMotion.container(0.1)} />
-      <Services motion={servicesMotion.container(0.1)} />
-      <Projects motion={projectsMotion.container(0.25, 0.5)} type='grid' limit={true} />
-      <History motion={historyMotion.container(0.25, 1.5)} />
-      <Technologies motion={technologiesMotion.container(0.25, 2.5)} type='swiper' />
-      <Contact motion={contactMotion.container(0.25, 3)} />
+      <Hero stagger={0.25} />
+      <Counters stagger={0.1} delay={1} />
+      <Services stagger={0.1} delay={1.25} />
+      <Projects stagger={0.25} delay={2} type='grid' limit={true} />
+      <History stagger={0.25} delay={4} />
+      <Technologies stagger={0.25} delay={5} type='swiper' />
+      <Contact stagger={0.25} delay={6} />
     </>
   );
 };
