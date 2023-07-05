@@ -34,25 +34,6 @@ const Content = styled(motion.div)`
   transform: ${({ $curtainEnabled }) => $curtainEnabled && `translateX(${rem(-150)})`};
   transition: 0.55s ease-in-out;
 
-  /* .scroll-content {
-    min-height: 100%;
-  }
-
-  .art-scroll-frame {
-    width: 100%;
-    min-height: calc(100vh - 30px);
-    height: calc(100% - 30px);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .scrollbar-track {
-    visibility: hidden;
-    opacity: 0;
-    pointer-events: none;
-  } */
-
   @media (max-width: ${rem(920)}) {
     position: relative;
     width: 100vw;
@@ -60,10 +41,6 @@ const Content = styled(motion.div)`
     padding-right: 0;
     padding-top: ${rem(70)};
     transform: ${({ $curtainEnabled }) => $curtainEnabled && 'none'};
-
-    /* .art-scroll-frame {
-      min-height: calc(100vh - 70px);
-    } */
   }
 
   @media (max-width: 230px) {
