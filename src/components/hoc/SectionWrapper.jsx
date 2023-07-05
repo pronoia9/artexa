@@ -18,6 +18,7 @@ const Container = styled(motion.section)`
   overflow: hidden;
   padding: 0 30px;
   position: relative;
+  min-height: 100%;
 
   @media (max-width: 920px) {
     padding-left: 15px;
