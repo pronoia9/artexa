@@ -19,7 +19,7 @@ export const PageWrapper = (Component, idName) =>
         <Background />
         <Scrollbar id='scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
           <Component {...props} />
-          <Footer />
+          {idName !== 'not-found' && <Footer />}
         </Scrollbar>
       </Content>
     );
