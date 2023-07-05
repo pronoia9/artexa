@@ -14,14 +14,11 @@ export const PageWrapper = (Component, idName) =>
     }));
 
     return (
-      <Content className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion}>
+      <Content id={`${idName}-page`} className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion}>
         <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
         <Background />
-
         <Scrollbar id='scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
-          <div>
-            <Component {...props} />
-          </div>
+          <Component {...props} />
           <Footer />
         </Scrollbar>
       </Content>
@@ -37,7 +34,7 @@ const Content = styled(motion.div)`
   transform: ${({ $curtainEnabled }) => $curtainEnabled && `translateX(${rem(-150)})`};
   transition: 0.55s ease-in-out;
 
-  .art-scroll-frame {
+  .scroll-content, .art-scroll-frame {
     height: 100%;
   }
 
@@ -50,7 +47,7 @@ const Content = styled(motion.div)`
     transform: ${({ $curtainEnabled }) => $curtainEnabled && 'none'};
 
     .art-scroll-frame {
-      height: calc(100vh - ${rem(70)});
+      /* height: calc(100vh - ${rem(70)}); */
     }
   }
 
