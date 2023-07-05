@@ -457,8 +457,8 @@ button {
 @media (max-width: 920px) {
   .art-scroll-frame {
     ${'' /* height: 100vh; */}
-    ${'' /* min-height: calc(100vh - 70px); */}
     ${'' /* min-height: calc(100% - 70px); */}
+    min-height: calc(100vh - 70px);
   }
 }
 
