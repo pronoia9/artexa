@@ -529,23 +529,6 @@ button {
   }
 }
 
-/* ----- hobbies ----- */
-
-.art-hobbies-item-frame {
-  height: 100px;
-  width: 100px;
-  padding-bottom: 0;
-  box-shadow: none !important;
-
-  img {
-    object-fit: scale-down !important;
-  }
-}
-
-.hobbies-container {
-  padding: 0;
-}
-
 /* ----- logos ----- */
 
 .art-brand {
