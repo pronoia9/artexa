@@ -444,13 +444,17 @@ button {
   .p-md-15-0 { padding-top: 15px; padding-bottom: 0; }
 }
 
-/* ------------------------------ xxxxxxxxxx ------------------------------ */
+/* ------------------------------ scrolling ------------------------------ */
 /* ----- scroll frame ----- */
+
+.scroll-content {
+  min-height: 100%;
+}
 
 .art-scroll-frame {
   width: 100%;
   min-height: calc(100vh - 30px);
-  height: 100%;
+  height: calc(100% - 30px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -460,10 +464,6 @@ button {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-}
-
-.scroll-content {
-  min-height: 100%;
 }
 
 /* ------------------------------ app marcup (after 920px) ------------------------------ */
