@@ -18,7 +18,7 @@ export const TimelineItem = (props) => {
   }
 
   return (
-    <Container className='art-timeline-item acc'>
+    <Container className='art-timeline-item acc' {...props}>
       <div className='art-timeline-mark-light' />
       <div className='art-timeline-mark' />
 
