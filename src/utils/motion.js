@@ -55,7 +55,7 @@ export const laptopMotion = (laptopOpen) => ({
 
 */
 /**********************  3. HOC Start  **********************/
-export const pageWrapperMotion = (staggerChildren = 1, delayChildren = 0) => ({
+export const pageWrapperMotion = (staggerChildren = 0.5, delayChildren = 0) => ({
   initial: 'hidden',
   animate: 'visible',
   exit: 'hidden',
