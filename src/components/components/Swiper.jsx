@@ -78,7 +78,7 @@ const NavContainer = styled(motion.div)`
   .swiper-pagination-bullet {
     height: 4px;
     margin-right: 10px;
-    background-color: var(--c-bg-pagination);
+    background-color: ${({ theme }) => theme.bgSwiperPagination};
     border-radius: 5px;
     opacity: 0.5;
     transition: 0.4s ease-in-out;

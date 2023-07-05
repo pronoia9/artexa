@@ -54,7 +54,7 @@ const Banner = styled.div`
     box-shadow: 0 3px 8px 0 var(--c-box-shadow);
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    background: var(--c-bg-banner-back);
+    background: ${({ theme }) => theme.bgBannerBack};
   }
 
   @media (max-width: 1400px) {
@@ -69,7 +69,7 @@ const Overlay = styled.div`
   display: flex;
   padding: 60px;
   width: 100%;
-  background-image: var(--c-bg-hero-overlay);
+  background-image: ${({ theme }) => theme.bgHeroOverlay};
 
   @media (max-width: 920px) {
     padding: 60px 30px;

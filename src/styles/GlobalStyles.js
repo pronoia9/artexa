@@ -11,26 +11,14 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --c-bg: ${({ theme }) => theme.bg};
     --c-bg-2: ${({ theme }) => theme.bg2};
-
     --c-bg-wrapper: ${({ theme }) => theme.bgWrapper};
-    --c-bg-hero-overlay: ${({ theme }) => theme.bgHeroOverlay};
-    --c-bg-banner-back: ${({ theme }) => theme.bgBannerBack};
-
     --c-bg-menu-1: ${({ theme }) => theme.bgMenu1};
     --c-bg-menu-2: ${({ theme }) => theme.bgMenu2};
-    --c-bg-img-hover: ${({ theme }) => theme.bgImageHover};
-    --c-bg-background-overlay: ${({ theme }) => theme.bgBackgroundOverlay};
-    --c-bg-input: ${({ theme }) => theme.bgInput};
-    --c-bg-input-label: ${({ theme }) => theme.bgInputLabel};
 
-    --c-bg-fancybox: rgba(32, 32, 42, 0.98);
-    --c-bg-pagination: ${({ theme }) => theme.bgSwiperPagination};
-
+    --c-bg-img-hover: ${({ theme }) => theme.bgImageHover}; /* the hover icon bg */
     --c-bg-card-overlay: ${({ theme }) => theme.bgCardOverlay};
-    
     --c-box-shadow: rgba(15, 15, 20, 0.2);
     --c-font-shadow: rgba(250, 250, 252, 0.4);
-    --c-timelineShadow: ${({ theme }) => theme.timelineShadow};
 
     --c-font-1: ${({ theme }) => theme.font1};
     --c-font-2: ${({ theme }) => theme.font2};
@@ -45,16 +33,17 @@ const GlobalStyles = createGlobalStyle`
     --c-accent-5: ${({ theme }) => theme.accent5};
 
     --c-gradient-2: ${({ theme }) => theme.gradient2};
-    --c-gradient-3: ${({ theme }) => theme.gradient4};
-    --c-gradient-4: ${({ theme }) => theme.gradient5};
-    --c-gradient-5: ${({ theme }) => theme.gradient6};
-    --c-gradient-6: ${({ theme }) => theme.gradient7};
-    --c-gradient-7: ${({ theme }) => theme.gradient8};
-    --c-gradient-8: ${({ theme }) => theme.gradient10};
+    --c-gradient-3: ${({ theme }) => theme.gradient3};
+    --c-gradient-4: ${({ theme }) => theme.gradient4};
+    --c-gradient-5: ${({ theme }) => theme.gradient5};
+    --c-gradient-6: ${({ theme }) => theme.gradient6};
+    --c-gradient-7: ${({ theme }) => theme.gradient7};
+    --c-gradient-8: ${({ theme }) => theme.gradient8};
     --c-gradient-accent-1: linear-gradient(0.25turn, var(--c-accent-2), var(--c-accent-3), var(--c-accent-4), var(--c-accent-5));
     --c-gradient-accent-2: linear-gradient(45deg, var(--c-accent-1), var(--c-accent-2), var(--c-accent-3), var(--c-accent-4), var(--c-accent-5));
 
-    --c-cursor: ${({ theme }) => theme.accent - 1};
+    --c-cursor: var(--c-accent-1);
+    
     --f-primary: 'Jost';
     --f-secondary: 'Caveat';
     --f-tertiary: 'Caveat Brush';

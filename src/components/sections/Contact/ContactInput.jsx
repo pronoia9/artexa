@@ -37,7 +37,7 @@ const Container = styled.div`
     width: 100%;
     padding-left: 15px;
     padding-right: 15px;
-    background: var(--c-bg-input);
+    background: ${({ theme }) => theme.bgInput};
     color: var(--c-font-2);
     border: none;
     border-left: solid 50px #20202a;
@@ -91,7 +91,7 @@ const Label = styled.label`
   letter-spacing: 1px;
   text-align: center;
   text-transform: uppercase;
-  background: var(--c-bg-input-label);
+  background: ${({ theme }) => theme.bgInputLabel};
   cursor: text;
   transition: 0.4s ease-in-out;
 `;

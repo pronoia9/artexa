@@ -25,5 +25,5 @@ const Container = styled.div`
 
 const Overlay = styled(Container)`
   left: 0;
-  background: var(--c-bg-background-overlay);
+  background: ${({ theme }) => theme.bgBackgroundOverlay};
 `;
