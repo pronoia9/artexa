@@ -234,10 +234,10 @@ export const projectsMotion = {
   container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
   filters: { variants: staggerContainer(0.15) },
   filter: { variants: zoomIn({ type: 'tween', duration: 0.1, ease: 'easeIn' }) },
-  grid: { variants: staggerContainerMirror(0.1, 10) },
-  button: { variants: zoomIn({ delay: 4.5 }) },
+  grid: { variants: staggerContainerMirror(0.1) },
+  button: { variants: zoomIn({ type: 'tween', delay: 5, duration: 1, ease: 'easeIn' }) },
   card: { variants: zoomIn({ type: 'tween', duration: 0.01, ease: 'linear', staggerChildren: 0.1 }) },
-  swiper: { variants: staggerContainerMirror(0.5) },
+  swiper: { variants: fadeIn() },
   navigation: { variants: fadeIn({ delay: 6.25 }) },
 };
 
@@ -252,6 +252,11 @@ export const historyMotion = {
 // TECHNOLOGIES
 export const technologiesMotion = {
   container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
+  grid: { variants: staggerContainerMirror(0.1) },
+  button: { variants: zoomIn() },
+  card: { variants: zoomIn() },
+  swiper: { variants: fadeIn() },
+  navigation: { variants: fadeIn() },
 };
 
 // CONTACT
