@@ -444,14 +444,6 @@ button {
   .p-md-15-0 { padding-top: 15px; padding-bottom: 0; }
 }
 
-/* ------------------------------ scrolling ------------------------------ */
-/* ------------------------------ app marcup (after 920px) ------------------------------ */
-@media (max-width: 920px) {
-  .art-scroll-frame {
-    height: 100vh;
-  }
-}
-
 /* ------------------------------ info bar ------------------------------ */
 @keyframes puls {
   0% {
