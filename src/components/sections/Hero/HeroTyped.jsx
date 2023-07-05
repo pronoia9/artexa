@@ -46,9 +46,9 @@ const Container = styled(motion.div)`
     font-family: var(--f-code);
     color: #e5c07b;
     text-shadow: 1px 1px 5px var(--c-accent-4);
-    filter: ${({ theme }) => theme.typedFilter && 'saturate(50) brightness(100)'};
-
+    
     i {
+      filter: ${({ theme }) => theme.typedFilter && 'saturate(40) brightness(100)'};
       color: #ef596e;
       font-style: normal;
       text-shadow: none;

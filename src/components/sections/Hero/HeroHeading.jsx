@@ -30,7 +30,7 @@ const Container = styled(motion.div)`
   }
 
   h1 {
-    color: #ffffff;
+    color: var(--c-font-2);
     font-size: 80px;
     line-height: 2ch;
 
