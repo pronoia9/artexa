@@ -212,24 +212,26 @@ export const heroMotion = {
   container: (stagger = 0.5, delay = 0) => ({ ...motionStates(), variants: staggerContainer(stagger, delay) }),
   heading: { variants: staggerContainer(0.5) },
   typed: { variants: fadeIn({}, 'down') },
-  button: { variants: zoomIn({ type: 'tween', duration: 0.5 }) },
+  button: { variants: zoomIn({ type: 'tween', duration: 0.25 }) },
+};
+
+// COUNTERS
+export const countersMotion = {
+  container: (stagger = 0.75, delay = 0) => ({ variants: staggerContainer(stagger, delay) }),
+  frame: { variants: staggerContainer(0.05) },
+  contents: { variants: zoomIn() },
 };
 
 // SERVICES
 export const servicesMotion = {
   container: (stagger = 0.5, delay = 0) => ({ ...motionStates(), variants: staggerContainer(stagger, delay) }),
-};
-
-// COUNTERS
-export const countersMotion = {
-  container: (stagger = 0.5, delay = 0) => ({ variants: staggerContainer(stagger, delay) }),
-  frame: { variants: staggerContainer(0.05) },
-  contents: { variants: zoomIn() },
+  card: { variants: zoomIn({ staggerChildren: 0.25 }) },
+  item: { variants: fadeIn() },
 };
 
 // PROJECTS
 export const projectsMotion = {
-  container: (stagger = 0.5, delay = 3.5) => ({ ...motionStates(), variants: staggerContainer(stagger, delay) }),
+  container: (stagger = 0.5, delay = 0) => ({ variants: staggerContainer(stagger, delay) }),
   filters: { variants: staggerContainer(0.15) },
   filter: { variants: zoomIn({ type: 'tween', duration: 0.1, ease: 'easeIn' }) },
   grid: { variants: staggerContainerMirror(0.1) },
@@ -240,17 +242,17 @@ export const projectsMotion = {
 
 // HISTORY
 export const historyMotion = {
-  container: { ...motionStates(), variants: staggerContainer(0.5, 4) },
+  container: () => ({ ...motionStates(), variants: staggerContainer(0.5, 4) }),
 };
 
 // TECHNOLOGIES
 export const technologiesMotion = {
-  container: { ...motionStates(), variants: staggerContainer(0.5, 4) },
+  container: () => ({ ...motionStates(), variants: staggerContainer(0.5, 4) }),
 };
 
 // CONTACT
 export const contactMotion = {
-  container: { ...motionStates(), variants: staggerContainer(0.5, 4) },
+  container: () => ({ ...motionStates(), variants: staggerContainer(0.5, 4) }),
 };
 /**************  Home Page End  **************/
 /***********************  6. Sections End  ***********************/
