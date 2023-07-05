@@ -22,116 +22,93 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+import { useLayoutEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { PageWrapper } from '..';
-import { useLayoutEffect } from 'react';
-import { Link } from 'react-router-dom';
 
 export default PageWrapper(() => {
+  const canvasRef = useRef();
+
   useLayoutEffect(() => {
-    (function () {
-      function ready(fn) {
-        if (document.readyState != 'loading') fn();
-        else document.addEventListener('DOMContentLoaded', fn);
+    let ctx = canvasRef.current.getContext('2d');
+    let width = 0;
+    let height = 0;
+    let particles = [];
+
+    var Particle = function () {
+      this.x = this.y = this.dx = this.dy = 0;
+      this.reset();
+    };
+
+    Particle.prototype.reset = function () {
+      this.y = Math.random() * height;
+      this.x = Math.random() * width;
+      this.dx = Math.random() * 1 - 0.5;
+      this.dy = Math.random() * 0.5 + 0.5;
+    };
+
+    function createParticles(count) {
+      if (count != particles.length) {
+        particles = [];
+        for (var i = 0; i < count; i++) {
+          particles.push(new Particle());
+        }
       }
+    }
 
-      function makeSnow(el) {
-        var ctx = el.getContext('2d');
-        var width = 0;
-        var height = 0;
-        var particles = [];
+    function onResize() {
+      width = window.innerWidth;
+      height = window.innerHeight;
+      canvasRef.current.width = width;
+      canvasRef.current.height = height;
+      createParticles((width * height) / 10000);
+    }
 
-        var Particle = function () {
-          this.x = this.y = this.dx = this.dy = 0;
-          this.reset();
-        };
+    function updateParticles() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = '#f6f9fa';
 
-        Particle.prototype.reset = function () {
-          this.y = Math.random() * height;
-          this.x = Math.random() * width;
-          this.dx = Math.random() * 1 - 0.5;
-          this.dy = Math.random() * 0.5 + 0.5;
-        };
+      particles.forEach(function (particle) {
+        particle.y += particle.dy;
+        particle.x += particle.dx;
 
-        function createParticles(count) {
-          if (count != particles.length) {
-            particles = [];
-            for (var i = 0; i < count; i++) {
-              particles.push(new Particle());
-            }
-          }
-        }
+        if (particle.y > height) particle.y = 0;
+        if (particle.x > width) particle.reset(), (particle.y = 0);
 
-        function onResize() {
-          width = window.innerWidth;
-          height = window.innerHeight;
-          el.width = width;
-          el.height = height;
-
-          createParticles((width * height) / 10000);
-        }
-
-        function updateParticles() {
-          ctx.clearRect(0, 0, width, height);
-          ctx.fillStyle = '#f6f9fa';
-
-          particles.forEach(function (particle) {
-            particle.y += particle.dy;
-            particle.x += particle.dx;
-
-            if (particle.y > height) {
-              particle.y = 0;
-            }
-
-            if (particle.x > width) {
-              particle.reset();
-              particle.y = 0;
-            }
-
-            ctx.beginPath();
-            ctx.arc(particle.x, particle.y, 5, 0, Math.PI * 2, false);
-            ctx.fill();
-          });
-
-          window.requestAnimationFrame(updateParticles);
-        }
-
-        onResize();
-        updateParticles();
-
-        window.addEventListener('resize', onResize);
-      }
-
-      ready(function () {
-        var canvas = document.getElementById('snow');
-        makeSnow(canvas);
+        ctx.beginPath();
+        ctx.arc(particle.x, particle.y, 5, 0, Math.PI * 2, false);
+        ctx.fill();
       });
-    })();
+
+      window.requestAnimationFrame(updateParticles);
+    }
+
+    onResize();
+    updateParticles();
+    window.addEventListener('resize', onResize);
+    return () => { window.removeEventListener('resize', onResize); };
   }, []);
 
   return (
     <Container footer={false}>
-      <div className='content'>
-        <canvas className='snow' id='snow' />
-        <div>
-          <div className='main-text'>
-            <h1>
-              Aw jeez.
-              <br />
-              That page has gone missing.
-            </h1>
-            <Link className='home-link' to='/'>
-              Hitch a ride back home.
-            </Link>
-          </div>
-          <div className='ground'>
-            <div className='mound'>
-              <div className='mound_text'>404</div>
-              <div className='mound_spade'></div>
-            </div>
-          </div>
+      <canvas ref={canvasRef} className='snow' id='snow' />
+      <div className='main-text'>
+        <h1>
+          Aw jeez.
+          <br />
+          That page has gone missing.
+        </h1>
+        <Link className='home-link' to='/'>
+          Hitch a ride back home.
+        </Link>
+      </div>
+      <div className='ground'>
+        <div className='mound'>
+          <div className='mound_text'>404</div>
+          <div className='mound_spade'></div>
         </div>
       </div>
     </Container>
@@ -142,20 +119,17 @@ export default PageWrapper(() => {
 
 /*************  styles  ************/
 const Container = styled(motion.section)`
+  position: relative;
+  height: 100%;
+  min-height: calc(100vh - 30px);
+  color: #5d7399;
   /* font-family: var(--f-tertiary); */
   font-size: 32px;
   font-weight: 500;
-  color: #5d7399;
-
-  .content {
-    position: relative;
-    height: 100%;
-    min-height: calc(100vh - 30px);
-    background-color: #d2e1ec;
-    background-image: linear-gradient(to bottom, #bbcfe1 0%, #e8f2f6 80%);
-    overflow: hidden;
-    z-index: 1;
-  }
+  background-color: #d2e1ec;
+  background-image: linear-gradient(to bottom, #bbcfe1 0%, #e8f2f6 80%);
+  overflow: hidden;
+  z-index: 1;
 
   .snow {
     position: absolute;
@@ -231,7 +205,7 @@ const Container = styled(motion.section)`
     font-weight: 800;
     font-size: 180px;
     text-align: center;
-    color: #dd4040;
+    color: var(--c-accent-1);
     pointer-events: none;
 
     &:before {
@@ -259,10 +233,10 @@ const Container = styled(motion.section)`
       margin-left: -150px;
       top: 68px;
       z-index: 2;
-      background: #dd4040;
+      color: var(--c-accent-1);
       border-radius: 100%;
       transform: rotate(-15deg);
-      box-shadow: -56px 12px 0 1px #dd4040, -126px 6px 0 2px #dd4040, -196px 24px 0 3px #dd4040;
+      box-shadow: -56px 12px 0 1px var(--c-accent-1), -126px 6px 0 2px var(--c-accent-1), -196px 24px 0 3px var(--c-accent-1);
     }
   }
 
@@ -280,7 +254,7 @@ const Container = styled(motion.section)`
     margin-right: -250px;
     z-index: 0;
     transform: rotate(35deg);
-    background: #dd4040;
+    background: var(--c-accent-1);
 
     &:before,
     &:after {
@@ -295,7 +269,7 @@ const Container = styled(motion.section)`
       bottom: 98%;
       left: 50%;
       margin-left: -20%;
-      background: #dd4040;
+      background: var(--c-accent-1);
     }
 
     &:after {
@@ -304,7 +278,7 @@ const Container = styled(motion.section)`
       top: -55px;
       left: 0%;
       box-sizing: border-box;
-      border: 10px solid #dd4040;
+      border: 10px solid var(--c-accent-1);
       border-radius: 4px 4px 20px 20px;
     }
   }
