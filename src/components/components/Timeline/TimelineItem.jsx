@@ -26,7 +26,7 @@ export const TimelineItem = (props) => {
         <Header className='art-card-header'>
           <div className='art-left-side'>
             <Title>{title}</Title>
-            <Subtitle className='art-el-suptitle mb-15'>{subtitle}</Subtitle>
+            <Subtitle className='mb-15'>{subtitle}</Subtitle>
           </div>
 
           {dates?.length && (
@@ -121,6 +121,7 @@ const Subtitle = styled.h5`
   margin-top: ${rem(10)};
   font-size: ${rem(14)};
   font-family: var(--f-code);
+  color: var(--c-font-3);
 `;
 
 const Header = styled.div`
