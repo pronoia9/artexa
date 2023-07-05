@@ -209,29 +209,29 @@ export const footerMotion = {};
 /*************  Home Page Start  *************/
 // HERO
 export const heroMotion = {
-  container: (stagger = 0.5, delay = 0) => ({ ...motionStates(), variants: staggerContainer(stagger, delay) }),
+  container: (stagger, delay) => ({ ...motionStates(), variants: staggerContainer(stagger, delay) }),
   heading: { variants: staggerContainer(0.5) },
   typed: { variants: fadeIn({}, 'down') },
-  button: { variants: zoomIn({ type: 'tween', duration: 0.25 }) },
+  button: { variants: zoomIn({ type: 'tween', duration: 0.5 }) },
 };
 
 // COUNTERS
 export const countersMotion = {
-  container: (stagger = 0.75, delay = 0) => ({ variants: staggerContainer(stagger, delay) }),
+  container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
   frame: { variants: staggerContainer(0.05) },
   contents: { variants: zoomIn() },
 };
 
 // SERVICES
 export const servicesMotion = {
-  container: (stagger = 0.5, delay = 0) => ({ ...motionStates(), variants: staggerContainer(stagger, delay) }),
+  container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
   card: { variants: zoomIn({ staggerChildren: 0.25 }) },
   item: { variants: fadeIn() },
 };
 
 // PROJECTS
 export const projectsMotion = {
-  container: (stagger = 0.5, delay = 0) => ({ variants: staggerContainer(stagger, delay) }),
+  container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
   filters: { variants: staggerContainer(0.15) },
   filter: { variants: zoomIn({ type: 'tween', duration: 0.1, ease: 'easeIn' }) },
   grid: { variants: staggerContainerMirror(0.1) },
@@ -242,17 +242,17 @@ export const projectsMotion = {
 
 // HISTORY
 export const historyMotion = {
-  container: () => ({ ...motionStates(), variants: staggerContainer(0.5, 4) }),
+  container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
 };
 
 // TECHNOLOGIES
 export const technologiesMotion = {
-  container: () => ({ ...motionStates(), variants: staggerContainer(0.5, 4) }),
+  container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
 };
 
 // CONTACT
 export const contactMotion = {
-  container: () => ({ ...motionStates(), variants: staggerContainer(0.5, 4) }),
+  container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
 };
 /**************  Home Page End  **************/
 /***********************  6. Sections End  ***********************/
@@ -346,14 +346,14 @@ export function slideIn(transitionOptions = {}, direction, amount) {
   };
 }
 
-export function staggerContainer(staggerChildren = 0.5, delayChildren = 0, transitionOptions = {}) {
+export function staggerContainer(staggerChildren = 0.25, delayChildren = 0, transitionOptions = {}) {
   return {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { staggerChildren, delayChildren, ...transitionOptions } },
   };
 }
 
-export function staggerContainerMirror(staggerChildren = 0.5, delayChildren = 0, transitionOptions = {}, hidden = {}, visible = {}) {
+export function staggerContainerMirror(staggerChildren = 0.25, delayChildren = 0, transitionOptions = {}, hidden = {}, visible = {}) {
   return {
     hidden: { opacity: 0, transition: { staggerChildren, delayChildren, ...transitionOptions, ...hidden } },
     visible: { opacity: 1, transition: { staggerChildren, delayChildren, ...transitionOptions, ...visible } },
