@@ -69,4 +69,5 @@ const Frame = styled.div`
   width: 100%;
   height: auto;
   margin-bottom: ${rem(60)};
+  justify-content: center;
 `;
