@@ -4,9 +4,9 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { dataStore } from '../../../store/dataStore';
-import { heroMotion, rem } from '../../../utils';
+import { rem } from '../../../utils';
 
-export const HeroTyped = () => {
+export const HeroTyped = (props) => {
   const data = dataStore((state) => state.hero.typed);
   const typedRef = useRef();
 
@@ -25,7 +25,7 @@ export const HeroTyped = () => {
   }, []);
 
   return (
-    <Container className='art-lg-text art-code' {...heroMotion.typed}>
+    <Container className='art-lg-text art-code' {...props}>
       <code>
         &lt;<i>code</i>&gt; <span ref={typedRef} /> &lt;/<i>code</i>&gt;
       </code>

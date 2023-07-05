@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 
 import { HeroHeading, HeroTyped, ButtonGradient, SectionWrapper } from '../..';
 import { dataStore } from '../../../store/dataStore';
-import { rem } from '../../../utils';
+import { heroMotion, rem } from '../../../utils';
 
 export default SectionWrapper(() => {
   const { data, accent } = dataStore((state) => ({ data: state.hero, accent: state.accent }));
@@ -21,9 +21,9 @@ export default SectionWrapper(() => {
 
         <Overlay className='art-banner-overlay'>
           <Title className='art-banner-title'>
-            <HeroHeading />
-            <HeroTyped />
-            <ButtonGradient title={data.button.text} onClick={beamMeUpScotty} />
+            <HeroHeading {...heroMotion.heading} />
+            <HeroTyped {...heroMotion.typed} />
+            <ButtonGradient title={data.button.text} onClick={beamMeUpScotty} {...heroMotion.button} />
           </Title>
 
           <Avatar src={data.avatar} className='art-banner-photo' alt='Banner Profile' />

@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 
 import { SplitText } from '../..';
 import { dataStore } from '../../../store/dataStore';
-import { heroMotion, rem } from '../../../utils';
+import { rem } from '../../../utils';
 
-export const HeroHeading = () => {
+export const HeroHeading = (props) => {
   const data = dataStore((state) => state.hero.heading);
 
   return (
-    <Container className='mb-15 hero-heading' {...heroMotion.heading}>
+    <Container className='mb-15 hero-heading' {...props}>
       {data.map((text, index) => (
         <h1 key={`hero-heading-${index}`}>
           <SplitText>{text}</SplitText>
