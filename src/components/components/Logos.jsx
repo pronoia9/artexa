@@ -1,11 +1,14 @@
-export const Logos = ({ logos }) => (
-  <div className='container-fluid'>
-    <div className='row'>
+import { SectionWrapper } from '..';
+
+export const Logos = SectionWrapper(
+  ({ logos }) => (
+    <>
       {logos.map((logo, index) => (
         <Logo key={`${index}-logo`} image={logo} />
       ))}
-    </div>
-  </div>
+    </>
+  ),
+  'logos'
 );
 
 export const Logo = ({ image }) => (
