@@ -4,7 +4,7 @@ import { Fancybox, Card, ButtonGradient } from '..';
 import { dataStore } from '../../store/dataStore';
 import { getProjectsCount } from '../../utils';
 
-export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, buttonText, ...props }) => {
+export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, buttonMotion, buttonText, ...props }) => {
   const { rows, setRows, cols, setCols, count, setCount, defaults } = dataStore((state) => ({
     rows: state[section].rows,
     setRows: state[section].setRows,
@@ -46,7 +46,7 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
 
   return (
     <>
-      <Fancybox className={`art-grid art-grid-${cols}-col art-gallery`} {...gridMotion} {...props}>
+      <Fancybox className={`art-grid art-grid-${cols}-col art-gallery`} {...props} {...gridMotion}>
         {Array.from(limit ? data.slice(0, count) : data)
           .flat()
           .map((item, index) => (
@@ -65,7 +65,7 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
       </Fancybox>
 
       {limit && data.length > getProjectsCount() && (
-        <ButtonGradient title={`View ${!showingAllData() ? 'More' : 'Less'}`} onClick={handleButtonClick} $position='center' />
+        <ButtonGradient title={`View ${!showingAllData() ? 'More' : 'Less'}`} onClick={handleButtonClick} $position='center' {...buttonMotion} />
       )}
     </>
   );
