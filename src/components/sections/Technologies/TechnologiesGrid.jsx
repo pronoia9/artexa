@@ -3,7 +3,16 @@ import { dataStore } from '../../../store/dataStore';
 import { technologiesMotion } from '../../../utils';
 
 export const TechnologiesGrid = (props) => {
-  const { data } = dataStore((state) => ({ data: state.technologies.list, }));
+  const { data } = dataStore((state) => ({ data: state.technologies.list }));
 
-  return <Grid section='technologies' data={data} gridMotion={technologiesMotion.grid} cardMotion={technologiesMotion.card} {...props} />;
+  return (
+    <Grid
+      section='technologies'
+      data={data}
+      {...props}
+      gridMotion={technologiesMotion.grid}
+      cardMotion={technologiesMotion.card}
+      buttonMotion={technologiesMotion.button}
+    />
+  );
 };
