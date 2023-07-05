@@ -215,6 +215,11 @@ export const heroMotion = {
   button: { variants: zoomIn({ type: 'tween', duration: 0.5 }) },
 };
 
+// SERVICES
+export const servicesMotion = {
+  container: (stagger = 0.5, delay = 0) => ({ ...motionStates(), variants: staggerContainer(stagger, delay) }),
+};
+
 // COUNTERS
 export const countersMotion = {
   container: (stagger = 0.5, delay = 0) => ({ variants: staggerContainer(stagger, delay) }),
