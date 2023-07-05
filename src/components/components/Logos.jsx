@@ -1,18 +1,17 @@
-import { SectionWrapper } from '..';
+import { motion } from 'framer-motion';
 
-export const Logos = SectionWrapper(
-  ({ logos }) => (
-    <>
+export const Logos = ({ logos }) => (
+  <motion.div className='container-fluid'>
+    <div className='row'>
       {logos.map((logo, index) => (
         <Logo key={`${index}-logo`} image={logo} />
       ))}
-    </>
-  ),
-  'logos'
+    </div>
+  </motion.div>
 );
 
 export const Logo = ({ image }) => (
-  <div className='col-6 col-lg-3'>
+  <motion.div className='col-6 col-lg-3'>
     <img className='art-brand' src={image} alt='warning' />
-  </div>
+  </motion.div>
 );
