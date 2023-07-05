@@ -23,11 +23,11 @@ export const Card = ({
 
   return (
     <Container
+      key={`${section}-card-${index}-${title}`}
       className={`art-a art-blog-card${classes ? ` ${classes}` : ''} acc`}
       $swiper={swiper}
       $hide={hide}
       {...props}
-      key={`${section}-card-${title}`}
     >
       <ImageLink className='art-port-cover' data-fancybox={`fancybox${section}`} href={image}>
         <img src={image} alt='item' />
