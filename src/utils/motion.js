@@ -55,21 +55,20 @@ export const laptopMotion = (laptopOpen) => ({
 
 */
 /**********************  3. HOC Start  **********************/
-export const pageWrapperMotion = () => ({
+export const pageWrapperMotion = (staggerChildren = 1, delayChildren = 0) => ({
   initial: 'hidden',
   animate: 'visible',
   exit: 'hidden',
   variants: {
     hidden: { opacity: 0, transition: { when: 'afterChildren' } },
-    visible: { opacity: 1, transition: { when: 'beforeChildren', staggerChildren: 1 } },
+    visible: { opacity: 1, transition: { when: 'beforeChildren', staggerChildren, delayChildren } },
   },
 });
 
-export const sectionWrapperMotion = () => ({
-  // whileInView: 'visible',
+export const sectionWrapperMotion = (staggerChildren = 0.25, delayChildren = 0) => ({
   variants: {
     hidden: { opacity: 0, y: 250, when: 'afterChildren' },
-    visible: { opacity: 1, y: 0, transition: { type: 'spring', when: 'beforeChildren', staggerChildren: 0.25 } },
+    visible: { opacity: 1, y: 0, transition: { type: 'spring', when: 'beforeChildren', staggerChildren, delayChildren } },
   },
 });
 /***********************  3. HOC End  ***********************/
@@ -119,11 +118,10 @@ export const sidebarMotion = {
   },
   // Soft Skills
   softSkills: {
-    container: { variants: staggerContainer(0.5) },
+    container: { variants: staggerContainer(0.25) },
     item: { variants: staggerContainer(0.25) },
     check: { variants: zoomIn() },
-    text: { variants: staggerContainer(0.01) },
-    char: { variants: textVariant() },
+    line: { variants: fadeIn({}, 'left') },
   },
   // Strengths
   strengths: {
@@ -348,10 +346,10 @@ export function staggerContainer(staggerChildren = 0.5, delayChildren = 0, trans
   };
 }
 
-export function staggerContainerMirror(staggerChildren = 0.5, delayChildren = 0, transitionOptions = {}) {
+export function staggerContainerMirror(staggerChildren = 0.5, delayChildren = 0, transitionOptions = {}, hidden = {}, visible = {}) {
   return {
-    hidden: { opacity: 0, transition: { staggerChildren, delayChildren, ...transitionOptions } },
-    visible: { opacity: 1, transition: { staggerChildren, delayChildren, ...transitionOptions } },
+    hidden: { opacity: 0, transition: { staggerChildren, delayChildren, ...transitionOptions, ...hidden } },
+    visible: { opacity: 1, transition: { staggerChildren, delayChildren, ...transitionOptions, ...visible } },
   };
 }
 /***********************  8. Utils End  ***********************/

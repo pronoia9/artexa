@@ -13,7 +13,7 @@ export const SoftSkills = () => {
         <li key={`sidebar-softskills-${index}`}>
           <ListItem key={`sidebar-softskills-${index}-items`} {...sidebarMotion.softSkills.item}>
             <motion.i className='fas fa-check' {...sidebarMotion.softSkills.check} />
-            <motion.span {...sidebarMotion.softSkills.item}>{row.map((s) => s.title).join(', ')}</motion.span>
+            <motion.span {...sidebarMotion.softSkills.line}>{row.map((s) => s.title).join(', ')}</motion.span>
           </ListItem>
         </li>
       ))}
