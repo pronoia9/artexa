@@ -2,17 +2,17 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { SectionTitle, TimelineItem } from '../..';
+import { historyMotion } from '../../../utils';
 
-export const TimelineColumn = ({ column = 1, title = '', data = [] }) => (
-  <div className={'col-lg-' + 12 / column}>
+export const TimelineColumn = ({ column = 1, title = '', data = [], index }) => (
+  <motion.div className={'col-lg-' + 12 / column} {...historyMotion.column}>
     <SectionTitle title={title} />
-
-    <Container className='art-timeline'>
+    <Container className='art-timeline' {...historyMotion.cards}>
       {data.map((item, index) => (
-        <TimelineItem key={`timeline-item-${index}-${item?.title}`} {...item} />
+        <TimelineItem key={`timeline-item-${index}-${item?.title}`} {...item} {...historyMotion.card} />
       ))}
     </Container>
-  </div>
+  </motion.div>
 );
 
 const Container = styled(motion.div)`
