@@ -1,9 +1,12 @@
 import { Field, ErrorMessage } from 'formik';
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
+
+import { contactMotion } from '../../../utils';
 
 export const ContactInput = ({ name, icon, active, ...props }) => {
   return (
-    <Container className='art-form-field'>
+    <Container className='art-form-field' {...contactMotion.input}>
       <Field
         id={name}
         name={name}
@@ -25,7 +28,7 @@ export const ContactInput = ({ name, icon, active, ...props }) => {
   );
 };
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   position: relative;
   margin-top: 5px;
   display: flex;

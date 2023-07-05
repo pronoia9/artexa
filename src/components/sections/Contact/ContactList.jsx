@@ -2,10 +2,11 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { SplitText } from '../..';
+import { contactMotion } from '../../../utils';
 
 export const ContactList = ({ cols, list }) => {
   return (
-    <motion.div className={`col-lg-${12 / cols}`}>
+    <motion.div className={`col-lg-${12 / cols}`} {...contactMotion.list}>
       <Container className='art-a art-card'>
         <div className='art-table p-15-15'>
           <ul>
@@ -21,9 +22,9 @@ export const ContactList = ({ cols, list }) => {
 
 export const ContactListItem = ({ title, description }) => {
   return (
-    <motion.li>
-      <h5><SplitText>{title}</SplitText>:</h5>
-      <SplitText>{description}</SplitText>
+    <motion.li {...contactMotion.listLine}>
+      <h5><SplitText>{`${title}:`}</SplitText></h5>
+      <motion.span {...contactMotion.listText}>{description}</motion.span>
     </motion.li>
   );
 };

@@ -4,7 +4,8 @@ import * as Yup from 'yup';
 
 import { SectionTitle, ContactInput, ButtonGradient } from '../../';
 import { dataStore } from '../../../store/dataStore';
-import { handleFormSubmit } from '../../../utils';
+import { cardMotion, contactMotion, handleFormSubmit } from '../../../utils';
+import { motion } from 'framer-motion';
 
 export const ContactForm = () => {
   const [success, setSuccess] = useState(false);
@@ -22,10 +23,10 @@ export const ContactForm = () => {
   };
 
   return (
-    <div className='col-lg-12'>
+    <motion.div className='col-lg-12' {...contactMotion.formContainer}>
       <SectionTitle title={data.title} />
 
-      <div className='art-a art-card'>
+      <motion.div className='art-a art-card' {...cardMotion.form}>
         <Formik {...formikOptions}>
           {(formik) => (
             <Form id='form' className='art-contact-form'>
@@ -45,7 +46,7 @@ export const ContactForm = () => {
             </Form>
           )}
         </Formik>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
