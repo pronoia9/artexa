@@ -209,7 +209,6 @@ export const footerMotion = {};
 /*************  Home Page Start  *************/
 // HERO
 export const heroMotion = {
-  container: (stagger, delay) => ({ ...motionStates(), variants: staggerContainer(stagger, delay) }),
   heading: { variants: staggerContainer(0.5) },
   typed: { variants: fadeIn({}, 'down') },
   button: { variants: zoomIn({ type: 'tween', duration: 0.5 }) },
@@ -217,21 +216,18 @@ export const heroMotion = {
 
 // COUNTERS
 export const countersMotion = {
-  container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
   frame: { variants: staggerContainer(0.05) },
   contents: { variants: zoomIn() },
 };
 
 // SERVICES
 export const servicesMotion = {
-  container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
   card: { variants: zoomIn({ staggerChildren: 0.25 }) },
   item: { variants: fadeIn() },
 };
 
 // PROJECTS
 export const projectsMotion = {
-  container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
   filters: { variants: staggerContainer(0.15) },
   filter: { variants: zoomIn({ type: 'tween', duration: 0.1, ease: 'easeIn' }) },
   grid: { variants: staggerContainerMirror(0.1) },
@@ -243,7 +239,6 @@ export const projectsMotion = {
 
 // HISTORY
 export const historyMotion = {
-  container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
   column: (i) => ({ variants: slideIn({ staggerChildren: 0.5 }, i ? 'right' : 'left') }),
   cards: { variants: staggerContainer(0.1) },
   card: { variants: zoomIn() },
@@ -251,7 +246,6 @@ export const historyMotion = {
 
 // TECHNOLOGIES
 export const technologiesMotion = {
-  container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
   grid: { variants: staggerContainerMirror(0.1) },
   button: { variants: zoomIn() },
   card: { variants: zoomIn() },
@@ -261,6 +255,28 @@ export const technologiesMotion = {
 
 // CONTACT
 export const contactMotion = {
+  list: { variants: staggerContainer(0.5) },
+  listLine: { variants: staggerContainer(0.25) },
+  listText: { variants: fadeIn() },
+  formContainer: { variants: staggerContainer(0.25) },
+  form: { variants: staggerContainer(0.1) },
+  input: { variants: fadeIn({}, 'down') },
+};
+
+// COURSES
+export const coursesMotion = {
+}
+
+// ABOUT
+export const aboutMotion = {
+}
+
+// PROJECT
+export const projectMotion = {
+};
+
+// NOT FOUND
+export const notFoundMotion = {
   container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
 };
 /**************  Home Page End  **************/
