@@ -29,7 +29,8 @@ const Content = styled(motion.div)`
   position: relative;
   width: 100vw;
   height: calc(100vh - ${rem(30)});
-  padding-right: ${rem(80)};
+  /* padding-right: ${rem(80)}; */
+  padding-right: ${rem(75)};
   overflow: hidden;
   transform: ${({ $curtainEnabled }) => $curtainEnabled && `translateX(${rem(-150)})`};
   transition: 0.55s ease-in-out;
