@@ -1,5 +1,7 @@
-import { PageWrapper } from '..';
+import { PageWrapper, SectionWrapper } from '..';
 
-export default PageWrapper(() => {
-  return <div>NotFound</div>;
-}, 'notfound');
+export default PageWrapper(
+  SectionWrapper(() => {
+    return <div>NotFound</div>;
+  }, 'notfound')
+);
