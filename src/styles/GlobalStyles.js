@@ -445,27 +445,6 @@ button {
 }
 
 /* ------------------------------ scrolling ------------------------------ */
-/* ----- scroll frame ----- */
-
-.scroll-content {
-  min-height: 100%;
-}
-
-.art-scroll-frame {
-  width: 100%;
-  min-height: calc(100vh - 30px);
-  height: calc(100% - 30px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.scrollbar-track {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
 /* ------------------------------ app marcup (after 920px) ------------------------------ */
 @media (max-width: 920px) {
   .art-scroll-frame {
