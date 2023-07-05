@@ -55,7 +55,7 @@ export const laptopMotion = (laptopOpen) => ({
 
 */
 /**********************  3. HOC Start  **********************/
-export const pageWrapperMotion = {
+export const pageWrapperMotion = () => ({
   initial: 'hidden',
   animate: 'visible',
   exit: 'hidden',
@@ -63,14 +63,15 @@ export const pageWrapperMotion = {
     hidden: { opacity: 0, transition: { when: 'afterChildren' } },
     visible: { opacity: 1, transition: { when: 'beforeChildren', staggerChildren: 1 } },
   },
-};
+});
 
-export const sectionWrapperMotion = {
+export const sectionWrapperMotion = () => ({
+  // whileInView: 'visible',
   variants: {
     hidden: { opacity: 0, y: 250, when: 'afterChildren' },
     visible: { opacity: 1, y: 0, transition: { type: 'spring', when: 'beforeChildren', staggerChildren: 0.25 } },
   },
-};
+});
 /***********************  3. HOC End  ***********************/
 /*
 
