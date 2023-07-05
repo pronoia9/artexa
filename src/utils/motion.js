@@ -243,6 +243,9 @@ export const projectsMotion = {
 // HISTORY
 export const historyMotion = {
   container: (stagger, delay) => ({ variants: staggerContainer(stagger, delay) }),
+  column: (i) => ({ variants: slideIn({ staggerChildren: 0.5 }, i ? 'right' : 'left') }),
+  cards: { variants: staggerContainer(0.1) },
+  card: { variants: zoomIn() },
 };
 
 // TECHNOLOGIES

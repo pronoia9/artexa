@@ -5,7 +5,7 @@ import { SectionTitle, TimelineItem } from '../..';
 import { historyMotion } from '../../../utils';
 
 export const TimelineColumn = ({ column = 1, title = '', data = [], index }) => (
-  <motion.div className={'col-lg-' + 12 / column} {...historyMotion.column}>
+  <motion.div className={'col-lg-' + 12 / column} {...historyMotion.column(index % 2)}>
     <SectionTitle title={title} />
     <Container className='art-timeline' {...historyMotion.cards}>
       {data.map((item, index) => (
