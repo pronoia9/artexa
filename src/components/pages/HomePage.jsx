@@ -8,7 +8,7 @@ const HomePage = () => {
       <Counters motion={countersMotion.container(0.1)} />
       <Services motion={servicesMotion.container(0.25)} />
       <Projects motion={projectsMotion.container(0.5, 0.5)} type='grid' limit={true} />
-      <History motion={historyMotion.container(0.5, 1)} />
+      <History motion={historyMotion.container(0.5, 1.5)} />
       <Technologies motion={technologiesMotion.container(0.25, 2)} type='swiper' />
       <Contact motion={contactMotion.container(0.25, 2.5)} />
     </>
