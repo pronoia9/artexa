@@ -34,14 +34,6 @@ const Content = styled(motion.div)`
   transform: ${({ $curtainEnabled }) => $curtainEnabled && `translateX(${rem(-150)})`};
   transition: 0.55s ease-in-out;
 
-  .scroll-content {
-    min-height: 100%;
-  }
-
-  .art-scroll-frame {
-    height: 100%;
-  }
-
   @media (max-width: ${rem(920)}) {
     position: relative;
     width: 100vw;

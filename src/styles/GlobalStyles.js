@@ -449,7 +449,11 @@ button {
 
 .art-scroll-frame {
   width: 100%;
-  height: calc(100vh - 60px);
+  min-height: calc(100vh - 30px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .scrollbar-track {
@@ -459,14 +463,8 @@ button {
 }
 
 .scroll-content {
+  min-height: 100%;
 }
-
-.art-scroll-frame {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
 
 /* ------------------------------ app marcup (after 920px) ------------------------------ */
 @media (max-width: 920px) {
