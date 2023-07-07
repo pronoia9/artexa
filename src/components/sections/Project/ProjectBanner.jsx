@@ -1,3 +1,5 @@
+import { styled } from 'styled-components';
+
 import { SectionWrapper, SectionTitle } from '../../';
 import { Tag } from '../../../styles';
 
@@ -7,7 +9,7 @@ export default SectionWrapper(({ project }) => {
   return (
     <>
       <SectionTitle title={title}>
-        <Tag>{categories.join(', ')}</Tag>
+        <Tags>{categories.join(', ')}</Tags>
       </SectionTitle>
 
       <div className='col-lg-12'>
@@ -23,3 +25,7 @@ export default SectionWrapper(({ project }) => {
     </>
   );
 });
+
+const Tags = styled(Tag)`
+  text-transform: capitalize;
+`;
