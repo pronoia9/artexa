@@ -2,20 +2,13 @@ import { styled } from 'styled-components';
 
 import { Fancybox, SectionWrapper } from '../../';
 
-export default SectionWrapper(({ image }) => {
-  const getPath = (index) => {
-    const dotIndex = image.lastIndexOf('.');
-    const pathBeforeDot = image.slice(0, dotIndex);
-    const pathAfterDot = image.slice(dotIndex);
-    return `${pathBeforeDot}-${index}${pathAfterDot}`;
-  };
-
+export default SectionWrapper(({ images }) => {
   return (
     <Grid className='col-12'>
-      {[...new Array(3)].map((v, index) => (
+      {images.map((image, index) => (
         <div className='grid-item'>
-          <a data-fancybox='project' href={getPath(index + 1)} className='art-a art-portfolio-item-frame'>
-            <img src={getPath(index + 1)} alt='item' />
+          <a data-fancybox='project' href={image} className='art-a art-portfolio-item-frame'>
+            <img src={image} alt='item' />
             <span className='art-item-hover'>
               <i className='fas fa-expand' />
             </span>
