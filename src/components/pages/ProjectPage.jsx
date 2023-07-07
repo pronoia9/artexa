@@ -8,15 +8,13 @@ export default PageWrapper(() => {
   const { projectId } = useParams(), navigate = useNavigate();
   const data = dataStore((state) => state.projects.projects.find((prj) => prj.id === projectId));
 
-  useEffect(() => {
-    !data && navigate('/projects');
-  }, []);
+  useEffect(() => { !data && navigate('/projects'); }, []);
 
   return (
     <Fancybox>
       <ProjectBanner project={data} />
       <ProjectInfo project={data} />
-      {data?.images && <ProjectScreenshots images={images} />}
+      <ProjectScreenshots image={data.image} />
     </Fancybox>
   );
 }, 'single-project-page');
