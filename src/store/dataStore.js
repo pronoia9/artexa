@@ -617,7 +617,7 @@ export const dataStore = create((set) => ({
         subtitle: 'Design, Frontend',
         description: ``,
         links: { repo: 'https://github.com/pronoia9/portfolio-2021', live: '/' },
-        image: '/assets/projects/portfolio.jpg',
+        image: '/src/assets/projects/portfolio.jpg',
         dates: ['Jun 22, 2023', 'Jul 9, 2023'],
         categories: ['react', '3d', 'design', 'frontend'],
         tags: [
@@ -655,7 +655,7 @@ export const dataStore = create((set) => ({
         subtitle: 'Design, Frontend',
         description: `Behold the enchanting realm of your coding prowess, brought to life through a captivating developer portfolio web app. Unveil your wondrous projects, skills, and triumphs in an interface that radiates charm and leaves onlookers grinning like whimsical kittens chasing lines of code.`,
         links: { repo: 'https://github.com/pronoia9/portfolio-2023', live: 'https://lumirise.vercel.app/' },
-        image: '/assets/projects/portfolio-2023.jpg',
+        image: '/src/assets/projects/portfolio-2023.jpg',
         dates: ['Jun 13, 2023'],
         categories: [],
         tags: [
@@ -679,7 +679,7 @@ export const dataStore = create((set) => ({
         subtitle: 'Design, Frontend',
         description: ``,
         links: { repo: 'https://github.com/pronoia9/metaversus', live: 'https://celestia-metaversus.vercel.app' },
-        image: '/assets/projects/metaversus.jpg',
+        image: '/src/assets/projects/metaversus.jpg',
         dates: ['Dec 6, 2022', 'Dec 11, 2022'],
         categories: [],
         tags: ['react', 'javascript', 'css', 'html', 'vitejs', 'next', 'nextjs', 'framer motion', 'tailwind', 'postcss', 'autoprefixer'],
