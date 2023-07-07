@@ -13,7 +13,7 @@ const ListItem = ({ title, subtitle }) => (
 );
 
 export default SectionWrapper(({ project }) => {
-  const { id, title, subtitle, description, links, image, year, date, dates, categories, tags, info } = project;
+  const { id, title, subtitle, description, links, image, dates, categories, tags } = project;
 
   return (
     <>
@@ -24,7 +24,9 @@ export default SectionWrapper(({ project }) => {
           <Description className='mb-15'>{description}</Description>
           <Tags className='art-tags acc'>
             {tags?.map((tag, index) => (
-              <Tag key={`project-${title}-tags-${index}`} $rng={rng(1, 5)}>{tag}</Tag>
+              <Tag key={`project-${title}-tags-${index}`} $rng={rng(1, 5)}>
+                {tag}
+              </Tag>
             ))}
           </Tags>
         </div>
@@ -33,9 +35,9 @@ export default SectionWrapper(({ project }) => {
         <div className='art-a art-card'>
           <div className='art-table p-15-15'>
             <ListContainer>
-              {info?.map((li, index) => (
-                <ListItem key={`project-${title}-info-${index}`} {...li} />
-              ))}
+              <ListItem key={`project-${title}-info-1`} title='Date Started:' subtitle={dates[0]} />
+              {dates[1] && <ListItem key={`project-${title}-info-2`} title='Date Completed:' subtitle={dates[1]} />}
+              <ListItem key={`project-${title}-info-3`} title='Status:' subtitle={!dates[1] ? 'Ongoing' : 'Complete'} />
             </ListContainer>
           </div>
           <Links className='acc'>
@@ -54,8 +56,7 @@ const DescriptionTitle = styled.h5`
 
 const Description = styled.p``;
 
-const Tags = styled.div`
-`;
+const Tags = styled.div``;
 
 const Links = styled.div`
   display: flex;

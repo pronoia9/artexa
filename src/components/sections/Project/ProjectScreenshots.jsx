@@ -2,19 +2,21 @@ import { styled } from 'styled-components';
 
 import { Fancybox, SectionWrapper } from '../../';
 
-export default SectionWrapper(({ images }) => {
+export default SectionWrapper(({ image }) => {
   return (
     <Grid>
-      {images?.map((img) => (
-        <div className='grid-item'>
-          <a data-fancybox='project' href={img} className='art-a art-portfolio-item-frame'>
-            <img src={img} alt='item' />
-            <span className='art-item-hover'>
-              <i className='fas fa-expand' />
-            </span>
-          </a>
-        </div>
-      ))}
+      {Array()
+        .fill(3)
+        .map((v, index) => (
+          <div className='grid-item'>
+            <a data-fancybox='project' href={image.replace('.jpg', `-${index + 1}.jpg`)} className='art-a art-portfolio-item-frame'>
+              <img src={image.replace('.jpg', `-${index + 1}.jpg`)} alt='item' />
+              <span className='art-item-hover'>
+                <i className='fas fa-expand' />
+              </span>
+            </a>
+          </div>
+        ))}
     </Grid>
   );
 });
