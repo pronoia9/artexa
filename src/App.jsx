@@ -20,6 +20,7 @@ export default function App() {
   }));
 
   useEffect(() => {
+    console.log('laptopOpen changed to', laptopOpen);
     if (laptopOpen) setTimeout(() => { setShow(laptopOpen); }, 3000);
     else setShow(laptopOpen);
   }, [laptopOpen, show]);
@@ -37,20 +38,18 @@ export default function App() {
 
         <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
           <TopBar className='art-mobile-top-bar' />
-          {loading === 'TEMPORARILY DISABLE' && <Preloader />}
+          {!loading && !show && <Scene />}
+          {loading && <Preloader />}
 
-          <Wrapper className='art-app-wrapper'>
-            <Container className='art-app-container'>
-              {!loading !== 'TEMPORARILY ENABLE' && show !== 'TEMPORARILY ENABLE' && (
-                <>
-                  <Sidebar />
-                  <PageRoutes />
-                  <Navbar />
-                </>
-              )}
-              {!loading && !show === 'TEMPORARILY DISABLE' && <Scene />}
-            </Container>
-          </Wrapper>
+          {!loading && show && (
+            <Wrapper className='art-app-wrapper'>
+              <Container className='art-app-container'>
+                <Sidebar />
+                <PageRoutes />
+                <Navbar />
+              </Container>
+            </Wrapper>
+          )}
         </AppContainer>
 
         <AnimatedCursorContainer className='animated-cursor'>
