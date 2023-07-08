@@ -2,12 +2,14 @@ import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Environment, ContactShadows, OrbitControls } from '@react-three/drei';
 import { styled } from 'styled-components';
-import { motion } from 'framer-motion-3d';
-import { m } from 'framer-motion';
+import { degToRad } from 'three/src/math/MathUtils';
+import { MotionConfig, m } from 'framer-motion';
+import { LayoutCamera, MotionCanvas, motion } from 'framer-motion-3d';
 
 import { Laptop } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { laptopMotion, sceneMotion } from '../../../utils';
+import { useControls } from 'leva';
 
 export const Scene = () => {
   const { laptopOpen, toggleLaptopOpen } = dataStore((state) => ({
@@ -15,24 +17,79 @@ export const Scene = () => {
     toggleLaptopOpen: state.toggleLaptopOpen,
   }));
 
+  // const { cstart, cend } = useControls('camera', {
+  //   cstart: { value: { x: 22.5, y: 13, z: -37 } },
+  //   cend: { value: { x: 0, y: 0, z: -17 } },
+  // });
+
+  // const { scale, position, rotation } = useControls('laptop', {
+  //   scale: { value: 50 },
+  //   position: { value: [0, -4, 0] }, // [0, 0, 0]
+  //   rotation: { value: [0, Math.PI, 0] }, // [0, 2, 0]
+  // });
+
   return (
-    <Container {...sceneMotion()}>
-      <Canvas dpr={[1, 2]} camera={{ position: [22.5, 13, -37], fov: 35 }}>
-        {/* Controls */}
-        <OrbitControls />
-        {/* Lights */}
-        <motion.pointLight position={[10, 10, 10]} intensity={1.5} color='#f0f0f0' />
-        {/* Shadows */}
-        <ContactShadows position={[0, -4.5, 0]} opacity={0.4} scale={50} blur={1.75} far={4.5} />
-        {/* Model */}
-        <Suspense fallback={null}>
-          <motion.group {...laptopMotion(laptopOpen).container} rotation={[0, Math.PI, 0]}>
-            <Laptop scale={50} onClick={(e) => (e.stopPropagation(), toggleLaptopOpen())} />
-            <Environment preset='city' />
-          </motion.group>
-        </Suspense>
-      </Canvas>
-    </Container>
+    <MotionConfig transition={{ duration: 4, ease: [0.54, 0.01, 0.61, 1] }}>
+      <Container data-is-fullscreen={laptopOpen} onClick={() => 'setFullscreen(!isFullscreen)'}>
+        <m.h1 layout children='<LayoutCamera />' />
+        <Container className='container' layout>
+          <Container>
+            <MotionCanvas dpr={[1, 2]}>
+              <motion.group initial={false} animate={laptopOpen ? 'open' : 'close'}>
+                {/* Camera / Controls */}
+                <OrbitControls enablePan={false} enableRotate={false} />
+                <LayoutCamera
+                  // initial={false}
+                  // animate={!laptopOpen ? { ...cstart, rotateY: degToRad(90), fov: 35 } : { ...cend, fov: 10 }}
+                  variants={{
+                    close: { x: 22.5, y: 13, z: -37, rotateY: degToRad(90), fov: 35 },
+                    open: {
+                      x: 0,
+                      y: 0,
+                      z: -1,
+                      fov: 10,
+                      transition: {
+                        duration: 4,
+                        ease: [0.54, 0.01, 0.61, 1],
+                        z: { type: 'tween', delay: 2, duration: 3, ease: [0.54, 0.01, 0.61, 1] },
+                      },
+                    },
+                  }}
+                />
+                {/* Lights */}
+                <motion.pointLight position={[10, 10, 10]} intensity={1.5} color='#f0f0f0' />
+                {/* Shadows */}
+                <ContactShadows position={[0, -4.5, 0]} opacity={0.4} scale={50} blur={1.75} far={4.5} />
+                {/* Model */}
+
+                <Laptop
+                  onClick={(e) => (e.stopPropagation(), toggleLaptopOpen())}
+                  {...laptopMotion(laptopOpen).container}
+                  scale={50}
+                  position={[0, -4, 0]}
+                  rotation={[0, Math.PI, 0]}
+                  // animate={!laptopOpen ? { x: 0, y: -4, z: 0 } : { x: 0, y: -5.5, z: 0 }}
+                  variants={{
+                    close: { y: -4, z: 0 },
+                    open: {
+                      y: -5.5,
+                      // z: -15,
+                      transition: {
+                        y: { delay: 1, duration: 2, ease: [0.54, 0.01, 0.61, 1] },
+                        // z: { delay: 2, duration: 3, ease: [0.54, 0.01, 0.61, 1] },
+                      },
+                    },
+                  }}
+                />
+                {/* Environment */}
+                <Environment preset='city' />
+              </motion.group>
+            </MotionCanvas>
+            <Canvas style={{ display: 'none' }} />
+          </Container>
+        </Container>
+      </Container>
+    </MotionConfig>
   );
 };
 
