@@ -5,12 +5,17 @@ import { dataStore } from '../../../store/dataStore';
 import { heroMotion, rem } from '../../../utils';
 
 export default SectionWrapper(() => {
-  const { data, accent } = dataStore((state) => ({ data: state.hero, accent: state.accent }));
+  const { data, accent, toggleLaptopOpen } = dataStore((state) => ({
+    data: state.hero,
+    accent: state.accent,
+    toggleLaptopOpen: state.toggleLaptopOpen,
+  }));
 
   const beamMeUpScotty = (e) => {
     e.preventDefault();
     // TODO: Find something cool to do here
     // ! Idea 1: Enter the laptop scene from the start
+    toggleLaptopOpen(false);
   };
 
   return (
