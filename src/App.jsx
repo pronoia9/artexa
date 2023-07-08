@@ -20,14 +20,18 @@ export default function App() {
   }));
 
   useEffect(() => {
-    console.log('laptopOpen changed to', laptopOpen);
-    if (laptopOpen) setTimeout(() => { setShow(laptopOpen); }, 3000);
+    if (laptopOpen)
+      setTimeout(() => {
+        setShow(laptopOpen);
+      }, 5000);
     else setShow(laptopOpen);
   }, [laptopOpen, show]);
 
   // Disable loading after 5s + 2s
   useEffect(() => {
-    setTimeout(() => { setLoading(false); }, 7000);
+    setTimeout(() => {
+      setLoading(false);
+    }, 7000);
     return () => clearTimeout();
   }, []);
 
@@ -36,12 +40,10 @@ export default function App() {
       <ThemeProvider theme={getThemeObject(accent)}>
         <GlobalStyles />
 
-        <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
-          <TopBar className='art-mobile-top-bar' />
-          {!loading && !show && <Scene />}
-          {loading && <Preloader />}
-
-          {!loading && show && (
+        {'!loading' && show && (
+          <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
+            {/* {loading && <Preloader />} */}
+            <TopBar className='art-mobile-top-bar' />
             <Wrapper className='art-app-wrapper'>
               <Container className='art-app-container'>
                 <Sidebar />
@@ -49,8 +51,11 @@ export default function App() {
                 <Navbar />
               </Container>
             </Wrapper>
-          )}
-        </AppContainer>
+          </AppContainer>
+        )}
+
+        {/* {!loading && !show && <Scene />} */}
+        <Scene />
 
         <AnimatedCursorContainer className='animated-cursor'>
           <AnimatedCursor {...cursorOptions} />
