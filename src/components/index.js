@@ -9,6 +9,7 @@ import { Scene } from './components/Laptop/Scene';
 import { Logos, Logo } from './components/Logos';
 import { Preloader } from './components/Preloader';
 import { Progressbar } from './components/Progressbar';
+import { SmoothScroll } from './components/SmoothScroll';
 import { SplitText } from './components/SplitText';
 import { SVGs } from './components/SVGs';
 import { Swiper, SwiperNavigation } from './components/Swiper';
@@ -110,6 +111,7 @@ export {
   Logos, Logo,
   Preloader,
   Progressbar,
+  SmoothScroll,
   SplitText,
   SVGs,
   Swiper, SwiperNavigation,

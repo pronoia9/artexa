@@ -1,28 +1,24 @@
-
 import { useRef, useEffect } from 'react';
-import { Fancybox as NativeFancybox } from '@fancyapps/ui';
+import Scrollbar from 'smooth-scrollbar';
+import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 import { motion } from 'framer-motion';
 
 export const SmoothScroll = (props) => {
-  const containerRef = useRef(null);
+  const scrollRef = useRef(null);
 
   useEffect(() => {
-    const container = containerRef.current;
-
-    const delegate = props.delegate || '[data-fancybox]';
-    const options = props.options || {};
-
-    NativeFancybox.bind(container, delegate, options);
-
-    // ! Doesnt work at all if the return/cleanup is active
-    // return () => {
-    //   NativeFancybox.unbind(container);
-    //   NativeFancybox.close();
-    // };
+    Scrollbar.use(OverscrollPlugin);
+    Scrollbar.init(scrollRef.current, { damping: 0.5 });
   });
 
   return (
-    <motion.div ref={containerRef} {...props}>
+    <motion.div
+      ref={scrollRef}
+      className='art-scroll-frame'
+      damping={0.5}
+      plugins={{ overscroll: { effect: 'bounce' } }}
+      {...props}
+    >
       {props.children}
     </motion.div>
   );
