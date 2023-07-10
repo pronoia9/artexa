@@ -42,7 +42,19 @@ export const Scene = () => {
                   // initial={false}
                   // animate={!laptopOpen ? { ...cstart, rotateY: degToRad(90), fov: 35 } : { ...cend, fov: 10 }}
                   variants={{
-                    close: { x: 22.5, y: 13, z: -37, rotateY: degToRad(90), fov: 35 },
+                    close: {
+                      x: 22.5,
+                      y: 13,
+                      z: -37,
+                      rotateY: degToRad(90),
+                      fov: 35,
+                      transition: {
+                        duration: 4,
+                        ease: [0.54, 0.01, 0.61, 1],
+                        x: { type: 'tween', delay: 1, duration: 3, ease: [0.54, 0.01, 0.61, 1] },
+                        y: { type: 'tween', delay: 1, duration: 3, ease: [0.54, 0.01, 0.61, 1] },
+                      },
+                    },
                     open: {
                       x: 0,
                       y: 0,
