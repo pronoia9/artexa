@@ -26,7 +26,6 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.13.0",
     "smooth-scrollbar": "^8.8.4",
-    "smooth-scrollbar-react": "^2.4.1",
     "styled-components": "^6.0.0-rc.5",
     "swiper": "^9.4.1",
     "three": "^0.153.0",
