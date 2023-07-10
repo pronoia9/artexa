@@ -52,7 +52,7 @@ const Container = styled(motion.div)`
 
   @media (max-width: ${rem(920)}) {
     position: absolute;
-    left: ${rem(-290)};
+    left: ${({ $active }) => rem($active ? 0 : -290)};
     width: ${rem(290)};
     height: 100vh;
     transform: ${({ $active }) => $active && `translateX(${rem(290)})`};
