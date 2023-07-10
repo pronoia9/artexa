@@ -19,7 +19,7 @@ export const Sidebar = () => {
 
         <Profile />
 
-        <SmoothScroll {...sidebarMotion.scrollContent}>
+        <SmoothScroll id='sidebar-scroll' {...sidebarMotion.scrollContent}>
           <Info />       <motion.div className='art-ls-divider' {...sidebarMotion.divider(1.75 * 0.666)} />
           <Languages />  <motion.div className='art-ls-divider' {...sidebarMotion.divider(3.5 * 0.666)} />
           <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(5.25 * 0.666)} />
@@ -34,7 +34,7 @@ export const Sidebar = () => {
   );
 };
 
-const Container = styled(motion.div)`
+const Container = styled.div`
   position: relative;
   width: ${rem(290)};
   min-width: ${rem(290)};
