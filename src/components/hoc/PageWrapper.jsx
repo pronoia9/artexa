@@ -1,4 +1,4 @@
-import { Scrollbar } from 'smooth-scrollbar-react';
+// import { Scrollbar } from 'smooth-scrollbar-react';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -17,10 +17,10 @@ export const PageWrapper = (Component, idName) =>
       <Content id={`${idName}-page`} className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion()}>
         <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
         <Background />
-        <Scrollbar id='scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}>
+        {/* <Scrollbar id='scrollbar' className='art-scroll-frame' damping={0.5} plugins={{ overscroll: { effect: 'bounce' } }}> */}
           <Component {...props} />
           {idName !== 'not-found' && <Footer />}
-        </Scrollbar>
+        {/* </Scrollbar> */}
       </Content>
     );
   };
