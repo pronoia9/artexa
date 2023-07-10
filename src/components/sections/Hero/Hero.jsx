@@ -5,9 +5,8 @@ import { dataStore } from '../../../store/dataStore';
 import { heroMotion, rem } from '../../../utils';
 
 export default SectionWrapper(() => {
-  const { data, accent, toggleLaptopOpen } = dataStore((state) => ({
+  const { data, toggleLaptopOpen } = dataStore((state) => ({
     data: state.hero,
-    accent: state.accent,
     toggleLaptopOpen: state.toggleLaptopOpen,
   }));
 
@@ -20,7 +19,7 @@ export default SectionWrapper(() => {
 
   return (
     <div className='col-lg-12'>
-      <Banner className='art-a art-banner' $accent={accent}>
+      <Banner className='art-a art-banner'>
         <div className='art-banner-back' />
         <div className='art-banner-dec' />
 
@@ -40,7 +39,7 @@ export default SectionWrapper(() => {
 
 const Banner = styled.div`
   transition: 0.55s ease-in-out;
-  background: ${({ $accent = 'pastels' }) => `url('src/assets/hero/bg-${$accent}.jpg')`};
+  background: ${({ theme }) => `url(${theme.heroBg})`};
   background-size: cover;
   background-position: center;
   position: relative;
