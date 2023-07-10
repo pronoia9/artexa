@@ -374,11 +374,10 @@ export const dataStore = create((set) => ({
   projects: {
     filters: [
       { title: 'all', filter: '' },
-      { title: 'react', filter: 'react' },
-      { title: '3d', filter: '3d' },
       { title: 'frontend', filter: 'frontend' },
       { title: 'fullstack', filter: 'fullstack' },
       { title: 'nextjs', filter: 'nextjs' },
+      { title: '3d', filter: '3d' },
     ],
     filterKey: '',
     setFilterKey: (filterKey) => set((state) => ({ projects: { ...state.projects, filterKey: filterKey } })),
