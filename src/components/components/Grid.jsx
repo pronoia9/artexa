@@ -45,7 +45,7 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
   }, []);
 
   return (
-    <>
+    <div className={`col-12${limit ? ' p-0-30' : ''}`}>
       <Fancybox className={`art-grid art-grid-${cols}-col art-gallery`} {...props} {...gridMotion}>
         {Array.from(limit ? data.slice(0, count) : data)
           .flat()
@@ -67,6 +67,6 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
       {limit && data.length > getProjectsCount() && (
         <ButtonGradient title={`View ${!showingAllData() ? 'More' : 'Less'}`} onClick={handleButtonClick} $position='center' {...buttonMotion} />
       )}
-    </>
+    </div>
   );
 };
