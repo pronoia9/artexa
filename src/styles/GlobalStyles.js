@@ -1,12 +1,13 @@
-import { createGlobalStyle, keyframes } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
+import { caveat, caveatBrush, jost, operatorMono } from '../assets';
 import { rem } from '../utils';
 
 const GlobalStyles = createGlobalStyle`
-  @font-face { font-family: 'Caveat'; src: url('src/assets/fonts/Caveat/Caveat-VariableFont_wght.ttf'); }
-  @font-face { font-family: 'Caveat Brush'; src: url('src/assets/fonts/Caveat_Brush/CaveatBrush-Regular.ttf'); }
-  @font-face { font-family: 'Jost'; src: url('src/assets/fonts/Jost/Jost-VariableFont_wght.ttf'); }
-  @font-face { font-family: 'Operator Mono'; src: url('src/assets/fonts/Operator_Mono/Operator Mono_Light Nerd_Font_Complete.otf'); }
+  @font-face { font-family: 'Caveat'; src: ${`url(${caveat})`}; }
+  @font-face { font-family: 'Caveat Brush'; src: ${`url(${caveatBrush})`}; }
+  @font-face { font-family: 'Jost'; src: ${`url(${jost})`}; }
+  @font-face { font-family: 'Operator Mono'; src: ${`url(${operatorMono})`}; }
 
   :root {
     --c-bg: ${({ theme }) => theme.bg};

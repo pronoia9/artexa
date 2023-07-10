@@ -1,7 +1,7 @@
 // 3D
 
 // FONTS
-
+import { caveat, caveatBrush, jost, operatorMono } from './fonts';
 // IMAGES
 // Footer
 import { footer1, footer2, footer3, footer4 } from './images/footer';
@@ -19,6 +19,10 @@ import sidebarAvatar from './images/shalom.png';
 import { techAnimatedCursor, techAxios, techBitmoji, techCountup, techEmailjs, techFancybox, techFontAwesome, techFormik, techFramerMotion, techGsap, techPoimandres, techProgressbar, techReactRouter, techReactThreeDrei, techReactThreeFiber, techSmoothScrollbar, techStyledComponents, techSwiper, techThreejs, techTypedjs, techVitejs } from './images/technologies'
 
 export {
+  // 3D
+  // FONTS
+  caveat, caveatBrush, jost, operatorMono,
+  // IMAGES
   // Footer
   footer1, footer2, footer3, footer4,
   // Hero
