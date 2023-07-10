@@ -231,7 +231,7 @@ export const projectsMotion = {
   filters: { variants: staggerContainer(0.15) },
   filter: { variants: zoomIn({ type: 'tween', duration: 0.1, ease: 'easeIn' }) },
   grid: { variants: staggerContainerMirror(0.1) },
-  button: { variants: zoomIn({ type: 'tween', delay: 4.5, duration: 1, ease: 'easeIn' }) },
+  button: { variants: zoomIn({ type: 'tween', duration: 0.25, ease: 'easeIn' }) },
   card: { variants: zoomIn({ type: 'tween', duration: 0.01, ease: 'linear', staggerChildren: 0.1 }) },
   swiper: { variants: fadeIn() },
   navigation: { variants: fadeIn({ delay: 6.25 }) },
