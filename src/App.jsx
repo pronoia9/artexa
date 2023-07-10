@@ -40,7 +40,7 @@ export default function App() {
       <ThemeProvider theme={getThemeObject(accent)}>
         <GlobalStyles />
 
-        {'!loading' && show && (
+        {'!loading' && 'show' && (
           <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
             {/* {loading && <Preloader />} */}
             <TopBar className='art-mobile-top-bar' />
@@ -55,7 +55,7 @@ export default function App() {
         )}
 
         {/* {!loading && !show && <Scene />} */}
-        <Scene />
+        {/* <Scene /> */}
 
         <AnimatedCursorContainer className='animated-cursor'>
           <AnimatedCursor {...cursorOptions} />
