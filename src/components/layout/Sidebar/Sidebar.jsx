@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Profile, Info, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials } from '../..';
+import { Profile, Info, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials, SmoothScroll } from '../..';
 import { dataStore } from '../../../store/dataStore';
 import { rem, sidebarMotion } from '../../../utils';
 
@@ -19,16 +19,14 @@ export const Sidebar = () => {
 
         <Profile />
 
-        <ScrollFrame className='art-scroll-frame'>
-          <ScrollContent className='scroll-content' {...sidebarMotion.scrollContent}>
-            <Info />       <motion.div className='art-ls-divider' {...sidebarMotion.divider(1.75 * 0.666)} />
-            <Languages />  <motion.div className='art-ls-divider' {...sidebarMotion.divider(3.5 * 0.666)} />
-            <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(5.25 * 0.666)} />
-            <SoftSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(8.25 * 0.666)} />
-            <Strengths />  <motion.div className='art-ls-divider' {...sidebarMotion.divider(10.5 * 0.666)} />
-            <Resume />
-          </ScrollContent>
-        </ScrollFrame>
+        <SmoothScroll {...sidebarMotion.scrollContent}>
+          <Info />       <motion.div className='art-ls-divider' {...sidebarMotion.divider(1.75 * 0.666)} />
+          <Languages />  <motion.div className='art-ls-divider' {...sidebarMotion.divider(3.5 * 0.666)} />
+          <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(5.25 * 0.666)} />
+          <SoftSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(8.25 * 0.666)} />
+          <Strengths />  <motion.div className='art-ls-divider' {...sidebarMotion.divider(10.5 * 0.666)} />
+          <Resume />
+        </SmoothScroll>
 
         <Socials />
       </Wrapper>
@@ -47,6 +45,10 @@ const Container = styled(motion.div)`
   z-index: 999;
   isolation: isolate;
   transition: 0.55s ease-in-out;
+
+  .scroll-content {
+    padding: ${rem(240)} 0 ${rem(50)};
+  }
 
   @media (max-width: ${rem(920)}) {
     position: absolute;
@@ -96,13 +98,4 @@ const MobileHeader = styled.div`
       transition: 0.4s ease-in-out;
     }
   }
-`;
-
-const ScrollFrame = styled.div`
-  overflow-x: hidden;
-  overflow-y: scroll;
-`;
-
-const ScrollContent = styled(motion.div)`
-  padding: ${rem(240)} 0 ${rem(50)};
 `;
