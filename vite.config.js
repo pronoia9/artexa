@@ -12,4 +12,5 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['react-countup.js', 'yup.js', 'formik.js'],
   },
+  assetsInclude: ['**.glb']
 });
