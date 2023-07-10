@@ -1,6 +1,5 @@
 import {
   getSystemTheme,
-  getAccentBackground,
   getThemeObject,
   getStoredSettings,
   setStoredSettings,
@@ -52,7 +51,6 @@ import {
 
 export {
   getSystemTheme,
-  getAccentBackground,
   getThemeObject,
   getStoredSettings,
   setStoredSettings,

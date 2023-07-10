@@ -2,7 +2,6 @@ import emailjs from '@emailjs/browser';
 import { Fancybox } from '@fancyapps/ui';
 import * as ProgressBar from 'progressbar.js';
 
-import { heroBgBlue, heroBgGreen, heroBgPastel, heroBgPink, heroBgPurple, heroBgRed, heroBgYellow } from '../assets';
 import { themes, colors } from '../styles/Themes';
 
 const storageKey = 'artexaSettings';
@@ -11,17 +10,6 @@ const storageKey = 'artexaSettings';
 
 // Get the system theme based on the user's OS preference
 export const getSystemTheme = () => (window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-
-export const getAccentBackground = (accent) =>
-  ({
-    blue: heroBgBlue,
-    green: heroBgGreen,
-    pastels: heroBgPastel,
-    pink: heroBgPink,
-    purple: heroBgPurple,
-    red: heroBgRed,
-    yellow: heroBgYellow,
-  }[accent]);
 
 // Get the theme object based on the provided theme name
 export const getThemeObject = (theme) => themes[theme] || colors[theme] || {};
