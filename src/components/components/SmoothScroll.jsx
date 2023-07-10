@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import Scrollbar from 'smooth-scrollbar';
 import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 import { motion } from 'framer-motion';
+import { styled } from 'styled-components';
 
 export const SmoothScroll = (props) => {
   const scrollRef = useRef(null);
@@ -12,7 +13,7 @@ export const SmoothScroll = (props) => {
   });
 
   return (
-    <motion.div
+    <Container
       ref={scrollRef}
       className='art-scroll-frame'
       damping={0.5}
@@ -20,6 +21,11 @@ export const SmoothScroll = (props) => {
       {...props}
     >
       {props.children}
-    </motion.div>
+    </Container>
   );
 };
+
+const Container = styled(motion.div)`
+  width: 100%;
+  height: calc(100vh - 30px);
+`;
