@@ -721,7 +721,8 @@ export const dataStore = create((set) => ({
           'react router dom',
           'shaders',
           '3d',
-          'frontend'
+          'frontend',
+          'styled components',
         ],
       },
       {
