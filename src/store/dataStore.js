@@ -9,7 +9,7 @@ import {
   // Hobbies
   baking, beanBagChairChill, dopPooping, gaming, keyboardSmash, loveThisWithCat, sticker2, sticker3, sticker,
   // Projects
-  banarama, dallElyse, donutDelights, metaversus, neonRetroverse, niftyNoggin, nocturnalEnigma, organizedBliss, portfolio2023, portfolio, punyMath, sereneVistas, sprinkleSpectacular, stellarCountdown, teeTailor, westsum,
+  banarama, dallElyse, donutDelights, metaversus, neonRetroverse, niftyNoggin, nocturnalEnigma, organizedBliss, portfolio2023, portfolio, punyMath, sereneVistas, sprinkleSpectacular, stellarCountdown, teeTailor, westsum, fiberFollies, makiwaku,
   // Technologies
   techAnimatedCursor, techAxios, techBitmoji, techCountup, techEmailjs, techFancybox, techFontAwesome, techFormik, techFramerMotion, techGsap, techPoimandres, techProgressbar, techReactRouter, techReactThreeDrei, techReactThreeFiber, techSmoothScrollbar, techStyledComponents, techSwiper, techThreejs, techTypedjs, techVitejs,
  } from '../assets';
@@ -493,7 +493,7 @@ export const dataStore = create((set) => ({
         description: `Step into the realm of AI-powered product customization with Tee-Tailor. This dynamic 3D product website allows users to personalize their items with an innovative twist. Witness the magic as the latest AI technologies bring unique designs to life, enabling customers to tailor their products to perfection.`,
         links: { repo: 'https://github.com/pronoia9/tee-tailor', live: 'https://tee-tailor.vercel.app/' },
         image: teeTailor,
-        date: ['April 10, 2023', 'April 14, 2023'],
+        dates: ['April 10, 2023', 'April 14, 2023'],
         categories: ['react', 'fullstack', '3d', 'ai'],
         tags: [
           'react',
@@ -666,7 +666,7 @@ export const dataStore = create((set) => ({
         links: { repo: 'https://github.com/pronoia9/portfolio-2023', live: 'https://lumirise.vercel.app/' },
         image: portfolio2023,
         dates: ['Jun 13, 2023'],
-        categories: [],
+        categories: ['desgin', 'frontend', 'react'],
         tags: [
           'react',
           'html',
@@ -690,8 +690,50 @@ export const dataStore = create((set) => ({
         links: { repo: 'https://github.com/pronoia9/metaversus', live: 'https://celestia-metaversus.vercel.app' },
         image: metaversus,
         dates: ['Dec 6, 2022', 'Dec 11, 2022'],
-        categories: [],
+        categories: ['design', 'frontend', 'react'],
         tags: ['react', 'javascript', 'css', 'html', 'vitejs', 'next', 'nextjs', 'framer motion', 'tailwind', 'postcss', 'autoprefixer'],
+      },
+      {
+        id: 'fiber-follies',
+        title: 'Fiber Follies',
+        subtitle: 'Frontend, ThreeJS',
+        description: ``,
+        links: { repo: 'https://github.com/pronoia9/fiber-follies', live: 'https://fiber-follies.vercel.app/' },
+        image: fiberFollies,
+        dates: ['July 11 2023'],
+        categories: ['react', 'threejs', 'design'],
+        tags: [
+          'react',
+          'html',
+          'css',
+          'javascript',
+          'vitejs',
+          'pmndrs',
+          'react spring',
+          'react three drei',
+          'react three fiber',
+          'react three postprocessing',
+          ' use gesture',
+          'leva',
+          'maath',
+          'three',
+          'zustand',
+          'react router dom',
+          'shaders',
+          '3d',
+          'frontend'
+        ],
+      },
+      {
+        id: 'makiwaku',
+        title: 'Makiwaku',
+        subtitle: 'Design, Frontend',
+        description: ``,
+        links: { repo: 'https://github.com/pronoia9/makiwaku', live: 'https://makiwaku.vercel.app/' },
+        image: makiwaku,
+        dates: ['Jul 16 2023', 'Jul 16 2023'],
+        categories: ['html', 'css', 'javascript'],
+        tags: ['html', 'css', 'javascript', 'vitejs', 'aos', 'frontend'],
       },
       // {
       //   id: '',
@@ -704,7 +746,7 @@ export const dataStore = create((set) => ({
       //   categories: [],
       //   tags: [],
       // },
-    ].sort((a, b) => b.date - a.date),
+    ].sort((a, b) => new Date(b.dates[0]) - new Date(a.dates[0])),
   },
 
   // History
