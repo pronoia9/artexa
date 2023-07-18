@@ -28,11 +28,11 @@ export default function App() {
     else setShow(laptopOpen);
   }, [laptopOpen, show]);
 
-  // Disable loading after 5s + 2s
+  // Disable loading after 5s + 2s //! TEMPORARILY LOWERED
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 7000);
+    }, 1);
     return () => clearTimeout();
   }, []);
 
