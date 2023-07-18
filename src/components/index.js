@@ -60,9 +60,6 @@ import ProjectPage from './pages/ProjectPage';
 import ProjectsPage from './pages/ProjectsPage';
 import TechnologiesPage from './pages/TechnologiesPage';
 
-// ---- ROUTES
-import { PageRoutes } from './routes/Routes';
-
 // ---- SECTIONS
 // -- About
 import About from './sections/About/About';
@@ -128,9 +125,6 @@ export {
 
   // ---- PAGES ----
   AboutPage, ContactPage, CoursePage, HistoryPage, HomePage, NotFound, ProjectPage, ProjectsPage, TechnologiesPage,
-
-  // ---- ROUTES ----
-  PageRoutes,
 
   // ---- SECTIONS ----
   About, Hobbies, HobbiesCard,
