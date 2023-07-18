@@ -34,7 +34,7 @@ export const Sidebar = () => {
   );
 };
 
-const Container = styled.div`
+const Container = styled(motion.div)`
   position: relative;
   width: ${rem(290)};
   min-width: ${rem(290)};
