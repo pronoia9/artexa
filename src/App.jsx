@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react';
+import { Outlet } from 'react-router-dom';
 import AnimatedCursor from 'react-animated-cursor';
 import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { PageRoutes, Navbar, Sidebar, Scene, Preloader } from './components';
+import { Navbar, Sidebar, Scene, Preloader } from './components';
 import { dataStore } from './store/dataStore';
 import { GlobalStyles } from './styles';
 import { appMotion, getThemeObject, rem } from './utils';
@@ -42,15 +43,20 @@ export default function App() {
 
         {'!loading' && 'show' && (
           <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
-            {/* {loading && <Preloader />} */}
-            <TopBar className='art-mobile-top-bar' />
-            <Wrapper className='art-app-wrapper'>
-              <Container className='art-app-container'>
-                <Sidebar />
-                <PageRoutes />
-                <Navbar />
-              </Container>
-            </Wrapper>
+            {loading ? (
+              <Preloader />
+            ) : (
+              <>
+                <TopBar className='art-mobile-top-bar' />
+                <Wrapper className='art-app-wrapper'>
+                  <Container className='art-app-container'>
+                    <Sidebar />
+                    <Outlet />
+                    <Navbar />
+                  </Container>
+                </Wrapper>
+              </>
+            )}
           </AppContainer>
         )}
 
