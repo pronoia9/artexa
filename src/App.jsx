@@ -5,6 +5,7 @@ import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { Navbar, Sidebar, Scene, Preloader } from './components';
+import { Scene as Room } from './components/components/Room/Scene';
 import { dataStore } from './store/dataStore';
 import { GlobalStyles } from './styles';
 import { appMotion, getThemeObject, rem } from './utils';
@@ -47,14 +48,15 @@ export default function App() {
               <Preloader />
             ) : (
               <>
-                <TopBar className='art-mobile-top-bar' />
+                {/* <TopBar className='art-mobile-top-bar' />
                 <Wrapper className='art-app-wrapper'>
                   <Container className='art-app-container'>
                     <Sidebar />
                     <Outlet />
                     <Navbar />
                   </Container>
-                </Wrapper>
+                </Wrapper> */}
+                <Room />
               </>
             )}
           </AppContainer>
