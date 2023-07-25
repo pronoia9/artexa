@@ -57,6 +57,7 @@ import teeTailor from './images/projects/tee-tailor.jpg';
 import westsum from './images/projects/westsum.jpg';
 import fiberFollies from './images/projects/fiber-follies.jpg';
 import makiwaku from './images/projects/makiwaku.jpg';
+import promptle from './images/projects/promptle.jpg';
 // Technologies
 import techAnimatedCursor from './images/technologies/animated-cursor.jpeg';
 import techAxios from './images/technologies/axios.jpg';
@@ -96,7 +97,7 @@ export {
   // Hobbies
   baking, beanBagChairChill, dopPooping, gaming, keyboardSmash, loveThisWithCat, sticker2, sticker3, sticker,
   // Projects
-  banarama, dallElyse, donutDelights, metaversus, neonRetroverse, niftyNoggin, nocturnalEnigma, organizedBliss, portfolio2023, portfolio, punyMath, sereneVistas, sprinkleSpectacular, stellarCountdown, teeTailor, westsum, fiberFollies, makiwaku,
+  banarama, dallElyse, donutDelights, metaversus, neonRetroverse, niftyNoggin, nocturnalEnigma, organizedBliss, portfolio2023, portfolio, punyMath, sereneVistas, sprinkleSpectacular, stellarCountdown, teeTailor, westsum, fiberFollies, makiwaku, promptle,
   // Technologies
   techAnimatedCursor, techAxios, techBitmoji, techCountup, techEmailjs, techFancybox, techFontAwesome, techFormik, techFramerMotion, techGsap, techPoimandres, techProgressbar, techReactRouter, techReactThreeDrei, techReactThreeFiber, techSmoothScrollbar, techStyledComponents, techSwiper, techThreejs, techTypedjs, techVitejs,
 }
