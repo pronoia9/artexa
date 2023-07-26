@@ -768,7 +768,7 @@ export const dataStore = create((set) => ({
         description: ``,
         links: { repo: 'https://github.com/pronoia9/doodlebug-dash', live: 'https://doodlebug-dash.vercel.app/' },
         image: doodlebugDash,
-        dates: ['Jul 26 2023', 'Jul 28 2023'],
+        dates: ['Jul 25 2023', 'Jul 26 2023'],
         categories: ['nextjs', 'frontend', 'typescript'],
         tags: [
           'react',
