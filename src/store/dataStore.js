@@ -764,7 +764,7 @@ export const dataStore = create((set) => ({
       {
         id: 'doodlebug-dash',
         title: 'Doodlebug Dash',
-        subtitle: 'Design, Fullstack',
+        subtitle: 'Design, Frontend',
         description: ``,
         links: { repo: 'https://github.com/pronoia9/doodlebug-dash', live: 'https://doodlebug-dash.vercel.app/' },
         image: doodlebugDash,
