@@ -9,7 +9,7 @@ import {
   // Hobbies
   baking, beanBagChairChill, dopPooping, gaming, keyboardSmash, loveThisWithCat, sticker2, sticker3, sticker,
   // Projects
-  banarama, dallElyse, donutDelights, metaversus, neonRetroverse, niftyNoggin, nocturnalEnigma, organizedBliss, portfolio2023, portfolio, punyMath, sereneVistas, sprinkleSpectacular, stellarCountdown, teeTailor, westsum, fiberFollies, makiwaku, promptle,
+  banarama, dallElyse, donutDelights, metaversus, neonRetroverse, niftyNoggin, nocturnalEnigma, organizedBliss, portfolio2023, portfolio, punyMath, sereneVistas, sprinkleSpectacular, stellarCountdown, teeTailor, westsum, fiberFollies, makiwaku, promptle, doodlebugDash,
   // Technologies
   techAnimatedCursor, techAxios, techBitmoji, techCountup, techEmailjs, techFancybox, techFontAwesome, techFormik, techFramerMotion, techGsap, techPoimandres, techProgressbar, techReactRouter, techReactThreeDrei, techReactThreeFiber, techSmoothScrollbar, techStyledComponents, techSwiper, techThreejs, techTypedjs, techVitejs,
  } from '../assets';
@@ -767,7 +767,7 @@ export const dataStore = create((set) => ({
         subtitle: 'Design, Fullstack',
         description: ``,
         links: { repo: 'https://github.com/pronoia9/doodlebug-dash', live: 'https://doodlebug-dash.vercel.app/' },
-        image: '',
+        image: doodlebugDash,
         dates: ['Jul 26 2023', 'Jul 28 2023'],
         categories: ['nextjs', 'frontend', 'typescript'],
         tags: [
@@ -781,6 +781,8 @@ export const dataStore = create((set) => ({
           'postcss',
           'autoprefixer',
           'headlesssui',
+          'apis',
+          'rapidapi',
           'frontend',
         ],
       },
