@@ -1122,31 +1122,31 @@ export const dataStore = create((set) => ({
     setCount: (count) => set((state) => ({ technologies: { ...state.technologies, count: count } })),
     list: [
       {
-        title: 'styled components',
+        title: 'Styled Components',
         subtitle: 'Styling your way with speed, strong typing, and flexibility.',
         link: 'https://styled-components.com',
         image: techStyledComponents,
       },
       {
-        title: 'framer motion',
+        title: 'Framer Motion',
         subtitle: '',
         link: '',
         image: techFramerMotion,
       },
       {
-        title: 'threejs',
+        title: 'Threejs',
         subtitle: '',
         link: '',
         image: techThreejs,
       },
       {
-        title: 'react three fiber',
+        title: 'React Three Fiber',
         subtitle: '',
         link: '',
         image: techReactThreeFiber,
       },
       {
-        title: 'react three drei',
+        title: 'React Three Drei',
         subtitle: '',
         link: '',
         image: techReactThreeDrei,
@@ -1188,7 +1188,7 @@ export const dataStore = create((set) => ({
         image: techSmoothScrollbar,
       },
       {
-        title: 'axios',
+        title: 'Axios',
         subtitle: '',
         link: '',
         image: techAxios,
@@ -1200,7 +1200,7 @@ export const dataStore = create((set) => ({
         image: techGsap,
       },
       {
-        title: 'vitejs',
+        title: 'Vitejs',
         subtitle: '',
         link: '',
         image: techVitejs,
@@ -1236,7 +1236,7 @@ export const dataStore = create((set) => ({
         image: techReactRouter,
       },
       {
-        title: 'Progressbar,js',
+        title: 'Progressbar.js',
         subtitle: '',
         link: '',
         image: techProgressbar,
@@ -1246,6 +1246,12 @@ export const dataStore = create((set) => ({
         subtitle: '',
         link: '',
         image: techPoimandres,
+      },
+      {
+        title: 'Nextjs',
+        subtitle: '',
+        link: '',
+        image: '',
       },
     ],
   },
