@@ -1,12 +1,17 @@
-import { Environment, Sky } from '@react-three/drei';
+import { Environment, Sky, Stars, Cloud } from '@react-three/drei';
 import { EffectComposer, Bloom, DepthOfField } from '@react-three/postprocessing';
 
 export const Effects = () => {
   return (
     <>
-      {/* <Sky scale={1000} sunPosition={[2, 0.4, 10]} /> */}
-      {/* <fog attach='fog' args={['#ff5020', 5, 18]} /> */}
-      <Environment preset='forest' />
+      {/* <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} /> */}
+      {/* <color attach='background' args={['#728CAD']} /> */}
+      {/* <Sky distance={450000} sunPosition={[0, 1, 0]} inclination={0} azimuth={0.25} /> */}
+      <Sky sunPosition={[100, 20, 100]} />
+      <Cloud opacity={0.5} speed={0.8} width={10} depth={2.5} segments={20} />
+
+      <Environment preset='apartment' />
+
       <EffectComposer>
         <Bloom intensity={1.0} luminanceThreshold={0.9} luminanceSmoothing={0.025} mipmapBlur={true} />
         <DepthOfField focusDistance={0} focalLength={0.02} bokehScale={2} />
