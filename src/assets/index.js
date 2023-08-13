@@ -59,6 +59,7 @@ import fiberFollies from './images/projects/fiber-follies.jpg';
 import makiwaku from './images/projects/makiwaku.jpg';
 import promptle from './images/projects/promptle.jpg';
 import doodlebugDash from './images/projects/doodlebug-dash.jpg';
+import weavio from './images/projects/weavio.jpg';
 // Technologies
 import techAnimatedCursor from './images/technologies/animated-cursor.jpeg';
 import techAxios from './images/technologies/axios.jpg';
@@ -86,19 +87,83 @@ export {
   // 3D
   macbook,
   // FONTS
-  caveat, caveatBrush, jost, operatorMono,
+  caveat,
+  caveatBrush,
+  jost,
+  operatorMono,
   // IMAGES
-  sidebarAvatar, heroAvatar,
+  sidebarAvatar,
+  heroAvatar,
   // Footer
-  footer1, footer2, footer3, footer4,
+  footer1,
+  footer2,
+  footer3,
+  footer4,
   // Hero
-  heroBgBlue, heroBgGreen, heroBgPastel, heroBgPink, heroBgPurple, heroBgRed, heroBgYellow,
+  heroBgBlue,
+  heroBgGreen,
+  heroBgPastel,
+  heroBgPink,
+  heroBgPurple,
+  heroBgRed,
+  heroBgYellow,
   // History
-  historyCei, historySc, historyTabWdb, historyZtmTcwd,
+  historyCei,
+  historySc,
+  historyTabWdb,
+  historyZtmTcwd,
   // Hobbies
-  baking, beanBagChairChill, dopPooping, gaming, keyboardSmash, loveThisWithCat, sticker2, sticker3, sticker,
+  baking,
+  beanBagChairChill,
+  dopPooping,
+  gaming,
+  keyboardSmash,
+  loveThisWithCat,
+  sticker2,
+  sticker3,
+  sticker,
   // Projects
-  banarama, dallElyse, donutDelights, metaversus, neonRetroverse, niftyNoggin, nocturnalEnigma, organizedBliss, portfolio2023, portfolio, punyMath, sereneVistas, sprinkleSpectacular, stellarCountdown, teeTailor, westsum, fiberFollies, makiwaku, promptle, doodlebugDash,
+  banarama,
+  dallElyse,
+  donutDelights,
+  metaversus,
+  neonRetroverse,
+  niftyNoggin,
+  nocturnalEnigma,
+  organizedBliss,
+  portfolio2023,
+  portfolio,
+  punyMath,
+  sereneVistas,
+  sprinkleSpectacular,
+  stellarCountdown,
+  teeTailor,
+  westsum,
+  fiberFollies,
+  makiwaku,
+  promptle,
+  doodlebugDash,
+  weavio,
   // Technologies
-  techAnimatedCursor, techAxios, techBitmoji, techCountup, techEmailjs, techFancybox, techFontAwesome, techFormik, techFramerMotion, techGsap, techPoimandres, techProgressbar, techReactRouter, techReactThreeDrei, techReactThreeFiber, techSmoothScrollbar, techStyledComponents, techSwiper, techThreejs, techTypedjs, techVitejs,
-}
+  techAnimatedCursor,
+  techAxios,
+  techBitmoji,
+  techCountup,
+  techEmailjs,
+  techFancybox,
+  techFontAwesome,
+  techFormik,
+  techFramerMotion,
+  techGsap,
+  techPoimandres,
+  techProgressbar,
+  techReactRouter,
+  techReactThreeDrei,
+  techReactThreeFiber,
+  techSmoothScrollbar,
+  techStyledComponents,
+  techSwiper,
+  techThreejs,
+  techTypedjs,
+  techVitejs,
+};
