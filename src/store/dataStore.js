@@ -9,7 +9,7 @@ import {
   // Hobbies
   baking, beanBagChairChill, dopPooping, gaming, keyboardSmash, loveThisWithCat, sticker2, sticker3, sticker,
   // Projects
-  banarama, dallElyse, donutDelights, metaversus, neonRetroverse, niftyNoggin, nocturnalEnigma, organizedBliss, portfolio2023, portfolio, punyMath, sereneVistas, sprinkleSpectacular, stellarCountdown, teeTailor, westsum, fiberFollies, makiwaku, promptle, doodlebugDash,
+  banarama, dallElyse, donutDelights, metaversus, neonRetroverse, niftyNoggin, nocturnalEnigma, organizedBliss, portfolio2023, portfolio, punyMath, sereneVistas, sprinkleSpectacular, stellarCountdown, teeTailor, westsum, fiberFollies, makiwaku, promptle, doodlebugDash, weavio,
   // Technologies
   techAnimatedCursor, techAxios, techBitmoji, techCountup, techEmailjs, techFancybox, techFontAwesome, techFormik, techFramerMotion, techGsap, techPoimandres, techProgressbar, techReactRouter, techReactThreeDrei, techReactThreeFiber, techSmoothScrollbar, techStyledComponents, techSwiper, techThreejs, techTypedjs, techVitejs,
  } from '../assets';
@@ -784,6 +784,37 @@ export const dataStore = create((set) => ({
           'apis',
           'rapidapi',
           'frontend',
+        ],
+      },
+      {
+        id: 'weavio',
+        title: 'Weavio',
+        subtitle: 'Fullstack, Next, Design',
+        description: ``,
+        links: { repo: 'https://github.com/pronoia9/weavio', live: 'https://weavio.vercel.app' },
+        image: weavio,
+        dates: ['Aug 7, 2023', 'Aug 12, 2023'],
+        categories: ['Fullstack', 'Design', 'Nextjs'],
+        tags: [
+          'react',
+          'nextjs',
+          'javascript',
+          'typescript',
+          'html',
+          'css',
+          'tailwindcss',
+          'tailwindcss-animate',
+          'postcss',
+          'autoprefixer',
+          'clerk',
+          'shadcn',
+          'radix-ui',
+          'mongodb',
+          'mongoose',
+          'uploadthing',
+          'zod',
+          'clsx',
+          'svix',
         ],
       },
       // {
