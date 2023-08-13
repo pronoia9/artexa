@@ -65,9 +65,9 @@ export default function App() {
         {/* {!loading && !show && <Scene />} */}
         {/* <Scene /> */}
 
-        <AnimatedCursorContainer className='animated-cursor'>
+        {/* <AnimatedCursorContainer className='animated-cursor'>
           <AnimatedCursor {...cursorOptions} />
-        </AnimatedCursorContainer>
+        </AnimatedCursorContainer> */}
       </ThemeProvider>
     </ThemeProvider>
   );
