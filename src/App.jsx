@@ -5,7 +5,7 @@ import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { Navbar, Sidebar, Scene, Preloader } from './components';
-import { Scene as Room } from './components/components/Room/Scene';
+import { Experience } from './components/components/Room/Experience';
 import { dataStore } from './store/dataStore';
 import { GlobalStyles } from './styles';
 import { appMotion, getThemeObject, rem } from './utils';
@@ -56,7 +56,7 @@ export default function App() {
                     <Navbar />
                   </Container>
                 </Wrapper> */}
-                <Room />
+                <Experience />
               </>
             )}
           </AppContainer>
