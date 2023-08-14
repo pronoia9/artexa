@@ -23,7 +23,9 @@ export default function RootLayout({ children }) {
 
   // Disable loading after 7s maybe?
   useEffect(() => {
-    const loader = setTimeout(() => { setLoading(false); }, loadTime);
+    const loader = setTimeout(() => {
+      setLoading(false);
+    }, loadTime);
     return () => clearTimeout(loader);
   }, []);
 
@@ -34,12 +36,12 @@ export default function RootLayout({ children }) {
           <ThemeProvider theme={getThemeObject(theme)}>
             <ThemeProvider theme={getThemeObject(accent)}>
               <GlobalStyles />
+
               <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
-                {loading ? (
-                  <Preloader />
-                ) : (
+                {loading ? (<Preloader />) : (
                   <>
                     <TopBar className='art-mobile-top-bar' />
+                    
                     <Wrapper className='art-app-wrapper'>
                       <Container className='art-app-container'>
                         <Sidebar />
