@@ -1,22 +1,31 @@
 'use client';
 
 import { useRef, useEffect } from 'react';
-import Scrollbar from 'smooth-scrollbar';
+import SmoothScrollbar from 'smooth-scrollbar';
 import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
 import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 
-export const SmoothScroll = ({ options, ...props }) => {
-  const scrollRef = useRef(null);
+export const SmoothScroll = ({ options, children, ...props }) => {
+  const content = useRef(null);
 
   useEffect(() => {
-    Scrollbar.use(OverscrollPlugin);
-    Scrollbar.init(scrollRef.current, { damping: 0.5, ...options });
-  });
+    SmoothScrollbar.use(OverscrollPlugin);
+    SmoothScrollbar.init(content.current, {
+      // renderByPixels: false,
+      damping: 0.5,
+      // delegateTo: document,
+      ...options,
+    });
+
+    return () => {
+      if (SmoothScrollbar) SmoothScrollbar.destroy();
+    };
+  }, []);
 
   return (
-    <Container ref={scrollRef} className='art-scroll-frame' {...props}>
-      {props.children}
+    <Container data-scrollbar ref={content} className='art-scroll-frame' {...props}>
+      <div className='container'>{children}</div>
     </Container>
   );
 };
