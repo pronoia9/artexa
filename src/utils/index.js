@@ -1,21 +1,10 @@
-import {
-  getSystemTheme,
-  getThemeObject,
-  getStoredSettings,
-  setStoredSettings,
-  getThemeFromStorage,
-  saveThemeToStorage,
-  isDarkTheme,
-  lowerCase,
-  rng,
-  rem,
-  ProgressbarInstance,
-  rgbaToHex,
-  getProjectsCount,
-  handleFormSubmit,
-  openFancybox,
-} from './utils';
+// CONSTANTS
+import { cursorOptions, sidebar, navbar, footer, hero, counters, projects, history, courses, technologies, contact, about, services } from './constants';
 
+// STORE
+import { dataStore } from './dataStore';
+
+// MOTION
 import {
   appMotion,
   sceneMotion,
@@ -26,8 +15,8 @@ import {
   navbarMotion,
   footerMotion,
   heroMotion,
-  servicesMotion,
   countersMotion,
+  servicesMotion,
   projectsMotion,
   historyMotion,
   technologiesMotion,
@@ -49,7 +38,8 @@ import {
   staggerContainerMirror,
 } from './motion';
 
-export {
+// UTILS
+import {
   getSystemTheme,
   getThemeObject,
   getStoredSettings,
@@ -60,12 +50,31 @@ export {
   lowerCase,
   rng,
   rem,
-  ProgressbarInstance,
   rgbaToHex,
   getProjectsCount,
+  ProgressbarInstance,
   handleFormSubmit,
   openFancybox,
-  // Motion
+} from './utils';
+
+export {
+  // CONSTANTS
+  cursorOptions,
+  sidebar,
+  navbar,
+  footer,
+  hero,
+  counters,
+  projects,
+  history,
+  courses,
+  technologies,
+  contact,
+  about,
+  services,
+  // STORE
+  dataStore,
+  // MOTION
   appMotion,
   sceneMotion,
   laptopMotion,
@@ -75,16 +84,16 @@ export {
   navbarMotion,
   footerMotion,
   heroMotion,
-  servicesMotion,
   countersMotion,
+  servicesMotion,
   projectsMotion,
   historyMotion,
   technologiesMotion,
   contactMotion,
+  coursesMotion,
   aboutMotion,
   projectMotion,
   notFoundMotion,
-  coursesMotion,
   preloaderMotion,
   cardMotion,
   buttonMotion,
@@ -96,4 +105,20 @@ export {
   slideIn,
   staggerContainer,
   staggerContainerMirror,
+  // UTILS
+  getSystemTheme,
+  getThemeObject,
+  getStoredSettings,
+  setStoredSettings,
+  getThemeFromStorage,
+  saveThemeToStorage,
+  isDarkTheme,
+  lowerCase,
+  rng,
+  rem,
+  rgbaToHex,
+  getProjectsCount,
+  ProgressbarInstance,
+  handleFormSubmit,
+  openFancybox,
 };
