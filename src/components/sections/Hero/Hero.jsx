@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 import { HeroHeading, HeroTyped, ButtonGradient, SectionWrapper } from '@/components';
-import { heroMotion, rem, hero as data } from '@/utils';
+import { heroMotion, rem, hero as data, dataStore } from '@/utils';
 
 export default SectionWrapper(() => {
   const { toggleLaptopOpen } = dataStore((state) => ({ toggleLaptopOpen: state.toggleLaptopOpen, }));
