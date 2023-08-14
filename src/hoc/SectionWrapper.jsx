@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { sectionWrapperMotion } from '../../utils';
+import { sectionWrapperMotion } from '../utils';
 
 export const SectionWrapper = (Component, idName) =>
   function HOC(props) {
