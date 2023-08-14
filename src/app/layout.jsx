@@ -11,7 +11,7 @@ import { GlobalStyles } from '@/styles';
 import { appMotion, pageWrapperMotion, getThemeObject, rem, dataStore } from '@/utils';
 
 export default function RootLayout({ children }) {
-  const loadTime = 0; //! TODO: TEMPORARILY DISABLED
+  const loadTime = 500; //! TODO: TEMPORARILY DISABLED
   const { loading, setLoading, theme, accent, curtainEnabled, curtainClose } = dataStore((state) => ({
     loading: state.loading,
     setLoading: state.setLoading,
@@ -23,9 +23,7 @@ export default function RootLayout({ children }) {
 
   // Disable loading after 7s maybe?
   useEffect(() => {
-    const loader = setTimeout(() => {
-      setLoading(false);
-    }, loadTime);
+    const loader = setTimeout(() => { setLoading(false); }, loadTime);
     return () => clearTimeout(loader);
   }, []);
 
@@ -38,10 +36,10 @@ export default function RootLayout({ children }) {
               <GlobalStyles />
 
               <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
-                {loading ? (<Preloader />) : (
+                {loading ? (<Preloader title='Welcome' duration={loadTime} />) : (
                   <>
                     <TopBar className='art-mobile-top-bar' />
-                    
+
                     <Wrapper className='art-app-wrapper'>
                       <Container className='art-app-container'>
                         <Sidebar />
