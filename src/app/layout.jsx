@@ -7,13 +7,23 @@ import { motion } from 'framer-motion';
 
 // import { Navbar, Sidebar, Scene, Preloader } from '@/components';
 import StyledComponentsRegistry from '@/lib/registry';
-// import { dataStore } from '@/store/dataStore';
 import { GlobalStyles } from '@/styles';
-import { cursorOptions, appMotion, getThemeObject, rem } from '@/utils';
+import { cursorOptions, appMotion, getThemeObject, rem, dataStore } from '@/utils';
 
 export default function RootLayout({ children }) {
-  const [theme, setTheme] = useState('dark');
-  const [accent, setAccent] = useState('pastels');
+  const loadTime = 0; //! TODO: TEMPORARILY DISABLED
+  const { loading, setLoading, theme, accent } = dataStore((state) => ({
+    loading: state.loading,
+    setLoading: state.setLoading,
+    theme: state.theme,
+    accent: state.accent,
+  }));
+
+  // Disable loading after 5s + 2s 
+  useEffect(() => {
+    setTimeout(() => { setLoading(false); }, loadTime);
+    return () => clearTimeout();
+  }, []);
 
   return (
     <html>
@@ -22,7 +32,23 @@ export default function RootLayout({ children }) {
           <ThemeProvider theme={getThemeObject(theme)}>
             <ThemeProvider theme={getThemeObject(accent)}>
               <GlobalStyles />
-              {children}
+              <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
+                {loading ? (
+                  <>{/* <Preloader /> */}</>
+                ) : (
+                  <>
+                    <TopBar className='art-mobile-top-bar' />
+                    <Wrapper className='art-app-wrapper'>
+                      <Container className='art-app-container'>
+                        {/* <Sidebar /> */}
+                        {children}
+                        {/* <Navbar /> */}
+                      </Container>
+                    </Wrapper>
+                  </>
+                )}
+              </AppContainer>
+              
               <AnimatedCursorContainer className='animated-cursor'>
                 <AnimatedCursor {...cursorOptions} />
               </AnimatedCursorContainer>
