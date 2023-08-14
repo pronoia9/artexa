@@ -21,12 +21,10 @@ export default function RootLayout({ children }) {
     curtainClose: state.curtainClose,
   }));
 
-  // Disable loading after 5s + 2s
+  // Disable loading after 7s maybe?
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-    }, loadTime);
-    return () => clearTimeout();
+    const loader = setTimeout(() => { setLoading(false); }, loadTime);
+    return () => clearTimeout(loader);
   }, []);
 
   return (
@@ -51,7 +49,6 @@ export default function RootLayout({ children }) {
                           <Background />
                           <SmoothScroll>
                             {children}
-                            {/* {idName !== 'not-found' && <Footer />} */}
                             <Footer />
                           </SmoothScroll>
                         </PageWrapper>
