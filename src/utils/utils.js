@@ -9,17 +9,21 @@ const storageKey = 'artexaSettings';
 //------------------------------ THEME STUFF -----------------------------//
 
 // Get the system theme based on the user's OS preference
-export const getSystemTheme = () => (window?.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+export const getSystemTheme = () => {
+  if (typeof window !== 'undefined') return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
 
 // Get the theme object based on the provided theme name
 export const getThemeObject = (theme) => themes[theme] || colors[theme] || {};
 
 // Get the stored settings object from local storage
-export const getStoredSettings = () => JSON.parse(localStorage.getItem(storageKey));
+export const getStoredSettings = () => {
+  if (typeof window !== 'undefined') return JSON.parse(localStorage.getItem(storageKey));
+};
 
 // Set the provided settings object in local storage
 export const setStoredSettings = (settings) => {
-  localStorage.setItem(storageKey, JSON.stringify(settings));
+  if (typeof window !== 'undefined') localStorage.setItem(storageKey, JSON.stringify(settings));
 };
 
 // Get the theme or accent object from local storage based on the provided type
@@ -66,11 +70,12 @@ export const rgbaToHex = (rgbaColor) => {
   return '#' + hexValue;
 };
 
-export const getProjectsCount = (rows = 3, cols = 2) =>
-  (window.innerWidth > 1020 ? cols : window.innerWidth > 768 ? Math.max(cols - 1, 2) : Math.max(cols - 1, 1)) * rows;
+export const getProjectsCount = (rows = 3, cols = 2) => {
+  if (typeof window !== 'undefined') return (window.innerWidth > 1020 ? cols : window.innerWidth > 768 ? Math.max(cols - 1, 2) : Math.max(cols - 1, 1)) * rows;
+}
 
 //----------------------------- PROGRESSBARS -----------------------------//
-export const ProgressbarInstance = ({ type = 'circle', level, index, hide }) => {
+export const ProgressbarInstance = ({ type = 'circle', level, index, hide, duration = 5000 }) => {
   const id = `#${type}prog${index}`;
   switch (type) {
     case 'circle':
@@ -100,7 +105,7 @@ export const ProgressbarInstance = ({ type = 'circle', level, index, hide }) => 
       return new ProgressBar.Line(id, {
         strokeWidth: 1.7,
         easing: 'easeInOut',
-        duration: 5000,
+        duration,
         delay: 750,
         trailWidth: 1.7,
         svgStyle: { width: '100%', height: '100%' },
