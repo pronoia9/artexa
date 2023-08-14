@@ -1,3 +1,5 @@
+'use client';
+
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -46,7 +48,10 @@ export const GradientButton = styled(ButtonMedium)`
   background-image: var(--c-gradient-accent-2);
   background-size: 200%;
 
-  &, *, &:hover, &:hover * {
+  &,
+  *,
+  &:hover,
+  &:hover * {
     color: var(--c-font-dark) !important;
   }
 `;
