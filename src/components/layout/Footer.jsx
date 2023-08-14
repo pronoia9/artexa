@@ -1,10 +1,12 @@
+import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 
 import { Logos, SectionWrapper } from '@/components';
-import { footer as data } from '@/utils';
+import { footer as data, sectionWrapperMotion } from '@/utils';
 
-// export const Footer = () => {
-//   return (
+// TODO: Fix this HOC component export shit
+// export default SectionWrapper(
+//   () => (
 //     <>
 //       <Logos logos={data.logos} />
 //       <FooterContainer>
@@ -12,23 +14,34 @@ import { footer as data } from '@/utils';
 //         <div>{data.text[1]}</div>
 //       </FooterContainer>
 //     </>
-//   );
-// };
-// export default SectionWrapper(Footer, 'footer');
+//   ),
+//   'footer'
+// );
 
-export const Footer = () => {
-  console.log('-------------------------------------------------------------\n', data);
-  console.log('-------------------------------------------------------------');
+export default function Footer () {
   return (
-    <>
-      <Logos logos={data.logos} />
-      <FooterContainer>
-        <div>{data.text[0]}</div>
-        <div>{data.text[1]}</div>
-      </FooterContainer>
-    </>
+    <Container className='container-fluid' {...sectionWrapperMotion()}>
+      <div className='row p-30-0'>
+        <Logos logos={data.logos} />
+        <FooterContainer>
+          <div>{data.text[0]}</div>
+          <div>{data.text[1]}</div>
+        </FooterContainer>
+      </div>
+    </Container>
   );
 };
+
+const Container = styled(motion.section)`
+  overflow: hidden;
+  padding: 0 30px;
+  position: relative;
+
+  @media (max-width: 920px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+`;
 
 const FooterContainer = styled.div`
   width: 100%;
