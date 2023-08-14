@@ -1,5 +1,5 @@
 import {
-  heroAvatar, sidebarAvatar,
+  heroAvatar,
   // Footer
   footer1, footer2, footer3, footer4,
   // History
@@ -66,7 +66,7 @@ export const sidebar = {
     nameLink: '/',
     subtitle: ['Full-Stack Developer,', 'Avid pet lover 🐶'],
     available: true,
-    avatar: sidebarAvatar,
+    avatar: '/images/shalom.png',
   },
 
   about: [
