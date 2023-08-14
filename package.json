@@ -18,7 +18,7 @@
     "framer-motion": "^10.15.2",
     "framer-motion-3d": "^10.15.2",
     "leva": "^0.9.35",
-    "next": "13.4.13",
+    "next": "^13.4.15-canary.0",
     "progressbar.js": "^1.1.0",
     "react": "18.2.0",
     "react-animated-cursor": "^2.8.1",
@@ -31,5 +31,8 @@
     "typed.js": "^2.0.16",
     "yup": "^1.2.0",
     "zustand": "^4.4.1"
+  },
+  "devDependencies": {
+    "babel-plugin-styled-components": "^2.1.4"
   }
 }
