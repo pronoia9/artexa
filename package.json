@@ -18,6 +18,7 @@
     "formik": "^2.4.3",
     "framer-motion": "^10.15.2",
     "framer-motion-3d": "^10.15.2",
+    "gsap": "^3.12.2",
     "leva": "^0.9.35",
     "next": "^13.4.15-canary.0",
     "progressbar.js": "^1.1.0",
