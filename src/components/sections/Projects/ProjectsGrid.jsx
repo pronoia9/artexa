@@ -3,10 +3,11 @@
 import { useEffect, useState } from 'react';
 
 import { Grid } from '@/components';
-import { lowerCase, projectsMotion, projects as data } from '@/utils';
+import { lowerCase, projectsMotion, projects as data, dataStore } from '@/utils';
 
 export const ProjectsGrid = (props) => {
-  const { projects, filterKey } = data;
+  const { projects } = data;
+  const { filterKey } = dataStore((state) => ({ filterKey: state.projects.filterKey }));
   const [filteredProjects, setFilteredProjects] = useState(projects);
 
   // Handle filtering projects when filter key changes
