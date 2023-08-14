@@ -8,8 +8,8 @@ export const Preloader = ({ title, duration }) => {
   return (
     <Container id='art-preloader' className='art-preloader' {...preloaderMotion}>
       <Wrapper className='art-preloader-content'>
-        <h1>{ title }</h1>
-        <Progressbar type='preloader' level={100} duration={duration} />
+        <h1>{title}</h1>
+        {duration && <Progressbar type='preloader' level={100} duration={duration} />}
       </Wrapper>
     </Container>
   );
