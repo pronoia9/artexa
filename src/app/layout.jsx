@@ -5,23 +5,27 @@ import AnimatedCursor from 'react-animated-cursor';
 import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-// import { Navbar, Sidebar, Scene, Preloader } from '@/components';
+// import { Navbar, Sidebar, Scene, Preloader, Background, Footer, SmoothScroll } from '@/components';
 import StyledComponentsRegistry from '@/lib/registry';
 import { GlobalStyles } from '@/styles';
-import { cursorOptions, appMotion, getThemeObject, rem, dataStore } from '@/utils';
+import { cursorOptions, appMotion, pageWrapperMotion, getThemeObject, rem, dataStore } from '@/utils';
 
 export default function RootLayout({ children }) {
   const loadTime = 0; //! TODO: TEMPORARILY DISABLED
-  const { loading, setLoading, theme, accent } = dataStore((state) => ({
+  const { loading, setLoading, theme, accent, curtainEnabled, curtainClose } = dataStore((state) => ({
     loading: state.loading,
     setLoading: state.setLoading,
     theme: state.theme,
     accent: state.accent,
+    curtainEnabled: state.curtainEnabled,
+    curtainClose: state.curtainClose,
   }));
 
-  // Disable loading after 5s + 2s 
+  // Disable loading after 5s + 2s
   useEffect(() => {
-    setTimeout(() => { setLoading(false); }, loadTime);
+    setTimeout(() => {
+      setLoading(false);
+    }, loadTime);
     return () => clearTimeout();
   }, []);
 
@@ -41,14 +45,24 @@ export default function RootLayout({ children }) {
                     <Wrapper className='art-app-wrapper'>
                       <Container className='art-app-container'>
                         {/* <Sidebar /> */}
-                        {children}
+
+                        {/*  */}
+                        <PageWrapper className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion()}>
+                          <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
+                          {/* <Background /> */}
+                          {/* <SmoothScroll> */}
+                          {children}
+                          {/* {idName !== 'not-found' && <Footer />} */}
+                          {/* </SmoothScroll> */}
+                        </PageWrapper>
+                        {/*  */}
                         {/* <Navbar /> */}
                       </Container>
                     </Wrapper>
                   </>
                 )}
               </AppContainer>
-              
+
               <AnimatedCursorContainer className='animated-cursor'>
                 <AnimatedCursor {...cursorOptions} />
               </AnimatedCursorContainer>
@@ -122,4 +136,45 @@ const Container = styled(motion.div)`
 const AnimatedCursorContainer = styled.div`
   position: relative;
   z-index: 99999999999999999999;
+`;
+
+const PageWrapper = styled(motion.div)`
+  position: relative;
+  width: 100vw;
+  height: calc(100vh - ${rem(30)});
+  /* padding-right: ${rem(80)}; */
+  padding-right: ${rem(75)};
+  overflow: hidden;
+  transform: ${({ $curtainEnabled }) => $curtainEnabled && `translateX(${rem(-150)})`};
+  transition: 0.55s ease-in-out;
+
+  @media (max-width: ${rem(920)}) {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    padding-right: 0;
+    padding-top: ${rem(70)};
+    transform: ${({ $curtainEnabled }) => $curtainEnabled && 'none'};
+  }
+
+  @media (max-width: 230px) {
+    padding-right: 0;
+  }
+`;
+
+const Curtain = styled.div`
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 40, 0.88);
+  opacity: ${({ $curtainEnabled }) => ($curtainEnabled ? 0.7 : 0)};
+  pointer-events: ${({ $curtainEnabled }) => ($curtainEnabled ? 'all' : 'none')};
+  z-index: 9;
+  transition: 0.55s ease-in-out;
+
+  @media (max-width: ${rem(920)}) {
+    pointer-events: ${({ $curtainEnabled }) => $curtainEnabled && 'all'};
+    opacity: ${({ $curtainEnabled }) => $curtainEnabled && 1};
+  }
 `;
