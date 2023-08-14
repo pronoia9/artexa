@@ -12,6 +12,7 @@ import { appMotion, getThemeObject, rem } from './utils';
 
 export default function App() {
   const [show, setShow] = useState(false);
+  const loadTime = 7000;
   const { loading, setLoading, theme, accent, cursorOptions, laptopOpen } = dataStore((state) => ({
     loading: state.loading,
     setLoading: state.setLoading,
@@ -33,7 +34,7 @@ export default function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 1);
+    }, loadTime);
     return () => clearTimeout();
   }, []);
 
@@ -45,7 +46,7 @@ export default function App() {
         {'!loading' && 'show' && (
           <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
             {loading ? (
-              <Preloader />
+              <Preloader title='Welcome' duration={loadTime} />
             ) : (
               <>
                 {/* <TopBar className='art-mobile-top-bar' />
