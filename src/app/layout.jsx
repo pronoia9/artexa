@@ -1,7 +1,6 @@
 'use client';
 
 import 'bootstrap/dist/css/bootstrap.css';
-
 import { useState, useEffect } from 'react';
 import AnimatedCursor from 'react-animated-cursor';
 import { ThemeProvider, styled } from 'styled-components';
@@ -40,7 +39,7 @@ export default function RootLayout({ children }) {
               <GlobalStyles />
               <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
                 {loading ? (
-                  <>{/* <Preloader /> */}</>
+                  <Preloader />
                 ) : (
                   <>
                     <TopBar className='art-mobile-top-bar' />
@@ -50,12 +49,12 @@ export default function RootLayout({ children }) {
 
                         <PageWrapper className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion()}>
                           <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
-                          {/* <Background /> */}
-                          {/* <SmoothScroll> */}
-                          {children}
-                          {/* {idName !== 'not-found' && <Footer />} */}
-                          {/* <Footer /> */}
-                          {/* </SmoothScroll> */}
+                          <Background />
+                          <SmoothScroll>
+                            {children}
+                            {/* {idName !== 'not-found' && <Footer />} */}
+                            <Footer />
+                          </SmoothScroll>
                         </PageWrapper>
 
                         <Navbar />
