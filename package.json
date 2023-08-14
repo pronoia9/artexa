@@ -9,8 +9,26 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "@fancyapps/ui": "^5.0.22",
+    "@react-three/drei": "^9.80.3",
+    "@react-three/fiber": "^8.13.6",
+    "@types/three": "^0.155.0",
+    "formik": "^2.4.3",
+    "framer-motion": "^10.15.2",
+    "framer-motion-3d": "^10.15.2",
+    "leva": "^0.9.35",
     "next": "13.4.13",
+    "progressbar.js": "^1.1.0",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-countup": "^6.4.2",
+    "react-dom": "18.2.0",
+    "smooth-scrollbar": "^8.8.4",
+    "styled-components": "^6.0.7",
+    "swiper": "^10.1.0",
+    "three": "^0.155.0",
+    "typed.js": "^2.0.16",
+    "yup": "^1.2.0",
+    "zustand": "^4.4.1"
   }
 }
