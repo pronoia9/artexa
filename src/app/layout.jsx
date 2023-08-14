@@ -5,7 +5,8 @@ import AnimatedCursor from 'react-animated-cursor';
 import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-// import { Navbar, Sidebar, Scene, Preloader, Background, Footer, SmoothScroll } from '@/components';
+import { Preloader, Background, SmoothScroll } from '@/components';
+import { Footer, Navbar, Sidebar } from '@/layout';
 import StyledComponentsRegistry from '@/lib/registry';
 import { GlobalStyles } from '@/styles';
 import { cursorOptions, appMotion, pageWrapperMotion, getThemeObject, rem, dataStore } from '@/utils';
@@ -44,19 +45,19 @@ export default function RootLayout({ children }) {
                     <TopBar className='art-mobile-top-bar' />
                     <Wrapper className='art-app-wrapper'>
                       <Container className='art-app-container'>
-                        {/* <Sidebar /> */}
+                        <Sidebar />
 
-                        {/*  */}
                         <PageWrapper className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion()}>
                           <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
                           {/* <Background /> */}
                           {/* <SmoothScroll> */}
                           {children}
                           {/* {idName !== 'not-found' && <Footer />} */}
+                          <Footer />
                           {/* </SmoothScroll> */}
                         </PageWrapper>
-                        {/*  */}
-                        {/* <Navbar /> */}
+
+                        <Navbar />
                       </Container>
                     </Wrapper>
                   </>
