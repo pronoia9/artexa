@@ -22,14 +22,14 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
+'use client';
+
 import { useLayoutEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { PageWrapper } from '..';
-
-export default PageWrapper(() => {
+export default function Page() {
   const canvasRef = useRef();
 
   useLayoutEffect(() => {
@@ -89,7 +89,9 @@ export default PageWrapper(() => {
     onResize();
     updateParticles();
     window.addEventListener('resize', onResize);
-    return () => { window.removeEventListener('resize', onResize); };
+    return () => {
+      window.removeEventListener('resize', onResize);
+    };
   }, []);
 
   return (
@@ -101,7 +103,7 @@ export default PageWrapper(() => {
           <br />
           That page has gone missing.
         </h1>
-        <Link className='home-link' to='/'>
+        <Link className='home-link' href='/'>
           Hitch a ride back home.
         </Link>
       </div>
@@ -113,7 +115,7 @@ export default PageWrapper(() => {
       </div>
     </Container>
   );
-}, 'not-found');
+}
 
 /************  animation  ***********/
 
