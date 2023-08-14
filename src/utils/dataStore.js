@@ -1,26 +1,11 @@
 import { create } from 'zustand';
 
-import { getThemeFromStorage, saveThemeToStorage } from '.';
+import { getThemeFromStorage, saveThemeToStorage } from '@/utils';
 
 export const dataStore = create((set) => ({
   // LOADING (PRELOADER)
   loading: true,
   setLoading: (loading) => set({ loading }),
-
-  // LAPTOP
-  laptopOpen: false,
-  setLaptopOpen: (laptopOpen) => set({ laptopOpen }),
-  toggleLaptopOpen: () => set((state) => ({ laptopOpen: !state.laptopOpen })),
-  laptopHover: false,
-  setLaptopHover: (laptopHover) =>
-    set((state) => {
-      const [outer, inner] = document.querySelectorAll('.animated-cursor div');
-      inner.style.width = laptopHover && !state.laptopOpen ? 0 : '40px';
-      inner.style.height = laptopHover && !state.laptopOpen ? 0 : '40px';
-      outer.style.width = laptopHover && !state.laptopOpen ? '80px' : '40px';
-      outer.style.height = laptopHover && !state.laptopOpen ? '80px' : '40px';
-      return { laptopHover };
-    }),
 
   // THEME
   theme: getThemeFromStorage('theme'),
@@ -42,7 +27,7 @@ export const dataStore = create((set) => ({
       return { accent };
     }),
 
-  // Sidebar / Navbar / Overlay
+  // SIDEBAR / NAVBAR / OVERLAY
   curtainEnabled: false,
   curtainClose: () => set({ navbarOpen: false, sidebarOpen: false, curtainEnabled: false }),
   navbarOpen: false,
@@ -64,7 +49,7 @@ export const dataStore = create((set) => ({
       curtainEnabled: !state.sidebarOpen,
     })),
 
-  // IFRAME BROWSER OVERLAY
+  // TODO: IFRAME BROWSER OVERLAY
   frameLink: '',
   setFrameLink: (link) => set({ frameLink: link }),
 }));
