@@ -1,5 +1,5 @@
 // CONSTANTS
-import { cursorOptions, routes, sidebar, navbar, footer, hero, counters, projects, history, courses, technologies, contact, about, services } from './constants';
+import { routes, sidebar, navbar, footer, hero, counters, projects, history, courses, technologies, contact, about, services } from './constants';
 
 // STORE
 import { dataStore } from './dataStore';
@@ -59,7 +59,6 @@ import {
 
 export {
   // CONSTANTS
-  cursorOptions,
   routes,
   sidebar,
   navbar,
