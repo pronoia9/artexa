@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -9,14 +9,14 @@ import { motion } from 'framer-motion';
 import { dataStore, navbarMotion, rem } from '@/utils';
 
 export const NavbarListItem = ({ title, path, index, submenu }) => {
-  const router = useRouter();
+  const pathname = usePathname();
   const { navbarOpen, closeNavbar } = dataStore((state) => ({ navbarOpen: state.navbarOpen, closeNavbar: state.closeNavbar }));
   const [submenuOpen, setSubMenuOpen] = useState(false);
 
   const handleClick = (e) => {
     if (submenu) setSubMenuOpen((prev) => !prev);
     else {
-      if (router.pathname === path) e.preventDefault();
+      if (pathname === path) e.preventDefault();
       closeNavbar();
     }
   };
@@ -24,7 +24,7 @@ export const NavbarListItem = ({ title, path, index, submenu }) => {
   return (
     <ListItem
       className={`menu-item ${submenu ? ' menu-item-has-children' : ''}`}
-      $currentPage={router.pathname === path}
+      $currentPage={pathname === path}
       $submenuopen={submenu && submenuOpen}
       {...navbarMotion.item}
     >
