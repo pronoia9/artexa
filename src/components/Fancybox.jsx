@@ -1,5 +1,6 @@
 'use client';
 
+import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import { useRef, useEffect } from 'react';
 import { Fancybox as NativeFancybox } from '@fancyapps/ui';
 import { motion } from 'framer-motion';
