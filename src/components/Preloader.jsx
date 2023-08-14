@@ -6,12 +6,13 @@ import { styled } from 'styled-components';
 import { Progressbar } from '@/components';
 import { preloaderMotion } from '@/utils';
 
-export const Preloader = () => {
+export const Preloader = ({ title, duration, children }) => {
   return (
     <Container id='art-preloader' className='art-preloader' {...preloaderMotion}>
       <Wrapper className='art-preloader-content'>
-        <h1>Welcome</h1>
-        <Progressbar type='preloader' level={100} />
+        <h1>{title}</h1>
+        {children}
+        {duration && <Progressbar type='preloader' level={100} duration={duration} delay={0} />}
       </Wrapper>
     </Container>
   );
