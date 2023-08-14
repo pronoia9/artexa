@@ -1,8 +1,8 @@
-import { Link } from 'react-router-dom';
+import { styled } from 'styled-components';
+import Link from 'next/link';
 
 import { GradientButton } from '@/styles';
 import { buttonMotion, openFancybox } from '@/utils';
-import { styled } from 'styled-components';
 
 export const Button = (props) => {
   const { link, title, children } = props;
@@ -24,7 +24,7 @@ export const ButtonLink = ({ link, title, arrow = true, children, icon, ...props
     }
   };
   return (
-    <Link to={link} className='art-link art-color-link art-w-chevron acc' {...props} onClick={handleClick}>
+    <Link href={link} className='art-link art-color-link art-w-chevron acc' {...props} onClick={handleClick}>
       {title}
       {children}
       {(arrow || icon) && <i className={icon || 'fas fa-chevron-right'} aria-hidden='true' />}
