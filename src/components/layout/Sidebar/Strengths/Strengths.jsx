@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import { dataStore } from "../../../../store/dataStore";
+import { dataStore } from "../../../../utils/dataStore";
 import { Tag } from "../../../../styles";
 import { rng, sidebarMotion } from "../../../../utils";
 

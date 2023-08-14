@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { NavbarButton, NavbarCurrentPage, NavbarList, ThemeButton } from '../..';
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 import { navbarMotion, rem } from '../../../utils';
 
 export const Navbar = () => {

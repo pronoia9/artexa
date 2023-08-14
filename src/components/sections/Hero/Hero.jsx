@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 import { HeroHeading, HeroTyped, ButtonGradient, SectionWrapper } from '../..';
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 import { heroMotion, rem } from '../../../utils';
 
 export default SectionWrapper(() => {

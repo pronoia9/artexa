@@ -3,7 +3,7 @@ import Typed from 'typed.js';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 import { rem } from '../../../utils';
 
 export const HeroTyped = (props) => {

@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { Background, Footer, SmoothScroll } from '..';
-import { dataStore } from '../../store/dataStore';
+import { dataStore } from '../../utils/dataStore';
 import { pageWrapperMotion, rem } from '../../utils';
 
 export const PageWrapper = (Component, idName) =>

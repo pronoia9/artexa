@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { Profile, Info, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials, SmoothScroll } from '../..';
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 import { rem, sidebarMotion } from '../../../utils';
 
 export const Sidebar = () => {

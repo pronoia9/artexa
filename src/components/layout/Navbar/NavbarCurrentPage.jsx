@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import { styled } from 'styled-components';
 
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 import { rem } from '../../../utils';
 
 export const NavbarCurrentPage = () => {

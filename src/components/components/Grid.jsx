@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { Fancybox, Card, ButtonGradient } from '..';
-import { dataStore } from '../../store/dataStore';
+import { dataStore } from '../../utils/dataStore';
 import { getProjectsCount } from '../../utils';
 
 export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, buttonMotion, buttonText, ...props }) => {

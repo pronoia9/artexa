@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { HardSkillsItem } from '../../..';
-import { dataStore } from '../../../../store/dataStore';
+import { dataStore } from '../../../../utils/dataStore';
 import { rem, sidebarMotion } from '../../../../utils';
 
 export const HardSkills = () => {

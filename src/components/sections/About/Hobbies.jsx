@@ -1,4 +1,4 @@
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 import { HobbiesCard, Swiper } from '../..';
 import { SwiperSlide } from 'swiper/react';
 

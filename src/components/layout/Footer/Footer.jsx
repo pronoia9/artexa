@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 import { Logos, SectionWrapper } from '../..';
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 
 const Footer = () => {
   const data = dataStore((state) => state.footer);

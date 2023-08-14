@@ -1,7 +1,7 @@
 import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 import { navbarMotion, rem } from '../../../utils';
 
 const Path = (props) => <motion.path fill='transparent' strokeWidth='3' strokeLinecap='round' {...props} />;

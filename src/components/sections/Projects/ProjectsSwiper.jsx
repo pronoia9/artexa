@@ -1,5 +1,5 @@
 import { Swiper } from '../../components/Swiper';
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 import { projectsMotion } from '../../../utils';
 
 export const ProjectsSwiper = (props) => {

@@ -1,5 +1,5 @@
 import { Swiper } from '../..';
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 import { technologiesMotion } from '../../../utils';
 
 export const TechnologiesSwiper = (props) => {

@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { styled, css } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 import { navbarMotion, rem } from '../../../utils';
 
 export const NavbarListItem = ({ title, path, index, submenu }) => {

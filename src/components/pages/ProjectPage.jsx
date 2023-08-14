@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
 import { PageWrapper, ProjectBanner, ProjectInfo, ProjectScreenshots, Fancybox } from '..';
-import { dataStore } from '../../store/dataStore';
+import { dataStore } from '../../utils/dataStore';
 
 export default PageWrapper(() => {
   const { projectId } = useParams(), navigate = useNavigate();

@@ -2,7 +2,7 @@
 // import { motion } from 'framer-motion';
 
 import { Counter, SectionWrapper } from '../..';
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 
 export default SectionWrapper(() => {
   const data = dataStore((state) => state.counters);

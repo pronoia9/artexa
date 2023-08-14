@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { styled } from 'styled-components';
 
 import { SplitText } from '../../../components/SplitText';
-import { dataStore } from '../../../../store/dataStore';
+import { dataStore } from '../../../../utils/dataStore';
 
 export const ProfileName = () => {
   const data = dataStore((state) => state.sidebar.profile);

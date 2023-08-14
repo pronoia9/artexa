@@ -4,7 +4,7 @@ import { useFrame } from '@react-three/fiber';
 import { useGLTF } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 import { laptopMotion } from '../../../utils';
 
 export const Laptop = ({ hinge, elevate, ...props }) => {

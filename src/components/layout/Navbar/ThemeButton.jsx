@@ -1,7 +1,7 @@
 import { styled, css } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 import { colors } from '../../../styles';
 import { navbarMotion, rem } from '../../../utils';
 

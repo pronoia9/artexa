@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { LanguagesItem } from '../../..';
-import { dataStore } from '../../../../store/dataStore';
+import { dataStore } from '../../../../utils/dataStore';
 import { sidebarMotion } from '../../../../utils';
 
 export const Languages = () => {

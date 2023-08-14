@@ -1,5 +1,5 @@
 import { SectionTitle, SectionWrapper, ServicesCard } from '../..';
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 
 export default SectionWrapper(() => {
   const services = dataStore((state) => state.services);

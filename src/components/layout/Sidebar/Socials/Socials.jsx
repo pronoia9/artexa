@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { SocialsItem } from '../../..';
-import { dataStore } from '../../../../store/dataStore';
+import { dataStore } from '../../../../utils/dataStore';
 import { sidebarMotion } from '../../../../utils';
 
 export const Socials = () => {

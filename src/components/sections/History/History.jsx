@@ -1,5 +1,5 @@
 import { SectionWrapper, Timeline } from '../..';
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 
 export default SectionWrapper(() => {
   const data = dataStore((state) => state.history);

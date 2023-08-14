@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { Grid } from '../..';
-import { dataStore } from '../../../store/dataStore';
+import { dataStore } from '../../../utils/dataStore';
 import { lowerCase, projectsMotion } from '../../../utils';
 
 export const ProjectsGrid = (props) => {

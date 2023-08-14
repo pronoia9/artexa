@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 import { InfoItem } from '../../..';
-import { dataStore } from '../../../../store/dataStore';
+import { dataStore } from '../../../../utils/dataStore';
 import { sidebarMotion } from '../../../../utils';
 
 export const Info = () => {
