@@ -2,14 +2,13 @@
 
 import 'bootstrap/dist/css/bootstrap.css';
 import { useState, useEffect } from 'react';
-import AnimatedCursor from 'react-animated-cursor';
 import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Footer, Navbar, Sidebar, Preloader, Background, SmoothScroll } from '@/components';
+import { Footer, Navbar, Sidebar, Preloader, Background, SmoothScroll, Cursor } from '@/components';
 import StyledComponentsRegistry from '@/lib/registry';
 import { GlobalStyles } from '@/styles';
-import { cursorOptions, appMotion, pageWrapperMotion, getThemeObject, rem, dataStore } from '@/utils';
+import { appMotion, pageWrapperMotion, getThemeObject, rem, dataStore } from '@/utils';
 
 export default function RootLayout({ children }) {
   const loadTime = 0; //! TODO: TEMPORARILY DISABLED
@@ -64,9 +63,7 @@ export default function RootLayout({ children }) {
                 )}
               </AppContainer>
 
-              <AnimatedCursorContainer className='animated-cursor'>
-                <AnimatedCursor {...cursorOptions} />
-              </AnimatedCursorContainer>
+              <Cursor />
             </ThemeProvider>
           </ThemeProvider>
         </StyledComponentsRegistry>
@@ -132,11 +129,6 @@ const Container = styled(motion.div)`
   @media (max-width: ${rem(920)}) {
     width: 100%;
   }
-`;
-
-const AnimatedCursorContainer = styled.div`
-  position: relative;
-  z-index: 99999999999999999999;
 `;
 
 const PageWrapper = styled(motion.div)`

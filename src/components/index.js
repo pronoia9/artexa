@@ -66,6 +66,7 @@ import { TechnologiesSwiper } from './sections/Technologies/TechnologiesSwiper';
 import { Background } from './Background';
 import { Button, ButtonLink, ButtonGradient } from './Buttons';
 import { Card } from './Card';
+import { Cursor } from './Cursor';
 import { Fancybox } from './Fancybox';
 import { Grid } from './Grid';
 import { Logos, Logo } from './Logos';
@@ -101,6 +102,7 @@ export {
   Background,
   Button, ButtonLink, ButtonGradient,
   Card,
+  Cursor,
   Fancybox,
   Grid,
   Logos,
