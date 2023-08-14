@@ -1,17 +1,17 @@
 import { Canvas } from '@react-three/fiber';
-import { OrbitControls, ScrollControls } from '@react-three/drei';
+import { Center, OrbitControls, ScrollControls } from '@react-three/drei';
 
-import { Lights } from './Lights';
 import { Scene } from './Scene';
 import { Effects } from './Effects';
 
 export const Experience = () => {
   return (
-    <Canvas dpr={[1, 2]} camera={{ fov: 35 }} gl={{ antialias: true }} shadows={false}>
+    <Canvas dpr={[1, 2]} camera={{ fov: 35, position: [25, 25, 25], zoom: 65 }} gl={{ antialias: true }} shadows={false} orthographic>
       <OrbitControls />
-      <Lights />
       <ScrollControls pages={6} damping={0.1}>
-        <Scene />
+        <Center>
+          <Scene />
+        </Center>
       </ScrollControls>
       <Effects />
     </Canvas>
