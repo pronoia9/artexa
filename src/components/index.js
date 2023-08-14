@@ -1,104 +1,23 @@
-// ---- COMPONENTS
-import { Background } from './components/Background';
-import { Button, ButtonLink, ButtonGradient } from './components/Buttons';
-import { Card } from './components/Card';
-import { Fancybox } from './components/Fancybox';
-import { Grid } from './components/Grid';
-import { Laptop } from './components/Laptop/Laptop';
-import { Scene } from './components/Laptop/Scene';
-import { Logos, Logo } from './components/Logos';
-import { Preloader } from './components/Preloader';
-import { Progressbar } from './components/Progressbar';
-import { SmoothScroll } from './components/SmoothScroll';
-import { SplitText } from './components/SplitText';
-import { SVGs } from './components/SVGs';
-import { Swiper, SwiperNavigation } from './components/Swiper';
-import { SectionTitle } from './components/Text';
-import { Timeline } from './components/Timeline/Timeline';
-import { TimelineColumn } from './components/Timeline/TimelineColumn';
-import { TimelineItem } from './components/Timeline/TimelineItem';
-
-// --- HOC
-import { PageWrapper } from './hoc/PageWrapper';
-import { SectionWrapper } from './hoc/SectionWrapper';
-
-// ---- LAYOUT
-// Navbar
-import Footer from './layout/Footer/Footer';
-import { Navbar } from './layout/Navbar/Navbar';
-import { NavbarButton } from './layout/Navbar/NavbarButton';
-import { NavbarCurrentPage } from './layout/Navbar/NavbarCurrentPage';
-import { NavbarList } from './layout/Navbar/NavbarList';
-import { NavbarListItem } from './layout/Navbar/NavbarListItem';
-import { ThemeButton } from './layout/Navbar/ThemeButton';
-// Sidebar
-import { Sidebar } from './layout/Sidebar/Sidebar';
-import { HardSkills } from './layout/Sidebar/HardSkills/HardSkills';
-import { HardSkillsItem } from './layout/Sidebar/HardSkills/HardSkillsItem';
-import { Info } from './layout/Sidebar/Info/Info';
-import { InfoItem } from './layout/Sidebar/Info/InfoItem';
-import { Languages } from './layout/Sidebar/Languages/Languages';
-import { LanguagesItem } from './layout/Sidebar/Languages/LanguagesItem';
-import { Profile } from './layout/Sidebar/Profile/Profile';
-import { ProfileAvatar } from './layout/Sidebar/Profile/ProfileAvatar';
-import { ProfileName } from './layout/Sidebar/Profile/ProfileName';
-import { ProfilePost } from './layout/Sidebar/Profile/ProfilePost';
-import { Resume } from './layout/Sidebar/Resume/Resume';
-import { Socials } from './layout/Sidebar/Socials/Socials';
-import { SocialsItem } from './layout/Sidebar/Socials/SocialsItem';
-import { SoftSkills } from './layout/Sidebar/SoftSkills/SoftSkills';
-import { Strengths } from './layout/Sidebar/Strengths/Strengths';
-
-// ---- PAGES
-import AboutPage from './pages/AboutPage';
-import ContactPage from './pages/ContactPage';
-import CoursePage from './pages/CoursePage';
-import HistoryPage from './pages/HistoryPage';
-import HomePage from './pages/HomePage';
-import NotFound from './pages/NotFound';
-import ProjectPage from './pages/ProjectPage';
-import ProjectsPage from './pages/ProjectsPage';
-import TechnologiesPage from './pages/TechnologiesPage';
-
-// ---- SECTIONS
-// -- About
-import About from './sections/About/About';
-import { Hobbies } from './sections/About/Hobbies';
-import { HobbiesCard } from './sections/About/HobbiesCard';
-// -- Contact
-import Contact from './sections/Contact/Contact';
-import { ContactList, ContactListItem } from './sections/Contact/ContactList';
-import { ContactInput } from './sections/Contact/ContactInput';
-import { ContactForm } from './sections/Contact/ContactForm';
-// -- Counters
-import Counters from './sections/Counters/Counters';
-import { Counter } from './sections/Counters/Counter';
-// -- Courses
-import Courses from './sections/Courses/Courses';
-// -- Hero
-import Hero from './sections/Hero/Hero';
-import { HeroHeading } from './sections/Hero/HeroHeading';
-import { HeroTyped } from './sections/Hero/HeroTyped';
-// -- History
-import History from './sections/History/History';
-// -- Projects
-import ProjectBanner from './sections/Project/ProjectBanner';
-import ProjectInfo from './sections/Project/ProjectInfo';
-import ProjectScreenshots from './sections/Project/ProjectScreenshots';
-import Projects from './sections/Projects/Projects';
-import { ProjectsFilters, FilterItem } from './sections/Projects/ProjectsFilters';
-import { ProjectsGrid } from './sections/Projects/ProjectsGrid';
-import { ProjectsSwiper } from './sections/Projects/ProjectsSwiper';
-// -- Services
-import Services from './sections/Services/Services';
-import { ServicesCard } from './sections/Services/ServicesCard';
-// -- Technologies
-import Technologies from './sections/Technologies/Technologies';
-import { TechnologiesGrid } from './sections/Technologies/TechnologiesGrid';
-import { TechnologiesSwiper } from './sections/Technologies/TechnologiesSwiper';
+import { Background } from './Background';
+import { Button, ButtonLink, ButtonGradient } from './Buttons';
+import { Card } from './Card';
+import { Fancybox } from './Fancybox';
+import { Grid } from './Grid';
+import { Laptop } from './Laptop/Laptop';
+import { Scene } from './Laptop/Scene';
+import { Logos, Logo } from './Logos';
+import { Preloader } from './Preloader';
+import { Progressbar } from './Progressbar';
+import { SmoothScroll } from './SmoothScroll';
+import { SplitText } from './SplitText';
+import { SVGs } from './SVGs';
+import { Swiper, SwiperNavigation } from './Swiper';
+import { SectionTitle } from './Text';
+import { Timeline } from './Timeline/Timeline';
+import { TimelineColumn } from './Timeline/TimelineColumn';
+import { TimelineItem } from './Timeline/TimelineItem';
 
 export {
-  // ---- COMPONENTS ----
   Background,
   Button, ButtonLink, ButtonGradient,
   Card,
@@ -113,28 +32,5 @@ export {
   SVGs,
   Swiper, SwiperNavigation,
   SectionTitle,
-  Timeline, TimelineColumn, TimelineItem,
-
-  // ---- HOC ----
-  PageWrapper, SectionWrapper,
-
-  // ---- LAYOUT ----
-  Footer,
-  Navbar, NavbarButton, NavbarCurrentPage, NavbarList, NavbarListItem, ThemeButton,
-  Sidebar, HardSkills, HardSkillsItem, Info, InfoItem, Languages, LanguagesItem, Profile, ProfileAvatar, ProfileName, ProfilePost, Resume, Socials, SocialsItem, SoftSkills, Strengths,
-
-  // ---- PAGES ----
-  AboutPage, ContactPage, CoursePage, HistoryPage, HomePage, NotFound, ProjectPage, ProjectsPage, TechnologiesPage,
-
-  // ---- SECTIONS ----
-  About, Hobbies, HobbiesCard,
-  Contact, ContactForm, ContactInput, ContactList, ContactListItem,
-  Counters, Counter,
-  Courses,
-  Hero, HeroHeading, HeroTyped,
-  History,
-  ProjectBanner, ProjectInfo, ProjectScreenshots,
-  Projects, ProjectsFilters, FilterItem, ProjectsGrid, ProjectsSwiper,
-  Services, ServicesCard,
-  Technologies, TechnologiesGrid, TechnologiesSwiper,
+  Timeline, TimelineColumn, TimelineItem
 };
