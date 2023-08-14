@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 
 import { HeroHeading, HeroTyped, ButtonGradient, SectionWrapper } from '../../components';
 import { dataStore } from '../../utils/dataStore';
-import { heroMotion, rem } from '../../utils';
+import { heroMotion, rem } from '@/utils';
 
 export default SectionWrapper(() => {
   const { data, toggleLaptopOpen } = dataStore((state) => ({

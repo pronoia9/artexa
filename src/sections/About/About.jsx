@@ -1,5 +1,5 @@
 import { Hobbies, SectionTitle, SectionWrapper } from '../../components';
-import { Tag } from '../../styles';
+import { Tag } from '@/styles';
 
 export default SectionWrapper(() => {
   return (

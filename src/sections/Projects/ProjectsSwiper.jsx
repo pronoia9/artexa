@@ -1,6 +1,6 @@
 import { Swiper } from '../../components/Swiper';
 import { dataStore } from '../../utils/dataStore';
-import { projectsMotion } from '../../utils';
+import { projectsMotion } from '@/utils';
 
 export const ProjectsSwiper = (props) => {
   const data = dataStore((state) => state.projects.projects);

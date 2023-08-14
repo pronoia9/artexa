@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 
 import { SectionWrapper, SectionTitle } from '../../components';
-import { Tag } from '../../styles';
+import { Tag } from '@/styles';
 
 export default SectionWrapper(({ project }) => {
   const { title, image, categories } = project;

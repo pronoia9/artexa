@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 import { SplitText } from '../../components';
 import { dataStore } from '../../utils/dataStore';
-import { rem } from '../../utils';
+import { rem } from '@/utils';
 
 export const HeroHeading = (props) => {
   const data = dataStore((state) => state.hero.heading);

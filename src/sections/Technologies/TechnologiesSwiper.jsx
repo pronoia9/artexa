@@ -1,6 +1,6 @@
 import { Swiper } from '../../components';
 import { dataStore } from '../../utils/dataStore';
-import { technologiesMotion } from '../../utils';
+import { technologiesMotion } from '@/utils';
 
 export const TechnologiesSwiper = (props) => {
   const data = dataStore((state) => state.technologies.list);

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { ProgressbarInstance, rem } from '../../utils';
+import { ProgressbarInstance, rem } from '@/utils';
 
 export const Progressbar = (props) => {
   const { type, level, index } = props;

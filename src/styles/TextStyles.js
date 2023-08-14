@@ -1,7 +1,7 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { rem } from '../utils';
+import { rem } from '@/utils';
 
 export const GradientHeading = styled(motion.div)`
   transition: transform 0.5s ease-in-out;

@@ -8,7 +8,7 @@ import { LayoutCamera, MotionCanvas, motion } from 'framer-motion-3d';
 
 import { Laptop } from '..';
 import { dataStore } from '../../utils/dataStore';
-import { laptopMotion, sceneMotion } from '../../utils';
+import { laptopMotion, sceneMotion } from '@/utils';
 import { useControls } from 'leva';
 
 export const Scene = () => {

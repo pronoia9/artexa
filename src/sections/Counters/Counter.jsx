@@ -2,7 +2,7 @@ import CountUp from 'react-countup';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { countersMotion, rem } from '../../utils';
+import { countersMotion, rem } from '@/utils';
 
 export const Counter = ({ index, number, text, accent, length }) => {
   return (

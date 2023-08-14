@@ -2,7 +2,7 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { SplitText } from '../../components';
-import { contactMotion } from '../../utils';
+import { contactMotion } from '@/utils';
 
 export const ContactList = ({ cols, list }) => {
   return (

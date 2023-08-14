@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
-import { GradientButton } from '../../styles';
-import { buttonMotion, openFancybox } from '../../utils';
+import { GradientButton } from '@/styles';
+import { buttonMotion, openFancybox } from '@/utils';
 import { styled } from 'styled-components';
 
 export const Button = (props) => {

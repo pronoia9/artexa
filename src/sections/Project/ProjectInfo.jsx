@@ -2,8 +2,8 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { SectionWrapper, SectionTitle, ButtonLink } from '../../components';
-import { Tag } from '../../styles';
-import { rng } from '../../utils';
+import { Tag } from '@/styles';
+import { rng } from '@/utils';
 
 const ListItem = ({ title, subtitle }) => (
   <ListItemContainer>

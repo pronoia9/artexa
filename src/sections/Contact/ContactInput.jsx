@@ -2,7 +2,7 @@ import { Field, ErrorMessage } from 'formik';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { contactMotion } from '../../utils';
+import { contactMotion } from '@/utils';
 
 export const ContactInput = ({ name, icon, active, ...props }) => {
   return (

@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { Grid } from '../../components';
 import { dataStore } from '../../utils/dataStore';
-import { lowerCase, projectsMotion } from '../../utils';
+import { lowerCase, projectsMotion } from '@/utils';
 
 export const ProjectsGrid = (props) => {
   const { projects, filterKey } = dataStore((state) => ({

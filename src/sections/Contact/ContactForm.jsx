@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 
 import { SectionTitle, ContactInput, ButtonGradient } from '../../components';
 import { dataStore } from '../../utils/dataStore';
-import { cardMotion, contactMotion, handleFormSubmit } from '../../utils';
+import { cardMotion, contactMotion, handleFormSubmit } from '@/utils';
 import { motion } from 'framer-motion';
 
 export const ContactForm = () => {

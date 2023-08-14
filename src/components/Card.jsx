@@ -2,8 +2,8 @@ import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { ButtonLink } from './Buttons';
-import { rem } from '../../utils';
-import { Tag } from '../../styles';
+import { rem } from '@/utils';
+import { Tag } from '@/styles';
 
 const Tags = ({ title, tags }) => (
   <TagsContainer className='mb-15'>

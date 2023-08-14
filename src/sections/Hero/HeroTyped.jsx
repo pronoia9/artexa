@@ -4,7 +4,7 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { dataStore } from '../../utils/dataStore';
-import { rem } from '../../utils';
+import { rem } from '@/utils';
 
 export const HeroTyped = (props) => {
   const data = dataStore((state) => state.hero.typed);

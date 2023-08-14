@@ -1,6 +1,6 @@
 import { Grid } from '../../components';
 import { dataStore } from '../../utils/dataStore';
-import { technologiesMotion } from '../../utils';
+import { technologiesMotion } from '@/utils';
 
 export const TechnologiesGrid = (props) => {
   const { data } = dataStore((state) => ({ data: state.technologies.list }));
