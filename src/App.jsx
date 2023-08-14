@@ -46,7 +46,7 @@ export default function App() {
         {'!loading' && 'show' && (
           <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
             {loading ? (
-              <Preloader title='Welcome' duration={loadTime} />
+              <>{/* <Preloader title='Welcome' duration={loadTime} /> */}</>
             ) : (
               <>
                 {/* <TopBar className='art-mobile-top-bar' />
