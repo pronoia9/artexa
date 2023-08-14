@@ -1,4 +1,4 @@
-import { heroBgBlue, heroBgGreen, heroBgPastel, heroBgPink, heroBgPurple, heroBgRed, heroBgYellow } from "../assets";
+import { heroBgBlue, heroBgGreen, heroBgPastel, heroBgPink, heroBgPurple, heroBgRed, heroBgYellow } from "/public";
 
 export const themes = {
   dark: {
