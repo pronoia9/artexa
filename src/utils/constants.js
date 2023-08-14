@@ -303,15 +303,6 @@ export const projects = {
     { title: 'nextjs', filter: 'nextjs' },
     { title: '3d', filter: '3d' },
   ],
-  filterKey: '',
-  setFilterKey: (filterKey) => set((state) => ({ projects: { ...state.projects, filterKey: filterKey } })),
-  defaults: { rows: 3, cols: 2 },
-  rows: 3,
-  setRows: (rows) => set((state) => ({ projects: { ...state.projects, rows: rows } })),
-  cols: 2,
-  setCols: (cols) => set((state) => ({ projects: { ...state.projects, cols: cols } })),
-  count: 6,
-  setCount: (count) => set((state) => ({ projects: { ...state.projects, count: count } })),
   projects: [
     {
       id: 'ugAU0ari79',
@@ -1065,13 +1056,6 @@ export const courses = [
 export const technologies = {
   title: 'Technologies | Libraries',
   message: 'Read More',
-  defaults: { rows: 3, cols: 3 },
-  rows: 3,
-  setRows: (rows) => set((state) => ({ technologies: { ...state.technologies, rows: rows } })),
-  cols: 3,
-  setCols: (cols) => set((state) => ({ technologies: { ...state.technologies, cols: cols } })),
-  count: 6,
-  setCount: (count) => set((state) => ({ technologies: { ...state.technologies, count: count } })),
   list: [
     {
       title: 'Styled Components',
