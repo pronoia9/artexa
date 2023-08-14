@@ -1,9 +1,9 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Profile, Info, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials, SmoothScroll } from '../..';
-import { dataStore } from '../../../utils/dataStore';
-import { rem, sidebarMotion } from '../../../utils';
+import { SmoothScroll } from '@/components';
+import { Profile, Info, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials } from '@/layout';
+import { dataStore, rem, sidebarMotion } from '@/utils';
 
 export const Sidebar = () => {
   const { sidebarOpen, toggleSidebar } = dataStore((state) => ({ sidebarOpen: state.sidebarOpen, toggleSidebar: state.toggleSidebar }));

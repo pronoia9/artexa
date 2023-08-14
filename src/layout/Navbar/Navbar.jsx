@@ -1,9 +1,8 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { NavbarButton, NavbarCurrentPage, NavbarList, ThemeButton } from '../..';
-import { dataStore } from '../../../utils/dataStore';
-import { navbarMotion, rem } from '../../../utils';
+import { NavbarButton, NavbarCurrentPage, NavbarList, ThemeButton } from '@/layout';
+import { dataStore, navbarMotion, rem } from '@/utils';
 
 export const Navbar = () => {
   const { navbarOpen } = dataStore((state) => ({ navbarOpen: state.navbarOpen }));
