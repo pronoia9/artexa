@@ -1,7 +1,7 @@
 import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { ButtonLink } from './Buttons';
+import { ButtonLink } from '@/components';
 import { rem } from '@/utils';
 import { Tag } from '@/styles';
 

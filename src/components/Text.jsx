@@ -2,7 +2,7 @@ import { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 
-import { SplitText } from '..';
+import { SplitText } from '@/components';
 
 export const SectionTitle = forwardRef(function SectionTitle({ column = 1, title = 'Missing Section Title', speed, children, ...props }, ref) {
   return (

@@ -1,9 +1,44 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { ButtonLink } from '../..';
-import { Tag } from '../../../styles';
-import { rem } from '../../../utils';
+import { SectionTitle, ButtonLink } from '@/components';
+import { Tag } from '@/styles';
+import { historyMotion, rem } from '@/utils';
+
+export const Timeline = ({ titles, children, ...props }) => {
+  return children ? (
+    children.map((tl, index) => (
+      <TimelineColumn column={children.length || 2} title={titles[index] || ''} key={`timeline-column-${index}`} data={tl} index={index} />
+    ))
+  ) : (
+    <TimelineColumn {...props} /> // column={column || 2} title={title || ''} key={`timeline-column-${index}`} data={data}
+  );
+};
+
+export const TimelineColumn = ({ column = 1, title = '', data = [], index }) => (
+  <motion.div className={'col-lg-' + 12 / column} {...historyMotion.column(index % 2)}>
+    <SectionTitle title={title} />
+    <TimelineColumnContainer className='art-timeline' {...historyMotion.cards}>
+      {data.map((item, index) => (
+        <TimelineItem key={`timeline-item-${index}-${item?.title}`} {...item} {...historyMotion.card} />
+      ))}
+    </TimelineColumnContainer>
+  </motion.div>
+);
+
+const TimelineColumnContainer = styled(motion.div)`
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    width: 5px;
+    height: calc(100% - 10px);
+    background: var(--c-bg);
+  }
+`;
 
 export const TimelineItem = (props) => {
   const { id, title, subtitle, description, dates, image, link } = props;
@@ -18,11 +53,11 @@ export const TimelineItem = (props) => {
   }
 
   return (
-    <Container className='art-timeline-item acc' {...props}>
+    <TimelineItemContainer className='art-timeline-item acc' {...props}>
       <div className='art-timeline-mark-light' />
       <div className='art-timeline-mark' />
 
-      <Content className='art-a art-timeline-content'>
+      <TimelineItemContent className='art-a art-timeline-content'>
         <Header className='art-card-header'>
           <div className='art-left-side'>
             <Title>{title}</Title>
@@ -43,12 +78,12 @@ export const TimelineItem = (props) => {
           title={link ? 'Link' : image ? 'Certificate' : 'Suprise!'}
           {...(image ? { 'data-fancybox': 'history' } : { target: '_blank', rel: 'noreferrer' })}
         />
-      </Content>
-    </Container>
+      </TimelineItemContent>
+    </TimelineItemContainer>
   );
 };
 
-const Container = styled(motion.div)`
+const TimelineItemContainer = styled(motion.div)`
   position: relative;
 
   .art-timeline-mark-light {
@@ -80,7 +115,7 @@ const Container = styled(motion.div)`
   }
 `;
 
-const Content = styled.div`
+const TimelineItemContent = styled.div`
   position: relative;
   margin-right: ${rem(45)};
   background: var(--c-bg-card-overlay);

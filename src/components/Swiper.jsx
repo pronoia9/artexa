@@ -3,7 +3,7 @@ import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Card, Fancybox } from '..';
+import { Card, Fancybox } from '@/components';
 
 export const Swiper = ({ section, data, navProps, autoplay, swiperOptions, navigation = true, children, ...props }) => {
   if (autoplay) SwiperCore.use([Autoplay]);

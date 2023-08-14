@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 
-import { Progressbar } from '..';
-import { preloaderMotion } from '../../utils/motion';
+import { Progressbar } from '@/components';
+import { preloaderMotion } from '@/utils';
 
 export const Preloader = () => {
   return (
