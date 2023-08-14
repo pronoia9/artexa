@@ -75,7 +75,7 @@ export const getProjectsCount = (rows = 3, cols = 2) => {
 }
 
 //----------------------------- PROGRESSBARS -----------------------------//
-export const ProgressbarInstance = ({ type = 'circle', level, index, hide, duration = 5000 }) => {
+export const ProgressbarInstance = ({ type = 'circle', level, index, hide, duration = 5000, delay = 750 }) => {
   const id = `#${type}prog${index}`;
   switch (type) {
     case 'circle':
@@ -83,35 +83,29 @@ export const ProgressbarInstance = ({ type = 'circle', level, index, hide, durat
         strokeWidth: 7,
         easing: 'easeInOut',
         duration: 1400,
-        delay: 2400 + Number(index) * 100,
+        delay: 3400 + Number(index) * 100,
         trailWidth: 7,
-        step: (state, bar) => {
-          bar.setText(`${level}%`);
-        },
+        step: (state, bar) => { bar.setText(!hide ? `${level}%`: ''); },
       });
     case 'line':
       return new ProgressBar.Line(id, {
         strokeWidth: 1.72,
         easing: 'easeInOut',
         duration: 1400,
-        delay: 2700 + Number(index) * 100,
+        delay: 4700 + Number(index) * 100,
         trailWidth: 7,
         svgStyle: { width: '100%', height: '100%' },
-        step: (state, bar) => {
-          bar.setText(!hide ? `${level} %` : '');
-        },
+        step: (state, bar) => { bar.setText(!hide ? `${level} %` : ''); },
       });
     case 'preloader':
       return new ProgressBar.Line(id, {
         strokeWidth: 1.7,
         easing: 'easeInOut',
         duration,
-        delay: 750,
+        delay,
         trailWidth: 1.7,
         svgStyle: { width: '100%', height: '100%' },
-        step: (state, bar) => {
-          bar.setText(Math.round(bar.value() * 100) + ' %');
-        },
+        step: (state, bar) => { bar.setText(Math.round(bar.value() * 100) + ' %'); },
       });
     default:
       return null;
