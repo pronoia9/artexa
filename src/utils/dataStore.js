@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-import { getThemeFromStorage, saveThemeToStorage } from '@/utils';
+import { getThemeFromStorage, saveThemeToStorage } from '@/utils/utils';
 
 export const dataStore = create((set) => ({
   // LOADING (PRELOADER)
