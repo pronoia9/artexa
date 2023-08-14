@@ -1,11 +1,10 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { dataStore } from '../../../../utils/dataStore';
-import { rem, sidebarMotion } from '../../../../utils';
+import { rem, sidebarMotion, sidebar } from '@/utils';
 
 export const SoftSkills = () => {
-  const data = dataStore((state) => state.sidebar.skills.soft);
+  const data = sidebar.skills.soft;
 
   return (
     <SkillsList className='art-knowledge-list p-15-0' {...sidebarMotion.softSkills.container}>

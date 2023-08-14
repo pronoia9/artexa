@@ -1,12 +1,10 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { NavbarListItem } from '../..';
-import { dataStore } from '../../../utils/dataStore';
-import { navbarMotion } from '../../../utils';
+import { NavbarListItem } from '@/layout';
+import { navbar as data, navbarMotion } from '@/utils';
 
 export const NavbarList = () => {
-  const data = dataStore((state) => state.navbar);
   return (
     <Container>
       <NavigationList className='main-menu' {...navbarMotion.list}>

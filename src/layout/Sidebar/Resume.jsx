@@ -1,11 +1,10 @@
 import { styled } from "styled-components";
 import { motion } from "framer-motion";
 
-import { dataStore } from "../../../../utils/dataStore";
-import { sidebarMotion } from "../../../../utils";
+import { sidebarMotion, sidebar } from '@/utils';
 
 export const Resume = () => {
-  const data = dataStore((state) => state.sidebar.resume);
+  const data = sidebar.resume;
   return (
     <Container className='art-links-frame p-15-15' {...sidebarMotion.resume.container}>
       <a href={data.url} className='art-link art-color-link' download>

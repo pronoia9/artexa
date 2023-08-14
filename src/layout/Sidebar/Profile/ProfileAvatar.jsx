@@ -1,12 +1,11 @@
 import { styled, css } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { dataStore } from '../../../../utils/dataStore';
-import { Tooltip } from '../../../../styles';
-import { openFancybox, rem, sidebarMotion } from '../../../../utils';
+import { Tooltip } from '@/styles';
+import { openFancybox, rem, sidebarMotion, sidebar } from '@/utils';
 
 export const ProfileAvatar = () => {
-  const data = dataStore((state) => state.sidebar.profile);
+  const data = sidebar.profile;
 
   return (
     <AvatarContainer className='art-avatar' {...sidebarMotion.profile.avatarContainer}>

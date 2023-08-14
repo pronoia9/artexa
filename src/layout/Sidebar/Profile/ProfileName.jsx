@@ -1,15 +1,15 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { styled } from 'styled-components';
 
-import { SplitText } from '../../../components/SplitText';
-import { dataStore } from '../../../../utils/dataStore';
+import { SplitText } from '@/components';
+import { sidebar } from '@/utils';
 
 export const ProfileName = () => {
-  const data = dataStore((state) => state.sidebar.profile);
+  const data = sidebar.profile;
 
   return (
     <NameText className='art-name mb-10'>
-      <Link to={data.nameLink}>
+      <Link href={data.nameLink}>
         <SplitText>{data.name}</SplitText>
       </Link>
     </NameText>

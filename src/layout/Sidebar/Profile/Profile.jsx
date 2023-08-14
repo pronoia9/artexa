@@ -1,8 +1,8 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { ProfileAvatar, ProfileName, ProfilePost } from '../../..';
-import { rem, sidebarMotion } from '../../../../utils';
+import { ProfileAvatar, ProfileName, ProfilePost } from '@/layout';
+import { rem, sidebarMotion } from '@/utils';
 
 export const Profile = () => (
   <ProfileContainer className='art-header' {...sidebarMotion.profile.container}>

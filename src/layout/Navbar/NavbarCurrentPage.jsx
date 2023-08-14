@@ -1,16 +1,15 @@
-import { useLocation } from 'react-router-dom';
+import { useRouter } from 'next/navigation';
 import { styled } from 'styled-components';
 
-import { dataStore } from '../../../utils/dataStore';
-import { rem } from '../../../utils';
+import { routes, rem, dataStore } from '@/utils';
 
 export const NavbarCurrentPage = () => {
-  const { routes, navbarOpen } = dataStore((state) => ({ routes: state.routes, navbarOpen: state.navbarOpen }));
-  let location = useLocation();
+  const router = useRouter();
+  const { navbarOpen } = dataStore((state) => ({ navbarOpen: state.navbarOpen }));
 
   return (
     <Container className='art-current-page' $navbarOpen={navbarOpen}>
-      <span>{routes.find((r) => r.path === location.pathname)?.title}</span>
+      <span>{routes.find((r) => r.path === router.pathname)?.title}</span>
     </Container>
   );
 };

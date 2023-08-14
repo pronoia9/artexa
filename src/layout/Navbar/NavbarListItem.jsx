@@ -1,20 +1,22 @@
+'use client';
+
 import { useState } from 'react';
-import { useLocation, Link } from 'react-router-dom';
-import { styled, css } from 'styled-components';
+import { useRouter } from 'next/navigation';
+import Link from 'next/link';
+import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { dataStore } from '../../../utils/dataStore';
-import { navbarMotion, rem } from '../../../utils';
+import { dataStore, navbarMotion, rem } from '@/utils';
 
 export const NavbarListItem = ({ title, path, index, submenu }) => {
+  const router = useRouter();
   const { navbarOpen, closeNavbar } = dataStore((state) => ({ navbarOpen: state.navbarOpen, closeNavbar: state.closeNavbar }));
-  let location = useLocation();
   const [submenuOpen, setSubMenuOpen] = useState(false);
 
   const handleClick = (e) => {
     if (submenu) setSubMenuOpen((prev) => !prev);
     else {
-      if (location.pathname === path) e.preventDefault();
+      if (router.pathname === path) e.preventDefault();
       closeNavbar();
     }
   };
@@ -22,7 +24,7 @@ export const NavbarListItem = ({ title, path, index, submenu }) => {
   return (
     <ListItem
       className={`menu-item ${submenu ? ' menu-item-has-children' : ''}`}
-      $currentPage={location.pathname === path}
+      $currentPage={router.pathname === path}
       $submenuopen={submenu && submenuOpen}
       {...navbarMotion.item}
     >
@@ -37,7 +39,7 @@ export const NavbarListItem = ({ title, path, index, submenu }) => {
           <i className='fa-solid fa-chevron-right' />
         </>
       ) : (
-        <Link to={path} onClick={handleClick}>
+        <Link href={path} onClick={handleClick}>
           {title}
         </Link>
       )}

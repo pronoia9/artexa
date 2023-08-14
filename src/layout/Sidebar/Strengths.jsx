@@ -1,11 +1,10 @@
 import { motion } from "framer-motion";
 
-import { dataStore } from "../../../../utils/dataStore";
-import { Tag } from "../../../../styles";
-import { rng, sidebarMotion } from "../../../../utils";
+import { Tag } from "@/styles";
+import { rng, sidebarMotion, sidebar } from '@/utils';
 
 export const Strengths = () => {
-  const data = dataStore((state) => state.sidebar.strengths);
+  const data = sidebar.strengths;
   
   return (
     <motion.div className='art-strengths p-15-15 acc' {...sidebarMotion.strengths.container}>

@@ -1,12 +1,11 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { SplitText } from '../../../components/SplitText';
-import { dataStore } from '../../../../utils/dataStore';
-import { sidebarMotion } from '../../../../utils';
+import { SplitText } from '@/components';
+import { sidebarMotion, sidebar } from '@/utils';
 
 export const ProfilePost = () => {
-  const data = dataStore((state) => state.sidebar.profile);
+  const data = sidebar.profile;
 
   return (
     <PostContainer {...sidebarMotion.profile.posts}>
