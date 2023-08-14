@@ -2,7 +2,7 @@ import emailjs from '@emailjs/browser';
 import { Fancybox } from '@fancyapps/ui';
 import * as ProgressBar from 'progressbar.js';
 
-import { themes, colors } from '../styles/Themes';
+import { themes, colors } from '@/styles/Themes';
 
 const storageKey = 'artexaSettings';
 
@@ -68,25 +68,6 @@ export const rgbaToHex = (rgbaColor) => {
 
 export const getProjectsCount = (rows = 3, cols = 2) =>
   (window.innerWidth > 1020 ? cols : window.innerWidth > 768 ? Math.max(cols - 1, 2) : Math.max(cols - 1, 1)) * rows;
-
-// ----------------------------- TRANSITION ----------------------------- //
-// function transition() {
-//   // since the transition-fade containers opacity changes after the first time this function is called
-//   // reset it to 0 so it can go from 0-1 again, continuosly
-//   try {
-//     document.getElementById('transition-fade').style = 'opacity:0';
-
-//     anime({
-//       targets: '.transition-fade',
-//       opacity: [0, 1],
-//       delay: 400,
-//       duration: 800,
-//       easing: 'linear',
-//     });
-//   } catch (e) {
-//     console.log(e);
-//   }
-// }
 
 //----------------------------- PROGRESSBARS -----------------------------//
 export const ProgressbarInstance = ({ type = 'circle', level, index, hide }) => {
