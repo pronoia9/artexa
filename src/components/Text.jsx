@@ -1,3 +1,5 @@
+'use client';
+
 import { forwardRef } from 'react';
 import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
@@ -17,7 +19,7 @@ export const SectionTitle = forwardRef(function SectionTitle({ column = 1, title
       </Container>
     </motion.div>
   );
-})
+});
 
 const Container = styled.div`
   position: relative;

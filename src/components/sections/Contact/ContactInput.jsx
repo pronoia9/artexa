@@ -1,3 +1,5 @@
+'use client';
+
 import { Field, ErrorMessage } from 'formik';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -35,7 +37,8 @@ const Container = styled(motion.div)`
   flex-direction: column;
   gap: 0;
 
-  input, textarea {
+  input,
+  textarea {
     height: 50px;
     width: 100%;
     padding-left: 15px;
@@ -108,7 +111,8 @@ const Validation = styled.div`
     padding-top: 1px;
   }
 
-  &, span {
+  &,
+  span {
     color: var(--c-accent-5);
     margin-left: 30px;
   }

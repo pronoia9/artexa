@@ -1,3 +1,5 @@
+'use client';
+
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -23,7 +25,9 @@ export const ContactList = ({ cols, list }) => {
 export const ContactListItem = ({ title, description }) => {
   return (
     <motion.li {...contactMotion.listLine}>
-      <h5><SplitText>{`${title}:`}</SplitText></h5>
+      <h5>
+        <SplitText>{`${title}:`}</SplitText>
+      </h5>
       <motion.span {...contactMotion.listText}>{description}</motion.span>
     </motion.li>
   );
@@ -31,7 +35,7 @@ export const ContactListItem = ({ title, description }) => {
 
 const Container = styled.div`
   margin-bottom: 30px;
-  
+
   h5 {
     font-family: var(--f-tertiary);
   }

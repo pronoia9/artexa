@@ -1,3 +1,5 @@
+'use client';
+
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -8,14 +10,16 @@ export const ProjectsFilters = (props) => {
     filterKey: state.projects.filterKey,
     setFilterKey: state.projects.setFilterKey,
   }));
-  
+
   return (
     <Container className='art-filter acc' {...projectsMotion.filters}>
       {data.filters.map((f, index) => (
         <FilterItem
           key={`projects-filter-${index} acc`}
           {...f}
-          onClick={() => { setFilterKey(lowerCase(f.filter)); }}
+          onClick={() => {
+            setFilterKey(lowerCase(f.filter));
+          }}
           active={filterKey === f.filter}
           {...projectsMotion.filter}
           {...props}

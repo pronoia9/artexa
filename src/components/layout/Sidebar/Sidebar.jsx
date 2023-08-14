@@ -1,3 +1,5 @@
+'use client';
+
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -19,11 +21,11 @@ export const Sidebar = () => {
         <Profile />
 
         <SmoothScroll id='sidebar-scroll' {...sidebarMotion.scrollContent}>
-          <Info />       <motion.div className='art-ls-divider' {...sidebarMotion.divider(1.75 * 0.666)} />
-          <Languages />  <motion.div className='art-ls-divider' {...sidebarMotion.divider(3.5 * 0.666)} />
+          <Info /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(1.75 * 0.666)} />
+          <Languages /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(3.5 * 0.666)} />
           <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(5.25 * 0.666)} />
           <SoftSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(8.25 * 0.666)} />
-          <Strengths />  <motion.div className='art-ls-divider' {...sidebarMotion.divider(10.5 * 0.666)} />
+          <Strengths /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(10.5 * 0.666)} />
           <Resume />
         </SmoothScroll>
 

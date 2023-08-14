@@ -1,3 +1,5 @@
+'use client';
+
 import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 
@@ -18,7 +20,7 @@ import { footer as data, sectionWrapperMotion } from '@/utils';
 //   'footer'
 // );
 
-export default function Footer () {
+export default function Footer() {
   return (
     <Container className='container-fluid' {...sectionWrapperMotion()}>
       <div className='row p-30-0'>
@@ -30,7 +32,7 @@ export default function Footer () {
       </div>
     </Container>
   );
-};
+}
 
 const Container = styled(motion.section)`
   overflow: hidden;

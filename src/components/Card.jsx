@@ -1,3 +1,5 @@
+'use client';
+
 import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -16,11 +18,25 @@ const Tags = ({ title, tags }) => (
 );
 
 export const Card = ({
-  index, swiper, hide, section,
-  id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes,
+  index,
+  swiper,
+  hide,
+  section,
+  id,
+  title,
+  subtitle,
+  description,
+  link,
+  links,
+  image,
+  images,
+  year,
+  date,
+  categories,
+  tags,
+  classes,
   ...props
 }) => {
-
   return (
     <Container
       key={`${section}-card-${index}-${title}`}
@@ -37,15 +53,14 @@ export const Card = ({
       </ImageLink>
 
       <Overlay className='art-post-description' $hide={hide}>
-        {/* <a href='#.'> */}<Title className='mb-15'>{title}</Title>{/* </a> */}
+        {/* <a href='#.'> */}
+        <Title className='mb-15'>{title}</Title>
+        {/* </a> */}
         {subtitle && <div className='mb-15'>{subtitle}</div>}
 
         {!swiper && categories?.length && <Tags title={title} tags={categories} />}
 
-        <ButtonLink
-          link={link || `/${section}/${id}`}
-          title='Learn More'
-        />
+        <ButtonLink link={link || `/${section}/${id}`} title='Learn More' />
       </Overlay>
     </Container>
   );

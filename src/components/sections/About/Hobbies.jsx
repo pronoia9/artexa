@@ -1,3 +1,5 @@
+'use client';
+
 import { SwiperSlide } from 'swiper/react';
 
 import { Swiper, HobbiesCard } from '@/components';

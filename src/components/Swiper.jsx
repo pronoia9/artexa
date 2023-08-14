@@ -1,3 +1,5 @@
+'use client';
+
 import 'swiper/css';
 import 'swiper/css/a11y';
 import 'swiper/css/autoplay';
