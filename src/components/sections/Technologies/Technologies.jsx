@@ -9,7 +9,7 @@ export default SectionWrapper(({ type = 'swiper', ...props }) => {
 
   return (
     <>
-      <SectionTitle title='Techolonies' ref={ref} />
+      <SectionTitle title='Technologies' ref={ref} />
       {type === 'grid' && <TechnologiesGrid {...props} />}
       {type === 'swiper' && <TechnologiesSwiper {...props} />}
     </>
