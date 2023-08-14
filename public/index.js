@@ -1,12 +1,3 @@
-// 3D
-import macbook from './3d/macbook.glb';
-
-// FONTS
-import caveat from './fonts/Caveat/Caveat-VariableFont_wght.ttf';
-import caveatBrush from './fonts/Caveat_Brush/CaveatBrush-Regular.ttf';
-import jost from './fonts/Jost/Jost-VariableFont_wght.ttf';
-import operatorMono from './fonts/Operator_Mono/Operator Mono_Light Nerd_Font_Complete.otf';
-
 // IMAGES
 import sidebarAvatar from './images/shalom.png';
 import heroAvatar from './images/wave.png';
@@ -84,13 +75,6 @@ import techTypedjs from './images/technologies/typedjs.jpeg';
 import techVitejs from './images/technologies/vitejs.jpeg';
 
 export {
-  // 3D
-  macbook,
-  // FONTS
-  caveat,
-  caveatBrush,
-  jost,
-  operatorMono,
   // IMAGES
   sidebarAvatar,
   heroAvatar,
