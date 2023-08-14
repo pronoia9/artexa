@@ -1,12 +1,13 @@
 'use client';
 
+import 'bootstrap/dist/css/bootstrap.css';
+
 import { useState, useEffect } from 'react';
 import AnimatedCursor from 'react-animated-cursor';
 import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Preloader, Background, SmoothScroll } from '@/components';
-import { Footer, Navbar, Sidebar } from '@/layout';
+import { Footer, Navbar, Sidebar, Preloader, Background, SmoothScroll } from '@/components';
 import StyledComponentsRegistry from '@/lib/registry';
 import { GlobalStyles } from '@/styles';
 import { cursorOptions, appMotion, pageWrapperMotion, getThemeObject, rem, dataStore } from '@/utils';
@@ -53,7 +54,7 @@ export default function RootLayout({ children }) {
                           {/* <SmoothScroll> */}
                           {children}
                           {/* {idName !== 'not-found' && <Footer />} */}
-                          <Footer />
+                          {/* <Footer /> */}
                           {/* </SmoothScroll> */}
                         </PageWrapper>
 
