@@ -25,9 +25,7 @@ export default function RootLayout({ children }) {
 
   // Disable loading after 7s maybe?
   useEffect(() => {
-    const loader = setTimeout(() => {
-      setLoading(false);
-    }, loadTime);
+    const loader = setTimeout(() => { setLoading(false); }, loadTime);
     return () => clearTimeout(loader);
   }, []);
 
