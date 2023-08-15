@@ -32,7 +32,7 @@ export const ButtonLink = ({ link, title, arrow = true, children, icon, ...props
     <Link href={link} className='art-link art-color-link art-w-chevron acc' {...props} onClick={handleClick}>
       {title}
       {children}
-      {(arrow || icon) && <SVGs type='right' height={9} />}
+      {(arrow || icon) && <SVGs type={icon} height={9} />}
     </Link>
   );
 };
@@ -48,7 +48,14 @@ export const ButtonGradient = ({ position, children, inline, ...props }) => {
 
 const GradientButtonContaienr = styled(GradientButton)`
   position: relative;
-  display: block;
+  /* display: block; */
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
   margin: ${({ $position }) => ($position === 'center' ? '0 auto' : $position === 'right' && 'auto')};
   margin-right: ${({ $position }) => $position === 'right' && '0'};
+
+  svg {
+    fill: black;
+  }
 `;
