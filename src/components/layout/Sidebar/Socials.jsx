@@ -3,17 +3,19 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { SVGs } from '@/components';
+import { Fancybox, SVGs } from '@/components';
 import { sidebar, sidebarMotion } from '@/utils';
 
 export const Socials = () => {
   const data = sidebar.social;
   return (
-    <Container className='art-ls-social acc' {...sidebarMotion.socials.container}>
-      {data.map((social, index) => (
-        <SocialsItem key={`sidebar-socials-${index}`} {...social} index={index} />
-      ))}
-    </Container>
+    <Fancybox className='art-ls-social acc'>
+      <Container className='art-ls-social acc' {...sidebarMotion.socials.container}>
+        {data.map((social, index) => (
+          <SocialsItem key={`sidebar-socials-${index}`} {...social} index={index} />
+        ))}
+      </Container>
+    </Fancybox>
   );
 };
 
@@ -37,7 +39,8 @@ const Container = styled(motion.div)`
 export const SocialsItem = ({ platform, fancybox, url }) => (
   <SocialItem
     className={`${platform}${fancybox ? ' fancybox' : ''}`}
-    href={!fancybox ? url : null}
+    href={url}
+    {...(fancybox && { 'data-fancybox': 'socials' })}
     target='_blank'
     rel='noopener noreferrer'
     {...sidebarMotion.socials.item}
