@@ -24,6 +24,7 @@ export const SoftSkills = () => {
 
 const SkillsList = styled(motion.ul)`
   padding-left: 0;
+  list-style: none;
 `;
 
 const ListItem = styled(motion.div)`
