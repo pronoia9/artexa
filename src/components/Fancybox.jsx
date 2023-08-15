@@ -6,6 +6,7 @@ import { Fancybox as NativeFancybox } from '@fancyapps/ui';
 import { motion } from 'framer-motion';
 
 import { SVGs } from '@/components';
+import { styled } from 'styled-components';
 
 export const Fancybox = (props) => {
   const containerRef = useRef(null);
@@ -33,7 +34,11 @@ export const Fancybox = (props) => {
 };
 
 export const HoverExpand = () => {
-  return <>
-    <SVGs type='expand' />
-  </>
-}
+  return (
+    <Container className='art-item-hover'>
+      <SVGs type='expand' />
+    </Container>
+  );
+};
+
+const Container = styled.div``;
