@@ -7,6 +7,7 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { dataStore, navbarMotion, rem } from '@/utils';
+import { SVGs } from '@/components';
 
 export const NavbarListItem = ({ title, path, index, submenu }) => {
   const pathname = usePathname();
@@ -36,7 +37,7 @@ export const NavbarListItem = ({ title, path, index, submenu }) => {
               <NavbarListItem key={`navbarlist-${title}-${index}`} {...li} />
             ))}
           </ul>
-          <i className='fa-solid fa-chevron-right' />
+          <SVGs type='right' height={9} />
         </>
       ) : (
         <Link href={path} onClick={handleClick}>
@@ -60,14 +61,11 @@ const ListItem = styled(motion.li)`
     }
   }
 
-  a,
-  p,
-  span {
+  a, p, span {
     transition: 0.2s ease-in-out;
   }
 
-  a,
-  p {
+  a, p {
     display: inline-block;
     width: 100%;
     margin-bottom: 0;
@@ -87,16 +85,16 @@ const ListItem = styled(motion.li)`
   }
 
   /* Submenu */
-  i {
+  i, svg {
     position: absolute;
     top: ${rem(12.5)};
     right: ${rem(30)};
     display: inline-block;
-    font-size: ${rem(9)};
-    font-weight: 900;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
+    /* font-size: ${rem(9)}; */
+    /* font-weight: 900; */
+    /* font-style: normal; */
+    /* font-variant: normal; */
+    /* text-rendering: auto; */
     transform: translateX(${rem(5)});
     transition: 0.4s ease-in-out;
   }
@@ -107,7 +105,7 @@ const ListItem = styled(motion.li)`
     padding-right: 0;
 
     &:hover {
-      i {
+      i, svg {
         transform: rotate(90deg);
       }
     }
