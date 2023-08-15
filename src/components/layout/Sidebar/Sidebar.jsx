@@ -11,7 +11,7 @@ export const Sidebar = () => {
 
   return (
     <Container className='art-info-bar' $active={sidebarOpen} {...sidebarMotion.sidebar}>
-      {/* <Wrapper className='art-info-bar-frame'> */}
+      <Wrapper className='art-info-bar-frame'>
         <MobileHeader className='art-info-bar-header' $active={sidebarOpen}>
           <div className='art-info-bar-btn' onClick={() => toggleSidebar()}>
             <i className='fas fa-ellipsis-v' />
@@ -30,7 +30,7 @@ export const Sidebar = () => {
         </SmoothScroll>
 
         <Socials />
-      {/* </Wrapper> */}
+      </Wrapper>
     </Container>
   );
 };
@@ -64,9 +64,9 @@ const Container = styled(motion.div)`
   }
 `;
 
-// const Wrapper = styled.div`
-  /* padding: 0 ${rem(15)}; */
-// `;
+const Wrapper = styled.div`
+  padding: 0 ${rem(15)};
+`;
 
 const MobileHeader = styled.div`
   position: absolute;
