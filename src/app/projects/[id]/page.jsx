@@ -1,8 +1,8 @@
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
-import { ProjectBanner, ProjectInfo, ProjectScreenshots, Fancybox } from '..';
-import { dataStore } from '../../../utils/dataStore';
+import { ProjectBanner, ProjectInfo, ProjectScreenshots, Fancybox } from '@/components';
+import { dataStore } from '@/utils';
 
 export default function Page() {
   const { projectId } = useParams(), navigate = useNavigate();
