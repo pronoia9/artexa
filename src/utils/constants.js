@@ -470,7 +470,7 @@ export const projects = {
       title: 'The Portfolio',
       subtitle: 'Design, Frontend',
       description: ``,
-      links: { repo: 'https://github.com/pronoia9/portfolio-2021', live: '/' },
+      links: { repo: 'https://github.com/pronoia9/portfolio-2021', live: 'https://jay-ansin.vercel.app/' },
       image: '/images/projects/portfolio.jpg',
       dates: ['Jun 22, 2023', 'Jul 9, 2023'],
       categories: ['react', '3d', 'design', 'frontend'],
