@@ -16,8 +16,8 @@ export const dataStore = create((set) => ({
       return { theme: newTheme };
     }),
   themes: [
-    { title: 'light', icon: 'far fa-sun' },
-    { title: 'dark', icon: 'far fa-moon' },
+    { title: 'light', icon: 'sun' },
+    { title: 'dark', icon: 'moon' },
   ],
   // ACCENT / COLORS
   accent: getThemeFromStorage('accent'),
