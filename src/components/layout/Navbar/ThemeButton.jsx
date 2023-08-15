@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 import { colors } from '@/styles';
 import { dataStore, navbarMotion, rem } from '@/utils';
+import { SVGs } from '@/components';
 
 export const ThemeButton = () => {
   const { navbarOpen, themes, theme, toggleTheme, accent, setAccent } = dataStore((state) => ({
@@ -35,7 +36,7 @@ export const ThemeButton = () => {
             $navbarOpen={navbarOpen}
             onClick={() => handleThemeClick(title)}
           >
-            <i className={icon} />
+            <SVGs type={icon} height={16} />
           </ThemeItem>
         ))}
       </div>
@@ -88,6 +89,13 @@ const ThemeItem = styled.div`
   transition: 0.55s ease-in-out;
   z-index: 1;
 
+  i, svg {
+    fill: ${({ $active }) => (!$active ? 'var(--c-font-2)' : 'var(--c-bg-wrapper)')};
+    /* font-size: 1rem; */
+    /* font-weight: 600; */
+    transition: 0.4s ease-in-out;
+  }
+
   &:first-child {
     margin-bottom: ${rem(10)};
   }
@@ -103,13 +111,6 @@ const ThemeItem = styled.div`
         transform: translateY(calc(${rem(-10)} - 1.75rem));
       }
     `}
-
-  i {
-    color: ${({ $active }) => (!$active ? 'var(--c-font-2)' : 'var(--c-bg-wrapper)')};
-    font-size: 1rem;
-    font-weight: 600;
-    transition: 0.4s ease-in-out;
-  }
 `;
 
 const AccentContainer = styled(motion.div)`
