@@ -18,7 +18,7 @@ export default SectionWrapper(() => {
     e.preventDefault();
 
     let count = 200;
-    let defaults = { origin: { y: 0.9, x: 0.2 } };
+    let defaults = { origin: { y: 0.9, x: 0.15 } };
 
     const fire = (particleRatio, opts) => {
       myConfetti.current(
