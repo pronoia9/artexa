@@ -666,6 +666,7 @@ export const projects = {
         'zod',
         'clsx',
         'svix',
+        'fullstack',
       ],
     },
     // {
