@@ -5,6 +5,7 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { contactMotion } from '@/utils';
+import { SVGs } from '@/components';
 
 export const ContactInput = ({ name, icon, active, ...props }) => {
   return (
@@ -18,7 +19,7 @@ export const ContactInput = ({ name, icon, active, ...props }) => {
       />
 
       <Label htmlFor={name}>
-        <i className={icon} />
+        <SVGs type={icon} height={11} />
       </Label>
 
       <Validation className='art-validation-warning'>
@@ -71,10 +72,13 @@ const Container = styled(motion.div)`
   }
 
   .art-input {
-    &.art-active + label,
-    &:focus + label {
+    &.art-active + label, &:focus + label {
       background: var(--c-accent-1);
-      color: var(--c-font-dark);
+      /* color: var(--c-font-dark); */
+
+      svg {
+        fill: var(--c-font-dark);
+      }
     }
   }
 
@@ -90,16 +94,23 @@ const Label = styled.label`
   left: 0;
   width: 50px;
   padding: 0 15px;
-  color: var(--c-font-1);
-  font-size: 11px;
-  font-weight: 500;
+  /* color: var(--c-font-1); */
+  /* font-size: 11px; */
+  /* font-weight: 500; */
   line-height: 50px;
-  letter-spacing: 1px;
+  /* letter-spacing: 1px; */
   text-align: center;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   background: ${({ theme }) => theme.bgInputLabel};
   cursor: text;
-  transition: 0.4s ease-in-out;
+  
+  &, svg {
+    transition: 0.4s ease-in-out;
+  }
+
+  svg {
+    fill: var(--c-font-1);
+  }
 `;
 
 const Validation = styled.div`
@@ -111,8 +122,7 @@ const Validation = styled.div`
     padding-top: 1px;
   }
 
-  &,
-  span {
+  &, span {
     color: var(--c-accent-5);
     margin-left: 30px;
   }

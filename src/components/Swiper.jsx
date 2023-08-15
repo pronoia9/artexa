@@ -28,7 +28,7 @@ import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Card, Fancybox } from '@/components';
+import { Card, Fancybox, SVGs } from '@/components';
 
 export const Swiper = ({ section, data, navProps, autoplay, swiperOptions, navigation = true, children, ...props }) => {
   if (autoplay) SwiperCore.use([Autoplay]);
@@ -74,10 +74,10 @@ export const SwiperNavigation = ({ section, ...props }) => (
       <div className='art-sn-right'>
         <NavFrame className='art-slider-nav-frame'>
           <Nav className={`art-slider-nav art-${section}-swiper-prev`} role='button' aria-label='Previous slide'>
-            <i className='fas fa-chevron-left' />
+            <SVGs type='left' height={13} />
           </Nav>
           <Nav className={`art-slider-nav art-${section}-swiper-next`} role='button' aria-label='Next slide'>
-            <i className='fas fa-chevron-right' />
+            <SVGs type='right' height={13} />
           </Nav>
         </NavFrame>
       </div>

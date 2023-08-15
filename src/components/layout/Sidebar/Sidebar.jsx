@@ -3,7 +3,7 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { SmoothScroll, Profile, Info, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials } from '@/components';
+import { SmoothScroll, Profile, Info, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials, SVGs } from '@/components';
 import { dataStore, rem, sidebarMotion } from '@/utils';
 
 export const Sidebar = () => {
@@ -14,7 +14,7 @@ export const Sidebar = () => {
       <Wrapper className='art-info-bar-frame'>
         <MobileHeader className='art-info-bar-header' $active={sidebarOpen}>
           <div className='art-info-bar-btn' onClick={() => toggleSidebar()}>
-            <i className='fas fa-ellipsis-v' />
+            <SVGs type='ellipsis-vertical' width={3.75} height={14} />
           </div>
         </MobileHeader>
 

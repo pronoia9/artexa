@@ -5,7 +5,7 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { motion } from 'framer-motion';
 
-import { SectionTitle, ButtonGradient, ContactInput } from '@/components';
+import { SectionTitle, ButtonGradient, ContactInput, SVGs } from '@/components';
 import { cardMotion, contactMotion, handleFormSubmit, contact } from '@/utils';
 
 export const ContactForm = () => {
@@ -31,18 +31,19 @@ export const ContactForm = () => {
         <Formik {...formikOptions}>
           {(formik) => (
             <Form id='form' className='art-contact-form'>
-              <ContactInput name='name' type='text' icon='fas fa-user' active={formik.values.name} />
-              <ContactInput name='subject' type='text' icon='fas fa-inbox' active={formik.values.subject} />
-              <ContactInput name='email' type='email' icon='fas fa-at' active={formik.values.email} />
-              <ContactInput name='message' as='textarea' icon='fas fa-envelope' active={formik.values.message} />
+              <ContactInput name='name' type='text' icon='user' active={formik.values.name} />
+              <ContactInput name='subject' type='text' icon='inbox' active={formik.values.subject} />
+              <ContactInput name='email' type='email' icon='at' active={formik.values.email} />
+              <ContactInput name='message' as='textarea' icon='envelope' active={formik.values.message} />
 
               <ButtonGradient
                 className='art-submit'
                 type='submit'
                 title={`${success ? 'Message Sent' : formik.isSubmitting ? 'Sending Message' : 'Send Message'}`}
                 $position='right'
+                inline={true}
               >
-                {success ? <i className='fas fa-check' /> : !formik.isSubmitting && <i className='far fa-paper-plane' />}
+                <SVGs type={success ? 'check' : !formik.isSubmitting && 'paper-plane'} height={10} style={{ fill: 'black' }} />
               </ButtonGradient>
             </Form>
           )}
