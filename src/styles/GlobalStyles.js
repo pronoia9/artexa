@@ -173,6 +173,16 @@ h6 {
   font-weight: 400;
 }
 
+svg {
+  fill: var(--c-font-1);
+
+  &:hover {
+    text-shadow: 0 0 3px var(--c-font-shadow);
+    fill: var(--c-accent-1);
+  }
+}
+
+
 /* ----- text config ----- */
 
 .art-sm-text {
@@ -335,28 +345,55 @@ blockquote {
   cursor: pointer;
   transition: 0.4s ease-in-out;
 
+  svg {
+    fill: var(--c-font-1);
+  }
+
   &:hover {
     color: var(--c-font-2);
     text-shadow: 0 0 3px var(--c-font-shadow);
+
+    svg {
+      fill: var(--c-font-2);
+      text-shadow: 0 0 3px var(--c-font-shadow);
+    }
   }
 
   &.art-white-link {
     color: var(--c-font-2);
 
+    svg {
+      fill: var(--c-font-2);
+    }
+
     &:hover {
       color: var(--c-font-2);
       text-shadow: 0 0 3px var(--c-font-shadow);
       transform: translateX(5px);
+
+      svg {
+        fill: var(--c-font-2);
+        text-shadow: 0 0 3px var(--c-font-shadow);
+      }
     }
   }
 
   &.art-color-link {
     color: var(--c-accent-1);
 
+    svg {
+      fill: var(--c-accent-1)
+    }
+
     &:hover {
       color: var(--c-accent-2);
       text-shadow: 0 0 3px var(--c-font-shadow);
       transform: translateX(5px);
+
+      svg {
+        fill: var(--c-accent-2);
+        text-shadow: 0 0 3px var(--c-font-shadow);
+      }
     }
   }
 
