@@ -1,20 +1,23 @@
-import { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+'use client';
 
-import { ProjectBanner, ProjectInfo, ProjectScreenshots, Fancybox } from '@/components';
-import { dataStore } from '@/utils';
+import { useEffect } from 'react';
+import { usePathname, useRouter } from 'next/navigation';
+
+import { ProjectBanner, ProjectInfo, ProjectScreenshots } from '@/components';
+import { projects } from '@/utils';
 
 export default function Page() {
-  const { projectId } = useParams(), navigate = useNavigate();
-  const data = dataStore((state) => state.projects.projects.find((prj) => prj.id === projectId));
+  const router = useRouter(), pathname = usePathname();
+  const data = projects.projects.find((prj) => prj.id === pathname.split('/')[2]);
 
-  useEffect(() => { !data && navigate('/projects'); }, []);
+  // TODO: find a way to return to prev page not /projects (ex: if clicked on the home page...?)
+  useEffect(() => { !data && router.push('/projects'); }, []);
 
   return (
-    <Fancybox>
+    <>
       <ProjectBanner project={data} />
       <ProjectInfo project={data} />
-      {data?.images && <ProjectScreenshots {...data} />}
-    </Fancybox>
+      {data?.images?.length && <ProjectScreenshots {...data} />}
+    </>
   );
 }
