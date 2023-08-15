@@ -164,7 +164,6 @@ export const sidebar = {
     url: '',
   },
 
-  // TODO: Change non link socials with a hover info maybe
   social: [
     {
       platform: 'github',
