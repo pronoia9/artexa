@@ -43,7 +43,7 @@ export default SectionWrapper(({ project }) => {
             </ListContainer>
           </div>
           <Links className='acc'>
-            {links.repo && <ButtonLink title='Repository' link={links.repo} icon='github' />}
+            {links.repo && <ButtonLink title='Repository' link={links.repo} icon='github-repo' />}
             {links.live && <ButtonLink title='Live Site' link={links.live} icon='globe' />}
           </Links>
         </div>
