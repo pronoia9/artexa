@@ -25,7 +25,7 @@ export const SmoothScroll = ({ options, children, ...props }) => {
 
   return (
     <Container data-scrollbar ref={content} className='art-scroll-frame' {...props}>
-      <div className='container'>{children}</div>
+      <div>{children}</div>
     </Container>
   );
 };
