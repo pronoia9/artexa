@@ -5,6 +5,8 @@ import { useRef, useEffect } from 'react';
 import { Fancybox as NativeFancybox } from '@fancyapps/ui';
 import { motion } from 'framer-motion';
 
+import { SVGs } from '@/components';
+
 export const Fancybox = (props) => {
   const containerRef = useRef(null);
 
@@ -29,3 +31,9 @@ export const Fancybox = (props) => {
     </motion.div>
   );
 };
+
+export const HoverExpand = () => {
+  return <>
+    <SVGs type='expand' />
+  </>
+}

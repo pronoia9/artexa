@@ -67,7 +67,7 @@ import { Background } from './Background';
 import { Button, ButtonLink, ButtonGradient } from './Buttons';
 import { Card } from './Card';
 import { Cursor } from './Cursor';
-import { Fancybox } from './Fancybox';
+import { Fancybox, HoverExpand } from './Fancybox';
 import { Grid } from './Grid';
 import { Logos, Logo } from './Logos';
 import { Preloader } from './Preloader';
@@ -103,7 +103,7 @@ export {
   Button, ButtonLink, ButtonGradient,
   Card,
   Cursor,
-  Fancybox,
+  Fancybox, HoverExpand,
   Grid,
   Logos,
   Logo,
