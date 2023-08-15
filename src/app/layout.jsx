@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Footer, Navbar, Sidebar, Preloader, Background, SmoothScroll, Cursor } from '@/components';
+import { Footer, Navbar, Sidebar, Preloader, Background, SmoothScroll, Cursor, Fancybox } from '@/components';
 import StyledComponentsRegistry from '@/lib/registry';
 import { GlobalStyles } from '@/styles';
 import { appMotion, pageWrapperMotion, getThemeObject, rem, dataStore } from '@/utils';
@@ -35,30 +35,39 @@ export default function RootLayout({ children }) {
             <ThemeProvider theme={getThemeObject(accent)}>
               <GlobalStyles />
 
-              <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
-                {loading ? (<Preloader title='Welcome' duration={loadTime} />) : (
-                  <>
-                    <TopBar className='art-mobile-top-bar' />
+              <Fancybox>
+                <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
+                  {loading ? (
+                    <Preloader title='Welcome' duration={loadTime} />
+                  ) : (
+                    <>
+                      <TopBar className='art-mobile-top-bar' />
 
-                    <Wrapper className='art-app-wrapper'>
-                      <Container className='art-app-container'>
-                        <Sidebar />
+                      <Wrapper className='art-app-wrapper'>
+                        <Container className='art-app-container'>
+                          <Sidebar />
 
-                        <PageWrapper className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion()}>
-                          <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
-                          <Background />
-                          <SmoothScroll>
-                            {children}
-                            <Footer />
-                          </SmoothScroll>
-                        </PageWrapper>
+                          <PageWrapper
+                            className='art-content'
+                            $curtainEnabled={curtainEnabled}
+                            onClick={() => curtainClose()}
+                            {...pageWrapperMotion()}
+                          >
+                            <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
+                            <Background />
+                            <SmoothScroll>
+                              {children}
+                              <Footer />
+                            </SmoothScroll>
+                          </PageWrapper>
 
-                        <Navbar />
-                      </Container>
-                    </Wrapper>
-                  </>
-                )}
-              </AppContainer>
+                          <Navbar />
+                        </Container>
+                      </Wrapper>
+                    </>
+                  )}
+                </AppContainer>
+              </Fancybox>
 
               <Cursor />
             </ThemeProvider>

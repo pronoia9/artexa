@@ -34,7 +34,7 @@ export const Swiper = ({ section, data, navProps, autoplay, swiperOptions, navig
   if (autoplay) SwiperCore.use([Autoplay]);
   return (
     <>
-      <Fancybox className='col-lg-12' {...props}>
+      <motion.div className='col-lg-12' {...props}>
         <SwiperNative
           modules={[Navigation, Pagination, A11y]}
           spaceBetween={30}
@@ -57,7 +57,7 @@ export const Swiper = ({ section, data, navProps, autoplay, swiperOptions, navig
             </SwiperSlide>
           ))}
         </SwiperNative>
-      </Fancybox>
+      </motion.div>
 
       {navigation && <SwiperNavigation section={section} {...navProps} />}
     </>

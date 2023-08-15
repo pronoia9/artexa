@@ -1,8 +1,9 @@
 'use client';
 
 import { useEffect } from 'react';
+import { motion } from 'framer-motion';
 
-import { Fancybox, Card, ButtonGradient } from '@/components';
+import { Card, ButtonGradient } from '@/components';
 import { dataStore, getProjectsCount } from '@/utils';
 
 export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, buttonMotion, buttonText, ...props }) => {
@@ -47,7 +48,7 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
 
   return (
     <div className={`col-12${limit ? ' p-0-30' : ''}`}>
-      <Fancybox className={`art-grid art-grid-${cols}-col art-gallery`} {...props} {...gridMotion}>
+      <motion.div className={`art-grid art-grid-${cols}-col art-gallery`} {...props} {...gridMotion}>
         {Array.from(limit ? data.slice(0, count) : data)
           .flat()
           .map((item, index) => (
@@ -63,7 +64,7 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
               {...cardMotion}
             />
           ))}
-      </Fancybox>
+      </motion.div>
 
       {limit && data.length > getProjectsCount() && (
         <ButtonGradient title={`View ${!showingAllData() ? 'More' : 'Less'}`} onClick={handleButtonClick} $position='center' {...buttonMotion} />

@@ -9,13 +9,11 @@ import { sidebar, sidebarMotion } from '@/utils';
 export const Socials = () => {
   const data = sidebar.social;
   return (
-    <Fancybox className='art-ls-social acc'>
-      <Container className='art-ls-social acc' {...sidebarMotion.socials.container}>
-        {data.map((social, index) => (
-          <SocialsItem key={`sidebar-socials-${index}`} {...social} index={index} />
-        ))}
-      </Container>
-    </Fancybox>
+    <Container className='art-ls-social acc' {...sidebarMotion.socials.container}>
+      {data.map((social, index) => (
+        <SocialsItem key={`sidebar-socials-${index}`} {...social} index={index} />
+      ))}
+    </Container>
   );
 };
 
