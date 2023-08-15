@@ -535,39 +535,6 @@ button {
   }
 }
 
-.art-item-hover {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-  width: 27px;
-  height: 27px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--c-font-2);
-  font-size: ${rem(11)};
-  font-weight: 700;
-  line-height: ${rem(30)};
-  text-align: center;
-  background: var(--c-gradient-2);
-  border-radius: 50%;
-  box-shadow: 0 1px 4px 0 var(--c-box-shadow);
-  opacity: 0;
-  z-index: 10;
-  transition: 0.4s ease-in-out;
-
-  &.center {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-
-  &:hover {
-    opacity: 1 !important;
-    transform: scale(1.07);
-  }
-}
-
 /* ----- logos ----- */
 
 .art-brand {
