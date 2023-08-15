@@ -23,18 +23,19 @@ export default function RootLayout({ children }) {
 
   // Disable loading after 7s maybe?
   useEffect(() => {
-    const loader = setTimeout(() => { setLoading(false); }, loadTime);
+    const loader = setTimeout(() => {
+      setLoading(false);
+    }, loadTime);
     return () => clearTimeout(loader);
   }, []);
 
   return (
     <html>
-      <body>
-        <StyledComponentsRegistry>
-          <ThemeProvider theme={getThemeObject(theme)}>
-            <ThemeProvider theme={getThemeObject(accent)}>
-              <GlobalStyles />
-
+      <StyledComponentsRegistry>
+        <ThemeProvider theme={getThemeObject(theme)}>
+          <ThemeProvider theme={getThemeObject(accent)}>
+            <GlobalStyles />
+            <body>
               <Fancybox>
                 <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
                   {loading ? (
@@ -70,10 +71,10 @@ export default function RootLayout({ children }) {
               </Fancybox>
 
               <Cursor />
-            </ThemeProvider>
+            </body>
           </ThemeProvider>
-        </StyledComponentsRegistry>
-      </body>
+        </ThemeProvider>
+      </StyledComponentsRegistry>
     </html>
   );
 }
