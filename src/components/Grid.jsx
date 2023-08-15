@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 
 import { Card, ButtonGradient } from '@/components';
 import { dataStore, getProjectsCount } from '@/utils';
+import { styled } from 'styled-components';
 
 export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, buttonMotion, buttonText, ...props }) => {
   const { rows, setRows, cols, setCols, count, setCount, defaults } = dataStore((state) => ({
@@ -37,17 +38,13 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
 
   // Sets count when the window is resized
   useEffect(() => {
-    const resize = () => {
-      setCount(Math.min(getProjectsCount(rows, cols), data.length || Infinity));
-    };
+    const resize = () => { setCount(Math.min(getProjectsCount(rows, cols), data.length || Infinity)); };
     window.addEventListener('resize', resize);
-    return () => {
-      window.removeEventListener('resize', resize);
-    };
+    return () => { window.removeEventListener('resize', resize); };
   }, []);
 
   return (
-    <div className={`col-12${limit ? ' p-0-30' : ''}`}>
+    <Container className={`col-12${limit ? ' p-0-30' : ''}`}>
       <motion.div className={`art-grid art-grid-${cols}-col art-gallery`} {...props} {...gridMotion}>
         {Array.from(limit ? data.slice(0, count) : data)
           .flat()
@@ -69,6 +66,10 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
       {limit && data.length > getProjectsCount() && (
         <ButtonGradient title={`View ${!showingAllData() ? 'More' : 'Less'}`} onClick={handleButtonClick} $position='center' {...buttonMotion} />
       )}
-    </div>
+    </Container>
   );
 };
+
+const Container = styled.div`
+  padding: 0 !important;
+`;
