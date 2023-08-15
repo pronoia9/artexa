@@ -4,8 +4,7 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 import { Card, ButtonGradient } from '@/components';
-import { dataStore, getProjectsCount, rem } from '@/utils';
-import { styled } from 'styled-components';
+import { dataStore, getProjectsCount } from '@/utils';
 
 export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, buttonMotion, buttonText, ...props }) => {
   const { rows, setRows, cols, setCols, count, setCount, defaults } = dataStore((state) => ({
@@ -44,7 +43,7 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
   }, []);
 
   return (
-    <Container className={`col-12${limit ? ' p-0-30' : ''}`}>
+    <div className={`col-12${limit ? ' p-0-30' : ''}`}>
       <motion.div className={`art-grid art-grid-${cols}-col art-gallery`} {...props} {...gridMotion}>
         {Array.from(limit ? data.slice(0, count) : data)
           .flat()
@@ -66,10 +65,6 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
       {limit && data.length > getProjectsCount() && (
         <ButtonGradient title={`View ${!showingAllData() ? 'More' : 'Less'}`} onClick={handleButtonClick} $position='center' {...buttonMotion} />
       )}
-    </Container>
+    </div>
   );
 };
-
-const Container = styled.div`
-  padding: 0 0 ${rem(30)} 0;
-`;
