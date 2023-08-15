@@ -7,14 +7,18 @@ import { buttonMotion, openFancybox } from '@/utils';
 export const Button = (props) => {
   const { link, title, children } = props;
   return !link ? (
-    <span className='art-link art-color-link acc' {...props}>
+    <ButtonContainer className='art-link art-color-link acc' {...props}>
       {title}
       {children}
-    </span>
+    </ButtonContainer>
   ) : (
     <ButtonLink {...props} />
   );
 };
+
+const ButtonContainer = styled.span`
+  position: relative;
+`;
 
 export const ButtonLink = ({ link, title, arrow = true, children, icon, ...props }) => {
   const handleClick = (e) => {
@@ -32,15 +36,17 @@ export const ButtonLink = ({ link, title, arrow = true, children, icon, ...props
   );
 };
 
-export const ButtonGradient = ({ position, ...props }) => {
+export const ButtonGradient = ({ position, children, inline, ...props }) => {
   return (
     <GradientButtonContaienr className='art-buttons-frame' {...buttonMotion.gradient} {...props}>
-      <Button link={props.link} title={props.title} arrow={props.arrow} children={props.children} />
+      <Button link={props.link} title={props.title} arrow={props.arrow} children={!inline ? children : <></>} />
+      {inline && children}
     </GradientButtonContaienr>
   );
 };
 
 const GradientButtonContaienr = styled(GradientButton)`
+  position: relative;
   display: block;
   margin: ${({ $position }) => ($position === 'center' ? '0 auto' : $position === 'right' && 'auto')};
   margin-right: ${({ $position }) => $position === 'right' && '0'};
