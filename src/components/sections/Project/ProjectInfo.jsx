@@ -9,7 +9,7 @@ import { rng } from '@/utils';
 
 const ListItem = ({ title, subtitle }) => (
   <ListItemContainer>
-    <h6>{title}:</h6>
+    <h6>{title}</h6>
     <span>{subtitle}</span>
   </ListItemContainer>
 );
