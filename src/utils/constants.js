@@ -185,7 +185,7 @@ export const sidebar = {
     {
       platform: 'discord',
       fancybox: true,
-      url: '/images/snapchat.jpg',
+      url: '/images/discord.jpg',
     },
   ],
 };
