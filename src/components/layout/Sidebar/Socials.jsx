@@ -3,12 +3,13 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
+import { SVGs } from '@/components';
 import { sidebar, sidebarMotion } from '@/utils';
 
 export const Socials = () => {
   const data = sidebar.social;
   return (
-    <Container className='art-ls-social' {...sidebarMotion.socials.container}>
+    <Container className='art-ls-social acc' {...sidebarMotion.socials.container}>
       {data.map((social, index) => (
         <SocialsItem key={`sidebar-socials-${index}`} {...social} index={index} />
       ))}
@@ -33,15 +34,15 @@ const Container = styled(motion.div)`
   isolation: isolate;
 `;
 
-export const SocialsItem = ({ id, platform, favicon, fancybox, url, index }) => (
+export const SocialsItem = ({ platform, fancybox, url }) => (
   <SocialItem
-    className={platform}
-    href={url}
-    target={!fancybox ? '_blank' : ''}
-    rel={!fancybox ? 'noopener noreferrer' : ''}
+    className={`${platform}${fancybox ? ' fancybox' : ''}`}
+    href={!fancybox ? url : null}
+    target='_blank'
+    rel='noopener noreferrer'
     {...sidebarMotion.socials.item}
   >
-    <i className={favicon} />
+    <SVGs type={platform} height={15} />
   </SocialItem>
 );
 
@@ -49,12 +50,20 @@ const SocialItem = styled(motion.a)`
   color: var(--c-font-1);
   transition: 0.2s ease-in-out;
 
-  &:hover {
-    text-shadow: 0 0 3px var(--c-font-shadow);
-    color: var(--c-accent-1);
+  svg {
+    fill: var(--c-font-1);
   }
 
-  &.social-unavailable:hover {
-    color: var(--c-font-2);
+  &:hover {
+    svg {
+      text-shadow: 0 0 3px var(--c-font-shadow);
+      fill: var(--c-accent-1);
+    }
+  }
+
+  &.fancybox:hover {
+    svg {
+      fill: var(--c-font-2);
+    }
   }
 `;
