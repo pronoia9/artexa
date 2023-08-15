@@ -2,6 +2,7 @@
 
 import 'bootstrap/dist/css/bootstrap.css';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -11,6 +12,7 @@ import { GlobalStyles } from '@/styles';
 import { appMotion, pageWrapperMotion, getThemeObject, rem, dataStore } from '@/utils';
 
 export default function RootLayout({ children }) {
+  const pathname = usePathname();
   const loadTime = 500; //! TODO: TEMPORARILY DISABLED
   const { loading, setLoading, theme, accent, curtainEnabled, curtainClose } = dataStore((state) => ({
     loading: state.loading,
@@ -36,39 +38,32 @@ export default function RootLayout({ children }) {
           <ThemeProvider theme={getThemeObject(accent)}>
             <GlobalStyles />
             <body>
-              <Fancybox>
-                <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
-                  {loading ? (
-                    <Preloader title='Welcome' duration={loadTime} />
-                  ) : (
-                    <>
-                      <TopBar className='art-mobile-top-bar' />
+              <AppContainer className='art-app' {...appMotion.appContainer}>
+                {loading ? (
+                  <Preloader title='Welcome' duration={loadTime} />
+                ) : (
+                  <>
+                    <TopBar className='art-mobile-top-bar' />
 
-                      <Wrapper className='art-app-wrapper'>
-                        <Container className='art-app-container'>
-                          <Sidebar />
+                    <Wrapper className='art-app-wrapper'>
+                      <Container className='art-app-container'>
+                        <Sidebar />
 
-                          <PageWrapper
-                            className='art-content'
-                            $curtainEnabled={curtainEnabled}
-                            onClick={() => curtainClose()}
-                            {...pageWrapperMotion()}
-                          >
-                            <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
-                            <Background />
-                            <SmoothScroll>
-                              {children}
-                              <Footer />
-                            </SmoothScroll>
-                          </PageWrapper>
+                        <PageWrapper className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion()}>
+                          <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
+                          <Background />
+                          <SmoothScroll>
+                            {children}
+                            <Footer />
+                          </SmoothScroll>
+                        </PageWrapper>
 
-                          <Navbar />
-                        </Container>
-                      </Wrapper>
-                    </>
-                  )}
-                </AppContainer>
-              </Fancybox>
+                        <Navbar />
+                      </Container>
+                    </Wrapper>
+                  </>
+                )}
+              </AppContainer>
 
               <Cursor />
             </body>
@@ -79,7 +74,7 @@ export default function RootLayout({ children }) {
   );
 }
 
-const AppContainer = styled(motion.div)`
+const AppContainer = styled(Fancybox)`
   position: relative;
   width: 100vw;
   height: 100%;
