@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 import { SectionWrapper, SectionTitle, ButtonLink } from '@/components';
 import { Tag } from '@/styles';
-import { rng } from '@/utils';
+import { rem, rng } from '@/utils';
 
 const ListItem = ({ title, subtitle }) => (
   <ListItemContainer>
@@ -23,24 +23,26 @@ export default SectionWrapper(({ project }) => {
       <div className='col-lg-8'>
         <div className='art-a art-card art-fluid-card'>
           <DescriptionTitle className='mb-15'>Description</DescriptionTitle>
-          <Description className='mb-15'>{description}</Description>
-          <Tags className='art-tags acc'>
-            {tags?.map((tag, index) => (
-              <Tag key={`project-${title}-tags-${index}`} $rng={rng(1, 5)}>
-                {tag}
-              </Tag>
-            ))}
-          </Tags>
+          {description && <p className='mb-15'>{description}</p>}
+          {tags?.length && (
+            <div className='art-tags acc'>
+              {tags.map((tag, index) => (
+                <Tag key={`project-${title}-tags-${index}`} $rng={rng(1, 5)}>
+                  {tag}
+                </Tag>
+              ))}
+            </div>
+          )}
         </div>
       </div>
       <div className='col-lg-4'>
         <div className='art-a art-card'>
           <div className='art-table p-15-15'>
-            <ListContainer>
+            <ul>
               <ListItem key={`project-${title}-info-1`} title='Date Started:' subtitle={dates[0]} />
               {dates[1] && <ListItem key={`project-${title}-info-2`} title='Date Completed:' subtitle={dates[1]} />}
               <ListItem key={`project-${title}-info-3`} title='Status:' subtitle={!dates[1] ? 'Ongoing' : 'Complete'} />
-            </ListContainer>
+            </ul>
           </div>
           <Links className='acc'>
             {links.repo && <ButtonLink title='Repository' link={links.repo} icon='github-repo' />}
@@ -56,9 +58,9 @@ const DescriptionTitle = styled.h5`
   font-family: var(--f-primary);
 `;
 
-const Description = styled.p``;
+// const Description = styled.p``;
 
-const Tags = styled.div``;
+// const TagsContainer = styled.div``;
 
 const Links = styled.div`
   display: flex;
@@ -70,15 +72,10 @@ const Links = styled.div`
     gap: 0.75rem;
 
     &:hover {
-      i {
+      svg {
         transform: scale(1.2) !important;
       }
     }
-  }
-
-  i {
-    font-size: 1rem !important;
-    transform: translateX(0) !important;
   }
 
   @media (max-width: 991px) {
@@ -91,10 +88,15 @@ const Links = styled.div`
   }
 `;
 
-const ListContainer = styled(motion.ul)``;
+// const ListContainer = styled(motion.ul)``;
 
 const ListItemContainer = styled(motion.li)`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
   h6 {
     font-family: var(--f-primary);
+    font-size: ${rem(14)};
   }
 `;
