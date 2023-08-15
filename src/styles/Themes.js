@@ -1,5 +1,3 @@
-import { heroBgBlue, heroBgGreen, heroBgPastel, heroBgPink, heroBgPurple, heroBgRed, heroBgYellow } from "/public";
-
 export const themes = {
   dark: {
     bg: 'rgba(25, 25, 35, 1)',
@@ -66,7 +64,7 @@ export const colors = {
     accent3: 'rgba(211, 235, 255, 1)',
     accent4: 'rgba(1, 125, 228, 1)',
     accent5: 'rgba(0, 88, 160, 1)',
-    heroBg: heroBgBlue,
+    heroBg: './images/background/bg-blue.jpg',
   },
   green: {
     accent1: 'rgba(76, 175, 82, 1)',
@@ -74,7 +72,7 @@ export const colors = {
     accent3: 'rgba(152, 236, 157, 1)',
     accent4: 'rgba(0, 130, 9, 1)',
     accent5: 'rgba(0, 116, 8, 1)',
-    heroBg: heroBgGreen,
+    heroBg: './images/background/bg-green.jpg',
   },
   pastels: {
     accent1: 'rgba(167, 104, 244, 1)',
@@ -82,7 +80,7 @@ export const colors = {
     accent3: 'rgba(213, 155, 246, 1)',
     accent4: 'rgba(152, 150, 241, 1)',
     accent5: 'rgba(142, 246, 228, 1)',
-    heroBg: heroBgPastel,
+    heroBg: './images/background/bg-pastels.jpg',
   },
   pink: {
     accent1: 'rgba(203, 59, 138, 1)',
@@ -90,7 +88,7 @@ export const colors = {
     accent3: 'rgba(227, 107, 174, 1)',
     accent4: 'rgba(179, 65, 128, 1)',
     accent5: 'rgba(130, 38, 89, 1)',
-    heroBg: heroBgPink,
+    heroBg: './images/background/bg-pink.jpg',
   },
   purple: {
     accent1: 'rgba(167, 104, 244, 1)',
@@ -98,7 +96,7 @@ export const colors = {
     accent3: 'rgba(163, 147, 235, 1)',
     accent4: 'rgba(94, 99, 182, 1)',
     accent5: 'rgba(39, 41, 109, 1)',
-    heroBg: heroBgPurple,
+    heroBg: './images/background/bg-purple.jpg',
   },
   red: {
     accent1: 'rgba(244, 68, 54, 1)',
@@ -106,7 +104,7 @@ export const colors = {
     accent3: 'rgba(255, 133, 123, 1)',
     accent4: 'rgba(164, 12, 0, 1)',
     accent5: 'rgba(134, 10, 0, 1)',
-    heroBg: heroBgRed,
+    heroBg: './images/background/bg-red.jpg',
   },
   yellow: {
     accent1: 'rgba(255, 193, 7, 1)',
@@ -114,6 +112,6 @@ export const colors = {
     accent3: 'rgba(240, 123, 63, 1)',
     accent4: 'rgba(234, 84, 85, 1)',
     accent5: 'rgba(255, 22, 93, 1)',
-    heroBg: heroBgYellow
+    heroBg: './images/background/bg-yellow.jpg',
   },
 };
