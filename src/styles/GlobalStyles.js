@@ -403,7 +403,7 @@ blockquote {
     flex-direction: row;
     align-items: center;
 
-    i {
+    i, svg {
       font-weight: 900;
       font-style: normal;
       font-variant: normal;
@@ -416,8 +416,10 @@ blockquote {
     &:hover {
       transform: translateX(0);
 
-      i {
+      i, svg {
+        text-shadow: 0 0 3px var(--c-font-shadow);
         transform: translateX(10px);
+        fill: var(--c-accent-2);
       }
     }
   }
@@ -641,7 +643,7 @@ button {
 
   &.art-grid-3-col .art-grid-item {
     width: 33.3333%;
-    
+
     .art-portfolio-item-frame {
       &.art-horizontal { padding-bottom: 65%; }
       &.art-vertical { padding-bottom: 140%; }
