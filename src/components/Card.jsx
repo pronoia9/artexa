@@ -3,7 +3,7 @@
 import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { ButtonLink } from '@/components';
+import { ButtonLink, HoverExpand } from '@/components';
 import { rem } from '@/utils';
 import { Tag } from '@/styles';
 
@@ -17,26 +17,7 @@ const Tags = ({ title, tags }) => (
   </TagsContainer>
 );
 
-export const Card = ({
-  index,
-  swiper,
-  hide,
-  section,
-  id,
-  title,
-  subtitle,
-  description,
-  link,
-  links,
-  image,
-  images,
-  year,
-  date,
-  categories,
-  tags,
-  classes,
-  ...props
-}) => {
+export const Card = ({ index, swiper, hide, section, id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes, ...props }) => {
   return (
     <Container
       key={`${section}-card-${index}-${title}`}
@@ -47,9 +28,7 @@ export const Card = ({
     >
       <ImageLink className='art-port-cover' data-fancybox={`fancybox${section}`} href={image}>
         <img src={image} alt='item' />
-        <div className='art-item-hover'>
-          <i className='fas fa-expand' />
-        </div>
+        <HoverExpand />
       </ImageLink>
 
       <Overlay className='art-post-description' $hide={hide}>

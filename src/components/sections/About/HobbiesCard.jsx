@@ -3,14 +3,14 @@
 import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 
+import { HoverExpand } from '@/components';
+
 export const HobbiesCard = ({ title, image }) => {
   return (
     <Frame className='art-a art-hobbies-item-frame acc'>
       <Item data-fancybox='hobbies' href={image} className='art-a art-hobbies-item-frame art-horizontal'>
         <img src={image} alt={title} />
-        <span className='art-item-hover center'>
-          <i className='fas fa-expand' />
-        </span>
+        <HoverExpand />
       </Item>
     </Frame>
   );

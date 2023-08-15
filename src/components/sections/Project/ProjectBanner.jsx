@@ -1,6 +1,6 @@
 import { styled } from 'styled-components';
 
-import { SectionWrapper, SectionTitle } from '@/components';
+import { SectionWrapper, SectionTitle, HoverExpand } from '@/components';
 import { Tag } from '@/styles';
 
 export default SectionWrapper(({ project }) => {
@@ -16,9 +16,7 @@ export default SectionWrapper(({ project }) => {
         <div className='art-a art-project-cover'>
           <a data-fancybox='project' href={image} className='art-portfolio-item-frame art-horizontal'>
             <img src={image} alt={title} />
-            <span className='art-item-hover'>
-              <i className='fas fa-expand' />
-            </span>
+            <HoverExpand />
           </a>
         </div>
       </div>

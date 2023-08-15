@@ -1,28 +1,18 @@
 'use client';
 
-import { useRef, useEffect } from 'react';
-import { Fancybox as NativeFancybox } from '@fancyapps/ui';
-import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
 
-import { Fancybox, SectionWrapper } from '@/components';
+import { HoverExpand, SectionWrapper } from '@/components';
 
 export default SectionWrapper(({ images }) => {
-  const containerRef = useRef(null);
-
-  useEffect(() => {
-    NativeFancybox.bind(containerRef.current, '[data-fancybox]', {});
-  });
-
   return (
-    <Grid ref={containerRef} className='col-12'>
+    <Grid className='col-12'>
       {images.map((image, index) => (
         <div className='grid-item'>
           <a data-fancybox='project' href={image} className='art-a art-portfolio-item-frame'>
             <img src={image} alt='item' />
-            <span className='art-item-hover'>
-              <i className='fas fa-expand' />
-            </span>
+            <HoverExpand />
           </a>
         </div>
       ))}
@@ -30,7 +20,6 @@ export default SectionWrapper(({ images }) => {
   );
 });
 
-// TODO: Figure out why Fancybox component wouldnt work in styled(Fancybox)
 const Grid = styled(motion.div)`
   flex: 0 0 100%;
   width: 100%;
