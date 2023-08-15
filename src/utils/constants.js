@@ -225,12 +225,6 @@ export const hero = {
   button: { text: 'beam me up scotty', url: '' },
 };
 
-export const counters = [
-  { id: 1, number: new Date().getFullYear() - new Date('2021').getFullYear(), text: 'Years Experience', accent: '+' },
-  { id: 2, number: 3, text: 'Certificates' },
-  { id: 3, number: 85, text: 'Completed Projects', accent: '~' },
-];
-
 export const projects = {
   filters: [
     { title: 'all', filter: '' },
@@ -682,6 +676,12 @@ export const projects = {
     // },
   ].sort((a, b) => new Date(b.dates[0]) - new Date(a.dates[0])),
 };
+
+export const counters = [
+  { id: 1, number: new Date().getFullYear() - new Date('2021').getFullYear(), text: 'Years Experience', accent: '+' },
+  { id: 2, number: 3, text: 'Certificates' },
+  { id: 3, number: projects.projects.length, text: 'Completed Projects', accent: '+' },
+];
 
 export const history = {
   timeline: ['education', 'courses'],
