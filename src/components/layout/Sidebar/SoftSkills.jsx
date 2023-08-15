@@ -3,6 +3,7 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
+import { SVGs } from '@/components';
 import { rem, sidebarMotion, sidebar } from '@/utils';
 
 export const SoftSkills = () => {
@@ -13,7 +14,9 @@ export const SoftSkills = () => {
       {data.map((row, index) => (
         <li key={`sidebar-softskills-${index}`}>
           <ListItem key={`sidebar-softskills-${index}-items`} {...sidebarMotion.softSkills.item}>
-            <motion.i className='fas fa-check' {...sidebarMotion.softSkills.check} />
+            <motion.span {...sidebarMotion.softSkills.check}>
+              <SVGs type='check' height={6} />
+            </motion.span>
             <motion.span {...sidebarMotion.softSkills.line}>{row.map((s) => s.title).join(', ')}</motion.span>
           </ListItem>
         </li>
@@ -30,11 +33,10 @@ const SkillsList = styled(motion.ul)`
 const ListItem = styled(motion.div)`
   margin-bottom: ${rem(5)};
 
-  i {
+  svg {
     margin-right: ${rem(5)};
-    color: var(--c-accent-1);
-    font-size: ${rem(9)};
-    font-weight: 900;
+    fill: var(--c-accent-1);
+
   }
 
   &:last-child {
@@ -42,8 +44,8 @@ const ListItem = styled(motion.div)`
   }
 
   &:hover {
-    i {
-      color: var(--c-accent-3);
+    svg {
+      fill: var(--c-accent-3);
     }
   }
 `;
