@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 import { Card, ButtonGradient } from '@/components';
-import { dataStore, getProjectsCount } from '@/utils';
+import { dataStore, getProjectsCount, rem } from '@/utils';
 import { styled } from 'styled-components';
 
 export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, buttonMotion, buttonText, ...props }) => {
@@ -71,5 +71,5 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
 };
 
 const Container = styled.div`
-  padding: 0 !important;
+  padding: 0 0 ${rem(30)} 0;
 `;
