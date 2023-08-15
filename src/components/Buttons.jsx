@@ -32,7 +32,7 @@ export const ButtonLink = ({ link, title, arrow = true, children, icon, ...props
     <Link href={link} className='art-link art-color-link art-w-chevron acc' {...props} onClick={handleClick}>
       {title}
       {children}
-      {(icon || arrow) && <SVGs type={icon || 'right'} height={9} />}
+      {(icon || arrow) && <SVGs type={icon || 'right'} height={!icon ? 9 : 16} />}
     </Link>
   );
 };
