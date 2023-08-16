@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { styled } from 'styled-components';
 
@@ -9,7 +11,7 @@ export const ProfileName = () => {
 
   return (
     <NameText className='art-name mb-10'>
-      <Link href={data.nameLink}>
+      <Link href={data.nameLink} shallow>
         <SplitText>{data.name}</SplitText>
       </Link>
     </NameText>
