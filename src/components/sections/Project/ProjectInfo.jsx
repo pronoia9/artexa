@@ -3,9 +3,8 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { SectionWrapper, SectionTitle, ButtonLink } from '@/components';
-import { Tag } from '@/styles';
-import { rem, rng } from '@/utils';
+import { SectionWrapper, SectionTitle, ButtonLink, Tags } from '@/components';
+import { rem } from '@/utils';
 
 const ListItem = ({ title, subtitle }) => (
   <ListItemContainer>
@@ -24,15 +23,7 @@ export default SectionWrapper(({ project }) => {
         <div className='art-a art-card art-fluid-card'>
           <DescriptionTitle className='mb-15'>Description</DescriptionTitle>
           {description && <p className='mb-15'>{description}</p>}
-          {tags?.length && (
-            <div className='art-tags acc'>
-              {tags.map((tag, index) => (
-                <Tag key={`project-${title}-tags-${index}`} $rng={rng(1, 5)}>
-                  {tag}
-                </Tag>
-              ))}
-            </div>
-          )}
+          {tags?.length && <Tags data={tags} section='project' className='art-tags' />}
         </div>
       </div>
       <div className='col-lg-4'>
@@ -44,7 +35,7 @@ export default SectionWrapper(({ project }) => {
               <ListItem key={`project-${title}-info-3`} title='Status:' subtitle={!dates[1] ? 'Ongoing' : 'Complete'} />
             </ul>
           </div>
-          <Links className='acc'>
+          <Links>
             {links.repo && <ButtonLink title='Repository' link={links.repo} icon='github-repo' />}
             {links.live && <ButtonLink title='Live Site' link={links.live} icon='globe' />}
           </Links>

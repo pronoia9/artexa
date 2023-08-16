@@ -75,6 +75,7 @@ import { SmoothScroll } from './SmoothScroll';
 import { SplitText } from './SplitText';
 import { SVGs } from './SVGs';
 import { Swiper, SwiperNavigation } from './Swiper';
+import { Tags } from './Tags';
 import { SectionTitle } from './Text';
 import { Timeline, TimelineColumn, TimelineItem } from './Timeline';
 
@@ -111,8 +112,8 @@ export {
   SmoothScroll,
   SplitText,
   SVGs,
-  Swiper,
-  SwiperNavigation,
+  Swiper, SwiperNavigation,
+  Tags,
   SectionTitle,
   Timeline, TimelineColumn, TimelineItem,
 };

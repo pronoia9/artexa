@@ -3,19 +3,8 @@
 import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { ButtonLink, HoverExpand } from '@/components';
+import { ButtonLink, HoverExpand, Tags } from '@/components';
 import { rem } from '@/utils';
-import { Tag } from '@/styles';
-
-const Tags = ({ title, tags }) => (
-  <TagsContainer className='mb-15'>
-    {tags?.map((tag) => (
-      <Tag key={`project-${title}-tags-${tag}`} className='art-tag'>
-        {tag}
-      </Tag>
-    ))}
-  </TagsContainer>
-);
 
 export const Card = ({ index, swiper, hide, section, id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes, ...props }) => {
   return (
@@ -37,7 +26,7 @@ export const Card = ({ index, swiper, hide, section, id, title, subtitle, descri
         {/* </a> */}
         {subtitle && <div className='mb-15'>{subtitle}</div>}
 
-        {!swiper && categories?.length && <Tags title={title} tags={categories} />}
+        {!swiper && categories?.length && <Tags title={title} tags={categories} className='mb-15' />}
 
         <ButtonLink link={link || `/${section}/${id}`} title='Learn More' />
       </Overlay>
