@@ -1,9 +1,10 @@
+// import Link from 'next/link';
 import { styled } from 'styled-components';
-import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 import { SVGs } from '@/components';
 import { GradientButton } from '@/styles';
-import { buttonMotion, openFancybox, rem } from '@/utils';
+import { buttonMotion, openFancybox } from '@/utils';
 
 export const Button = (props) => {
   const { link, title, children } = props;
@@ -21,7 +22,7 @@ const ButtonContainer = styled.span`
   position: relative;
 `;
 
-export const ButtonLink = ({ link, title, arrow = true, children, icon, ...props }) => {
+export const ButtonLink = ({ link, title, arrow = true, icon, children, ...props }) => {
   const handleClick = (e) => {
     if (props['data-fancybox']) {
       e.preventDefault();
@@ -29,11 +30,11 @@ export const ButtonLink = ({ link, title, arrow = true, children, icon, ...props
     }
   };
   return (
-    <Link href={link} className='art-link art-color-link art-w-chevron acc' {...props} onClick={handleClick}>
+    <motion.a href={link} className='art-link art-color-link art-w-chevron acc' onClick={handleClick} {...props}>
       {title}
       {children}
       {(icon || arrow) && <SVGs type={icon || 'right'} height={!icon ? 9 : 16} />}
-    </Link>
+    </motion.a>
   );
 };
 
