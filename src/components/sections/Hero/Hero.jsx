@@ -5,34 +5,16 @@ import { styled } from 'styled-components';
 import confetti from 'canvas-confetti';
 
 import { HeroHeading, HeroTyped, ButtonGradient, SectionWrapper } from '@/components';
-import { heroMotion, rem, hero as data } from '@/utils';
+import { heroMotion, rem, hero as data, rngPickRandom, confettiFireworks } from '@/utils';
 
 export default SectionWrapper(() => {
-  const myCanvas = useRef(), myConfetti = useRef();
-
-  useEffect(() => {
-    myConfetti.current = confetti.create(myCanvas.current, { resize: true, useWorker: true });
-  }, []);
+  // const myConfetti = useRef(), myCanvas = useRef();
+  // useEffect(() => {
+  //   myConfetti.current = confetti.create(myCanvas.current, { resize: true, useWorker: true });
+  // }, []);
 
   const beamMeUpScotty = (e) => {
-    e.preventDefault();
-
-    let count = 200;
-    let defaults = { origin: { y: 0.9, x: 0.15 } };
-
-    const fire = (particleRatio, opts) => {
-      myConfetti.current(
-        Object.assign({}, defaults, opts, {
-          particleCount: Math.floor(count * particleRatio),
-        })
-      );
-    };
-
-    fire(0.25, { spread: 26, startVelocity: 55 });
-    fire(0.2, { spread: 60 });
-    fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
-    fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
-    fire(0.1, { spread: 120, startVelocity: 45 });
+    confettiFireworks();
   };
 
   return (
@@ -41,7 +23,7 @@ export default SectionWrapper(() => {
         <div className='art-banner-back' />
         <div className='art-banner-dec' />
 
-        <BeamMeUp ref={myCanvas} />
+        {/* <BannerCanvas ref={myCanvas} /> */}
         <Overlay className='art-banner-overlay'>
           <Title className='art-banner-title'>
             <HeroHeading {...heroMotion.heading} />
@@ -57,15 +39,15 @@ export default SectionWrapper(() => {
   );
 }, 'hero');
 
-const BeamMeUp = styled.canvas`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 100;
-  pointer-events: none;
-`;
+// const BannerCanvas = styled.canvas`
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   z-index: 100;
+//   pointer-events: none;
+// `;
 
 const Banner = styled.div`
   position: relative;
