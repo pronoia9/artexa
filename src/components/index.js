@@ -23,7 +23,6 @@ import { Strengths } from './layout/Sidebar/Strengths';
 import Footer from './layout/Footer';
 
 // --- HOC
-import { PageWrapper } from './hoc/PageWrapper';
 import { SectionWrapper } from './hoc/SectionWrapper';
 
 // -- About
@@ -86,7 +85,7 @@ export {
   Sidebar, HardSkills, Info, Languages, Profile, ProfileAvatar, ProfileName, ProfilePost, Resume, Socials, SoftSkills, Strengths,
   Footer,
   // ---- HOC ----
-  PageWrapper, SectionWrapper,
+  SectionWrapper,
   // ---- SECTIONS ----
   About, Hobbies, HobbiesCard,
   Contact, ContactForm, ContactInput, ContactList, ContactListItem,
