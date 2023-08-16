@@ -66,6 +66,11 @@ const Container = styled(motion.div)`
 
 const Wrapper = styled.div`
   padding: 0 ${rem(15)};
+
+  /* space-between for content so the footer is at the bottom for when the contents are less than the height, gotta fix it here */
+  .art-scroll-frame {
+    justify-content: start;
+  }
 `;
 
 const MobileHeader = styled.div`
