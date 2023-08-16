@@ -473,7 +473,6 @@ button {
 }
 
 /* ------------------------------ scrolling ------------------------------ */
-/* ----- scroll frame ----- */
 
 .scroll-content {
   ${'' /* min-height: 100%; */}
@@ -497,7 +496,6 @@ button {
   pointer-events: none;
 }
 
-/* ------------------------------ app marcup (after 920px) ------------------------------ */
 @media (max-width: 920px) {
   .art-scroll-frame {
     ${'' /* height: 100vh; */}
@@ -506,7 +504,7 @@ button {
   }
 }
 
-/* ------------------------------ info bar ------------------------------ */
+/* ------------------------------ animation ------------------------------ */
 @keyframes puls {
   0% {
     transform: scale(0.6);
