@@ -34,9 +34,9 @@ export const Fancybox = (props) => {
   );
 };
 
-export const HoverExpand = () => {
+export const HoverExpand = ({ center }) => {
   return (
-    <Container className='art-item-hover'>
+    <Container className='art-item-hover' $center={center}>
       <SVGs type='expand' height={9} />
     </Container>
   );
@@ -44,8 +44,8 @@ export const HoverExpand = () => {
 
 const Container = styled.div`
   position: absolute;
-  top: 30px;
-  left: 30px;
+  top: ${({ $center }) => ($center ? 'calc(50% - 15px)' : rem(30))};
+  left: ${({ $center }) => ($center ? 'calc(50% - 15px)' : rem(30))};
   width: 27px;
   height: 27px;
   display: flex;
@@ -65,16 +65,10 @@ const Container = styled.div`
   &, svg {
     transition: 0.4s ease-in-out;
   }
-  
+
   svg {
     fill: var(--c-font-2);
   }
-
-  /* &.center {
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  } */
 
   &:hover {
     opacity: 1 !important;
