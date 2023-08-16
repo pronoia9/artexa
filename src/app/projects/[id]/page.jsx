@@ -18,6 +18,7 @@ export default function Page() {
       <ProjectBanner project={data} />
       <ProjectInfo project={data} />
       {data?.images?.length && <ProjectScreenshots {...data} />}
+      {<ProjectScreenshots {...{ ...data, images: [data.image, data.image, data.image] }} />}
     </>
   );
 }

@@ -24,24 +24,20 @@ const Grid = styled(motion.div)`
   flex: 0 0 100%;
   width: 100%;
   display: grid;
-  grid-template-areas: 'one three' 'two three';
+  grid-template-areas: 'one three' 'two three' 'four five' 'four six';
   gap: 1.5rem;
 
   & > div {
     height: 100%;
-    &:nth-child(1) {
-      grid-area: one;
-    }
-    &:nth-child(2) {
-      grid-area: two;
-    }
-    &:nth-child(3) {
-      grid-area: three;
-    }
+    &:nth-child(1) { grid-area: one; }
+    &:nth-child(2) { grid-area: two; }
+    &:nth-child(3) { grid-area: three; }
+    &:nth-child(4) { grid-area: four; }
+    &:nth-child(5) { grid-area: five; }
+    &:nth-child(6) { grid-area: six; }
 
-    &:nth-child(3) {
-      a,
-      img {
+    &:nth-child(3), &:nth-child(4) {
+      a, img {
         height: 100%;
         width: auto;
       }
@@ -49,6 +45,6 @@ const Grid = styled(motion.div)`
   }
 
   @media (max-width: 768px) {
-    grid-template-areas: 'one' 'two' 'three';
+    grid-template-areas: 'one' 'two' 'three' 'four' 'five' 'six';
   }
 `;
