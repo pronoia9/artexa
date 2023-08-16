@@ -4,13 +4,13 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { HoverExpand, SectionWrapper } from '@/components';
-import { projectMotion } from '@/utils';
+import { projectMotion, rem } from '@/utils';
 
 export default SectionWrapper(({ images }) => {
   return (
     <Grid className='col-12' {...projectMotion.screenshots.grid}>
       {images.map((image, index) => (
-        <motion.div className='grid-item' {...projectMotion.screenshots.image}>
+        <motion.div key={`project-screenshots-${index}`} className='grid-item' {...projectMotion.screenshots.image}>
           <a data-fancybox='project' href={image} className='art-a art-portfolio-item-frame'>
             <img src={image} alt='item' />
             <HoverExpand />
@@ -45,7 +45,11 @@ const Grid = styled(motion.div)`
     }
   }
 
-  @media (max-width: 768px) {
-    grid-template-areas: 'one' 'two' 'three' 'four' 'five' 'six';
+  @media (max-width: ${rem(768)}) {
+    grid-template-areas: 'one' 'two' 'three' 'three' 'four' 'four' 'five' 'six';
+
+    a, img {
+      width: 100% !important;
+    }
   }
 `;
