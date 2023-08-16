@@ -36,11 +36,11 @@ const Container = styled.div`
   width: 100%;
   height: calc(100vh - 30px);
 
-  /* .scrollbar-track {
+  .scrollbar-track {
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
-  } */
+  }
 `;
 
 const Wrapper = styled(motion.div)`
