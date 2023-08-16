@@ -510,6 +510,35 @@ button {
 
 /* ------------------------------ portfolio ------------------------------ */
 
+.art-portfolio-item-frame, .art-hobbies-item-frame {
+  display: block;
+  width: 100%;
+  outline: inherit;
+  overflow: hidden;
+  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
+  position: relative;
+  padding-bottom: 60%;
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(85%) blur(0);
+    transition: 0.4s ease-in-out;
+  }
+
+  &:hover { 
+    img {
+      transform: scale(1.07);
+      filter: brightness(100%) blur(0);
+    }
+  }
+}
+
 /* ----- touch device ----- */
 /* @media (pointer: coarse) {
   .art-grid .art-grid-item {
@@ -526,8 +555,6 @@ button {
   }
 } */
 
-/* ----- single project ----- */
-
 /* .art-project-category {
   color: var(--c-font-3);
   margin-left: auto;
@@ -539,7 +566,7 @@ button {
   font-size: 10px;
 } *
 
-/* ----- fancybox customization ----- */
+/* ------------------------------ fancybox ------------------------------ */
 
 .fancybox__container {
   /* margin: 15px; */

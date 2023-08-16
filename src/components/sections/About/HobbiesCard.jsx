@@ -31,30 +31,8 @@ const Item = styled.div`
   height: 100px;
   padding: 0;
   box-shadow: none;
-
-  display: block;
-  width: 100%;
-  outline: inherit;
-  overflow: hidden;
-  position: relative;
-  padding-bottom: 60%;
-
+  
   img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
     object-fit: scale-down;
-    object-position: center;
-    filter: brightness(85%) blur(0);
-    transition: 0.4s ease-in-out;
-  }
-
-  &:hover {
-    img {
-      transform: scale(1.07);
-      filter: brightness(100%) blur(0);
     }
-  }
 `;
