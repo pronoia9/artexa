@@ -50,7 +50,7 @@ export default function RootLayout({ children }) {
                         <PageWrapper className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion()}>
                           <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
                           <Background />
-                          <SmoothScroll>
+                          <SmoothScroll $justify='space-between'>
                             {children}
                             <Footer />
                           </SmoothScroll>
