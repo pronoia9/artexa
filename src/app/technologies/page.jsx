@@ -1,4 +1,4 @@
-import { Technologies } from '..';
+import { Technologies } from '@/components';
 
 export default function Page() {
   return (
