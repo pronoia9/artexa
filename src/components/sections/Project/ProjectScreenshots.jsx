@@ -4,17 +4,18 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { HoverExpand, SectionWrapper } from '@/components';
+import { projectMotion } from '@/utils';
 
 export default SectionWrapper(({ images }) => {
   return (
-    <Grid className='col-12'>
+    <Grid className='col-12' {...projectMotion.screenshots.grid}>
       {images.map((image, index) => (
-        <div className='grid-item'>
+        <motion.div className='grid-item' {...projectMotion.screenshots.image}>
           <a data-fancybox='project' href={image} className='art-a art-portfolio-item-frame'>
             <img src={image} alt='item' />
             <HoverExpand />
           </a>
-        </div>
+        </motion.div>
       ))}
     </Grid>
   );
