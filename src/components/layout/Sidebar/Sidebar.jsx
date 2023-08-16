@@ -20,7 +20,7 @@ export const Sidebar = () => {
 
         <Profile />
 
-        <SmoothScroll id='sidebar-scroll' {...sidebarMotion.scrollContent}>
+        <SmoothScroll {...sidebarMotion.scrollContent}>
           <Info /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(1.75 * 0.666)} />
           <Languages /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(3.5 * 0.666)} />
           <HardSkills /> <motion.div className='art-ls-divider' {...sidebarMotion.divider(5.25 * 0.666)} />
@@ -66,11 +66,6 @@ const Container = styled(motion.div)`
 
 const Wrapper = styled.div`
   padding: 0 ${rem(15)};
-
-  /* space-between for content so the footer is at the bottom for when the contents are less than the height, gotta fix it here */
-  .art-scroll-frame {
-    justify-content: start;
-  }
 `;
 
 const MobileHeader = styled.div`
