@@ -55,8 +55,10 @@ export const lowerCase = (t) => `${t}`.toLowerCase();
 
 // Generate a random number between min and max (inclusive)
 export const rng = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-// exclusive
+
 export const rngInRange = (min, max) => Math.random() * (max - min) + min;
+
+export const rngPickRandom = (arr) => arr[rng(0, arr.length - 1)];
 
 // Convert a pixel value to rem
 export const rem = (val) => `${parseInt(val) / 16}rem`;
