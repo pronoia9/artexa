@@ -66,7 +66,7 @@ const GlobalStyles = createGlobalStyle`
     font-family: var(--f-primary);
     font-weight: 400;
     letter-spacing: .25px;
-    font-smooth: subpixel-antialiased
+    font-smooth: subpixel-antialiased;
   }
 
   * {
@@ -76,6 +76,10 @@ const GlobalStyles = createGlobalStyle`
       background 0.6s ease-in-out, 
       color 0.6s ease-in-out !important; */
     }
+  }
+
+  body > canvas {
+    z-index: 1 !important;
   }
 
 /* ----------------------------- Author: Nazar Miller ----------------------------- */
