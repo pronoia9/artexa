@@ -253,7 +253,10 @@ export const projectMotion = {
     link: { variants: fadeIn({ type: 'tween', duration: 0.33, delayChildren: 0 }, 'left', '10px') },
     icon: { variants: zoomIn() },
   },
-  screenshots: {},
+  screenshots: {
+    grid: { variants: staggerContainer(0.15) },
+    image: { variants: zoomIn() },
+  },
 };
 
 // HISTORY
