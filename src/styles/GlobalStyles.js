@@ -76,6 +76,7 @@ const GlobalStyles = createGlobalStyle`
       background 0.6s ease-in-out, 
       color 0.6s ease-in-out !important; */
     }
+    cursor: none !important;
   }
 
   body > canvas {
