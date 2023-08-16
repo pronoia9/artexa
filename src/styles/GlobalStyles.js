@@ -540,24 +540,6 @@ button {
   }
 }
 
-/* ----- logos ----- */
-
-.art-brand {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto;
-  margin-top: 30px;
-  padding: 1.5rem;
-  display: block;
-  margin-bottom: 30px;
-  opacity: 0.6;
-  transition: 0.4s ease-in-out;
-
-  &:hover {
-    opacity: 1;
-  }
-}
-
 /* ------------------------------ portfolio ------------------------------ */
 
 /* ----- touch device ----- */
