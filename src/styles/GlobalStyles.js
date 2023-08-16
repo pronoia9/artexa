@@ -559,35 +559,6 @@ button {
 }
 
 /* ------------------------------ portfolio ------------------------------ */
-/* ----- portfolio items ----- */
-
-.art-portfolio-item-frame, .art-hobbies-item-frame {
-  display: block;
-  width: 100%;
-  outline: inherit;
-  overflow: hidden;
-  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
-  position: relative;
-  padding-bottom: 60%;
-}
-
-.art-portfolio-item-frame img, .art-hobbies-item-frame img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(85%) blur(0);
-  transition: 0.4s ease-in-out;
-}
-
-
-.art-portfolio-item-frame:hover img, .art-hobbies-item-frame:hover img {
-  transform: scale(1.07);
-  filter: brightness(100%) blur(0);
-}
 
 .art-grid {
   /* display: grid;
@@ -662,17 +633,6 @@ button {
 }
 
 /* ----- single project ----- */
-
-.art-project-cover {
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 3px 8px 0 var(--c-box-shadow);
-  margin-bottom: 30px;
-
-  .art-portfolio-item-frame {
-    padding-bottom: 50%;
-  }
-}
 
 .art-project-category {
   color: var(--c-font-3);
