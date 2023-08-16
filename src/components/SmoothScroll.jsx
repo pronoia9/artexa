@@ -3,8 +3,8 @@
 import { useRef, useEffect } from 'react';
 import SmoothScrollbar from 'smooth-scrollbar';
 import OverscrollPlugin from 'smooth-scrollbar/plugins/overscroll';
-import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
+// import { motion } from 'framer-motion';
 
 export const SmoothScroll = ({ options, children, ...props }) => {
   const content = useRef(null);
@@ -43,7 +43,7 @@ const Container = styled.div`
   }
 `;
 
-const Wrapper = styled(motion.div)`
+const Wrapper = styled.div`
   width: 100%;
   /* height: calc(100vh - 60px); */
   height: 100%;
