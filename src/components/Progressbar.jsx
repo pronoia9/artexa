@@ -6,12 +6,12 @@ import { motion } from 'framer-motion';
 
 import { ProgressbarInstance, rem } from '@/utils';
 
-export const Progressbar = (props) => {
+export const Progressbar = ({ hide, ...props }) => {
   const { type, level, index } = props;
   if (!type || !level) return <></>;
 
   useEffect(() => {
-    const progress = ProgressbarInstance(props);
+    const progress = ProgressbarInstance({ hide, ...props });
     progress?.animate(level / 100);
     return () => { progress?.destroy(); };
   }, []);
