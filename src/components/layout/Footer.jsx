@@ -35,9 +35,9 @@ export default function Footer() {
 }
 
 const Container = styled(motion.section)`
-  overflow: hidden;
-  padding: 0 30px;
   position: relative;
+  padding: 0 30px;
+  overflow: hidden;
 
   @media (max-width: 920px) {
     padding-left: 15px;
