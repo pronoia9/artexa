@@ -26,7 +26,7 @@ export const Card = ({ index, swiper, hide, section, id, title, subtitle, descri
         {/* </a> */}
         {subtitle && <div className='mb-15'>{subtitle}</div>}
 
-        {!swiper && categories?.length && <Tags title={title} tags={categories} className='mb-15' />}
+        {!swiper && categories?.length && <Tags section={title} data={categories} className='mb-15' />}
 
         <ButtonLink link={link || `/${section}/${id}`} title='Learn More' />
       </Overlay>
