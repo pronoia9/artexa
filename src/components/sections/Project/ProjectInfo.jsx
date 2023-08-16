@@ -3,13 +3,15 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { SectionWrapper, SectionTitle, ButtonLink, Tags } from '@/components';
-import { rem } from '@/utils';
+import { SectionWrapper, SectionTitle, ButtonLink, Tags, SplitText, SVGs } from '@/components';
+import { projectMotion, rem } from '@/utils';
 
 const ListItem = ({ title, subtitle }) => (
-  <ListItemContainer>
-    <h6>{title}</h6>
-    <span>{subtitle}</span>
+  <ListItemContainer {...projectMotion.info.listItem}>
+    <h6>
+      <SplitText>{title}</SplitText>
+    </h6>
+    <motion.span {...projectMotion.info.subtitle}>{subtitle}</motion.span>
   </ListItemContainer>
 );
 
@@ -19,15 +21,17 @@ export default SectionWrapper(({ project }) => {
   return (
     <>
       <SectionTitle title='Project Details' />
-      <div className='col-lg-8'>
+
+      <motion.div className='col-lg-8' {...projectMotion.info.description}>
         <div className='art-a art-card art-fluid-card'>
           <DescriptionTitle className='mb-15'>Description</DescriptionTitle>
           {description && <p className='mb-15'>{description}</p>}
           {tags?.length && <Tags data={tags} section='project' className='art-tags' />}
         </div>
-      </div>
-      <div className='col-lg-4'>
-        <div className='art-a art-card'>
+      </motion.div>
+
+      <motion.div className='col-lg-4' {...projectMotion.info.dates}>
+        <motion.div className='art-a art-card'>
           <div className='art-table p-15-15'>
             <ul>
               <ListItem key={`project-${title}-info-1`} title='Date Started:' subtitle={dates[0]} />
@@ -35,12 +39,21 @@ export default SectionWrapper(({ project }) => {
               <ListItem key={`project-${title}-info-3`} title='Status:' subtitle={!dates[1] ? 'Ongoing' : 'Complete'} />
             </ul>
           </div>
-          <Links>
-            {links.repo && <ButtonLink title='Repository' link={links.repo} icon='github-repo' />}
-            {links.live && <ButtonLink title='Live Site' link={links.live} icon='globe' />}
+
+          <Links {...projectMotion.info.links}>
+            {links?.repo.length && (
+              <ButtonLink title='Repository' link={links.repo} arrow={false} {...projectMotion.info.link}>
+                <SVGs type='github-repo' height={16} {...projectMotion.info.icon} />
+              </ButtonLink>
+            )}
+            {links?.live.length && (
+              <ButtonLink title='Live Site' link={links.live} arrow={false} {...projectMotion.info.link}>
+                <SVGs type='globe' height={16} {...projectMotion.info.icon} />
+              </ButtonLink>
+            )}
           </Links>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </>
   );
 });
@@ -53,7 +66,7 @@ const DescriptionTitle = styled.h5`
 
 // const TagsContainer = styled.div``;
 
-const Links = styled.div`
+const Links = styled(motion.div)`
   display: flex;
   flex-direction: column;
   gap: 1rem;

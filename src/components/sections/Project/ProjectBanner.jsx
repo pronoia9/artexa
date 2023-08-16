@@ -1,6 +1,9 @@
+import { styled } from 'styled-components';
+import { motion } from 'framer-motion';
+
 import { SectionWrapper, SectionTitle, HoverExpand } from '@/components';
 import { Tag } from '@/styles';
-import { styled } from 'styled-components';
+import { projectMotion } from '@/utils';
 
 export default SectionWrapper(({ project }) => {
   const { title, image, categories } = project;
@@ -8,24 +11,22 @@ export default SectionWrapper(({ project }) => {
   return (
     <>
       <SectionTitle title={title}>
-        <Tag>{categories.join(', ')}</Tag>
+        <Tag {...projectMotion.banner.category}>{categories.join(', ')}</Tag>
       </SectionTitle>
 
-      <div className='col-lg-12'>
-        <Wrapper className='art-a art-project-cover'>
-          <a data-fancybox='project' href={image} className='art-portfolio-item-frame art-horizontal'>
-            <img src={image} alt={title} />
-            <HoverExpand />
-          </a>
-        </Wrapper>
-      </div>
+      <Container className='col-lg-12 art-a art-project-cover' {...projectMotion.banner.thumbnail}>
+        <a data-fancybox='project' href={image} className='art-portfolio-item-frame art-horizontal'>
+          <img src={image} alt={title} />
+          <HoverExpand />
+        </a>
+      </Container>
     </>
   );
 });
 
-const Wrapper = styled.div`
+const Container = styled(motion.div)`
   position: relative;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
   box-shadow: 0 3px 8px 0 var(--c-box-shadow);
   overflow: hidden;
 `;
