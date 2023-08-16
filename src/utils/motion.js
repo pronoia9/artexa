@@ -314,6 +314,12 @@ export const buttonMotion = {
     variants: fadeIn({ type: 'tween', ease: 'easeIn', duration: 2 }),
   },
 };
+
+// TAGS
+export const tagsMotion = {
+  container: { variants: staggerContainer(0.1) },
+  item: { variants: zoomIn() },
+};
 /***********************  7. Components End  ***********************/
 /*
 
