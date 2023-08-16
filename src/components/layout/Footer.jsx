@@ -26,8 +26,8 @@ export default function Footer() {
       <div className='row p-30-0'>
         <Logos logos={data.logos} />
         <FooterContainer>
-          <div>{data.text[0]}</div>
-          <div>{data.text[1]}</div>
+          <span>{data.text[0]}</span>
+          <span>{data.text[1]}</span>
         </FooterContainer>
       </div>
     </Container>
@@ -47,7 +47,7 @@ const Container = styled(motion.section)`
 
 const FooterContainer = styled.div`
   width: 100%;
-  padding: 17px 30px 7px;
+  padding: 14px 30px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -63,7 +63,7 @@ const FooterContainer = styled.div`
     margin-bottom: 10px;
   }
 
-  a {
+  a, span {
     transition: 0.2s ease-in-out;
 
     &:hover {
