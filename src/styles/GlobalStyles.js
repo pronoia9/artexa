@@ -560,9 +560,25 @@ button {
 
 /* ------------------------------ portfolio ------------------------------ */
 
+/* ----- touch device ----- */
+/* @media (pointer: coarse) {
+  .art-grid .art-grid-item {
+    .art-item-description {
+      position: relative;
+      left: 0;
+      width: 100%;
+      transform: translateY(0);
+    }
+
+    &:hover .art-item-description {
+      transform: none;
+    }
+  }
+} */
+
 /* ----- single project ----- */
 
-.art-project-category {
+/* .art-project-category {
   color: var(--c-font-3);
   margin-left: auto;
   display: inline;
@@ -571,14 +587,14 @@ button {
   border-radius: 15px;
   box-shadow: inset 0 3px 8px 0 var(--c-box-shadow);
   font-size: 10px;
-}
+} *
 
 /* ----- fancybox customization ----- */
 
 .fancybox__container {
-  ${'' /* margin: 15px; */}
-  ${'' /* width: calc(100vw - 30px); */}
-  ${'' /* height: calc(100vh - 30px); */}
+  /* margin: 15px; */
+  /* width: calc(100vw - 30px); */
+  /* height: calc(100vh - 30px); */
   border: 15px solid var(--c-bg);
   overflow: hidden;
   
@@ -593,7 +609,7 @@ button {
   .fancybox__toolbar {
     background: var(--c-bg-img-hover);
     display: flex;
-    ${'' /* width: calc(100vw - 30px); */}
+    /* width: calc(100vw - 30px); */
     justify-content: flex-end;
     align-items: center;
     height: 70px;
