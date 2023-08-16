@@ -237,6 +237,25 @@ export const projectsMotion = {
   navigation: { variants: fadeIn({ delay: 6.25 }) },
 };
 
+// PROJECT
+export const projectMotion = {
+  banner: {
+    category: { variants: zoomIn() },
+    thumbnail: { variants: fadeIn() },
+  },
+  info: {
+    description: { variants: fadeIn({ staggerChildren: 0.1 }, 'left', '75px') },
+    tags: {},
+    dates: { variants: fadeIn({ staggerChildren: 0.25 }, 'down', '75px') },
+    listItem: { variants: staggerContainer(0.5) },
+    subtitle: { variants: fadeIn({}, 'right') },
+    links: { variants: fadeIn({ staggerChildren: 1, delayChildren: 0.25 }) },
+    link: { variants: fadeIn({ type: 'tween', duration: 0.33, delayChildren: 0 }, 'left', '10px') },
+    icon: { variants: zoomIn() },
+  },
+  screenshots: {},
+};
+
 // HISTORY
 export const historyMotion = {
   column: (i) => ({ variants: slideIn({ staggerChildren: 0.5 }, i ? 'right' : 'left') }),
@@ -247,7 +266,7 @@ export const historyMotion = {
 // TECHNOLOGIES
 export const technologiesMotion = {
   grid: { variants: staggerContainerMirror(0.1) },
-  button: { },
+  button: {},
   card: { variants: zoomIn({ type: 'tween', duration: 0.01, ease: 'linear', staggerChildren: 0.1 }) },
   swiper: { variants: fadeIn() },
   navigation: { variants: fadeIn() },
@@ -264,16 +283,10 @@ export const contactMotion = {
 };
 
 // COURSES
-export const coursesMotion = {
-}
+export const coursesMotion = {};
 
 // ABOUT
-export const aboutMotion = {
-}
-
-// PROJECT
-export const projectMotion = {
-};
+export const aboutMotion = {};
 
 // NOT FOUND
 export const notFoundMotion = {
@@ -354,24 +367,22 @@ export function zoomIn(transitionOptions = {}) {
   };
 }
 
-export function fadeIn(transitionOptions = {}, direction, amount) {
-  const num = amount || 100;
+export function fadeIn(transitionOptions = {}, direction, amount = '100px') {
   return {
     hidden: {
-      x: direction === 'left' ? -num : direction === 'right' ? num : 0,
-      y: direction === 'up' ? num : direction === 'down' ? -num : 0,
+      x: direction === 'left' ? `-${amount}` : direction === 'right' ? `${amount}` : 0,
+      y: direction === 'up' ? `${amount}` : direction === 'down' ? `-${amount}` : 0,
       opacity: 0,
     },
     visible: { x: 0, y: 0, opacity: 1, transition: { type: 'spring', ...transitionOptions } },
   };
 }
 
-export function slideIn(transitionOptions = {}, direction, amount) {
-  const num = amount || '100%';
+export function slideIn(transitionOptions = {}, direction, amount = '100%') {
   return {
     hidden: {
-      x: direction === 'left' ? `-${num}` : direction === 'right' ? `${num}` : 0,
-      y: direction === 'up' ? `${num}` : direction === 'down' ? `-${num}` : 0,
+      x: direction === 'left' ? `-${amount}` : direction === 'right' ? `${amount}` : 0,
+      y: direction === 'up' ? `${amount}` : direction === 'down' ? `-${amount}` : 0,
     },
     visible: { x: 0, y: 0, transition: { type: 'spring', ...transitionOptions } },
   };
