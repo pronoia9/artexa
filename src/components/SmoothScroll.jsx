@@ -18,9 +18,7 @@ export const SmoothScroll = ({ options, children, ...props }) => {
       ...options,
     });
 
-    return () => {
-      if (SmoothScrollbar) SmoothScrollbar.destroy();
-    };
+    return () => { if (SmoothScrollbar) SmoothScrollbar.destroy(); };
   }, []);
 
   return (
