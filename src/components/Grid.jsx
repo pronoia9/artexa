@@ -135,6 +135,26 @@ const Wrapper = styled(motion.div)`
     }
   }
 
+  @media (max-width: 768px) {
+    .art-grid {
+      &.art-grid-2-col .art-grid-item, &.art-grid-3-col .art-grid-item {
+        width: 100%;
+      }
+    }
+
+    .art-m-hidden {
+      display: none;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .art-grid {
+      &.art-grid-2-col .art-grid-item, &.art-grid-3-col .art-grid-item {
+        width: 100%;
+      }
+    }
+  }
+
   @media (pointer: coarse) {
     /* Single Project Page Screenshots Grid */
     .art-portfolio-item-frame .art-item-hover {

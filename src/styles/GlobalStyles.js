@@ -722,28 +722,6 @@ button {
   }
 }
 
-/* ------------------------------ content (after 768px) ------------------------------ */
-@media (max-width: 768px) {
-  .art-grid {
-    &.art-grid-2-col .art-grid-item, &.art-grid-3-col .art-grid-item {
-      width: 100%;
-    }
-  }
-
-  .art-m-hidden {
-    display: none;
-  }
-}
-
-/* ------------------------------ content (after 500px) ------------------------------ */
-@media (max-width: 500px) {
-  .art-grid {
-    &.art-grid-2-col .art-grid-item, &.art-grid-3-col .art-grid-item {
-      width: 100%;
-    }
-  }
-}
-
 /* ------------------------------ transitions ------------------------------ */
 
 .art-a {
