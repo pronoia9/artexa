@@ -25,9 +25,9 @@ export const SmoothScroll = ({ options, children, ...props }) => {
 
   return (
     <Container data-scrollbar ref={content}>
-      <motion.div className='art-scroll-frame' {...props}>
+      <Wrapper className='art-scroll-frame' {...props}>
         {children}
-      </motion.div>
+      </Wrapper>
     </Container>
   );
 };
@@ -35,4 +35,28 @@ export const SmoothScroll = ({ options, children, ...props }) => {
 const Container = styled.div`
   width: 100%;
   height: calc(100vh - 30px);
+
+  /* .scrollbar-track {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  } */
+`;
+
+const Wrapper = styled(motion.div)`
+  width: 100%;
+  /* height: calc(100vh - 60px); */
+  height: 100%;
+  height: calc(100% - 30px);
+  /* min-height: calc(100% - 30px); */
+  min-height: calc(100vh - 30px);
+  display: flex;
+  flex-direction: column;
+  justify-content: ${({ $justify }) => $justify || 'start'};
+
+  @media (max-width: 920px) {
+    /* height: 100vh; */
+    /* min-height: calc(100% - 70px); */
+    min-height: calc(100vh - 70px);
+  }
 `;

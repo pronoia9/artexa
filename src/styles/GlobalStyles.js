@@ -474,38 +474,6 @@ button {
   .p-md-15-0 { padding-top: 15px; padding-bottom: 0; }
 }
 
-/* ------------------------------ scrolling ------------------------------ */
-
-.scroll-content {
-  ${'' /* min-height: 100%; */}
-}
-
-.art-scroll-frame {
-  width: 100%;
-  ${'' /* height: calc(100vh - 60px); */}
-  height: 100%;
-  height: calc(100% - 30px);
-  ${'' /* min-height: calc(100% - 30px); */}
-  min-height: calc(100vh - 30px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.scrollbar-track {
-  visibility: hidden;
-  opacity: 0;
-  pointer-events: none;
-}
-
-@media (max-width: 920px) {
-  .art-scroll-frame {
-    ${'' /* height: 100vh; */}
-    ${'' /* min-height: calc(100% - 70px); */}
-    min-height: calc(100vh - 70px);
-  }
-}
-
 /* ------------------------------ animation ------------------------------ */
 @keyframes puls {
   0% {
