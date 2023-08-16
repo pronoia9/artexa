@@ -38,14 +38,18 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
 
   // Sets count when the window is resized
   useEffect(() => {
-    const resize = () => { setCount(Math.min(getProjectsCount(rows, cols), data.length || Infinity)); };
+    const resize = () => {
+      setCount(Math.min(getProjectsCount(rows, cols), data.length || Infinity));
+    };
     window.addEventListener('resize', resize);
-    return () => { window.removeEventListener('resize', resize); };
+    return () => {
+      window.removeEventListener('resize', resize);
+    };
   }, []);
 
   return (
     <Container className={`col-12${limit ? ' p-0-30' : ''}`}>
-      <motion.div className={`art-grid art-grid-${cols}-col art-gallery`} {...props} {...gridMotion}>
+      <Wrapper className={`art-grid art-grid-${cols}-col art-gallery`} {...props} {...gridMotion}>
         {Array.from(limit ? data.slice(0, count) : data)
           .flat()
           .map((item, index) => (
@@ -61,7 +65,7 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
               {...cardMotion}
             />
           ))}
-      </motion.div>
+      </Wrapper>
 
       {limit && data.length > getProjectsCount() && (
         <ButtonGradient title={`View ${!showingAllData() ? 'More' : 'Less'}`} onClick={handleButtonClick} $position='center' {...buttonMotion} />
@@ -73,4 +77,68 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
 const Container = styled.div`
   padding-left: 0;
   padding-right: 0;
+`;
+
+const Wrapper = styled(motion.div)`
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(33%, 1fr));
+  grid-template-rows: masonry; */
+  transition: 0.55s ease-in-out;
+  width: 100%;
+
+  /* clear fix */
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  &.art-grid-2-col {
+    .art-grid-item {
+      width: 50%;
+
+      /* Single Project Page Screenshots Grid */
+      .art-portfolio-item-frame {
+        &.art-horizontal { padding-bottom: 66.7%; }
+        &.art-vertical { padding-bottom: 140%; }
+        &.art-square { padding-bottom: 90%; }
+      }
+    }
+  }
+
+  &.art-grid-3-col {
+    .art-grid-item {
+      width: 33.3333%;
+
+      /* Single Project Page Screenshots Grid */
+      .art-portfolio-item-frame {
+        &.art-horizontal { padding-bottom: 65%; }
+        &.art-vertical { padding-bottom: 140%; }
+        &.art-square { padding-bottom: 90%; }
+      }
+    }
+  }
+
+  .art-grid-item {
+    float: left;
+    margin-bottom: 30px;
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    padding: 0 15px;
+  }
+
+  @media (max-width: 1200px) {
+    &.art-grid-2-col .art-grid-item,
+    &.art-grid-3-col .art-grid-item {
+      width: 50%;
+    }
+  }
+
+  @media (pointer: coarse) {
+    /* Single Project Page Screenshots Grid */
+    .art-portfolio-item-frame .art-item-hover {
+      opacity: 0.5;
+    }
+  }
 `;
