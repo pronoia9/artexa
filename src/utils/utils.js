@@ -1,6 +1,7 @@
 import emailjs from '@emailjs/browser';
 import { Fancybox } from '@fancyapps/ui';
 import * as ProgressBar from 'progressbar.js';
+import confetti from 'canvas-confetti';
 
 import { themes, colors } from '@/styles/Themes';
 
@@ -148,8 +149,8 @@ export const openFancybox = (image) => {
 //------------------------------- CONFETTI -------------------------------//
 // Basic Cannon
 // The default mode... just your regular basic average blast of confetti. But it's still a little cool, right?
-export const confettiBasicCannon = (confetti) => {
-  confetti({
+export const confettiBasicCannon = (myConfetti = confetti) => {
+  myConfetti({
     particleCount: 100,
     spread: 70,
     origin: { y: 0.6 },
@@ -158,8 +159,8 @@ export const confettiBasicCannon = (confetti) => {
 
 // Random Direction
 // Go crazy with some randomness. Shoot a random amount of confetti in random directions. (Go ahead... you know you want to click that button more than once.)
-export const confettiRandomDirection = (confetti) => {
-  confetti({
+export const confettiRandomDirection = (myConfetti = confetti) => {
+  myConfetti({
     angle: rngInRange(55, 125),
     spread: rngInRange(50, 70),
     particleCount: rngInRange(50, 100),
@@ -169,12 +170,12 @@ export const confettiRandomDirection = (confetti) => {
 
 // Realistic Look
 // If you happened to get curious and changed the particle count to 400 or so, you saw something disappointing. An even "flattened cone" look to the confetti, making it look way too perfect and ruining the illusion. We can fix that by mixing a few effects together.
-export const confettiRealisticLook = (confetti) => {
+export const confettiRealisticLook = (myConfetti = confetti) => {
   let count = 200;
   let defaults = { origin: { y: 0.7 } };
 
   function fire(particleRatio, opts) {
-    confetti(
+    myConfetti(
       Object.assign({}, defaults, opts, {
         particleCount: Math.floor(count * particleRatio),
       })
@@ -191,7 +192,7 @@ export const confettiRealisticLook = (confetti) => {
 // Stars
 // You can combine multiple calls to confetti with any settings in order to create a more complex effect. Go ahead, combine different shapes, sizes, etc. Stagger them for an extra boost of excitement.
 // ✨ Celebrate with a burst of stars! ✨
-export const confettiStars = (confetti) => {
+export const confettiStars = (myConfetti = confetti) => {
   var defaults = {
     spread: 360,
     ticks: 50,
@@ -203,14 +204,14 @@ export const confettiStars = (confetti) => {
   };
 
   function shoot() {
-    confetti({
+    myConfetti({
       ...defaults,
       particleCount: 40,
       scalar: 1.2,
       shapes: ['star'],
     });
 
-    confetti({
+    myConfetti({
       ...defaults,
       particleCount: 10,
       scalar: 0.75,
@@ -225,7 +226,7 @@ export const confettiStars = (confetti) => {
 
 // Fireworks
 // Why click a button repeatedly when you can have code do it for you? Shoot some firework of confetti from the sides of page so you can still read the content in the center.
-export const confettiFireworks = (confetti) => {
+export const confettiFireworks = (myConfetti = confetti) => {
   let duration = 15 * 1000;
   let animationEnd = Date.now() + duration;
   let defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
@@ -237,14 +238,14 @@ export const confettiFireworks = (confetti) => {
 
     var particleCount = 50 * (timeLeft / duration);
     // since particles fall down, start a bit higher than random
-    confetti(Object.assign({}, defaults, { particleCount, origin: { x: rngInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
-    confetti(Object.assign({}, defaults, { particleCount, origin: { x: rngInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
+    myConfetti(Object.assign({}, defaults, { particleCount, origin: { x: rngInRange(0.1, 0.3), y: Math.random() - 0.2 } }));
+    myConfetti(Object.assign({}, defaults, { particleCount, origin: { x: rngInRange(0.7, 0.9), y: Math.random() - 0.2 } }));
   }, 250);
 };
 
 // Snow
 // The effect is not limited to crazy rapid fire of confetti though. You can create a wintery mood with gently falling particles across the entire page.
-export const confettiSnow = (confetti) => {
+export const confettiSnow = (myConfetti = confetti) => {
   let duration = 15 * 1000;
   let animationEnd = Date.now() + duration;
   let skew = 1;
@@ -254,7 +255,7 @@ export const confettiSnow = (confetti) => {
     let ticks = Math.max(200, 500 * (timeLeft / duration));
     skew = Math.max(0.8, skew - 0.001);
 
-    confetti({
+    myConfetti({
       particleCount: 1,
       startVelocity: 0,
       ticks: ticks,
@@ -277,19 +278,19 @@ export const confettiSnow = (confetti) => {
 // School Pride
 // But if you are into crazy rapid fire of confetti, what could be a better use than to show everyone what you are all about? Tell people where you are from with two confetti cannons from either side of the page.
 // 🌰 Go Buckeyes! 🌰
-export const confettiSchoolPride = (confetti) => {
+export const confettiSchoolPride = (myConfetti = confetti) => {
   let end = Date.now() + 15 * 1000;
   let colors = ['#bb0000', '#ffffff'];
 
   (function frame() {
-    confetti({
+    myConfetti({
       particleCount: 2,
       angle: 60,
       spread: 55,
       origin: { x: 0 },
       colors: colors,
     });
-    confetti({
+    myConfetti({
       particleCount: 2,
       angle: 120,
       spread: 55,
