@@ -24,13 +24,15 @@ export const SmoothScroll = ({ options, children, ...props }) => {
   }, []);
 
   return (
-    <Container data-scrollbar ref={content} className='art-scroll-frame' {...props}>
-      <div>{children}</div>
+    <Container data-scrollbar ref={content}>
+      <motion.div className='art-scroll-frame' {...props}>
+        {children}
+      </motion.div>
     </Container>
   );
 };
 
-const Container = styled(motion.div)`
+const Container = styled.div`
   width: 100%;
   height: calc(100vh - 30px);
 `;
