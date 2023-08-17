@@ -201,7 +201,11 @@ svg {
 }
 
 .art-white {
-  color: var(--c-font-light);
+  color: var(--c-font-2);
+}
+
+.art-accent {
+  color: var(--c-accent-1);
 }
 
 /* ----- buttons frame ----- */
