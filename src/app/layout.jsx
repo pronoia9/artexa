@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
   }, []);
 
   return (
-    <html>
+    <html lang='en' suppressHydrationWarning={true}>
       <StyledComponentsRegistry>
         <ThemeProvider theme={getThemeObject(theme)}>
           <ThemeProvider theme={getThemeObject(accent)}>
