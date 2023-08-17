@@ -40,26 +40,23 @@ export default function RootLayout({ children }) {
                 {loading ? (
                   <Preloader title='Welcome' duration={loadTime} />
                 ) : (
-                  <>
-                    <TopBar className='art-mobile-top-bar' />
+                  <Wrapper className='art-app-wrapper'>
+                    {/* <TopBar className='art-mobile-top-bar' />
+                    <Container className='art-app-container'>
+                      <Sidebar />
 
-                    <Wrapper className='art-app-wrapper'>
-                      <Container className='art-app-container'>
-                        <Sidebar />
+                      <PageWrapper className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion()}>
+                        <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
+                        <Background />
+                        <SmoothScroll $justify='space-between'>
+                          {children}
+                          <Footer />
+                        </SmoothScroll>
+                      </PageWrapper>
 
-                        <PageWrapper className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion()}>
-                          <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
-                          <Background />
-                          <SmoothScroll $justify='space-between'>
-                            {children}
-                            <Footer />
-                          </SmoothScroll>
-                        </PageWrapper>
-
-                        <Navbar />
-                      </Container>
-                    </Wrapper>
-                  </>
+                      <Navbar />
+                    </Container> */}
+                  </Wrapper>
                 )}
               </AppContainer>
 
