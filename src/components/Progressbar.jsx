@@ -6,12 +6,11 @@ import { motion } from 'framer-motion';
 
 import { ProgressbarInstance, rem } from '@/utils';
 
-export const Progressbar = ({ hide, ...props }) => {
-  const { type, level, index } = props;
-  if (!type || !level) return <></>;
+export const Progressbar = ({ title, description, language, type, level = 100, index, hide, duration, delay, variants, ...props }) => {
+  if (!type) return;
 
   useEffect(() => {
-    const progress = ProgressbarInstance({ hide, ...props });
+    const progress = ProgressbarInstance({ type, level, index, hide, duration, delay, ...props });
     progress?.animate(level / 100);
     return () => { progress?.destroy(); };
   }, []);
@@ -19,7 +18,7 @@ export const Progressbar = ({ hide, ...props }) => {
   return <Container {...props} id={`${type}prog${index}`} className={`art-${type}-progress`} />;
 };
 
-const Container = styled(motion.div)`
+const Container = styled(motion.div).withConfig({ shouldForwardProp: (prop) => !['variants'].includes(prop) })`
   path {
     &:first-child {
       stroke: var(--c-bg);
