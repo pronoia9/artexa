@@ -22,9 +22,10 @@ import { Strengths } from './layout/Sidebar/Strengths';
 // Footer
 import Footer from './layout/Footer';
 
-// --- HOC
+// ---- HOC
 import { SectionWrapper } from './hoc/SectionWrapper';
 
+// ---- SECTIONS
 // -- About
 import About from './sections/About/About';
 import { Hobbies } from './sections/About/Hobbies';
@@ -60,6 +61,9 @@ import { ServicesCard } from './sections/Services/ServicesCard';
 import Technologies from './sections/Technologies/Technologies';
 import { TechnologiesGrid } from './sections/Technologies/TechnologiesGrid';
 import { TechnologiesSwiper } from './sections/Technologies/TechnologiesSwiper';
+
+// ---- THREEJS
+import { Experience } from './threejs';
 
 // ---- COMPONENTS
 import { Background } from './Background';
@@ -98,6 +102,8 @@ export {
   Projects, ProjectsFilters, FilterItem, ProjectsGrid, ProjectsSwiper,
   Services, ServicesCard,
   Technologies, TechnologiesGrid, TechnologiesSwiper,
+  //  ---- THREEJS ----
+  Experience,
   // ---- COMPONENTS ----
   Background,
   Button, ButtonLink, ButtonGradient,

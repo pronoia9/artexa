@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Footer, Navbar, Sidebar, Preloader, Background, SmoothScroll, Cursor, Fancybox } from '@/components';
+import { Footer, Navbar, Sidebar, Preloader, Background, SmoothScroll, Cursor, Fancybox, Experience } from '@/components';
 import StyledComponentsRegistry from '@/lib/registry';
 import { GlobalStyles } from '@/styles';
 import { appMotion, pageWrapperMotion, getThemeObject, rem, dataStore } from '@/utils';
@@ -38,9 +38,12 @@ export default function RootLayout({ children }) {
             <body>
               <AppContainer className='art-app' {...appMotion.appContainer}>
                 {loading ? (
-                  <Preloader title='Welcome' duration={loadTime} />
+                  <>
+                    {/* <Preloader title='Welcome' duration={loadTime} /> */}
+                  </>
                 ) : (
                   <Wrapper className='art-app-wrapper'>
+                    <Experience />
                     {/* <TopBar className='art-mobile-top-bar' />
                     <Container className='art-app-container'>
                       <Sidebar />
