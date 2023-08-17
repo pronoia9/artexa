@@ -41,7 +41,7 @@ const Container = styled.div`
   }
 `;
 
-const Wrapper = styled.div`
+const Wrapper = styled.div.withConfig({ shouldForwardProp: (prop) => !['variants'].includes(prop) })`
   width: 100%;
   /* height: calc(100vh - 60px); */
   height: 100%;
