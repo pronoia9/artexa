@@ -38,28 +38,28 @@ export default function RootLayout({ children }) {
             <body>
               <AppContainer className='art-app' {...appMotion.appContainer}>
                 {loading ? (
-                  <>
-                    {/* <Preloader title='Welcome' duration={loadTime} /> */}
-                  </>
+                  <>{/* <Preloader title='Welcome' duration={loadTime} /> */}</>
                 ) : (
-                  <Wrapper className='art-app-wrapper'>
+                  <>
+                    {/* <Wrapper className='art-app-wrapper'>
+                      <TopBar className='art-mobile-top-bar' />
+                      <Container className='art-app-container'>
+                        <Sidebar />
+
+                        <PageWrapper className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion()}>
+                          <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
+                          <Background />
+                          <SmoothScroll $justify='space-between'>
+                            {children}
+                            <Footer />
+                          </SmoothScroll>
+                        </PageWrapper>
+
+                        <Navbar />
+                      </Container>
+                    </Wrapper> */}
                     <Experience />
-                    {/* <TopBar className='art-mobile-top-bar' />
-                    <Container className='art-app-container'>
-                      <Sidebar />
-
-                      <PageWrapper className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion()}>
-                        <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
-                        <Background />
-                        <SmoothScroll $justify='space-between'>
-                          {children}
-                          <Footer />
-                        </SmoothScroll>
-                      </PageWrapper>
-
-                      <Navbar />
-                    </Container> */}
-                  </Wrapper>
+                  </>
                 )}
               </AppContainer>
 
