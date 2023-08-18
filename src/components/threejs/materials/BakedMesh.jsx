@@ -1,8 +1,12 @@
+import { MeshBasicMaterial } from 'three';
+import { extend } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
 import { bakedDay, bakedNeutral, bakedNight } from '@/components/threejs';
 import { dataStore, isDarkTheme, rngInRange } from '@/utils';
+
+extend({ MeshBasicMaterial });
 
 export const BakedMesh = ({ variants, children, ...props }) => {
   const { theme } = dataStore((store) => ({ theme: store.theme }));
