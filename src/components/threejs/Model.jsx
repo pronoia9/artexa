@@ -37,24 +37,10 @@ export const Model = ({ scrollRef, ...props }) => {
   useEffect(() => void (actions['EmptyAction'].play().paused = true), []);
 
   useFrame((state, delta) => {
-    // state.camera.position.set(
-    //   // Math.sin((offset - 0.5) * -0.5) * 29,
-    //   // Math.atan((offset - 0.5) * Math.PI * 2) * 14,
-    //   // Math.cos(((offset - 0.5) * Math.PI) / 3) * 12
-    //   25,
-    //   25,
-    //   25
-    // );
-    // 0, 4, 0
-    // 4.06, 0.21, -4.56
-    // state.camera.lookAt(0, 0, 0);
-
     const action = actions['EmptyAction'];
     action.time = MathUtils.lerp(action.time, action.getClip().duration * scroll.offset, 0.05);
 
-    // console.log(cameraRef.current.position);
-    state.camera.position.lerp({ x: state.pointer.x / 2, y: 0, z: -state.pointer.y / 2 }, 0.1);
-    // state.camera.lookAt(cameraRef.current.position.x - 1, cameraRef.current.position.y, cameraRef.current.position.z);
+    state.camera.position.lerp({ x: state.pointer.x / 4, y: 0, z: -state.pointer.y / 4 }, 0.1);
   });
 
   return (
