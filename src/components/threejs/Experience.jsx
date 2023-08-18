@@ -1,74 +1,50 @@
 'use client';
 
-import { Suspense, useEffect, useRef, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { Center, OrbitControls, ScrollControls, Environment, Sky, Stars, Cloud, useScroll } from '@react-three/drei';
 import { EffectComposer, Bloom, DepthOfField } from '@react-three/postprocessing';
 import { useControls } from 'leva';
 import { styled } from 'styled-components';
-import { motion as m } from 'framer-motion';
-import { LayoutCamera, MotionCanvas, motion } from 'framer-motion-3d';
+import { MotionConfig, motion } from 'framer-motion';
+import { MotionCanvas, motion as motion3d } from 'framer-motion-3d';
 
 import { SVGs, SectionTitle } from '@/components';
 import { Room } from '@/components/threejs';
+import { fadeIn } from '@/utils';
 
-export const Experience = () => {
-  const scrollRef = useRef();
-
+export const Experience = ({ scrollRef }) => {
   return (
-    <>
-      <Canvas dpr={[1, 2]} gl={{ antialias: true }} shadows={false} >
-        <Suspense fallback={null}>
-          {/* <motion.group initial='hidden' animate='visible' variants={{ hidden: { scale: 0.1, x: 0, y: 0, z: 0 }, visible: { x: -4, y: -2, z: 0, }, }}> */}
-          <ScrollControls pages={3}>
-            <Room />
-          </ScrollControls>
-          {/* </motion.group> */}
-        </Suspense>
-        <Effects />
-      </Canvas>
-    </>
+    <Container
+      // !---------------------------------------------------------------------------------------------------------------------
+      initial='hidden'
+      animate='visible'
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1, transition: { type: 'tween', duration: 1, delay: 2, } }
+      }}
+      // !---------------------------------------------------------------------------------------------------------------------
+    >
+      <MotionConfig transition={{ type: 'spring' }}>
+        <MotionCanvas dpr={[1, 2]} gl={{ antialias: true }} shadows={false}>
+          <Suspense fallback={null}>
+            <ScrollControls pages={3}>
+              <Room />
+            </ScrollControls>
+          </Suspense>
+          <Effects />
+        </MotionCanvas>
+        <Canvas />
+      </MotionConfig>
+    </Container>
   );
 };
 
-const Container = styled(m.div)`
-  position: relative;
-  width: 100%;
-  height: 100%;
-
+const Container = styled(motion.div)`
+  &,
   canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-  }
-`;
-
-const Wrapper = styled.div`
-  /* position: absolute;
-  bottom: 2.5rem;
-  left: 0;
-  width: 100%;
-  height: 50%; */
-  /* display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  pointer-events: none; */
-
-  div {
-    width: fit-content !important;
-  }
-
-  span {
-    position: absolute;
-    bottom: 2.5rem;
-    svg {
-      fill: var(--c-font-1);
-      width: 1rem !important;
-      height: 1rem !important;
-    }
   }
 `;
 

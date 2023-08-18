@@ -1,4 +1,5 @@
 import { useTexture } from '@react-three/drei';
+import { motion } from 'framer-motion-3d';
 
 import { bakedDay, bakedNeutral, bakedNight } from '@/components/threejs';
 import { dataStore, isDarkTheme } from '@/utils';
@@ -10,9 +11,9 @@ export const BakedMaterial = ({ children, ...props }) => {
     bakedTextureNeutral = useTexture(bakedNeutral);
 
   return (
-    <mesh {...props}>
-      <meshBasicMaterial map={isDarkTheme(theme) ? bakedTextureNight : bakedTextureDay} map-flipY={false} />
+    <motion.mesh {...props}>
+      {/* <motion.meshBasicMaterial map={bakedNeutral} map-flipY={false} /> */}
       {children}
-    </mesh>
+    </motion.mesh>
   );
 };

@@ -1,7 +1,7 @@
 'use client';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -22,6 +22,7 @@ export default function RootLayout({ children }) {
     curtainEnabled: state.curtainEnabled,
     curtainClose: state.curtainClose,
   }));
+  const scrollRef = useRef();
 
   // Disable loading after 7s maybe?
   useEffect(() => {
@@ -36,33 +37,38 @@ export default function RootLayout({ children }) {
           <ThemeProvider theme={getThemeObject(accent)}>
             <GlobalStyles />
             <body>
-              <AppContainer className='art-app' {...appMotion.appContainer}>
-                {loading ? (
-                  <>{/* <Preloader title='Welcome' duration={loadTime} /> */}</>
-                ) : (
-                  <>
-                    {/* <Wrapper className='art-app-wrapper'>
-                      <TopBar className='art-mobile-top-bar' />
-                      <Container className='art-app-container'>
-                        <Sidebar />
+              <Experience scrollRef={scrollRef}>
+                <AppContainer className='art-app' {...appMotion.appContainer}>
+                  {loading ? (
+                    <Preloader title='Welcome' duration={loadTime} />
+                  ) : (
+                    <>
+                      <Wrapper className='art-app-wrapper'>
+                        <TopBar className='art-mobile-top-bar' />
+                        <Container className='art-app-container'>
+                          <Sidebar />
 
-                        <PageWrapper className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion()}>
-                          <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
-                          <Background />
-                          <SmoothScroll $justify='space-between'>
-                            {children}
-                            <Footer />
-                          </SmoothScroll>
-                        </PageWrapper>
+                          <PageWrapper
+                            className='art-content'
+                            $curtainEnabled={curtainEnabled}
+                            onClick={() => curtainClose()}
+                            {...pageWrapperMotion()}
+                          >
+                            <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
+                            <Background />
+                            <SmoothScroll $justify='space-between'>
+                              {children}
+                              <Footer />
+                            </SmoothScroll>
+                          </PageWrapper>
 
-                        <Navbar />
-                      </Container>
-                    </Wrapper> */}
-                    <Experience />
-                  </>
-                )}
-              </AppContainer>
-
+                          <Navbar />
+                        </Container>
+                      </Wrapper>
+                    </>
+                  )}
+                </AppContainer>
+              </Experience>
               <Cursor />
             </body>
           </ThemeProvider>
