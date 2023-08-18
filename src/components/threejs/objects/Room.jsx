@@ -6,13 +6,16 @@ Command: npx gltfjsx@6.1.11 brunos-room-v1.glb --transform
 */
 
 import React, { useEffect, useRef } from 'react';
-import { MathUtils } from 'three';
-import { useFrame } from '@react-three/fiber';
-import { PerspectiveCamera, useAnimations, useGLTF, useScroll } from '@react-three/drei';
+import { MathUtils, Mesh, Group, PerspectiveCamera } from 'three';
+import { extend, useFrame } from '@react-three/fiber';
+import { PerspectiveCamera as Camera, useAnimations, useGLTF, useScroll } from '@react-three/drei';
+import { MotionConfig } from 'framer-motion';
 import { motion } from 'framer-motion-3d';
 
-import { roomModel, BakedMaterial, Bookshelf, Chair, CoffeeTable, Couch, Desk, Cube, Guitar, TVUnit, PetBed } from '@/components/threejs';
+import { roomModel, BakedMesh, Bookshelf, Chair, CoffeeTable, Couch, Desk, Cube, Guitar, TVUnit, PetBed } from '@/components/threejs';
 import { useControls } from 'leva';
+
+extend({ Mesh, Group, PerspectiveCamera });
 
 export const Room = ({ scrollRef, ...props }) => {
   const group = useRef(),
@@ -26,7 +29,7 @@ export const Room = ({ scrollRef, ...props }) => {
   useFrame((state, delta) => {
     const action = actions['CameraAnimation'];
     action.time = MathUtils.lerp(action.time, action.getClip().duration * scroll.offset, 0.05);
-    // scroll.offset < 0.92 && state.camera.position.lerp({ x: state.pointer.x / 4, y: 0, z: -state.pointer.y / 4 }, 0.1);
+    scroll.offset < 0.92 && state.camera.position.lerp({ x: state.pointer.x / 4, y: 0, z: -state.pointer.y / 4 }, 0.1);
   });
 
   useControls('room', {
@@ -39,19 +42,17 @@ export const Room = ({ scrollRef, ...props }) => {
         <motion.group
           name='SceneContainer'
           scale={0.73}
-          // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
           variants={{
             hidden: { opacity: 0, rotateX: 0.2, rotateZ: -0.2 },
             visible: {
               opacity: 1,
               rotateX: 0,
               rotateZ: 0,
-              transition: { type: 'tween', duration: 1, delay: 0.5, staggerChildren: 0.25, delayChildren: 0.5 },
+              transition: { type: 'tween', duration: 1, delay: 0.5, staggerChildren: 0.5, delayChildren: 1 },
             },
           }}
-          // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         >
-          <BakedMaterial name='Room' geometry={nodes.Room.geometry} material={nodes.Room.material} rotation={[Math.PI, 0, Math.PI]}>
+          <BakedMesh name='Room' geometry={nodes.Room.geometry} material={nodes.Room.material} rotation={[Math.PI, 0, Math.PI]}>
             <Bookshelf nodes={nodes} />
             <Chair nodes={nodes} />
             <CoffeeTable nodes={nodes} />
@@ -61,11 +62,11 @@ export const Room = ({ scrollRef, ...props }) => {
             <Guitar nodes={nodes} />
             <PetBed nodes={nodes} />
             <TVUnit nodes={nodes} />
-          </BakedMaterial>
+          </BakedMesh>
         </motion.group>
 
         <motion.group ref={cameraRef} name='CameraContainer' position={[20.02, 15.24, 20.01]} rotation={[1.24, 0.3, -0.74]}>
-          <PerspectiveCamera name='TrueIsoCam_1' makeDefault={true} far={1000} near={0.1} fov={22.9} rotation={[-Math.PI / 2, 0, 0]} />
+          <Camera name='TrueIsoCam_1' makeDefault={true} far={1000} near={0.1} fov={22.9} rotation={[-Math.PI / 2, 0, 0]} />
         </motion.group>
       </group>
     </group>
