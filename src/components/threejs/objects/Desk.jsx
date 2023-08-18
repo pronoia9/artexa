@@ -1,12 +1,12 @@
-import { BakedMaterial } from '@/components/threejs';
+import { BakedMesh } from '@/components/threejs';
 import { motion } from 'framer-motion-3d';
 
 export const Desk = ({ nodes, children, ...props }) => {
   return (
-    <BakedMaterial name='Desk' geometry={nodes.Desk.geometry} material={nodes.Desk.material} position={[3.51, 1.66, 0.61]} {...props}>
-      <BakedMaterial name='Camera' geometry={nodes.Camera.geometry} material={nodes.Camera.material} position={[0.48, 2.27, 2.06]} />
+    <BakedMesh name='Desk' geometry={nodes.Desk.geometry} material={nodes.Desk.material} position={[3.51, 1.66, 0.61]} {...props}>
+      <BakedMesh name='Camera' geometry={nodes.Camera.geometry} material={nodes.Camera.material} position={[0.48, 2.27, 2.06]} />
 
-      <BakedMaterial name='Coffee_Mug' geometry={nodes.Coffee_Mug.geometry} material={nodes.Coffee_Mug.material} position={[-0.62, 0.41, -2]}>
+      <BakedMesh name='Coffee_Mug' geometry={nodes.Coffee_Mug.geometry} material={nodes.Coffee_Mug.material} position={[-0.62, 0.41, -2]}>
         <mesh
           name='Coffee_Steam'
           geometry={nodes.Coffee_Steam.geometry}
@@ -14,7 +14,7 @@ export const Desk = ({ nodes, children, ...props }) => {
           position={[0, 0.58, -0.01]}
           rotation={[-Math.PI / 2, 0, Math.PI / 2]}
         />
-      </BakedMaterial>
+      </BakedMesh>
 
       <mesh
         name='Elgato_Light'
@@ -25,9 +25,9 @@ export const Desk = ({ nodes, children, ...props }) => {
         scale={1.1}
       />
 
-      <BakedMaterial name='Headset' geometry={nodes.Headset.geometry} material={nodes.Headset.material} position={[-0.3, 0.37, -2.64]} />
+      <BakedMesh name='Headset' geometry={nodes.Headset.geometry} material={nodes.Headset.material} position={[-0.3, 0.37, -2.64]} />
 
-      <BakedMaterial name='Macbook' geometry={nodes.Macbook.geometry} material={nodes.Macbook.material} position={[-0.02, 0.85, 1.53]}>
+      <BakedMesh name='Macbook' geometry={nodes.Macbook.geometry} material={nodes.Macbook.material} position={[-0.02, 0.85, 1.53]}>
         <mesh
           name='Screen_(Macbook)'
           geometry={nodes['Screen_(Macbook)'].geometry}
@@ -35,9 +35,9 @@ export const Desk = ({ nodes, children, ...props }) => {
           position={[0.3, 0.53, 0.09]}
           rotation={[1.59, -0.05, 1.87]}
         />
-      </BakedMaterial>
+      </BakedMesh>
 
-      <BakedMaterial name='Monitor' geometry={nodes.Monitor.geometry} material={nodes.Monitor.material} position={[0.6, 1.3, -0.4]}>
+      <BakedMesh name='Monitor' geometry={nodes.Monitor.geometry} material={nodes.Monitor.material} position={[0.6, 1.3, -0.4]}>
         <mesh
           name='Screen_(Monitor)'
           geometry={nodes['Screen_(Monitor)'].geometry}
@@ -45,23 +45,23 @@ export const Desk = ({ nodes, children, ...props }) => {
           position={[-0.13, 0.45, 0.09]}
           rotation={[0, 0, -Math.PI / 2]}
         />
-      </BakedMaterial>
+      </BakedMesh>
 
-      <BakedMaterial
+      <BakedMesh
         name='Plant_(Desk,_L)'
         geometry={nodes['Plant_(Desk,_L)'].geometry}
         material={nodes['Plant_(Desk,_L)'].material}
         position={[0.23, 1.49, 3.2]}
       />
 
-      <BakedMaterial
+      <BakedMesh
         name='Plant_(Desk,_S)'
         geometry={nodes['Plant_(Desk,_S)'].geometry}
         material={nodes['Plant_(Desk,_S)'].material}
         position={[-0.37, 0.68, 2.44]}
       />
 
-      <BakedMaterial name='RubixCube' geometry={nodes.RubixCube.geometry} material={nodes.RubixCube.material} position={[0.58, 0.37, -2.57]} />
-    </BakedMaterial>
+      <BakedMesh name='RubixCube' geometry={nodes.RubixCube.geometry} material={nodes.RubixCube.material} position={[0.58, 0.37, -2.57]} />
+    </BakedMesh>
   );
 };

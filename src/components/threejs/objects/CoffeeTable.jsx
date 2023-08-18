@@ -1,17 +1,17 @@
-import { BakedMaterial } from '@/components/threejs';
+import { BakedMesh } from '@/components/threejs';
 
 export const CoffeeTable = ({ nodes, ...props }) => {
   return (
-    <BakedMaterial
+    <BakedMesh
       name='Coffee_Table'
       geometry={nodes.Coffee_Table.geometry}
       material={nodes.Coffee_Table.material}
       position={[-2.21, 0.76, 0.37]}
       {...props}
     >
-      <BakedMaterial name='Controller' geometry={nodes.Controller.geometry} material={nodes.Controller.material} position={[-0.23, 0.3, -0.54]} />
+      <BakedMesh name='Controller' geometry={nodes.Controller.geometry} material={nodes.Controller.material} position={[-0.23, 0.3, -0.54]} />
 
-      <BakedMaterial name='Google_Home' geometry={nodes.Google_Home.geometry} material={nodes.Google_Home.material} position={[0.71, 0.3, 0.65]}>
+      <BakedMesh name='Google_Home' geometry={nodes.Google_Home.geometry} material={nodes.Google_Home.material} position={[0.71, 0.3, 0.65]}>
         <mesh
           name='Google_Home_Leds001'
           geometry={nodes.Google_Home_Leds001.geometry}
@@ -44,7 +44,7 @@ export const CoffeeTable = ({ nodes, ...props }) => {
           rotation={[0, 0, 0.04]}
           scale={0.02}
         />
-      </BakedMaterial>
-    </BakedMaterial>
+      </BakedMesh>
+    </BakedMesh>
   );
 };
