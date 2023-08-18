@@ -7,7 +7,7 @@ const roomModel = '/3d/brunos-room-transformed.glb';
 
 import { Experience } from './Experience';
 
-import { BakedMaterial } from './materials/BakedMaterial';
+import { BakedMesh } from './materials/BakedMesh';
 import { CoffeeSteam } from './materials/CoffeeSteam';
 
 import { Bookshelf } from './objects/Bookshelf';
@@ -24,5 +24,5 @@ import { TVUnit } from './objects/TVUnit';
 export {
   bakedDay, bakedNeutral, bakedNight, lightMap, roomModel,
   Experience,
-  BakedMaterial, CoffeeSteam,
+  BakedMesh, CoffeeSteam,
   Bookshelf, Chair, CoffeeTable, Couch, Cube, Desk, Guitar, PetBed, Room, TVUnit, };
