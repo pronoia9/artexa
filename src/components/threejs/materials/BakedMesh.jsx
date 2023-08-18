@@ -9,16 +9,26 @@ export const BakedMesh = ({ variants, children, ...props }) => {
   const bakedTextureDay = useTexture(bakedDay),
     bakedTextureNight = useTexture(bakedNight),
     bakedTextureNeutral = useTexture(bakedNeutral);
-  
+
   return (
     <motion.mesh
       variants={{
         hidden: { scale: 0, ...variants?.hidden },
-        visible: { scale: 1, transition: { delay: rngInRange(0.25, 0.75) }, ...variants?.visible },
+        visible: {
+          scale: 1,
+          ...variants?.visible,
+          transition: {
+            type: 'spring',
+            bounce: 0.6,
+            delayChildren: rngInRange(0.1, 0.25),
+            staggerChildren: rngInRange(0.1, 0.25),
+            ...variants?.visible?.transition,
+          },
+        },
       }}
       {...props}
     >
-      {/* <motion.meshBasicMaterial map={bakedNeutral} map-flipY={false} /> */}
+      <motion.meshBasicMaterial map={isDarkTheme(theme) ? bakedTextureNight : bakedTextureDay || bakedTextureNeutral} map-flipY={false} />
       {children}
     </motion.mesh>
   );
