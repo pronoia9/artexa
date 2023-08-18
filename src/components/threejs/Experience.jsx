@@ -10,7 +10,7 @@ import { motion as m } from 'framer-motion';
 import { LayoutCamera, MotionCanvas, motion } from 'framer-motion-3d';
 
 import { SVGs, SectionTitle } from '@/components';
-import { Model } from './Model';
+import { Room } from '@/components/threejs';
 
 export const Experience = () => {
   const scrollRef = useRef();
@@ -21,7 +21,7 @@ export const Experience = () => {
         <Suspense fallback={null}>
           {/* <motion.group initial='hidden' animate='visible' variants={{ hidden: { scale: 0.1, x: 0, y: 0, z: 0 }, visible: { x: -4, y: -2, z: 0, }, }}> */}
           <ScrollControls pages={3}>
-            <Model />
+            <Room />
           </ScrollControls>
           {/* </motion.group> */}
         </Suspense>
