@@ -1,3 +1,5 @@
+'use client';
+
 // CONSTANTS
 import { routes, sidebar, navbar, footer, hero, counters, projects, history, courses, technologies, contact, about, services } from './constants';
 

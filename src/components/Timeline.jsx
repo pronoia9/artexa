@@ -8,7 +8,6 @@ import { Tag } from '@/styles';
 import { historyMotion, rem } from '@/utils';
 
 export const Timeline = ({ titles, children, ...props }) => {
-  return <></>;
   return children ? (
     children.map((tl, index) => (
       <TimelineColumn column={children.length || 2} title={titles[index] || ''} key={`timeline-column-${index}`} data={tl} index={index} />
@@ -18,7 +17,7 @@ export const Timeline = ({ titles, children, ...props }) => {
   );
 };
 
-export const TimelineColumn = ({ column = 1, title = '', data = [], index }) => <></> || (
+export const TimelineColumn = ({ column = 1, title = '', data = [], index }) => (
   <motion.div className={'col-lg-' + 12 / column} {...historyMotion.column(index % 2)}>
     <SectionTitle title={title} />
     <TimelineColumnContainer className='art-timeline' {...historyMotion.cards}>
@@ -44,7 +43,6 @@ const TimelineColumnContainer = styled(motion.div)`
 `;
 
 export const TimelineItem = (props) => {
-  return <></>;
   const { id, title, subtitle, description, dates, image, link } = props;
 
   if (dates) {

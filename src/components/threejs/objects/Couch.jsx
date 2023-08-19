@@ -1,14 +1,10 @@
+'use client';
+
 import { BakedMesh } from '@/components/threejs';
 
 export const Couch = ({ nodes, ...props }) => {
   return (
-    <BakedMesh
-      name='Couch'
-      geometry={nodes.Couch.geometry}
-      material={nodes.Couch.material}
-      position={[-2.01, 0.97, -3.02]}
-      {...props}
-    >
+    <BakedMesh name='Couch' geometry={nodes.Couch.geometry} material={nodes.Couch.material} position={[-2.01, 0.97, -3.02]} {...props}>
       <BakedMesh
         name='Octopus'
         geometry={nodes.Octopus.geometry}

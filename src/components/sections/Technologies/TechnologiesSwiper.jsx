@@ -1,3 +1,5 @@
+'use client';
+
 import { Swiper } from '@/components';
 import { technologiesMotion, technologies as data } from '@/utils';
 

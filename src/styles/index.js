@@ -1,3 +1,5 @@
+'use client';
+
 import GlobalStyles from './GlobalStyles';
 import { themes, colors } from './Themes';
 import { Button, ButtonMedium, ButtonSmall, GradientButton } from './ButtonStyles';

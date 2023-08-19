@@ -1,3 +1,5 @@
+'use client';
+
 import { Grid } from '@/components';
 import { technologiesMotion, technologies as data } from '@/utils';
 

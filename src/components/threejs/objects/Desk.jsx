@@ -1,4 +1,6 @@
-import { BakedMesh } from '@/components/threejs';;
+'use client';
+
+import { BakedMesh } from '@/components/threejs';
 
 export const Desk = ({ nodes, children, ...props }) => {
   return (

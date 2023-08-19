@@ -1,3 +1,5 @@
+'use client';
+
 import { BakedMesh } from '@/components/threejs';
 
 export const Bookshelf = ({ nodes, ...props }) => {
