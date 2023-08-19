@@ -1,5 +1,4 @@
-import { BakedMesh } from '@/components/threejs';
-import { motion } from 'framer-motion-3d';
+import { BakedMesh } from '@/components/threejs';;
 
 export const Desk = ({ nodes, children, ...props }) => {
   return (
