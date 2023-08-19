@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react';
-import { Formik, Form, Yup } from './idfk.js';
+import { Formik, Form } from 'formik';
+import * as Yup from 'yup';
 import { motion } from 'framer-motion';
 
 import { SectionTitle, ButtonGradient, ContactInput, SVGs } from '@/components';
