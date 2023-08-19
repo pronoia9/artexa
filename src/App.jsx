@@ -5,12 +5,14 @@ import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { Navbar, Sidebar, Scene, Preloader } from './components';
+import { Experience } from './components/components/Room/Experience';
 import { dataStore } from './store/dataStore';
 import { GlobalStyles } from './styles';
 import { appMotion, getThemeObject, rem } from './utils';
 
 export default function App() {
   const [show, setShow] = useState(false);
+  const loadTime = 7000;
   const { loading, setLoading, theme, accent, cursorOptions, laptopOpen } = dataStore((state) => ({
     loading: state.loading,
     setLoading: state.setLoading,
@@ -32,7 +34,7 @@ export default function App() {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 1);
+    }, loadTime);
     return () => clearTimeout();
   }, []);
 
@@ -44,17 +46,18 @@ export default function App() {
         {'!loading' && 'show' && (
           <AppContainer key='app-appcontainer' className='art-app' {...appMotion.appContainer}>
             {loading ? (
-              <Preloader />
+              <>{/* <Preloader title='Welcome' duration={loadTime} /> */}</>
             ) : (
               <>
-                <TopBar className='art-mobile-top-bar' />
+                {/* <TopBar className='art-mobile-top-bar' />
                 <Wrapper className='art-app-wrapper'>
                   <Container className='art-app-container'>
                     <Sidebar />
                     <Outlet />
                     <Navbar />
                   </Container>
-                </Wrapper>
+                </Wrapper> */}
+                <Experience />
               </>
             )}
           </AppContainer>
@@ -63,9 +66,9 @@ export default function App() {
         {/* {!loading && !show && <Scene />} */}
         {/* <Scene /> */}
 
-        <AnimatedCursorContainer className='animated-cursor'>
+        {/* <AnimatedCursorContainer className='animated-cursor'>
           <AnimatedCursor {...cursorOptions} />
-        </AnimatedCursorContainer>
+        </AnimatedCursorContainer> */}
       </ThemeProvider>
     </ThemeProvider>
   );

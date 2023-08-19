@@ -89,7 +89,7 @@ export const getProjectsCount = (rows = 3, cols = 2) =>
 // }
 
 //----------------------------- PROGRESSBARS -----------------------------//
-export const ProgressbarInstance = ({ type = 'circle', level, index, hide }) => {
+export const ProgressbarInstance = ({ type = 'circle', level, index, hide, duration = 5000 }) => {
   const id = `#${type}prog${index}`;
   switch (type) {
     case 'circle':
@@ -119,7 +119,7 @@ export const ProgressbarInstance = ({ type = 'circle', level, index, hide }) => 
       return new ProgressBar.Line(id, {
         strokeWidth: 1.7,
         easing: 'easeInOut',
-        duration: 5000,
+        duration,
         delay: 750,
         trailWidth: 1.7,
         svgStyle: { width: '100%', height: '100%' },
