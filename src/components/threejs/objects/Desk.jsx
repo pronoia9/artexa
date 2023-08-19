@@ -24,7 +24,9 @@ export const Desk = ({ nodes, children, ...props }) => {
         position={[0.52, 2.92, -0.68]}
         rotation={[1.67, 0.25, 1.2]}
         scale={1.1}
-      />
+      >
+        <meshBasicMaterial color='white' />
+      </mesh>
 
       <BakedMesh name='Headset' geometry={nodes.Headset.geometry} material={nodes.Headset.material} position={[-0.3, 0.37, -2.64]} />
 
