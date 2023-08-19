@@ -24,7 +24,7 @@ export const Experience = ({ scrollRef }) => {
       }}
       // !---------------------------------------------------------------------------------------------------------------------
     >
-      <MotionCanvas dpr={[1, 2]} gl={{ antialias: true }} shadows={false}>
+      <MotionCanvas dpr={[1, 2]} gl={{ antialias: true }} shadows={true}>
         <Scene scrollRef={scrollRef} />
       </MotionCanvas>
     </Container>
