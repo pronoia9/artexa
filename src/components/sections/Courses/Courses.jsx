@@ -1,3 +1,5 @@
+'use client';
+
 import { SectionWrapper, Timeline } from '@/components';
 import { courses as data } from '@/utils';
 

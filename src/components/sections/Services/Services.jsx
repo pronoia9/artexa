@@ -1,3 +1,5 @@
+'use client';
+
 import { SectionTitle, SectionWrapper, ServicesCard } from '@/components';
 import { services as data } from '@/utils';
 

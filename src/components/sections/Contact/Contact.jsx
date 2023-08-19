@@ -1,3 +1,5 @@
+'use client';
+
 import { SectionTitle, SectionWrapper, ContactList, ContactForm } from '@/components';
 import { contact as data } from '@/utils';
 

@@ -1,3 +1,5 @@
+'use client';
+
 import { SectionTitle, SectionWrapper, Hobbies } from '@/components';
 import { Tag } from '@/styles';
 
