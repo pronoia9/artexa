@@ -1,3 +1,5 @@
+'use client';
+
 import emailjs from '@emailjs/browser';
 import { Fancybox } from '@fancyapps/ui';
 import * as ProgressBar from 'progressbar.js';
