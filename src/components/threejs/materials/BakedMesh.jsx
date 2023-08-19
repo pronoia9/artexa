@@ -1,6 +1,6 @@
 'use client';
 
-import { MeshBasicMaterial, MeshNormalMaterial, MeshStandardMaterial } from 'three';
+import { MeshBasicMaterial } from 'three';
 import { extend } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
@@ -8,7 +8,7 @@ import { motion } from 'framer-motion-3d';
 import { dataStore, isDarkTheme, rngInRange } from '@/utils';
 import { useState } from 'react';
 
-extend({ MeshBasicMaterial, MeshNormalMaterial, MeshStandardMaterial });
+extend({ MeshBasicMaterial });
 
 export const BakedMesh = ({ variants, children, ...props }) => {
   const { theme } = dataStore((store) => ({ theme: store.theme }));
@@ -37,8 +37,7 @@ export const BakedMesh = ({ variants, children, ...props }) => {
       }}
       {...props}
     >
-      {/* <motion.meshBasicMaterial map={bakedTexture} map-flipY={false} /> */}
-      <meshBasicMaterial />
+      <motion.meshBasicMaterial map={bakedTexture} map-flipY={false} />
       {children}
     </motion.mesh>
   );
