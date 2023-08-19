@@ -1,6 +1,6 @@
 'use client';
 
-import { Suspense } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 import { BufferAttribute, BufferGeometry, Points } from 'three';
 import { extend, useFrame } from '@react-three/fiber';
 import { ScrollControls, Environment, Sky, Stars, Cloud, useProgress, useScroll } from '@react-three/drei';
@@ -13,7 +13,7 @@ import { Room } from '@/components/threejs';
 
 extend({ BufferAttribute, BufferGeometry, Points });
 
-export const Experience = ({ scrollRef }) => {
+export const Experience = () => {
   // const { active, progress, errors, item, loaded, total } = useProgress();
 
   return (
@@ -28,7 +28,21 @@ export const Experience = ({ scrollRef }) => {
       // !---------------------------------------------------------------------------------------------------------------------
     >
       <MotionCanvas dpr={[1, 2]} gl={{ antialias: true }} shadows={true}>
-        <Scene scrollRef={scrollRef} />
+        <Suspense fallback={null}>
+          <ScrollControls pages={3}>
+            <Scene />
+          </ScrollControls>
+
+          {/* <color attach='background' args={['#191923']} /> */}
+          <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+          {/* <Sky distance={450000} sunPosition={[0, 1, 0]} inclination={0} azimuth={0.25} /> */}
+          {/* <Sky sunPosition={[100, 20, 100]} /> */}
+          {/* <Cloud opacity={0.5} speed={0.8} width={10} depth={2.5} segments={20} /> */}
+          <Environment preset='apartment' />
+          <EffectComposer>
+            <Bloom intensity={0.25} luminanceThreshold={0.9} luminanceSmoothing={0.025} mipmapBlur={true} />
+          </EffectComposer>
+        </Suspense>
       </MotionCanvas>
     </Container>
   );
@@ -42,24 +56,20 @@ const Container = styled(motion.div)`
   }
 `;
 
-const Scene = ({ scrollRef }) => {
+const Scene = () => {
+  const [showCube, setShowCube] = useState(true);
+  const scroll = useScroll();
+
+  // reset scroll offset to the start once cube is hidden
+  useEffect(() => void (!showCube && (scroll.offset = 0)), [showCube]);
+
+  useFrame((state) => {
+    if (showCube && scroll.offset > 0) setShowCube(false);
+  });
+
   return (
     <>
-      <Suspense fallback={null}>
-        <ScrollControls pages={3}>
-          <Room scrollRef={scrollRef} />
-        </ScrollControls>
-
-        {/* <color attach='background' args={['#191923']} /> */}
-        <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-        {/* <Sky distance={450000} sunPosition={[0, 1, 0]} inclination={0} azimuth={0.25} /> */}
-        {/* <Sky sunPosition={[100, 20, 100]} /> */}
-        {/* <Cloud opacity={0.5} speed={0.8} width={10} depth={2.5} segments={20} /> */}
-        <Environment preset='apartment' />
-        <EffectComposer>
-          <Bloom intensity={0.25} luminanceThreshold={0.9} luminanceSmoothing={0.025} mipmapBlur={true} />
-        </EffectComposer>
-      </Suspense>
+      <Room showCube={showCube} />
     </>
   );
 };
