@@ -12,7 +12,7 @@ import { PerspectiveCamera as Camera, useAnimations, useGLTF, useScroll } from '
 import { MotionConfig } from 'framer-motion';
 import { motion } from 'framer-motion-3d';
 
-import { roomModel, BakedMesh, Bookshelf, Chair, CoffeeTable, Couch, Desk, Cube, Guitar, TVUnit, PetBed } from '@/components/threejs';
+import { BakedMesh, Bookshelf, Chair, CoffeeTable, Couch, Desk, Cube, Guitar, TVUnit, PetBed } from '@/components/threejs';
 import { useControls } from 'leva';
 
 extend({ Mesh, Group, PerspectiveCamera });
@@ -20,7 +20,7 @@ extend({ Mesh, Group, PerspectiveCamera });
 export const Room = ({ scrollRef, ...props }) => {
   const group = useRef(),
     cameraRef = useRef();
-  const { nodes, materials, animations } = useGLTF(roomModel);
+  const { nodes, materials, animations } = useGLTF('/3d/brunos-room-transformed.glb');
   const { actions } = useAnimations(animations, group);
   const scroll = useScroll();
 
@@ -73,4 +73,4 @@ export const Room = ({ scrollRef, ...props }) => {
   );
 };
 
-useGLTF.preload(roomModel);
+useGLTF.preload('/3d/brunos-room-transformed.glb');

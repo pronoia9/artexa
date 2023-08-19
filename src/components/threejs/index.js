@@ -1,10 +1,3 @@
-
-const bakedDay = '/3d/bakedDay.jpg';
-const bakedNeutral = '/3d/bakedNeutral.jpg';
-const bakedNight = '/3d/bakedNight.jpg';
-const lightMap = '/3d/lightMap.jpg';
-const roomModel = '/3d/brunos-room-transformed.glb';
-
 import { Experience } from './Experience';
 
 import { BakedMesh } from './materials/BakedMesh';
@@ -22,7 +15,6 @@ import { Room } from './objects/Room';
 import { TVUnit } from './objects/TVUnit';
 
 export {
-  bakedDay, bakedNeutral, bakedNight, lightMap, roomModel,
   Experience,
   BakedMesh, CoffeeSteam,
   Bookshelf, Chair, CoffeeTable, Couch, Cube, Desk, Guitar, PetBed, Room, TVUnit, };

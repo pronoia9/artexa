@@ -5,7 +5,6 @@ import { extend } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
-import { bakedDay, bakedNeutral, bakedNight } from '@/components/threejs';
 import { dataStore, isDarkTheme, rngInRange } from '@/utils';
 import { useState } from 'react';
 
@@ -13,9 +12,9 @@ extend({ MeshBasicMaterial, MeshNormalMaterial, MeshStandardMaterial });
 
 export const BakedMesh = ({ variants, children, ...props }) => {
   const { theme } = dataStore((store) => ({ theme: store.theme }));
-  const bakedTextureDay = useTexture(bakedDay),
-    bakedTextureNight = useTexture(bakedNight),
-    bakedTextureNeutral = useTexture(bakedNeutral);
+  const bakedTextureDay = useTexture('/3d/bakedDay.jpg'),
+    bakedTextureNight = useTexture('/3d/bakedNeutral.jpg'),
+    bakedTextureNeutral = useTexture('/3d/bakedNight.jpg');
   const [bakedTexture, setBakedTexture] = useState(bakedTextureNeutral);
 
   return (
