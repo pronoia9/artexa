@@ -1,3 +1,5 @@
+'use client';
+
 import { create } from 'zustand';
 
 import { getThemeFromStorage, saveThemeToStorage } from '@/utils/utils';
