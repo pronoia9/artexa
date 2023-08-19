@@ -13,7 +13,7 @@ import { appMotion, pageWrapperMotion, getThemeObject, rem, dataStore } from '@/
 
 export default function RootLayout({ children }) {
   const pathname = usePathname();
-  const loadTime = 500; //! TODO: TEMPORARILY DISABLED
+  const loadTime = 5000; //! TODO: TEMPORARILY CHANGED
   const { loading, setLoading, theme, accent, curtainEnabled, curtainClose } = dataStore((state) => ({
     loading: state.loading,
     setLoading: state.setLoading,
@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
           <ThemeProvider theme={getThemeObject(accent)}>
             <GlobalStyles />
             <body>
-              <Experience scrollRef={scrollRef}>
+              {/* <Experience scrollRef={scrollRef}> */}
                 <AppContainer className='art-app' {...appMotion.appContainer}>
                   {loading ? (
                     <Preloader title='Welcome' duration={loadTime} />
@@ -68,7 +68,7 @@ export default function RootLayout({ children }) {
                     </>
                   )}
                 </AppContainer>
-              </Experience>
+              {/* </Experience> */}
               <Cursor />
             </body>
           </ThemeProvider>
