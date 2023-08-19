@@ -1,21 +1,27 @@
-import { MeshBasicMaterial } from 'three';
+'use client';
+
+import { MeshBasicMaterial, MeshNormalMaterial, MeshStandardMaterial } from 'three';
 import { extend } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
 import { bakedDay, bakedNeutral, bakedNight } from '@/components/threejs';
 import { dataStore, isDarkTheme, rngInRange } from '@/utils';
+import { useState } from 'react';
 
-extend({ MeshBasicMaterial });
+extend({ MeshBasicMaterial, MeshNormalMaterial, MeshStandardMaterial });
 
 export const BakedMesh = ({ variants, children, ...props }) => {
   const { theme } = dataStore((store) => ({ theme: store.theme }));
   const bakedTextureDay = useTexture(bakedDay),
     bakedTextureNight = useTexture(bakedNight),
     bakedTextureNeutral = useTexture(bakedNeutral);
+  const [bakedTexture, setBakedTexture] = useState(bakedTextureNeutral);
 
   return (
     <motion.mesh
+      castShadow
+      receiveShadow
       variants={{
         hidden: { scale: 0, ...variants?.hidden },
         visible: {
@@ -32,7 +38,8 @@ export const BakedMesh = ({ variants, children, ...props }) => {
       }}
       {...props}
     >
-      <motion.meshBasicMaterial map={isDarkTheme(theme) ? bakedTextureNight : bakedTextureDay || bakedTextureNeutral} map-flipY={false} />
+      {/* <motion.meshBasicMaterial map={bakedTexture} map-flipY={false} /> */}
+      <meshBasicMaterial />
       {children}
     </motion.mesh>
   );
