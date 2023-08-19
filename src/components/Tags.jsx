@@ -1,7 +1,9 @@
-import { motion } from "framer-motion";
-import { styled } from "styled-components";
+'use client';
 
-import { Tag } from "@/styles";
+import { motion } from 'framer-motion';
+import { styled } from 'styled-components';
+
+import { Tag } from '@/styles';
 import { rng, tagsMotion } from '@/utils';
 
 export const Tags = ({ data, section, motion, ...props }) => {
