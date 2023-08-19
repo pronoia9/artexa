@@ -1,3 +1,5 @@
+"use client";
+
 import { motion } from 'framer-motion-3d';
 
 import { colors } from '@/styles';
