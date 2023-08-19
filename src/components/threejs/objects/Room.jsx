@@ -9,31 +9,26 @@ import React, { useEffect, useRef } from 'react';
 import { MathUtils, Mesh, Group, PerspectiveCamera } from 'three';
 import { extend, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera as Camera, useAnimations, useGLTF, useScroll } from '@react-three/drei';
-import { MotionConfig } from 'framer-motion';
 import { motion } from 'framer-motion-3d';
 
 import { BakedMesh, Bookshelf, Chair, CoffeeTable, Couch, Desk, Cube, Guitar, TVUnit, PetBed } from '@/components/threejs';
-import { useControls } from 'leva';
 
 extend({ Mesh, Group, PerspectiveCamera });
 
-export const Room = ({ scrollRef, ...props }) => {
-  const group = useRef(),
-    cameraRef = useRef();
-  const { nodes, materials, animations } = useGLTF('/3d/brunos-room-transformed.glb');
+export const Room = ({ showCube, ...props }) => {
+  const group = useRef();
+  const { nodes, animations } = useGLTF('/3d/brunos-room-transformed.glb');
   const { actions } = useAnimations(animations, group);
   const scroll = useScroll();
 
   useEffect(() => void (actions['CameraAnimation'].play().paused = true), []);
 
-  useFrame((state, delta) => {
-    const action = actions['CameraAnimation'];
-    action.time = MathUtils.lerp(action.time, action.getClip().duration * scroll.offset, 0.05);
-    scroll.offset < 0.92 && state.camera.position.lerp({ x: state.pointer.x / 4, y: 0, z: -state.pointer.y / 4 }, 0.1);
-  });
-
-  useControls('room', {
-    rotation: { value: [0.2, 0, -0.2] },
+  useFrame((state) => {
+    if (!showCube) {
+      const action = actions['CameraAnimation'];
+      action.time = MathUtils.lerp(action.time, action.getClip().duration * scroll.offset, 0.05);
+      scroll.offset < 0.92 && state.camera.position.lerp({ x: state.pointer.x / 4, y: 0, z: -state.pointer.y / 4 }, 0.1);
+    }
   });
 
   return (
@@ -52,20 +47,25 @@ export const Room = ({ scrollRef, ...props }) => {
             },
           }}
         >
-          <BakedMesh name='Room' geometry={nodes.Room.geometry} material={nodes.Room.material} rotation={[Math.PI, 0, Math.PI]}>
-            <Bookshelf nodes={nodes} />
-            <Chair nodes={nodes} />
-            <CoffeeTable nodes={nodes} />
-            <Couch nodes={nodes} />
-            {/* <Cube nodes={nodes} /> */}
-            <Desk nodes={nodes} />
-            <Guitar nodes={nodes} />
-            <PetBed nodes={nodes} />
-            <TVUnit nodes={nodes} />
+          <BakedMesh name='Room' geometry={nodes.Room.geometry} material={nodes.Room.material} rotation={[Math.PI, 0, Math.PI]} showCube={showCube}>
+            {showCube ? (
+              <Cube nodes={nodes} />
+            ) : (
+              <>
+                <Bookshelf nodes={nodes} />
+                <Chair nodes={nodes} />
+                <CoffeeTable nodes={nodes} />
+                <Couch nodes={nodes} />
+                <Desk nodes={nodes} />
+                <Guitar nodes={nodes} />
+                <PetBed nodes={nodes} />
+                <TVUnit nodes={nodes} />
+              </>
+            )}
           </BakedMesh>
         </motion.group>
 
-        <motion.group ref={cameraRef} name='CameraContainer' position={[20.02, 15.24, 20.01]} rotation={[1.24, 0.3, -0.74]}>
+        <motion.group name='CameraContainer' position={[20.02, 15.24, 20.01]} rotation={[1.24, 0.3, -0.74]}>
           <Camera name='TrueIsoCam_1' makeDefault={true} far={1000} near={0.1} fov={22.9} rotation={[-Math.PI / 2, 0, 0]} />
         </motion.group>
       </group>
