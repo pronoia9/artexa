@@ -10,7 +10,7 @@ import { useState } from 'react';
 
 extend({ MeshBasicMaterial });
 
-export const BakedMesh = ({ variants, children, ...props }) => {
+export const BakedMesh = ({ showCube, variants, children, ...props }) => {
   const { theme } = dataStore((store) => ({ theme: store.theme }));
   const bakedTextureDay = useTexture('/3d/bakedDay.jpg'),
     bakedTextureNight = useTexture('/3d/bakedNeutral.jpg'),
