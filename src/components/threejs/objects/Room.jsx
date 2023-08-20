@@ -6,14 +6,15 @@ Command: npx gltfjsx@6.1.11 brunos-room-v1.glb --transform
 */
 
 import React, { useEffect, useRef, useState } from 'react';
-import { MathUtils, Mesh, Group, PerspectiveCamera, LoopOnce } from 'three';
+import { MathUtils, Mesh, Group, PerspectiveCamera, LoopOnce, SphereGeometry } from 'three';
 import { extend, useFrame } from '@react-three/fiber';
 import { PerspectiveCamera as Camera, useAnimations, useGLTF, useScroll } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
 import { BakedMesh, Bookshelf, Chair, CoffeeTable, Couch, Desk, Cube, Guitar, TVUnit, PetBed } from '@/components/threejs';
+import { sceneMotion } from '@/utils';
 
-extend({ Mesh, Group, PerspectiveCamera });
+extend({ Mesh, Group, PerspectiveCamera, SphereGeometry });
 
 export const Room = (props) => {
   const group = useRef();
@@ -23,12 +24,12 @@ export const Room = (props) => {
   const [cube, setCube] = useState('initial');
 
   useEffect(() => void (actions['Camera Scroll'].play().paused = true), []);
-
+  
   // reset scroll offset to the start once the room is shown and the cube is hidden
-  useEffect(() => void (cube === 'hide' && (scroll.offset = 0)), [cube]);
-
+  useEffect(() => void (cube === 'hidden' && (scroll.offset = 0)), [cube]);
+  
   useFrame((state) => {
-    // console.log('showCube', showCube, ' | ', 'offset', scroll.offset);
+    // console.log('cube:', cube, '  |   offset:', scroll.offset);
     const cameraAction = actions['Camera Scroll'], cubeAction = actions['Cube Animation'];
 
     // Play cube animation on first scroll
@@ -39,13 +40,13 @@ export const Room = (props) => {
     }
 
     // Show room during cube animation before the cube is hidden
-    if (cube === 'animating' && cubeAction.time >= cubeAction.getClip().duration * 0.35) setCube('show room');
+    else if (cube === 'animating' && cubeAction.time >= cubeAction.getClip().duration * 0.35) setCube('show room');
 
     // Hide cube once its animation is done
-    if (cube === 'show room' && cubeAction.time === cubeAction.getClip().duration) setCube('hide');
+    else if (cube === 'show room' && cubeAction.time === cubeAction.getClip().duration) setCube('hidden');
 
     // Enable camera scroll + controls
-    if (cube === 'hide') {
+    else if (cube === 'hidden') {
       cameraAction.time = MathUtils.lerp(cameraAction.time, cameraAction.getClip().duration * scroll.offset, 0.05);
       state.camera.position.lerp({ x: state.pointer.x / 4, y: 0, z: -state.pointer.y / 4 }, 0.1);
     }
@@ -56,27 +57,18 @@ export const Room = (props) => {
       <group name='Scene'>
         <group name='Camera_Container' position={[20.02, 15.24, 20.01]} rotation={[1.24, 0.3, -0.74]}>
           <Camera name='TrueIsoCam_1' makeDefault={true} far={1000} near={0.1} fov={22.9} rotation={[-Math.PI / 2, 0, 0]} />
-          <group name='LookAt' position={[0.02, -3.11, -0.04]} rotation={[-1.12, -0.79, 0.02]} />
         </group>
 
-        <group name='Scene_Container' position={[0.01, -0.3, -0.01]}>
-          {cube !== 'hide' && <Cube nodes={nodes} />}
-          {(cube === 'show room' || cube === 'hide') && (
+        <motion.group name='Scene_Container' position={[0.01, -0.3, -0.01]}>
+          {cube !== 'hidden' && <Cube nodes={nodes} />}
+          {(cube === 'show room' || cube === 'hidden') && (
             <BakedMesh
               name='Room'
               geometry={nodes.Room.geometry}
               material={nodes.Room.material}
               position={[-0.01, 0.3, 0.01]}
               rotation={[Math.PI, 0, Math.PI]}
-              variants={{
-                hidden: { opacity: 0, rotateX: Math.PI + 0.4, rotateZ: Math.PI + 0.4 },
-                visible: {
-                  opacity: 1,
-                  rotateX: Math.PI,
-                  rotateZ: Math.PI,
-                  transition: { type: 'tween', duration: 1, delay: 0, staggerChildren: 0.5, delayChildren: 1 },
-                },
-              }}
+              {...sceneMotion.room}
             >
               <Bookshelf nodes={nodes} />
               <Chair nodes={nodes} />
@@ -88,7 +80,7 @@ export const Room = (props) => {
               <TVUnit nodes={nodes} />
             </BakedMesh>
           )}
-        </group>
+        </motion.group>
       </group>
     </group>
   );

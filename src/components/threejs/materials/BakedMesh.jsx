@@ -5,7 +5,7 @@ import { extend } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
-import { dataStore, isDarkTheme, rngInRange } from '@/utils';
+import { dataStore, isDarkTheme, rngInRange, sceneMotion } from '@/utils';
 import { useState } from 'react';
 
 extend({ MeshBasicMaterial });
@@ -18,25 +18,7 @@ export const BakedMesh = ({ showCube, variants, children, ...props }) => {
   const [bakedTexture, setBakedTexture] = useState(bakedTextureNeutral);
 
   return (
-    <motion.mesh
-      castShadow
-      receiveShadow
-      variants={{
-        hidden: { scale: 0, ...variants?.hidden },
-        visible: {
-          scale: 1,
-          ...variants?.visible,
-          transition: {
-            type: 'spring',
-            bounce: 0.6,
-            delayChildren: rngInRange(0.1, 0.25),
-            staggerChildren: rngInRange(0.1, 0.25),
-            ...variants?.visible?.transition,
-          },
-        },
-      }}
-      {...props}
-    >
+    <motion.mesh castShadow receiveShadow {...sceneMotion.bakedMesh(rngInRange(0.1, 0.25), rngInRange(0.1, 0.25), variants)} {...props}>
       <motion.meshBasicMaterial map={bakedTexture} map-flipY={false} />
       {children}
     </motion.mesh>
