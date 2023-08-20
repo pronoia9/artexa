@@ -10,6 +10,7 @@ import { motion } from 'framer-motion';
 import { MotionCanvas, motion as motion3d } from 'framer-motion-3d';
 
 import { Room } from '@/components/threejs';
+import { sceneMotion } from '@/utils';
 
 extend({ BufferAttribute, BufferGeometry, Points });
 
@@ -17,16 +18,7 @@ export const Experience = () => {
   // const { active, progress, errors, item, loaded, total } = useProgress();
 
   return (
-    <Container
-      // !---------------------------------------------------------------------------------------------------------------------
-      initial='hidden'
-      animate='visible'
-      variants={{
-        hidden: { opacity: 0 },
-        visible: { opacity: 1, transition: { type: 'tween', duration: 1, delay: 2, delayChildren: 1 } },
-      }}
-      // !---------------------------------------------------------------------------------------------------------------------
-    >
+    <Container {...sceneMotion.container}>
       <MotionCanvas dpr={[1, 2]} gl={{ antialias: true }} shadows={true}>
         <Suspense fallback={null}>
           <ScrollControls pages={3}>
@@ -55,11 +47,3 @@ const Container = styled(motion.div)`
     height: 100%;
   }
 `;
-
-const Scene = () => {
-  return (
-    <>
-      <Room />
-    </>
-  );
-};
