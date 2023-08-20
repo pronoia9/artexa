@@ -20,33 +20,34 @@ export const Room = (props) => {
   const { nodes, animations } = useGLTF('/3d/brunos-room-transformed.glb');
   const { actions } = useAnimations(animations, group);
   const scroll = useScroll();
-  const [showCube, setShowCube] = useState('initial');
+  const [cube, setCube] = useState('initial');
 
   useEffect(() => void (actions['Camera Scroll'].play().paused = true), []);
 
-  // reset scroll offset to the start once the room is shown
-  useEffect(() => void (showCube === 'show room' && (scroll.offset = 0)), [showCube]);
+  // reset scroll offset to the start once the room is shown and the cube is hidden
+  useEffect(() => void (cube === 'hide' && (scroll.offset = 0)), [cube]);
 
   useFrame((state) => {
-    const cameraAction = actions['Camera Scroll'],
-      cubeAction = actions['Cube Animation'];
+    // console.log('showCube', showCube, ' | ', 'offset', scroll.offset);
+    const cameraAction = actions['Camera Scroll'], cubeAction = actions['Cube Animation'];
 
-    // Play cube animation
-    if (showCube === 'initial' && scroll.offset > 0) {
+    // Play cube animation on first scroll
+    if (cube === 'initial' && scroll.offset > 0) {
       cubeAction.clampWhenFinished = true;
       cubeAction.setLoop(LoopOnce).play();
-      setShowCube('animating');
+      setCube('animating');
     }
 
-    // Show room before the cube disappears
-    if (showCube !== 'show room' && cubeAction.time >= cubeAction.getClip().duration * 0.35) setShowCube('show room');
-    
-    // if (showCube === 'animating' && cubeAction.time === cubeAction.getClip().duration) setShowCube('hide');
+    // Show room during cube animation before the cube is hidden
+    if (cube === 'animating' && cubeAction.time >= cubeAction.getClip().duration * 0.35) setCube('show room');
+
+    // Hide cube once its animation is done
+    if (cube === 'show room' && cubeAction.time === cubeAction.getClip().duration) setCube('hide');
 
     // Enable camera scroll + controls
-    if (showCube === 'show room' || showCube === 'hide') {
+    if (cube === 'hide') {
       cameraAction.time = MathUtils.lerp(cameraAction.time, cameraAction.getClip().duration * scroll.offset, 0.05);
-      cameraAction.offset < 0.92 && state.camera.position.lerp({ x: state.pointer.x / 4, y: 0, z: -state.pointer.y / 4 }, 0.1);
+      state.camera.position.lerp({ x: state.pointer.x / 4, y: 0, z: -state.pointer.y / 4 }, 0.1);
     }
   });
 
@@ -58,9 +59,9 @@ export const Room = (props) => {
           <group name='LookAt' position={[0.02, -3.11, -0.04]} rotation={[-1.12, -0.79, 0.02]} />
         </group>
 
-        <motion.group name='Scene_Container' position={[0.01, -0.3, -0.01]} initial='hidden' animate='visible'>
-          {showCube !== 'hide' && <Cube nodes={nodes} /* animate={{ scale: showCube ? 0.25 : 0 }} */ />}
-          {showCube === 'show room' && (
+        <group name='Scene_Container' position={[0.01, -0.3, -0.01]}>
+          {cube !== 'hide' && <Cube nodes={nodes} />}
+          {(cube === 'show room' || cube === 'hide') && (
             <BakedMesh
               name='Room'
               geometry={nodes.Room.geometry}
@@ -87,7 +88,7 @@ export const Room = (props) => {
               <TVUnit nodes={nodes} />
             </BakedMesh>
           )}
-        </motion.group>
+        </group>
       </group>
     </group>
   );
