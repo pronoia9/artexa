@@ -1,6 +1,6 @@
 'use client';
 
-import { BakedMesh } from '@/components/threejs';
+import { BakedMesh, SteamMaterial } from '@/components/threejs';
 
 export const Desk = ({ nodes, children, ...props }) => {
   return (
@@ -14,7 +14,9 @@ export const Desk = ({ nodes, children, ...props }) => {
           material={nodes.Coffee_Steam.material}
           position={[0, 0.42, -0.01]}
           rotation={[-Math.PI / 2, 0, Math.PI / 2]}
-        />
+        >
+          <SteamMaterial />
+        </mesh>
       </BakedMesh>
 
       <mesh
