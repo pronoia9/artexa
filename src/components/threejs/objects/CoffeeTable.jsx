@@ -1,8 +1,11 @@
 'use client';
 
-import { BakedMesh } from '@/components/threejs';
+import { motion } from 'framer-motion-3d';
 
-export const CoffeeTable = ({ nodes, ...props }) => {
+import { BakedMesh } from '@/components/threejs';
+import { rngInRange, sceneMotion } from '@/utils';
+
+export const CoffeeTable = ({ nodes, materials, ...props }) => {
   return (
     <BakedMesh
       name='Coffee_Table'
@@ -43,6 +46,20 @@ export const CoffeeTable = ({ nodes, ...props }) => {
           rotation={[0, 0, 0.04]}
         />
       </BakedMesh>
+
+      <motion.group name='Tardis' position={[-0.57, 0.16, 0.18]} rotation={[Math.PI, -1.3, Math.PI]} {...sceneMotion.bakedMesh()}>
+        <mesh name='Tardis_1' geometry={nodes.Tardis_1.geometry} material={materials.blue_wood} />
+        <mesh name='Tardis_2' geometry={nodes.Tardis_2.geometry} material={materials.white_wood} />
+        <mesh name='Tardis_3' geometry={nodes.Tardis_3.geometry} material={materials.black_glass} />
+        <mesh name='Tardis_4' geometry={nodes.Tardis_4.geometry} material={materials.black_sign_material} />
+        <mesh name='Tardis_5' geometry={nodes.Tardis_5.geometry} material={materials.internal_floor_material} />
+        <mesh name='Tardis_6' geometry={nodes.Tardis_6.geometry} material={materials.white_glass} />
+        <mesh name='Tardis_7' geometry={nodes.Tardis_7.geometry} material={materials.bulb_material} />
+        <mesh name='Tardis_8' geometry={nodes.Tardis_8.geometry} material={materials.phone_door_sign_material} />
+        <mesh name='Tardis_9' geometry={nodes.Tardis_9.geometry} material={materials.handle_material} />
+        <mesh name='Tardis_10' geometry={nodes.Tardis_10.geometry} material={materials.st_john_sign_material} />
+        <mesh name='Tardis_11' geometry={nodes.Tardis_11.geometry} material={materials.yale_lock_material} />
+      </motion.group>
     </BakedMesh>
   );
 };

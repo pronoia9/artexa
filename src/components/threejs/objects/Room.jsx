@@ -18,7 +18,7 @@ extend({ Mesh, Group, PerspectiveCamera, SphereGeometry });
 
 export const Room = (props) => {
   const group = useRef();
-  const { nodes, animations } = useGLTF('/3d/brunos-room-transformed.glb');
+  const { nodes, materials, animations } = useGLTF('/3d/brunos-room-transformed.glb');
   const { actions } = useAnimations(animations, group);
   const scroll = useScroll();
   const [cube, setCube] = useState('initial');
@@ -72,7 +72,7 @@ export const Room = (props) => {
             >
               <Bookshelf nodes={nodes} />
               <Chair nodes={nodes} />
-              <CoffeeTable nodes={nodes} />
+              <CoffeeTable nodes={nodes} materials={materials} />
               <Couch nodes={nodes} />
               <Desk nodes={nodes} />
               <Guitar nodes={nodes} />
