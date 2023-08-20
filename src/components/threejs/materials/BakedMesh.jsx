@@ -7,6 +7,7 @@ import { motion } from 'framer-motion-3d';
 
 import { dataStore, isDarkTheme, rngInRange, sceneMotion } from '@/utils';
 import { useState } from 'react';
+import { BakedMaterial } from '..';
 
 extend({ MeshBasicMaterial });
 
@@ -18,8 +19,9 @@ export const BakedMesh = ({ showCube, variants, children, ...props }) => {
   const [bakedTexture, setBakedTexture] = useState(bakedTextureNeutral);
 
   return (
-    <motion.mesh castShadow receiveShadow {...sceneMotion.bakedMesh(rngInRange(0.1, 0.25), rngInRange(0.1, 0.25), variants)} {...props}>
-      <motion.meshBasicMaterial map={bakedTexture} map-flipY={false} />
+    <motion.mesh {...sceneMotion.bakedMesh(rngInRange(0.1, 0.25), rngInRange(0.1, 0.25), variants)} {...props}>
+      {/* <motion.meshBasicMaterial map={bakedTexture} map-flipY={false} /> */}
+      <BakedMaterial />
       {children}
     </motion.mesh>
   );
