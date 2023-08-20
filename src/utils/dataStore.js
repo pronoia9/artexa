@@ -32,6 +32,7 @@ export const dataStore = create((set) => ({
   // SIDEBAR / NAVBAR / OVERLAY
   curtainEnabled: false,
   curtainClose: () => set({ navbarOpen: false, sidebarOpen: false, curtainEnabled: false }),
+  
   navbarOpen: false,
   openNavbar: () => set({ navbarOpen: true, sidebarOpen: false, curtainEnabled: true }),
   closeNavbar: () => set({ navbarOpen: false, curtainEnabled: false }),
@@ -41,6 +42,7 @@ export const dataStore = create((set) => ({
       sidebarOpen: state.sidebarOpen && !state.navbarOpen ? false : state.sidebarOpen,
       curtainEnabled: !state.navbarOpen,
     })),
+  
   sidebarOpen: false,
   openSidebar: () => set({ navbarOpen: false, sidebarOpen: true, curtainEnabled: true }),
   closeSidebar: () => set({ sidebarOpen: false, curtainEnabled: false }),
@@ -50,10 +52,6 @@ export const dataStore = create((set) => ({
       sidebarOpen: !state.sidebarOpen,
       curtainEnabled: !state.sidebarOpen,
     })),
-
-  // TODO: IFRAME BROWSER OVERLAY
-  frameLink: '',
-  setFrameLink: (link) => set({ frameLink: link }),
 
   projects: {
     filterKey: '',
