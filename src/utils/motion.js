@@ -41,7 +41,7 @@ export const sceneMotion = {
       },
     },
   },
-  bakedMesh: (delayChildren, staggerChildren, variants = {}) => ({
+  bakedMesh: (delayChildren = 0, staggerChildren = 0, variants = {}) => ({
     variants: {
       hidden: { scale: 0, ...variants?.hidden },
       visible: { scale: 1, ...variants?.visible,
