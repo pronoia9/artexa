@@ -24,31 +24,32 @@ export const appMotion = {
 
 */
 /**********************  2. 3D Start  **********************/
-export const sceneMotion = () => ({
-  initial: { opacity: 1 },
-  exit: { opacity: 0 },
-  transition: { duration: 0.5, delay: 5, ease: 'easeInOut' },
-});
-
-export const laptopMotion = (laptopOpen) => ({
+export const sceneMotion = {
   container: {
-    animate: laptopOpen ? 'open' : 'close',
+    initial:'hidden',
+    animate:'visible',
+    variants:{
+      hidden: { opacity: 0 },
+      visible: { opacity: 1, transition: { type: 'tween', duration: 1, delay: 2, delayChildren: 1 } },
+    }
   },
-  elevate: {
+  room: {
     variants: {
-      initial: { y: 0 },
-      close: { y: -4, transition: { type: 'spring' } },
-      open: { y: -5.5, transition: { type: 'spring' } },
+      hidden: { opacity: 0, rotateX: Math.PI + 0.4, rotateZ: Math.PI + 0.4 },
+      visible: { opacity: 1, rotateX: Math.PI, rotateZ: Math.PI,
+        transition: { type: 'tween', duration: 1, delay: 0, staggerChildren: 0.5, delayChildren: 1 },
+      },
     },
   },
-  display: {
+  bakedMesh: (delayChildren, staggerChildren, variants = {}) => ({
     variants: {
-      close: { rotateX: 0 },
-      open: { rotateX: -Math.PI / 2 },
+      hidden: { scale: 0, ...variants?.hidden },
+      visible: { scale: 1, ...variants?.visible,
+        transition: { type: 'spring', bounce: 0.6, delayChildren, staggerChildren, ...variants?.visible?.transition, },
+      },
     },
-    transition: { duration: 1.5 },
-  },
-});
+  }),
+};
 /***********************  2. 3D End  ***********************/
 /*
 

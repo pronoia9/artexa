@@ -37,7 +37,7 @@ export default function RootLayout({ children }) {
           <ThemeProvider theme={getThemeObject(accent)}>
             <GlobalStyles />
             <body>
-              {/* <Experience scrollRef={scrollRef}> */}
+              <Experience scrollRef={scrollRef}>
                 <AppContainer className='art-app' {...appMotion.appContainer}>
                   {loading ? (
                     <Preloader title='Welcome' duration={loadTime} />
@@ -68,7 +68,7 @@ export default function RootLayout({ children }) {
                     </>
                   )}
                 </AppContainer>
-              {/* </Experience> */}
+              </Experience>
               <Cursor />
             </body>
           </ThemeProvider>

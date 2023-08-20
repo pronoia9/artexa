@@ -10,7 +10,6 @@ import { dataStore } from './dataStore';
 import {
   appMotion,
   sceneMotion,
-  laptopMotion,
   pageWrapperMotion,
   sectionWrapperMotion,
   sidebarMotion,
@@ -89,7 +88,6 @@ export {
   // MOTION
   appMotion,
   sceneMotion,
-  laptopMotion,
   pageWrapperMotion,
   sectionWrapperMotion,
   sidebarMotion,
