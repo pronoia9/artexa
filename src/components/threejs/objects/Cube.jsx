@@ -9,7 +9,7 @@ export const Cube = ({ nodes, ...props }) => {
   const { accent } = dataStore((store) => ({ theme: store.accent }));
 
   return (
-    <motion.group name='Cube' position={[4.64, 0, 4.7]} rotation={[-Math.PI, 0, -Math.PI]} scale={[5.03, 3.42, 5.03]} {...props}>
+    <motion.group name='Cube' position={[0, 2.44, 0]} scale={0.25} {...props}>
       <mesh name='Cube_1' geometry={nodes.Cube_1.geometry} material={nodes.Cube_1.material}>
         <meshBasicMaterial color={colors[accent ? accent : 'purple']['accent1']} />
       </mesh>
@@ -19,3 +19,4 @@ export const Cube = ({ nodes, ...props }) => {
     </motion.group>
   );
 };
+
