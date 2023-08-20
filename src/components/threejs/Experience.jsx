@@ -30,7 +30,7 @@ export const Experience = () => {
       <MotionCanvas dpr={[1, 2]} gl={{ antialias: true }} shadows={true}>
         <Suspense fallback={null}>
           <ScrollControls pages={3}>
-            <Scene />
+            <Room />
           </ScrollControls>
 
           {/* <color attach='background' args={['#191923']} /> */}
@@ -57,19 +57,9 @@ const Container = styled(motion.div)`
 `;
 
 const Scene = () => {
-  const [showCube, setShowCube] = useState(true);
-  const scroll = useScroll();
-
-  // reset scroll offset to the start once cube is hidden
-  useEffect(() => void (!showCube && (scroll.offset = 0)), [showCube]);
-
-  useFrame((state) => {
-    if (showCube && scroll.offset > 0) setShowCube(false);
-  });
-
   return (
     <>
-      <Room showCube={showCube} />
+      <Room />
     </>
   );
 };
