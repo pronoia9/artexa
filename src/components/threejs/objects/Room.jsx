@@ -8,10 +8,10 @@ Command: npx gltfjsx@6.1.11 brunos-room-v1.glb --transform
 import React, { useEffect, useRef, useState } from 'react';
 import { MathUtils, Mesh, Group, PerspectiveCamera, LoopOnce, SphereGeometry } from 'three';
 import { extend, useFrame } from '@react-three/fiber';
-import { PerspectiveCamera as Camera, useAnimations, useGLTF, useScroll } from '@react-three/drei';
+import { PerspectiveCamera as Camera, Float, useAnimations, useGLTF, useScroll } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
-import { BakedMesh, Bookshelf, Chair, CoffeeTable, Couch, Desk, Cube, Guitar, TVUnit, PetBed } from '@/components/threejs';
+import { BakedMesh, Bookshelf, Chair, CoffeeTable, Couch, Desk, Cube, Guitar, TVUnit, PetBed, Tardis } from '@/components/threejs';
 import { sceneMotion } from '@/utils';
 
 extend({ Mesh, Group, PerspectiveCamera, SphereGeometry });
@@ -77,6 +77,7 @@ export const Room = (props) => {
               <Desk nodes={nodes} />
               <Guitar nodes={nodes} />
               <PetBed nodes={nodes} />
+              <Tardis nodes={nodes} materials={materials} />
               <TVUnit nodes={nodes} />
             </BakedMesh>
           )}

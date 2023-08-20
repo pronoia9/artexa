@@ -13,9 +13,10 @@ import { Desk } from './objects/Desk';
 import { Guitar } from './objects/Guitar';
 import { PetBed } from './objects/PetBed';
 import { Room } from './objects/Room';
+import { Tardis } from './objects/Tardis';
 import { TVUnit } from './objects/TVUnit';
 
 export {
   Experience,
   BakedMesh, BakedShader, SteamShader,
-  Bookshelf, Chair, CoffeeTable, Couch, Cube, Desk, Guitar, PetBed, Room, TVUnit, };
+  Bookshelf, Chair, CoffeeTable, Couch, Cube, Desk, Guitar, PetBed, Room, Tardis, TVUnit, };
