@@ -8,12 +8,12 @@ import { shaderMaterial, useTexture } from '@react-three/drei';
 extend({
   BakedShaderMaterial: shaderMaterial(
     {
-      uBakedDayTexture: '/public/3d/bakedDay.jpg',
-      uBakedNightTexture: '/public/3d/bakedNight.jpg',
-      uBakedNeutralTexture: '/public/3d/bakedNeutral.jpg',
-      uLightMapTexture: '/public/3d/lightMap.jpg',
+      uBakedDayTexture: null,
+      uBakedNightTexture: null,
+      uBakedNeutralTexture: null,
+      uLightMapTexture: null,
 
-      uNightMix: 0,
+      uNightMix: 1,
       uNeutralMix: 0,
 
       uLightTvColor: new Color('#ff115e'),
