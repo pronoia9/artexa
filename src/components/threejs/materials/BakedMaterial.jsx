@@ -16,13 +16,13 @@ extend({
       uNightMix: 1,
       uNeutralMix: 0,
 
-      uLightTvColor: Color('#ff115e'),
+      uLightTvColor: new Color('#ff115e'),
       uLightTvStrength: 1.47,
 
-      uLightDeskColor: Color('#ff6700'),
+      uLightDeskColor: new Color('#ff6700'),
       uLightDeskStrength: 1.9,
 
-      uLightPcColor: Color('#0082ff'),
+      uLightPcColor: new Color('#0082ff'),
       uLightPcStrength: 1.4,
     },
     `
@@ -88,12 +88,12 @@ export function BakedMaterial() {
   const ref = useRef();
 
   useEffect(() => {
-    ref?.current && (ref.current.transparent = true);
-    ref?.current && (ref.current.depthWrite = false);
+    // ref?.current && (ref.current.transparent = true);
+    // ref?.current && (ref.current.depthWrite = false);
   }, []);
 
   useFrame((state, delta) => {
-    ref.current.uTime += delta * 500;
+    // ref.current.uTime += delta * 500;
   });
 
   return <bakedShaderMaterial ref={ref} />;
