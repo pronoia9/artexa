@@ -1,8 +1,8 @@
 import { Experience } from './Experience';
 
 import { BakedMesh } from './materials/BakedMesh';
-import { BakedShader } from './materials/BakedShader';
-import { SteamShader } from './materials/SteamShader';
+import { BakedMaterial } from './materials/BakedMaterial';
+import { SteamMaterial } from './materials/SteamMaterial';
 
 import { Bookshelf } from './objects/Bookshelf';
 import { Chair } from './objects/Chair';
@@ -18,5 +18,5 @@ import { TVUnit } from './objects/TVUnit';
 
 export {
   Experience,
-  BakedMesh, BakedShader, SteamShader,
+  BakedMesh, BakedMaterial, SteamMaterial,
   Bookshelf, Chair, CoffeeTable, Couch, Cube, Desk, Guitar, PetBed, Room, Tardis, TVUnit, };
