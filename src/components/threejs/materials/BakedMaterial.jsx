@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import { Color } from 'three';
+import { Color, sRGBEncoding } from 'three';
 import { extend, useFrame } from '@react-three/fiber';
-import { shaderMaterial } from '@react-three/drei';
+import { shaderMaterial, useTexture } from '@react-three/drei';
 
 extend({
   BakedShaderMaterial: shaderMaterial(
@@ -13,7 +13,7 @@ extend({
       uBakedNeutralTexture: '/public/3d/bakedNeutral.jpg',
       uLightMapTexture: '/public/3d/lightMap.jpg',
 
-      uNightMix: 1,
+      uNightMix: 0,
       uNeutralMix: 0,
 
       uLightTvColor: new Color('#ff115e'),
@@ -58,9 +58,21 @@ extend({
     varying vec2 vUv;
 
     // #pragma glslify: blend = require(glsl-blend/add)
-    #pragma glslify: blend = require(glsl-blend/lighten)
     // #pragma glslify: blend = require(glsl-blend/normal)
     // #pragma glslify: blend = require(glsl-blend/screen)
+
+    // #pragma glslify: blend = require(glsl-blend/lighten)
+    float blendLighten(float base, float blend) {
+      return max(blend, base);
+    }
+
+    vec3 blendLighten(vec3 base, vec3 blend) {
+      return vec3(blendLighten(base.r, blend.r), blendLighten(base.g, blend.g), blendLighten(base.b, blend.b));
+    }
+
+    vec3 blendLighten(vec3 base, vec3 blend, float opacity) {
+      return (blendLighten(base, blend) * opacity + base * (1.0 - opacity));
+    }
 
     void main() {
       vec3 bakedDayColor = texture2D(uBakedDayTexture, vUv).rgb;
@@ -70,13 +82,13 @@ extend({
       vec3 lightMapColor = texture2D(uLightMapTexture, vUv).rgb;
 
       float lightTvStrength = lightMapColor.r * uLightTvStrength;
-      bakedColor = blend(bakedColor, uLightTvColor, lightTvStrength);
+      bakedColor = blendLighten(bakedColor, uLightTvColor, lightTvStrength);
 
       float lightPcStrength = lightMapColor.b * uLightPcStrength;
-      bakedColor = blend(bakedColor, uLightPcColor, lightPcStrength);
+      bakedColor = blendLighten(bakedColor, uLightPcColor, lightPcStrength);
 
       float lightDeskStrength = lightMapColor.g * uLightDeskStrength;
-      bakedColor = blend(bakedColor, uLightDeskColor, lightDeskStrength);
+      bakedColor = blendLighten(bakedColor, uLightDeskColor, lightDeskStrength);
 
       gl_FragColor = vec4(bakedColor, 1.0);
     }
@@ -86,10 +98,24 @@ extend({
 
 export function BakedMaterial() {
   const ref = useRef();
+  const bakedTextureDay = useTexture('/3d/bakedDay.jpg'),
+    bakedTextureNight = useTexture('/3d/bakedNeutral.jpg'),
+    bakedTextureNeutral = useTexture('/3d/bakedNight.jpg'),
+    lightMap = useTexture('/3d/lightMap.jpg');
+
+  // bakedTextureDay.encoding = sRGBEncoding;
+  bakedTextureDay.flipY = false;
+  // bakedTextureNight.encoding = sRGBEncoding;
+  bakedTextureNight.flipY = false;
+  // bakedTextureNeutral.encoding = sRGBEncoding;
+  bakedTextureNeutral.flipY = false;
+  lightMap.flipY = false;
 
   useEffect(() => {
-    // ref?.current && (ref.current.transparent = true);
-    // ref?.current && (ref.current.depthWrite = false);
+    ref?.current && (ref.current.uBakedDayTexture = bakedTextureDay);
+    ref?.current && (ref.current.uBakedNightTexture = bakedTextureNight);
+    ref?.current && (ref.current.uBakedNeutralTexture = bakedTextureNeutral);
+    ref?.current && (ref.current.uLightMapTexture = lightMap);
   }, []);
 
   useFrame((state, delta) => {
