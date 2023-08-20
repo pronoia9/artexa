@@ -25,7 +25,7 @@ export const Tardis = ({ nodes, materials, ...props }) => {
       floatingRange={[-0.2, 0.2]} // Range of y-axis values the object will float within, defaults to [-0.1,0.1]
     >
       <motion.group
-        key={`tardis-group-rotation-${rotate[1]}`}
+        key={`tardis-group-rotation-${rotate[1] || rotate[0]}`}
         name='Tardis'
         position={[2.32, 1.84, 4.82]}
         rotation={[-3.13, -0.87, -3.08]}

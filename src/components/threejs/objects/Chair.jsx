@@ -6,12 +6,12 @@ import { BakedMesh } from '@/components/threejs';
 import { rngInRange } from '@/utils';
 
 export const Chair = ({ nodes, ...props }) => {
-  const [rotateZ, setRotateZ] = useState([-Math.PI, null]);
+  const [rotate, setRotate] = useState([-Math.PI, null]);
 
   useEffect(() => {
     let timeout;
     const wander = () => {
-      setRotateZ((prev) => [prev[1] || -Math.PI, parseFloat(prev) + rngInRange(-Math.PI * 0.1, Math.PI * 0.1)]);
+      setRotate((prev) => [prev[1] || -Math.PI, parseFloat(prev) + rngInRange(-Math.PI * 0.1, Math.PI * 0.1)]);
       timeout = setTimeout(wander, (1 + Math.random() * 5) * 1000);
     };
     wander();
@@ -21,17 +21,17 @@ export const Chair = ({ nodes, ...props }) => {
   return (
     <BakedMesh name='Chair' geometry={nodes.Chair.geometry} material={nodes.Chair.material} position={[0.73, 0.26, 0.59]} {...props}>
       <BakedMesh
-        key={`chair-seat-${rotateZ}`}
+        key={`chair-seat-${rotate[1] || rotate[0]}`}
         name='Chair_Seat'
         geometry={nodes.Chair_Seat.geometry}
         material={nodes.Chair_Seat.material}
         position={[0, 0.59, 0]}
         rotation={[-Math.PI / 2, 0, -Math.PI]}
-        {...(rotateZ[1]
+        {...(rotate[1]
           ? {
               variants: {
-                hidden: { scale: 1, rotateZ: rotateZ[0] },
-                visible: { scale: 1, rotateZ: rotateZ[1], transition: { type: 'ease', duration: 0.5 || Math.abs(rotateZ[1] - rotateZ[0]) } },
+                hidden: { scale: 1, rotateZ: rotate[0] },
+                visible: { scale: 1, rotateZ: rotate[1], transition: { type: 'ease', duration: 0.5 || Math.abs(rotate[1] - rotate[0]) } },
               },
             }
           : {})}
