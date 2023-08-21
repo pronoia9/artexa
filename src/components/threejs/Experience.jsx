@@ -1,18 +1,18 @@
 'use client';
 
-import { Suspense, useEffect, useState } from 'react';
-import { BufferAttribute, BufferGeometry, Points } from 'three';
-import { extend, useFrame } from '@react-three/fiber';
-import { ScrollControls, Environment, Sky, Stars, Cloud, useProgress, useScroll } from '@react-three/drei';
+import { Suspense } from 'react';
+import { BufferAttribute, BufferGeometry, Points, Mesh, Group, PerspectiveCamera, OrthographicCamera, SphereGeometry } from 'three';
+import { extend } from '@react-three/fiber';
+import { ScrollControls, Environment, Sky, Stars, Cloud, useProgress } from '@react-three/drei';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
-import { MotionCanvas, motion as motion3d } from 'framer-motion-3d';
+import { MotionCanvas } from 'framer-motion-3d';
 
 import { Room } from '@/components/threejs';
 import { sceneMotion } from '@/utils';
 
-extend({ BufferAttribute, BufferGeometry, Points });
+extend({ BufferAttribute, BufferGeometry, Points, Mesh, Group, PerspectiveCamera, OrthographicCamera, SphereGeometry });
 
 export const Experience = () => {
   // const { active, progress, errors, item, loaded, total } = useProgress();
