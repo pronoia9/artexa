@@ -6,30 +6,30 @@ import { extend, useFrame } from '@react-three/fiber';
 import { shaderMaterial } from '@react-three/drei';
 import { useControls } from 'leva';
 
-const loader = (url) => {
-  return new TextureLoader().load(
-    url,
-    // onLoad callback
-    (texture) => {
-      texture.flipY = false;
-      texture.encoding = sRGBEncoding;
-      texture.needsUpdate = true;
-    },
-    // onProgress callback currently not supported
-    undefined,
-    // onError callback
-    (err) => void console.error('An error happened with texture', url)
-  );
-};
+// const loader = (url) => {
+//   return new TextureLoader().load(
+//     url,
+//     // onLoad callback
+//     (texture) => {
+//       texture.flipY = false;
+//       texture.encoding = sRGBEncoding;
+//       texture.needsUpdate = true;
+//     },
+//     // onProgress callback currently not supported
+//     undefined,
+//     // onError callback
+//     (err) => void console.error('An error happened with texture', url)
+//   );
+// };
 
 extend({
   TextureLoader,
   BakedShaderMaterial: shaderMaterial(
     {
-      uBakedDayTexture: loader('/3d/bakedDay.jpg'),
-      uBakedNightTexture: loader('/3d/bakedNight.jpg'),
-      uBakedNeutralTexture: loader('/3d/bakedNeutral.jpg'),
-      uLightMapTexture: loader('/3d/lightMap.jpg'),
+      // uBakedDayTexture: loader('/3d/bakedDay.jpg'),
+      // uBakedNightTexture: loader('/3d/bakedNight.jpg'),
+      // uBakedNeutralTexture: loader('/3d/bakedNeutral.jpg'),
+      // uLightMapTexture: loader('/3d/lightMap.jpg'),
 
       uNightMix: 1,
       uNeutralMix: 0,
@@ -115,19 +115,19 @@ extend({
 });
 
 export function BakedMaterial() {
-  const ref = useRef();
-  const [controls, setControls] = useState(
-    useControls('Room Shader', {
-      'Light Mix': { value: 1, step: 0.01, min: 0, max: 1 },
-      'Neutral Mix': { value: 0, step: 0.01, min: 0, max: 1 },
-      'TV Light': { value: '#ff115e' },
-      'TV Light Strength': { value: 1.47, step: 0.01, min: 0, max: 3 },
-      'Desk Light': { value: '#ff6700' },
-      'Desk Light Strength': { value: 1.9, step: 0.01, min: 0, max: 3 },
-      'PC Light': { value: '#0082ff' },
-      'PC Light Strength': { value: 1.4, step: 0.01, min: 0, max: 3 },
-    })
-  );
+  // const ref = useRef();
+  // const [controls, setControls] = useState(
+  //   useControls('Room Shader', {
+  //     'Light Mix': { value: 1, step: 0.01, min: 0, max: 1 },
+  //     'Neutral Mix': { value: 0, step: 0.01, min: 0, max: 1 },
+  //     'TV Light': { value: '#ff115e' },
+  //     'TV Light Strength': { value: 1.47, step: 0.01, min: 0, max: 3 },
+  //     'Desk Light': { value: '#ff6700' },
+  //     'Desk Light Strength': { value: 1.9, step: 0.01, min: 0, max: 3 },
+  //     'PC Light': { value: '#0082ff' },
+  //     'PC Light Strength': { value: 1.4, step: 0.01, min: 0, max: 3 },
+  //   })
+  // );
 
   // useEffect(() => {
   //   if (ref.current) {
@@ -142,9 +142,10 @@ export function BakedMaterial() {
   //   }
   // }, [controls]);
 
-  useFrame((state, delta) => {
-    ref.current.uTime += delta * 1000;
-  });
+  // useFrame((state, delta) => {
+  //   ref.current.uTime += delta * 1000;
+  // });
 
-  return <bakedShaderMaterial key={'asd'} ref={ref} />;
+  // return <bakedShaderMaterial ref={ref} />;
+  return <></>;
 }
