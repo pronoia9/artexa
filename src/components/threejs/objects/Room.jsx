@@ -6,31 +6,30 @@ Command: npx gltfjsx@6.1.11 brunos-room-v1.glb --transform
 */
 
 import React, { useEffect, useRef, useState } from 'react';
-import { MathUtils, Mesh, Group, PerspectiveCamera, LoopOnce, SphereGeometry } from 'three';
-import { extend, useFrame } from '@react-three/fiber';
+import { MathUtils, LoopOnce } from 'three';
+import { useFrame } from '@react-three/fiber';
 import { PerspectiveCamera as Camera, useAnimations, useGLTF, useScroll } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
-import { BakedMesh, Bookshelf, Chair, CoffeeTable, Couch, Desk, Cube, Guitar, TVUnit, PetBed } from '@/components/threejs';
+import { BakedMesh, Bookshelf, Chair, CoffeeTable, Couch, Desk, Cube, Guitar, TVUnit, PetBed, Tardis } from '@/components/threejs';
 import { sceneMotion } from '@/utils';
-
-extend({ Mesh, Group, PerspectiveCamera, SphereGeometry });
 
 export const Room = (props) => {
   const group = useRef();
-  const { nodes, animations } = useGLTF('/3d/brunos-room-transformed.glb');
+  const { nodes, materials, animations } = useGLTF('/3d/brunos-room-transformed.glb');
   const { actions } = useAnimations(animations, group);
   const scroll = useScroll();
   const [cube, setCube] = useState('initial');
 
   useEffect(() => void (actions['Camera Scroll'].play().paused = true), []);
-  
+
   // reset scroll offset to the start once the room is shown and the cube is hidden
   useEffect(() => void (cube === 'hidden' && (scroll.offset = 0)), [cube]);
-  
+
   useFrame((state) => {
     // console.log('cube:', cube, '  |   offset:', scroll.offset);
-    const cameraAction = actions['Camera Scroll'], cubeAction = actions['Cube Animation'];
+    const cameraAction = actions['Camera Scroll'],
+      cubeAction = actions['Cube Animation'];
 
     // Play cube animation on first scroll
     if (cube === 'initial' && scroll.offset > 0) {
@@ -41,12 +40,11 @@ export const Room = (props) => {
 
     // Show room during cube animation before the cube is hidden
     else if (cube === 'animating' && cubeAction.time >= cubeAction.getClip().duration * 0.35) setCube('show room');
-
     // Hide cube once its animation is done
     else if (cube === 'show room' && cubeAction.time === cubeAction.getClip().duration) setCube('hidden');
-
     // Enable camera scroll + controls
     else if (cube === 'hidden') {
+      // ref.current.material.needsUpdate = true;
       cameraAction.time = MathUtils.lerp(cameraAction.time, cameraAction.getClip().duration * scroll.offset, 0.05);
       state.camera.position.lerp({ x: state.pointer.x / 4, y: 0, z: -state.pointer.y / 4 }, 0.1);
     }
@@ -72,11 +70,12 @@ export const Room = (props) => {
             >
               <Bookshelf nodes={nodes} />
               <Chair nodes={nodes} />
-              <CoffeeTable nodes={nodes} />
+              <CoffeeTable nodes={nodes} materials={materials} />
               <Couch nodes={nodes} />
               <Desk nodes={nodes} />
               <Guitar nodes={nodes} />
               <PetBed nodes={nodes} />
+              <Tardis nodes={nodes} materials={materials} />
               <TVUnit nodes={nodes} />
             </BakedMesh>
           )}

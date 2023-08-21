@@ -1,11 +1,11 @@
 'use client';
 
-import { BakedMesh } from '@/components/threejs';
+import { BakedMesh, SteamMaterial } from '@/components/threejs';
 
 export const Desk = ({ nodes, children, ...props }) => {
   return (
     <BakedMesh name='Desk' geometry={nodes.Desk.geometry} material={nodes.Desk.material} position={[2.55, 1.21, 0.45]} {...props}>
-      <BakedMesh name='Camera' geometry={nodes.Camera.geometry} material={nodes.Camera.material} position={[0.35, 1.65, 1.49]} />
+      <BakedMesh name='Camera' geometry={nodes.Camera.geometry} material={nodes.Camera.material} position={[0.39, 1.52, 1.54]} />
 
       <BakedMesh name='Coffee_Mug' geometry={nodes.Coffee_Mug.geometry} material={nodes.Coffee_Mug.material} position={[-0.45, 0.3, -1.45]}>
         <mesh
@@ -14,7 +14,9 @@ export const Desk = ({ nodes, children, ...props }) => {
           material={nodes.Coffee_Steam.material}
           position={[0, 0.42, -0.01]}
           rotation={[-Math.PI / 2, 0, Math.PI / 2]}
-        />
+        >
+          <SteamMaterial />
+        </mesh>
       </BakedMesh>
 
       <mesh
