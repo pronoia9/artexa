@@ -1,13 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import { MeshBasicMaterial } from 'three';
 import { extend } from '@react-three/fiber';
 import { useTexture } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
+import { BakedMaterial } from '@/components/threejs';
 import { dataStore, isDarkTheme, rngInRange, sceneMotion } from '@/utils';
-import { useState } from 'react';
-import { BakedMaterial } from '..';
 
 extend({ MeshBasicMaterial });
 
