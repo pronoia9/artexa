@@ -1,17 +1,35 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import { Color, sRGBEncoding } from 'three';
+import { useEffect, useRef, useState } from 'react';
+import { Color, sRGBEncoding, TextureLoader } from 'three';
 import { extend, useFrame } from '@react-three/fiber';
-import { shaderMaterial, useTexture } from '@react-three/drei';
+import { shaderMaterial } from '@react-three/drei';
+import { useControls } from 'leva';
+
+const loader = (url) => {
+  return new TextureLoader().load(
+    url,
+    // onLoad callback
+    (texture) => {
+      texture.flipY = false;
+      texture.encoding = sRGBEncoding;
+      texture.needsUpdate = true;
+    },
+    // onProgress callback currently not supported
+    undefined,
+    // onError callback
+    (err) => void console.error('An error happened with texture', url)
+  );
+};
 
 extend({
+  TextureLoader,
   BakedShaderMaterial: shaderMaterial(
     {
-      uBakedDayTexture: null,
-      uBakedNightTexture: null,
-      uBakedNeutralTexture: null,
-      uLightMapTexture: null,
+      uBakedDayTexture: loader('/3d/bakedDay.jpg'),
+      uBakedNightTexture: loader('/3d/bakedNight.jpg'),
+      uBakedNeutralTexture: loader('/3d/bakedNeutral.jpg'),
+      uLightMapTexture: loader('/3d/lightMap.jpg'),
 
       uNightMix: 1,
       uNeutralMix: 0,
@@ -98,29 +116,35 @@ extend({
 
 export function BakedMaterial() {
   const ref = useRef();
-  const bakedTextureDay = useTexture('/3d/bakedDay.jpg'),
-    bakedTextureNight = useTexture('/3d/bakedNeutral.jpg'),
-    bakedTextureNeutral = useTexture('/3d/bakedNight.jpg'),
-    lightMap = useTexture('/3d/lightMap.jpg');
+  const [controls, setControls] = useState(
+    useControls('Room Shader', {
+      'Light Mix': { value: 1, step: 0.01, min: 0, max: 1 },
+      'Neutral Mix': { value: 0, step: 0.01, min: 0, max: 1 },
+      'TV Light': { value: '#ff115e' },
+      'TV Light Strength': { value: 1.47, step: 0.01, min: 0, max: 3 },
+      'Desk Light': { value: '#ff6700' },
+      'Desk Light Strength': { value: 1.9, step: 0.01, min: 0, max: 3 },
+      'PC Light': { value: '#0082ff' },
+      'PC Light Strength': { value: 1.4, step: 0.01, min: 0, max: 3 },
+    })
+  );
 
-  // bakedTextureDay.encoding = sRGBEncoding;
-  bakedTextureDay.flipY = false;
-  // bakedTextureNight.encoding = sRGBEncoding;
-  bakedTextureNight.flipY = false;
-  // bakedTextureNeutral.encoding = sRGBEncoding;
-  bakedTextureNeutral.flipY = false;
-  lightMap.flipY = false;
-
-  useEffect(() => {
-    ref?.current && (ref.current.uBakedDayTexture = bakedTextureDay);
-    ref?.current && (ref.current.uBakedNightTexture = bakedTextureNight);
-    ref?.current && (ref.current.uBakedNeutralTexture = bakedTextureNeutral);
-    ref?.current && (ref.current.uLightMapTexture = lightMap);
-  }, []);
+  // useEffect(() => {
+  //   if (ref.current) {
+  //     ref.current.uNightMix = controls['Light Mix'];
+  //     ref.current.uNeutralMix = controls['Neutral Mix'];
+  //     ref.current.uLightTvColor = new Color(controls['TV Light']);
+  //     ref.current.uLightTvStrength = controls['TV Light Strength'];
+  //     ref.current.uLightDeskColor = new Color(controls['Desk Light']);
+  //     ref.current.uLightDeskStrength = controls['Desk Light Strength'];
+  //     ref.current.uLightPcColor = new Color(controls['PC Light']);
+  //     ref.current.uLightPcStrength = controls['PC Light Strength'];
+  //   }
+  // }, [controls]);
 
   useFrame((state, delta) => {
-    // ref.current.uTime += delta * 500;
+    ref.current.uTime += delta * 1000;
   });
 
-  return <bakedShaderMaterial ref={ref} />;
+  return <bakedShaderMaterial key={'asd'} ref={ref} />;
 }
