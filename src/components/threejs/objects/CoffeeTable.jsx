@@ -28,13 +28,7 @@ export const CoffeeTable = ({ nodes, ...props }) => {
     >
       <BakedMesh name='Controller' geometry={nodes.Controller.geometry} material={nodes.Controller.material} position={[-0.17, 0.22, -0.39]} />
 
-      <BakedMesh
-        name='Google_Home'
-        geometry={nodes.Google_Home.geometry}
-        material={nodes.Google_Home.material}
-        position={[0.51, 0.21, 0.47]}
-        rotation={[0, 0, 1]}
-      >
+      <BakedMesh name='Google_Home' geometry={nodes.Google_Home.geometry} material={nodes.Google_Home.material} position={[0.51, 0.21, 0.47]}>
         <mesh
           name='Google_Home_Leds001'
           geometry={nodes.Google_Home_Leds001.geometry}
