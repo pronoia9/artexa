@@ -19,7 +19,7 @@ export const Experience = () => {
 
   return (
     <Container {...sceneMotion.container}>
-      <MotionCanvas dpr={[1, 2]} gl={{ antialias: true }} shadows={true}>
+      <MotionCanvas dpr={[1, 2]} gl={{ antialias: true }} flat>
         <Suspense fallback={null}>
           <ScrollControls pages={3}>
             <Room />
@@ -31,9 +31,9 @@ export const Experience = () => {
           {/* <Sky sunPosition={[100, 20, 100]} /> */}
           {/* <Cloud opacity={0.5} speed={0.8} width={10} depth={2.5} segments={20} /> */}
           <Environment preset='apartment' />
-          <EffectComposer>
+          {/* <EffectComposer>
             <Bloom intensity={0.25} luminanceThreshold={0.9} luminanceSmoothing={0.025} mipmapBlur={true} />
-          </EffectComposer>
+          </EffectComposer> */}
         </Suspense>
       </MotionCanvas>
     </Container>
