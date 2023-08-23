@@ -71,10 +71,10 @@ export const Room = (props) => {
               <Bookshelf nodes={nodes} />
               <Chair nodes={nodes} />
               <CoffeeTable nodes={nodes} materials={materials} />
-              <Couch nodes={nodes} />
+              <Couch nodes={nodes} materials={materials} />
               <Desk nodes={nodes} />
               <Guitar nodes={nodes} />
-              <PetBed nodes={nodes} />
+              <PetBed nodes={nodes} materials={materials} />
               <Tardis nodes={nodes} materials={materials} />
               <TVUnit nodes={nodes} />
             </BakedMesh>
