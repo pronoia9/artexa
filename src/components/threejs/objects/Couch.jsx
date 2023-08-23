@@ -1,15 +1,8 @@
 'use client';
 
 import { BakedMesh } from '@/components/threejs';
-import { useEffect, useRef } from 'react';
 
 export const Couch = ({ nodes, materials, ...props }) => {
-  const zoruaRef = useRef();
-
-  useEffect(() => {
-    console.log(materials);
-  }, []);
-
   return (
     <BakedMesh name='Couch' geometry={nodes.Couch.geometry} material={nodes.Couch.material} position={[-1.46, 0.71, -2.19]} {...props}>
       <BakedMesh name='Octopus' geometry={nodes.Octopus.geometry} material={nodes.Octopus.material} position={[-1.85, 0.47, -0.5]} />
