@@ -58,7 +58,7 @@ export const Room = (props) => {
         </group>
 
         <motion.group name='Scene_Container' position={[0.01, -0.3, -0.01]}>
-          {cube !== 'hidden' && <Cube nodes={nodes} />}
+          {cube !== 'hidden' && <Cube nodes={nodes} materials={materials} />}
           {(cube === 'show room' || cube === 'hidden') && (
             <BakedMesh
               name='Room'
