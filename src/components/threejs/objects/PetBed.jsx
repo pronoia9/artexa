@@ -4,6 +4,7 @@ import { motion as motion3d } from 'framer-motion-3d';
 
 import { BakedMesh } from '@/components/threejs';
 import { sceneMotion } from '@/utils';
+import { MeshWobbleMaterial, useTexture } from '@react-three/drei';
 
 export const PetBed = ({ nodes, materials, ...props }) => {
   return (
@@ -21,7 +22,9 @@ export const PetBed = ({ nodes, materials, ...props }) => {
           <mesh name='Lilipup_Head_2' geometry={nodes.Lilipup_Head_2.geometry} material={materials['Lillipup REye']} />
           <mesh name='Lilipup_Head_3' geometry={nodes.Lilipup_Head_3.geometry} material={materials['Lillipup Mouth']} />
         </group>
-        <mesh name='Lilipup_Tail' geometry={nodes.Lilipup_Tail.geometry} material={materials['Lillipup Body00']} position={[0, 0.08, -0.02]} />
+        <mesh name='Lilipup_Tail' geometry={nodes.Lilipup_Tail.geometry} material={materials['Lillipup Body00']} position={[0, 0.08, -0.02]}>
+          <MeshWobbleMaterial color='#C49471' speed={10} />
+        </mesh>
       </motion3d.mesh>
     </BakedMesh>
   );

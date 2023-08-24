@@ -4,6 +4,7 @@ import { motion as motion3d } from 'framer-motion-3d';
 
 import { BakedMesh } from '@/components/threejs';
 import { sceneMotion } from '@/utils';
+import { MeshWobbleMaterial } from '@react-three/drei';
 
 export const Couch = ({ nodes, materials, ...props }) => {
   return (
@@ -61,7 +62,9 @@ export const Couch = ({ nodes, materials, ...props }) => {
           <mesh name='Zorua_Head_4' geometry={nodes.Zorua_Head_4.geometry} material={materials['Zorua #38']} />
           <mesh name='Zorua_Head_5' geometry={nodes.Zorua_Head_5.geometry} material={materials['Zorua #39']} />
         </group>
-        <mesh name='Zorua_Tail' geometry={nodes.Zorua_Tail.geometry} material={materials['Zorua #35']} position={[0, 0.19, -0.08]} />
+        <mesh name='Zorua_Tail' geometry={nodes.Zorua_Tail.geometry} material={materials['Zorua #35']} position={[0, 0.19, -0.08]}>
+          <MeshWobbleMaterial color='#5E576D' speed={1} />
+        </mesh>
       </motion3d.group>
     </BakedMesh>
   );
