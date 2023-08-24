@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { MeshBasicMaterial, SRGBColorSpace } from 'three';
 import { extend } from '@react-three/fiber';
-import { useTexture } from '@react-three/drei';
+import { MeshWobbleMaterial, useTexture } from '@react-three/drei';
 import { useControls, button } from 'leva';
 import { motion } from 'framer-motion-3d';
 
@@ -12,7 +12,7 @@ import { dataStore, isDarkTheme, rngInRange, sceneMotion } from '@/utils';
 
 extend({ MeshBasicMaterial });
 
-export const BakedMesh = ({ showCube, variants, children, ...props }) => {
+export const BakedMesh = ({ showCube, variants, children, wobble = false, wobbleOptions, ...props }) => {
   const meshRef = useRef(),
     materialRef = useRef();
   const { theme, toggleTheme } = dataStore((store) => ({ theme: store.theme, toggleTheme: store.toggleTheme }));
@@ -26,10 +26,10 @@ export const BakedMesh = ({ showCube, variants, children, ...props }) => {
   nightTexture.colorSpace = SRGBColorSpace;
   lightMap.flipY = false;
 
-  const updateMaterials = () => {
-    materialRef.current.map.needsUpdate = true;
-    materialRef.current.map.needsPMREUpdate = true;
-  };
+  const updateMaterials = () => void ((materialRef.current.map.needsUpdate = true), (materialRef.current.map.needsPMREUpdate = true));
+
+  // console.log('meshRef', meshRef);
+  // console.log('materialRef', materialRef);
 
   const options = useControls('Texture', {
     'Toggle Time': button(() => {
@@ -41,15 +41,25 @@ export const BakedMesh = ({ showCube, variants, children, ...props }) => {
   });
 
   return (
-    <motion.mesh ref={meshRef} {...sceneMotion.bakedMesh(rngInRange(0.1, 0.25), rngInRange(0.1, 0.25), variants)} castShadow receiveShadow {...props}>
-      <meshBasicMaterial
-        ref={materialRef}
-        key={`${theme}-${options}`}
-        map={isDarkTheme(theme) ? nightTexture : dayTexture}
-        // lightMap={lightMap}
-        // lightMapIntensity={options['Light Intensity']}
-      />
-      {/* <BakedMaterial /> */}
+    <motion.mesh ref={meshRef} {...sceneMotion.bakedMesh(rngInRange(0.1, 0.25), rngInRange(0.1, 0.25), variants)} {...props}>
+      {!wobble && (
+        <meshBasicMaterial
+          ref={materialRef}
+          key={`${theme}-${options}`}
+          map={isDarkTheme(theme) ? nightTexture : dayTexture}
+          // lightMap={lightMap}
+          // lightMapIntensity={options['Light Intensity']}
+        />
+      )}
+      {wobble && (
+        <MeshWobbleMaterial
+          ref={materialRef}
+          key={`${theme}-${options}`}
+          map={isDarkTheme(theme) ? nightTexture : dayTexture}
+          emissive={0}
+          {...wobbleOptions}
+        />
+      )}
       {children}
     </motion.mesh>
   );
