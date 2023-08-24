@@ -35,17 +35,17 @@ export const Tardis = ({ nodes, materials, ...props }) => {
         } : {})}
         {...props}
       >
-        <mesh name='Tardis_1' geometry={nodes.Tardis_1.geometry} material={materials.blue_wood} />
-        <mesh name='Tardis_2' geometry={nodes.Tardis_2.geometry} material={materials.white_wood} />
-        <mesh name='Tardis_3' geometry={nodes.Tardis_3.geometry} material={materials.black_glass} />
-        <mesh name='Tardis_4' geometry={nodes.Tardis_4.geometry} material={materials.black_sign_material} />
-        <mesh name='Tardis_5' geometry={nodes.Tardis_5.geometry} material={materials.internal_floor_material} />
-        <mesh name='Tardis_6' geometry={nodes.Tardis_6.geometry} material={materials.white_glass} />
-        <mesh name='Tardis_7' geometry={nodes.Tardis_7.geometry} material={materials.bulb_material} />
-        <mesh name='Tardis_8' geometry={nodes.Tardis_8.geometry} material={materials.phone_door_sign_material} />
-        <mesh name='Tardis_9' geometry={nodes.Tardis_9.geometry} material={materials.handle_material} />
-        <mesh name='Tardis_10' geometry={nodes.Tardis_10.geometry} material={materials.st_john_sign_material} />
-        <mesh name='Tardis_11' geometry={nodes.Tardis_11.geometry} material={materials.yale_lock_material} />
+        <mesh name='Tardis_1' geometry={nodes.Tardis_1.geometry} material={materials['TARDIS blue_wood']} />
+        <mesh name='Tardis_2' geometry={nodes.Tardis_2.geometry} material={materials['TARDIS white_wood']} />
+        <mesh name='Tardis_3' geometry={nodes.Tardis_3.geometry} material={materials['TARDIS black_glass']} />
+        <mesh name='Tardis_4' geometry={nodes.Tardis_4.geometry} material={materials['TARDIS black_sign_material']} />
+        <mesh name='Tardis_5' geometry={nodes.Tardis_5.geometry} material={materials['TARDIS internal_floor_material']} />
+        <mesh name='Tardis_6' geometry={nodes.Tardis_6.geometry} material={materials['TARDIS white_glass']} />
+        <mesh name='Tardis_7' geometry={nodes.Tardis_7.geometry} material={materials['TARDIS bulb_material']} />
+        <mesh name='Tardis_8' geometry={nodes.Tardis_8.geometry} material={materials['TARDIS phone_door_sign_material']} />
+        <mesh name='Tardis_9' geometry={nodes.Tardis_9.geometry} material={materials['TARDIS handle_material']} />
+        <mesh name='Tardis_10' geometry={nodes.Tardis_10.geometry} material={materials['TARDIS st_john_sign_material']} />
+        <mesh name='Tardis_11' geometry={nodes.Tardis_11.geometry} material={materials['TARDIS yale_lock_material']} />
       </motion.group>
     </Float>
   );

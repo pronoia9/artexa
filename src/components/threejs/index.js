@@ -1,4 +1,5 @@
 import { Experience } from './Experience';
+import { Extend } from './Extend';
 
 import { BakedMesh } from './materials/BakedMesh';
 import { BakedMaterial } from './materials/BakedMaterial';
@@ -18,5 +19,6 @@ import { TVUnit } from './objects/TVUnit';
 
 export {
   Experience,
+  Extend,
   BakedMesh, BakedMaterial, SteamMaterial,
   Bookshelf, Chair, CoffeeTable, Couch, Cube, Desk, Guitar, PetBed, Room, Tardis, TVUnit, };
