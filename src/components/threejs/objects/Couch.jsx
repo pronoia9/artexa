@@ -1,10 +1,8 @@
 'use client';
 
-import { motion as motion3d } from 'framer-motion-3d';
+// import { MeshWobbleMaterial } from '@react-three/drei';
 
 import { BakedMesh } from '@/components/threejs';
-import { sceneMotion } from '@/utils';
-import { MeshWobbleMaterial } from '@react-three/drei';
 
 export const Couch = ({ nodes, materials, ...props }) => {
   return (
@@ -51,21 +49,6 @@ export const Couch = ({ nodes, materials, ...props }) => {
           wobble={false} // ! Disable for now until the texture weirdness is sorted
         />
       </BakedMesh>
-
-      <motion3d.group name='Zorua' position={[0.68, -0.08, 0.52]} rotation={[-0.62, -0.4, -0.27]} {...sceneMotion.bakedMesh()}>
-        <mesh name='Zorua_1' geometry={nodes.Zorua_1.geometry} material={materials['Zorua #35']} />
-        <mesh name='Zorua_2' geometry={nodes.Zorua_2.geometry} material={materials['Zorua #36']} />
-        <group name='Zorua_Head' position={[0, 0.19, 0.14]}>
-          <mesh name='Zorua_Head_1' geometry={nodes.Zorua_Head_1.geometry} material={materials['Zorua #35']} />
-          <mesh name='Zorua_Head_2' geometry={nodes.Zorua_Head_2.geometry} material={materials['Zorua #36']} />
-          <mesh name='Zorua_Head_3' geometry={nodes.Zorua_Head_3.geometry} material={materials['Zorua #37']} />
-          <mesh name='Zorua_Head_4' geometry={nodes.Zorua_Head_4.geometry} material={materials['Zorua #38']} />
-          <mesh name='Zorua_Head_5' geometry={nodes.Zorua_Head_5.geometry} material={materials['Zorua #39']} />
-        </group>
-        <mesh name='Zorua_Tail' geometry={nodes.Zorua_Tail.geometry} material={materials['Zorua #35']} position={[0, 0.19, -0.08]}>
-          <MeshWobbleMaterial color='#5E576D' speed={1} />
-        </mesh>
-      </motion3d.group>
     </BakedMesh>
   );
 };
