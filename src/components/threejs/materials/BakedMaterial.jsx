@@ -5,15 +5,16 @@ import { Color, SRGBColorSpace, TextureLoader } from 'three';
 import { extend } from '@react-three/fiber';
 import { shaderMaterial, useTexture } from '@react-three/drei';
 import { useControls } from 'leva';
+import { dataStore, isDarkTheme } from '@/utils';
 
 const BakedShaderMaterial = shaderMaterial(
   {
-    uBakedDayTexture: null,
-    uBakedNightTexture: null,
+    uBakedLightTexture: null,
+    uBakedDarkTexture: null,
     uBakedNeutralTexture: null,
     uLightMapTexture: null,
 
-    uNightMix: 1,
+    uLightMix: 1,
     uNeutralMix: 0,
 
     uLightTvColor: new Color('#ff115e'),
@@ -38,12 +39,12 @@ const BakedShaderMaterial = shaderMaterial(
     }
     `,
   `
-    uniform sampler2D uBakedDayTexture;
-    uniform sampler2D uBakedNightTexture;
+    uniform sampler2D uBakedLightTexture;
+    uniform sampler2D uBakedDarkTexture;
     uniform sampler2D uBakedNeutralTexture;
     uniform sampler2D uLightMapTexture;
 
-    uniform float uNightMix;
+    uniform float uLightMix;
     uniform float uNeutralMix;
 
     uniform vec3 uLightTvColor;
@@ -75,10 +76,10 @@ const BakedShaderMaterial = shaderMaterial(
     }
 
     void main() {
-      vec3 bakedDayColor = texture2D(uBakedDayTexture, vUv).rgb;
-      vec3 bakedNightColor = texture2D(uBakedNightTexture, vUv).rgb;
+      vec3 bakedDayColor = texture2D(uBakedLightTexture, vUv).rgb;
+      vec3 bakedNightColor = texture2D(uBakedDarkTexture, vUv).rgb;
       vec3 bakedNeutralColor = texture2D(uBakedNeutralTexture, vUv).rgb;
-      vec3 bakedColor = mix(mix(bakedDayColor, bakedNightColor, uNightMix), bakedNeutralColor, uNeutralMix);
+      vec3 bakedColor = mix(mix(bakedDayColor, bakedNightColor, uLightMix), bakedNeutralColor, uNeutralMix);
       vec3 lightMapColor = texture2D(uLightMapTexture, vUv).rgb;
 
       float lightTvStrength = lightMapColor.r * uLightTvStrength;
@@ -97,28 +98,31 @@ const BakedShaderMaterial = shaderMaterial(
 
 export function BakedMaterial(props) {
   const ref = useRef();
+  const { theme } = dataStore((state) => ({ theme: state.theme }));
 
-  const dayTexture = useTexture('/3d/bakedDay.jpg'),
-    nightTexture = useTexture('/3d/bakedNight.jpg'),
+  const lightTexture = useTexture('/3d/bakedDay.jpg'),
+    darkTexture = useTexture('/3d/bakedNight.jpg'),
     neutralTexture = useTexture('/3d/bakedNeutral.jpg'),
     lightMap = useTexture('/3d/lightMap.jpg');
-  dayTexture.flipY = false;
-  dayTexture.colorSpace = SRGBColorSpace;
-  nightTexture.flipY = false;
-  nightTexture.colorSpace = SRGBColorSpace;
+
+  lightTexture.flipY = false;
+  lightTexture.colorSpace = SRGBColorSpace;
+  darkTexture.flipY = false;
+  darkTexture.colorSpace = SRGBColorSpace;
   neutralTexture.flipY = false;
   neutralTexture.colorSpace = SRGBColorSpace;
   lightMap.flipY = false;
+
   useEffect(() => {
-    ref.current.uBakedDayTexture = dayTexture;
-    ref.current.uBakedNightTexture = nightTexture;
+    ref.current.uBakedLightTexture = lightTexture;
+    ref.current.uBakedDarkTexture = darkTexture;
     ref.current.uBakedNeutralTexture = neutralTexture;
     ref.current.uLightMapTexture = lightMap;
     ref.current.needsUpdate = true;
   }, []);
 
   const controls = useControls('Room Shader', {
-    'Light Mix': { value: 1, step: 0.01, min: 0, max: 1 },
+    'Light Mix': { value: isDarkTheme(theme) ? 1 : 0, step: 0.01, min: 0, max: 1 },
     'Neutral Mix': { value: 0, step: 0.01, min: 0, max: 1 },
     'TV Light': { value: '#ff115e' },
     'TV Light Strength': { value: 1.47, step: 0.01, min: 0, max: 3 },
@@ -129,11 +133,11 @@ export function BakedMaterial(props) {
   });
 
   useEffect(() => {
-    ref.current.uBakedDayTexture = dayTexture;
-    ref.current.uBakedNightTexture = nightTexture;
+    ref.current.uBakedLightTexture = lightTexture;
+    ref.current.uBakedDarkTexture = darkTexture;
     ref.current.uBakedNeutralTexture = neutralTexture;
     ref.current.uLightMapTexture = lightMap;
-    ref.current.uNightMix = controls['Light Mix'];
+    ref.current.uLightMix = controls['Light Mix'];
     ref.current.uNeutralMix = controls['Neutral Mix'];
     ref.current.uLightTvColor = new Color(controls['TV Light']);
     ref.current.uLightTvStrength = controls['TV Light Strength'];
@@ -144,7 +148,14 @@ export function BakedMaterial(props) {
     ref.current.needsUpdate = true;
   }, [controls]);
 
-  return <bakedShaderMaterial key={Object.values(controls).join()} ref={ref} {...controls} {...props} />;
+  return (
+    <bakedShaderMaterial
+      // key={Object.values(controls).join()}
+      ref={ref}
+      {...controls}
+      {...props}
+    />
+  );
 }
 
 extend({ TextureLoader, shaderMaterial, BakedShaderMaterial });
