@@ -1,9 +1,9 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { Color, sRGBEncoding, TextureLoader } from 'three';
+import { Color, SRGBColorSpace, TextureLoader } from 'three';
 import { extend, useFrame } from '@react-three/fiber';
-import { shaderMaterial } from '@react-three/drei';
+import { shaderMaterial, useTexture } from '@react-three/drei';
 import { useControls } from 'leva';
 
 // const loader = (url) => {
@@ -12,7 +12,7 @@ import { useControls } from 'leva';
 //     // onLoad callback
 //     (texture) => {
 //       texture.flipY = false;
-//       texture.encoding = sRGBEncoding;
+//       texture.colorSpace = SRGBColorSpace;
 //       texture.needsUpdate = true;
 //     },
 //     // onProgress callback currently not supported
@@ -22,28 +22,26 @@ import { useControls } from 'leva';
 //   );
 // };
 
-extend({
-  TextureLoader,
-  BakedShaderMaterial: shaderMaterial(
-    {
-      // uBakedDayTexture: loader('/3d/bakedDay.jpg'),
-      // uBakedNightTexture: loader('/3d/bakedNight.jpg'),
-      // uBakedNeutralTexture: loader('/3d/bakedNeutral.jpg'),
-      // uLightMapTexture: loader('/3d/lightMap.jpg'),
+export const BakedShaderMaterial = shaderMaterial(
+  {
+    uBakedDayTexture: null,
+    uBakedNightTexture: null,
+    uBakedNeutralTexture: null,
+    uLightMapTexture: null,
 
-      uNightMix: 1,
-      uNeutralMix: 0,
+    uNightMix: 1,
+    uNeutralMix: 0,
 
-      uLightTvColor: new Color('#ff115e'),
-      uLightTvStrength: 1.47,
+    uLightTvColor: new Color('#ff115e'),
+    uLightTvStrength: 1.47,
 
-      uLightDeskColor: new Color('#ff6700'),
-      uLightDeskStrength: 1.9,
+    uLightDeskColor: new Color('#ff6700'),
+    uLightDeskStrength: 1.9,
 
-      uLightPcColor: new Color('#0082ff'),
-      uLightPcStrength: 1.4,
-    },
-    `
+    uLightPcColor: new Color('#0082ff'),
+    uLightPcStrength: 1.4,
+  },
+  `
     varying vec2 vUv;
 
     void main() {
@@ -55,7 +53,7 @@ extend({
       vUv = uv;
     }
     `,
-    `
+  `
     uniform sampler2D uBakedDayTexture;
     uniform sampler2D uBakedNightTexture;
     uniform sampler2D uBakedNeutralTexture;
@@ -111,41 +109,76 @@ extend({
       gl_FragColor = vec4(bakedColor, 1.0);
     }
     `
-  ),
-});
+);
 
-export function BakedMaterial() {
-  // const ref = useRef();
-  // const [controls, setControls] = useState(
-  //   useControls('Room Shader', {
-  //     'Light Mix': { value: 1, step: 0.01, min: 0, max: 1 },
-  //     'Neutral Mix': { value: 0, step: 0.01, min: 0, max: 1 },
-  //     'TV Light': { value: '#ff115e' },
-  //     'TV Light Strength': { value: 1.47, step: 0.01, min: 0, max: 3 },
-  //     'Desk Light': { value: '#ff6700' },
-  //     'Desk Light Strength': { value: 1.9, step: 0.01, min: 0, max: 3 },
-  //     'PC Light': { value: '#0082ff' },
-  //     'PC Light Strength': { value: 1.4, step: 0.01, min: 0, max: 3 },
-  //   })
-  // );
+export function BakedMaterial(props) {
+  const ref = useRef();
 
-  // useEffect(() => {
-  //   if (ref.current) {
-  //     ref.current.uNightMix = controls['Light Mix'];
-  //     ref.current.uNeutralMix = controls['Neutral Mix'];
-  //     ref.current.uLightTvColor = new Color(controls['TV Light']);
-  //     ref.current.uLightTvStrength = controls['TV Light Strength'];
-  //     ref.current.uLightDeskColor = new Color(controls['Desk Light']);
-  //     ref.current.uLightDeskStrength = controls['Desk Light Strength'];
-  //     ref.current.uLightPcColor = new Color(controls['PC Light']);
-  //     ref.current.uLightPcStrength = controls['PC Light Strength'];
-  //   }
-  // }, [controls]);
+  const dayTexture = useTexture('/3d/bakedDay.jpg'),
+    nightTexture = useTexture('/3d/bakedNight.jpg'),
+    neutralTexture = useTexture('/3d/bakedNeutral.jpg'),
+    lightMap = useTexture('/3d/lightMap.jpg');
+  dayTexture.flipY = false;
+  dayTexture.colorSpace = SRGBColorSpace;
+  nightTexture.flipY = false;
+  nightTexture.colorSpace = SRGBColorSpace;
+  neutralTexture.flipY = false;
+  neutralTexture.colorSpace = SRGBColorSpace;
+  lightMap.flipY = false;
+  useEffect(() => {
+    ref.current.uBakedDayTexture = dayTexture;
+    ref.current.uBakedNightTexture = nightTexture;
+    ref.current.uBakedNeutralTexture = neutralTexture;
+    ref.current.uLightMapTexture = lightMap;
+    ref.current.needsUpdate = true;
+  }, []);
 
-  // useFrame((state, delta) => {
-  //   ref.current.uTime += delta * 1000;
-  // });
+  const controls = useControls('Room Shader', {
+    'Light Mix': { value: 1, step: 0.01, min: 0, max: 1 },
+    'Neutral Mix': { value: 0, step: 0.01, min: 0, max: 1 },
+    'TV Light': { value: '#ff115e' },
+    'TV Light Strength': { value: 1.47, step: 0.01, min: 0, max: 3 },
+    'Desk Light': { value: '#ff6700' },
+    'Desk Light Strength': { value: 1.9, step: 0.01, min: 0, max: 3 },
+    'PC Light': { value: '#0082ff' },
+    'PC Light Strength': { value: 1.4, step: 0.01, min: 0, max: 3 },
+  });
 
-  // return <bakedShaderMaterial ref={ref} />;
-  return <></>;
+  // const [lightMix, setLightMix] = useState(controls['Light Mix']);
+  // const [neutralMix, setNeutralMix] = useState(controls['Neutral Mix']);
+  // const [tvLight, setTvLight] = useState(controls['TV Light']);
+  // const [tvLightStrength, setTvLightStrength] = useState(controls['TV Light Strength']);
+  // const [deskLight, setDeskLight] = useState(controls['Desk Light']);
+  // const [deskLightStrength, setDeskLightStrength] = useState(controls['Desk Light Strength']);
+  // const [pcLight, setPcLight] = useState(controls['PC Light']);
+  // const [pcLightStrength, setPcLightStrength] = useState(controls['PC Light Strength']);
+  // useEffect(() => void (ref.current.uNightMix = controls['Light Mix']), [lightMix]);
+  // useEffect(() => void (ref.current.uNeutralMix = controls['Neutral Mix']), [neutralMix]);
+  // useEffect(() => void (ref.current.uLightTvColor = new Color(controls['TV Light'])), [tvLight]);
+  // useEffect(() => void (ref.current.uLightTvStrength = controls['TV Light Strength']), [tvLightStrength]);
+  // useEffect(() => void (ref.current.uLightDeskColor = new Color(controls['Desk Light'])), [deskLight]);
+  // useEffect(() => void (ref.current.uLightDeskStrength = controls['Desk Light Strength']), [deskLightStrength]);
+  // useEffect(() => void (ref.current.uLightPcColor = new Color(controls['PC Light'])), [pcLight]);
+  // useEffect(() => void (ref.current.uLightPcStrength = controls['PC Light Strength']), [pcLightStrength]);
+  // useEffect(() => void (ref.current.needsUpdate = true), [controls]);
+
+  useEffect(() => {
+    ref.current.uBakedDayTexture = dayTexture;
+    ref.current.uBakedNightTexture = nightTexture;
+    ref.current.uBakedNeutralTexture = neutralTexture;
+    ref.current.uLightMapTexture = lightMap;
+    ref.current.uNightMix = controls['Light Mix'];
+    ref.current.uNeutralMix = controls['Neutral Mix'];
+    ref.current.uLightTvColor = new Color(controls['TV Light']);
+    ref.current.uLightTvStrength = controls['TV Light Strength'];
+    ref.current.uLightDeskColor = new Color(controls['Desk Light']);
+    ref.current.uLightDeskStrength = controls['Desk Light Strength'];
+    ref.current.uLightPcColor = new Color(controls['PC Light']);
+    ref.current.uLightPcStrength = controls['PC Light Strength'];
+    ref.current.needsUpdate = true;
+  }, [controls]);
+
+  return <bakedShaderMaterial key={Object.values(controls).join()} ref={ref} {...controls} {...props} />;
 }
+
+extend({ TextureLoader, shaderMaterial, BakedShaderMaterial });
