@@ -1,7 +1,5 @@
 'use client';
 
-// import { MeshWobbleMaterial } from '@react-three/drei';
-
 import { BakedMesh } from '@/components/threejs';
 
 export const Couch = ({ nodes, materials, ...props }) => {
@@ -14,7 +12,6 @@ export const Couch = ({ nodes, materials, ...props }) => {
           material={nodes.Tentacle001.material}
           position={[-0.29, 0.16 + 0.05, 0.03]}
           variants={null}
-          wobble={false} // ! Disable for now until the texture weirdness is sorted
         />
         <BakedMesh
           name='Tentacle005'
@@ -22,7 +19,6 @@ export const Couch = ({ nodes, materials, ...props }) => {
           material={nodes.Tentacle005.material}
           position={[0.92, 0.06 + 0.02, -0.28]}
           variants={null}
-          wobble={false} // ! Disable for now until the texture weirdness is sorted
         />
         <BakedMesh
           name='Tentacle002'
@@ -30,7 +26,6 @@ export const Couch = ({ nodes, materials, ...props }) => {
           material={nodes.Tentacle002.material}
           position={[-0.29, 0.15 + 0.05, -0.15]}
           variants={null}
-          wobble={false} // ! Disable for now until the texture weirdness is sorted
         />
         <BakedMesh
           name='Tentacle004'
@@ -38,7 +33,6 @@ export const Couch = ({ nodes, materials, ...props }) => {
           material={nodes.Tentacle004.material}
           position={[0.02, 0.16 + 0.05, -0.28]}
           variants={null}
-          wobble={false} // ! Disable for now until the texture weirdness is sorted
         />
         <BakedMesh
           name='Tentacle003'
@@ -46,7 +40,6 @@ export const Couch = ({ nodes, materials, ...props }) => {
           material={nodes.Tentacle003.material}
           position={[-0.16, 0.15 + 0.05, -0.27]}
           variants={null}
-          wobble={false} // ! Disable for now until the texture weirdness is sorted
         />
       </BakedMesh>
     </BakedMesh>
