@@ -11,7 +11,7 @@ export const Chair = ({ nodes, ...props }) => {
   useEffect(() => {
     let timeout;
     const wander = () => {
-      setRotate((prev) => [prev[1] || -Math.PI, parseFloat(prev) + rngInRange(-Math.PI * 0.1, Math.PI * 0.1)]);
+      setRotate((prev) => [prev[1] || -Math.PI, parseFloat(prev) + rngInRange(-Math.PI * 0.1, Math.PI * 0.1) * 0.1]);
       timeout = setTimeout(wander, (1 + Math.random() * 5) * 1000);
     };
     wander();

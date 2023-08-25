@@ -1,31 +1,28 @@
 'use client';
 
+import { MeshWobbleMaterial } from '@react-three/drei';
 import { motion as motion3d } from 'framer-motion-3d';
 
 import { BakedMesh } from '@/components/threejs';
 import { sceneMotion } from '@/utils';
-import { MeshWobbleMaterial, useTexture } from '@react-three/drei';
 
 export const PetBed = ({ nodes, materials, ...props }) => {
   return (
     <BakedMesh name='Pet_Bed' geometry={nodes.Pet_Bed.geometry} material={nodes.Pet_Bed.material} position={[1.12, 0.17, 2.83]} {...props}>
-      <motion3d.mesh
-        name='Lilipup'
-        geometry={nodes.Lilipup.geometry}
-        material={materials['Lillipup Body00']}
-        position={[0.1, 0.06, 0.03]}
-        rotation={[-2.83, 0.49, 2.99]}
-        {...sceneMotion.bakedMesh()}
-      >
-        <group name='Lilipup_Head' position={[0, 0.06, 0.15]}>
-          <mesh name='Lilipup_Head_1' geometry={nodes.Lilipup_Head_1.geometry} material={materials['Lillipup Body00']} />
-          <mesh name='Lilipup_Head_2' geometry={nodes.Lilipup_Head_2.geometry} material={materials['Lillipup REye']} />
-          <mesh name='Lilipup_Head_3' geometry={nodes.Lilipup_Head_3.geometry} material={materials['Lillipup Mouth']} />
+      <motion3d.group name='Zorua' position={[-0.09, 0.03, -0.05]} rotation={[-2.46, 0.72, 2.65]} {...sceneMotion.bakedMesh()}>
+        <mesh name='Zorua_1' geometry={nodes.Zorua_1.geometry} material={materials['Zorua #35']} />
+        <mesh name='Zorua_2' geometry={nodes.Zorua_2.geometry} material={materials['Zorua #36']} />
+        <group name='Zorua_Head' position={[0, 0.19, 0.14]}>
+          <mesh name='Zorua_Head_1' geometry={nodes.Zorua_Head_1.geometry} material={materials['Zorua #35']} />
+          <mesh name='Zorua_Head_2' geometry={nodes.Zorua_Head_2.geometry} material={materials['Zorua #36']} />
+          <mesh name='Zorua_Head_3' geometry={nodes.Zorua_Head_3.geometry} material={materials['Zorua #37']} />
+          <mesh name='Zorua_Head_4' geometry={nodes.Zorua_Head_4.geometry} material={materials['Zorua #38']} />
+          <mesh name='Zorua_Head_5' geometry={nodes.Zorua_Head_5.geometry} material={materials['Zorua #39']} />
         </group>
-        <mesh name='Lilipup_Tail' geometry={nodes.Lilipup_Tail.geometry} material={materials['Lillipup Body00']} position={[0, 0.08, -0.02]}>
-          <MeshWobbleMaterial color='#C49471' speed={10} />
+        <mesh name='Zorua_Tail' geometry={nodes.Zorua_Tail.geometry} material={materials['Zorua #35']} position={[0, 0.19, -0.08]}>
+          <MeshWobbleMaterial color='#5E576D' speed={7.5} />
         </mesh>
-      </motion3d.mesh>
+      </motion3d.group>
     </BakedMesh>
   );
 };

@@ -1,7 +1,7 @@
 'use client';
 
 import { Suspense } from 'react';
-import { ScrollControls, Environment, Sky, Stars, Cloud, useProgress } from '@react-three/drei';
+import { ScrollControls, Environment, Stars, useProgress } from '@react-three/drei';
 import { EffectComposer, Bloom } from '@react-three/postprocessing';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -9,6 +9,9 @@ import { MotionCanvas } from 'framer-motion-3d';
 
 import { Extend, Room } from '@/components/threejs';
 import { sceneMotion, dataStore, isDarkTheme } from '@/utils';
+
+// import dayEnv from '/3d/cayley_interior_1k.exr';
+// import nightEnv from '/3d/fireplace_1k.exr';
 
 export const Experience = () => {
   // const { active, progress, errors, item, loaded, total } = useProgress();
@@ -40,21 +43,13 @@ const Effects = () => {
   const { theme } = dataStore((state) => ({ theme: state.theme }));
 
   return (
-    <group key={`effects-${theme}`}>
-      {isDarkTheme(theme) ? (
-        <>
-          <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-        </>
-      ) : (
-        <>
-          <Sky sunPosition={[100, 20, 100]} />
-          <group position={[-7, -3.5, -10]}>
-            <Cloud opacity={0.5} speed={0.8} width={10} depth={2.5} segments={20} />
-          </group>
-        </>
-      )}
+    <group>
+      <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
 
-      <Environment preset='apartment' />
+      <Environment key={`environment-${theme}`} preset='apartment' />
+      {/* <Environment preset={isDarkTheme(theme) ? nightEnv : dayEnv} /> */}
+      {/* <Environment preset={isDarkTheme(theme) ? require('/public/3d/fireplace_1k.exr') : require('/public/3d/cayley_interior_1k.exr')} /> */}
+
       {/* <EffectComposer>
           <Bloom intensity={0.25} luminanceThreshold={0.9} luminanceSmoothing={0.025} mipmapBlur={true} />
         </EffectComposer> */}
