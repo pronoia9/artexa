@@ -1,28 +1,12 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Color, SRGBColorSpace, TextureLoader } from 'three';
-import { extend, useFrame } from '@react-three/fiber';
+import { extend } from '@react-three/fiber';
 import { shaderMaterial, useTexture } from '@react-three/drei';
 import { useControls } from 'leva';
 
-// const loader = (url) => {
-//   return new TextureLoader().load(
-//     url,
-//     // onLoad callback
-//     (texture) => {
-//       texture.flipY = false;
-//       texture.colorSpace = SRGBColorSpace;
-//       texture.needsUpdate = true;
-//     },
-//     // onProgress callback currently not supported
-//     undefined,
-//     // onError callback
-//     (err) => void console.error('An error happened with texture', url)
-//   );
-// };
-
-export const BakedShaderMaterial = shaderMaterial(
+const BakedShaderMaterial = shaderMaterial(
   {
     uBakedDayTexture: null,
     uBakedNightTexture: null,
@@ -143,24 +127,6 @@ export function BakedMaterial(props) {
     'PC Light': { value: '#0082ff' },
     'PC Light Strength': { value: 1.4, step: 0.01, min: 0, max: 3 },
   });
-
-  // const [lightMix, setLightMix] = useState(controls['Light Mix']);
-  // const [neutralMix, setNeutralMix] = useState(controls['Neutral Mix']);
-  // const [tvLight, setTvLight] = useState(controls['TV Light']);
-  // const [tvLightStrength, setTvLightStrength] = useState(controls['TV Light Strength']);
-  // const [deskLight, setDeskLight] = useState(controls['Desk Light']);
-  // const [deskLightStrength, setDeskLightStrength] = useState(controls['Desk Light Strength']);
-  // const [pcLight, setPcLight] = useState(controls['PC Light']);
-  // const [pcLightStrength, setPcLightStrength] = useState(controls['PC Light Strength']);
-  // useEffect(() => void (ref.current.uNightMix = controls['Light Mix']), [lightMix]);
-  // useEffect(() => void (ref.current.uNeutralMix = controls['Neutral Mix']), [neutralMix]);
-  // useEffect(() => void (ref.current.uLightTvColor = new Color(controls['TV Light'])), [tvLight]);
-  // useEffect(() => void (ref.current.uLightTvStrength = controls['TV Light Strength']), [tvLightStrength]);
-  // useEffect(() => void (ref.current.uLightDeskColor = new Color(controls['Desk Light'])), [deskLight]);
-  // useEffect(() => void (ref.current.uLightDeskStrength = controls['Desk Light Strength']), [deskLightStrength]);
-  // useEffect(() => void (ref.current.uLightPcColor = new Color(controls['PC Light'])), [pcLight]);
-  // useEffect(() => void (ref.current.uLightPcStrength = controls['PC Light Strength']), [pcLightStrength]);
-  // useEffect(() => void (ref.current.needsUpdate = true), [controls]);
 
   useEffect(() => {
     ref.current.uBakedDayTexture = dayTexture;
