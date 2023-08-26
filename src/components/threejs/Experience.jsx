@@ -40,7 +40,7 @@ const Effects = () => {
   // const { theme } = dataStore((state) => ({ theme: state.theme }));
   return (
     <>
-      <color attach='background' args={['#191913']} />
+      <color attach='background' args={['#1e1e28']} />
       <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
       <Environment files='/3d/christmas_photo_studio_04_1k.hdr' />
       {/* <EffectComposer>
