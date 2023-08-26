@@ -15,7 +15,7 @@ export const Experience = () => {
 
   return (
     <Container {...sceneMotion.container}>
-      <MotionCanvas dpr={[1, 2]} gl={{ antialias: true }} flat shadows>
+      <MotionCanvas dpr={[1, 2]} gl={{ antialias: true }} flat>
         <Extend />
         <Suspense fallback={null}>
           <ScrollControls pages={3}>
@@ -42,7 +42,7 @@ const Effects = () => {
     <>
       <color attach='background' args={['#191913']} />
       <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
-      <Environment preset='apartment' />
+      <Environment files='/3d/christmas_photo_studio_04_1k.hdr' />
       {/* <EffectComposer>
         <Bloom intensity={0.25} luminanceThreshold={0.9} luminanceSmoothing={0.025} mipmapBlur={true} />
       </EffectComposer> */}
