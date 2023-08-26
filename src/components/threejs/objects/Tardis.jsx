@@ -1,11 +1,16 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { Float } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
-import { rngInRange, sceneMotion } from '@/utils';
-import { useEffect, useState } from 'react';
+import { dataStore, isDarkTheme, rngInRange, sceneMotion } from '@/utils';
+
+const Lights = (props) => <meshStandardMaterial color='white' emissive='#FDFF00' {...props} />;
 
 export const Tardis = ({ nodes, materials, ...props }) => {
   const [rotate, setRotate] = useState([-0.87, null]);
+  const { theme } = dataStore((state) => ({ theme: state.theme }));
 
   useEffect(() => {
     let timeout;
@@ -29,19 +34,32 @@ export const Tardis = ({ nodes, materials, ...props }) => {
         name='Tardis'
         position={[2.32, 1.84, 4.82]}
         rotation={[-3.13, -0.87, -3.08]}
-        {...sceneMotion.bakedMesh(0, 0, rotate[1] ? {
-          hidden: { scale: 1, rotateY: -0.87 }, 
-          visible: { scale: 1, rotateY: rotate[1], transition: { type: 'ease', duration: '2' } }
-        } : {})}
+        {...sceneMotion.bakedMesh(
+          0,
+          0,
+          rotate[1]
+            ? {
+                hidden: { scale: 1, rotateY: -0.87 },
+                visible: { scale: 1, rotateY: rotate[1], transition: { type: 'ease', duration: '2' } },
+              }
+            : {}
+        )}
         {...props}
       >
         <mesh name='Tardis_1' geometry={nodes.Tardis_1.geometry} material={materials['TARDIS blue_wood']} />
         <mesh name='Tardis_2' geometry={nodes.Tardis_2.geometry} material={materials['TARDIS white_wood']} />
-        <mesh name='Tardis_3' geometry={nodes.Tardis_3.geometry} material={materials['TARDIS black_glass']} />
+        {/* // TODO: Test if key is needed */}
+        <mesh key={`Tardis_3-${theme}`} name='Tardis_3' geometry={nodes.Tardis_3.geometry} material={materials['TARDIS black_glass']}>
+          {isDarkTheme(theme) && <Lights emissiveIntensity={1} />}
+        </mesh>
         <mesh name='Tardis_4' geometry={nodes.Tardis_4.geometry} material={materials['TARDIS black_sign_material']} />
         <mesh name='Tardis_5' geometry={nodes.Tardis_5.geometry} material={materials['TARDIS internal_floor_material']} />
-        <mesh name='Tardis_6' geometry={nodes.Tardis_6.geometry} material={materials['TARDIS white_glass']} />
-        <mesh name='Tardis_7' geometry={nodes.Tardis_7.geometry} material={materials['TARDIS bulb_material']} />
+        <mesh key={`Tardis_6-${theme}`} name='Tardis_6' geometry={nodes.Tardis_6.geometry} material={materials['TARDIS white_glass']}>
+          {isDarkTheme(theme) && <Lights emissiveIntensity={2} />}
+        </mesh>
+        <mesh key={`Tardis_7-${theme}`} name='Tardis_7' geometry={nodes.Tardis_7.geometry} material={materials['TARDIS bulb_material']}>
+          {isDarkTheme(theme) && <Lights emissiveIntensity={10} />}
+        </mesh>
         <mesh name='Tardis_8' geometry={nodes.Tardis_8.geometry} material={materials['TARDIS phone_door_sign_material']} />
         <mesh name='Tardis_9' geometry={nodes.Tardis_9.geometry} material={materials['TARDIS handle_material']} />
         <mesh name='Tardis_10' geometry={nodes.Tardis_10.geometry} material={materials['TARDIS st_john_sign_material']} />
