@@ -8,7 +8,7 @@ const nextConfig = {
   // swcMinify: true,
   webpack: (config) => {
     config.module.rules.push({
-      test: /\.(frag|vert|exr)$/,
+      test: /\.(hdr)$/, // frag|vert|exr|
       type: 'asset/source',
     });
     return config;
