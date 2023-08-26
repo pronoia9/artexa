@@ -5,7 +5,8 @@ import { Color, SRGBColorSpace, TextureLoader } from 'three';
 import { extend } from '@react-three/fiber';
 import { shaderMaterial, useTexture } from '@react-three/drei';
 import { useControls } from 'leva';
-import { dataStore, isDarkTheme } from '@/utils';
+
+import { dataStore } from '@/utils';
 
 const BakedShaderMaterial = shaderMaterial(
   {
@@ -98,7 +99,7 @@ const BakedShaderMaterial = shaderMaterial(
 
 export function BakedMaterial(props) {
   const ref = useRef();
-  const { theme } = dataStore((state) => ({ theme: state.theme }));
+  const { lightMix, setLightMix } = dataStore((state) => ({ lightMix: state.lightMix, setLightMix: state.setLightMix }));
 
   const lightTexture = useTexture('/3d/bakedDay.jpg'),
     darkTexture = useTexture('/3d/bakedNight.jpg'),
@@ -122,7 +123,7 @@ export function BakedMaterial(props) {
   }, []);
 
   const controls = useControls('Room Shader', {
-    'Light Mix': { value: isDarkTheme(theme) ? 1 : 0, step: 0.01, min: 0, max: 1 },
+    'Light Mix': { value: lightMix, step: 0.01, min: 0, max: 1 },
     'Neutral Mix': { value: 0, step: 0.01, min: 0, max: 1 },
     'TV Light': { value: '#ff115e' },
     'TV Light Strength': { value: 1.47, step: 0.01, min: 0, max: 3 },
@@ -132,12 +133,15 @@ export function BakedMaterial(props) {
     'PC Light Strength': { value: 1.4, step: 0.01, min: 0, max: 3 },
   });
 
+  useEffect(() => void setLightMix(controls['Light Mix']), [controls['Light Mix']]);
+
+  useEffect(() => void ((ref.current.uLightMix = Math.abs(1 - lightMix)), (ref.current.needsUpdate = true)), [lightMix]);
+
   useEffect(() => {
     ref.current.uBakedLightTexture = lightTexture;
     ref.current.uBakedDarkTexture = darkTexture;
     ref.current.uBakedNeutralTexture = neutralTexture;
     ref.current.uLightMapTexture = lightMap;
-    ref.current.uLightMix = controls['Light Mix'];
     ref.current.uNeutralMix = controls['Neutral Mix'];
     ref.current.uLightTvColor = new Color(controls['TV Light']);
     ref.current.uLightTvStrength = controls['TV Light Strength'];
