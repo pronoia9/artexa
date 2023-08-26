@@ -6,13 +6,13 @@ const nextConfig = {
   },
   // reactStrictMode: true,
   // swcMinify: true,
-  // webpack: (config) => {
-  //   config.module.rules.push({
-  //     test: /\.(frag|vert)$/,
-  //     type: 'asset/source',
-  //   });
-  //   return config;
-  // },
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.(frag|vert|exr)$/,
+      type: 'asset/source',
+    });
+    return config;
+  },
 };
 
 module.exports = nextConfig;
