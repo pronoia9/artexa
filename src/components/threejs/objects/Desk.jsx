@@ -67,8 +67,8 @@ export const Desk = ({ nodes, children, ...props }) => {
           name='Screen_(Macbook)'
           geometry={nodes['Screen_(Macbook)'].geometry}
           material={nodes['Screen_(Macbook)'].material}
-          position={[0.22, 0.38, 0.06]}
-          rotation={[1.59, -0.05, 1.87]}
+          position={[0.22, 0.382, 0.07]}
+          rotation={[1.59, -0.06, 1.87]}
         />
       </BakedMesh>
 
@@ -77,7 +77,7 @@ export const Desk = ({ nodes, children, ...props }) => {
           name='Screen_(Monitor)'
           geometry={nodes['Screen_(Monitor)'].geometry}
           material={nodes['Screen_(Monitor)'].material}
-          position={[-0.09, 0.32, 0.06]}
+          position={[-0.09, 0.325, 0.066]}
           rotation={[0, 0, -Math.PI / 2]}
         />
       </BakedMesh>
