@@ -1,11 +1,42 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import { BakedMesh, SteamMaterial } from '@/components/threejs';
 
 export const Desk = ({ nodes, children, ...props }) => {
+  const [cameraRotate, setCameraRotate] = useState([0, null]);
+
+  useEffect(() => {
+    let timeout;
+    const wander = () => {
+      setCameraRotate((prev) => [prev[1] || 0, Math.random()]);
+      timeout = setTimeout(wander, (1 + Math.random() * 5) * 1000);
+    };
+    wander();
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <BakedMesh name='Desk' geometry={nodes.Desk.geometry} material={nodes.Desk.material} position={[2.55, 1.21, 0.45]} {...props}>
-      <BakedMesh name='Camera' geometry={nodes.Camera.geometry} material={nodes.Camera.material} position={[0.39, 1.52, 1.54]} />
+      <BakedMesh
+        key={`camera-rotation-${cameraRotate[1] || cameraRotate[0]}`}
+        name='Camera'
+        geometry={nodes.Camera.geometry}
+        material={nodes.Camera.material}
+        position={[0.39, 1.52, 1.54]}
+        rotation={[0, 0, 0]}
+        {...(cameraRotate[1]
+          ? {
+              variants: {
+                hidden: { scale: 1, rotateY: cameraRotate[0] },
+                visible: { scale: 1, rotateY: cameraRotate[1],
+                  transition: { type: 'ease', duration: 0.5 || Math.abs(cameraRotate[1] - cameraRotate[0]) },
+                },
+              },
+            }
+          : {})}
+      />
 
       <BakedMesh name='Coffee_Mug' geometry={nodes.Coffee_Mug.geometry} material={nodes.Coffee_Mug.material} position={[-0.45, 0.3, -1.45]}>
         <mesh
@@ -26,7 +57,7 @@ export const Desk = ({ nodes, children, ...props }) => {
         position={[0.37, 2.12, -0.49]}
         rotation={[1.67, 0.25, 1.2]}
       >
-        <meshBasicMaterial color='white' />
+        <meshStandardMaterial color='white' emissive='white' emissiveIntensity={10} />
       </mesh>
 
       <BakedMesh name='Headset' geometry={nodes.Headset.geometry} material={nodes.Headset.material} position={[-0.21, 0.27, -1.91]} />
