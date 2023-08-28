@@ -156,19 +156,6 @@ const Macbook = ({ nodes }) => {
   );
 };
 
-const MacbookScreen = ({ isOn, ...props }) => {
-  const screenRef = useRef();
-  const texture = useVideoTexture('/3d/House of the Dragon Opening Credits 4K | Season 1 (HBO) | Game Of Thrones Extras.mp4', {
-    unsuspend: 'canplay',
-    crossOrigin: 'Anonymous',
-    muted: true,
-    loop: true,
-    start: true,
-  });
-
-  return <meshBasicMaterial ref={screenRef} map={texture} toneMapped={false} {...props} />;
-};
-
 const Monitor = ({ nodes }) => (
   <BakedMesh name='Monitor' geometry={nodes.Monitor.geometry} material={nodes.Monitor.material} position={[0.43, 0.95, -0.29]}>
     <mesh
