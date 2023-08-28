@@ -1,13 +1,9 @@
 'use client';
 
-import { Color, DoubleSide, LinearFilter, MeshBasicMaterial, Texture } from 'three';
-
 import { useEffect, useRef, useState } from 'react';
-import { Html, useVideoTexture } from '@react-three/drei';
+import { useVideoTexture } from '@react-three/drei';
 
 import { BakedMesh, SteamMaterial } from '@/components/threejs';
-import { useControls } from 'leva';
-import { useFrame } from '@react-three/fiber';
 
 export const Desk = ({ nodes, ...props }) => {
   return (
