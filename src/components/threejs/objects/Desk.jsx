@@ -1,12 +1,15 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { Color, DoubleSide, LinearFilter, MeshBasicMaterial, Texture } from 'three';
+
+import { useEffect, useRef, useState } from 'react';
+import { Html, useVideoTexture } from '@react-three/drei';
 
 import { BakedMesh, SteamMaterial } from '@/components/threejs';
+import { useControls } from 'leva';
+import { useFrame } from '@react-three/fiber';
 
 export const Desk = ({ nodes, ...props }) => {
-
-
   return (
     <BakedMesh name='Desk' geometry={nodes.Desk.geometry} material={nodes.Desk.material} position={[2.55, 1.21, 0.45]} {...props}>
       <Camera nodes={nodes} />
@@ -89,19 +92,82 @@ const Headset = ({ nodes }) => (
   <BakedMesh name='Headset' geometry={nodes.Headset.geometry} material={nodes.Headset.material} position={[-0.21, 0.27, -1.91]} />
 );
 
-const Macbook = ({ nodes }) => (
-  <BakedMesh name='Macbook' geometry={nodes.Macbook.geometry} material={nodes.Macbook.material} position={[-0.01, 0.61, 1.11]}>
-    <mesh
-      name='Screen_(Macbook)'
-      geometry={nodes['Screen_(Macbook)'].geometry}
-      material={nodes['Screen_(Macbook)'].material}
-      position={[0.22, 0.382, 0.07]}
-      rotation={[1.59, -0.06, 1.87]}
+const Macbook = ({ nodes }) => {
+  const videoMaterialRef = useRef();
+  const [isPlaying, setIsPlaying] = useState(false), [videoElement, setVideoElement] = useState(null);
+  const videoTexture = useVideoTexture('/3d/house-of-the-dragon.mp4', {
+    unsuspend: 'canplay',
+    crossOrigin: 'Anonymous',
+    muted: false,
+    loop: false,
+    start: isPlaying,
+  });
+
+  const handleVideoEnd = () => {
+    setIsPlaying(false); // Set isPlaying to false when the video ends
+    videoElement && (videoElement.currentTime = 0); // Rewind the video to the beginning
+  };
+
+  useEffect(() => {
+    if (videoMaterialRef.current && videoMaterialRef.current.map) {
+      const videoElement = videoMaterialRef.current.map.image;
+      setVideoElement(videoElement);
+
+      videoElement.addEventListener('ended', handleVideoEnd); // Add an event listener for the "ended" event
+      return () => void videoElement.removeEventListener('ended', handleVideoEnd); // Clean up the event listener when component unmounts
+    }
+  }, []);
+
+  useEffect(() => {
+    if (videoElement) {
+      if (isPlaying) videoElement.play();
+      else videoElement.pause();
+    }
+  }, [isPlaying, videoElement]);
+
+  return (
+    <BakedMesh
+      name='Macbook'
+      geometry={nodes.Macbook.geometry}
+      material={nodes.Macbook.material}
+      position={[-0.01, 0.61, 1.11]}
+      onClick={() => void setIsPlaying((prev) => !prev)}
     >
-      {/* <videoTexture /> */}
-    </mesh>
-  </BakedMesh>
-);
+      <mesh
+        name='Screen_(Macbook)'
+        geometry={nodes['Screen_(Macbook)'].geometry}
+        material={nodes['Screen_(Macbook)'].material}
+        position={[0.22, 0.382, 0.07]}
+        rotation={[1.59, -0.06, 1.87]}
+      >
+        <meshStandardMaterial
+          ref={videoMaterialRef}
+          // ! Enable to turn off the screen while the video is paused
+          // key={`macbook-screen-material-${isPlaying}`}
+          // color={isPlaying ? null : 'black'}
+          map={videoTexture}
+          toneMapped={false}
+          // TODO: After readding Bloom
+          // emissive={'white'} // Set the emissive color
+          // emissiveIntensity={0.01} // Adjust the intensity of the emissive light
+        />
+      </mesh>
+    </BakedMesh>
+  );
+};
+
+const MacbookScreen = ({ isOn, ...props }) => {
+  const screenRef = useRef();
+  const texture = useVideoTexture('/3d/House of the Dragon Opening Credits 4K | Season 1 (HBO) | Game Of Thrones Extras.mp4', {
+    unsuspend: 'canplay',
+    crossOrigin: 'Anonymous',
+    muted: true,
+    loop: true,
+    start: true,
+  });
+
+  return <meshBasicMaterial ref={screenRef} map={texture} toneMapped={false} {...props} />;
+};
 
 const Monitor = ({ nodes }) => (
   <BakedMesh name='Monitor' geometry={nodes.Monitor.geometry} material={nodes.Monitor.material} position={[0.43, 0.95, -0.29]}>
@@ -136,5 +202,3 @@ const PlantS = ({ nodes }) => (
 const RubixCube = ({ nodes }) => (
   <BakedMesh name='RubixCube' geometry={nodes.RubixCube.geometry} material={nodes.RubixCube.material} position={[0.42, 0.27, -1.87]} />
 );
-
-
