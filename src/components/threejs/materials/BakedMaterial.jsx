@@ -4,7 +4,8 @@ import { useEffect, useRef } from 'react';
 import { Color, SRGBColorSpace, TextureLoader } from 'three';
 import { extend } from '@react-three/fiber';
 import { shaderMaterial, useTexture } from '@react-three/drei';
-import { useControls } from 'leva';
+import { button, useControls } from 'leva';
+
 import { dataStore, isDarkTheme } from '@/utils';
 
 const BakedShaderMaterial = shaderMaterial(
@@ -98,7 +99,12 @@ const BakedShaderMaterial = shaderMaterial(
 
 export function BakedMaterial(props) {
   const ref = useRef();
-  const { theme } = dataStore((state) => ({ theme: state.theme }));
+  const { lightMix, setLightMix, theme, toggleTheme } = dataStore((state) => ({
+    lightMix: state.lightMix,
+    setLightMix: state.setLightMix,
+    theme: state.theme,
+    toggleTheme: state.toggleTheme,
+  }));
 
   const lightTexture = useTexture('/3d/bakedDay.jpg'),
     darkTexture = useTexture('/3d/bakedNight.jpg'),
@@ -122,22 +128,22 @@ export function BakedMaterial(props) {
   }, []);
 
   const controls = useControls('Room Shader', {
-    'Light Mix': { value: isDarkTheme(theme) ? 1 : 0, step: 0.01, min: 0, max: 1 },
-    'Neutral Mix': { value: 0, step: 0.01, min: 0, max: 1 },
+    'Light Mix': { value: isDarkTheme(theme) ? 0 : 1, step: 0.01, min: 0, max: 1 /* disabled: !isDarkTheme(theme), */ },
+    'Neutral Mix': { value: isDarkTheme(theme) ? 0 : 0.3, step: 0.01, min: 0, max: 1 /* disabled: !isDarkTheme(theme), */ },
     'TV Light': { value: '#ff115e' },
-    'TV Light Strength': { value: 1.47, step: 0.01, min: 0, max: 3 },
+    'TV Light Strength': { value: isDarkTheme(theme) ? 1.47 : 0.5, step: 0.01, min: 0, max: 3 },
     'Desk Light': { value: '#ff6700' },
-    'Desk Light Strength': { value: 1.9, step: 0.01, min: 0, max: 3 },
+    'Desk Light Strength': { value: isDarkTheme(theme) ? 1.9 : 0.5, step: 0.01, min: 0, max: 3 },
     'PC Light': { value: '#0082ff' },
-    'PC Light Strength': { value: 1.4, step: 0.01, min: 0, max: 3 },
+    'PC Light Strength': { value: isDarkTheme(theme) ? 1.4 : 0.5, step: 0.01, min: 0, max: 3 },
   });
+  useControls({ 'Toggle Time': button(() => void toggleTheme()) });
 
   useEffect(() => {
     ref.current.uBakedLightTexture = lightTexture;
     ref.current.uBakedDarkTexture = darkTexture;
     ref.current.uBakedNeutralTexture = neutralTexture;
     ref.current.uLightMapTexture = lightMap;
-    ref.current.uLightMix = controls['Light Mix'];
     ref.current.uNeutralMix = controls['Neutral Mix'];
     ref.current.uLightTvColor = new Color(controls['TV Light']);
     ref.current.uLightTvStrength = controls['TV Light Strength'];
@@ -148,14 +154,11 @@ export function BakedMaterial(props) {
     ref.current.needsUpdate = true;
   }, [controls]);
 
-  return (
-    <bakedShaderMaterial
-      // key={Object.values(controls).join()}
-      ref={ref}
-      {...controls}
-      {...props}
-    />
-  );
+  useEffect(() => void setLightMix(controls['Light Mix']), [controls['Light Mix']]);
+
+  useEffect(() => void ((ref.current.uLightMix = Math.abs(1 - lightMix)), (ref.current.needsUpdate = true)), [lightMix]);
+
+  return <bakedShaderMaterial ref={ref} {...controls} {...props} />;
 }
 
 extend({ TextureLoader, shaderMaterial, BakedShaderMaterial });

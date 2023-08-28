@@ -9,8 +9,12 @@ export const Cube = ({ nodes, materials, children, ...props }) => {
 
   return (
     <motion.group name='Cube' position={[0, 2.44, 0]} scale={0.25} {...props}>
-      <mesh name='Cube001' geometry={nodes.Cube001.geometry} material={materials[`Cube ${isDarkTheme(theme) ? 'Night' : 'Day'}.002`]} />
-      <mesh name='Cube001_1' geometry={nodes.Cube001_1.geometry} material={materials[`Cube ${isDarkTheme(theme) ? 'Night' : 'Day'}.001`]} />
+      <mesh name='Cube001' geometry={nodes.Cube001.geometry} material={nodes.Cube001.material}>
+        <meshStandardMaterial color={`#${isDarkTheme(theme) ? 'B63C3C' : 'CF504A'}`} />
+      </mesh>
+      <mesh name='Cube001_1' geometry={nodes.Cube001_1.geometry} material={nodes.Cube001_1.material}>
+        <meshStandardMaterial color={`#${isDarkTheme(theme) ? 'FFF3FF' : 'FFF3DD'}`} />
+      </mesh>
       {children}
     </motion.group>
   );

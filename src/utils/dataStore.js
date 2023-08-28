@@ -2,7 +2,7 @@
 
 import { create } from 'zustand';
 
-import { getThemeFromStorage, saveThemeToStorage } from '@/utils/utils';
+import { getThemeFromStorage, isDarkTheme, saveThemeToStorage } from '@/utils/utils';
 
 export const dataStore = create((set) => ({
   // LOADING (PRELOADER)
@@ -29,6 +29,10 @@ export const dataStore = create((set) => ({
       saveThemeToStorage('accent', accent);
       return { accent };
     }),
+
+  // THREEJS STUFF
+  lightMix: isDarkTheme(getThemeFromStorage('theme')) ? 0 : 1,
+  setLightMix: (lightMix) => set({ lightMix }),
 
   // SIDEBAR / NAVBAR / OVERLAY
   curtainEnabled: false,

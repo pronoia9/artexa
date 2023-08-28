@@ -1,24 +1,21 @@
 'use client';
 
 import { Suspense } from 'react';
-import { ScrollControls, Environment, Stars, useProgress } from '@react-three/drei';
-import { EffectComposer, Bloom } from '@react-three/postprocessing';
+import { ScrollControls, Environment, Stars, useProgress, Sky, Cloud } from '@react-three/drei';
+// import { useControls } from 'leva';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 import { MotionCanvas } from 'framer-motion-3d';
 
 import { Extend, Room } from '@/components/threejs';
-import { sceneMotion, dataStore, isDarkTheme } from '@/utils';
-
-// import dayEnv from '/3d/cayley_interior_1k.exr';
-// import nightEnv from '/3d/fireplace_1k.exr';
+import { dataStore, isDarkTheme, sceneMotion } from '@/utils';
 
 export const Experience = () => {
   // const { active, progress, errors, item, loaded, total } = useProgress();
 
   return (
     <Container {...sceneMotion.container}>
-      <MotionCanvas dpr={[1, 2]} gl={{ antialias: true }} flat shadows>
+      <MotionCanvas dpr={[1, 2]} gl={{ antialias: true }} flat>
         <Extend />
         <Suspense fallback={null}>
           <ScrollControls pages={3}>
@@ -43,16 +40,24 @@ const Effects = () => {
   const { theme } = dataStore((state) => ({ theme: state.theme }));
 
   return (
-    <group>
-      <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+    <>
+      <group key={`scene_effects-${theme}`}>
+        {isDarkTheme(theme) ? (
+          <>
+            <color attach='background' args={['#1e1e28']} />
+            <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+          </>
+        ) : (
+          <>
+            <Sky sunPosition={[100, 20, 100]} />
+            <group position={[-9.1, -4.1, -14.1]} /*{...useControls({ position: { value: [-7, -3.5, -10], step: 0.1 } })}*/>
+              <Cloud opacity={0.5} speed={0.25} width={10} depth={2.5} segments={20} />
+            </group>
+          </>
+        )}
+      </group>
 
-      <Environment key={`environment-${theme}`} preset='apartment' />
-      {/* <Environment preset={isDarkTheme(theme) ? nightEnv : dayEnv} /> */}
-      {/* <Environment preset={isDarkTheme(theme) ? require('/public/3d/fireplace_1k.exr') : require('/public/3d/cayley_interior_1k.exr')} /> */}
-
-      {/* <EffectComposer>
-          <Bloom intensity={0.25} luminanceThreshold={0.9} luminanceSmoothing={0.025} mipmapBlur={true} />
-        </EffectComposer> */}
-    </group>
+      <Environment files='/3d/christmas_photo_studio_04_1k.hdr' />
+    </>
   );
 };

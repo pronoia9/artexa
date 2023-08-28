@@ -9,6 +9,9 @@ import {
   SphereGeometry,
   MeshStandardMaterial,
   PlaneGeometry,
+  Color,
+  VideoTexture,
+  ShaderMaterial,
 } from 'three';
 import { extend } from '@react-three/fiber';
 
@@ -23,6 +26,9 @@ extend({
   SphereGeometry,
   MeshStandardMaterial,
   PlaneGeometry,
+  Color,
+  VideoTexture,
+  ShaderMaterial,
 });
 
 export const Extend = () => {

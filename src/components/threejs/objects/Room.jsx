@@ -28,8 +28,7 @@ export const Room = (props) => {
 
   useFrame((state) => {
     // console.log('cube:', cube, '  |   offset:', scroll.offset);
-    const cameraAction = actions['Camera Scroll'],
-      cubeAction = actions['Cube Animation'];
+    const cameraAction = actions['Camera Scroll'], cubeAction = actions['Cube Animation'];
 
     // Play cube animation on first scroll
     if (cube === 'initial' && scroll.offset > 0) {
@@ -37,7 +36,6 @@ export const Room = (props) => {
       cubeAction.setLoop(LoopOnce).play();
       setCube('animating');
     }
-
     // Show room during cube animation before the cube is hidden
     else if (cube === 'animating' && cubeAction.time >= cubeAction.getClip().duration * 0.35) setCube('show room');
     // Hide cube once its animation is done
