@@ -23,7 +23,15 @@ export const TVUnit = ({ nodes, ...props }) => {
 
       <BakedMesh name='PS5' geometry={nodes.PS5.geometry} material={nodes.PS5.material} position={[-1.56, -0.04, 0.05]} />
 
-      <BakedMesh name='TV' geometry={nodes.TV.geometry} material={nodes.TV.material} position={[-0.02, 0.92, 0.13]} />
+      <BakedMesh name='TV' geometry={nodes.TV.geometry} material={nodes.TV.material} position={[-0.02, 0.92, 0.13]}>
+        <mesh
+          name='Screen_(TV)'
+          geometry={nodes['Screen_(TV)'].geometry}
+          material={nodes['Screen_(TV)'].material}
+          position={[0, 0.55, 0.02]}
+          scale={1.01}
+        />
+      </BakedMesh>
 
       <BakedMesh name='VR' geometry={nodes.VR.geometry} material={nodes.VR.material} position={[-1.17, -0.33, -0.17]} />
     </BakedMesh>
