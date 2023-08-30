@@ -11,7 +11,7 @@ import { useFrame } from '@react-three/fiber';
 import { useAnimations, useGLTF, useScroll } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
-import { Camera, Room, Cube, Emissives } from '@/components/threejs';
+import { Camera, Cube, Room } from '@/components/threejs';
 
 export const Scene = (props) => {
   const group = useRef();
@@ -27,7 +27,8 @@ export const Scene = (props) => {
 
   useFrame((state) => {
     // console.log('cube:', cube, '  |   offset:', scroll.offset);
-    const cameraAction = actions['Camera Scroll'], cubeAction = actions['Cube Animation'];
+    const cameraAction = actions['Camera Scroll'],
+      cubeAction = actions['Cube Animation'];
 
     // Play cube animation on first scroll
     if (cube === 'initial' && scroll.offset > 0) {
@@ -53,12 +54,7 @@ export const Scene = (props) => {
 
       <motion.group name='Room_Container' position={[0.01, -0.3, -0.01]}>
         {cube !== 'hidden' && <Cube nodes={nodes} materials={materials} />}
-        {(cube === 'show room' || cube === 'hidden') && (
-          <>
-            <Room nodes={nodes} materials={materials} />
-            <Emissives nodes={nodes} materials={materials} />
-          </>
-        )}
+        {(cube === 'show room' || cube === 'hidden') && <Room nodes={nodes} materials={materials} />}
       </motion.group>
     </group>
   );
