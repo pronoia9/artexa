@@ -6,7 +6,7 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 import { MotionCanvas } from 'framer-motion-3d';
 
-import { Extend, Camera, Room, Bloom, Emissives, Effects } from '@/components/threejs';
+import { Extend, Scene, Effects } from '@/components/threejs';
 import { sceneMotion } from '@/utils';
 
 export const Experience = () => {
@@ -18,11 +18,7 @@ export const Experience = () => {
         <Extend />
         <Suspense fallback={null}>
           <ScrollControls pages={3}>
-            <Camera />
-            <Room />
-            <Bloom>
-              <Emissives />
-            </Bloom>
+            <Scene />
           </ScrollControls>
           <Effects />
         </Suspense>
