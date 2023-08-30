@@ -4,7 +4,7 @@ import { BakedMesh } from '@/components/threejs';
 
 export const TVUnit = ({ nodes, ...props }) => {
   return (
-    <BakedMesh name='TV_Unit' geometry={nodes.TV_Unit.geometry} material={nodes.TV_Unit.material} position={[-1.68, 0.47, 2.91]}>
+    <BakedMesh name='TV_Unit' geometry={nodes.TV_Unit.geometry} material={nodes.TV_Unit.material} position={[-1.68, 0.47, 2.91]} {...props}>
       <BakedMesh name='Console' geometry={nodes.Console.geometry} material={nodes.Console.material} position={[1.41, -0.05, 0.02]} />
 
       <BakedMesh
@@ -23,9 +23,7 @@ export const TVUnit = ({ nodes, ...props }) => {
 
       <BakedMesh name='PS5' geometry={nodes.PS5.geometry} material={nodes.PS5.material} position={[-1.56, -0.04, 0.05]} />
 
-      <BakedMesh name='TV' geometry={nodes.TV.geometry} material={nodes.TV.material} position={[-0.02, 0.92, 0.13]}>
-        <mesh name='Screen_(TV)' geometry={nodes['Screen_(TV)'].geometry} material={nodes['Screen_(TV)'].material} position={[0, 0.55, 0.02]} />
-      </BakedMesh>
+      <BakedMesh name='TV' geometry={nodes.TV.geometry} material={nodes.TV.material} position={[-0.02, 0.92, 0.13]} />
 
       <BakedMesh name='VR' geometry={nodes.VR.geometry} material={nodes.VR.material} position={[-1.17, -0.33, -0.17]} />
     </BakedMesh>
