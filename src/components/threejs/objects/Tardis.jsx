@@ -4,9 +4,13 @@ import { useEffect, useState } from 'react';
 import { Float } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
-import { rngInRange, sceneMotion } from '@/utils';
+import { isDarkTheme, dataStore, rngInRange, sceneMotion } from '@/utils';
+
+const TardisLights = (props) => <meshStandardMaterial color='white' emissive='#FDFF00' {...props} />;
 
 export const Tardis = ({ nodes, materials, ...props }) => {
+  const { theme } = dataStore((state) => ({ theme: state.theme }));
+
   const floatOptions = {
     speed: 1, // Animation speed, defaults to 1
     rotationIntensity: 1, // XYZ rotation intensity, defaults to 1
@@ -53,6 +57,18 @@ export const Tardis = ({ nodes, materials, ...props }) => {
         <mesh name='Tardis_6' geometry={nodes.Tardis_6.geometry} material={materials['TARDIS handle_material']} />
         <mesh name='Tardis_7' geometry={nodes.Tardis_7.geometry} material={materials['TARDIS st_john_sign_material']} />
         <mesh name='Tardis_8' geometry={nodes.Tardis_8.geometry} material={materials['TARDIS yale_lock_material']} />
+
+        <group name='Tardis_Lights'>
+          <mesh key={`Tardis_Lights_1-${theme}`} geometry={nodes.Tardis_Lights_1.geometry} material={materials['TARDIS black_glass']}>
+            {isDarkTheme(theme) && <TardisLights emissiveIntensity={1} />}
+          </mesh>
+          <mesh key={`Tardis_Lights_2-${theme}`} geometry={nodes.Tardis_Lights_2.geometry} material={materials['TARDIS white_glass']}>
+            {isDarkTheme(theme) && <TardisLights emissiveIntensity={2} />}
+          </mesh>
+          <mesh key={`Tardis_Lights_3-${theme}`} geometry={nodes.Tardis_Lights_3.geometry} material={materials['TARDIS bulb_material']}>
+            {isDarkTheme(theme) && <TardisLights emissiveIntensity={10} />}
+          </mesh>
+        </group>
       </motion.group>
     </Float>
   );

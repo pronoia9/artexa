@@ -1,6 +1,13 @@
-export const Emissives = () => {
+'use client';
+
+import { useEffect, useRef, useState } from "react";
+import { useVideoTexture } from "@react-three/drei";
+
+import { dataStore, isDarkTheme } from "@/utils";
+
+export const Emissives = ({ nodes, materials }) => {
   return (
-    <group name='Emissives' position={[0.01, -0.3, -0.01]}>
+    <group name='Emissives_Container' position={[0.01, -0.3, -0.01]}>
       <mesh
         name='Elgato_Light'
         geometry={nodes.Elgato_Light.geometry}
@@ -33,11 +40,100 @@ export const Emissives = () => {
         rotation={[Math.PI, 0, Math.PI]}
       />
 
-      <group name='Tardis_Lights' position={[-2.33, 2.14, -4.82]} rotation={[-0.01, 0.87, 0.06]}>
-        <mesh name='Tardis001' geometry={nodes.Tardis001.geometry} material={materials['TARDIS black_glass']} />
-        <mesh name='Tardis001_1' geometry={nodes.Tardis001_1.geometry} material={materials['TARDIS white_glass']} />
-        <mesh name='Tardis001_2' geometry={nodes.Tardis001_2.geometry} material={materials['TARDIS bulb_material']} />
-      </group>
+      {/* <group name='Tardis_Lights' position={[-2.33, 2.14, -4.82]} rotation={[-0.01, 0.87, 0.06]}>
+        <mesh name='Tardis_Lights_1' geometry={nodes.Tardis_Lights_1.geometry} material={materials['TARDIS black_glass']} />
+        <mesh name='Tardis_Lights_2' geometry={nodes.Tardis_Lights_2.geometry} material={materials['TARDIS white_glass']} />
+        <mesh name='Tardis_Lights_3' geometry={nodes.Tardis_Lights_3.geometry} material={materials['TARDIS bulb_material']} />
+      </group> */}
     </group>
+  );
+};
+
+const TardisLights = (props) => <meshStandardMaterial color='white' emissive='#FDFF00' {...props} />;
+
+const Tardis = () => {
+  const { theme } = dataStore((state) => ({ theme: state.theme }));
+  return (
+    <>
+      {/* // TODO: Test if key is needed */}
+      <mesh key={`Tardis_3-${theme}`} name='Tardis_3' geometry={nodes.Tardis_3.geometry} material={materials['TARDIS black_glass']}>
+        {isDarkTheme(theme) && <TardisLights emissiveIntensity={1} />}
+      </mesh>
+      <mesh key={`Tardis_6-${theme}`} name='Tardis_6' geometry={nodes.Tardis_6.geometry} material={materials['TARDIS white_glass']}>
+        {isDarkTheme(theme) && <TardisLights emissiveIntensity={2} />}
+      </mesh>
+      <mesh key={`Tardis_7-${theme}`} name='Tardis_7' geometry={nodes.Tardis_7.geometry} material={materials['TARDIS bulb_material']}>
+        {isDarkTheme(theme) && <TardisLights emissiveIntensity={10} />}
+      </mesh>
+    </>
+  );
+};
+
+const ElgatoLight = ({ nodes }) => (
+  <mesh
+    name='Elgato_Light'
+    geometry={nodes.Elgato_Light.geometry}
+    material={nodes.Elgato_Light.material}
+    position={[0.37, 2.12, -0.49]}
+    rotation={[1.67, 0.25, 1.2]}
+  >
+    <meshStandardMaterial color='white' emissive='white' emissiveIntensity={10} />
+  </mesh>
+);
+
+const MacbookScreen = ({ nodes }) => {
+  const videoMaterialRef = useRef();
+  const [isPlaying, setIsPlaying] = useState(false),
+    [videoElement, setVideoElement] = useState(null);
+  const videoTexture = useVideoTexture('/3d/house-of-the-dragon.mp4', {
+    unsuspend: 'canplay',
+    crossOrigin: 'Anonymous',
+    muted: false,
+    loop: false,
+    start: isPlaying,
+  });
+
+  const handleVideoEnd = () => {
+    setIsPlaying(false); // Set isPlaying to false when the video ends
+    videoElement && (videoElement.currentTime = 0); // Rewind the video to the beginning
+  };
+
+  useEffect(() => {
+    if (videoMaterialRef.current && videoMaterialRef.current.map) {
+      const videoElement = videoMaterialRef.current.map.image;
+      setVideoElement(videoElement);
+
+      videoElement.addEventListener('ended', handleVideoEnd); // Add an event listener for the "ended" event
+      return () => void videoElement.removeEventListener('ended', handleVideoEnd); // Clean up the event listener when component unmounts
+    }
+  }, []);
+
+  useEffect(() => {
+    if (videoElement) {
+      if (isPlaying) videoElement.play();
+      else videoElement.pause();
+    }
+  }, [isPlaying, videoElement]);
+
+  return (
+    <mesh
+      name='Screen_(Macbook)'
+      geometry={nodes['Screen_(Macbook)'].geometry}
+      material={nodes['Screen_(Macbook)'].material}
+      position={[0.22, 0.382, 0.07]}
+      rotation={[1.59, -0.06, 1.87]}
+    >
+      <meshStandardMaterial
+        ref={videoMaterialRef}
+        // ! Enable to turn off the screen while the video is paused
+        // key={`macbook-screen-material-${isPlaying}`}
+        // color={isPlaying ? null : 'black'}
+        map={videoTexture}
+        toneMapped={false}
+        // TODO: After readding Bloom
+        // emissive={'white'} // Set the emissive color
+        // emissiveIntensity={0.01} // Adjust the intensity of the emissive light
+      />
+    </mesh>
   );
 };
