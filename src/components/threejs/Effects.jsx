@@ -29,3 +29,7 @@ export const Effects = () => {
     </>
   );
 };
+
+export const Bloom = () => {
+  return <></>;
+};
