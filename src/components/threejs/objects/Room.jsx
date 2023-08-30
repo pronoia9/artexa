@@ -9,7 +9,6 @@ export const Room = ({ nodes, materials }) => {
       name='Room'
       geometry={nodes.Room.geometry}
       material={nodes.Room.material}
-      position={[-0.01, 0.3, 0.01]}
       rotation={[Math.PI, 0, Math.PI]}
       {...sceneMotion.room}
     >
