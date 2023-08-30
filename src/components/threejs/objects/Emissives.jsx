@@ -7,7 +7,7 @@ import { dataStore, isDarkTheme } from "@/utils";
 
 export const Emissives = ({ nodes, materials }) => {
   return (
-    <group name='Emissives_Container' position={[0.01, -0.3, -0.01]}>
+    <group name='Emissives'>
       <mesh
         name='Elgato_Light'
         geometry={nodes.Elgato_Light.geometry}
@@ -15,36 +15,30 @@ export const Emissives = ({ nodes, materials }) => {
         position={[-2.93, 3.63, 0.05]}
         rotation={[1.48, -0.25, -1.94]}
       />
-
       <mesh
         name='Screen_(Macbook)'
         geometry={nodes['Screen_(Macbook)'].geometry}
         material={materials.Screen}
-        position={[-2.76, 2.51, -1.61]}
+        position={[-2.76, 2.505, -1.615]}
         rotation={[1.56, 0.05, -1.27]}
+        scale={1.01}
       />
-
       <mesh
         name='Screen_(Monitor)'
         geometry={nodes['Screen_(Monitor)'].geometry}
         material={materials.Screen}
         position={[-2.9, 2.78, -0.21]}
         rotation={[-Math.PI, 0, Math.PI / 2]}
+        scale={[1.03, 1.01, 1.01]}
       />
-
       <mesh
         name='Screen_(TV)'
         geometry={nodes['Screen_(TV)'].geometry}
         material={materials.Screen}
         position={[1.7, 2.24, -3.05]}
         rotation={[Math.PI, 0, Math.PI]}
+        scale={1.01}
       />
-
-      {/* <group name='Tardis_Lights' position={[-2.33, 2.14, -4.82]} rotation={[-0.01, 0.87, 0.06]}>
-        <mesh name='Tardis_Lights_1' geometry={nodes.Tardis_Lights_1.geometry} material={materials['TARDIS black_glass']} />
-        <mesh name='Tardis_Lights_2' geometry={nodes.Tardis_Lights_2.geometry} material={materials['TARDIS white_glass']} />
-        <mesh name='Tardis_Lights_3' geometry={nodes.Tardis_Lights_3.geometry} material={materials['TARDIS bulb_material']} />
-      </group> */}
     </group>
   );
 };
