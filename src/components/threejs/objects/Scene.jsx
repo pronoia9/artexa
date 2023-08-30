@@ -11,8 +11,7 @@ import { useFrame } from '@react-three/fiber';
 import { useAnimations, useGLTF, useScroll } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
-import { Camera, Room, BakedMesh, Bookshelf, Chair, CoffeeTable, Couch, Desk, Cube, Guitar, TVUnit, PetBed, Tardis } from '@/components/threejs';
-import { sceneMotion } from '@/utils';
+import { Camera, Room, Cube } from '@/components/threejs';
 
 export const Scene = (props) => {
   const group = useRef();
