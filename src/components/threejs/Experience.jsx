@@ -2,6 +2,7 @@
 
 import { Suspense } from 'react';
 import { ScrollControls, useProgress } from '@react-three/drei';
+import { Leva } from 'leva';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 import { MotionCanvas } from 'framer-motion-3d';
@@ -14,6 +15,7 @@ export const Experience = () => {
 
   return (
     <Container {...sceneMotion.container}>
+      <Leva collapsed />
       <MotionCanvas dpr={[1, 2]} gl={{ antialias: true }} flat>
         <Extend />
         <Suspense fallback={null}>
