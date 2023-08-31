@@ -12,6 +12,7 @@ import { useAnimations, useGLTF, useScroll } from '@react-three/drei';
 import { motion } from 'framer-motion-3d';
 
 import { Camera, Cube, Room } from '@/components/threejs';
+import { folder, useControls } from 'leva';
 
 export const Scene = (props) => {
   const group = useRef();
@@ -25,7 +26,26 @@ export const Scene = (props) => {
   // reset scroll offset to the start once the room is shown and the cube is hidden
   useEffect(() => void (cube === 'hidden' && (scroll.offset = 0)), [cube]);
 
-  useFrame((state) => {
+  // Camera Constants
+  const camRotationX = -1.5707963267,
+    camRotationY = 0;
+  const cameraOptions = useControls('Camera', {
+    Position: folder({
+      'Enable [Position]': true,
+      'Multiplier [Position]': { value: 0.25, step: 0.1 },
+      'Speed [Position]': { value: 0.1, step: 0.1 },
+    }),
+    Rotation: folder({
+      'Enable [Rotation]': true,
+      'Up/Down': false,
+      'Left/Right': true,
+      'Range [Rotation]': { value: 0.5, step: 0.1 },
+      'Multiplier [Rotation]': { value: 1, step: 0.1 },
+      'Speed [Rotation]': { value: 0.5, step: 0.1 },
+    }),
+  });
+
+  useFrame(({ camera, pointer }, delta) => {
     // console.log('cube:', cube, '  |   offset:', scroll.offset);
     const cameraAction = actions['Camera Scroll'],
       cubeAction = actions['Cube Animation'];
@@ -42,9 +62,28 @@ export const Scene = (props) => {
     else if (cube === 'show room' && cubeAction.time === cubeAction.getClip().duration) setCube('hidden');
     // Enable camera scroll + controls
     else if (cube === 'hidden') {
-      // ref.current.material.needsUpdate = true;
       cameraAction.time = MathUtils.lerp(cameraAction.time, cameraAction.getClip().duration * scroll.offset, 0.05);
-      state.camera.position.lerp({ x: state.pointer.x / 4, y: 0, z: -state.pointer.y / 4 }, 0.1);
+      // Camera Position
+      camera.position.lerp(
+        cameraOptions['Enable [Position]']
+          ? { x: pointer.x * cameraOptions['Multiplier [Position]'], y: 0, z: -pointer.y * cameraOptions['Multiplier [Position]'] }
+          : { x: 0, y: 0, z: 0 },
+        cameraOptions['Speed [Position]']
+      );
+
+      // Camera Rotation
+      if (cameraOptions['Enable [Rotation]']) {
+        camera.rotation.x = MathUtils.lerp(
+          camera.rotation.x,
+          Math.abs(pointer.y) > 0.5 && cameraOptions['Up/Down'] ? camRotationX + pointer.y * 0.1 : camRotationX,
+          delta * 0.5
+        );
+        camera.rotation.y = MathUtils.lerp(
+          camera.rotation.y,
+          Math.abs(pointer.x) > 0.5 && cameraOptions['Left/Right'] ? -pointer.x * 0.1 : camRotationY,
+          delta * 0.5
+        );
+      }
     }
   });
 
