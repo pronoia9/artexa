@@ -37,11 +37,11 @@ export const Scene = (props) => {
     }),
     Rotation: folder({
       'Enable [Rotation]': true,
-      'Up/Down': false,
+      'Up/Down': true,
       'Left/Right': true,
-      'Range [Rotation]': { value: 0.5, step: 0.1 },
-      'Multiplier [Rotation]': { value: 1, step: 0.1 },
-      'Speed [Rotation]': { value: 0.5, step: 0.1 },
+      'Threshold [Rotation]': { value: 0.75, step: 0.1 },
+      'Multiplier [Rotation]': { value: 0.5, step: 0.1 },
+      'Speed [Rotation]': { value: 1, step: 0.1 },
     }),
   });
 
@@ -75,13 +75,17 @@ export const Scene = (props) => {
       if (cameraOptions['Enable [Rotation]']) {
         camera.rotation.x = MathUtils.lerp(
           camera.rotation.x,
-          Math.abs(pointer.y) > 0.5 && cameraOptions['Up/Down'] ? camRotationX + pointer.y * 0.1 : camRotationX,
-          delta * 0.5
+          Math.abs(pointer.y) > cameraOptions['Threshold [Rotation]'] && cameraOptions['Up/Down']
+            ? camRotationX + pointer.y * cameraOptions['Multiplier [Rotation]'] * scroll.offset
+            : camRotationX,
+          delta * scroll.offset * cameraOptions['Speed [Rotation]']
         );
         camera.rotation.y = MathUtils.lerp(
           camera.rotation.y,
-          Math.abs(pointer.x) > 0.5 && cameraOptions['Left/Right'] ? -pointer.x * 0.1 : camRotationY,
-          delta * 0.5
+          Math.abs(pointer.x) > cameraOptions['Threshold [Rotation]'] && cameraOptions['Left/Right']
+            ? -pointer.x * cameraOptions['Multiplier [Rotation]'] * scroll.offset
+            : camRotationY,
+          delta * scroll.offset * cameraOptions['Speed [Rotation]']
         );
       }
     }
