@@ -32,23 +32,28 @@ export const Scene = (props) => {
   const cameraOptions = useControls('Camera', {
     Position: folder({
       'Enable [Position]': true,
-      'Multiplier [Position]': { value: 0.25, step: 0.1 },
-      'Speed [Position]': { value: 0.1, step: 0.1 },
+      'Multiplier [Position]': { value: 0.25, step: 0.01, min: 0, max: 2 },
+      'Speed [Position]': { value: 0.1, step: 0.01, min: 0, max: 2 },
     }),
     Rotation: folder({
       'Enable [Rotation]': true,
-      'Up/Down': true,
-      'Left/Right': true,
-      'Threshold [Rotation]': { value: 0.75, step: 0.1 },
-      'Multiplier [Rotation]': { value: 0.5, step: 0.1 },
-      'Speed [Rotation]': { value: 1, step: 0.1 },
+      'Threshold [Rotation]': { value: 0, step: 0.01, min: 0, max: 2 },
+      'Up/Down': folder({
+        'Enable [Up/Down]': true,
+        'Multiplier [Up/Down]': { value: 0.25, step: 0.01, min: 0, max: 2 },
+        'Speed [Up/Down]': { value: 0.5, step: 0.01, min: 0, max: 5 },
+      }),
+      'Left/Right': folder({
+        'Enable [Left/Right]': true,
+        'Multiplier [Left/Right]': { value: 0.5, step: 0.01, min: 0, max: 2 },
+        'Speed [Left/Right]': { value: 2, step: 0.01, min: 0, max: 5 },
+      }),
     }),
   });
 
   useFrame(({ camera, pointer }, delta) => {
     // console.log('cube:', cube, '  |   offset:', scroll.offset);
-    const cameraAction = actions['Camera Scroll'],
-      cubeAction = actions['Cube Animation'];
+    const cameraAction = actions['Camera Scroll'], cubeAction = actions['Cube Animation'];
 
     // Play cube animation on first scroll
     if (cube === 'initial' && scroll.offset > 0) {
@@ -75,17 +80,17 @@ export const Scene = (props) => {
       if (cameraOptions['Enable [Rotation]']) {
         camera.rotation.x = MathUtils.lerp(
           camera.rotation.x,
-          Math.abs(pointer.y) > cameraOptions['Threshold [Rotation]'] && cameraOptions['Up/Down']
-            ? camRotationX + pointer.y * cameraOptions['Multiplier [Rotation]'] * scroll.offset
+          Math.abs(pointer.y) > cameraOptions['Threshold [Rotation]'] && cameraOptions['Enable [Up/Down]']
+            ? camRotationX + pointer.y * cameraOptions['Multiplier [Up/Down]'] * scroll.offset
             : camRotationX,
-          delta * scroll.offset * cameraOptions['Speed [Rotation]']
+          delta * scroll.offset * cameraOptions['Speed [Up/Down]']
         );
         camera.rotation.y = MathUtils.lerp(
           camera.rotation.y,
-          Math.abs(pointer.x) > cameraOptions['Threshold [Rotation]'] && cameraOptions['Left/Right']
-            ? -pointer.x * cameraOptions['Multiplier [Rotation]'] * scroll.offset
+          Math.abs(pointer.x) > cameraOptions['Threshold [Rotation]'] && cameraOptions['Enable [Left/Right]']
+            ? -pointer.x * cameraOptions['Multiplier [Left/Right]'] * scroll.offset
             : camRotationY,
-          delta * scroll.offset * cameraOptions['Speed [Rotation]']
+          delta * scroll.offset * cameraOptions['Speed [Left/Right]']
         );
       }
     }
