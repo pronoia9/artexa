@@ -1,5 +1,6 @@
 import { Experience } from './Experience';
-import { Extend } from './Extend';
+import { Bloom, Effects } from './Effects';
+import { Camera } from './Camera';
 
 import { BakedMesh } from './materials/BakedMesh';
 import { BakedMaterial } from './materials/BakedMaterial';
@@ -14,11 +15,11 @@ import { Desk } from './objects/Desk';
 import { Guitar } from './objects/Guitar';
 import { PetBed } from './objects/PetBed';
 import { Room } from './objects/Room';
+import { Scene } from './objects/Scene';
 import { Tardis } from './objects/Tardis';
 import { TVUnit } from './objects/TVUnit';
 
 export {
-  Experience,
-  Extend,
+  Experience, Bloom, Effects, Camera,
   BakedMesh, BakedMaterial, SteamMaterial,
-  Bookshelf, Chair, CoffeeTable, Couch, Cube, Desk, Guitar, PetBed, Room, Tardis, TVUnit, };
+  Bookshelf, Chair, CoffeeTable, Couch, Cube, Desk, Guitar, PetBed, Room, Scene, Tardis, TVUnit, };

@@ -1,13 +1,9 @@
 'use client';
 
-import { Color, DoubleSide, LinearFilter, MeshBasicMaterial, Texture } from 'three';
-
 import { useEffect, useRef, useState } from 'react';
-import { Html, useVideoTexture } from '@react-three/drei';
 
 import { BakedMesh, SteamMaterial } from '@/components/threejs';
-import { useControls } from 'leva';
-import { useFrame } from '@react-three/fiber';
+import { useVideoTexture } from '@react-three/drei';
 
 export const Desk = ({ nodes, ...props }) => {
   return (
@@ -92,9 +88,11 @@ const Headset = ({ nodes }) => (
   <BakedMesh name='Headset' geometry={nodes.Headset.geometry} material={nodes.Headset.material} position={[-0.21, 0.27, -1.91]} />
 );
 
+// TODO: Use store for playing cause material is in emissives
 const Macbook = ({ nodes }) => {
   const videoMaterialRef = useRef();
-  const [isPlaying, setIsPlaying] = useState(false), [videoElement, setVideoElement] = useState(null);
+  const [isPlaying, setIsPlaying] = useState(false),
+    [videoElement, setVideoElement] = useState(null);
   const videoTexture = useVideoTexture('/3d/house-of-the-dragon.mp4', {
     unsuspend: 'canplay',
     crossOrigin: 'Anonymous',
@@ -132,13 +130,17 @@ const Macbook = ({ nodes }) => {
       material={nodes.Macbook.material}
       position={[-0.01, 0.61, 1.11]}
       onClick={() => void setIsPlaying((prev) => !prev)}
+      onDoubleClick={handleVideoEnd}
     >
       <mesh
         name='Screen_(Macbook)'
         geometry={nodes['Screen_(Macbook)'].geometry}
         material={nodes['Screen_(Macbook)'].material}
-        position={[0.22, 0.382, 0.07]}
-        rotation={[1.59, -0.06, 1.87]}
+        position={[0.22, 0.38, 0.06]}
+        rotation={[1.59, -0.05, 1.87]}
+        scale={1.01}
+        onClick={() => void setIsPlaying((prev) => !prev)}
+        onDoubleClick={handleVideoEnd}
       >
         <meshStandardMaterial
           ref={videoMaterialRef}
@@ -156,14 +158,16 @@ const Macbook = ({ nodes }) => {
   );
 };
 
+// TODO: Idea 1 - Blobs Portal
 const Monitor = ({ nodes }) => (
   <BakedMesh name='Monitor' geometry={nodes.Monitor.geometry} material={nodes.Monitor.material} position={[0.43, 0.95, -0.29]}>
     <mesh
       name='Screen_(Monitor)'
       geometry={nodes['Screen_(Monitor)'].geometry}
       material={nodes['Screen_(Monitor)'].material}
-      position={[-0.09, 0.325, 0.066]}
+      position={[-0.09, 0.32, 0.06]}
       rotation={[0, 0, -Math.PI / 2]}
+      scale={[1.03, 1.01, 1.01]}
     />
   </BakedMesh>
 );

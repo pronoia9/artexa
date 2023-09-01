@@ -2,9 +2,8 @@
 
 import { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
-import { useControls } from 'leva';
-import { motion as motion3d } from 'framer-motion-3d';
 import { Noise } from 'noisejs';
+import { motion as motion3d } from 'framer-motion-3d';
 
 import { BakedMesh } from '@/components/threejs';
 import { sceneMotion } from '@/utils';
@@ -12,8 +11,7 @@ import { sceneMotion } from '@/utils';
 const noise = new Noise();
 
 export const PetBed = ({ nodes, materials, ...props }) => {
-  const zoruaHeadRef = useRef(),
-    zoruaTailRef = useRef();
+  const zoruaHeadRef = useRef(), zoruaTailRef = useRef();
 
   useFrame((state) => {
     const time = state.clock.getElapsedTime(); // Get the elapsed time since animation started
@@ -51,7 +49,7 @@ export const PetBed = ({ nodes, materials, ...props }) => {
       <motion3d.group name='Zorua' position={[-0.09, 0.03, -0.05]} rotation={[-2.46, 0.72, 2.65]} {...sceneMotion.bakedMesh()}>
         <mesh name='Zorua_1' geometry={nodes.Zorua_1.geometry} material={materials['Zorua #35']} />
         <mesh name='Zorua_2' geometry={nodes.Zorua_2.geometry} material={materials['Zorua #36']} />
-        <group ref={zoruaHeadRef} name='Zorua_Head' position={[0, 0.19, 0.14]} {...useControls({ rotation: { value: [0, 0, 0], step: 0.1 } })}>
+        <group ref={zoruaHeadRef} name='Zorua_Head' position={[0, 0.19, 0.14]}>
           <mesh name='Zorua_Head_1' geometry={nodes.Zorua_Head_1.geometry} material={materials['Zorua #35']} />
           <mesh name='Zorua_Head_2' geometry={nodes.Zorua_Head_2.geometry} material={materials['Zorua #36']} />
           <mesh name='Zorua_Head_3' geometry={nodes.Zorua_Head_3.geometry} material={materials['Zorua #37']} />
@@ -64,7 +62,6 @@ export const PetBed = ({ nodes, materials, ...props }) => {
           geometry={nodes.Zorua_Tail.geometry}
           material={materials['Zorua #35']}
           position={[0, 0.19, -0.08]}
-          // {...useControls({ rotation: { value: [0, 0, 0], step: 0.1 } })}
         />
       </motion3d.group>
     </BakedMesh>
