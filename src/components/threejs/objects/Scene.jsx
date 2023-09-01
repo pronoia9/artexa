@@ -28,8 +28,8 @@ export const Scene = (props) => {
   useEffect(() => void (cube === 'hidden' && (scroll.offset = 0)), [cube]);
 
   // Define constants for camera rotation
-  const camRotationX = -1.5707963267; // Rotation around the X-axis
-  const camRotationY = 0; // Rotation around the Y-axis
+  const camRotationX = -1.5707963267, // Rotation around the X-axis
+    camRotationY = 0; // Rotation around the Y-axis
   // Define UI controls for camera properties using 'leva'
   const cameraOptions = useControls('Camera', {
     Position: folder({
