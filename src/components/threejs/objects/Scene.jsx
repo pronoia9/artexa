@@ -8,7 +8,7 @@ Command: npx gltfjsx@6.1.11 brunos-room-v1.glb --transform
 import { useEffect, useRef, useState } from 'react';
 import { MathUtils, LoopOnce } from 'three';
 import { useFrame } from '@react-three/fiber';
-import { useAnimations, useGLTF, useScroll } from '@react-three/drei';
+import { Center, useAnimations, useGLTF, useScroll } from '@react-three/drei';
 import { folder, useControls } from 'leva';
 import { motion } from 'framer-motion-3d';
 
@@ -57,17 +57,15 @@ export const Scene = (props) => {
 
   // Resizing
   useEffect(() => {
-    const resize = () => {
-      console.log(objectsUpdateResponsive(window.innerWidth, window.innerHeight));
-      setResponsives((prev) => ({...prev, ...objectsUpdateResponsive()}))
-    };
+    const resize = () => void setResponsives((prev) => ({ ...prev, ...objectsUpdateResponsive(scroll.offset) }));
     window.addEventListener('resize', resize);
     return () => void window.removeEventListener('resize', resize);
   }, []);
 
   useFrame(({ camera, pointer }, delta) => {
-    // console.log('cube:', cube, '  |   offset:', scroll.offset);
-    const cameraAction = actions['Camera Scroll'], cubeAction = actions['Cube Animation'];
+    console.log('cube:', cube, '  |   offset:', scroll.offset);
+    const cameraAction = actions['Camera Scroll'],
+      cubeAction = actions['Cube Animation'];
 
     // Play cube animation on first scroll
     if (cube === 'initial' && scroll.offset > 0) {
@@ -113,13 +111,15 @@ export const Scene = (props) => {
   });
 
   return (
-    <group ref={group} name='Scene_Container' {...props} dispose={null}>
-      <Camera position={[0, 0, responsives.camera]} />
-      <motion.group name='Room_Container' position={[-0.25, -0.3, -0.01]}>
-        {cube !== 'hidden' && <Cube nodes={nodes} materials={materials} scale={responsives.cube} />}
-        {(cube === 'show room' || cube === 'hidden') && <Room nodes={nodes} materials={materials} scale={responsives.room} />}
-      </motion.group>
-    </group>
+    <Center>
+      <group ref={group} name='Scene_Container' {...props} dispose={null}>
+        <Camera position={[0, 0, responsives.camera]} />
+        <motion.group name='Room_Container' position={[-0.25, -0.3, -0.01]}>
+          {cube !== 'hidden' && <Cube nodes={nodes} materials={materials} scale={responsives.cube} />}
+          {(cube === 'show room' || cube === 'hidden') && <Room nodes={nodes} materials={materials} scale={responsives.room} />}
+        </motion.group>
+      </group>
+    </Center>
   );
 };
 
