@@ -9,8 +9,7 @@ import { themes, colors } from '@/styles/Themes';
 
 const storageKey = 'artexaSettings';
 
-//------------------------------ THEME STUFF -----------------------------//
-
+//--------------------------- THEME STUFF START --------------------------//
 // Get the system theme based on the user's OS preference
 export const getSystemTheme = () => {
   if (typeof window !== 'undefined') return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -49,9 +48,11 @@ export const saveThemeToStorage = (type, value) => {
 
 // Check if the theme is dark
 export const isDarkTheme = (theme) => theme === 'dark';
-
-//----------------------------- RANDOM UTILS -----------------------------//
-
+//---------------------------- THEME STUFF END ---------------------------//
+//
+//
+//
+//-------------------------- RANDOM UTILS START --------------------------//
 // Convert a string to lowercase
 export const lowerCase = (t) => `${t}`.toLowerCase();
 
@@ -81,8 +82,11 @@ export const getProjectsCount = (rows = 3, cols = 2) => {
   if (typeof window !== 'undefined')
     return (window.innerWidth > 1020 ? cols : window.innerWidth > 768 ? Math.max(cols - 1, 2) : Math.max(cols - 1, 1)) * rows;
 };
-
-//----------------------------- PROGRESSBARS -----------------------------//
+//--------------------------- RANDOM UTILS END ---------------------------//
+//
+//
+//
+//-------------------------- PROGRESSBARS START --------------------------//
 export const ProgressbarInstance = ({ type = 'circle', level, index, hide, duration, delay }) => {
   const id = `#${type}prog${index}`;
   switch (type) {
@@ -125,8 +129,11 @@ export const ProgressbarInstance = ({ type = 'circle', level, index, hide, durat
       return null;
   }
 };
-
-//--------------------------------- FORM ---------------------------------//
+//--------------------------- PROGRESSBARS END ---------------------------//
+//
+//
+//
+//------------------------------ FORM START ------------------------------//
 export const handleFormSubmit = (values, { setSubmitting, resetForm }, setSuccess) => {
   emailjs
     .send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, values, import.meta.env.VITE_EMAILJS_PUBLIC_KEY)
@@ -143,14 +150,19 @@ export const handleFormSubmit = (values, { setSubmitting, resetForm }, setSucces
       }
     );
 };
-
-//------------------------------- FANCYBOX -------------------------------//
-
+//------------------------------- FORM END -------------------------------//
+//
+//
+//
+//---------------------------- FANCYBOX START ----------------------------//
 export const openFancybox = (image) => {
   Fancybox.show([{ src: image, type: 'image' }]);
 };
-
-//------------------------------- CONFETTI -------------------------------//
+//----------------------------- FANCYBOX END -----------------------------//
+//
+//
+//
+//---------------------------- CONFETTI START ----------------------------//
 // Basic Cannon
 // The default mode... just your regular basic average blast of confetti. But it's still a little cool, right?
 export const confettiBasicCannon = (myConfetti = confetti) => {
@@ -187,10 +199,10 @@ export const confettiRealisticLook = (myConfetti = confetti) => {
   }
 
   fire(0.25, { spread: 26, startVelocity: 55 });
-  fire(0.2,  { spread: 60 });
+  fire(0.2, { spread: 60 });
   fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
-  fire(0.1,  { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
-  fire(0.1,  { spread: 120, startVelocity: 45 });
+  fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+  fire(0.1, { spread: 120, startVelocity: 45 });
 };
 
 // Stars
@@ -305,3 +317,9 @@ export const confettiSchoolPride = (myConfetti = confetti) => {
     if (Date.now() < end) requestAnimationFrame(frame);
   })();
 };
+//----------------------------- CONFETTI END -----------------------------//
+//
+//
+//
+//----------------------------- THREEJS START ----------------------------//
+//------------------------------ THREEJS END -----------------------------//
