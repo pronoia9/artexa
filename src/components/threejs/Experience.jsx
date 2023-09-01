@@ -1,7 +1,7 @@
 'use client';
 
 import { Suspense } from 'react';
-import { ScrollControls, useProgress } from '@react-three/drei';
+import { Preload, ScrollControls, useProgress } from '@react-three/drei';
 import { Leva } from 'leva';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -23,6 +23,7 @@ export const Experience = () => {
             <Scene />
           </ScrollControls>
           <Effects />
+          <Preload all />
         </Suspense>
       </MotionCanvas>
     </Container>
