@@ -324,13 +324,13 @@ export const confettiSchoolPride = (myConfetti = confetti) => {
 //----------------------------- THREEJS START ----------------------------//
 export const objectsUpdateResponsive = (width = window.innerWidth, height = window.innerHeight) => {
   switch (true) {
-    case width < 350:  return { room: 0.3  };
-    case width < 425:  return { room: 0.35 };
-    case width < 550:  return { room: 0.4  };
-    case width < 700:  return { room: 0.55 };
-    case width < 900:  return { room: 0.7  };
-    case width < 1100: return { room: 0.85 };
-    default:           return { cube: 0.25, room: 1, camera: 0.3 };
+    case width < 350:  return { room: 0.3 , camera: 2.025 };
+    case width < 425:  return { room: 0.35, camera: 1.9 };
+    case width < 550:  return { room: 0.4 , camera: 1.8 };
+    case width < 700:  return { room: 0.55, camera: 1.425 };
+    case width < 900:  return { room: 0.7 , camera: 1.045 };
+    case width < 1100: return { room: 0.85, camera: 0.675 };
+    default:           return { room: 1,    camera: 0.3, cube: 0.25, };
   }
 };
 //------------------------------ THREEJS END -----------------------------//
