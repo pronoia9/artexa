@@ -9,23 +9,19 @@ import { useEffect, useRef, useState } from 'react';
 import { MathUtils, LoopOnce } from 'three';
 import { useFrame } from '@react-three/fiber';
 import { useAnimations, useGLTF, useScroll } from '@react-three/drei';
+import { folder, useControls } from 'leva';
 import { motion } from 'framer-motion-3d';
 
 import { Camera, Cube, Room } from '@/components/threejs';
-import { folder, useControls } from 'leva';
+import { objectsUpdateResponsive } from '@/utils';
 
 export const Scene = (props) => {
   const group = useRef(); // Reference to the top group in the 3D scene
-  const [cube, setCube] = useState('initial'); // State to keep track of the cube's state (initial, animating, show room, hidden)
+  const [cube, setCube] = useState('initial'), // State to keep track of the cube's state (initial, animating, show room, hidden)
+    [responsives, setResponsives] = useState({ cube: 0.25, room: 1, camera: 0.3 }); // State to responsively resize/reposition objects
   const { nodes, materials, animations } = useGLTF('/3d/brunos-room-transformed.glb');
   const { actions } = useAnimations(animations, group); // Extract animation actions from loaded animations
   const scroll = useScroll(); // Get scroll data for controlling animation
-
-  // Disable the 'Camera Scroll' animation initially
-  useEffect(() => void (actions['Camera Scroll'].play().paused = true), []);
-
-  // Reset scroll offset to the start once the room is shown and the cube is hidden
-  useEffect(() => void (cube === 'hidden' && (scroll.offset = 0)), [cube]);
 
   // Define constants for camera rotation
   const camRotationX = -1.5707963267, // Rotation around the X-axis
@@ -33,12 +29,12 @@ export const Scene = (props) => {
   // Define UI controls for camera properties using 'leva'
   const cameraOptions = useControls('Camera', {
     Position: folder({
-      'Enable [Position]': true,
+      'Enable [Position]': false,
       'Multiplier [Position]': { value: 0.25, step: 0.01, min: 0, max: 2 },
       'Speed [Position]': { value: 0.1, step: 0.01, min: 0, max: 2 },
     }),
     Rotation: folder({
-      'Enable [Rotation]': true,
+      'Enable [Rotation]': false,
       'Threshold [Rotation]': { value: 0, step: 0.01, min: 0, max: 2 },
       'Up/Down': folder({
         'Enable [Up/Down]': true,
@@ -53,10 +49,25 @@ export const Scene = (props) => {
     }),
   });
 
+  // Disable the 'Camera Scroll' animation initially
+  useEffect(() => void (actions['Camera Scroll'].play().paused = true), []);
+
+  // Reset scroll offset to the start once the room is shown and the cube is hidden
+  useEffect(() => void (cube === 'hidden' && (scroll.offset = 0)), [cube]);
+
+  // Resizing
+  useEffect(() => {
+    const resize = () => {
+      console.log(objectsUpdateResponsive(window.innerWidth, window.innerHeight));
+      setResponsives((prev) => ({...prev, ...objectsUpdateResponsive()}))
+    };
+    window.addEventListener('resize', resize);
+    return () => void window.removeEventListener('resize', resize);
+  }, []);
+
   useFrame(({ camera, pointer }, delta) => {
     // console.log('cube:', cube, '  |   offset:', scroll.offset);
-    const cameraAction = actions['Camera Scroll'],
-      cubeAction = actions['Cube Animation'];
+    const cameraAction = actions['Camera Scroll'], cubeAction = actions['Cube Animation'];
 
     // Play cube animation on first scroll
     if (cube === 'initial' && scroll.offset > 0) {
@@ -103,10 +114,10 @@ export const Scene = (props) => {
 
   return (
     <group ref={group} name='Scene_Container' {...props} dispose={null}>
-      <Camera />
-      <motion.group name='Room_Container' position={[0.01, -0.3, -0.01]}>
-        {cube !== 'hidden' && <Cube nodes={nodes} materials={materials} />}
-        {(cube === 'show room' || cube === 'hidden') && <Room nodes={nodes} materials={materials} />}
+      <Camera position={[0, 0, responsives.camera]} />
+      <motion.group name='Room_Container' position={[-0.25, -0.3, -0.01]}>
+        {cube !== 'hidden' && <Cube nodes={nodes} materials={materials} scale={responsives.cube} />}
+        {(cube === 'show room' || cube === 'hidden') && <Room nodes={nodes} materials={materials} scale={responsives.room} />}
       </motion.group>
     </group>
   );
