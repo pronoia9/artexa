@@ -66,6 +66,8 @@ import {
   confettiFireworks,
   confettiSnow,
   confettiSchoolPride,
+  resizeObjects,
+  repositionCamera,
 } from './utils';
 
 export {
@@ -141,4 +143,6 @@ export {
   confettiFireworks,
   confettiSnow,
   confettiSchoolPride,
+  resizeObjects,
+  repositionCamera,
 };
