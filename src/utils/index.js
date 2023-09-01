@@ -66,7 +66,7 @@ import {
   confettiFireworks,
   confettiSnow,
   confettiSchoolPride,
-  resizeObjects,
+  objectsUpdateResponsive,
 } from './utils';
 
 export {
@@ -142,5 +142,5 @@ export {
   confettiFireworks,
   confettiSnow,
   confettiSchoolPride,
-  resizeObjects,
+  objectsUpdateResponsive,
 };
