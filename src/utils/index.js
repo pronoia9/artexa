@@ -67,7 +67,6 @@ import {
   confettiSnow,
   confettiSchoolPride,
   resizeObjects,
-  repositionCamera,
 } from './utils';
 
 export {
@@ -144,5 +143,4 @@ export {
   confettiSnow,
   confettiSchoolPride,
   resizeObjects,
-  repositionCamera,
 };
