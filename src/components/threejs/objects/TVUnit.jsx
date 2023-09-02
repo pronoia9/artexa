@@ -21,6 +21,7 @@ export const TVUnit = ({ nodes, ...props }) => {
   });
 
   const handleClick = (e) => {
+    // ! ISSUE: Changing the videoSource bugs it. The old video is still present, it pauses and the new video plays, and clicking again only toggles the previous video to play/pause as only audio while the new video also plays with both video and audio
     // if (e.object.name === 'Nintendo_Switch' && videoSource !== 'switch') setVideoSource('switch');
     // else if (e.object.name === 'TV_Thing' && videoSource !== 'tv') setVideoSource('tv');
     setIsPlaying((prev) => !prev);
@@ -29,8 +30,8 @@ export const TVUnit = ({ nodes, ...props }) => {
   // Reset video (pause it at the start)
   const handleVideoReset = () => {
     videoElement && (videoElement.currentTime = 0); // Rewind the video to the beginning
-    // setIsPlaying(false); // Set isPlaying to false when the video ends
-    setIsPlaying((prev) => !prev);
+    setIsPlaying(false); // Set isPlaying to false when the video ends
+    // setIsPlaying((prev) => !prev); // Pause the video if double clicked while playing, play it when paused
   };
 
   useEffect(() => {
@@ -40,14 +41,14 @@ export const TVUnit = ({ nodes, ...props }) => {
       videoElement.addEventListener('ended', handleVideoReset); // Add an event listener for the "ended" event
       return () => void videoElement.removeEventListener('ended', handleVideoReset); // Clean up the event listener when component unmounts
     }
-  }, []);
+  }, [videoElement]);
 
   useEffect(() => {
     if (videoElement) isPlaying ? videoElement.play() : videoElement.pause();
   }, [videoElement, isPlaying]);
 
   useEffect(() => {
-    console.log('video source changed to', videoSource);
+    // Change video here maybe i dont know...
   }, [videoSource]);
 
   return (
@@ -96,7 +97,6 @@ export const TVUnit = ({ nodes, ...props }) => {
           scale={1.01}
         >
           <meshStandardMaterial
-            // key={`tv-screen-material-${videoSource}`}
             ref={videoMaterialRef}
             // color={isPlaying ? null : 'black'}
             map={videoTexture}
