@@ -29,12 +29,12 @@ export const Scene = (props) => {
   // Define UI controls for camera properties using 'leva'
   const cameraOptions = useControls('Camera', {
     Position: folder({
-      'Enable [Position]': false,
+      'Enable [Position]': true,
       'Multiplier [Position]': { value: 0.25, step: 0.01, min: 0, max: 2 },
       'Speed [Position]': { value: 0.1, step: 0.01, min: 0, max: 2 },
     }),
     Rotation: folder({
-      'Enable [Rotation]': false,
+      'Enable [Rotation]': true,
       'Threshold [Rotation]': { value: 0, step: 0.01, min: 0, max: 2 },
       'Up/Down': folder({
         'Enable [Up/Down]': true,
