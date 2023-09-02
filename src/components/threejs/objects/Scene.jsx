@@ -63,7 +63,7 @@ export const Scene = (props) => {
   }, []);
 
   useFrame(({ camera, pointer }, delta) => {
-    console.log('cube:', cube, '  |   offset:', scroll.offset);
+    // console.log('cube:', cube, '  |   offset:', scroll.offset);
     const cameraAction = actions['Camera Scroll'],
       cubeAction = actions['Cube Animation'];
 
