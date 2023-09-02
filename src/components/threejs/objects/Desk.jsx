@@ -1,9 +1,8 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { BakedMesh, SteamMaterial } from '@/components/threejs';
-import { useVideoTexture } from '@react-three/drei';
 
 export const Desk = ({ nodes, ...props }) => {
   return (
@@ -90,48 +89,8 @@ const Headset = ({ nodes }) => (
 
 // TODO: Use store for playing cause material is in emissives
 const Macbook = ({ nodes }) => {
-  const videoMaterialRef = useRef();
-  const [isPlaying, setIsPlaying] = useState(false),
-    [videoElement, setVideoElement] = useState(null);
-  const videoTexture = useVideoTexture('/3d/house-of-the-dragon.mp4', {
-    unsuspend: 'canplay',
-    crossOrigin: 'Anonymous',
-    muted: false,
-    loop: false,
-    start: isPlaying,
-  });
-
-  const handleVideoEnd = () => {
-    setIsPlaying(false); // Set isPlaying to false when the video ends
-    videoElement && (videoElement.currentTime = 0); // Rewind the video to the beginning
-  };
-
-  useEffect(() => {
-    if (videoMaterialRef.current && videoMaterialRef.current.map) {
-      const videoElement = videoMaterialRef.current.map.image;
-      setVideoElement(videoElement);
-
-      videoElement.addEventListener('ended', handleVideoEnd); // Add an event listener for the "ended" event
-      return () => void videoElement.removeEventListener('ended', handleVideoEnd); // Clean up the event listener when component unmounts
-    }
-  }, []);
-
-  useEffect(() => {
-    if (videoElement) {
-      if (isPlaying) videoElement.play();
-      else videoElement.pause();
-    }
-  }, [isPlaying, videoElement]);
-
   return (
-    <BakedMesh
-      name='Macbook'
-      geometry={nodes.Macbook.geometry}
-      material={nodes.Macbook.material}
-      position={[-0.01, 0.61, 1.11]}
-      onClick={() => void setIsPlaying((prev) => !prev)}
-      onDoubleClick={handleVideoEnd}
-    >
+    <BakedMesh name='Macbook' geometry={nodes.Macbook.geometry} material={nodes.Macbook.material} position={[-0.01, 0.61, 1.11]}>
       <mesh
         name='Screen_(Macbook)'
         geometry={nodes['Screen_(Macbook)'].geometry}
@@ -139,21 +98,7 @@ const Macbook = ({ nodes }) => {
         position={[0.22, 0.38, 0.06]}
         rotation={[1.59, -0.05, 1.87]}
         scale={1.01}
-        onClick={() => void setIsPlaying((prev) => !prev)}
-        onDoubleClick={handleVideoEnd}
-      >
-        <meshStandardMaterial
-          ref={videoMaterialRef}
-          // ! Enable to turn off the screen while the video is paused
-          // key={`macbook-screen-material-${isPlaying}`}
-          // color={isPlaying ? null : 'black'}
-          map={videoTexture}
-          toneMapped={false}
-          // TODO: After readding Bloom
-          // emissive={'white'} // Set the emissive color
-          // emissiveIntensity={0.01} // Adjust the intensity of the emissive light
-        />
-      </mesh>
+      />
     </BakedMesh>
   );
 };
