@@ -11,20 +11,20 @@ const noise = new Noise();
 export const Couch = ({ nodes, materials, ...props }) => {
   const tentaclesRefs = useRef([]);
 
-  const speed = 1.25;
+  const multiplier = 1.1, speed = 0.125;
 
   useFrame((state) => {
     const time = state.clock.getElapsedTime();
-    tentaclesRefs.current[0].rotation.x = noise.perlin2(time * 0.09 * speed, 9) * 0.125;
-    tentaclesRefs.current[0].rotation.z = noise.perlin2(time * 0.1 * speed, 10) * 0.125;
-    tentaclesRefs.current[1].rotation.x = noise.perlin2(time * 0.08 * speed, 8) * 0.125;
-    tentaclesRefs.current[1].rotation.z = noise.perlin2(time * 0.07 * speed, 7) * 0.125;
-    tentaclesRefs.current[2].rotation.x = noise.perlin2(time * 0.04 * speed, 4) * 0.125;
-    tentaclesRefs.current[2].rotation.z = noise.perlin2(time * 0.03 * speed, 3) * 0.125;
-    tentaclesRefs.current[3].rotation.x = noise.perlin2(time * 0.05 * speed, 5) * 0.125;
-    tentaclesRefs.current[3].rotation.z = noise.perlin2(time * 0.06 * speed, 6) * 0.125;
-    tentaclesRefs.current[4].rotation.x = noise.perlin2(time * 0.01 * speed, 1) * 0.125;
-    tentaclesRefs.current[4].rotation.z = noise.perlin2(time * 0.02 * speed, 2) * 0.125;
+    tentaclesRefs.current[0].rotation.x = noise.perlin2(time * 0.09 * multiplier, 9) * speed;
+    tentaclesRefs.current[0].rotation.z = noise.perlin2(time * 0.1 * multiplier, 10) * speed;
+    tentaclesRefs.current[1].rotation.x = noise.perlin2(time * 0.08 * multiplier, 8) * speed;
+    tentaclesRefs.current[1].rotation.z = noise.perlin2(time * 0.07 * multiplier, 7) * speed;
+    tentaclesRefs.current[2].rotation.x = noise.perlin2(time * 0.04 * multiplier, 4) * speed;
+    tentaclesRefs.current[2].rotation.z = noise.perlin2(time * 0.03 * multiplier, 3) * speed;
+    tentaclesRefs.current[3].rotation.x = noise.perlin2(time * 0.05 * multiplier, 5) * speed;
+    tentaclesRefs.current[3].rotation.z = noise.perlin2(time * 0.06 * multiplier, 6) * speed;
+    tentaclesRefs.current[4].rotation.x = noise.perlin2(time * 0.01 * multiplier, 1) * speed;
+    tentaclesRefs.current[4].rotation.z = noise.perlin2(time * 0.02 * multiplier, 2) * speed;
   });
 
   return (
