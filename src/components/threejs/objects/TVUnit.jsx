@@ -1,55 +1,57 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
-import { useVideoTexture } from '@react-three/drei';
+import { useEffect, useState } from 'react';
+import { sRGBEncoding } from 'three';
 import { motion as motion3d } from 'framer-motion-3d';
 
 import { BakedMesh } from '@/components/threejs';
 
 export const TVUnit = ({ nodes, ...props }) => {
-  const videoMaterialRef = useRef();
-
-  const [videoElement, setVideoElement] = useState(null);
-  const [videoSource, setVideoSource] = useState('tv');
   const [isPlaying, setIsPlaying] = useState(false);
-  const videoTexture = useVideoTexture(`/3d/${videoSource}.mp4`, {
-    unsuspend: 'canplay',
-    crossOrigin: 'Anonymous',
-    muted: false,
-    loop: false,
-    start: isPlaying,
+  const [active, setActive] = useState('tv');
+  const [videos] = useState({
+    tv: Object.assign(document.createElement('video'), { src: `/3d/tv.mp4`, crossOrigin: 'Anonymous', loop: false, muted: false }),
+    nintendo: Object.assign(document.createElement('video'), { src: `/3d/nintendo.mp4`, crossOrigin: 'Anonymous', loop: false, muted: false }),
   });
+  // const [hover, setHover] = useState(false);
+  // const [volume, setVolume] = useState(1);
 
   const handleClick = (e) => {
-    // ! ISSUE: Changing the videoSource bugs it. The old video is still present, it pauses and the new video plays, and clicking again only toggles the previous video to play/pause as only audio while the new video also plays with both video and audio
-    // if (e.object.name === 'Nintendo_Switch' && videoSource !== 'switch') setVideoSource('switch');
-    // else if (e.object.name === 'TV_Thing' && videoSource !== 'tv') setVideoSource('tv');
+    if (e.object.name === 'Nintendo_Switch' && active !== 'nintendo') setActive('nintendo');
+    else if (e.object.name === 'TV_Thing' && active !== 'tv') setActive('tv');
     setIsPlaying((prev) => !prev);
   };
 
-  // Reset video (pause it at the start)
-  const handleVideoReset = () => {
-    videoElement && (videoElement.currentTime = 0); // Rewind the video to the beginning
-    setIsPlaying(false); // Set isPlaying to false when the video ends
-    // setIsPlaying((prev) => !prev); // Pause the video if double clicked while playing, play it when paused
+  const handleDoubleClick = () => {
+    videos[active].pause();
+    videos[active].currentTime = 0;
+    setIsPlaying(false);
   };
 
-  useEffect(() => {
-    if (videoMaterialRef.current && videoMaterialRef.current.map) {
-      const videoElement = videoMaterialRef.current.map.image;
-      setVideoElement(videoElement);
-      videoElement.addEventListener('ended', handleVideoReset); // Add an event listener for the "ended" event
-      return () => void videoElement.removeEventListener('ended', handleVideoReset); // Clean up the event listener when component unmounts
-    }
-  }, [videoElement]);
+  // TODO: Maybe add an option to change the volume on hover & mouse scroll. Look into suspending scroll.offset within these conditions as well.
+  // const handleMouseWheel = (e) => {
+  // };
+
+  useEffect(() => { isPlaying ? videos[active].play() : videos[active].pause(); }, [isPlaying]);
 
   useEffect(() => {
-    if (videoElement) isPlaying ? videoElement.play() : videoElement.pause();
-  }, [videoElement, isPlaying]);
+    Object.values(videos).forEach((video) => {
+      video.pause();
+      video.currentTime = 0;
+    });
+    videos[active].play();
+  }, [active]);
 
-  useEffect(() => {
-    // Change video here maybe i dont know...
-  }, [videoSource]);
+  useEffect(() => void videos[active].pause(), []);
+
+  // useEffect(() => {
+  //   window.addEventListener('wheel', handleMouseWheel);
+  //   return () => { window.removeEventListener('wheel', handleMouseWheel); };
+  // }, []);
+
+  // useEffect(() => {
+  //   if (isPlaying && hover) videos[active].volume = volume;
+  // }, [volume]);
 
   return (
     <BakedMesh name='TV_Unit' geometry={nodes.TV_Unit.geometry} material={nodes.TV_Unit.material} position={[-1.68, 0.47, 2.91]} {...props}>
@@ -70,7 +72,7 @@ export const TVUnit = ({ nodes, ...props }) => {
         material={nodes.Nintendo_Switch.material}
         position={[1.63, 0.34, 0.06]}
         onClick={handleClick}
-        onDoubleClick={handleVideoReset}
+        onDoubleClick={handleDoubleClick}
       />
 
       <BakedMesh
@@ -78,7 +80,7 @@ export const TVUnit = ({ nodes, ...props }) => {
         geometry={nodes.TV_Thing.geometry}
         material={nodes.TV_Thing.material}
         onClick={handleClick}
-        onDoubleClick={handleVideoReset}
+        onDoubleClick={handleDoubleClick}
       />
 
       <BakedMesh
@@ -87,7 +89,9 @@ export const TVUnit = ({ nodes, ...props }) => {
         material={nodes.TV.material}
         position={[-0.02, 0.92, 0.13]}
         onClick={handleClick}
-        onDoubleClick={handleVideoReset}
+        onDoubleClick={handleDoubleClick}
+        // onPointerOver={() => setHover(true)}
+        // onPointerOut={() => setHover(false)}
       >
         <motion3d.mesh
           name='Screen_(TV)'
@@ -96,12 +100,9 @@ export const TVUnit = ({ nodes, ...props }) => {
           position={[0, 0.55, 0.02]}
           scale={1.01}
         >
-          <meshStandardMaterial
-            ref={videoMaterialRef}
-            // color={isPlaying ? null : 'black'}
-            map={videoTexture}
-            toneMapped={false}
-          />
+          <meshStandardMaterial toneMapped={false}>
+            <videoTexture key={`videoTexture-${active}`} attach='map' args={[videos[active]]} encoding={sRGBEncoding} />
+          </meshStandardMaterial>
         </motion3d.mesh>
       </BakedMesh>
 
