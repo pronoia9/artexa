@@ -56,7 +56,7 @@ export const TVUnit = ({ nodes, ...props }) => {
       geometry={nodes.TV_Unit.geometry}
       material={nodes.TV_Unit.material}
       position={[-1.68, 0.47, 2.91]}
-      onPointerOver={() => void setHoveredItem(e.object.name)}
+      onPointerOver={(e) => void setHoveredItem(e.object.name)}
       onPointerOut={() => void setHoveredItem(null)}
       {...props}
     >
