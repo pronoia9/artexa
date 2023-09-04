@@ -5,14 +5,24 @@ import { useEffect, useState } from 'react';
 import { BakedMesh, SteamMaterial } from '@/components/threejs';
 
 export const Desk = ({ nodes, ...props }) => {
+  const [hoveredItem, setHoveredItem] = useState(null);
+
   return (
-    <BakedMesh name='Desk' geometry={nodes.Desk.geometry} material={nodes.Desk.material} position={[2.55, 1.21, 0.45]} {...props}>
+    <BakedMesh
+      name='Desk'
+      geometry={nodes.Desk.geometry}
+      material={nodes.Desk.material}
+      position={[2.55, 1.21, 0.45]}
+      onPointerOver={(e) => void setHoveredItem(e.object.name)}
+      onPointerOut={() => void setHoveredItem(null)}
+      {...props}
+    >
       <Camera nodes={nodes} />
       <CoffeeMug nodes={nodes} />
       <ElgatoLight nodes={nodes} />
       <Headset nodes={nodes} />
-      <Macbook nodes={nodes} />
-      <Monitor nodes={nodes} />
+      <Macbook nodes={nodes} hovered={hoveredItem === 'Macbook' || hoveredItem === 'Screen_(Macbook)'} />
+      <Monitor nodes={nodes} hovered={hoveredItem === 'Monitor' || hoveredItem === 'Screen_(Monitor)'} />
       <PlantL nodes={nodes} />
       <PlantS nodes={nodes} />
       <RubixCube nodes={nodes} />
@@ -87,10 +97,11 @@ const Headset = ({ nodes }) => (
   <BakedMesh name='Headset' geometry={nodes.Headset.geometry} material={nodes.Headset.material} position={[-0.21, 0.27, -1.91]} />
 );
 
-// TODO: Use store for playing cause material is in emissives
-const Macbook = ({ nodes }) => {
+// TODO: Idea 1 - Selective Bloom Spheres
+// TODO: Idea 2 - Selective Confetti
+const Macbook = ({ nodes, ...props }) => {
   return (
-    <BakedMesh name='Macbook' geometry={nodes.Macbook.geometry} material={nodes.Macbook.material} position={[-0.01, 0.61, 1.11]}>
+    <BakedMesh name='Macbook' geometry={nodes.Macbook.geometry} material={nodes.Macbook.material} position={[-0.01, 0.61, 1.11]} {...props}>
       <mesh
         name='Screen_(Macbook)'
         geometry={nodes['Screen_(Macbook)'].geometry}
@@ -104,8 +115,8 @@ const Macbook = ({ nodes }) => {
 };
 
 // TODO: Idea 1 - Blobs Portal
-const Monitor = ({ nodes }) => (
-  <BakedMesh name='Monitor' geometry={nodes.Monitor.geometry} material={nodes.Monitor.material} position={[0.43, 0.95, -0.29]}>
+const Monitor = ({ nodes, ...props }) => (
+  <BakedMesh name='Monitor' geometry={nodes.Monitor.geometry} material={nodes.Monitor.material} position={[0.43, 0.95, -0.29]} {...props}>
     <mesh
       name='Screen_(Monitor)'
       geometry={nodes['Screen_(Monitor)'].geometry}
