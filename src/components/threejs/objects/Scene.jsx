@@ -64,8 +64,7 @@ export const Scene = (props) => {
 
   useFrame(({ camera, pointer }, delta) => {
     // console.log('cube:', cube, '  |   offset:', scroll.offset);
-    const cameraAction = actions['Camera Scroll'],
-      cubeAction = actions['Cube Animation'];
+    const cameraAction = actions['Camera Scroll'], cubeAction = actions['Cube Animation'];
 
     // Play cube animation on first scroll
     if (cube === 'initial' && scroll.offset > 0) {
@@ -80,6 +79,7 @@ export const Scene = (props) => {
     // Enable camera scroll + controls
     else if (cube === 'hidden') {
       // Interpolate camera action time based on scroll offset
+      // cameraAction.time = MathUtils.damp(cameraAction.time, (cameraAction.getClip().duration) * scroll.offset, 100, delta);
       cameraAction.time = MathUtils.lerp(cameraAction.time, cameraAction.getClip().duration * scroll.offset, 0.05);
 
       // Camera Position
