@@ -6,20 +6,22 @@ import { motion as motion3d } from 'framer-motion-3d';
 
 import { BakedMesh } from '@/components/threejs';
 
+const videoOptions = { crossOrigin: 'Anonymous', loop: false, muted: false, volume: 0.25 };
+
 export const TVUnit = ({ nodes, ...props }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [active, setActive] = useState('tv2');
   const [videos] = useState({
-    tv1: Object.assign(document.createElement('video'), { src: `/3d/tv1.mp4`, crossOrigin: 'Anonymous', loop: false, muted: false }),
-    tv2: Object.assign(document.createElement('video'), { src: `/3d/tv2.mp4`, crossOrigin: 'Anonymous', loop: false, muted: false }),
-    nintendo: Object.assign(document.createElement('video'), { src: `/3d/nintendo.mp4`, crossOrigin: 'Anonymous', loop: false, muted: false }),
+    tv1: Object.assign(document.createElement('video'), { src: `/3d/tv1.mp4`, ...videoOptions }),
+    tv2: Object.assign(document.createElement('video'), { src: `/3d/tv2.mp4`, ...videoOptions }),
+    nintendo: Object.assign(document.createElement('video'), { src: `/3d/nintendo.mp4`, ...videoOptions }),
   });
   // const [hover, setHover] = useState(false);
   // const [volume, setVolume] = useState(1);
 
   const handleClick = (e) => {
     if (e.object.name === 'Nintendo_Switch' && active !== 'nintendo') setActive('nintendo');
-    else if (e.object.name === 'TV_Thing') setActive((prev) => prev === 'tv1' ? 'tv2' : 'tv1');
+    else if (e.object.name === 'TV_Thing') setActive((prev) => (prev === 'tv1' ? 'tv2' : 'tv1'));
     setIsPlaying((prev) => !prev);
   };
 
@@ -33,7 +35,9 @@ export const TVUnit = ({ nodes, ...props }) => {
   // const handleMouseWheel = (e) => {
   // };
 
-  useEffect(() => { isPlaying ? videos[active].play() : videos[active].pause(); }, [isPlaying]);
+  useEffect(() => {
+    isPlaying ? videos[active].play() : videos[active].pause();
+  }, [isPlaying]);
 
   useEffect(() => {
     Object.values(videos).forEach((video) => {
@@ -102,7 +106,15 @@ export const TVUnit = ({ nodes, ...props }) => {
           scale={1.01}
         >
           <meshStandardMaterial toneMapped={false}>
-            <videoTexture key={`videoTexture-${active}`} attach='map' args={[videos[active]]} encoding={sRGBEncoding} flipY={true} wrapS={RepeatWrapping} repeat-x={-1} />
+            <videoTexture
+              key={`videoTexture-${active}`}
+              attach='map'
+              args={[videos[active]]}
+              encoding={sRGBEncoding}
+              flipY={true}
+              wrapS={RepeatWrapping}
+              repeat-x={-1}
+            />
           </meshStandardMaterial>
         </motion3d.mesh>
       </BakedMesh>
