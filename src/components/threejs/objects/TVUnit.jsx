@@ -32,10 +32,7 @@ export const TVUnit = ({ nodes, ...props }) => {
   };
 
   // TODO: Maybe add an option to change the volume on hover & mouse scroll. Look into suspending scroll.offset within these conditions as well.
-  // const handleMouseWheel = (e) => {
-  // };
-
-  const handlePointerOver = (e) => void setHoveredItem(e.object.name);
+  // const handleMouseWheel = (e) => { };
 
   useEffect(() => { isPlaying ? videos[active].play() : videos[active].pause(); }, [isPlaying]);
 
@@ -51,7 +48,7 @@ export const TVUnit = ({ nodes, ...props }) => {
 
   // useEffect(() => { window.addEventListener('wheel', handleMouseWheel); return () => { window.removeEventListener('wheel', handleMouseWheel); }; }, []);
   // useEffect(() => { if (isPlaying && hover) videos[active].volume = volume; }, [volume]);
-  
+
   return (
     <BakedMesh
       ref={groupRef}
@@ -59,7 +56,7 @@ export const TVUnit = ({ nodes, ...props }) => {
       geometry={nodes.TV_Unit.geometry}
       material={nodes.TV_Unit.material}
       position={[-1.68, 0.47, 2.91]}
-      onPointerOver={handlePointerOver}
+      onPointerOver={() => void setHoveredItem(e.object.name)}
       onPointerOut={() => void setHoveredItem(null)}
       {...props}
     >
