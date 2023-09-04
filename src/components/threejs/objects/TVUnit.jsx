@@ -1,14 +1,14 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { RepeatWrapping, sRGBEncoding } from 'three';
-import { motion as motion3d } from 'framer-motion-3d';
 
 import { BakedMesh } from '@/components/threejs';
 
 const videoOptions = { crossOrigin: 'Anonymous', loop: false, muted: false, volume: 0.25 };
 
 export const TVUnit = ({ nodes, ...props }) => {
+  const groupRef = useRef();
   const [isPlaying, setIsPlaying] = useState(false);
   const [active, setActive] = useState('tv2');
   const [videos] = useState({
@@ -16,7 +16,7 @@ export const TVUnit = ({ nodes, ...props }) => {
     tv2: Object.assign(document.createElement('video'), { src: `/3d/tv2.mp4`, ...videoOptions }),
     nintendo: Object.assign(document.createElement('video'), { src: `/3d/nintendo.mp4`, ...videoOptions }),
   });
-  // const [hover, setHover] = useState(false);
+  const [hoveredItem, setHoveredItem] = useState(null);
   // const [volume, setVolume] = useState(1);
 
   const handleClick = (e) => {
@@ -35,9 +35,9 @@ export const TVUnit = ({ nodes, ...props }) => {
   // const handleMouseWheel = (e) => {
   // };
 
-  useEffect(() => {
-    isPlaying ? videos[active].play() : videos[active].pause();
-  }, [isPlaying]);
+  const handlePointerOver = (e) => void setHoveredItem(e.object.name);
+
+  useEffect(() => { isPlaying ? videos[active].play() : videos[active].pause(); }, [isPlaying]);
 
   useEffect(() => {
     Object.values(videos).forEach((video) => {
@@ -49,17 +49,20 @@ export const TVUnit = ({ nodes, ...props }) => {
 
   useEffect(() => void videos[active].pause(), []);
 
-  // useEffect(() => {
-  //   window.addEventListener('wheel', handleMouseWheel);
-  //   return () => { window.removeEventListener('wheel', handleMouseWheel); };
-  // }, []);
-
-  // useEffect(() => {
-  //   if (isPlaying && hover) videos[active].volume = volume;
-  // }, [volume]);
-
+  // useEffect(() => { window.addEventListener('wheel', handleMouseWheel); return () => { window.removeEventListener('wheel', handleMouseWheel); }; }, []);
+  // useEffect(() => { if (isPlaying && hover) videos[active].volume = volume; }, [volume]);
+  
   return (
-    <BakedMesh name='TV_Unit' geometry={nodes.TV_Unit.geometry} material={nodes.TV_Unit.material} position={[-1.68, 0.47, 2.91]} {...props}>
+    <BakedMesh
+      ref={groupRef}
+      name='TV_Unit'
+      geometry={nodes.TV_Unit.geometry}
+      material={nodes.TV_Unit.material}
+      position={[-1.68, 0.47, 2.91]}
+      onPointerOver={handlePointerOver}
+      onPointerOut={() => void setHoveredItem(null)}
+      {...props}
+    >
       <BakedMesh
         name='Plant_(TV_Unit)'
         geometry={nodes['Plant_(TV_Unit)'].geometry}
@@ -78,6 +81,7 @@ export const TVUnit = ({ nodes, ...props }) => {
         position={[1.63, 0.34, 0.06]}
         onClick={handleClick}
         onDoubleClick={handleDoubleClick}
+        hovered={hoveredItem === 'Nintendo_Switch'}
       />
 
       <BakedMesh
@@ -86,6 +90,8 @@ export const TVUnit = ({ nodes, ...props }) => {
         material={nodes.TV_Thing.material}
         onClick={handleClick}
         onDoubleClick={handleDoubleClick}
+        onPointerOver={() => void setHoveredItem('TV_Thing')}
+        hovered={hoveredItem === 'TV_Thing'}
       />
 
       <BakedMesh
@@ -95,10 +101,9 @@ export const TVUnit = ({ nodes, ...props }) => {
         position={[-0.02, 0.92, 0.13]}
         onClick={handleClick}
         onDoubleClick={handleDoubleClick}
-        // onPointerOver={() => setHover(true)}
-        // onPointerOut={() => setHover(false)}
+        hovered={hoveredItem === 'TV' || hoveredItem === 'Screen_(TV)'}
       >
-        <motion3d.mesh
+        <mesh
           name='Screen_(TV)'
           geometry={nodes['Screen_(TV)'].geometry}
           material={nodes['Screen_(TV)'].Screen}
@@ -116,7 +121,7 @@ export const TVUnit = ({ nodes, ...props }) => {
               repeat-x={-1}
             />
           </meshStandardMaterial>
-        </motion3d.mesh>
+        </mesh>
       </BakedMesh>
 
       <BakedMesh name='VR' geometry={nodes.VR.geometry} material={nodes.VR.material} position={[-1.17, -0.33, -0.17]} />
