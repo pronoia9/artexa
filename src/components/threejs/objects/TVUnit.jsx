@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { sRGBEncoding } from 'three';
+import { RepeatWrapping, sRGBEncoding } from 'three';
 import { motion as motion3d } from 'framer-motion-3d';
 
 import { BakedMesh } from '@/components/threejs';
@@ -102,7 +102,7 @@ export const TVUnit = ({ nodes, ...props }) => {
           scale={1.01}
         >
           <meshStandardMaterial toneMapped={false}>
-            <videoTexture key={`videoTexture-${active}`} attach='map' args={[videos[active]]} encoding={sRGBEncoding} />
+            <videoTexture key={`videoTexture-${active}`} attach='map' args={[videos[active]]} encoding={sRGBEncoding} flipY={true} wrapS={RepeatWrapping} repeat-x={-1} />
           </meshStandardMaterial>
         </motion3d.mesh>
       </BakedMesh>
