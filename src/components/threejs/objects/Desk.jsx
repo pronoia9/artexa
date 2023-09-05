@@ -5,24 +5,14 @@ import { useEffect, useState } from 'react';
 import { BakedMesh, SteamMaterial } from '@/components/threejs';
 
 export const Desk = ({ nodes, ...props }) => {
-  const [hoveredItem, setHoveredItem] = useState(null);
-
   return (
-    <BakedMesh
-      name='Desk'
-      geometry={nodes.Desk.geometry}
-      material={nodes.Desk.material}
-      position={[2.55, 1.21, 0.45]}
-      onPointerOver={(e) => void setHoveredItem(e.object.name)}
-      onPointerOut={() => void setHoveredItem(null)}
-      {...props}
-    >
+    <BakedMesh name='Desk' geometry={nodes.Desk.geometry} material={nodes.Desk.material} position={[2.55, 1.21, 0.45]} {...props}>
       <Camera nodes={nodes} />
       <CoffeeMug nodes={nodes} />
       <ElgatoLight nodes={nodes} />
       <Headset nodes={nodes} />
-      <Macbook nodes={nodes} hovered={hoveredItem === 'Macbook' || hoveredItem === 'Screen_(Macbook)'} />
-      <Monitor nodes={nodes} hovered={hoveredItem === 'Monitor' || hoveredItem === 'Screen_(Monitor)'} />
+      <Macbook nodes={nodes} />
+      <Monitor nodes={nodes} />
       <PlantL nodes={nodes} />
       <PlantS nodes={nodes} />
       <RubixCube nodes={nodes} />
