@@ -3,11 +3,14 @@
 import { useEffect, useRef, useState } from 'react';
 import { CatmullRomCurve3, MathUtils, Vector3 } from 'three';
 import { extend, useFrame } from '@react-three/fiber';
-import { MeshPortalMaterial } from '@react-three/drei';
+import { MeshPortalMaterial, Environment, MeshDistortMaterial, ContactShadows } from '@react-three/drei';
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 import { useControls } from 'leva';
+import { motion as motion3d } from 'framer-motion-3d';
 
 import { BakedMesh, SteamMaterial } from '@/components/threejs';
+import { dataStore, rngInRange } from '@/utils';
+import { colors, themes } from '@/styles';
 // import { colors } from '@/styles';
 // import { dataStore } from '@/utils';
 
@@ -96,8 +99,6 @@ const Headset = ({ nodes }) => (
   <BakedMesh name='Headset' geometry={nodes.Headset.geometry} material={nodes.Headset.material} position={[-0.21, 0.27, -1.91]} />
 );
 
-// TODO: Idea 1 - Selective Bloom Spheres
-// TODO: Idea 2 - Selective Confetti
 const Macbook = ({ nodes, ...props }) => {
   // const { accent } = dataStore((state) => ({ accent: state.accent }));
   const { dash, count, radius } = useControls('Wallpaper', {
@@ -132,17 +133,9 @@ const Macbook = ({ nodes, ...props }) => {
   );
 };
 
-// TODO: Idea 1 - Blobs Portal
 const Monitor = ({ nodes, ...props }) => (
   <BakedMesh name='Monitor' geometry={nodes.Monitor.geometry} material={nodes.Monitor.material} position={[0.43, 0.95, -0.29]} {...props}>
-    <mesh
-      name='Screen_(Monitor)'
-      geometry={nodes['Screen_(Monitor)'].geometry}
-      material={nodes['Screen_(Monitor)'].material}
-      position={[-0.09, 0.32, 0.06]}
-      rotation={[0, 0, -Math.PI / 2]}
-      scale={[1.03, 1.01, 1.01]}
-    />
+    <Blob nodes={nodes} />
   </BakedMesh>
 );
 
@@ -193,5 +186,68 @@ const Fatline = ({ curve, width, color, speed, dash }) => {
       <meshLineGeometry points={curve} />
       <meshLineMaterial transparent lineWidth={width * 0.075} color={color} depthWrite={false} dashArray={0.25} dashRatio={dash} toneMapped={false} />
     </mesh>
+  );
+};
+
+const Blob = ({ nodes }) => {
+  const { theme, accent } = dataStore((state) => ({ theme: state.theme, accent: state.accent }));
+  const meshRef = useRef(),
+    lightRef = useRef();
+  const [mode, setMode] = useState(false),
+    [down, setDown] = useState(false),
+    [hovered, setHovered] = useState(false);
+
+  return (
+    <motion3d.mesh
+      name='Screen_(Monitor)'
+      geometry={nodes['Screen_(Monitor)'].geometry}
+      material={nodes['Screen_(Monitor)'].material}
+      position={[-0.09, 0.32, 0.06]}
+      rotation={[0, 0, -Math.PI / 2]}
+      scale={[1.03, 1.01, 1.01]}
+    >
+      <MeshPortalMaterial>
+        <color attach='background' args={[themes[!mode ? 'dark' : 'light'].bg]} />
+
+        <group position={[0, 1.5, 0]}>
+          <motion3d.ambientLight animate={{ intensity: mode && !hovered ? 1.5 : 0.5 }} />
+          <motion3d.pointLight ref={lightRef} position-z={-15} color={colors[accent].accent1} animate={{ intensity: mode && !hovered ? 0.4 : 1 }} />
+
+          <motion3d.mesh
+            ref={meshRef}
+            scale={0.2}
+            onPointerOver={() => setHovered(true)}
+            onPointerOut={() => setHovered(false)}
+            onPointerDown={() => setDown(true)}
+            onPointerUp={() => { setDown(false); setMode(!mode); }}
+            // onDoubleClick={ change show from store to switch from 3d scene to portfolio site }
+            animate={{ scale: (down ? 1.5 : hovered ? 1.2 : 1) * 0.2, transition: { type: 'spring', bounce: 0.8, duration: 2 } }}
+          >
+            <sphereGeometry args={[1, 64, 64]} />
+            <MeshDistortMaterial
+              color={hovered ? colors[accent][`accent${Math.floor(rngInRange(0, 6))}`] : !mode ? '#202020' : 'white'}
+              envMapIntensity={mode && !hovered ? 0.4 : 1}
+              clearcoat={mode && !hovered ? 0.04 : 1}
+              clearcoatRoughness={0}
+              metalness={0.1}
+            />
+          </motion3d.mesh>
+
+          {/* <ContactShadows
+            rotation={[Math.PI / 2, 0, 0]}
+            position={[0, -1.6, 0]}
+            {...useControls({ position: [0, -1.6, 0], rotation: [Math.PI / 2, 0, 0] })}
+            // opacity={mode ? 0.8 : 0.4}
+            opacity={1}
+            width={15}
+            height={15}
+            blur={2.5}
+            far={1.6}
+          /> */}
+        </group>
+
+        <Environment preset='warehouse' />
+      </MeshPortalMaterial>
+    </motion3d.mesh>
   );
 };
