@@ -11,7 +11,7 @@ export const Cube = ({ nodes, materials, ...props }) => {
 
   return (
     <motion.group name='Cube' position={[0.01, 2.14, -0.01]} scale={0.25} {...props}>
-      <Float key={`cube-float-${scroll.offset}`} speed={scroll.offset === 0 ? 2.5 : 0} factor={1}>
+      <Float key={`cube-float-${scroll.offset}`} speed={scroll.offset === 0 ? 5 : 0} factor={1}>
         <mesh name='Cube_1' geometry={nodes.Cube_1.geometry} material={nodes.Cube_1.material}>
           <meshStandardMaterial color={`#${isDarkTheme(theme) ? 'FFF3FF' : 'FFF3DD'}`} />
         </mesh>
