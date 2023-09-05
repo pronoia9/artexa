@@ -3,7 +3,7 @@ import { Bloom, Effects } from './Effects';
 import { Camera } from './Camera';
 
 import { BakedMesh } from './materials/BakedMesh';
-import { BakedMaterial } from './materials/BakedMaterial';
+import { BakedShaderMaterial, BakedMaterial } from './materials/BakedMaterial';
 import { SteamMaterial } from './materials/SteamMaterial';
 
 import { Bookshelf } from './objects/Bookshelf';
@@ -21,5 +21,5 @@ import { TVUnit } from './objects/TVUnit';
 
 export {
   Experience, Bloom, Effects, Camera,
-  BakedMesh, BakedMaterial, SteamMaterial,
+  BakedMesh, BakedShaderMaterial, BakedMaterial, SteamMaterial,
   Bookshelf, Chair, CoffeeTable, Couch, Cube, Desk, Guitar, PetBed, Room, Scene, Tardis, TVUnit, };

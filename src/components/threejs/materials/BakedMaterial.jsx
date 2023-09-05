@@ -8,7 +8,7 @@ import { button, useControls } from 'leva';
 
 import { dataStore, isDarkTheme } from '@/utils';
 
-const BakedShaderMaterial = shaderMaterial(
+export const BakedShaderMaterial = shaderMaterial(
   {
     uBakedLightTexture: null,
     uBakedDarkTexture: null,
