@@ -10,7 +10,6 @@ import { MathUtils, LoopOnce } from 'three';
 import { useFrame } from '@react-three/fiber';
 import { Center, useAnimations, useGLTF, useScroll } from '@react-three/drei';
 import { folder, useControls } from 'leva';
-import { motion } from 'framer-motion-3d';
 
 import { Camera, Cube, Room } from '@/components/threejs';
 import { objectsUpdateResponsive } from '@/utils';
@@ -113,10 +112,10 @@ export const Scene = (props) => {
     <Center>
       <group ref={group} name='Scene_Container' {...props} dispose={null}>
         <Camera position={[0, 0, responsives.camera]} />
-        <motion.group name='Room_Container' position={[-0.25, -0.3, -0.01]}>
+        <group name='Room_Container' position={[-0.25, -0.3, -0.01]}>
           {cube !== 'hidden' && <Cube nodes={nodes} materials={materials} scale={responsives.cube} />}
           {(cube === 'show room' || cube === 'hidden') && <Room nodes={nodes} materials={materials} scale={responsives.room} />}
-        </motion.group>
+        </group>
       </group>
     </Center>
   );
