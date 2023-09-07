@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { CatmullRomCurve3, MathUtils, Vector3 } from 'three';
 import { extend, useFrame } from '@react-three/fiber';
-import { MeshPortalMaterial, Environment, MeshDistortMaterial, ContactShadows } from '@react-three/drei';
+import { MeshPortalMaterial, Environment, MeshDistortMaterial } from '@react-three/drei';
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 import { useControls } from 'leva';
 import { motion as motion3d } from 'framer-motion-3d';
@@ -198,7 +198,7 @@ const Monitor = ({ nodes, ...props }) => (
   </BakedMesh>
 );
 
-const Blob = ({ nodes }) => {
+const Blob = () => {
   const { theme, accent } = dataStore((state) => ({ theme: state.theme, accent: state.accent }));
   const meshRef = useRef(),
     lightRef = useRef();
@@ -210,13 +210,14 @@ const Blob = ({ nodes }) => {
     <MeshPortalMaterial>
       <color attach='background' args={[themes[!mode ? 'dark' : 'light'].bg]} />
 
-      <group position={[0, 1.5, 0]}>
+      <group position={[0, 0.25, 0]}>
         <motion3d.ambientLight animate={{ intensity: mode && !hovered ? 1.5 : 0.5 }} />
         <motion3d.pointLight ref={lightRef} position-z={-15} color={colors[accent].accent1} animate={{ intensity: mode && !hovered ? 0.4 : 1 }} />
 
         <motion3d.mesh
           ref={meshRef}
           scale={0.2}
+          // key={`blob-mesh-${hovered}-${down}`}
           onPointerOver={() => setHovered(true)}
           onPointerOut={() => setHovered(false)}
           onPointerDown={() => setDown(true)}
