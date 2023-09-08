@@ -3,13 +3,13 @@
 import { useEffect, useRef, useState } from 'react';
 import { CatmullRomCurve3, MathUtils, Vector3 } from 'three';
 import { extend, useFrame } from '@react-three/fiber';
-import { MeshPortalMaterial, Environment, MeshDistortMaterial } from '@react-three/drei';
+import { MeshPortalMaterial, Environment, PivotControls } from '@react-three/drei';
 import { MeshLineGeometry, MeshLineMaterial } from 'meshline';
 import { useControls } from 'leva';
 import { motion as motion3d } from 'framer-motion-3d';
 
 import { BakedMesh, SteamMaterial } from '@/components/threejs';
-import { dataStore, rngInRange } from '@/utils';
+import { dataStore, isDarkTheme, rngInRange } from '@/utils';
 import { colors, themes } from '@/styles';
 // import { colors } from '@/styles';
 // import { dataStore } from '@/utils';
@@ -193,50 +193,9 @@ const Monitor = ({ nodes, ...props }) => (
       rotation={[0, 0, -Math.PI / 2]}
       scale={[1.03, 1.01, 1.01]}
     >
-      <Blob nodes={nodes} />
+      <MeshPortalMaterial>
+        {/* // TODO  */}
+      </MeshPortalMaterial>
     </mesh>
   </BakedMesh>
 );
-
-const Blob = () => {
-  const { theme, accent } = dataStore((state) => ({ theme: state.theme, accent: state.accent }));
-  const meshRef = useRef(),
-    lightRef = useRef();
-  const [mode, setMode] = useState(false),
-    [down, setDown] = useState(false),
-    [hovered, setHovered] = useState(false);
-
-  return (
-    <MeshPortalMaterial>
-      <color attach='background' args={[themes[!mode ? 'dark' : 'light'].bg]} />
-
-      <group position={[0, 0.25, 0]}>
-        <motion3d.ambientLight animate={{ intensity: mode && !hovered ? 1.5 : 0.5 }} />
-        <motion3d.pointLight ref={lightRef} position-z={-15} color={colors[accent].accent1} animate={{ intensity: mode && !hovered ? 0.4 : 1 }} />
-
-        <motion3d.mesh
-          ref={meshRef}
-          scale={0.2}
-          // key={`blob-mesh-${hovered}-${down}`}
-          onPointerOver={() => setHovered(true)}
-          onPointerOut={() => setHovered(false)}
-          onPointerDown={() => setDown(true)}
-          onPointerUp={() => { setDown(false); setMode(!mode); }}
-          // onDoubleClick={ change show from store to switch from 3d scene to portfolio site }
-          animate={{ scale: (down ? 1.5 : hovered ? 1.2 : 1) * 0.2, transition: { type: 'spring', bounce: 0.8, duration: 2 } }}
-        >
-          <sphereGeometry args={[1, 64, 64]} />
-          <MeshDistortMaterial
-            color={hovered ? colors[accent][`accent${Math.floor(rngInRange(0, 6))}`] : !mode ? '#202020' : 'white'}
-            envMapIntensity={mode && !hovered ? 0.4 : 1}
-            clearcoat={mode && !hovered ? 0.04 : 1}
-            clearcoatRoughness={0}
-            metalness={0.1}
-          />
-        </motion3d.mesh>
-      </group>
-
-      <Environment preset='warehouse' />
-    </MeshPortalMaterial>
-  );
-};
