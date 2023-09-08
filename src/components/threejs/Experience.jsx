@@ -19,7 +19,7 @@ export const Experience = () => {
       <Canvas dpr={[1, 2]} gl={{ antialias: true }} flat>
         <Suspense fallback={null}>
           <ScrollControls pages={3}>
-            <Scene  />
+            <Scene />
           </ScrollControls>
           <Effects />
           <Preload all />

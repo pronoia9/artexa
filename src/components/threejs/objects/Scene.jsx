@@ -10,7 +10,6 @@ import { MathUtils, LoopOnce } from 'three';
 import { useFrame } from '@react-three/fiber';
 import { Center, useAnimations, useGLTF, useScroll } from '@react-three/drei';
 import { folder, useControls } from 'leva';
-import { motion } from 'framer-motion-3d';
 
 import { Camera, Cube, Room } from '@/components/threejs';
 import { objectsUpdateResponsive } from '@/utils';
@@ -64,7 +63,8 @@ export const Scene = (props) => {
 
   useFrame(({ camera, pointer }, delta) => {
     // console.log('cube:', cube, '  |   offset:', scroll.offset);
-    const cameraAction = actions['Camera Scroll'], cubeAction = actions['Cube Animation'];
+    const cameraAction = actions['Camera Scroll'],
+      cubeAction = actions['Cube Animation'];
 
     // Play cube animation on first scroll
     if (cube === 'initial' && scroll.offset > 0) {
@@ -91,22 +91,20 @@ export const Scene = (props) => {
       );
 
       // Camera Rotation
-      if (cameraOptions['Enable [Rotation]']) {
-        camera.rotation.x = MathUtils.lerp(
-          camera.rotation.x,
-          Math.abs(pointer.y) > cameraOptions['Threshold [Rotation]'] && cameraOptions['Enable [Up/Down]']
-            ? camRotationX + pointer.y * cameraOptions['Multiplier [Up/Down]'] * scroll.offset
-            : camRotationX,
-          delta * scroll.offset * cameraOptions['Speed [Up/Down]']
-        );
-        camera.rotation.y = MathUtils.lerp(
-          camera.rotation.y,
-          Math.abs(pointer.x) > cameraOptions['Threshold [Rotation]'] && cameraOptions['Enable [Left/Right]']
-            ? -pointer.x * cameraOptions['Multiplier [Left/Right]'] * scroll.offset
-            : camRotationY,
-          delta * scroll.offset * cameraOptions['Speed [Left/Right]']
-        );
-      }
+      camera.rotation.x = MathUtils.lerp(
+        camera.rotation.x,
+        Math.abs(pointer.y) > cameraOptions['Threshold [Rotation]'] && cameraOptions['Enable [Up/Down]'] && cameraOptions['Enable [Rotation]']
+          ? camRotationX + pointer.y * cameraOptions['Multiplier [Up/Down]'] * scroll.offset
+          : camRotationX,
+        delta * scroll.offset * cameraOptions['Speed [Up/Down]']
+      );
+      camera.rotation.y = MathUtils.lerp(
+        camera.rotation.y,
+        Math.abs(pointer.x) > cameraOptions['Threshold [Rotation]'] && cameraOptions['Enable [Left/Right]'] && cameraOptions['Enable [Rotation]']
+          ? -pointer.x * cameraOptions['Multiplier [Left/Right]'] * scroll.offset
+          : camRotationY,
+        delta * scroll.offset * cameraOptions['Speed [Left/Right]']
+      );
     }
   });
 
@@ -114,10 +112,10 @@ export const Scene = (props) => {
     <Center>
       <group ref={group} name='Scene_Container' {...props} dispose={null}>
         <Camera position={[0, 0, responsives.camera]} />
-        <motion.group name='Room_Container' position={[-0.25, -0.3, -0.01]}>
+        <group name='Room_Container' position={[-0.25, -0.3, -0.01]}>
           {cube !== 'hidden' && <Cube nodes={nodes} materials={materials} scale={responsives.cube} />}
           {(cube === 'show room' || cube === 'hidden') && <Room nodes={nodes} materials={materials} scale={responsives.room} />}
-        </motion.group>
+        </group>
       </group>
     </Center>
   );

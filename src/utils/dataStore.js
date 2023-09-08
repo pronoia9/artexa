@@ -11,7 +11,11 @@ export const dataStore = create((set) => ({
 
   // THEME
   theme: getThemeFromStorage('theme'),
-  setTheme: (theme) => set({ theme }),
+  setTheme: (theme) =>
+    set(() => {
+      saveThemeToStorage('theme', theme);
+      return { theme };
+    }),
   toggleTheme: () =>
     set((state) => {
       const newTheme = state.theme === 'light' ? 'dark' : 'light';
@@ -31,6 +35,8 @@ export const dataStore = create((set) => ({
     }),
 
   // THREEJS STUFF
+  showExperience: true,
+  setShowExperience: (experience) => set({ experience }),
   lightMix: isDarkTheme(getThemeFromStorage('theme')) ? 0 : 1,
   setLightMix: (lightMix) => set({ lightMix }),
 
