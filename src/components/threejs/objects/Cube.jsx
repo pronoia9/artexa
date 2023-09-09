@@ -1,7 +1,7 @@
 'use client';
 
 import { Float, useScroll } from '@react-three/drei';
-import { motion } from 'framer-motion-3d';
+import { motion as motion3d } from 'framer-motion-3d';
 
 import { dataStore, isDarkTheme } from '@/utils';
 
@@ -10,7 +10,7 @@ export const Cube = ({ nodes, materials, ...props }) => {
   const scroll = useScroll();
 
   return (
-    <motion.group name='Cube' position={[0.01, 2.14, -0.01]} scale={0.25} {...props}>
+    <motion3d.group name='Cube' position={[0.01, 2.14, -0.01]} scale={0.25} {...props}>
       <Float
         key={`cube-float-${scroll.offset}`}
         speed={scroll.offset === 0 ? 5 : 0} // Animation speed, defaults to 1
@@ -25,6 +25,6 @@ export const Cube = ({ nodes, materials, ...props }) => {
           <meshStandardMaterial color={`#${isDarkTheme(theme) ? 'B63C3C' : 'CF504A'}`} />
         </mesh>
       </Float>
-    </motion.group>
+    </motion3d.group>
   );
 };
