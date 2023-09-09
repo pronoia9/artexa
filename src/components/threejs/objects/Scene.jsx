@@ -52,7 +52,7 @@ export const Scene = ({ scrollRef, ...props }) => {
   useEffect(() => void (actions['Camera Scroll'].play().paused = true), []);
 
   // Reset scroll offset to the start once the room is shown and the cube is hidden
-  useEffect(() => void (cube === 'hidden' && (scroll.offset = 0)), [cube]);
+  useEffect(() => void (cube === 'hidden' && (scroll.offset = 0.0001)), [cube]);
 
   // Resizing
   useEffect(() => {
