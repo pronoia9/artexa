@@ -48,8 +48,6 @@ export const Scene = ({ scrollRef, ...props }) => {
     }),
   });
 
-  useEffect(() => void (scrollRef.current = scroll), [scroll]);
-
   // Disable the 'Camera Scroll' animation initially
   useEffect(() => void (actions['Camera Scroll'].play().paused = true), []);
 
@@ -62,6 +60,8 @@ export const Scene = ({ scrollRef, ...props }) => {
     window.addEventListener('resize', resize);
     return () => void window.removeEventListener('resize', resize);
   }, []);
+
+  useEffect(() => { scrollRef.current = scroll.offset; }, [scroll, scroll.offset]);
 
   useFrame(({ camera, pointer }, delta) => {
     // console.log('cube:', cube, '  |   offset:', scroll.offset);
