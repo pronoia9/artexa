@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
         <ThemeProvider theme={getThemeObject(theme)}>
           <ThemeProvider theme={getThemeObject(accent)}>
             <GlobalStyles />
-            <body>
+            <body suppressHydrationWarning={true}>
               <Experience scrollRef={scrollRef}>
                 <AppContainer className='art-app' {...appMotion.appContainer}>
                   {loading ? (
