@@ -14,7 +14,7 @@ import { folder, useControls } from 'leva';
 import { Camera, Cube, Room } from '@/components/threejs';
 import { objectsUpdateResponsive } from '@/utils';
 
-export const Scene = ({ scrollRef, ...props }) => {
+export const Scene = ({ cubeRef, ...props }) => {
   const group = useRef(); // Reference to the top group in the 3D scene
   const [cube, setCube] = useState('initial'), // State to keep track of the cube's state (initial, animating, show room, hidden)
     [responsives, setResponsives] = useState({ cube: 0.25, room: 1, camera: 0.3 }); // State to responsively resize/reposition objects
@@ -52,7 +52,7 @@ export const Scene = ({ scrollRef, ...props }) => {
   useEffect(() => void (actions['Camera Scroll'].play().paused = true), []);
 
   // Reset scroll offset to the start once the room is shown and the cube is hidden
-  useEffect(() => void (cube === 'hidden' && (scroll.offset = 0.0001)), [cube]);
+  useEffect(() => void (cube === 'hidden' && (scroll.offset = 0)), [cube]);
 
   // Resizing
   useEffect(() => {
@@ -61,7 +61,8 @@ export const Scene = ({ scrollRef, ...props }) => {
     return () => void window.removeEventListener('resize', resize);
   }, []);
 
-  useEffect(() => { scrollRef.current = scroll.offset; }, [scroll, scroll.offset]);
+  // Updating refs from Experience.jsx
+  useEffect(() => { cubeRef.current = cube; }, [cube]);
 
   useFrame(({ camera, pointer }, delta) => {
     // console.log('cube:', cube, '  |   offset:', scroll.offset);

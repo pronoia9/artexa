@@ -4,7 +4,7 @@ import { Suspense, useRef } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Preload, ScrollControls } from '@react-three/drei';
 import { Leva } from 'leva';
-import { keyframes, styled } from 'styled-components';
+import { css, keyframes, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { SVGs } from '@/components';
@@ -12,30 +12,30 @@ import { Scene, Effects } from '@/components/threejs';
 import { rem, sceneMotion } from '@/utils';
 
 export const Experience = () => {
-  const scrollRef = useRef();
+  const cubeRef = useRef();
   // const { active, progress, errors, item, loaded, total } = useProgress();
 
   return (
-    <Container {...sceneMotion.container} $offset={scrollRef.current?.offset}>
+    <Container {...sceneMotion.container} $cube={cubeRef.current}>
       <div className='down'>
         <span>
           <SVGs type='down' />
         </span>
       </div>
 
+      <div className='leva-panel'>
+        <Leva collapsed />
+      </div>
+
       <Canvas dpr={[1, 2]} gl={{ antialias: true }} flat>
         <Suspense fallback={null}>
           <ScrollControls pages={3}>
-            <Scene scrollRef={scrollRef} />
+            <Scene cubeRef={cubeRef} />
           </ScrollControls>
           <Effects />
           <Preload all />
         </Suspense>
       </Canvas>
-
-      <div className='leva-panel'>
-        <Leva collapsed />
-      </div>
     </Container>
   );
 };
@@ -55,7 +55,6 @@ const Container = styled(motion.div)`
   height: 100%;
 
   .down {
-    display: ${({ $offset }) => ($offset > 0 ? 'none' : '')};
     position: absolute;
     bottom: 5%;
     left: calc(50% - 1rem);
@@ -73,7 +72,8 @@ const Container = styled(motion.div)`
     }
   }
 
-  .leva-panel {
-    display: ${({ $offset }) => ($offset > 0 ? '' : 'none')};
-  }
+  ${({ $cube }) => css`
+    .down       { display: ${($cube === 'initial' || $cube === undefined) ? '' : 'none'}; }
+    .leva-panel { display: ${$cube === 'hidden' ? '' : 'none'}; }
+  `}
 `;
