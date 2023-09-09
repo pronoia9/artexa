@@ -14,7 +14,7 @@ import { folder, useControls } from 'leva';
 import { Camera, Cube, Room } from '@/components/threejs';
 import { objectsUpdateResponsive } from '@/utils';
 
-export const Scene = (props) => {
+export const Scene = ({ scrollRef, ...props }) => {
   const group = useRef(); // Reference to the top group in the 3D scene
   const [cube, setCube] = useState('initial'), // State to keep track of the cube's state (initial, animating, show room, hidden)
     [responsives, setResponsives] = useState({ cube: 0.25, room: 1, camera: 0.3 }); // State to responsively resize/reposition objects
@@ -47,6 +47,8 @@ export const Scene = (props) => {
       }),
     }),
   });
+
+  useEffect(() => void (scrollRef.current = scroll), [scroll]);
 
   // Disable the 'Camera Scroll' animation initially
   useEffect(() => void (actions['Camera Scroll'].play().paused = true), []);
