@@ -23,7 +23,7 @@ export const Effects = () => {
         ) : (
           <>
             <Sky sunPosition={[100, 20, 100]} />
-            <group position={[-9.1, -4.1, -14.1]} /*{...useControls({ position: { value: [-7, -3.5, -10], step: 0.1 } })}*/>
+            <group position={[-9.1, -4.1, -14.1]}>
               <Cloud opacity={0.5} speed={0.25} width={10} depth={2.5} segments={20} />
             </group>
           </>
