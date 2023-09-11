@@ -1,16 +1,11 @@
 'use client';
 
 import { Environment, Stars, Sky, Cloud } from '@react-three/drei';
-// import { ShaderPass } from 'postprocessing';
 
-// import { BakedShaderMaterial } from '@/components/threejs';
 import { dataStore, isDarkTheme } from '@/utils';
 
 export const Effects = () => {
   const { theme } = dataStore((state) => ({ theme: state.theme }));
-
-  // TODO: Experiment with passes
-  // const myShaderPass = new ShaderPass(BakedShaderMaterial, 'tDiffuse');
 
   return (
     <>
@@ -33,8 +28,4 @@ export const Effects = () => {
       <Environment files='/3d/christmas_photo_studio_04_1k.hdr' />
     </>
   );
-};
-
-export const Bloom = () => {
-  return <></>;
 };
