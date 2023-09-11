@@ -1,5 +1,5 @@
 import { Experience } from './Experience';
-import { Bloom, Effects } from './Effects';
+import { Effects } from './Effects';
 import { Camera } from './Camera';
 
 import { BakedMesh } from './materials/BakedMesh';
@@ -20,6 +20,6 @@ import { Tardis } from './objects/Tardis';
 import { TVUnit } from './objects/TVUnit';
 
 export {
-  Experience, Bloom, Effects, Camera,
+  Experience, Effects, Camera,
   BakedMesh, BakedShaderMaterial, BakedMaterial, SteamMaterial,
   Bookshelf, Chair, CoffeeTable, Couch, Cube, Desk, Guitar, PetBed, Room, Scene, Tardis, TVUnit, };
