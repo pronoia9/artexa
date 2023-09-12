@@ -1,7 +1,7 @@
 'use client';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import { useState, useEffect, useRef } from 'react';
+import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
@@ -14,15 +14,15 @@ import { appMotion, pageWrapperMotion, getThemeObject, rem, dataStore } from '@/
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   const loadTime = 5000; //! TODO: TEMPORARILY CHANGED
-  const { loading, setLoading, theme, accent, curtainEnabled, curtainClose } = dataStore((state) => ({
+  const { loading, setLoading, theme, accent, curtainEnabled, curtainClose, showExperience } = dataStore((state) => ({
     loading: state.loading,
     setLoading: state.setLoading,
     theme: state.theme,
     accent: state.accent,
     curtainEnabled: state.curtainEnabled,
     curtainClose: state.curtainClose,
+    showExperience: state.showExperience,
   }));
-  const scrollRef = useRef();
 
   // Disable loading after 7s maybe?
   useEffect(() => {
@@ -37,7 +37,9 @@ export default function RootLayout({ children }) {
           <ThemeProvider theme={getThemeObject(accent)}>
             <GlobalStyles />
             <body suppressHydrationWarning={true}>
-              <Experience scrollRef={scrollRef}>
+              {showExperience ? (
+                <Experience />
+              ) : (
                 <AppContainer className='art-app' {...appMotion.appContainer}>
                   {loading ? (
                     <Preloader title='Welcome' duration={loadTime} />
@@ -68,7 +70,7 @@ export default function RootLayout({ children }) {
                     </>
                   )}
                 </AppContainer>
-              </Experience>
+              )}
               <Cursor />
             </body>
           </ThemeProvider>
