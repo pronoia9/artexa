@@ -28,12 +28,12 @@ export const PetBed = ({ nodes, materials, ...props }) => {
     const tailXRotationSpeed = 0.05 + tailYRotationNoise * 0.1; // Adjust speed variation range
 
     // Calculate rotation values based on noise and range limitations
-    const tailXRotation = tailXRotationNoise * 0.5; // Scaled to be between 0 and 1
+    const tailXRotation = tailXRotationNoise * 0.5;
     const tailYRotation = Math.sin(time * tailXRotationSpeed) * (Math.PI / 2);
-    const tailZRotation = tailZRotationNoise * 0.25; // Scaled to be between -0.5 and 0.5
-    const headXRotation = (headXRotationNoise - 0.5) * 0.3; // Scaled to be between 0 and 0.5
-    const headYRotation = (headYRotationNoise - 0.5) * 0.1; // Scaled to be between -0.5 and 0.5
-    const headZRotation = (headZRotationNoise - 0.5) * 0.2; // Scaled to be between -0.5 and 0.5
+    const tailZRotation = tailZRotationNoise * 0.25;
+    const headXRotation = (headXRotationNoise - 0.5) * 0.3;
+    const headYRotation = (headYRotationNoise - 0.5) * 0.1;
+    const headZRotation = (headZRotationNoise - 0.5) * 0.2;
 
     // Apply rotations to the tail mesh
     zoruaTailRef.current.rotation.x = tailXRotation;
