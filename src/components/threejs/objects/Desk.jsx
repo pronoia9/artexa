@@ -178,7 +178,7 @@ const Fatline = ({ curve, width, color, speed, dash }) => {
   return (
     <mesh ref={ref}>
       <meshLineGeometry points={curve} />
-      <meshLineMaterial transparent lineWidth={width * 0.075} color={color} depthWrite={false} dashArray={0.25} dashRatio={dash} toneMapped={false} />
+      <meshLineMaterial transparent lineWidth={width * 0.025} color={color} depthWrite={false} dashArray={0.25} dashRatio={dash} toneMapped={false} />
     </mesh>
   );
 };
