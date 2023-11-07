@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { css, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
@@ -7,6 +8,7 @@ import { ButtonLink, HoverExpand, Tags } from '@/components';
 import { rem } from '@/utils';
 
 export const Card = ({ index, swiper, hide, section, id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes, ...props }) => {
+  console.log('section', section);
   return (
     <Container
       key={`${section}-card-${index}-${title}`}
@@ -28,7 +30,13 @@ export const Card = ({ index, swiper, hide, section, id, title, subtitle, descri
 
         {!swiper && categories?.length && <Tags section={title} data={categories} className='mb-15' />}
 
-        <ButtonLink link={link || `/${section}/${id}`} title='Learn More' />
+        {section === 'projects' ? (
+          <Link href={section} as={`/${section}/${id}`}>
+            <ButtonLink link={`/${section}/${id}`} title='Learn More' />
+          </Link>
+        ) : (
+          <ButtonLink link={link} title='Learn More' />
+        )}
       </Overlay>
     </Container>
   );
