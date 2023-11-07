@@ -728,7 +728,7 @@ export const projects = {
       description: ``,
       links: { repo: 'https://github.com/pronoia9/wanderlark', live: 'https://wanderlark.vercel.app/' },
       image: '/images/projects/wanderlark.jpg',
-      images: ['/images/projects/wanderlark-1.jpeg', '/images/projects/wanderlark-2.jpeg', '/images/projects/wanderlark-3.jpeg'],
+      images: ['/images/projects/wanderlark-1.jpg', '/images/projects/wanderlark-2.jpg', '/images/projects/wanderlark-3.jpg'],
       dates: ['Nov 5, 2023', 'Nov 5, 2023'],
       categories: ['frontend', 'design', 'nextjs'],
       tags: ['react', 'nextjs', 'javascript', 'typescript', 'html', 'css', 'tailwindcss', 'postcss', 'autoprefixer', 'frontend'],
