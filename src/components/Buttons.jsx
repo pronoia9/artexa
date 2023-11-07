@@ -8,21 +8,33 @@ import { SVGs } from '@/components';
 import { GradientButton } from '@/styles';
 import { buttonMotion, openFancybox } from '@/utils';
 
-export const Button = (props) => {
-  const { link, title, children } = props;
-  return !link ? (
-    <ButtonContainer className='art-link art-color-link acc' {...props}>
+export const Button = ({ link, title, arrow = false, icon, children, ...props }) => {
+  const handleFancyboxClick = (e) => {
+    if (props['data-fancybox']) {
+      e.preventDefault();
+      openFancybox(link);
+    }
+  };
+
+  const styleClasses = `art-link art-color-link acc ${arrow || icon ? 'art-w-chevron' : ''}`;
+  const content = (
+    <>
       {title}
       {children}
-    </ButtonContainer>
+      {(icon || arrow) && <SVGs type={icon || 'right'} height={!icon ? 9 : 16} />}
+    </>
+  );
+
+  return !link ? (
+    <span className={styleClasses} style={{ position: 'relative' }} {...props}>
+      {content}
+    </span>
   ) : (
-    <ButtonLink {...props} />
+    <motion.a href={link} className={styleClasses} onClick={handleFancyboxClick} {...props}>
+      {content}
+    </motion.a>
   );
 };
-
-const ButtonContainer = styled.span`
-  position: relative;
-`;
 
 export const ButtonLink = ({ link, title, arrow = true, icon, children, ...props }) => {
   const handleClick = (e) => {
@@ -32,7 +44,7 @@ export const ButtonLink = ({ link, title, arrow = true, icon, children, ...props
     }
   };
   return (
-    <motion.a href={link} className='art-link art-color-link art-w-chevron acc' onClick={handleClick} {...props}>
+    <motion.a href={link} className={`art-link art-color-link acc ${arrow || icon ? 'art-w-chevron' : ''}`} onClick={handleClick} {...props}>
       {title}
       {children}
       {(icon || arrow) && <SVGs type={icon || 'right'} height={!icon ? 9 : 16} />}
