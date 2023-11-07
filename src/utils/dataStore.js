@@ -35,7 +35,7 @@ export const dataStore = create((set) => ({
     }),
 
   // THREEJS STUFF
-  showExperience: false, //!
+  showExperience: true,
   setShowExperience: (experience) => set({ experience }),
   lightMix: isDarkTheme(getThemeFromStorage('theme')) ? 0 : 1,
   setLightMix: (lightMix) => set({ lightMix }),
