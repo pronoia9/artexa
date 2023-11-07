@@ -26,9 +26,9 @@ export const Button = ({ link, title, arrow = false, icon, children, ...props })
   );
 
   return !link ? (
-    <span className={styleClasses} style={{ position: 'relative' }} {...props}>
+    <motion.span className={styleClasses} style={{ position: 'relative' }} {...props}>
       {content}
-    </span>
+    </motion.span>
   ) : (
     <motion.a href={link} className={styleClasses} onClick={handleFancyboxClick} {...props}>
       {content}
