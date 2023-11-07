@@ -8,7 +8,6 @@ import { ButtonLink, HoverExpand, Tags } from '@/components';
 import { rem } from '@/utils';
 
 export const Card = ({ index, swiper, hide, section, id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes, ...props }) => {
-  console.log('section', section);
   return (
     <Container
       key={`${section}-card-${index}-${title}`}
