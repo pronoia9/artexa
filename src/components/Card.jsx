@@ -31,10 +31,10 @@ export const Card = ({ index, swiper, hide, section, id, title, subtitle, descri
 
         {section === 'projects' ? (
           <Link href={section} as={`/${section}/${id}`}>
-            <Button title='Learn More' arrow={true} />
+            <Button title='Learn More' />
           </Link>
         ) : (
-          <Button link={link} title='Learn More' arrow={true} />
+          <Button link={link} title='Learn More' />
         )}
       </Overlay>
     </Container>

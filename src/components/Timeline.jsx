@@ -3,7 +3,7 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { SectionTitle, ButtonLink } from '@/components';
+import { SectionTitle, Button } from '@/components';
 import { Tag } from '@/styles';
 import { historyMotion, rem } from '@/utils';
 
@@ -75,7 +75,7 @@ export const TimelineItem = (props) => {
 
         <p>{description}</p>
 
-        <ButtonLink
+        <Button
           link={link || image}
           title={link ? 'Link' : image ? 'Certificate' : 'Suprise!'}
           {...(image ? { 'data-fancybox': 'history' } : { target: '_blank', rel: 'noreferrer' })}
