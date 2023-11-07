@@ -8,7 +8,7 @@ import { SVGs } from '@/components';
 import { GradientButton } from '@/styles';
 import { buttonMotion, openFancybox } from '@/utils';
 
-export const Button = ({ link, title, arrow = false, icon, children, ...props }) => {
+export const Button = ({ link, title, arrow = true, icon, children, ...props }) => {
   const handleFancyboxClick = (e) => {
     if (props['data-fancybox']) {
       e.preventDefault();
