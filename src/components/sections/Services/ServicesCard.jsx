@@ -1,9 +1,10 @@
 'use client';
 
+import Link from 'next/link';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { ButtonLink } from '@/components';
+import { Button } from '@/components';
 import { servicesMotion } from '@/utils';
 
 export const ServicesCard = ({ title, subtitle, description, link }) => {
@@ -17,7 +18,9 @@ export const ServicesCard = ({ title, subtitle, description, link }) => {
             </motion.h5>
             <motion.p {...servicesMotion.item}>{description}</motion.p>
           </div>
-          <ButtonLink title='Order Now' link='/contact' {...servicesMotion.item} />
+          <Link href='/contact'>
+            <Button title='Order Now' {...servicesMotion.item} />
+          </Link>
         </Wrapper>
       </Card>
     </motion.div>

@@ -8,34 +8,31 @@ import { SVGs } from '@/components';
 import { GradientButton } from '@/styles';
 import { buttonMotion, openFancybox } from '@/utils';
 
-export const Button = (props) => {
-  const { link, title, children } = props;
-  return !link ? (
-    <ButtonContainer className='art-link art-color-link acc' {...props}>
+export const Button = ({ link, title, arrow = true, icon, children, ...props }) => {
+  const styleClasses = `art-link art-color-link acc ${arrow || icon ? 'art-w-chevron' : ''}`;
+  
+  const content = (
+    <>
       {title}
       {children}
-    </ButtonContainer>
-  ) : (
-    <ButtonLink {...props} />
+      {(icon || arrow) && <SVGs type={icon || 'right'} height={!icon ? 9 : 16} />}
+    </>
   );
-};
 
-const ButtonContainer = styled.span`
-  position: relative;
-`;
-
-export const ButtonLink = ({ link, title, arrow = true, icon, children, ...props }) => {
-  const handleClick = (e) => {
+  const handleFancyboxClick = (e) => {
     if (props['data-fancybox']) {
       e.preventDefault();
       openFancybox(link);
     }
   };
-  return (
-    <motion.a href={link} className='art-link art-color-link art-w-chevron acc' onClick={handleClick} {...props}>
-      {title}
-      {children}
-      {(icon || arrow) && <SVGs type={icon || 'right'} height={!icon ? 9 : 16} />}
+
+  return !link ? (
+    <motion.span className={styleClasses} style={{ position: 'relative' }} {...props}>
+      {content}
+    </motion.span>
+  ) : (
+    <motion.a href={link} className={styleClasses} onClick={handleFancyboxClick} {...props}>
+      {content}
     </motion.a>
   );
 };

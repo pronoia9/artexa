@@ -3,7 +3,7 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { SectionWrapper, SectionTitle, ButtonLink, Tags, SplitText, SVGs } from '@/components';
+import { SectionWrapper, SectionTitle, Button, Tags, SplitText, SVGs } from '@/components';
 import { projectMotion, rem } from '@/utils';
 
 const ListItem = ({ title, subtitle }) => (
@@ -42,14 +42,14 @@ export default SectionWrapper(({ project }) => {
 
           <Links {...projectMotion.info.links}>
             {links?.repo.length && (
-              <ButtonLink title='Repository' link={links.repo} arrow={false} {...projectMotion.info.link}>
+              <Button title='Repository' link={links.repo} arrow={false} {...projectMotion.info.link}>
                 <SVGs type='github-repo' height={16} {...projectMotion.info.icon} />
-              </ButtonLink>
+              </Button>
             )}
             {links?.live.length && (
-              <ButtonLink title='Live Site' link={links.live} arrow={false} {...projectMotion.info.link}>
+              <Button title='Live Site' link={links.live} arrow={false} {...projectMotion.info.link}>
                 <SVGs type='globe' height={16} {...projectMotion.info.icon} />
-              </ButtonLink>
+              </Button>
             )}
           </Links>
         </motion.div>
@@ -102,5 +102,9 @@ const ListItemContainer = styled(motion.li)`
   h6 {
     font-family: var(--f-primary);
     font-size: ${rem(14)};
+  }
+
+  span {
+    text-align: right;
   }
 `;
