@@ -69,7 +69,7 @@ import { Experience } from './threejs';
 
 // ---- COMPONENTS
 import { Background } from './Background';
-import { Button, ButtonLink, ButtonGradient } from './Buttons';
+import { Button, ButtonGradient } from './Buttons';
 import { Card } from './Card';
 import { Cursor } from './Cursor';
 import { Fancybox, HoverExpand } from './Fancybox';
@@ -142,7 +142,6 @@ export {
   // ---- COMPONENTS ----
   Background,
   Button,
-  ButtonLink,
   ButtonGradient,
   Card,
   Cursor,
