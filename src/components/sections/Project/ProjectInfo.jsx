@@ -103,4 +103,8 @@ const ListItemContainer = styled(motion.li)`
     font-family: var(--f-primary);
     font-size: ${rem(14)};
   }
+
+  span {
+    text-align: right;
+  }
 `;
