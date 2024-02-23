@@ -64,9 +64,6 @@ import Technologies from './sections/Technologies/Technologies';
 import { TechnologiesGrid } from './sections/Technologies/TechnologiesGrid';
 import { TechnologiesSwiper } from './sections/Technologies/TechnologiesSwiper';
 
-// ---- THREEJS
-import { Experience } from './threejs';
-
 // ---- COMPONENTS
 import { Background } from './Background';
 import { Button, ButtonGradient } from './Buttons';
@@ -137,8 +134,6 @@ export {
   Technologies,
   TechnologiesGrid,
   TechnologiesSwiper,
-  //  ---- THREEJS ----
-  Experience,
   // ---- COMPONENTS ----
   Background,
   Button,
