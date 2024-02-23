@@ -6,22 +6,21 @@ import { usePathname } from 'next/navigation';
 import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Footer, Navbar, Sidebar, Preloader, Background, SmoothScroll, Cursor, Fancybox, Experience } from '@/components';
+import { Footer, Navbar, Sidebar, Preloader, Background, SmoothScroll, Cursor, Fancybox } from '@/components';
 import StyledComponentsRegistry from '@/lib/registry';
 import { GlobalStyles } from '@/styles';
 import { appMotion, pageWrapperMotion, getThemeObject, rem, dataStore } from '@/utils';
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
+  // const pathname = usePathname();
   const loadTime = 5000; //! TODO: TEMPORARILY CHANGED
-  const { loading, setLoading, theme, accent, curtainEnabled, curtainClose, showExperience } = dataStore((state) => ({
+  const { loading, setLoading, theme, accent, curtainEnabled, curtainClose } = dataStore((state) => ({
     loading: state.loading,
     setLoading: state.setLoading,
     theme: state.theme,
     accent: state.accent,
     curtainEnabled: state.curtainEnabled,
     curtainClose: state.curtainClose,
-    showExperience: state.showExperience,
   }));
 
   // Disable loading after 7s maybe?
@@ -37,40 +36,31 @@ export default function RootLayout({ children }) {
           <ThemeProvider theme={getThemeObject(accent)}>
             <GlobalStyles />
             <body suppressHydrationWarning={true}>
-              {showExperience ? (
-                <Experience />
-              ) : (
-                <AppContainer className='art-app' {...appMotion.appContainer}>
-                  {loading ? (
-                    <Preloader title='Welcome' duration={loadTime} />
-                  ) : (
-                    <>
-                      <Wrapper className='art-app-wrapper'>
-                        <TopBar className='art-mobile-top-bar' />
-                        <Container className='art-app-container'>
-                          <Sidebar />
+              <AppContainer className='art-app' {...appMotion.appContainer}>
+                {loading ? (
+                  <Preloader title='Welcome' duration={loadTime} />
+                ) : (
+                  <>
+                    <Wrapper className='art-app-wrapper'>
+                      <TopBar className='art-mobile-top-bar' />
+                      <Container className='art-app-container'>
+                        <Sidebar />
 
-                          <PageWrapper
-                            className='art-content'
-                            $curtainEnabled={curtainEnabled}
-                            onClick={() => curtainClose()}
-                            {...pageWrapperMotion()}
-                          >
-                            <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
-                            <Background />
-                            <SmoothScroll $justify='space-between'>
-                              {children}
-                              <Footer />
-                            </SmoothScroll>
-                          </PageWrapper>
+                        <PageWrapper className='art-content' $curtainEnabled={curtainEnabled} onClick={() => curtainClose()} {...pageWrapperMotion()}>
+                          <Curtain className='art-curtain' $curtainEnabled={curtainEnabled} />
+                          <Background />
+                          <SmoothScroll $justify='space-between'>
+                            {children}
+                            <Footer />
+                          </SmoothScroll>
+                        </PageWrapper>
 
-                          <Navbar />
-                        </Container>
-                      </Wrapper>
-                    </>
-                  )}
-                </AppContainer>
-              )}
+                        <Navbar />
+                      </Container>
+                    </Wrapper>
+                  </>
+                )}
+              </AppContainer>
               <Cursor />
             </body>
           </ThemeProvider>
