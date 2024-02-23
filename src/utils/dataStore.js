@@ -34,12 +34,6 @@ export const dataStore = create((set) => ({
       return { accent };
     }),
 
-  // THREEJS STUFF
-  showExperience: false, //!
-  setShowExperience: (experience) => set({ experience }),
-  lightMix: isDarkTheme(getThemeFromStorage('theme')) ? 0 : 1,
-  setLightMix: (lightMix) => set({ lightMix }),
-
   // SIDEBAR / NAVBAR / OVERLAY
   curtainEnabled: false,
   curtainClose: () => set({ navbarOpen: false, sidebarOpen: false, curtainEnabled: false }),
