@@ -24,32 +24,6 @@ export const appMotion = {
 
 */
 /**********************  2. 3D Start  **********************/
-export const sceneMotion = {
-  container: {
-    initial:'hidden',
-    animate:'visible',
-    variants:{
-      hidden: { opacity: 0 },
-      visible: { opacity: 1, transition: { type: 'tween', duration: 1, delay: 2, delayChildren: 1 } },
-    }
-  },
-  room: {
-    variants: {
-      hidden: { opacity: 0, rotateX: Math.PI + 0.4, rotateZ: Math.PI + 0.4 },
-      visible: { opacity: 1, rotateX: Math.PI, rotateZ: Math.PI,
-        transition: { type: 'tween', duration: 1, delay: 0, staggerChildren: 0.5, delayChildren: 1 },
-      },
-    },
-  },
-  bakedMesh: (delayChildren = 0, staggerChildren = 0, variants = {}) => ({
-    variants: {
-      hidden: { scale: 0, ...variants?.hidden },
-      visible: { scale: 1, ...variants?.visible,
-        transition: { type: 'spring', bounce: 0.6, delayChildren, staggerChildren, ...variants?.visible?.transition, },
-      },
-    },
-  }),
-};
 /***********************  2. 3D End  ***********************/
 /*
 
