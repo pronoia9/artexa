@@ -2,7 +2,7 @@
 
 import 'bootstrap/dist/css/bootstrap.css';
 import { useEffect } from 'react';
-import { usePathname } from 'next/navigation';
+// import { usePathname } from 'next/navigation';
 import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
