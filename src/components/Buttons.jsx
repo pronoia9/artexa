@@ -9,31 +9,26 @@ import { GradientButton } from '@/styles';
 import { buttonMotion, openFancybox } from '@/utils';
 
 export const Button = ({ link, title, arrow = true, icon, children, ...props }) => {
-  const styleClasses = `art-link art-color-link acc ${arrow || icon ? 'art-w-chevron' : ''}`;
-  
-  const content = (
-    <>
-      {title}
-      {children}
-      {(icon || arrow) && <SVGs type={icon || 'right'} height={!icon ? 9 : 16} />}
-    </>
-  );
+  const Element = link ? motion.a : motion.span;
 
-  const handleFancyboxClick = (e) => {
-    if (props['data-fancybox']) {
+  const handleClick = (e) => {
+    if (link && props['data-fancybox']) {
       e.preventDefault();
       openFancybox(link);
     }
   };
 
-  return !link ? (
-    <motion.span className={styleClasses} style={{ position: 'relative' }} {...props}>
-      {content}
-    </motion.span>
-  ) : (
-    <motion.a href={link} className={styleClasses} onClick={handleFancyboxClick} {...props}>
-      {content}
-    </motion.a>
+  return (
+    <Element
+      className={`art-link art-color-link acc ${arrow || icon ? 'art-w-chevron' : ''}`}
+      style={!link ? { position: 'relative' } : null}
+      onClick={handleClick}
+      {...(!link ? props : { ...props, href: link, target: '_blank', rel: 'noopener noreferrer' })} // Merge props conditionally
+    >
+      {title}
+      {children}
+      {(icon || arrow) && <SVGs type={icon || 'right'} height={!icon ? 9 : 16} />}
+    </Element>
   );
 };
 
