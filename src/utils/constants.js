@@ -21,7 +21,8 @@ export const sidebar = {
 
   about: [
     { id: 1, title: 'Nationality:', subtitle: 'U.S.' },
-    { id: 2, title: 'Age', subtitle: new Date().getFullYear() - new Date('April 15, 1995').getFullYear() },
+    // { id: 2, title: 'Age', subtitle: new Date().getFullYear() - new Date('April 15, 1995').getFullYear() },
+    { id: 2, title: 'Location', subtitle: 'Atlanta, GA' },
   ],
 
   languages: [
