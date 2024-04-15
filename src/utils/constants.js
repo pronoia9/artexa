@@ -44,7 +44,7 @@ export const sidebar = {
         level: 70,
       },
       {
-        title: 'JavaScript',
+        title: 'javascript',
         description: `An alchemist of interactivity, infusing life into web applications with spells of dynamic functionality, casting spells that engage and captivate users at every turn.`,
         level: 90,
       },
@@ -54,7 +54,7 @@ export const sidebar = {
         level: 85,
       },
       {
-        title: 'Three.js',
+        title: 'threejs',
         description: `A magician of the third dimension, conjuring captivating realms of 3D wonder, where pixels transcend their flat nature and come alive in a dance of depth and immersion.`,
         level: 70,
       },
