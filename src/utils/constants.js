@@ -34,27 +34,27 @@ export const sidebar = {
   skills: {
     hard: [
       {
-        title: 'html',
+        title: 'HTML',
         description: `A weaver of the web's foundational tapestry, crafting structured elegance that dances across the digital realm, guiding users on a visual journey of enchantment.`,
         level: 85,
       },
       {
-        title: 'css',
+        title: 'CSS',
         description: `A virtuoso of style and form, fashioning the visual symphony that adorns the web's canvas, harmonizing colors, layouts, and animations to create an immersive experience.`,
         level: 70,
       },
       {
-        title: 'javascript',
+        title: 'JavaScript',
         description: `An alchemist of interactivity, infusing life into web applications with spells of dynamic functionality, casting spells that engage and captivate users at every turn.`,
         level: 90,
       },
       {
-        title: 'react',
+        title: 'React',
         description: `A maestro of user interfaces, conducting the orchestration of reusable components and state management, composing harmonies that resonate with seamless efficiency.`,
         level: 85,
       },
       {
-        title: 'threejs',
+        title: 'Three.js',
         description: `A magician of the third dimension, conjuring captivating realms of 3D wonder, where pixels transcend their flat nature and come alive in a dance of depth and immersion.`,
         level: 70,
       },
@@ -63,7 +63,7 @@ export const sidebar = {
     soft: [
       [
         {
-          title: 'Nextjs',
+          title: 'Next.js',
           description: ``,
           level: 0,
         },
@@ -73,7 +73,7 @@ export const sidebar = {
           level: 0,
         },
         {
-          title: 'zustand',
+          title: 'Zustand',
           description: ``,
           level: 0,
         },
@@ -92,12 +92,12 @@ export const sidebar = {
       ],
       [
         {
-          title: 'react three fiber',
+          title: 'React Three Fiber',
           description: `A sorcerer of integration, seamlessly merging the realms of React and Three.js, casting spells that empower the creation of interactive and enchanting 3D web applications.`,
           level: 70,
         },
         {
-          title: 'blender',
+          title: 'Blender',
           description: `A visionary artist, wielding the brush of creativity to mold digital clay into breathtaking 3D masterpieces, breathing life into virtual sculptures that transcend imagination.`,
           level: 60,
         },
