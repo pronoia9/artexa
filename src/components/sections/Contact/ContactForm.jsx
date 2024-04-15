@@ -42,6 +42,7 @@ export const ContactForm = () => {
                 title={`${success ? 'Message Sent' : formik.isSubmitting ? 'Sending Message' : 'Send Message'}`}
                 $position='right'
                 inline={true}
+                arrow={false}
               >
                 <SVGs type={success ? 'check' : !formik.isSubmitting && 'paper-plane'} height={10} style={{ fill: 'black' }} />
               </ButtonGradient>
