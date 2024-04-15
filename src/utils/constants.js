@@ -1206,13 +1206,13 @@ export const contact = {
   info: [
     [
       { title: 'Email', description: 'jayansin9@gmail.com' },
-      { title: 'Skype', description: '@jayansin' },
-      { title: 'Discord', description: '¬ _¬#6475' },
+      { title: 'Github', description: 'pronoia9' },
+      { title: 'Discord', description: 'pronoia9' },
     ],
     [
-      { title: 'Mobile', description: '+1 234 56 78' },
-      { title: 'Home', description: 'N/A' },
-      { title: 'Address', description: '42 Hilarity Lane, Chuckleville, 12345' },
+      { title: 'Mobile', description: '+1 470 550 9545' },
+      { title: 'Skype', description: '@jayansin' },
+      { title: 'Address', description: 'Woodstock, GA' },
     ],
   ],
   form: {
