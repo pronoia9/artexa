@@ -69,11 +69,12 @@ const DescriptionTitle = styled.h5`
 const Links = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
 
   a {
+    display: flex;
+    flex-direction: row;
     color: var(--c-accent-1);
-    gap: 0.75rem;
+    gap: 0.5rem;
 
     &:hover {
       svg {
