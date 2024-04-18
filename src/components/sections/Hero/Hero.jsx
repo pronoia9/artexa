@@ -28,12 +28,11 @@ export default SectionWrapper(() => {
           <Title className='art-banner-title'>
             <HeroHeading {...heroMotion.heading} />
             <HeroTyped {...heroMotion.typed} />
-            <ButtonGradient title={data.button.text} onClick={beamMeUpScotty} {...heroMotion.button} inline={true}></ButtonGradient>
+            <ButtonGradient title={`${data.button.text}`} onClick={beamMeUpScotty} {...heroMotion.button} arrow={false} />
           </Title>
 
           <Avatar src={data.avatar} className='art-banner-photo' alt='Banner Profile' />
         </Overlay>
-        
       </Banner>
     </div>
   );
