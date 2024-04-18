@@ -13,11 +13,11 @@ export const HeroTyped = (props) => {
   useLayoutEffect(() => {
     const typed = new Typed(typedRef.current, {
       strings: [...data.typed],
-      typeSpeed: 25,
+      typeSpeed: 20,
       backSpeed: 10,
       smartBackspace: true,
       startDelay: 2500,
-      backDelay: 1000,
+      backDelay: 4000,
       loop: true,
       loopCount: Infinity,
     });
