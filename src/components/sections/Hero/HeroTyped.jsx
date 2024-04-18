@@ -35,13 +35,9 @@ export const HeroTyped = (props) => {
 
 const Container = styled(motion.div)`
   max-width: 75%;
-  min-height: ${rem(82)}; /* 3 lines */
-  /* margin-bottom: ${rem(25)}; */
+  min-height: calc(17px * 1.7 * 3); /* 3 lines */
   margin: 0;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-
+  
   code {
     font-family: var(--f-code);
     color: #e5c07b;
@@ -60,20 +56,12 @@ const Container = styled(motion.div)`
     }
   }
 
-  @media (max-width: 1150px) { min-height: ${rem(109)}; /* 4 lines */ }
-  @media (max-width: 1110px) { min-height: ${rem(136)}; /* 5 lines */ }
-
-  @media (max-width: 921px) {
-    margin-bottom: 0;
-    min-height: ${rem(82)}; /* 3 lines */
-  }
-
-  @media (max-width: 700px) {
-    max-width: 100%;
-  }
-
-  @media (max-width: 519px) { min-height: ${rem(109)}; /* 4 lines */ }
-  @media (max-width: 408px) { min-height: ${rem(136)}; /* 5 lines */ }
-  @media (max-width: 352px) { min-height: ${rem(164)}; /* 6 lines */ }
-  @media (max-width: 328px) { min-height: ${rem(191)}; /* 7 lines */ }
+  @media (max-width: 1150px) { min-height: calc(17px * 1.7 * 4); /* 4 lines */ }
+  @media (max-width: 1110px) { min-height: calc(17px * 1.7 * 5); /* 5 lines */ }
+  @media (max-width: 921px)  { min-height: calc(17px * 1.7 * 3); /* 3 lines */ }
+  @media (max-width: 700px)  { max-width: 100%; }
+  @media (max-width: 519px)  { min-height: calc(17px * 1.7 * 4); /* 4 lines */ }
+  @media (max-width: 408px)  { min-height: calc(17px * 1.7 * 5); /* 5 lines */ }
+  @media (max-width: 352px)  { min-height: calc(17px * 1.7 * 6); /* 6 lines */ }
+  @media (max-width: 328px)  { min-height: calc(17px * 1.7 * 7); /* 7 lines */ }
 `;
