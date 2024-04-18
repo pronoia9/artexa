@@ -113,6 +113,10 @@ const Title = styled.div`
     align-items: center;
     text-align: center;
   }
+
+  button {
+    margin: 0 !important;
+  }
 `;
 
 const Avatar = styled.img`
