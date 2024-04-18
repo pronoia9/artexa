@@ -457,14 +457,14 @@ button {
 
 /* ------------------------------ space ------------------------------ */
 
-.p-30-0  { padding-top: 30px;  padding-bottom: 0; }
-.p-0-30  { padding-top: 0;     padding-bottom: 30px; }
-.p-30-30 { padding-top: 30px;  padding-bottom: 30px; }
-.p-30-15 { padding-top: 30px;  padding-bottom: 15px; }
-.p-15-15 { padding-top: 15px;  padding-bottom: 15px; }
-.p-15-0  { padding-top: 15px;  padding-bottom: 0; }
-.p-60-0  { padding-top: 60px;  padding-bottom: 0; }
-.p-230-0 { padding-top: 230px; padding-bottom: 0; }
+.p-30-0  { padding-top:   30px;   padding-bottom: 0; }
+.p-0-30  { padding-top:      0;   padding-bottom: 30px; }
+.p-30-30 { padding-top:   30px;   padding-bottom: 30px; }
+.p-30-15 { padding-top:   30px;   padding-bottom: 15px; }
+.p-15-15 { padding-top:   15px;   padding-bottom: 15px; }
+.p-15-0  { padding-top:   15px;   padding-bottom: 0; }
+.p-60-0  { padding-top:   60px;   padding-bottom: 0; }
+.p-230-0 { padding-top:  230px;   padding-bottom: 0; }
 .mb-10   { margin-bottom: 10px; }
 .mb-15   { margin-bottom: 15px; }
 .mb-25   { margin-bottom: 25px; }
