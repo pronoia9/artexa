@@ -35,7 +35,7 @@ export const Button = ({ link, title, arrow = true, icon, children, ...props }) 
 export const ButtonGradient = ({ position, link, title, arrow = true, icon, inline, children, ...props }) => {
   return (
     <GradientButtonContaienr className='art-buttons-frame' {...buttonMotion.gradient} {...props}>
-      <Button link={link} title={title} arrow={arrow} children={!inline ? children : <></>} />
+      <Button link={link} title={title} arrow={arrow} icon={icon} children={!inline ? children : <></>} />
       {inline && children}
     </GradientButtonContaienr>
   );
