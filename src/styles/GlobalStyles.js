@@ -55,30 +55,28 @@ const GlobalStyles = createGlobalStyle`
     background: var(--c-bg);
   }
 
-  *::-webkit-scrollbar {
-    display: none;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
   body {
+    font-family: var(--f-primary);
     color: var(--c-font-1);
     font-size: 13px;
     line-height: 1.7;
-    font-family: var(--f-primary);
     font-weight: 400;
     letter-spacing: .25px;
     font-smooth: subpixel-antialiased;
   }
 
   * {
-    ${
-      '' /* transition: 
+    /* transition: 
       background-color 0.6s ease-in-out, 
       background 0.6s ease-in-out, 
       color 0.6s ease-in-out !important; */
-    }
     cursor: none !important;
+
+    &::-webkit-scrollbar {
+      display: none;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
   }
 
   body > canvas {
