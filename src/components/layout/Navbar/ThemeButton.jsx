@@ -90,6 +90,7 @@ const ThemeItem = styled.div`
   z-index: 1;
 
   i, svg {
+    padding: 1px;
     fill: ${({ $active }) => (!$active ? 'var(--c-font-2)' : 'var(--c-bg-wrapper)')};
     /* font-size: 1rem; */
     /* font-weight: 600; */
