@@ -72,8 +72,10 @@ export const Tag = styled(motion.p)`
   margin: auto ${rem(3)} ${rem(5)} auto;
   padding: ${rem(3)} ${rem(10)};
   display: inline-block;
-  color: var(--c-font-1);
-  font-size: ${rem(10)};
+  /* color: var(--c-font-1); */
+  color: var(--c-font-2);
+  /* font-size: ${rem(10)}; */
+  font-size: ${rem(12)};
   font-family: var(--f-code);
   background: var(--c-bg);
   border-radius: ${rem(15)};
