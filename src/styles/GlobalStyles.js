@@ -2,7 +2,7 @@
 
 import { createGlobalStyle } from 'styled-components';
 
-import { rem } from '@/utils';
+// import { rem } from '@/utils';
 
 export const GlobalStyles = createGlobalStyle`
   @font-face { font-family: 'Caveat';         src: url('/fonts/Caveat/Caveat-VariableFont_wght.ttf')   format('truetype'); }
