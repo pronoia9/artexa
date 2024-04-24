@@ -484,7 +484,7 @@ export const projects = {
       id: 'portfolio-1-2021',
       title: 'The Portfolio',
       subtitle: 'Design, Frontend',
-      description: ``,
+      description: `Embark on a visual odyssey through the captivating universe of my portfolio. From mesmerizing animations to sleek user interfaces, each project is a testament to creativity, craftsmanship, and innovation. Explore the intersection of design and technology and discover a world where imagination knows no bounds.`,
       links: { repo: 'https://github.com/pronoia9/portfolio-2021', live: 'https://jay-ansin.vercel.app/' },
       image: '/images/projects/portfolio.jpg',
       images: [
@@ -562,7 +562,7 @@ export const projects = {
       id: 'metaverse-madness',
       title: 'Metaversus',
       subtitle: 'Design, Frontend',
-      description: ``, // TODO
+      description: `Step into the future with Metaversus, a captivating landing page that offers a glimpse into a futuristic realm of possibilities. With its sleek design and cutting-edge visuals, Metaversus invites you to explore the frontier of innovation and imagination.`,
       links: { repo: 'https://github.com/pronoia9/metaversus', live: 'https://celestia-metaversus.vercel.app' },
       image: '/images/projects/metaversus.jpg',
       images: [
@@ -581,7 +581,7 @@ export const projects = {
       id: 'fiber-follies',
       title: 'Fiber Follies',
       subtitle: 'Frontend, ThreeJS',
-      description: ``, // TODO
+      description: `Immerse yourself in a visual feast of stunning Three.js projects showcased as mesmerizing cards in Fiber Follies. From captivating animations to breathtaking 3D scenes, each card invites you to explore the boundless creativity of the digital realm.`,
       links: { repo: 'https://github.com/pronoia9/fiber-follies', live: 'https://fiber-follies.vercel.app/' },
       image: '/images/projects/fiber-follies.jpg',
       images: ['/images/projects/fiber-follies-1.jpeg', '/images/projects/fiber-follies-2.jpeg', '/images/projects/fiber-follies-3.jpeg'],
@@ -614,7 +614,7 @@ export const projects = {
       id: 'makiwaku',
       title: 'Makiwaku',
       subtitle: 'Design, Frontend',
-      description: ``, // TODO
+      description: `Savor the essence of Japan at Makiwaku, your culinary passport to Japanese delicacies! From sushi to ramen, each dish is a symphony of flavors meticulously crafted to whisk you away to the vibrant streets of Japan. Immerse yourself in the art of Japanese cuisine with Makiwaku today!`,
       links: { repo: 'https://github.com/pronoia9/makiwaku', live: 'https://makiwaku.vercel.app/' },
       image: '/images/projects/makiwaku.jpg',
       images: [
@@ -633,7 +633,7 @@ export const projects = {
       id: 'promptle',
       title: 'Promptle',
       subtitle: 'Design, Fullstack',
-      description: ``, // TODO
+      description: `Unleash your creativity and ignite inspiration with Promptle! This innovative Next.js application is your gateway to a world of limitless ideas. Share prompts, spark creativity, and watch ideas flourish as you connect with a community of like-minded individuals. Dive into Promptle and let your imagination soar!`,
       links: { repo: 'https://github.com/pronoia9/promptle', live: 'https://promptle.vercel.app/' },
       image: '/images/projects/promptle.jpg',
       images: ['/images/projects/promptle-1.jpeg', '/images/projects/promptle-2.jpeg', '/images/projects/promptle-3.jpeg'],
@@ -659,7 +659,7 @@ export const projects = {
       id: 'doodlebug-dash',
       title: 'Doodlebug Dash',
       subtitle: 'Design, Frontend',
-      description: ``, // TODO
+      description: `Rev up your engines and hit the virtual road with Doodlebug Dash, the ultimate destination for car enthusiasts! This Next.js marvel brings the thrill of the open road to your screen, offering a curated collection of cars, reviews, and automotive adventures. Whether you're a gearhead or just appreciate the beauty of the automobile, Doodlebug Dash is your pit stop for all things automotive.`,
       links: { repo: 'https://github.com/pronoia9/doodlebug-dash', live: 'https://doodlebug-dash.vercel.app/' },
       image: '/images/projects/doodlebug-dash.jpg',
       images: ['/images/projects/doodlebug-dash-1.jpeg', '/images/projects/doodlebug-dash-2.jpeg', '/images/projects/doodlebug-dash-3.jpeg'],
@@ -685,7 +685,7 @@ export const projects = {
       id: 'weavio',
       title: 'Weavio',
       subtitle: 'Fullstack, Next, Design',
-      description: ``, // TODO
+      description: `Dive into meaningful discussions and trendsetting ideas with Weavio, your digital hub for vibrant conversations. Inspired by Threads, Weavio offers a dynamic platform where users engage, inspire, and connect.`,
       links: { repo: 'https://github.com/pronoia9/weavio', live: 'https://weavio.vercel.app' },
       image: '/images/projects/weavio.jpg',
       images: [
@@ -725,7 +725,7 @@ export const projects = {
       id: 'wanderlark',
       title: 'WanderLark',
       subtitle: 'Frontend, Nextjs, Design',
-      description: ``, // TODO
+      description: `Embark on a journey of exploration and discovery with WanderLark, your passport to unforgettable adventures. Whether you're a seasoned traveler or an armchair explorer, WanderLark inspires wanderlust and helps you plan your next escapade with ease.`,
       links: { repo: 'https://github.com/pronoia9/wanderlark', live: 'https://wanderlark.vercel.app/' },
       image: '/images/projects/wanderlark.jpg',
       images: ['/images/projects/wanderlark-1.jpg', '/images/projects/wanderlark-2.jpg', '/images/projects/wanderlark-3.jpg'],
@@ -766,7 +766,7 @@ export const projects = {
       id: 'dush',
       title: 'DUSH',
       subtitle: 'Fullstack, Typescript',
-      description: ``, // TODO
+      description: `Join the electrifying world of social connections with DUSH! This Next.js marvel reshapes social media as we know it, blending sleek design with cutting-edge tech. Engage, connect, and share seamlessly on a platform built for genuine connections. Dive into DUSH today and redefine your social experience.`,
       links: { repo: 'https://github.com/pronoia9/dush', live: 'https://dush-pi.vercel.app/' },
       image: '', // TODO
       images: ['/images/projects'], // TODO
@@ -802,7 +802,7 @@ export const projects = {
       id: 'portfolio-supah',
       title: 'Portfolio (Supah)',
       subtitle: 'Frontend, Design',
-      description: ``, // TODO
+      description: `Experience the epitome of design excellence with Portfolio Supah, a stunning clone of an Awwwards-winning designer's portfolio. Immerse yourself in a world of aesthetic mastery and innovation as you explore a meticulously crafted showcase of visual delights. From sleek UI designs to breathtaking animations, Portfolio Supah sets the standard for digital artistry.`,
       links: { repo: 'https://github.com/pronoia9/portfolio-supah', live: 'https://portfolio-supah.vercel.app/' },
       image: '', // TODO
       images: ['/images/projects'], // TODO
@@ -814,7 +814,7 @@ export const projects = {
       id: 'pun-manteau',
       title: 'Pun Manteau',
       subtitle: 'Frontend, Design, APIs',
-      description: ``, // TODO
+      description: `Experience a delightful fusion of timekeeping and humor with Pun Manteau, a whimsical clock app that adds a touch of wit to your day. Featuring real-time location and time information, Pun Manteau combines functionality with entertainment, ensuring each moment is greeted with a clever pun tailored to your locale. Let Pun Manteau brighten your day, one pun at a time.`,
       links: { repo: 'https://github.com/pronoia9/pun-manteau', live: 'https://pun-manteau.vercel.app/' },
       image: '', // TODO
       images: ['/images/projects'], // TODO
@@ -822,11 +822,35 @@ export const projects = {
       categories: ['frontend', 'design'],
       tags: ['react', 'vitejs', 'html', 'javascript', 'css', 'axios', 'styled-components', 'framer-motion'],
     },
+    {
+      id: 'flapple',
+      title: 'Flapple',
+      subtitle: 'Frontend, Design',
+      description: `Get ready to take a bite out of innovation with Flapple, the app that puts the "fun" in functionality! Dive into a world of whimsy and wonder as you explore the design of an iPhone page like never before. With Flapple, you'll experience all the excitement of an Apple product launch without the hefty price tag or the endless queues. It's the app that's so good, it's practically a fruit salad for your digital cravings!`,
+      links: { repo: 'https://github.com/pronoia9/flapple', live: 'https://flapple-chi.vercel.app/' },
+      image: '', // TODO
+      images: ['/images/projects'], // TODO
+      dates: ['', ''], // TODO
+      categories: [], // TODO
+      tags: [], // TODO
+    },
     // {
     //   id: 'newage',
     //   title: 'NewAge Consultancy',
     //   subtitle: 'Frontend, Design',
-    //   description: ``, // TODO
+    //   description: `Prepare to revolutionize your online presence with NewAge Consultancy, a project poised to set the standard for tech consultancy websites. Featuring cutting-edge design and intuitive interfaces, NewAge Consultancy offers a fresh take on professionalism in the digital age. Say hello to a sleek, modern web experience that reflects the innovation and expertise of NewAge Consultancy.`,
+    //   links: { repo: '', live: '' }, // TODO
+    //   image: '', // TODO
+    //   images: ['/images/projects'], // TODO
+    //   dates: ['', ''], // TODO
+    //   categories: [], // TODO
+    //   tags: [], // TODO
+    // },
+    // {
+    //   id: 'babel-buster',
+    //   title: 'Babel Buster',
+    //   subtitle: 'Frontend, Design',
+    //   description: `Get ready to break the language barrier and unleash the laughter with Babel Buster, the app that turns words into a riotous journey through the world's languages! Simply input your text and watch as it gets hilariously transformed, bouncing from language to language like a linguistic pinball machine. With Babel Buster, every translation is a comedic masterpiece waiting to be discovered. Get ready to bust a gut laughing with Babel Buster!`,
     //   links: { repo: '', live: '' }, // TODO
     //   image: '', // TODO
     //   images: ['/images/projects'], // TODO
