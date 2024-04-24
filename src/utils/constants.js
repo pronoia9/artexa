@@ -886,7 +886,7 @@ export const history = {
     //   description: `Immerse yourself in the mystical realm of React.js mastery with the guidance of the revered React.js sages. Together, we unravel the secrets of Redux, dance with React Hooks, wield GraphQL's power, and summon the mighty Context API. Brace yourself as we embark on an epic journey, conquering Firebase, Redux-Saga, Stripe, and more, crafting enchanting and powerful web applications from scratch.`,
     //   link: 'https://zerotomastery.io/courses/learn-react/',
     // },
-  ],
+  ].sort((a, b) => b?.dates[1] - a?.dates[1]),
   courses: [
     {
       title: 'ThreeJS Journey',
@@ -898,18 +898,18 @@ export const history = {
     {
       title: 'Become A 3D Illustrator',
       subtitle: 'by Polygon Runway',
-      dates: [new Date('May 3, 2023'), 'Ongoing'],
+      dates: [new Date('May 3, 2023')],
       description: `Became a skilled 3D modeler through an immersive Blender course. Mastered controls, geometry modeling, lighting, and rendering. Explored advanced tools, texture painting, and ambient lighting for captivating effects. Created diverse projects, from low-poly to isometric rooms. Proficient in realistic material rendering and smooth modeling techniques. Ready to bring innovative concepts to life.`,
       link: 'https://polygonrunway.com/p/become-a-3d-illustrator',
     },
     {
-      title: 'Blender Donut Series',
+      title: 'Blender Donut Series (v3)',
       subtitle: 'by Blender Guru',
       dates: [new Date('May 5, 2023'), new Date('May 9, 2023')],
       description: `Blender Donut Tutorial series by Blender Guru: Mastered the art of crafting tantalizing digital donuts, honing skills in modeling, texturing, lighting, and rendering under the guidance of Blender Guru's wit and charm. Transformed into a skilled donut virtuoso, capable of creating visually captivating treats.`,
       link: 'https://www.youtube.com/playlist?list=PLjEaoINr3zgFX8ZsChQVQsuDSjEqdWMAD',
     },
-  ].sort((a, b) => b?.dates[0] - a?.dates[0]),
+  ].sort((a, b) => b?.dates[1] - a?.dates[1]),
   activities: [
     {
       title: 'Destination Imagination',
@@ -924,7 +924,7 @@ export const history = {
       description: `Ventured into the realm of environmental guardianship, donning the cape of a Caretaker of the Environment. In this noble quest, I joined forces with a league of eco-warriors, embracing the responsibility of protecting our precious planet. Together, we shaped awareness, wielded education, and championed sustainable development, leaving a trail of green footsteps in our wake.`,
       image: '/images/history/cei.jpg',
     },
-  ].sort((a, b) => b?.dates[0] - a?.dates[0]),
+  ].sort((a, b) => b?.dates[1] - a?.dates[1]),
   experience: [
     {
       title: 'NewAge Consultancy LLC',
