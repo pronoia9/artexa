@@ -562,7 +562,7 @@ export const projects = {
       id: 'metaverse-madness',
       title: 'Metaversus',
       subtitle: 'Design, Frontend',
-      description: ``,
+      description: ``, // TODO
       links: { repo: 'https://github.com/pronoia9/metaversus', live: 'https://celestia-metaversus.vercel.app' },
       image: '/images/projects/metaversus.jpg',
       images: [
@@ -581,7 +581,7 @@ export const projects = {
       id: 'fiber-follies',
       title: 'Fiber Follies',
       subtitle: 'Frontend, ThreeJS',
-      description: ``,
+      description: ``, // TODO
       links: { repo: 'https://github.com/pronoia9/fiber-follies', live: 'https://fiber-follies.vercel.app/' },
       image: '/images/projects/fiber-follies.jpg',
       images: ['/images/projects/fiber-follies-1.jpeg', '/images/projects/fiber-follies-2.jpeg', '/images/projects/fiber-follies-3.jpeg'],
@@ -614,7 +614,7 @@ export const projects = {
       id: 'makiwaku',
       title: 'Makiwaku',
       subtitle: 'Design, Frontend',
-      description: ``,
+      description: ``, // TODO
       links: { repo: 'https://github.com/pronoia9/makiwaku', live: 'https://makiwaku.vercel.app/' },
       image: '/images/projects/makiwaku.jpg',
       images: [
@@ -633,7 +633,7 @@ export const projects = {
       id: 'promptle',
       title: 'Promptle',
       subtitle: 'Design, Fullstack',
-      description: ``,
+      description: ``, // TODO
       links: { repo: 'https://github.com/pronoia9/promptle', live: 'https://promptle.vercel.app/' },
       image: '/images/projects/promptle.jpg',
       images: ['/images/projects/promptle-1.jpeg', '/images/projects/promptle-2.jpeg', '/images/projects/promptle-3.jpeg'],
@@ -659,7 +659,7 @@ export const projects = {
       id: 'doodlebug-dash',
       title: 'Doodlebug Dash',
       subtitle: 'Design, Frontend',
-      description: ``,
+      description: ``, // TODO
       links: { repo: 'https://github.com/pronoia9/doodlebug-dash', live: 'https://doodlebug-dash.vercel.app/' },
       image: '/images/projects/doodlebug-dash.jpg',
       images: ['/images/projects/doodlebug-dash-1.jpeg', '/images/projects/doodlebug-dash-2.jpeg', '/images/projects/doodlebug-dash-3.jpeg'],
@@ -685,7 +685,7 @@ export const projects = {
       id: 'weavio',
       title: 'Weavio',
       subtitle: 'Fullstack, Next, Design',
-      description: ``,
+      description: ``, // TODO
       links: { repo: 'https://github.com/pronoia9/weavio', live: 'https://weavio.vercel.app' },
       image: '/images/projects/weavio.jpg',
       images: [
@@ -724,8 +724,8 @@ export const projects = {
     {
       id: 'wanderlark',
       title: 'WanderLark',
-      subtitle: 'Frontend, Next, Design',
-      description: ``,
+      subtitle: 'Frontend, Nextjs, Design',
+      description: ``, // TODO
       links: { repo: 'https://github.com/pronoia9/wanderlark', live: 'https://wanderlark.vercel.app/' },
       image: '/images/projects/wanderlark.jpg',
       images: ['/images/projects/wanderlark-1.jpg', '/images/projects/wanderlark-2.jpg', '/images/projects/wanderlark-3.jpg'],
@@ -733,6 +733,107 @@ export const projects = {
       categories: ['frontend', 'design', 'nextjs'],
       tags: ['react', 'nextjs', 'javascript', 'typescript', 'html', 'css', 'tailwindcss', 'postcss', 'autoprefixer', 'frontend'],
     },
+    {
+      id: 'quibbledrib',
+      title: 'Quibbledrib',
+      subtitle: 'Frontend, Nextjs, Graphql',
+      description: ``, // TODO
+      links: { repo: 'https://github.com/pronoia9/quibbledrib', live: 'https://quibbledrib.vercel.app/' },
+      image: '', // TODO
+      images: ['/images/projects'], // TODO
+      dates: ['Oct 19, 2023', 'Oct 28, 2023'],
+      categories: ['frontend', 'nextjs'],
+      tags: [
+        'react',
+        'javascript',
+        'css',
+        'html',
+        'graphql',
+        'typescript',
+        'postcss',
+        'nextjs',
+        'autoprefixer',
+        'axios',
+        'cloudinary',
+        'jsonwebtoken',
+        'tailwindcss',
+        'next-auth',
+        'headlessui',
+        'supports-color',
+      ],
+    },
+    {
+      id: 'dush',
+      title: 'DUSH',
+      subtitle: 'Fullstack, Typescript',
+      description: ``, // TODO
+      links: { repo: 'https://github.com/pronoia9/dush', live: 'https://dush-pi.vercel.app/' },
+      image: '', // TODO
+      images: ['/images/projects'], // TODO
+      dates: ['Nov 18, 2023', 'Dec 4, 2023'],
+      categories: ['fullstack', 'typescript'],
+      tags: [
+        'react',
+        'vitejs',
+        'typescript',
+        'javascript',
+        'html',
+        'css',
+        '@hookform',
+        '@radix-ui',
+        'appwrite',
+        'attr-accept',
+        'class-variance-authority',
+        'clsx',
+        'lucide-react',
+        'react-router-dom',
+        'react-dropzone',
+        'react-hook-form',
+        'react-intersection-observer',
+        'solidjs-dropzone',
+        'tailwindcss',
+        'postcss',
+        'autoprefixer',
+        'tailwind-merge',
+        'zod',
+      ],
+    },
+    {
+      id: 'portfolio-supah',
+      title: 'Portfolio (Supah)',
+      subtitle: 'Frontend, Design',
+      description: ``, // TODO
+      links: { repo: 'https://github.com/pronoia9/portfolio-supah', live: 'https://portfolio-supah.vercel.app/' },
+      image: '', // TODO
+      images: ['/images/projects'], // TODO
+      dates: ['Mar 6, 2024', 'Mar 11, 2024'],
+      categories: ['frontend', 'design'],
+      tags: ['react', 'vitejs', 'html', 'css', 'javascript', 'framer-motion'],
+    },
+    {
+      id: 'pun-manteau',
+      title: 'Pun Manteau',
+      subtitle: 'Frontend, Design, APIs',
+      description: ``, // TODO
+      links: { repo: 'https://github.com/pronoia9/pun-manteau', live: 'https://pun-manteau.vercel.app/' },
+      image: '', // TODO
+      images: ['/images/projects'], // TODO
+      dates: ['Mar 11, 2024', 'Mar 22, 2024'],
+      categories: ['frontend', 'design'],
+      tags: ['react', 'vitejs', 'html', 'javascript', 'css', 'axios', 'styled-components', 'framer-motion'],
+    },
+    // {
+    //   id: 'newage',
+    //   title: 'NewAge Consultancy',
+    //   subtitle: 'Frontend, Design',
+    //   description: ``, // TODO
+    //   links: { repo: '', live: '' }, // TODO
+    //   image: '', // TODO
+    //   images: ['/images/projects'], // TODO
+    //   dates: ['', ''], // TODO
+    //   categories: [], // TODO
+    //   tags: [], // TODO
+    // },
     // {
     //   id: '',
     //   title: '',
@@ -740,7 +841,7 @@ export const projects = {
     //   description: ``,
     //   links: { repo: '', live: '' },
     //   image: '',
-    //   images: ['/images/projects',],
+    //   images: ['/images/projects'],
     //   dates: ['', ''],
     //   categories: [],
     //   tags: [],
