@@ -4,7 +4,7 @@ import { createGlobalStyle } from 'styled-components';
 
 import { rem } from '@/utils';
 
-const GlobalStyles = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   @font-face { font-family: 'Caveat';         src: url('/fonts/Caveat/Caveat-VariableFont_wght.ttf')   format('truetype'); }
   @font-face { font-family: 'Caveat Brush';   src: url('/fonts/Caveat_Brush/CaveatBrush-Regular.ttf')  format('truetype'); }
   @font-face { font-family: 'Jost';           src: url('/fonts/Jost/Jost-VariableFont_wght.ttf')       format('truetype'); }
@@ -709,5 +709,3 @@ button {
   transition: 0.55s ease-in-out;
 }
 `;
-
-export default GlobalStyles;
