@@ -111,7 +111,7 @@ export const sidebarMotion = {
   },
   // Socials
   socials: {
-    container: { variants: staggerContainer(0.15, 7) },
+    container: { variants: staggerContainer(0.15, 2.25) },
     item: { variants: zoomIn({ type: 'linear', duration: 0.25 }) },
   },
 };
