@@ -171,7 +171,7 @@ export const sidebar = {
     {
       platform: 'discord',
       fancybox: true,
-      url: '/images/discord.jpg',
+      url: '/images/discord.gif',
     },
   ],
 };
