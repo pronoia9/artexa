@@ -1314,7 +1314,7 @@ export const contact = {
   info: [
     [
       { title: 'Email', description: 'jayansin9@gmail.com' },
-      { title: 'Github', description: 'pronoia9' },
+      { title: 'Github', description: 'pronoia9', link: 'https://github.com/pronoia9' },
       { title: 'Discord', description: 'pronoia9' },
     ],
     [
