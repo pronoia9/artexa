@@ -824,6 +824,14 @@ export const history = {
       image: '/images/history/cei.jpg',
     },
   ].sort((a, b) => b?.dates[0] - a?.dates[0]),
+  experience: [
+    {
+      title: 'NewAge Consultancy LLC',
+      subtitle: 'Frontend Developer',
+      dates: [new Date('April 2024')],
+      description: ``, // TODO
+    },
+  ],
 };
 
 export const courses = [
