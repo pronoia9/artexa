@@ -43,16 +43,18 @@ const SkillItem = styled(Tooltip)`
       ? css`
           &::after {
             content: $description;
-            top: -50%;
-            right: 5%;
+            top: -100%;
+            right: 1%;
             max-width: 90%;
+            color: var(--c-font-2);
+            font-size: 0.8rem;
+            background: var(--c-bg);
             transform: scale(0.75);
-            transition-delay: 1s;
+            transition-delay: 1.75s;
           }
         `
       : css`
-          &::after,
-          &::before {
+          &::after {
             content: none;
           }
         `}
