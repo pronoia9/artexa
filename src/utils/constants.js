@@ -21,14 +21,13 @@ export const sidebar = {
 
   about: [
     { id: 1, title: 'Nationality:', subtitle: 'U.S.' },
-    // { id: 2, title: 'Age', subtitle: new Date().getFullYear() - new Date('April 15, 1995').getFullYear() },
     { id: 2, title: 'Location', subtitle: 'Atlanta, GA' },
   ],
 
   languages: [
     { id: '1', language: 'English', level: 100 },
+    { id: '3', language: 'Turkish', level: 60 },
     { id: '2', language: 'French', level: 10 },
-    { id: '3', language: 'Japanese', level: 5 },
   ],
 
   skills: {
