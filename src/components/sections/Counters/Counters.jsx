@@ -6,7 +6,7 @@
 import { Counter, SectionWrapper } from '@/components';
 import { counters as data } from '@/utils';
 
-export default SectionWrapper(() => {
+export const Counters = SectionWrapper(() => {
   return (
     <>
       {/* <Container className='row art-card'> */}

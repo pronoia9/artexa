@@ -7,7 +7,7 @@ import { SectionWrapper, SectionTitle, HoverExpand } from '@/components';
 import { Tag } from '@/styles';
 import { projectMotion } from '@/utils';
 
-export default SectionWrapper(({ project }) => {
+export const ProjectBanner = SectionWrapper(({ project }) => {
   const { title, image, categories } = project;
 
   return (

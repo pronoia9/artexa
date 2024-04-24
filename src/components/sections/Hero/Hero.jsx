@@ -7,7 +7,7 @@ import confetti from 'canvas-confetti';
 import { HeroHeading, HeroTyped, ButtonGradient, SectionWrapper } from '@/components';
 import { heroMotion, rem, hero as data, rngPickRandom, confettiFireworks } from '@/utils';
 
-export default SectionWrapper(() => {
+export const Hero = SectionWrapper(() => {
   // const myConfetti = useRef(), myCanvas = useRef();
   // useEffect(() => {
   //   myConfetti.current = confetti.create(myCanvas.current, { resize: true, useWorker: true });

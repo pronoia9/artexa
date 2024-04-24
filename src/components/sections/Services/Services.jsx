@@ -3,7 +3,7 @@
 import { SectionTitle, SectionWrapper, ServicesCard } from '@/components';
 import { services as data } from '@/utils';
 
-export default SectionWrapper(() => {
+export const Services = SectionWrapper(() => {
   return (
     <>
       <SectionTitle title={data.title} />

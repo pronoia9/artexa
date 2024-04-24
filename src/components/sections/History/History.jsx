@@ -3,7 +3,7 @@
 import { SectionWrapper, Timeline } from '@/components';
 import { history as data } from '@/utils';
 
-export default SectionWrapper(() => {
+export const History = SectionWrapper(() => {
   if (!data) return <></>; // ! TEMP
 
   return (

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { HoverExpand, SectionWrapper } from '@/components';
 import { projectMotion, rem } from '@/utils';
 
-export default SectionWrapper(({ images }) => {
+export const ProjectScreenshots = SectionWrapper(({ images }) => {
   return (
     <Grid className='col-12' {...projectMotion.screenshots.grid}>
       {images.map((image, index) => (

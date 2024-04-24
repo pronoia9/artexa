@@ -3,7 +3,7 @@
 import { SectionTitle, SectionWrapper, Hobbies } from '@/components';
 import { Tag } from '@/styles';
 
-export default SectionWrapper(() => {
+export const About = SectionWrapper(() => {
   return (
     <>
       <SectionTitle title='About Me'>

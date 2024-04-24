@@ -3,7 +3,7 @@
 import { SectionTitle, SectionWrapper, ContactList, ContactForm } from '@/components';
 import { contact as data } from '@/utils';
 
-export default SectionWrapper(() => {
+export const Contact = SectionWrapper(() => {
   return (
     <>
       <SectionTitle title={data.title} />

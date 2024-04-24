@@ -4,7 +4,7 @@ import { useRef } from 'react';
 
 import { SectionWrapper, SectionTitle, TechnologiesGrid, TechnologiesSwiper } from '@/components';
 
-export default SectionWrapper(({ type = 'swiper', ...props }) => {
+export const Technologies = SectionWrapper(({ type = 'swiper', ...props }) => {
   const ref = useRef(null);
 
   return (

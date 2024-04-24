@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 
-import { Logos, SectionWrapper } from '@/components';
+import { Logos } from '@/components';
 import { footer as data, sectionWrapperMotion } from '@/utils';
 
 // TODO: Fix this HOC component export shit
@@ -20,7 +20,7 @@ import { footer as data, sectionWrapperMotion } from '@/utils';
 //   'footer'
 // );
 
-export default function Footer() {
+export const Footer = () => {
   return (
     <Container className='container-fluid' {...sectionWrapperMotion()}>
       <div className='row p-30-0'>
@@ -32,7 +32,7 @@ export default function Footer() {
       </div>
     </Container>
   );
-}
+};
 
 const Container = styled(motion.section)`
   position: relative;
@@ -63,7 +63,8 @@ const FooterContainer = styled.div`
     margin-bottom: 10px;
   }
 
-  a, span {
+  a,
+  span {
     transition: 0.2s ease-in-out;
 
     &:hover {

@@ -2,159 +2,82 @@
 
 // ---- LAYOUT
 // Navbar
-import { Navbar } from './layout/Navbar/Navbar';
-import { NavbarButton } from './layout/Navbar/NavbarButton';
-import { NavbarCurrentPage } from './layout/Navbar/NavbarCurrentPage';
-import { NavbarList } from './layout/Navbar/NavbarList';
-import { NavbarListItem } from './layout/Navbar/NavbarListItem';
-import { ThemeButton } from './layout/Navbar/ThemeButton';
+export * from '@/components/layout/Navbar/Navbar';
+export * from '@/components/layout/Navbar/NavbarButton';
+export * from '@/components/layout/Navbar/NavbarCurrentPage';
+export * from '@/components/layout/Navbar/NavbarList';
+export * from '@/components/layout/Navbar/NavbarListItem';
+export * from '@/components/layout/Navbar/ThemeButton';
 // Sidebar
-import { Sidebar } from './layout/Sidebar/Sidebar';
-import { HardSkills } from './layout/Sidebar/HardSkills';
-import { Info } from './layout/Sidebar/Info';
-import { Languages } from './layout/Sidebar/Languages';
-import { Profile } from './layout/Sidebar/Profile/Profile';
-import { ProfileAvatar } from './layout/Sidebar/Profile/ProfileAvatar';
-import { ProfileName } from './layout/Sidebar/Profile/ProfileName';
-import { ProfilePost } from './layout/Sidebar/Profile/ProfilePost';
-import { Resume } from './layout/Sidebar/Resume';
-import { Socials } from './layout/Sidebar/Socials';
-import { SoftSkills } from './layout/Sidebar/SoftSkills';
-import { Strengths } from './layout/Sidebar/Strengths';
+export * from '@/components/layout/Sidebar/Profile/Profile';
+export * from '@/components/layout/Sidebar/Profile/ProfileAvatar';
+export * from '@/components/layout/Sidebar/Profile/ProfileName';
+export * from '@/components/layout/Sidebar/Profile/ProfilePost';
+export * from '@/components/layout/Sidebar/HardSkills';
+export * from '@/components/layout/Sidebar/Info';
+export * from '@/components/layout/Sidebar/Languages';
+export * from '@/components/layout/Sidebar/Resume';
+export * from '@/components/layout/Sidebar/Sidebar';
+export * from '@/components/layout/Sidebar/Socials';
+export * from '@/components/layout/Sidebar/SoftSkills';
+export * from '@/components/layout/Sidebar/Strengths';
 // Footer
-import Footer from './layout/Footer';
+export * from '@/components/layout/Footer';
 
 // ---- HOC
-import { SectionWrapper } from './hoc/SectionWrapper';
+export * from '@/components/hoc/SectionWrapper';
 
 // ---- SECTIONS
 // -- About
-import About from './sections/About/About';
-import { Hobbies } from './sections/About/Hobbies';
-import { HobbiesCard } from './sections/About/HobbiesCard';
+export * from '@/components/sections/About/About';
+export * from '@/components/sections/About/Hobbies';
+export * from '@/components/sections/About/HobbiesCard';
 // -- Contact
-import Contact from './sections/Contact/Contact';
-import { ContactList, ContactListItem } from './sections/Contact/ContactList';
-import { ContactInput } from './sections/Contact/ContactInput';
-import { ContactForm } from './sections/Contact/ContactForm';
+export * from '@/components/sections/Contact/Contact';
+export * from '@/components/sections/Contact/ContactForm';
+export * from '@/components/sections/Contact/ContactInput';
+export * from '@/components/sections/Contact/ContactList';
 // -- Counters
-import Counters from './sections/Counters/Counters';
-import { Counter } from './sections/Counters/Counter';
+export * from '@/components/sections/Counters/Counter';
+export * from '@/components/sections/Counters/Counters';
 // -- Courses
-import Courses from './sections/Courses/Courses';
+export * from '@/components/sections/Courses/Courses';
 // -- Hero
-import Hero from './sections/Hero/Hero';
-import { HeroHeading } from './sections/Hero/HeroHeading';
-import { HeroTyped } from './sections/Hero/HeroTyped';
+export * from '@/components/sections/Hero/Hero';
+export * from '@/components/sections/Hero/HeroHeading';
+export * from '@/components/sections/Hero/HeroTyped';
 // -- History
-import History from './sections/History/History';
+export * from '@/components/sections/History/History';
 // -- Projects
-import ProjectBanner from './sections/Project/ProjectBanner';
-import ProjectInfo from './sections/Project/ProjectInfo';
-import ProjectScreenshots from './sections/Project/ProjectScreenshots';
-import Projects from './sections/Projects/Projects';
-import { ProjectsFilters, FilterItem } from './sections/Projects/ProjectsFilters';
-import { ProjectsGrid } from './sections/Projects/ProjectsGrid';
-import { ProjectsSwiper } from './sections/Projects/ProjectsSwiper';
+export * from '@/components/sections/Project/ProjectBanner';
+export * from '@/components/sections/Project/ProjectInfo';
+export * from '@/components/sections/Project/ProjectScreenshots';
+export * from '@/components/sections/Projects/Projects';
+export * from '@/components/sections/Projects/ProjectsFilters';
+export * from '@/components/sections/Projects/ProjectsGrid';
+export * from '@/components/sections/Projects/ProjectsSwiper';
 // -- Services
-import Services from './sections/Services/Services';
-import { ServicesCard } from './sections/Services/ServicesCard';
+export * from '@/components/sections/Services/Services';
+export * from '@/components/sections/Services/ServicesCard';
 // -- Technologies
-import Technologies from './sections/Technologies/Technologies';
-import { TechnologiesGrid } from './sections/Technologies/TechnologiesGrid';
-import { TechnologiesSwiper } from './sections/Technologies/TechnologiesSwiper';
+export * from '@/components/sections/Technologies/Technologies';
+export * from '@/components/sections/Technologies/TechnologiesGrid';
+export * from '@/components/sections/Technologies/TechnologiesSwiper';
 
 // ---- COMPONENTS
-import { Background } from './Background';
-import { Button, ButtonGradient } from './Buttons';
-import { Card } from './Card';
-import { Cursor } from './Cursor';
-import { Fancybox, HoverExpand } from './Fancybox';
-import { Grid } from './Grid';
-import { Logos, Logo } from './Logos';
-import { Preloader } from './Preloader';
-import { Progressbar } from './Progressbar';
-import { SmoothScroll } from './SmoothScroll';
-import { SplitText } from './SplitText';
-import { SVGs } from './SVGs';
-import { Swiper, SwiperNavigation } from './Swiper';
-import { Tags } from './Tags';
-import { SectionTitle } from './Text';
-import { Timeline, TimelineColumn, TimelineItem } from './Timeline';
-
-export {
-  // ---- LAYOUT ----
-  Navbar,
-  NavbarButton,
-  NavbarCurrentPage,
-  NavbarList,
-  NavbarListItem,
-  ThemeButton,
-  Sidebar,
-  HardSkills,
-  Info,
-  Languages,
-  Profile,
-  ProfileAvatar,
-  ProfileName,
-  ProfilePost,
-  Resume,
-  Socials,
-  SoftSkills,
-  Strengths,
-  Footer,
-  // ---- HOC ----
-  SectionWrapper,
-  // ---- SECTIONS ----
-  About,
-  Hobbies,
-  HobbiesCard,
-  Contact,
-  ContactForm,
-  ContactInput,
-  ContactList,
-  ContactListItem,
-  Counters,
-  Counter,
-  Courses,
-  Hero,
-  HeroHeading,
-  HeroTyped,
-  History,
-  ProjectBanner,
-  ProjectInfo,
-  ProjectScreenshots,
-  Projects,
-  ProjectsFilters,
-  FilterItem,
-  ProjectsGrid,
-  ProjectsSwiper,
-  Services,
-  ServicesCard,
-  Technologies,
-  TechnologiesGrid,
-  TechnologiesSwiper,
-  // ---- COMPONENTS ----
-  Background,
-  Button,
-  ButtonGradient,
-  Card,
-  Cursor,
-  Fancybox,
-  HoverExpand,
-  Grid,
-  Logos,
-  Logo,
-  Preloader,
-  Progressbar,
-  SmoothScroll,
-  SplitText,
-  SVGs,
-  Swiper,
-  SwiperNavigation,
-  Tags,
-  SectionTitle,
-  Timeline,
-  TimelineColumn,
-  TimelineItem,
-};
+export * from '@/components/Background';
+export * from '@/components/Buttons';
+export * from '@/components/Card';
+export * from '@/components/Cursor';
+export * from '@/components/Fancybox';
+export * from '@/components/Grid';
+export * from '@/components/Logos';
+export * from '@/components/Preloader';
+export * from '@/components/Progressbar';
+export * from '@/components/SmoothScroll';
+export * from '@/components/SplitText';
+export * from '@/components/SVGs';
+export * from '@/components/Swiper';
+export * from '@/components/Tags';
+export * from '@/components/Text';
+export * from '@/components/Timeline';

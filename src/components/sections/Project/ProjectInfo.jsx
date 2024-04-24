@@ -15,7 +15,7 @@ const ListItem = ({ title, subtitle }) => (
   </ListItemContainer>
 );
 
-export default SectionWrapper(({ project }) => {
+export const ProjectInfo = SectionWrapper(({ project }) => {
   const { id, title, subtitle, description, links, image, dates, categories, tags } = project;
 
   return (
