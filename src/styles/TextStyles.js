@@ -74,8 +74,7 @@ export const Tag = styled(motion.p)`
   display: inline-block;
   /* color: var(--c-font-1); */
   color: var(--c-font-2);
-  /* font-size: ${rem(10)}; */
-  font-size: ${rem(12)};
+  font-size: ${rem(10.5)};
   font-family: var(--f-code);
   background: var(--c-bg);
   border-radius: ${rem(15)};
