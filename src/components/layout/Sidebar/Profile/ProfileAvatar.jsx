@@ -29,9 +29,7 @@ const AvatarContainer = styled(motion.div)`
   position: relative;
   width: ${rem(90)};
   height: ${rem(90)};
-  margin: 0 auto;
   border-radius: 50%;
-  margin-bottom: ${rem(15)};
 `;
 
 const AvatarCurtain = styled.div`
