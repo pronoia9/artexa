@@ -65,7 +65,8 @@ export const rngPickRandom = (arr) => arr[rng(0, arr.length - 1)];
 
 // TODO: fix rem
 // Convert a pixel value to rem
-export const rem = (val) => `${val}px`; // `${parseInt(val) / 16}rem`;
+// export const rem = (val) => `${parseFloat(val) / 16}rem`;
+export const rem = (val) => `${val}px`;
 
 // Convert an RGBA color to hex format
 export const rgbaToHex = (rgbaColor) => {
