@@ -503,7 +503,7 @@ export const projects = {
       id: 'pun-manteau',
       title: 'Pun Manteau',
       subtitle: 'Frontend, Design, APIs',
-      description: `Experience a delightful fusion of timekeeping and humor with Pun Manteau, a whimsical clock app that adds a touch of wit to your day. Featuring real-time location and time information, Pun Manteau combines functionality with entertainment, ensuring each moment is greeted with a clever pun tailored to your locale. Let Pun Manteau brighten your day, one pun at a time.`,
+      description: `Experience a delightful fusion of timekeeping and humor with Pun Manteau, a whimsical clock app that adds a touch of wit to your day. Featuring real-time location and time information, Pun Manteau combines functionality with entertainment, ensuring each moment is greeted with a clever pun. Let Pun Manteau brighten your day, one pun at a time.`,
       links: { repo: 'https://github.com/pronoia9/pun-manteau', live: 'https://pun-manteau.vercel.app/' },
       imagesCount: 6,
       dates: ['Mar 11, 2024', 'Mar 22, 2024'],
