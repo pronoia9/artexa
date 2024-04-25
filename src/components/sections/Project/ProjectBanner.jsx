@@ -9,7 +9,7 @@ import { projectMotion } from '@/utils';
 
 export const ProjectBanner = SectionWrapper(({ project }) => {
   const { id, title, categories } = project;
-  const image = `/images/projects/${id}.jpg` || `/images/projects/${id}.jpeg` || `/images/projects/${id}.png`;
+  const image = `/images/projects/${id}.jpeg`;
 
   return (
     <>
