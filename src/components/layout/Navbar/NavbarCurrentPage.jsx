@@ -23,7 +23,7 @@ const Container = styled.div`
   left: ${rem(-62)};
   width: ${rem(200)};
   color: var(--c-font-2);
-  font-size: ${rem(11)};
+  font-size: ${rem(13)};
   font-weight: 500;
   letter-spacing: ${rem(1)};
   text-transform: uppercase;
