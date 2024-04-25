@@ -566,7 +566,7 @@ export const projects = {
       links: { repo: 'https://github.com/pronoia9/pun-manteau', live: 'https://pun-manteau.vercel.app/' },
       images: ['/images/projects'], // TODO
       dates: ['Mar 11, 2024', 'Mar 22, 2024'],
-      categories: ['frontend', 'design'],
+      categories: ['frontend', 'design', 'frontend mentor'],
       tags: ['react', 'vitejs', 'html', 'javascript', 'css', 'axios', 'styled-components', 'framer-motion'],
     },
     {
