@@ -32,7 +32,7 @@ export const SmoothScroll = ({ options, children, ...props }) => {
 
 const Container = styled.div`
   width: 100%;
-  height: calc(100vh - 25px);
+  height: calc(100vh - 30px);
 
   .scrollbar-track {
     visibility: hidden;
