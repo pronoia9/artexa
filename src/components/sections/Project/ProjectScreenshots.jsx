@@ -17,7 +17,7 @@ export const ProjectScreenshots = SectionWrapper(({ id, imagesCount }) => {
         const image = `/images/projects/${id}-${index + 1}.jpeg`;
         return (
           <motion.div key={`project-screenshots-${index}`} className='grid-item' {...projectMotion.screenshots.image}>
-            <a data-fancybox='project' href={image} className='art-a art-portfolio-item-frame'>
+            <a data-fancybox='fancybox-project' href={image} className='art-a art-portfolio-item-frame'>
               <img src={image} alt='item' />
               <HoverExpand />
             </a>

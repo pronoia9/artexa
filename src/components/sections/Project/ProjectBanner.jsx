@@ -18,7 +18,7 @@ export const ProjectBanner = SectionWrapper(({ project }) => {
       </SectionTitle>
 
       <Container className='col-lg-12 art-a art-project-cover' {...projectMotion.banner.thumbnail}>
-        <a data-fancybox='project' href={image} className='art-portfolio-item-frame art-horizontal'>
+        <a data-fancybox='fancybox-project' href={image} className='art-portfolio-item-frame art-horizontal'>
           <img src={image} alt={title} />
           <HoverExpand />
         </a>

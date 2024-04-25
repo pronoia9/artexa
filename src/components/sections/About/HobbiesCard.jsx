@@ -8,7 +8,7 @@ import { HoverExpand } from '@/components';
 export const HobbiesCard = ({ title, image }) => {
   return (
     <Frame className='art-a art-hobbies-item-frame'>
-      <Item data-fancybox='hobbies' href={image} className='art-a art-hobbies-item-frame art-horizontal'>
+      <Item data-fancybox='fancybox-hobbies' href={image} className='art-a art-hobbies-item-frame art-horizontal'>
         <img src={image} alt={title} />
         <HoverExpand center={true} />
       </Item>

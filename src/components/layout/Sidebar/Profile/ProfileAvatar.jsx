@@ -13,7 +13,7 @@ export const ProfileAvatar = () => {
 
   return (
     <AvatarContainer className='art-avatar' {...sidebarMotion.profile.avatarContainer}>
-      <AvatarCurtain data-fancybox='avatar' href={data.avatar} className='art-avatar-curtain' onClick={() => openFancybox(data.avatar)}>
+      <AvatarCurtain data-fancybox='fancybox-avatar' href={data.avatar} className='art-avatar-curtain' onClick={() => openFancybox(data.avatar)}>
         <AvatarImage src={data.avatar} alt='Avatar' {...sidebarMotion.profile.avatarItem} />
         <HoverExpand />
       </AvatarCurtain>

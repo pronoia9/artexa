@@ -78,7 +78,7 @@ export const TimelineItem = (props) => {
         <Button
           link={link || image}
           title={link ? 'Link' : image ? 'Certificate' : 'Suprise!'}
-          {...(image ? { 'data-fancybox': 'history' } : { target: '_blank', rel: 'noreferrer' })}
+          {...(image ? { 'data-fancybox': 'fancybox-history' } : { target: '_blank', rel: 'noreferrer' })}
         />
       </TimelineItemContent>
     </TimelineItemContainer>

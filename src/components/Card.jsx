@@ -16,7 +16,7 @@ export const Card = ({ index, swiper, hide, section, id, title, subtitle, descri
       $hide={hide}
       {...props}
     >
-      <ImageLink className='art-port-cover' data-fancybox={`fancybox${section}`} href={image}>
+      <ImageLink className='art-port-cover' data-fancybox={`fancybox-${section}`} href={image}>
         <img
           src={`/images/${section}/${id}.jpeg` || image || ''}
           alt='item'

@@ -39,7 +39,7 @@ export const SocialsItem = ({ platform, fancybox, url }) => (
   <SocialItem
     className={`${platform}${fancybox ? ' fancybox' : ''}`}
     href={url}
-    {...(fancybox && { 'data-fancybox': 'socials' })}
+    {...(fancybox && { 'data-fancybox': 'fancybox-socials' })}
     target='_blank'
     rel='noopener noreferrer'
     {...sidebarMotion.socials.item}
