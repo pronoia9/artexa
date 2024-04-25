@@ -7,7 +7,9 @@ import { motion } from 'framer-motion';
 import { Button, HoverExpand, Tags } from '@/components';
 import { rem } from '@/utils';
 
-export const Card = ({ index, swiper, hide, section, id, title, subtitle, description, link, links, image, images, year, date, categories, tags, classes, ...props }) => {
+export const Card = ({ index, swiper, hide, section, id, title, subtitle, description, link, links, year, date, categories, tags, classes, ...props }) => {
+  const image = `/images/${section}/${id}.jpeg` || '';
+  
   return (
     <Container
       key={`${section}-card-${index}-${title}`}
@@ -17,10 +19,7 @@ export const Card = ({ index, swiper, hide, section, id, title, subtitle, descri
       {...props}
     >
       <ImageLink className='art-port-cover' data-fancybox={`fancybox-${section}`} href={image}>
-        <img
-          src={`/images/${section}/${id}.jpeg` || image || ''}
-          alt='item'
-        />
+        <img src={image} alt='item' />
         <HoverExpand />
       </ImageLink>
 
