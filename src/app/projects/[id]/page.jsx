@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 
 import { ProjectBanner, ProjectInfo, ProjectScreenshots } from '@/components';
-import { projects } from '@/utils';
+import { projects } from '@/data';
 
 export default function Page() {
   const router = useRouter(), pathname = usePathname();
