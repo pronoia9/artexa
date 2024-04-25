@@ -155,9 +155,7 @@ export const handleFormSubmit = (values, { setSubmitting, resetForm }, setSucces
 //
 //
 //---------------------------- FANCYBOX START ----------------------------//
-export const openFancybox = (image) => {
-  Fancybox.show([{ src: image, type: 'image' }]);
-};
+export const openFancybox = (image) => void Fancybox.show([{ src: image, type: 'image' }]);
 //----------------------------- FANCYBOX END -----------------------------//
 //
 //
