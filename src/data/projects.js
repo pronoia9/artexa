@@ -453,6 +453,7 @@ export const projects = {
     //   tags: [ 'react', 'javascript', 'css', 'html', 'graphql', 'typescript', 'postcss', 'nextjs', 'autoprefixer', 'axios', 'cloudinary', 'jsonwebtoken', 'tailwindcss', 'next-auth', 'headlessui', 'supports-color' ],
     // },
     {
+      // TODO
       id: 'dush',
       title: 'DUSH',
       subtitle: 'Fullstack, Typescript',
