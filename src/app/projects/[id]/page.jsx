@@ -17,7 +17,7 @@ export default function Page() {
     <>
       <ProjectBanner project={data} />
       <ProjectInfo project={data} />
-      {data?.images?.length && <ProjectScreenshots {...data} />}
+      <ProjectScreenshots {...data} />
     </>
   );
 }
