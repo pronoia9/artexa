@@ -49,7 +49,7 @@ const Container = styled(motion.div)`
   transition: 0.55s ease-in-out;
 
   .scroll-content {
-    padding: ${rem(240)} 0 ${rem(50)};
+    padding: ${rem(15 + 15 + 235)} 0 ${rem(50)}; // 15px padding from container, 15px from wrapper + height of the profile component
   }
 
   @media (max-width: ${rem(920)}) {
