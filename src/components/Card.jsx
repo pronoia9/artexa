@@ -18,8 +18,7 @@ export const Card = ({ index, swiper, hide, section, id, title, subtitle, descri
     >
       <ImageLink className='art-port-cover' data-fancybox={`fancybox${section}`} href={image}>
         <img
-          // TODO: consider doing /images/${section}/id.jpeg
-          src={(section === 'projects' ? `/images/projects/${id}.jpeg` : image) || ''}
+          src={`/images/${section}/${id}.jpeg` || image || ''}
           alt='item'
         />
         <HoverExpand />
