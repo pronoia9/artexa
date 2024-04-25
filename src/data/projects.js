@@ -516,7 +516,7 @@ export const projects = {
       imagesCount: 6,
       dates: ['Mar 30, 2024', 'Apr 18, 2024'],
       categories: ['frontend', '3d'],
-      tags: ['react', 'vitejs', 'html', 'javascript', 'css', 'tailwindcss', 'autoprefixer', 'postcss', 'threejs', 'react-three-fiber', 'react-three-drei', 'gsap'], // TODO
+      tags: ['react', 'vitejs', 'html', 'javascript', 'css', 'tailwindcss', 'autoprefixer', 'postcss', 'threejs', 'react-three-fiber', 'react-three-drei', 'gsap'],
     },
     // {
     //   id: 'newage',
