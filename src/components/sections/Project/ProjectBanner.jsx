@@ -8,8 +8,8 @@ import { Tag } from '@/styles';
 import { projectMotion } from '@/utils';
 
 export const ProjectBanner = SectionWrapper(({ project }) => {
-  const { title, image, categories } = project;
-
+  const { id, title, categories } = project;
+  
   return (
     <>
       <SectionTitle title={title}>
@@ -17,7 +17,11 @@ export const ProjectBanner = SectionWrapper(({ project }) => {
       </SectionTitle>
 
       <Container className='col-lg-12 art-a art-project-cover' {...projectMotion.banner.thumbnail}>
-        <a data-fancybox='project' href={image} className='art-portfolio-item-frame art-horizontal'>
+        <a
+          data-fancybox='project'
+          href={`/images/projects/${id}.jpg` || `/images/projects/${id}.jpeg` || `/images/projects/${id}.png`}
+          className='art-portfolio-item-frame art-horizontal'
+        >
           <img src={image} alt={title} />
           <HoverExpand />
         </a>
