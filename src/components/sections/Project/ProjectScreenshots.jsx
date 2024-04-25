@@ -37,6 +37,7 @@ const Grid = styled(motion.div)`
 
   & > div {
     height: 100%;
+
     &:nth-child(1) {
       grid-area: one;
     }
@@ -60,8 +61,8 @@ const Grid = styled(motion.div)`
     &:nth-child(4) {
       a,
       img {
+        width: 100%;
         height: 100%;
-        width: auto;
       }
     }
   }
