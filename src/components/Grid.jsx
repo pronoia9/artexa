@@ -39,13 +39,9 @@ export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, butt
 
   // Sets count when the window is resized
   useEffect(() => {
-    const resize = () => {
-      setCount(Math.min(getProjectsCount(rows, cols), data.length || Infinity));
-    };
+    const resize = () => void setCount(Math.min(getProjectsCount(rows, cols), data.length || Infinity));
     window.addEventListener('resize', resize);
-    return () => {
-      window.removeEventListener('resize', resize);
-    };
+    return () => void window.removeEventListener('resize', resize);
   }, []);
 
   return (
@@ -100,9 +96,15 @@ const Wrapper = styled(motion.div)`
 
       /* Single Project Page Screenshots Grid */
       .art-portfolio-item-frame {
-        &.art-horizontal { padding-bottom: 66.7%; }
-        &.art-vertical { padding-bottom: 140%; }
-        &.art-square { padding-bottom: 90%; }
+        &.art-horizontal {
+          padding-bottom: 66.7%;
+        }
+        &.art-vertical {
+          padding-bottom: 140%;
+        }
+        &.art-square {
+          padding-bottom: 90%;
+        }
       }
     }
   }
@@ -113,9 +115,15 @@ const Wrapper = styled(motion.div)`
 
       /* Single Project Page Screenshots Grid */
       .art-portfolio-item-frame {
-        &.art-horizontal { padding-bottom: 65%; }
-        &.art-vertical { padding-bottom: 140%; }
-        &.art-square { padding-bottom: 90%; }
+        &.art-horizontal {
+          padding-bottom: 65%;
+        }
+        &.art-vertical {
+          padding-bottom: 140%;
+        }
+        &.art-square {
+          padding-bottom: 90%;
+        }
       }
     }
   }
@@ -138,7 +146,8 @@ const Wrapper = styled(motion.div)`
 
   @media (max-width: 768px) {
     .art-grid {
-      &.art-grid-2-col .art-grid-item, &.art-grid-3-col .art-grid-item {
+      &.art-grid-2-col .art-grid-item,
+      &.art-grid-3-col .art-grid-item {
         width: 100%;
       }
     }
@@ -150,7 +159,8 @@ const Wrapper = styled(motion.div)`
 
   @media (max-width: 500px) {
     .art-grid {
-      &.art-grid-2-col .art-grid-item, &.art-grid-3-col .art-grid-item {
+      &.art-grid-2-col .art-grid-item,
+      &.art-grid-3-col .art-grid-item {
         width: 100%;
       }
     }
