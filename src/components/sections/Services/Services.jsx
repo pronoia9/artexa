@@ -1,7 +1,7 @@
 'use client';
 
 import { SectionTitle, SectionWrapper, ServicesCard } from '@/components';
-import { services as data } from '@/utils';
+import { services as data } from '@/data';
 
 export const Services = SectionWrapper(() => {
   return (

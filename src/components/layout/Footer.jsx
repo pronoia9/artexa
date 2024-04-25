@@ -4,7 +4,8 @@ import { motion } from 'framer-motion';
 import { styled } from 'styled-components';
 
 import { Logos } from '@/components';
-import { footer as data, sectionWrapperMotion } from '@/utils';
+import { footer as data } from '@/data';
+import { sectionWrapperMotion } from '@/utils';
 
 // TODO: Fix this HOC component export shit
 // export default SectionWrapper(

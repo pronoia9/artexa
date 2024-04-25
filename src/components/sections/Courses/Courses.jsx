@@ -1,7 +1,7 @@
 'use client';
 
 import { SectionWrapper, Timeline } from '@/components';
-import { courses as data } from '@/utils';
+import { courses as data } from '@/data';
 
 export const Courses = SectionWrapper(() => {
   if (!data) return <></>; // ! TEMP

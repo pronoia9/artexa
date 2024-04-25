@@ -1,7 +1,8 @@
 'use client';
 
 import { Swiper } from '@/components';
-import { projectsMotion, projects as data } from '@/utils';
+import { projects as data } from '@/data';
+import { projectsMotion } from '@/utils';
 
 export const ProjectsSwiper = (props) => {
   if (!data) return <></>; // ! TEMP

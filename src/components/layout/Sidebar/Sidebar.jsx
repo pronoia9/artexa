@@ -4,7 +4,8 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { SmoothScroll, Profile, Info, Languages, HardSkills, SoftSkills, Strengths, Resume, Socials, SVGs } from '@/components';
-import { dataStore, rem, sidebarMotion } from '@/utils';
+import { dataStore } from '@/data';
+import { rem, sidebarMotion } from '@/utils';
 
 export const Sidebar = () => {
   const { sidebarOpen, toggleSidebar } = dataStore((state) => ({ sidebarOpen: state.sidebarOpen, toggleSidebar: state.toggleSidebar }));

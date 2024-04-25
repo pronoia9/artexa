@@ -4,7 +4,8 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { SVGs } from '@/components';
-import { rem, sidebarMotion, sidebar } from '@/utils';
+import { sidebar } from '@/data';
+import { rem, sidebarMotion } from '@/utils';
 
 export const SoftSkills = () => {
   const data = sidebar.skills.soft;

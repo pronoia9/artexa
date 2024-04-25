@@ -1,11 +1,12 @@
 'use client';
 
 import { useEffect } from 'react';
+import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { Card, ButtonGradient } from '@/components';
-import { dataStore, getProjectsCount } from '@/utils';
-import { styled } from 'styled-components';
+import { dataStore } from '@/data';
+import { getProjectsCount } from '@/utils';
 
 export const Grid = ({ limit = true, section, data, gridMotion, cardMotion, buttonMotion, buttonText, ...props }) => {
   const { rows, setRows, cols, setCols, count, setCount, defaults } = dataStore((state) => ({

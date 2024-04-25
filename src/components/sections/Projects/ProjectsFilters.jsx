@@ -3,7 +3,8 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { lowerCase, projectsMotion, projects as data, dataStore } from '@/utils';
+import { dataStore, projects as data } from '@/data';
+import { lowerCase, projectsMotion } from '@/utils';
 
 export const ProjectsFilters = (props) => {
   const { filterKey, setFilterKey } = dataStore((state) => ({

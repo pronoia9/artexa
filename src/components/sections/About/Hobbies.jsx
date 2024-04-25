@@ -3,7 +3,7 @@
 import { SwiperSlide } from 'swiper/react';
 
 import { Swiper, HobbiesCard } from '@/components';
-import { about as data } from '@/utils';
+import { about as data } from '@/data';
 
 export const Hobbies = () => {
   const swiperOptions = {

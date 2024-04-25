@@ -7,8 +7,9 @@ import { ThemeProvider, styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { Footer, Navbar, Sidebar, Preloader, Background, SmoothScroll, Cursor, Fancybox } from '@/components';
+import { dataStore } from '@/data';
 import { GlobalStyles, StyledComponentsRegistry } from '@/styles';
-import { appMotion, pageWrapperMotion, getThemeObject, rem, dataStore } from '@/utils';
+import { appMotion, pageWrapperMotion, getThemeObject, rem } from '@/utils';
 
 export default function RootLayout({ children }) {
   // const pathname = usePathname();

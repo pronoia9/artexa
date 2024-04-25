@@ -1,7 +1,7 @@
 'use client';
 
 import { SectionTitle, SectionWrapper, ContactList, ContactForm } from '@/components';
-import { contact as data } from '@/utils';
+import { contact as data } from '@/data';
 
 export const Contact = SectionWrapper(() => {
   return (

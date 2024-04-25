@@ -4,8 +4,9 @@ import { styled, css } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { HoverExpand } from '@/components';
+import { sidebar } from '@/data';
 import { Tooltip } from '@/styles';
-import { openFancybox, rem, sidebarMotion, sidebar } from '@/utils';
+import { openFancybox, rem, sidebarMotion } from '@/utils';
 
 export const ProfileAvatar = () => {
   const data = sidebar.profile;

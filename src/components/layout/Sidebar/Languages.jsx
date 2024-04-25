@@ -4,7 +4,8 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { Progressbar, SplitText } from '@/components';
-import { sidebar, sidebarMotion, rem } from '@/utils';
+import { sidebar } from '@/data';
+import { sidebarMotion, rem } from '@/utils';
 
 export const Languages = () => {
   const data = sidebar.languages;

@@ -3,7 +3,8 @@
 import { useEffect, useState } from 'react';
 
 import { Grid } from '@/components';
-import { lowerCase, projectsMotion, projects as data, dataStore } from '@/utils';
+import { dataStore, projects as data } from '@/data';
+import { lowerCase, projectsMotion } from '@/utils';
 
 export const ProjectsGrid = (props) => {
   if (!data) return <></>; // ! TEMP

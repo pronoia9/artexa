@@ -1,7 +1,7 @@
 'use client';
 
 import { SectionWrapper, Timeline } from '@/components';
-import { history as data } from '@/utils';
+import { history as data } from '@/data';
 
 export const History = SectionWrapper(() => {
   if (!data) return <></>; // ! TEMP

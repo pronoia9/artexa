@@ -1,11 +1,11 @@
 'use client';
 
 import { useLayoutEffect, useRef } from 'react';
-import Typed from 'typed.js';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
+import Typed from 'typed.js';
 
-import { rem, hero as data } from '@/utils';
+import { hero as data } from '@/data';
 
 export const HeroTyped = (props) => {
   const typedRef = useRef();

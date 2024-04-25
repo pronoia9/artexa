@@ -1,7 +1,8 @@
 'use client';
 
 import { Tags } from '@/components';
-import { sidebarMotion, sidebar } from '@/utils';
+import { sidebar } from '@/data';
+import { sidebarMotion } from '@/utils';
 
 export const Strengths = () => {
   return (

@@ -4,7 +4,7 @@
 // import { motion } from 'framer-motion';
 
 import { Counter, SectionWrapper } from '@/components';
-import { counters as data } from '@/utils';
+import { counters as data } from '@/data';
 
 export const Counters = SectionWrapper(() => {
   return (

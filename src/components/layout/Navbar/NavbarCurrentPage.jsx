@@ -3,7 +3,8 @@
 import { usePathname } from 'next/navigation';
 import { styled } from 'styled-components';
 
-import { routes, rem, dataStore } from '@/utils';
+import { dataStore, routes } from '@/data';
+import { rem } from '@/utils';
 
 export const NavbarCurrentPage = () => {
   const pathname = usePathname();

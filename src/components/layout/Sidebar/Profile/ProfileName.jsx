@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { styled } from 'styled-components';
 
 import { SplitText } from '@/components';
-import { sidebar } from '@/utils';
+import { sidebar } from '@/data';
 
 export const ProfileName = () => {
   const data = sidebar.profile;

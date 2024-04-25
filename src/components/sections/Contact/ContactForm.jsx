@@ -6,7 +6,8 @@ import * as Yup from 'yup';
 import { motion } from 'framer-motion';
 
 import { SectionTitle, ButtonGradient, ContactInput, SVGs } from '@/components';
-import { cardMotion, contactMotion, handleFormSubmit, contact } from '@/utils';
+import { contact } from '@/data';
+import { cardMotion, contactMotion, handleFormSubmit } from '@/utils';
 
 export const ContactForm = () => {
   const [success, setSuccess] = useState(false);

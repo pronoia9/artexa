@@ -3,8 +3,9 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { sidebarMotion, sidebar } from '@/utils';
 import { SVGs } from '@/components';
+import { sidebar } from '@/data';
+import { sidebarMotion } from '@/utils';
 
 export const Resume = () => {
   const data = sidebar.resume;

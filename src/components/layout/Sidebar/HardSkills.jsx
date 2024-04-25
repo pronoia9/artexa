@@ -4,8 +4,9 @@ import { styled, css } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { Progressbar } from '@/components';
+import { sidebar } from '@/data';
 import { Tooltip } from '@/styles';
-import { sidebar, sidebarMotion, rem } from '@/utils';
+import { sidebarMotion, rem } from '@/utils';
 
 export const HardSkills = () => {
   const data = sidebar.skills.hard;

@@ -3,9 +3,10 @@
 import { styled, css } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { colors } from '@/styles';
-import { dataStore, navbarMotion, rem } from '@/utils';
 import { SVGs } from '@/components';
+import { dataStore } from '@/data';
+import { colors } from '@/styles';
+import { navbarMotion, rem } from '@/utils';
 
 export const ThemeButton = () => {
   const { navbarOpen, themes, theme, toggleTheme, accent, setAccent } = dataStore((state) => ({

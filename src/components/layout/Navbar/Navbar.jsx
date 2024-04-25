@@ -4,7 +4,8 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { NavbarButton, NavbarCurrentPage, NavbarList, ThemeButton } from '@/components';
-import { dataStore, navbarMotion, rem } from '@/utils';
+import { dataStore } from '@/data';
+import { navbarMotion, rem } from '@/utils';
 
 export const Navbar = () => {
   const { navbarOpen } = dataStore((state) => ({ navbarOpen: state.navbarOpen }));

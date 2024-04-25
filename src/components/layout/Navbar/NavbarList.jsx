@@ -4,7 +4,8 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { NavbarListItem } from '@/components';
-import { navbar as data, navbarMotion } from '@/utils';
+import { navbar as data } from '@/data';
+import { navbarMotion } from '@/utils';
 
 export const NavbarList = () => {
   return (

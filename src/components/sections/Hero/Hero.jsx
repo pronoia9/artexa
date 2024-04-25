@@ -1,11 +1,12 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
+// import { useEffect, useRef } from 'react';
 import { styled } from 'styled-components';
-import confetti from 'canvas-confetti';
+// import confetti from 'canvas-confetti';
 
 import { HeroHeading, HeroTyped, ButtonGradient, SectionWrapper } from '@/components';
-import { heroMotion, rem, hero as data, rngPickRandom, confettiFireworks } from '@/utils';
+import { hero as data } from '@/data';
+import { heroMotion, rem, confettiFireworks } from '@/utils';
 
 export const Hero = SectionWrapper(() => {
   // const myConfetti = useRef(), myCanvas = useRef();
@@ -13,9 +14,7 @@ export const Hero = SectionWrapper(() => {
   //   myConfetti.current = confetti.create(myCanvas.current, { resize: true, useWorker: true });
   // }, []);
 
-  const beamMeUpScotty = (e) => {
-    confettiFireworks();
-  };
+  const beamMeUpScotty = (e) => void confettiFireworks();
 
   return (
     <div className='col-lg-12'>

@@ -6,8 +6,9 @@ import Link from 'next/link';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { dataStore, navbarMotion, rem } from '@/utils';
 import { SVGs } from '@/components';
+import { dataStore } from '@/data';
+import { navbarMotion, rem } from '@/utils';
 
 export const NavbarListItem = ({ title, path, index, submenu }) => {
   const pathname = usePathname();

@@ -3,8 +3,9 @@
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Fancybox, SVGs } from '@/components';
-import { sidebar, sidebarMotion } from '@/utils';
+import { SVGs } from '@/components';
+import { sidebar } from '@/data';
+import { sidebarMotion } from '@/utils';
 
 export const Socials = () => {
   const data = sidebar.social;

@@ -4,7 +4,8 @@ import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
 import { SplitText } from '@/components';
-import { rem, hero as data } from '@/utils';
+import { hero as data } from '@/data';
+import { rem } from '@/utils';
 
 export const HeroHeading = (props) => {
   return (

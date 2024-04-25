@@ -1,7 +1,8 @@
 'use client';
 
 import { Swiper } from '@/components';
-import { technologiesMotion, technologies as data } from '@/utils';
+import { technologies as data } from '@/data';
+import { technologiesMotion } from '@/utils';
 
 export const TechnologiesSwiper = (props) => {
   return (
