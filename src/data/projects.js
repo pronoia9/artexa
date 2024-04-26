@@ -238,7 +238,7 @@ export const projects = {
       title: "'The' Portfolio",
       subtitle: 'Design, Frontend',
       description: `Embark on a visual odyssey through the captivating universe of my portfolio. From mesmerizing animations to sleek user interfaces, each project is a testament to creativity, craftsmanship, and innovation. Explore the intersection of design and technology and discover a world where imagination knows no bounds.`,
-      links: { repo: 'https://github.com/pronoia9/portfolio-2021', live: 'https://jay-ansin.vercel.app/' },
+      links: { repo: 'https://github.com/pronoia9/portfolio', live: 'https://ansin.vercel.app/' },
       imagesCount: 6,
       dates: ['Jun 22, 2023', 'Jul 9, 2023'],
       categories: ['react', '3d', 'design', 'frontend'],
