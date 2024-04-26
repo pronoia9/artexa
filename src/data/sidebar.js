@@ -108,6 +108,16 @@ export const sidebar = {
           level: 20,
         },
         {
+          title: 'Figma',
+          description: ``,
+          level: 20,
+        },
+        {
+          title: 'Canva',
+          description: ``,
+          level: 75,
+        },
+        {
           title: 'Excel',
           description: ``,
           level: 0,
