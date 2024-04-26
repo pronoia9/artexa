@@ -88,6 +88,11 @@ export const sidebar = {
           description: `A visionary artist, wielding the brush of creativity to mold digital clay into breathtaking 3D masterpieces, breathing life into virtual sculptures that transcend imagination.`,
           level: 60,
         },
+        {
+          title: 'Spline',
+          description: ``,
+          level: 30,
+        },
       ],
       [
         {
