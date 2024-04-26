@@ -407,7 +407,7 @@ export const projects = {
       links: { repo: 'https://github.com/pronoia9/weavio', live: 'https://weavio.vercel.app' },
       imagesCount: 6,
       dates: ['Aug 7, 2023', 'Aug 12, 2023'],
-      categories: ['fullstack', 'design', 'nextjs'],
+      categories: ['fullstack', 'nextjs'],
       tags: [
         'react',
         'nextjs',
@@ -453,13 +453,12 @@ export const projects = {
     //   tags: [ 'react', 'javascript', 'css', 'html', 'graphql', 'typescript', 'postcss', 'nextjs', 'autoprefixer', 'axios', 'cloudinary', 'jsonwebtoken', 'tailwindcss', 'next-auth', 'headlessui', 'supports-color' ],
     // },
     {
-      // TODO
       id: 'dush',
       title: 'DUSH',
       subtitle: 'Fullstack, Typescript',
       description: `Join the electrifying world of social connections with DUSH! This Next.js marvel reshapes social media as we know it, blending sleek design with cutting-edge tech. Engage, connect, and share seamlessly on a platform built for genuine connections. Dive into DUSH today and redefine your social experience.`,
       links: { repo: 'https://github.com/pronoia9/dush', live: 'https://dush-pi.vercel.app/' },
-      imagesCount: 3,
+      imagesCount: 6,
       dates: ['Nov 18, 2023', 'Dec 4, 2023'],
       categories: ['fullstack', 'typescript'],
       tags: [
