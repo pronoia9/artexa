@@ -313,7 +313,7 @@ export const projects = {
       links: { repo: 'https://github.com/pronoia9/fiber-follies', live: 'https://fiber-follies.vercel.app/' },
       imagesCount: 3,
       dates: ['July 11 2023'],
-      categories: ['react', 'threejs', 'design'],
+      categories: ['react', 'threejs', 'frontend'],
       tags: [
         'react',
         'html',
@@ -325,7 +325,7 @@ export const projects = {
         'react three drei',
         'react three fiber',
         'react three postprocessing',
-        ' use gesture',
+        'use gesture',
         'leva',
         'maath',
         'three',
