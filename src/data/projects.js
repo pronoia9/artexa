@@ -93,7 +93,6 @@ export const projects = {
         'leva',
         'framer motion',
         'file saver',
-        'gpt',
         'cors',
         'cloudinary',
         'dotenv',
