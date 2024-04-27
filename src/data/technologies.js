@@ -135,5 +135,65 @@ export const technologies = {
       subtitle: 'An open-source framework providing React-based web applications with server-side rendering and static website generation.',
       link: 'https://nextjs.org/',
     },
-  ],
+    {
+      id: 'spline',
+      title: 'Spline',
+      subtitle: '',
+      link: '',
+    },
+    {
+      id: 'appwrite',
+      title: 'Appwrite',
+      subtitle: '',
+      link: '',
+    },
+    {
+      id: 'mailchimp',
+      title: 'Mailchimp',
+      subtitle: '',
+      link: '',
+    },
+    {
+      id: 'figma',
+      title: 'Figma',
+      subtitle: '',
+      link: '',
+    },
+    {
+      id: 'sentry',
+      title: 'Sentry',
+      subtitle: '',
+      link: '',
+    },
+    {
+      id: 'zod',
+      title: '',
+      subtitle: '',
+      link: '',
+    },
+    {
+      id: '',
+      title: '',
+      subtitle: '',
+      link: '',
+    },
+    {
+      id: '',
+      title: '',
+      subtitle: '',
+      link: '',
+    },
+    {
+      id: '',
+      title: '',
+      subtitle: '',
+      link: '',
+    },
+  ]
+    .filter((data) => data.id.length && data.link.length)
+    .sort((a, b) => {
+     var textA = a.id.toUpperCase();
+     var textB = b.id.toUpperCase();
+     return textA < textB ? -1 : textA > textB ? 1 : 0;
+    }),
 };
