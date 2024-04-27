@@ -172,6 +172,33 @@ export const sidebar = {
           level: 0,
         },
       ],
+      [
+        {
+          title: 'ChatGPT',
+          description: ``,
+          level: 0,
+        },
+        {
+          title: 'Claude',
+          description: ``,
+          level: 0,
+        },
+        {
+          title: 'Gemini',
+          description: ``,
+          level: 0,
+        },
+        {
+          title: 'Meta.ai',
+          description: ``,
+          level: 0,
+        },
+        {
+          title: 'Leonardo.ai',
+          description: ``,
+          level: 0,
+        },
+      ],
     ],
   },
 
