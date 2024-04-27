@@ -55,6 +55,11 @@ export const sidebar = {
           level: 0,
         },
         {
+          title: 'Vite',
+          description: ``,
+          level: 0,
+        },
+        {
           title: 'Redux',
           description: ``,
           level: 0,
@@ -72,9 +77,38 @@ export const sidebar = {
           level: 60,
         },
         {
-          title: 'MongoDB, PostgreSQL',
+          title: 'Express',
+          description: ``,
+          level: 0,
+        },
+      ],
+      [
+        {
+          title: 'MongoDB, Mongoose',
           description: `Keepers of digital knowledge, guardians of data's secrets, enabling the storage, retrieval, and manipulation of information that shapes the destiny of web applications.`,
           level: 60,
+        },
+        {
+          title: 'PostgreSQL',
+          description: ``,
+          level: 60,
+        },
+      ],
+      [
+        {
+          title: 'Styled Components',
+          description: ``,
+          level: 0,
+        },
+        {
+          title: 'Framer Motion',
+          description: ``,
+          level: 0,
+        },
+        {
+          title: 'GSAP',
+          description: ``,
+          level: 0,
         },
       ],
       [
@@ -108,19 +142,26 @@ export const sidebar = {
       ],
       [
         {
-          title: 'Photoshop',
-          description: `A brush-wielding virtuoso, harnessing the power of pixels to shape digital realms, seamlessly blending artistry and technical prowess to create visually stunning masterpieces that captivate the senses.`,
+          title: 'Figma',
+          description: ``,
           level: 20,
         },
         {
-          title: 'Figma',
-          description: ``,
+          title: 'Photoshop',
+          description: `A brush-wielding virtuoso, harnessing the power of pixels to shape digital realms, seamlessly blending artistry and technical prowess to create visually stunning masterpieces that captivate the senses.`,
           level: 20,
         },
         {
           title: 'Canva',
           description: ``,
           level: 75,
+        },
+      ],
+      [
+        {
+          title: 'Notion',
+          description: '',
+          level: 0,
         },
         {
           title: 'Excel',
