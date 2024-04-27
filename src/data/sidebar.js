@@ -81,6 +81,16 @@ export const sidebar = {
           description: ``,
           level: 0,
         },
+        {
+          title: 'Postman',
+          description: ``,
+          level: 0,
+        },
+        {
+          title: 'Rapid API',
+          description: ``,
+          level: 0,
+        },
       ],
       [
         {
@@ -156,16 +166,9 @@ export const sidebar = {
           description: ``,
           level: 75,
         },
-      ],
-      [
         {
           title: 'Notion',
           description: '',
-          level: 0,
-        },
-        {
-          title: 'Excel',
-          description: ``,
           level: 0,
         },
       ],
