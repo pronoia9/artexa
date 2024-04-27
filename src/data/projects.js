@@ -530,6 +530,8 @@ export const projects = {
         'react-three-fiber',
         'react-three-drei',
         'gsap',
+        'sentry',
+        'sentry-react'
       ],
     },
     // {
