@@ -101,7 +101,7 @@ export const sidebar = {
           level: 60,
         },
         {
-          title: 'Bash',
+          title: 'Bash/Zsh',
           description: ``,
           level: 0,
         },
