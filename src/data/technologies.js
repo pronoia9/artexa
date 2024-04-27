@@ -190,10 +190,10 @@ export const technologies = {
       link: '',
     },
   ]
-    .filter((data) => data.id.length && data.link.length)
+    .filter((obj) => Object.values(obj).filter((val) => val.length).length === Object.entries(obj).length)
     .sort((a, b) => {
-     var textA = a.id.toUpperCase();
-     var textB = b.id.toUpperCase();
-     return textA < textB ? -1 : textA > textB ? 1 : 0;
+      var textA = a.id.toUpperCase();
+      var textB = b.id.toUpperCase();
+      return textA < textB ? -1 : textA > textB ? 1 : 0;
     }),
 };
