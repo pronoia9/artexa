@@ -72,40 +72,6 @@ export const sidebar = {
       ],
       [
         {
-          title: 'Node.js',
-          description: `A guardian of the server-side, standing steadfast as a sentinel, wielding the power of Node.js to build scalable and robust backends, ensuring a steady flow of mystical energy to power web applications.`,
-          level: 60,
-        },
-        {
-          title: 'Express',
-          description: ``,
-          level: 0,
-        },
-        {
-          title: 'Postman',
-          description: ``,
-          level: 0,
-        },
-        {
-          title: 'Rapid API',
-          description: ``,
-          level: 0,
-        },
-      ],
-      [
-        {
-          title: 'MongoDB, Mongoose',
-          description: `Keepers of digital knowledge, guardians of data's secrets, enabling the storage, retrieval, and manipulation of information that shapes the destiny of web applications.`,
-          level: 60,
-        },
-        {
-          title: 'PostgreSQL',
-          description: ``,
-          level: 60,
-        },
-      ],
-      [
-        {
           title: 'Styled Components',
           description: ``,
           level: 0,
@@ -136,6 +102,40 @@ export const sidebar = {
           title: 'Spline',
           description: ``,
           level: 30,
+        },
+      ],
+      [
+        {
+          title: 'Node.js',
+          description: `A guardian of the server-side, standing steadfast as a sentinel, wielding the power of Node.js to build scalable and robust backends, ensuring a steady flow of mystical energy to power web applications.`,
+          level: 60,
+        },
+        {
+          title: 'Express',
+          description: ``,
+          level: 0,
+        },
+        {
+          title: 'Postman',
+          description: ``,
+          level: 0,
+        },
+        {
+          title: 'Rapid API',
+          description: ``,
+          level: 0,
+        },
+      ],
+      [
+        {
+          title: 'MongoDB, Mongoose',
+          description: `Keepers of digital knowledge, guardians of data's secrets, enabling the storage, retrieval, and manipulation of information that shapes the destiny of web applications.`,
+          level: 60,
+        },
+        {
+          title: 'PostgreSQL',
+          description: ``,
+          level: 60,
         },
       ],
       [
