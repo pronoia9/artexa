@@ -20,6 +20,6 @@ export const navbar = [
     //   { id: 41, title: 'Technologies', subtitle: '3', path: '/technologies-3' },
     // ],
   },
-  { id: 5, title: 'About', path: '/about' },
+  // { id: 5, title: 'About', path: '/about' },
   { id: 6, title: 'Contact', path: '/contact' },
 ];
