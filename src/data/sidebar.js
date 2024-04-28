@@ -189,12 +189,17 @@ export const sidebar = {
           level: 0,
         },
         {
-          title: 'Meta.ai',
+          title: 'Meta',
           description: ``,
           level: 0,
         },
         {
-          title: 'Leonardo.ai',
+          title: 'Perplexity',
+          description: ``,
+          level: 0,
+        },
+        {
+          title: 'Leonardo',
           description: ``,
           level: 0,
         },
