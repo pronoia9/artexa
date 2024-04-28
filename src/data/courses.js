@@ -1,6 +1,6 @@
 export const courses = [
   {
-    title: '6th Semester',
+    title: '2018 - 2019',
     data: [
       {
         id: 'PRJ666',
@@ -89,7 +89,7 @@ export const courses = [
     ],
   },
   {
-    title: '4th Semester',
+    title: '2018',
     data: [
       {
         id: 'DCN455',
@@ -127,7 +127,7 @@ export const courses = [
     ],
   },
   {
-    title: '3rd Semester',
+    title: '2017',
     data: [
       {
         id: 'DBS301',
@@ -168,7 +168,7 @@ export const courses = [
     ],
   },
   {
-    title: '2nd Semester',
+    title: '2016',
     data: [
       {
         id: 'DBS201',
