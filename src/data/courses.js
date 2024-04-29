@@ -49,7 +49,7 @@ export const courses = [
     ],
   },
   {
-    title: '5th Semester',
+    title: '2018',
     data: [
       {
         id: 'DSA555',
