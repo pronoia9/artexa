@@ -226,7 +226,7 @@ export const sidebar = {
 
   resume: {
     title: 'Download Resume',
-    url: '/resume/resume-jayansin-1.pdf',
+    url: '/resume/resume.pdf',
   },
 
   social: [
