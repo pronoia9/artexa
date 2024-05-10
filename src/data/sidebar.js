@@ -131,17 +131,19 @@ export const sidebar = {
 
   strengths: [
     'Curious',
-    'Organizational',
+    'Quick learner',
+    'Problem solver',
     'Logical thinking',
     'Detail oriented',
+    'Organizational',
     'Flexible',
+    'Adaptable',
     'Dedicated',
     'Focused',
-    'Adaptable',
     'Caring',
-    'Punctual',
     'Loyal',
-    'Tech savvy',
+    'Punctual',
+    'Strong work ethic',
     'Communicating',
     'Team oriented',
   ],
@@ -152,27 +154,10 @@ export const sidebar = {
   },
 
   social: [
-    {
-      platform: 'github',
-      url: 'https://github.com/pronoia9/',
-    },
-    {
-      platform: 'linkedin',
-      url: 'https://www.linkedin.com/in/jayansin/',
-    },
-    {
-      platform: 'facebook',
-      url: 'https://www.facebook.com/victoriouswaffles',
-    },
-    {
-      platform: 'snapchat',
-      fancybox: true,
-      url: '/images/snapchat.png',
-    },
-    {
-      platform: 'discord',
-      fancybox: true,
-      url: '/images/discord.gif',
-    },
+    { platform: 'github', url: 'https://github.com/pronoia9/' },
+    { platform: 'linkedin', url: 'https://www.linkedin.com/in/jayansin/' },
+    // { platform: 'facebook', url: 'https://www.facebook.com/victoriouswaffles' },
+    // { platform: 'snapchat', fancybox: true, url: '/images/snapchat.png' },
+    { platform: 'discord', fancybox: true, url: '/images/discord.gif' },
   ],
 };
