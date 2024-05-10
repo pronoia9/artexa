@@ -44,50 +44,55 @@ export const sidebar = {
       {
         title: 'Three.js',
         description: `A magician of the third dimension, conjuring captivating realms of 3D wonder, where pixels transcend their flat nature and come alive in a dance of depth and immersion.`,
-        level: 70,
+        level: 60,
       },
     ],
 
     soft: [
+      // Frontend
       [
+        { title: 'Vite', description: ``, level: 0 },
+        { title: 'Redux', description: ``, level: 0 },
+        { title: 'Zustand', description: ``, level: 0 },
+        { title: 'ContextAPI', description: ``, level: 0 },
+        { title: 'React Hooks', description: ``, level: 0 },
+      ],
+      // Backend
+      [
+        { title: 'Next.js', description: ``, level: 0 },
         {
-          title: 'Next.js',
-          description: ``,
-          level: 0,
+          title: 'Node.js',
+          description: `A guardian of the server-side, standing steadfast as a sentinel, wielding the power of Node.js to build scalable and robust backends, ensuring a steady flow of mystical energy to power web applications.`,
+          level: 60,
         },
+        { title: 'Express', description: ``, level: 0 },
         {
-          title: 'Vite',
-          description: ``,
-          level: 0,
-        },
-        {
-          title: 'Redux',
-          description: ``,
-          level: 0,
-        },
-        {
-          title: 'Zustand',
-          description: ``,
-          level: 0,
+          title: 'MongoDB, Mongoose, PostgreSQL',
+          description: `Keepers of digital knowledge, guardians of data's secrets, enabling the storage, retrieval, and manipulation of information that shapes the destiny of web applications.`,
+          level: 60,
         },
       ],
+      // Tools
       [
-        {
-          title: 'Styled Components',
-          description: ``,
-          level: 0,
-        },
-        {
-          title: 'Framer Motion',
-          description: ``,
-          level: 0,
-        },
-        {
-          title: 'GSAP',
-          description: ``,
-          level: 0,
-        },
+        { title: 'Git', description: ``, level: 0 },
+        { title: 'GitHub', description: ``, level: 0 },
+        { title: 'Docker', description: ``, level: 0 },
+        { title: 'Bash/Zsh', description: ``, level: 0 },
+        { title: 'RESTful API', description: ``, level: 0 },
+        { title: 'Postman', description: ``, level: 0 },
+        { title: 'Rapid API', description: ``, level: 0 },
       ],
+      // Style/Animation Libs
+      [
+        { title: 'Styled Components', description: ``, level: 0 },
+        { title: 'Tailwind CSS', description: ``, level: 0 },
+        { title: 'Bootstrap', description: ``, level: 0 },
+        { title: 'shadcn', description: ``, level: 0 },
+        { title: 'Framer Motion', description: ``, level: 0 },
+        { title: 'GSAP', description: ``, level: 0 },
+        { title: 'React Spring', description: ``, level: 0 },
+      ],
+      // 3D
       [
         {
           title: 'React Three Fiber',
@@ -99,111 +104,27 @@ export const sidebar = {
           description: `A visionary artist, wielding the brush of creativity to mold digital clay into breathtaking 3D masterpieces, breathing life into virtual sculptures that transcend imagination.`,
           level: 60,
         },
-        {
-          title: 'Spline',
-          description: ``,
-          level: 30,
-        },
+        { title: 'Spline', description: ``, level: 30 },
       ],
+      // Design/Prototyping/Organization
       [
-        {
-          title: 'Node.js',
-          description: `A guardian of the server-side, standing steadfast as a sentinel, wielding the power of Node.js to build scalable and robust backends, ensuring a steady flow of mystical energy to power web applications.`,
-          level: 60,
-        },
-        {
-          title: 'Express',
-          description: ``,
-          level: 0,
-        },
-        {
-          title: 'Postman',
-          description: ``,
-          level: 0,
-        },
-        {
-          title: 'Rapid API',
-          description: ``,
-          level: 0,
-        },
-      ],
-      [
-        {
-          title: 'MongoDB, Mongoose',
-          description: `Keepers of digital knowledge, guardians of data's secrets, enabling the storage, retrieval, and manipulation of information that shapes the destiny of web applications.`,
-          level: 60,
-        },
-        {
-          title: 'PostgreSQL',
-          description: ``,
-          level: 60,
-        },
-      ],
-      [
-        {
-          title: 'Git',
-          description: `A sage of version control, guarding against chaos and confusion, allowing teams to collaborate in a synchronized dance, preserving the integrity of projects with each graceful commit.`,
-          level: 60,
-        },
-        {
-          title: 'Bash/Zsh',
-          description: ``,
-          level: 0,
-        },
-      ],
-      [
-        {
-          title: 'Figma',
-          description: ``,
-          level: 20,
-        },
+        { title: 'Figma', description: ``, level: 20 },
         {
           title: 'Photoshop',
           description: `A brush-wielding virtuoso, harnessing the power of pixels to shape digital realms, seamlessly blending artistry and technical prowess to create visually stunning masterpieces that captivate the senses.`,
           level: 20,
         },
-        {
-          title: 'Canva',
-          description: ``,
-          level: 75,
-        },
-        {
-          title: 'Notion',
-          description: '',
-          level: 0,
-        },
+        { title: 'Canva', description: ``, level: 75 },
+        { title: 'Notion', description: '', level: 0 },
       ],
+      // AI/ML
       [
-        {
-          title: 'ChatGPT',
-          description: ``,
-          level: 0,
-        },
-        {
-          title: 'Claude',
-          description: ``,
-          level: 0,
-        },
-        {
-          title: 'Gemini',
-          description: ``,
-          level: 0,
-        },
-        {
-          title: 'Meta',
-          description: ``,
-          level: 0,
-        },
-        {
-          title: 'Perplexity',
-          description: ``,
-          level: 0,
-        },
-        {
-          title: 'Leonardo',
-          description: ``,
-          level: 0,
-        },
+        { title: 'ChatGPT', description: ``, level: 0 },
+        { title: 'Claude', description: ``, level: 0 },
+        { title: 'Gemini', description: ``, level: 0 },
+        { title: 'Meta', description: ``, level: 0 },
+        { title: 'Perplexity', description: ``, level: 0 },
+        { title: 'Leonardo', description: ``, level: 0 },
       ],
     ],
   },
