@@ -31,6 +31,9 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang='en' suppressHydrationWarning={true}>
+      <head>
+        <title>JAY | Hi.</title>
+      </head>
       <StyledComponentsRegistry>
         <ThemeProvider theme={getThemeObject(theme)}>
           <ThemeProvider theme={getThemeObject(accent)}>
