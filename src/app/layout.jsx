@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang='en' suppressHydrationWarning={true}>
       <head>
-        <title>JAY | Hi.</title>
+        <title>Hi. I'm Jay 👋</title>
       </head>
       <StyledComponentsRegistry>
         <ThemeProvider theme={getThemeObject(theme)}>
