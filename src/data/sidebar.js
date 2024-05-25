@@ -14,8 +14,8 @@ export const sidebar = {
 
   languages: [
     { id: '1', language: 'English', level: 100 },
-    // { id: '3', language: 'Turkish', level: 60 },
-    { id: '2', language: 'French', level: 20 },
+    { id: '2', language: 'French', level: 50 },
+    { id: '3', language: 'Turkish', level: 50 },
     { id: '2', language: 'Japanese', level: 10 },
   ],
 
