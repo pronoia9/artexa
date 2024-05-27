@@ -12,12 +12,16 @@ export const sidebar = {
     { id: 2, title: 'Location', subtitle: 'Atlanta, GA' },
   ],
 
-  languages: [
-    { id: '1', language: 'English', level: 100 },
-    { id: '2', language: 'French', level: 50 },
-    { id: '3', language: 'Turkish', level: 50 },
-    { id: '2', language: 'Japanese', level: 10 },
-  ],
+  languages: {
+    rows: 2,
+    cols: 2,
+    items: [
+      { id: '1', language: 'English', level: 100 },
+      { id: '2', language: 'French', level: 50 },
+      { id: '3', language: 'Turkish', level: 50 },
+      { id: '2', language: 'Japanese', level: 10 },
+    ],
+  },
 
   skills: {
     hard: [
