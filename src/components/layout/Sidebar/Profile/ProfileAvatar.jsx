@@ -3,19 +3,18 @@
 import { styled, css } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { HoverExpand } from '@/components';
 import { sidebar } from '@/data';
 import { Tooltip } from '@/styles';
-import { openFancybox, rem, sidebarMotion } from '@/utils';
+import { rem, sidebarMotion } from '@/utils';
 
 export const ProfileAvatar = () => {
   const data = sidebar.profile;
 
   return (
     <AvatarContainer className='art-avatar' {...sidebarMotion.profile.avatarContainer}>
-      <AvatarCurtain data-fancybox='fancybox-avatar' href={data.avatar} className='art-avatar-curtain' onClick={() => openFancybox(data.avatar)}>
+      <AvatarCurtain className='art-avatar-curtain'>
         <AvatarImage src={data.avatar} alt='Avatar' {...sidebarMotion.profile.avatarItem} />
-        <HoverExpand />
+        {/* <HoverExpand /> */}
       </AvatarCurtain>
 
       <AvatarStatus className='art-lamp-light' $available={data.available} {...sidebarMotion.profile.avatarItem}>

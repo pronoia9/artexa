@@ -4,7 +4,7 @@ export const sidebar = {
     nameLink: '/',
     subtitle: ['Full-Stack Developer,', 'Avid pet lover 🐶'],
     available: true,
-    avatar: '/images/shalom.png',
+    avatar: '/images/profile.jpeg',
   },
 
   about: [
