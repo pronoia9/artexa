@@ -4,7 +4,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>Hi. I'm Jay 👋</title>
       </head>
-      <body>{children}</body>
+      {children}
     </html>
   );
 }
