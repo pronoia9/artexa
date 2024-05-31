@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 import { Button, HoverExpand, Tags } from '@/components';
 import { rem } from '@/utils';
 
-export const Card = ({ index, swiper, hide, section, id, title, subtitle, description, link, links, year, date, categories, tags, classes, ...props }) => {
+export const Card = ({ index, swiper, hide, section, id, title, subtitle, description, link, links, year, date, categories, tags, classes, imagesCount, dates, ...props }) => {
   const image = `/images/${section}/${id}.jpeg` || '';
   
   return (
