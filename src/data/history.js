@@ -2,7 +2,7 @@ export const history = {
   timeline: ['education', 'courses'],
   education: [
     {
-      title: 'Seneca College',
+      title: 'Seneca Polytechnic',
       subtitle: 'Computer Programming and Analysis',
       dates: [new Date('May 2016'), new Date('May 2019')],
       description: `Embarking on a thrilling three-year adventure at Seneca College, I delved into the captivating realm of Computer Programming and Analysis. Armed with programming languages, design wizardry, and system sorcery, I honed my skills in crafting dynamic web applications across diverse operating systems. Alongside, I ventured into the realm of advanced option courses, unlocking hidden levels of technical prowess.`,
@@ -41,17 +41,17 @@ export const history = {
     {
       title: 'Become A 3D Illustrator',
       subtitle: 'by Polygon Runway',
-      dates: [new Date('May 3, 2023')],
+      dates: [new Date('May 3, 2023'), new Date('May 31, 2024')],
       description: `Became a skilled 3D modeler through an immersive Blender course. Mastered controls, geometry modeling, lighting, and rendering. Explored advanced tools, texture painting, and ambient lighting for captivating effects. Created diverse projects, from low-poly to isometric rooms. Proficient in realistic material rendering and smooth modeling techniques. Ready to bring innovative concepts to life.`,
       link: 'https://polygonrunway.com/p/become-a-3d-illustrator',
     },
-    {
-      title: 'Blender Donut Series (v3)',
-      subtitle: 'by Blender Guru',
-      dates: [new Date('May 5, 2023'), new Date('May 9, 2023')],
-      description: `Blender Donut Tutorial series by Blender Guru: Mastered the art of crafting tantalizing digital donuts, honing skills in modeling, texturing, lighting, and rendering under the guidance of Blender Guru's wit and charm. Transformed into a skilled donut virtuoso, capable of creating visually captivating treats.`,
-      link: 'https://www.youtube.com/playlist?list=PLjEaoINr3zgFX8ZsChQVQsuDSjEqdWMAD',
-    },
+    // {
+    //   title: 'Blender Donut Series (v3)',
+    //   subtitle: 'by Blender Guru',
+    //   dates: [new Date('May 5, 2023'), new Date('May 9, 2023')],
+    //   description: `Blender Donut Tutorial series by Blender Guru: Mastered the art of crafting tantalizing digital donuts, honing skills in modeling, texturing, lighting, and rendering under the guidance of Blender Guru's wit and charm. Transformed into a skilled donut virtuoso, capable of creating visually captivating treats.`,
+    //   link: 'https://www.youtube.com/playlist?list=PLjEaoINr3zgFX8ZsChQVQsuDSjEqdWMAD',
+    // },
   ].sort((a, b) => b?.dates[1] - a?.dates[1]),
   activities: [
     {
