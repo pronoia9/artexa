@@ -10,7 +10,7 @@ export const Projects = SectionWrapper(({ type = 'grid', ...props }) => {
   // TODO
   return (
     <>
-      <SectionTitle title='Projects (currently being edited/added on)' ref={ref}>
+      <SectionTitle title='Projects' ref={ref}>
         {type === 'grid' && <ProjectsFilters />}
       </SectionTitle>
       {type === 'grid' && <ProjectsGrid {...props} />}
