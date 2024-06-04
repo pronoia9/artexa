@@ -10,9 +10,15 @@ export const Cursor = () => {
 
   // Event listener for animated cursor
   useEffect(() => {
-    const handleMouseMove = (e) => { cursorRefs?.current?.forEach((c) => (c.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`)); };
+    const handleMouseMove = (e) => {
+      cursorRefs.current.forEach((ref) => {
+        if (ref) ref.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      });
+    };
     document.addEventListener('mousemove', handleMouseMove);
-    return () => { document.removeEventListener('mousemove', handleMouseMove); };
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
 
   // const cursorOptions = {
