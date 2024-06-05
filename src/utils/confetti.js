@@ -2,6 +2,8 @@
 
 import confetti from 'canvas-confetti';
 
+import { rngInRange } from '@/utils';
+
 // Basic Cannon
 // The default mode... just your regular basic average blast of confetti. But it's still a little cool, right?
 export const confettiBasicCannon = (myConfetti = confetti) => {
