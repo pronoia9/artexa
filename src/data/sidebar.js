@@ -13,12 +13,12 @@ export const sidebar = {
   ],
 
   languages: {
-    cols: 3,
+    cols: 2,
     items: [
       { id: '1', language: 'English', level: 100 },
       { id: '2', language: 'French', level: 50 },
       // { id: '3', language: 'Turkish', level: 50 },
-      { id: '2', language: 'Japanese', level: 10 },
+      // { id: '2', language: 'Japanese', level: 10 },
     ],
   },
 
