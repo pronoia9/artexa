@@ -16,7 +16,7 @@ const Container = styled.div`
   width: 100%;
   height: 400px;
   overflow: hidden;
-  background: ${({ theme }) => `url(${theme.heroBg})`};
+  background: ${({ theme }) => `url(/images/background/${theme.colorCode}-${theme.themeCode}.jpg)`};
   background-position: center;
   background-size: cover;
 `;

@@ -24,6 +24,7 @@ export const themes = {
     gradient5: 'linear-gradient(90deg, rgba(45, 45, 58, 0.902) 15%, rgba(45, 45, 58, 0.702) 50%, rgba(43, 43, 53, 0.702) 100%)',
     gradient6: 'linear-gradient(159deg, rgba(37, 37, 50, 1) 0%, rgba(35, 35, 45, 1) 100%)',
     gradient7: 'linear-gradient(159deg, rgba(45, 45, 58, 0.980) 0%, rgba(43, 43, 53, 0.980) 100%)',
+    themeCode: 'dark'
   },
 
   light: {
@@ -54,6 +55,7 @@ export const themes = {
     gradient5: '',
     gradient6: '#f4f4f6',
     gradient7: 'linear-gradient(159deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.95) 100%)',
+    themeCode: 'light'
   },
 };
 
@@ -64,7 +66,7 @@ export const colors = {
     accent3: 'rgba(211, 235, 255, 1)',
     accent4: 'rgba(1, 125, 228, 1)',
     accent5: 'rgba(0, 88, 160, 1)',
-    heroBg: '/images/background/bg-blue.jpg',
+    colorCode: 'blue',
   },
   green: {
     accent1: 'rgba(76, 175, 82, 1)',
@@ -72,7 +74,7 @@ export const colors = {
     accent3: 'rgba(152, 236, 157, 1)',
     accent4: 'rgba(0, 130, 9, 1)',
     accent5: 'rgba(0, 116, 8, 1)',
-    heroBg: '/images/background/bg-green.jpg',
+    colorCode: 'green',
   },
   pastels: {
     accent1: 'rgba(167, 104, 244, 1)',
@@ -80,7 +82,7 @@ export const colors = {
     accent3: 'rgba(213, 155, 246, 1)',
     accent4: 'rgba(152, 150, 241, 1)',
     accent5: 'rgba(142, 246, 228, 1)',
-    heroBg: '/images/background/bg-pastels.jpg',
+    colorCode: 'pastels',
   },
   pink: {
     accent1: 'rgba(203, 59, 138, 1)',
@@ -88,7 +90,7 @@ export const colors = {
     accent3: 'rgba(227, 107, 174, 1)',
     accent4: 'rgba(179, 65, 128, 1)',
     accent5: 'rgba(130, 38, 89, 1)',
-    heroBg: '/images/background/bg-pink.jpg',
+    colorCode: 'pink',
   },
   purple: {
     accent1: 'rgba(167, 104, 244, 1)',
@@ -96,7 +98,7 @@ export const colors = {
     accent3: 'rgba(163, 147, 235, 1)',
     accent4: 'rgba(94, 99, 182, 1)',
     accent5: 'rgba(39, 41, 109, 1)',
-    heroBg: '/images/background/bg-purple.jpg',
+    colorCode: 'purple',
   },
   red: {
     accent1: 'rgba(244, 68, 54, 1)',
@@ -104,7 +106,7 @@ export const colors = {
     accent3: 'rgba(255, 133, 123, 1)',
     accent4: 'rgba(164, 12, 0, 1)',
     accent5: 'rgba(134, 10, 0, 1)',
-    heroBg: '/images/background/bg-red.jpg',
+    colorCode: 'red',
   },
   yellow: {
     accent1: 'rgba(255, 193, 7, 1)',
@@ -112,6 +114,6 @@ export const colors = {
     accent3: 'rgba(240, 123, 63, 1)',
     accent4: 'rgba(234, 84, 85, 1)',
     accent5: 'rgba(255, 22, 93, 1)',
-    heroBg: '/images/background/bg-yellow.jpg',
+    colorCode: 'yellow',
   },
 };

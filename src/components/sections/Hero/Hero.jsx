@@ -49,7 +49,7 @@ export const Hero = SectionWrapper(() => {
 
 const Banner = styled.div`
   position: relative;
-  background: ${({ theme }) => `url(${theme.heroBg})`};
+  background: ${({ theme }) => `url(/images/background/${theme.colorCode}-${theme.themeCode}.jpg)`};
   background-size: cover;
   background-position: center;
   box-shadow: 0 3px 8px 0 var(--c-box-shadow);
