@@ -1,3 +1,5 @@
+'use client';
+
 import * as ProgressBar from 'progressbar.js';
 
 export const ProgressbarInstance = ({ type = 'circle', level, index, hide, duration, delay }) => {

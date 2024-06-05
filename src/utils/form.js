@@ -1,3 +1,5 @@
+'use client';
+
 import emailjs from '@emailjs/browser';
 
 export const handleFormSubmit = (values, { setSubmitting, resetForm }, setSuccess) => {

@@ -1,4 +1,4 @@
-'use clint';
+'use client';
 
 export * from '@/utils/confetti';
 export * from '@/utils/fancybox';
