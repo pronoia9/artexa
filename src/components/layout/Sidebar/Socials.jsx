@@ -27,7 +27,7 @@ const Container = styled(motion.div)`
   padding: 0 35px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
   font-size: 1.15rem;
   background: var(--c-bg-menu-2);
   box-shadow: 0 1px 4px 0 var(--c-box-shadow);
