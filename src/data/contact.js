@@ -7,7 +7,7 @@ export const contact = {
       { title: 'Discord', description: 'pronoia9' },
     ],
     [
-      { title: 'Mobile', description: '+1 470 550 9545' },
+      { title: 'Mobile', description: '+1 470 XXX XX XX' },
       { title: 'Skype', description: '@jayansin' },
       { title: 'Address', description: 'Woodstock, GA' },
     ],
