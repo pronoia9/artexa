@@ -20,7 +20,7 @@ export const PricesCard = ({ title, price, checklist, note, popular }) => {
             <div class='art-number'>
               {price.time ? (
                 <>
-                  <span>?</span>
+                  <span>$</span>
                   <div>{price.cost}</div>
                   <span>{price.time}</span>
                 </>
