@@ -48,6 +48,9 @@ export * from '@/components/sections/Hero/HeroHeading';
 export * from '@/components/sections/Hero/HeroTyped';
 // -- History
 export * from '@/components/sections/History/History';
+// -- Prices
+export * from '@/components/sections/Prices/Prices';
+export * from '@/components/sections/Prices/PricesCard';
 // -- Projects
 export * from '@/components/sections/Project/ProjectBanner';
 export * from '@/components/sections/Project/ProjectInfo';
@@ -63,6 +66,9 @@ export * from '@/components/sections/Services/ServicesCard';
 export * from '@/components/sections/Technologies/Technologies';
 export * from '@/components/sections/Technologies/TechnologiesGrid';
 export * from '@/components/sections/Technologies/TechnologiesSwiper';
+// -- Testimonials
+export * from '@/components/sections/Testimonials/Testimonials';
+export * from '@/components/sections/Testimonials/TestimonialsCard';
 
 // ---- COMPONENTS
 export * from '@/components/Background';
