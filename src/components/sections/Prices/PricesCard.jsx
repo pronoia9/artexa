@@ -16,7 +16,7 @@ export const PricesCard = ({ title, price, checklist, note, popular }) => {
             {title}
           </motion.h5>
 
-          <div class='art-price-cost'>
+          <Cost class='art-price-cost'>
             <div class='art-number'>
               {price.time ? (
                 <>
@@ -31,7 +31,7 @@ export const PricesCard = ({ title, price, checklist, note, popular }) => {
                 </>
               )}
             </div>
-          </div>
+          </Cost>
 
           <ul class='art-price-list'>
             {checklist.map((item, i) => (
@@ -46,10 +46,10 @@ export const PricesCard = ({ title, price, checklist, note, popular }) => {
           </Link>
 
           {note && (
-            <div class='art-asterisk'>
+            <Note class='art-asterisk'>
               <sup>*</sup>
               {note}
-            </div>
+            </Note>
           )}
         </Wrapper>
       </Card>
@@ -57,10 +57,88 @@ export const PricesCard = ({ title, price, checklist, note, popular }) => {
   );
 };
 
-const Card = styled.div``;
+const Card = styled.div`
+  margin-bottom: 30px;
+  overflow: hidden;
+  position: relative;
+  background-size: cover;
+  background: var(--c-bg-2);
+  box-shadow: var(--c-box-shadow);
+  text-align: center;
+  transition: 0.55s ease-in-out;
+
+  &.art-popular-price {
+    transform: scale(1.03);
+
+    &:before {
+      content: 'POPULAR';
+      width: 200px;
+      padding: 2px;
+      position: absolute;
+      top: 18px;
+      right: -72px;
+      z-index: 99;
+      box-shadow: var(--c-box-shadow);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--c-font-dark);
+      text-align: center;
+      background: var(--c-accent-1);
+      transform: rotate(45deg);
+    }
+  }
+`;
 
 const Wrapper = styled.div`
+  position: relative;
+  padding: 30px;
+
   h5 {
     font-family: var(--f-primary);
   }
+`;
+
+const Cost = styled.div`
+  padding: 0 10px;
+  margin-bottom: 30px;
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+
+  .art-number {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--c-accent-1);
+    margin-bottom: 0;
+
+    span {
+      padding: 0 5px;
+      font-size: 13px;
+      font-weight: 200;
+      color: var(--c-font-2);
+      opacity: 1;
+    }
+
+    div {
+      display: inline;
+    }
+
+    sup {
+      position: absolute;
+      top: 15px;
+      right: 0;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+  }
+`;
+
+const Note = styled.div`
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  font-size: 8px;
+  text-align: center;
+  opacity: 0.4;
 `;
