@@ -7,7 +7,6 @@ import { createGlobalStyle } from 'styled-components';
 export const GlobalStyles = createGlobalStyle`
   @font-face { font-family: 'Caveat';         src: url('/fonts/Caveat/Caveat-VariableFont_wght.ttf')   format('truetype'); }
   @font-face { font-family: 'Caveat Brush';   src: url('/fonts/Caveat_Brush/CaveatBrush-Regular.ttf')  format('truetype'); }
-  @font-face { font-family: 'Jost';           src: url('/fonts/Jost/Jost-VariableFont_wght.ttf')       format('truetype'); }
   @font-face { font-family: 'Operator Mono';  src: url('/fonts/Operator_Mono/Operator Mono_Light Nerd_Font_Complete.otf'); }
 
   :root {
@@ -41,7 +40,7 @@ export const GlobalStyles = createGlobalStyle`
 
     --c-cursor: var(--c-accent-1);
     
-    --f-primary: 'Jost';
+    --f-primary: 'Poppins';
     --f-secondary: 'Caveat';
     --f-tertiary: 'Caveat Brush';
     --f-code: 'Operator Mono', monospace;
