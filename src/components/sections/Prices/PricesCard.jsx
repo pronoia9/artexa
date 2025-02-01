@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCheck, faCross } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faXmark } from '@fortawesome/free-solid-svg-icons';
 
 import { Button } from '@/components';
 import { servicesMotion } from '@/utils';
@@ -38,7 +38,7 @@ export const PricesCard = ({ title, price, checklist, note, popular }) => {
           <PriceList className='art-price-list'>
             {checklist.map((item, i) => (
               <li key={`prices-card-${i}-${item.title}`}>
-                <FontAwesomeIcon icon={item.check ?faCheck : faCross} />
+                <FontAwesomeIcon icon={item.check ? faCheck : faXmark} />
                 {item.title}
               </li>
             ))}
@@ -99,6 +99,10 @@ const Card = styled.div`
 const Wrapper = styled.div`
   position: relative;
   padding: 30px;
+
+  .art-link {
+    margin: 0;
+  }
 `;
 
 const Cost = styled.div`
@@ -149,8 +153,8 @@ const PriceList = styled.ul`
     }
 
     svg {
-      width: 9px;
-      height: 9px;
+      width: 12px;
+      height: 12px;
       margin-right: 5px;
       color: var(--c-accent-1);
       font-weight: 900;
