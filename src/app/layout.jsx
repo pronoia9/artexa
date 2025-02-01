@@ -1,13 +1,17 @@
+import TemplateWrapper from './template-wrapper';
+
 const siteUrl = 'https://ansin.dev';
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: "Hi. I'm Jay 👋",
-  description: 'Portfolio of Jay, a skilled full-stack developer specializing in React, Next.js, and modern web technologies.',
+  description:
+    'Portfolio of Jay, a skilled full-stack developer specializing in React, Next.js, and modern web technologies.',
   keywords: 'Jay, portfolio, full-stack developer, React, Next.js, web development',
   openGraph: {
     title: "Hi. I'm Jay 👋",
-    description: 'Portfolio of Jay, a skilled full-stack developer specializing in React, Next.js, and modern web technologies.',
+    description:
+      'Portfolio of Jay, a skilled full-stack developer specializing in React, Next.js, and modern web technologies.',
     url: siteUrl,
     images: [
       {
@@ -22,7 +26,8 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: "Hi. I'm Jay 👋",
-    description: 'Portfolio of Jay, a skilled full-stack developer specializing in React, Next.js, and modern web technologies.',
+    description:
+      'Portfolio of Jay, a skilled full-stack developer specializing in React, Next.js, and modern web technologies.',
     image: `${siteUrl}/screenshot.jpeg`,
   },
   icons: {
@@ -36,7 +41,7 @@ export default function RootLayout({ children }) {
       <head>
         <title>Hi. I'm Jay 👋</title>
       </head>
-      {children}
+      <TemplateWrapper>{children}</TemplateWrapper>
     </html>
   );
 }
