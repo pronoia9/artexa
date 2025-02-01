@@ -20,9 +20,11 @@ export const Preloader = ({ title, children, ...props }) => {
 
 const Container = styled(motion.div)`
   margin: 15px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  bottom: 0;
+  right: 0;
   width: calc(100vw - 30px);
   height: calc(100vh - 30px);
   display: flex;
@@ -30,6 +32,7 @@ const Container = styled(motion.div)`
   justify-content: center;
   pointer-events: 'none';
   z-index: 999999;
+  background: var(--c-bg);
 
   @media (max-width: 920px) {
     margin: 0;
