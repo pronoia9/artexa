@@ -11,7 +11,7 @@ import { GlobalStyles, StyledComponentsRegistry } from '@/styles';
 import { appMotion, pageWrapperMotion, getThemeObject, rem } from '@/utils';
 
 export default function Template({ children }) {
-  const loadTime = 3000; //! TODO: TEMPORARILY CHANGED
+  const loadTime = 5000; //! TODO: TEMPORARILY CHANGED
   const { loading, setLoading, theme, accent, curtainEnabled, curtainClose } = dataStore((state) => ({
     loading: state.loading,
     setLoading: state.setLoading,
