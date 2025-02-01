@@ -22,13 +22,17 @@ export const ContactList = ({ cols, list }) => {
   );
 };
 
-export const ContactListItem = ({ title, description }) => {
+export const ContactListItem = ({ title, description, link }) => {
+  const MotionComponent = link ? motion.a : motion.span;
+
   return (
     <motion.li {...contactMotion.listLine}>
       <h5>
-        <SplitText>{`${title}:`}</SplitText>
+        <SplitText>{title && `${title}:`}</SplitText>
       </h5>
-      <motion.span {...contactMotion.listText}>{description}</motion.span>
+      <MotionComponent id={`contact-list-item-${description}`} {...contactMotion.listText} href={link} target={link ? '_blank' : undefined}>
+        {description}
+      </MotionComponent>
     </motion.li>
   );
 };
