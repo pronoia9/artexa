@@ -21,7 +21,7 @@ export const Progressbar = ({ title, description, language, type, level = 100, i
 const Container = styled(motion.div).withConfig({ shouldForwardProp: (prop) => !['variants'].includes(prop) })`
   path {
     &:first-child {
-      stroke: var(--c-bg);
+      stroke: var(--c-bg-2);
     }
 
     &:last-child {
