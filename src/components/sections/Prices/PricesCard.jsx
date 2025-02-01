@@ -3,6 +3,8 @@
 import Link from 'next/link';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faCross } from '@fortawesome/free-solid-svg-icons';
 
 import { Button } from '@/components';
 import { servicesMotion } from '@/utils';
@@ -16,8 +18,8 @@ export const PricesCard = ({ title, price, checklist, note, popular }) => {
             {title}
           </motion.h5>
 
-          <Cost class='art-price-cost'>
-            <div class='art-number'>
+          <Cost className='art-price-cost'>
+            <div className='art-number'>
               {price.time ? (
                 <>
                   <span>$</span>
@@ -33,20 +35,21 @@ export const PricesCard = ({ title, price, checklist, note, popular }) => {
             </div>
           </Cost>
 
-          <ul class='art-price-list'>
+          <PriceList className='art-price-list'>
             {checklist.map((item, i) => (
-              <li key={`prices-card-${i}-${item.title}`} className={item.yes ? '' : 'art-empty-item'}>
+              <li key={`prices-card-${i}-${item.title}`}>
+                <FontAwesomeIcon icon={item.check ?faCheck : faCross} />
                 {item.title}
               </li>
             ))}
-          </ul>
+          </PriceList>
 
           <Link href='/contact'>
             <Button title='Order Now' {...servicesMotion.item} />
           </Link>
 
           {note && (
-            <Note class='art-asterisk'>
+            <Note className='art-asterisk'>
               <sup>*</sup>
               {note}
             </Note>
@@ -58,6 +61,10 @@ export const PricesCard = ({ title, price, checklist, note, popular }) => {
 };
 
 const Card = styled.div`
+  h5 {
+    font-family: var(--f-primary) !important;
+  }
+
   margin-bottom: 30px;
   overflow: hidden;
   position: relative;
@@ -92,10 +99,6 @@ const Card = styled.div`
 const Wrapper = styled.div`
   position: relative;
   padding: 30px;
-
-  h5 {
-    font-family: var(--f-primary);
-  }
 `;
 
 const Cost = styled.div`
@@ -129,6 +132,28 @@ const Cost = styled.div`
       right: 0;
       font-size: 14px;
       opacity: 0.6;
+    }
+  }
+`;
+
+const PriceList = styled.ul`
+  padding: 0;
+  margin: 0 0 30px;
+
+  li {
+    list-style-type: none;
+    margin-bottom: 15px;
+
+    &.art-empty-item {
+      opacity: 0.3;
+    }
+
+    svg {
+      width: 9px;
+      height: 9px;
+      margin-right: 5px;
+      color: var(--c-accent-1);
+      font-weight: 900;
     }
   }
 `;
