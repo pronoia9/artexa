@@ -32,11 +32,30 @@ export const TestimonialCard = ({ name, subtitle, image, description, rating }) 
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding: 30px;
+  position: relative;
+  background-size: cover;
+  background: var(--c-bg-2);
+  box-shadow: var(--c-box-shadow);
+`;
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+`;
 
-const Image = styled.img``;
+const Image = styled.img`
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  top: -15px;
+  right: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: var(--c-box-shadow);
+`;
 
 const Name = styled.div``;
 
@@ -44,4 +63,40 @@ const Subtitle = styled.div``;
 
 const Description = styled.div``;
 
-const Rating = styled.div``;
+const Rating = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  overflow: hidden;
+
+  .art-star-rate {
+    box-shadow: inset 0 3px 8px 0 rgba(15, 15, 20, 0.2);
+    padding: 5px 15px;
+    font-size: 12px;
+    margin: 5px 0 0;
+    background: #20202a;
+    border-radius: 30px;
+    display: flex;
+    color: #ffc107;
+  }
+
+  li {
+    list-style-type: none;
+    margin-right: 5px;
+
+    .art-empty-item {
+      color: rgba(43, 43, 53, 0.98);
+    }
+  }
+
+  .art-testimonial-icon {
+    width: 120px;
+    position: absolute;
+    left: 45%;
+    top: 20px;
+    justify-content: center;
+    align-self: center;
+    opacity: 0.03;
+  }
+`;
