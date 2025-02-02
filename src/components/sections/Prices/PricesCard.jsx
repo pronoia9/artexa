@@ -37,7 +37,7 @@ export const PricesCard = ({ title, price, checklist, note, popular }) => {
 
           <PriceList className='art-price-list'>
             {checklist.map((item, i) => (
-              <li key={`prices-card-${i}-${item.title}`}>
+              <li key={`prices-card-${i}-${item.title}`} className={item.check ? '' : ' art-empty-item'}>
                 <FontAwesomeIcon icon={item.check ? faCheck : faXmark} />
                 {item.title}
               </li>
