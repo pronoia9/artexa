@@ -6,12 +6,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 export const TestimonialCard = forwardRef(({ name, subtitle, image, description, rating }, ref) => {
-  const img = image || { src: '', alt: '' };
 
   return (
     <Container ref={ref} className='art-a art-testimonial'>
       <Wrapper className='testimonial-body'>
-        <Image className='art-testimonial-face' {...img} />
+        {image && <Image className='art-testimonial-face' {...image} />}
         <Name>{name}</Name>
         <Subtitle className='art-el-suptitle mb-15'>{subtitle}</Subtitle>
         <Description className='mb-15'>{description}</Description>
