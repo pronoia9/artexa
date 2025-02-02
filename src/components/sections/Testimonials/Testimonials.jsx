@@ -12,14 +12,11 @@ export const Testimonials = SectionWrapper(() => {
   const [maxHeight, setMaxHeight] = useState(0);
 
   const swiperOptions = {
-    modules: null,
     spaceBetween: 30,
     slidesPerView: 3,
     speed: 1500,
     autoplay: { delay: 5000 },
     breakpoints: { 320: { slidesPerView: 1 }, 640: { slidesPerView: 2 } },
-    navigation: true,
-    pagination: true,
   };
 
   useEffect(() => {
@@ -33,7 +30,7 @@ export const Testimonials = SectionWrapper(() => {
   return (
     <Container $maxHeight={maxHeight}>
       <SectionTitle title={data.title} />
-      <Swiper section='testimonials' autoplay={true} swiperOptions={swiperOptions} navigation={false}>
+      <Swiper section='testimonials' autoplay={true} swiperOptions={swiperOptions} navigation pagination>
         {data.list.map((testimonial, index) => (
           <SwiperSlide key={`testimonial-${index}`}>
             <TestimonialCard
@@ -49,13 +46,15 @@ export const Testimonials = SectionWrapper(() => {
 });
 
 const Container = styled.div`
-  &, .art-testimonial-slider {
+  &,
+  .art-testimonial-slider {
     height: 100%;
     width: 100%;
     overflow: visible !important;
   }
 
-  .swiper-slide, .art-testimonial {
-    min-height: ${({ $maxHeight }) => ($maxHeight ? `${$maxHeight}px` : 'auto')};;
+  .swiper-slide,
+  .art-testimonial {
+    min-height: ${({ $maxHeight }) => ($maxHeight ? `${$maxHeight}px` : 'auto')};
   }
 `;
