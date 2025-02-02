@@ -1,14 +1,15 @@
 'use client';
 
+import { forwardRef } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 
-export const TestimonialCard = ({ name, subtitle, image, description, rating }) => {
+export const TestimonialCard = forwardRef(({ name, subtitle, image, description, rating }, ref) => {
   const img = image || { src: '', alt: '' };
 
   return (
-    <Container className='art-a art-testimonial'>
+    <Container ref={ref} className='art-a art-testimonial'>
       <Wrapper className='testimonial-body'>
         <Image className='art-testimonial-face' {...img} />
         <Name>{name}</Name>
@@ -19,7 +20,7 @@ export const TestimonialCard = ({ name, subtitle, image, description, rating }) 
       <Rating className='art-testimonial-footer'>
         <div className='art-left-side'>
           <ul className='art-star-rate'>
-            {new Array(rating).fill().map((r, i) => (
+            {new Array(rating).fill().map((_, i) => (
               <li key={`testimonial-${name}-rating-${i}`}>
                 <FontAwesomeIcon icon={faStar} />
               </li>
@@ -30,11 +31,14 @@ export const TestimonialCard = ({ name, subtitle, image, description, rating }) 
       </Rating>
     </Container>
   );
-};
+});
 
 const Container = styled.div`
   padding: 30px;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-size: cover;
   background: var(--c-bg-2);
   box-shadow: var(--c-box-shadow);
@@ -42,7 +46,6 @@ const Container = styled.div`
 
 const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
   z-index: 0;
 `;
 
