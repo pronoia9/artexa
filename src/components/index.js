@@ -68,7 +68,7 @@ export * from '@/components/sections/Technologies/TechnologiesGrid';
 export * from '@/components/sections/Technologies/TechnologiesSwiper';
 // -- Testimonials
 export * from '@/components/sections/Testimonials/Testimonials';
-export * from '@/components/sections/Testimonials/TestimonialsCard';
+export * from '@/components/sections/Testimonials/TestimonialCard';
 
 // ---- COMPONENTS
 export * from '@/components/Background';
