@@ -90,6 +90,10 @@ const Rating = styled.div`
     .art-empty-item {
       color: rgba(43, 43, 53, 0.98);
     }
+
+    &:last-child {
+      margin: 0;
+    }
   }
 
   .art-testimonial-icon {
