@@ -28,9 +28,9 @@ import SwiperCore, { Navigation, Pagination, A11y, Autoplay } from 'swiper';
 import { styled } from 'styled-components';
 import { motion } from 'framer-motion';
 
-import { Card, Fancybox, SVGs } from '@/components';
+import { Card, SVGs } from '@/components';
 
-export const Swiper = ({ section, data, navProps, autoplay, swiperOptions, navigation = true, children, ...props }) => {
+export const Swiper = ({ section, data, navProps, autoplay, swiperOptions, navigation = true, pagination, children, ...props }) => {
   if (autoplay) SwiperCore.use([Autoplay]);
   return (
     <>
@@ -46,9 +46,9 @@ export const Swiper = ({ section, data, navProps, autoplay, swiperOptions, navig
             640: { slidesPerView: 2, spaceBetween: 10 },
             1200: { slidesPerView: 3, spaceBetween: 30 },
           }}
+          {...swiperOptions}
           navigation={{ nextEl: `.art-${section}-swiper-next`, prevEl: `.art-${section}-swiper-prev` }}
           pagination={{ el: `.${section}-swiper-pagination`, type: 'bullets', clickable: true }}
-          {...swiperOptions}
         >
           {children}
           {data?.map((item, index) => (
