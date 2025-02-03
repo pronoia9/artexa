@@ -93,6 +93,10 @@ const Card = styled.div`
       background: var(--c-accent-1);
       transform: rotate(45deg);
     }
+
+    @media (max-width: 920px) {
+      transform: scale(1);
+    }
   }
 `;
 
