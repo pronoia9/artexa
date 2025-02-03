@@ -2,35 +2,38 @@ export const services = {
   title: 'Services',
   list: [
     {
-      title: 'Captivating Web Design',
-      subtitle: 'Web Development',
-      description: 'Crafting visually stunning and user-friendly web designs that capture attention and deliver exceptional user experiences.',
-      link: '#contact',
-    },
-    {
-      title: 'Interactive 3D Web Experiences',
-      subtitle: 'Web Development',
-      description: 'Creating immersive and interactive 3D web applications that engage users with captivating visuals and seamless interactions.',
-      link: '#contact',
-    },
-    {
-      title: 'Backend Development Solutions',
+      title: 'Website Development',
       subtitle: 'Web Development',
       description:
-        'Building robust and scalable backend solutions that power web applications, ensuring efficient data handling and seamless functionality.',
+        'Designing and developing modern, responsive websites that provide an engaging user experience and align with your brand’s vision.',
+      link: '#contact',
+    },
+    {
+      title: 'Web Application Development',
+      subtitle: 'Web Development',
+      description:
+        'Building tailored web applications with dynamic features and seamless functionality to enhance user engagement and business operations.',
+      link: '#contact',
+    },
+    {
+      title: 'Backend Solutions',
+      subtitle: 'Backend Development',
+      description:
+        'Developing scalable and efficient backend systems that ensure smooth data processing, secure authentication, and optimal performance.',
       link: '#contact',
     },
     {
       title: 'Database Management',
-      category: 'Web Development',
+      subtitle: 'Database Solutions',
       description:
-        'Expertise in working with databases like MongoDB and PostgreSQL, enabling efficient storage, retrieval, and manipulation of data in web applications.',
+        'Implementing and optimizing databases like MongoDB and PostgreSQL for efficient data storage, retrieval, and security.',
       link: '#contact',
     },
     {
-      title: 'Blender 3D Modeling',
-      category: 'Digital Artistry',
-      description: 'Utilizing Blender to create intricate and visually stunning 3D models, bringing imagination to life with precision and artistry.',
+      title: 'Maintenance & Support',
+      subtitle: 'Web Maintenance',
+      description:
+        'Providing ongoing updates, security patches, and performance optimizations to keep your website or web application running smoothly.',
       link: '#contact',
     },
   ],
