@@ -21,5 +21,6 @@ export const navbar = [
     // ],
   },
   // { id: 5, title: 'About', path: '/about' },
-  { id: 6, title: 'Contact', path: '/contact' },
+  { id: 6, title: 'Services', path: '/services' },
+  { id: 7, title: 'Contact', path: '/contact' },
 ];
